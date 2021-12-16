@@ -1,0 +1,58 @@
+// Typography
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+/* 	font-family:; */
+	font-weight: normal;
+	margin: 0 0 0.5em;
+	color: $headings-color;
+}
+
+h1, .h1 {
+	font-size:48px;
+	font-weight: normal;
+}
+
+h2, .h2 {
+	font-size:36px;
+	font-weight: normal;
+	color:#FFFFFF;
+
+}
+
+h3, .h3 {
+ 	font-size: 24px;
+	font-weight: normal;
+}
+
+h4, .h4 {
+	font-size: 18px;
+	color: #7DD42F
+}
+
+h5, .h5 {
+	font-size: $h5-font-size;
+}
+
+h6, .h6 {
+	font-size: $h6-font-size;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+a {
+	color: $base-link-color;
+	text-decoration: none;
+	transition: color .3s ease;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,192 @@
+footer{
+    padding: 45px 0 15px 0;
+    background: #5773AB;
+
+    @include media ("<desktop"){
+        padding: 15px 0 15px 0;
+    }
+
+    @include media ("<phone"){
+        padding: 35px 0 20px 0;
+    }
+}
+
+.footer-top{
+    color: #fff;
+    display: flex;
+    margin-bottom: 60px;
+
+    @include media ("<desktop"){
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    @include media ("<650px"){
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.tittle{     
+    padding-right: 180px;
+
+    
+    @include media ("<1155px"){
+        padding-right: 90px;
+    }
+    
+    @include media ("<desktop"){
+        padding-right: 0;
+        margin-bottom: 45px;
+    }
+
+    h3{
+        margin: 0;
+    }
+}
+
+.links-footer{
+    display: flex;
+    
+    @include media ("<desktop"){
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.main-links{
+    display: flex;
+    flex-direction:column;
+    margin-right: 100px;
+
+    @include media ("<1155px"){
+        margin-right: 50px;
+    }
+
+    @include media ("<desktop"){
+        margin-right: none;
+    }
+
+    @include media ("<650px"){
+        display: none;
+    }
+
+    h3{
+        margin-bottom: 25px;
+    }
+
+    a{
+       margin-bottom: 15px; 
+       color: #fff;
+    }
+}
+
+.report{
+
+    h3{
+        margin-right: 190px;
+
+        @include media ("<1155px"){
+            margin-right: 95px;
+        }
+
+        @include media ("<desktop"){
+            margin-right: none;
+        }
+    }
+
+    @include media ("<650px"){
+        display: none;
+    }
+}
+
+.contacts{
+
+    @include media ("<650px"){
+        border-top: 1px solid #FFFFFF;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .tele{
+        display: none;
+
+        @include media ("<desktop"){
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .mail{
+        @include media ("<phone"){
+            margin-bottom: 20px;
+         }
+    }
+
+    @include media ("<phone"){
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    h3{
+        margin-bottom: 25px;
+
+        @include media ("<650px"){
+            margin-bottom: 35px;
+            text-align: center;
+         }
+    }
+    a{
+        color: #fff;
+        font-size: 20px;
+    }
+}
+
+.footer-bot{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+    padding-top: 10px;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.35;
+        width: 100%;
+        height: 1px;
+        background: #FFFFFF;
+    }
+
+    @include media ("<phone"){
+        flex-direction: column;
+        align-items: center;
+
+        a:first-child{
+            margin:15px 0 20px 0;
+        }
+    }
+
+    a{
+        color: #fff;
+        font-size: 10px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+    img{
+
+        @include media ("<desktop"){
+            display: none;
+        }
+        @include media ("<phone"){
+            display: none;
+        }
+    }
+}

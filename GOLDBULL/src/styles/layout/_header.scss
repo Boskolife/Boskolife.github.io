@@ -1,0 +1,339 @@
+header{
+    background:url(../images/imgheader/headerbackground.png) 50% 0/cover no-repeat;
+    padding: 35px 0 300px 0;
+    z-index: 2;
+
+    @include media ("<desktop"){
+        background: linear-gradient(180deg, #4D4D4D 0%, rgba(0, 0, 0, 0.44) 100%),url(../images/imgheader/headerbackground.png) 0 0/cover no-repeat;
+        padding: 35px 0 200px 0;
+    }
+
+    @include media ("<phone"){
+        padding: 35px 0 100px 0;
+    }
+
+    @include media ("<phone"){
+        padding: 15px 0 35px 0;
+    }
+}
+
+.header-burger{
+    display: none;
+
+    @include media ("<desktop"){
+        display: block;
+        position: relative;
+        width: 25px;
+        height: 15px;
+        z-index: 2;
+        margin-right: 30px;
+
+        span{
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top:6px;
+            background:#FFFFFF;
+            transition: 0.4s;
+        }
+
+        &::before,&::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            background:#FFFFFF;
+            transition: 0.4s;
+        }
+
+        &::before{
+            top: 0;
+        }
+
+        &::after{
+            bottom: 0;
+            width: 15px;
+        }
+    }
+
+    @include media ("<phone"){
+        margin-right: 0px;
+    }
+}
+
+.burger_active{
+    &::before{
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    &::after{
+        transform: rotate(-45deg);
+        bottom: 4px;
+        width: 100%;
+    }
+
+    span{
+        display: none;
+    }
+}
+
+.main-logo{
+    z-index: 2;
+    max-width: 100%;
+
+    @include media ("<desktop"){
+        margin-left: 30px;
+    }
+
+    @include media ("<phone"){
+        margin-left: 0px;
+    }
+
+    img{
+        @include media ("<phone"){
+            width: 60px;
+            height: 25px;
+        }
+    }
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    
+    a{
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+.body_lock{
+    overflow: hidden;
+}
+
+.feedback-header{
+    display: none;
+
+    @include media ("<desktop"){
+        display: block; 
+        position: absolute;
+        top:-150vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(50, 50, 50, 0.45);
+        backdrop-filter: blur(15px);
+        transition: 1s;
+        z-index: 1;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+
+        .feedback-header-links{
+
+            @include media ("<desktop"){
+                display: flex;
+                flex-direction:column;
+                text-align: center;
+            }
+            
+            a{
+                font-size: 36px;
+                margin-bottom: 55px;
+            }
+        }
+        
+
+    
+        .login-links{
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            bottom: 0;
+            border-top:1px solid #FFFFFF;
+            max-width: 400px;
+            width: 100%;
+            padding-bottom: 40px;
+            
+
+            .login{
+                &::after{
+                    position: absolute;
+                    content:'';
+                    border: 1px solid #FFFFFF;
+                    left: 40%;
+                    max-width: 300px;
+                    height: 25px; 
+                    
+                    @include media ("<phone"){
+                        display: none;
+                    }
+                } 
+
+                @include media ("<tablet"){
+                    width: 100%;
+                }
+            }
+
+            a{
+                margin-top: 25px;
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    @include media ("<phone"){
+        display: block; 
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(50, 50, 50, 0.45);
+        backdrop-filter: blur(15px);
+        z-index: 1;
+        transition: 0.7s;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        
+        .feedback-header-links{
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content: center;
+            padding:150px 0;
+
+            a{
+                font-weight: bold;
+            }
+        }
+
+        .login-links{
+            display: flex;
+
+            @include media ("<desktop"){
+                flex-direction:column;
+                text-align: center;
+            }
+
+            @include media ("<phone"){
+                flex-direction:column;
+                text-align: center;
+            }
+        }
+    }      
+}
+
+.menu_active{
+    top:0;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ("<desktop"){
+        display: none;
+    }
+
+    .header-links{
+
+        ul{
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+
+            li{
+                list-style: none;
+            }
+        }
+        a{
+            margin-right: 34px;
+        }
+    }
+}
+.login-links{
+
+    .login{
+        &::after{
+            content:'';
+            border: 1px solid #FFFFFF;
+            margin: 0 21px;
+
+        }
+    }        
+    
+    a{
+        text-decoration: underline;
+    } 
+}
+
+.header-text{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding:210px 0 0 80px;
+
+    @include media ("<desktop"){
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding:210px 0 80px 0;
+    }
+
+    @include media ("<phone"){
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding:150px 0 150px 0;
+    }
+
+    h1{
+        max-width: 450px;
+
+        @include media ("<desktop"){
+            margin-bottom: 150px;
+            max-width: 660px;
+            width: 100%;
+            font-size: 64px;
+        }
+
+        @include media ("<tablet"){
+            font-size: 48px;
+        }
+
+        @include media ("<phone"){
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+
+    p{
+        max-width: 350px;
+        color: #FFFFFF;
+
+        @include media ("<desktop"){
+            max-width: 560px;
+            width: 100%;
+            font-size: 30px;
+        }
+
+        @include media ("<tablet"){
+            font-size: 24px;
+        }
+
+        @include media ("<phone"){
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+}
