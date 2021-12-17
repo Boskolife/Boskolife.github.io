@@ -1,3 +1,6 @@
+
+new WOW().init(); 
+
 jQuery(function() {
     $('.block-info').slick({
         dots:false,
@@ -25,5 +28,5 @@ for (i = 0; i < acc.length; i++) {
     });
 };
 
-new WOW().init(); 
+
 

@@ -12,7 +12,7 @@ html{
 }
 
 .container{
-    max-width: 1300px;
+    max-width: 1320px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px 0 110px;
@@ -1326,18 +1326,9 @@ html{
     .main-blog{
 
         h1{
-            margin-bottom: 60px;
-
-            @include media ("<desktop"){
-                margin-bottom: 190px;
-            }
-
-            @include media ("<tablet"){
-                margin-bottom: 140px;
-            }
+            @include adaptiv-vaule("margin-bottom", 60 , 30, 1);
 
             @include media ("<phone"){
-                margin-bottom: 110px;
                 padding: 0 20px;
             }
         }
@@ -1552,13 +1543,9 @@ html{
     }
 
     h1{
-        margin-bottom: 200px;
+        @include adaptiv-vaule("margin-bottom", 150 , 30, 1);
 
-        @include media ("<desktop"){
-            margin-bottom: 120px;
-        }
         @include media ("<phone"){
-            margin-bottom: 160px;
             padding: 0 20px;
         }
     }
@@ -2216,6 +2203,7 @@ html{
 
 .form-content{
     display: flex;
+    justify-content: space-between;
 
     @include media("<desktop"){
         flex-direction: column;
@@ -2224,10 +2212,15 @@ html{
 
 .form-block{
     padding: 50px 80px;
+    width: 60%;
     border: 1px solid #000000;
 
     @include media("<desktop"){
         margin-bottom: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     @include media("<phone"){
@@ -2250,9 +2243,14 @@ html{
         margin-bottom: 20px;
         max-width:580px;
 
+        @include media ("<desktop"){
+            width: 100%;
+        }
+
         select{
             padding:15px 30px;
             width:100%;
+            background: transparent;
 
             @include media ("<phone"){
                 padding: 15px;
@@ -2262,14 +2260,32 @@ html{
 
     .input{
         margin-bottom: 30px;
+
+        @include media ("<desktop"){
+            text-align: center;
+        }
+
         h3{
             font-size: 15px;
             margin-bottom: 20px;
             line-height: 198.5%;
         }
 
-        p{
-            margin-bottom:10px;
+        
+        .input-items{
+            flex-direction: column;
+
+            .label{
+                margin-bottom:10px;
+
+                label{
+                    @include adaptiv-vaule("font-size", 16, 14, 1);
+                }
+            }
+            input{
+                margin-right: 20px;
+                
+            }
         }
     }
 
@@ -2299,6 +2315,11 @@ html{
 .contact-info{
     margin-bottom: 40px;
     max-width:580px;
+
+    @include media ("<desktop"){
+        width: 100%;
+    }
+
     .name{
         margin-bottom: 20px;
         input{
@@ -2307,6 +2328,7 @@ html{
     }
     .surname{
         margin-bottom: 20px;
+
         input{
             width:100%;
         }
@@ -2328,13 +2350,10 @@ html{
     }
 }
 
-
-
-
 .communication{
     padding-left: 30px;
 
-    @include media ("<tablet"){
+    @include media ("<desktop"){
         padding: 0;
     }
 
@@ -2348,17 +2367,13 @@ html{
         .tittle{
             background: #20263C;
             padding: 30px 50px 5px 5px;
-    
+
             h2{
                 font-weight: 800;
-                font-size: 64px;
+                @include adaptiv-vaule("font-size", 64, 48, 1);
                 line-height: 85.5%;
                 max-width:420px;
                 color:#FFFFFF;
-
-                @include media ("<phone"){
-                    font-size: 48px;
-                }
             }
         }
     
@@ -2393,10 +2408,10 @@ html{
     }
 
     .adress{
+        margin-bottom: 70px;
 
         @include media("<desktop"){
             flex: 0 1 50%;
-            margin-bottom: 70px;
         }
         h3{
             color: #3C467A;

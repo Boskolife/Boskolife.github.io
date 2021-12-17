@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 jQuery(function () {
   $('.block-info').slick({
     dots: false,
@@ -23,5 +24,4 @@ for (i = 0; i < acc.length; i++) {
 }
 
 ;
-new WOW().init();
 //# sourceMappingURL=main.js.map

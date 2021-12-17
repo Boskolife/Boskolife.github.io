@@ -5,14 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port Group</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/animate.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="./js/slick.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
-    <script src="//js/wow.min.js"></script>
-    <script>
-    new WOW().init();
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <div id="wrapper">
@@ -32,9 +25,9 @@
                     <a class="arrow" href="#"> <img src="./images/ArrowMAIN.svg" alt="image not found"> </a>
                 </div>
             </nav>
-            <section class="form-list wow animate__bounce">
+            <section class="form-list ">
                 <div class="container">
-                    <h1 >Contact</h1>
+                    <h1 class="wow animate__animated animate__pulse">Contact</h1>
                     <div class="form-content">
                         <form class="form-block" action="#" enctype="multipart/form-data">
                             <div class="form-tittle">
@@ -50,12 +43,19 @@
                             <div class="input">
                                 <h3>Lorem ipsum dolor sit amet, consectetur </h3>
                                 <div class="input-items">
-                                    <p><input tabindex="2" type="checkbox" name="name" value="">Lorem ipsum dolor sit amet</p>
-                                    <p><input tabindex="3" type="checkbox" name="name1" value="">Lorem ipsum dolor sit amet</p>
-                                    <p><input tabindex="4" type="checkbox" name="name2" value="">Lorem ipsum dolor sit amet</p>
-                                    <p><input tabindex="5" type="checkbox" name="name3" value="">Lorem ipsum dolor sit amet</p>
-                                    <p><input tabindex="6" type="checkbox" name="name4" value="">Lorem ipsum dolor sit amet</p>
-                                    <p><input tabindex="7" type="checkbox" name="name5" value="">Lorem ipsum dolor sit amet</p>
+                                    <div class="label">
+                                        <label><input tabindex="2" type="checkbox" name="name" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
+                                    <div class="label"><label><input tabindex="3" type="checkbox" name="name1" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
+                                    <div class="label"><label><input tabindex="4" type="checkbox" name="name2" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
+                                    <div class="label"><label><input tabindex="5" type="checkbox" name="name3" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
+                                    <div class="label"><label><input tabindex="6" type="checkbox" name="name4" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
+                                    <div class="label"><label><input tabindex="7" type="checkbox" name="name5" value="">Lorem ipsum dolor sit amet</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="contact-info">
@@ -113,5 +113,9 @@
         </main>
         //= templates/footer.html
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="//js/wow.min.js"></script>
 </body>
 </html>

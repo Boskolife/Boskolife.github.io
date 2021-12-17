@@ -1,7 +1,10 @@
 header{
     padding-top: 50px;
-
     @include adaptiv-vaule("padding-top", 50, 25, 1);
+
+    .container{
+        padding: 0 20px;
+    }
 
 }
 
@@ -30,8 +33,8 @@ header{
 
     @include media ("<desktop"){
         flex-direction: column;
-        padding: 0 55px;
-        @include adaptiv-vaule("padding-top", 90, 80, 1);
+        padding: 0 33px;
+        @include adaptiv-vaule("padding-top", 190, 90, 1);
         @include adaptiv-vaule("padding-bottom", 100, 30, 1);
         position: absolute;
         top: -160vh;
@@ -62,7 +65,6 @@ header{
 
 .nav-links{
     display: flex;
-    padding-right: 15px;
     
     @include media ("<desktop"){
         height: 100%;
@@ -83,17 +85,11 @@ header{
     order: 1;
     margin: 0;
 
-    li:last-child{
-        margin-right: 0px;
-    }
-
     @include media ("<desktop"){
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        @include adaptiv-vaule("padding-top", 110, 35, 1);
         border-right: 3px solid #FFFFFF;
-        margin-bottom: 30px;
         order: 2;
     }
 
@@ -133,66 +129,12 @@ header{
 .burger-lang{
     order: 2;
     margin: 0;
-
+    padding: 0;
     
-    .sub-menu-list{
-        display: none;
-        position: absolute;
-        top: 0;
-        right: 50%;
-        transform: translate(25%);
-        padding-top: 30px;
-    }
-
-    
-    >li{
-        position: relative;
-
-        &:hover{
-            background:#FFFFFF;
-            .sub-menu-list{
-                display: block;
-                
-                li{
-                    margin-bottom: 10px;
-                }
-            }
-        }
-        &:first-child{
-            
-            
-            &::before{
-                position: absolute;
-                content:'';
-                border: 1px solid #000000;
-                width: 24px;
-                transform: rotate(90deg);
-                top: 8px;
-                left:-30px;
-                
-                @include media ("<desktop"){
-                    display: none;
-                }
-            }
-    
-            &::after{
-                position: absolute;
-                content: url(../images/headerimg/Arrow.svg);
-                align-items: center;
-                top: -3px;
-                right: -13px;
-
-                @include media ("<desktop"){
-                    display: none;
-                }
-            }
-        }
-    }
 
     @include media ("<desktop"){
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 50px;
 
         li{
             margin-bottom: 35px;
@@ -229,6 +171,60 @@ header{
 
             a{
                 font-size: 30px;
+            }
+        }
+    }
+    
+    .sub-menu-list{
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translate(25%);
+        padding-top: 30px;
+    }
+
+    >li{
+        position: relative;
+
+        &:hover{
+            background:#FFFFFF;
+
+            .sub-menu-list{
+                display: block;
+                
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &:first-child{
+            
+            
+            &::before{
+                position: absolute;
+                content:'';
+                border: 1px solid #000000;
+                width: 24px;
+                transform: rotate(90deg);
+                top: 8px;
+                left:-45px;
+                
+                @include media ("<desktop"){
+                    display: none;
+                }
+            }
+    
+            &::after{
+                position: absolute;
+                content: url(../images/headerimg/Arrow.svg);
+                align-items: center;
+                top: -3px;
+                right: -13px;
+
+                @include media ("<desktop"){
+                    display: none;
+                }
             }
         }
     }
@@ -314,7 +310,6 @@ header{
 }
 
 .burger_active{
-    margin-right: 20px;
 
     &::before{
         transform: rotate(45deg);

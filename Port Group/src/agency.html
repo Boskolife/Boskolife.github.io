@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
+    <title>Port Group</title>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="./js/slick.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <div id="wrapper">
@@ -29,9 +27,9 @@
             </nav>
             <section class="agency">
                 <div class="container">
-                    <div class="content-agency">
+                    <div class="content-agency wow animate__animated animate__pulse">
                         <h1>Our Agency</h1>
-                        <div class="agency-img">
+                        <div class="agency-img wow animate__animated animate__backInLeft">
                             <img src="./images/page2/agency/agencyimg.png" alt="image not found">
                         </div>
                     </div>
@@ -50,7 +48,7 @@
                         </div>
                     </div>
                     <div class="about-us-info">
-                        <div class="img-us">
+                        <div class="img-us wow animate__animated animate__backInLeft">
                             <img src="./images/page2/aboutus/aboutimg.png" alt="image not found">
                         </div>
                         <div class="about-tittle">
@@ -216,3 +214,9 @@
         </main>
         //= templates/footer.html
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/wow.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</body>
+</html>    
