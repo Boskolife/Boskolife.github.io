@@ -1428,36 +1428,6 @@ html {
       margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 880)); } }
   .bot-content .form {
     max-width: 400px; }
-    .bot-content .form .names {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      @media (max-width: 767px) {
-        .bot-content .form .names {
-          -ms-flex-direction: column;
-          flex-direction: column; } }
-      .bot-content .form .names input {
-        font-size: 14px;
-        color: #FFFFFF;
-        background: transparent;
-        max-width: 185px;
-        border: none;
-        border-bottom: 1px solid #ffffff;
-        padding: 0 0 20px 0;
-        margin-right: 10px; }
-        .bot-content .form .names input:last-child {
-          margin-right: 0; }
-        @media (max-width: 767px) {
-          .bot-content .form .names input {
-            max-width: 100%;
-            margin-right: 0; }
-            .bot-content .form .names input:first-child {
-              /* Только если меньше контейнера */
-              margin-bottom: 40px; } }
-    @media (max-width: 767px) and (max-width: 1200px) {
-      .bot-content .form .names input:first-child {
-        margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 880)); } }
     .bot-content .form input {
       font-size: 14px;
       color: #FFFFFF;
@@ -1471,8 +1441,21 @@ html {
       @media (max-width: 1200px) {
         .bot-content .form input {
           margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 880)); } }
-      .bot-content .form input:focus-visible {
-        border: none; }
+    .bot-content .form .names {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      @media (max-width: 767px) {
+        .bot-content .form .names {
+          -ms-flex-direction: column;
+          flex-direction: column; } }
+      .bot-content .form .names input:first-child {
+        margin-right: 15px; }
+      @media (max-width: 767px) {
+        .bot-content .form .names input {
+          max-width: 100%;
+          margin-right: 0; } }
     .bot-content .form textarea {
       margin-bottom: 20px;
       font-size: 14px;
@@ -1713,7 +1696,8 @@ footer {
   background: #161616;
   padding: 70px 0 20px 0; }
   .dark-page footer {
-    padding: 20px 0; }
+    padding: 20px 0;
+    border-top: 1px solid #ffffff; }
   @media (max-width: 767px) {
     footer {
       padding: 30px 0 20px 0; } }

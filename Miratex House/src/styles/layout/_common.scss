@@ -773,6 +773,17 @@ html{
 
     .form{
         max-width: 400px;
+        
+        input{
+            font-size: 14px;
+            color: #FFFFFF;
+            background:transparent;
+            width: 100%;
+            border:none;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 20px;
+            @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+        }
     
         .names{
             display: flex;
@@ -783,42 +794,15 @@ html{
             } 
 
             input{
-                font-size: 14px;
-                color: #FFFFFF;
-                background:transparent;
-                max-width: 185px;
-                border:none;
-                border-bottom: 1px solid #ffffff;
-                padding:0 0 20px 0;
-                margin-right: 10px;
 
-                &:last-child{
-                    margin-right: 0;
+                &:first-child{
+                    margin-right: 15px;
                 }
 
-                 @include media ("<tablet"){
+                @include media ("<tablet"){
                     max-width: 100%;
                     margin-right: 0;
-
-                    &:first-child{
-                        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
-                    }
                 }
-            }
-        }
-
-        input{
-            font-size: 14px;
-            color: #FFFFFF;
-            background:transparent;
-            width: 100%;
-            border:none;
-            border-bottom: 1px solid #ffffff;
-            padding-bottom: 20px;
-            @include adaptiv-vaule("margin-bottom", 40, 20, 1);
-
-            &:focus-visible{
-                border: none;
             }
         }
 

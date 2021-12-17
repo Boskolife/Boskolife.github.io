@@ -1,5 +1,5 @@
 
-new WOW().init(); 
+/* new WOW().init();  */
 
 jQuery(function() {
     $('.block-info').slick({
@@ -26,7 +26,7 @@ for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
     });
-};
+}
 
 
 

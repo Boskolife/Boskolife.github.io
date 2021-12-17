@@ -4,6 +4,7 @@ footer{
 
     .dark-page &{
         padding: 20px 0;
+        border-top:1px solid #ffffff;
     }
 
     @include media ("<tablet"){

@@ -1,6 +1,6 @@
 "use strict";
 
-new WOW().init();
+/* new WOW().init();  */
 jQuery(function () {
   $('.block-info').slick({
     dots: false,
@@ -22,6 +22,4 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
   });
 }
-
-;
 //# sourceMappingURL=main.js.map
