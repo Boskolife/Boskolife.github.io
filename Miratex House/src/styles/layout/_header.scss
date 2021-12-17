@@ -1,69 +1,10 @@
 header{
     border-bottom: 1px solid #000;
     padding: 12px 20px;
-}
 
-.dark-page{
-
-    header{
+    .dark-page &{
         background:#161616;
         border-bottom: 1px solid #FFFFFF;
-
-        .main-logo{
-
-            .img-logo{
-
-                svg{
-                    fill: white;
-                    border-right: 1px solid #FFFFFF;
-
-                    @include media ("<phone"){
-                        border: none;
-                    }
-                }
-            }
-
-        }
-        
-        .img-logo{
-            p{
-                color: #FFFFFF;
-            }
-        }
-
-        .links-1{
-            a{
-                color: #FFFFFF;
-            }
-        }
-
-        .links-2{
-            a{
-                color: #FFFFFF;
-            }
-        }
-
-        .links-3{
-
-            ul{
-                li{
-                    a{
-                        color: #FFFFFF;
-
-                        &:focus{
-                            color:#FFFFFF; 
-                        }
-                    }
-                }
-            }
-
-        }
-
-        .links-4{
-            a{
-                color: #FFFFFF;
-            }
-        }
     }
 }
 
@@ -81,7 +22,26 @@ header{
 .main-logo{
     
     .img-logo{
-        display: flex;
+
+        a{
+            display: flex;
+        }
+
+        .dark-page &{
+            
+            svg{
+                fill: white;
+                border-right: 1px solid #FFFFFF;
+
+                @include media ("<phone"){
+                    border: none;
+                }
+            }
+
+            p{
+                color: #FFFFFF;
+            }
+        }
 
         svg{
             fill: black;
@@ -114,6 +74,12 @@ header{
     .links-1{
         display: flex;
 
+        .dark-page &{
+            a{
+                color: #FFFFFF;
+            }
+        }
+
         @include media("<desktop"){
             display: none;
         }
@@ -129,6 +95,12 @@ header{
 
     .links-2{
 
+        .dark-page &{
+            a{
+                color: #FFFFFF;
+            }
+        }
+
         @include media("<desktop"){
             display: none;
         }
@@ -141,6 +113,21 @@ header{
     .links-3{
         display: flex;
         align-items: center;
+
+        .dark-page &{
+
+            ul{
+                li{
+                    a{
+                        color: #FFFFFF;
+
+                        &:focus{
+                            color:#FFFFFF; 
+                        }
+                    }
+                }
+            }
+        }
 
         @include media("<desktop"){
             order: 4;
@@ -214,6 +201,12 @@ header{
     }
 
     .links-4{ 
+
+        .dark-page &{
+            a{
+                color: #FFFFFF;
+            }
+        }
 
         @include media("<desktop"){
             order: 3;

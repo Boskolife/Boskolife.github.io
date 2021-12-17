@@ -15,6 +15,17 @@ html{
 
 .main-section{
     padding:140px 0 110px 0;
+
+    @include media ("<desktop"){
+        padding:140px 0 90px 0;
+    }
+    @include media ("<tablet"){
+        padding:140px 0 70px 0;
+    }
+    @include media ("<phone"){
+        padding:140px 0 50px 0;
+    }
+   
 }
 
 .main-content{
@@ -43,11 +54,10 @@ html{
     .main-text{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 140px;
+        @include adaptiv-vaule("margin-bottom", 140, 40, 1);
 
         @include media ("<desktop"){
             flex-direction: column;
-            margin-bottom: 70px;
         }
 
         .text-1{
@@ -89,11 +99,7 @@ html{
         img{
             object-fit: cover;
             width: 100%;
-            margin-bottom: 150px;
-
-            @include media ("<desktop"){
-                margin-bottom: 70px;
-            }
+            @include adaptiv-vaule("margin-bottom", 150, 30, 1);
         }
 
         p{
@@ -144,18 +150,18 @@ html{
 }
 
 .top-tittle{
-    margin-bottom: 70px;
+    @include adaptiv-vaule("margin-bottom", 70, 15, 1);
 }
 
 .spollers{
     display: flex;
-    margin-bottom: 150px;
+    @include adaptiv-vaule("margin-bottom", 150, 50, 1);
 
-    @include media ("<tablet"){
+    @include media ("<630px"){
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
+    } 
 }
 .btn-item{
     display: block;
@@ -167,7 +173,11 @@ html{
     @include media ("<tablet"){
         display: flex;
         align-items: center;
+        padding-right: 25px;
+    }
+    @include media ("<625px"){
         padding-right: 0;
+        width: 100%;
     }
 
     .item-spoller{
@@ -178,17 +188,11 @@ html{
         border: none;
         background: transparent;
         transition: 1s;
-        margin-bottom: 40px;
+        @include adaptiv-vaule("margin-bottom", 40, 10, 1);
         
         P{
             font-size: 18px;
             line-height: 21px;
-        }
-        
-
-        @include media ("<tablet"){
-            padding: 0;
-            margin-bottom: 30px;
         }
 
         .img-item{
@@ -201,6 +205,10 @@ html{
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include media ("<800px"){
+                margin-right: 15px;
+            }
 
             img{
                 transition: 0.5s;
@@ -221,10 +229,14 @@ html{
         opacity: 0;
         transition: max-height 1s ease ,opacity 1s ease;
         z-index: -1;
+
+        @include media ("<625px"){
+            width: 100%;
+        }
         
         .subitem{
             display: flex;
-            margin-bottom: 40px;
+            @include adaptiv-vaule("margin-bottom", 40, 10, 1);
             align-items: center;
 
             .img-item{
@@ -237,6 +249,10 @@ html{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                @include media ("<800px"){
+                    margin-right: 15px;
+                }
             } 
 
             p{
@@ -296,7 +312,7 @@ html{
 }
 
 .catalog{
-    @include adaptiv-vaule("padding-bottom", 150, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 30, 1);
 }
 
 .cat-tittle{
@@ -311,10 +327,11 @@ html{
 .cat-nav{
     display: flex;
     flex-wrap: wrap;
-    @include adaptiv-vaule("margin-bottom", 70 , 30, 1);
+    @include adaptiv-vaule("margin-bottom", 70 , 20, 1);
+
     a{
         padding-right: 30px;
-        margin-bottom: 40px;
+        @include adaptiv-vaule("margin-bottom", 40 , 15, 1);
         text-transform: uppercase;
     }
 }
@@ -375,7 +392,7 @@ html{
     .block-img{
 
         .img-item-1{
-            @include adaptiv-vaule("margin-bottom", 150 , 40, 1);
+            @include adaptiv-vaule("margin-bottom", 150 , 20, 1);
 
             img{
                 width: 100%;
@@ -384,7 +401,7 @@ html{
     
         .img-item-2{
             display: flex;
-            @include adaptiv-vaule("margin-bottom", 150 , 40, 1);
+            @include adaptiv-vaule("margin-bottom", 150 , 20, 1);
     
             .sub-item-1{
                 flex-direction: column;
@@ -405,7 +422,6 @@ html{
             .sub-item-2{
             max-width: 800px;
             max-height: 610px; 
-            /* @include adaptiv-vaule("margin-right", -200 , -20, 1); */
                 img{
                     height: 100%;
                     width: 100%;
@@ -455,7 +471,7 @@ html{
         }
     
         .item2{
-            @include adaptiv-vaule("margin-bottom", 150 , 50, 1);
+            @include adaptiv-vaule("margin-bottom", 150 , 10, 1);
     
             p{
                 font-size: 18px;
@@ -469,6 +485,7 @@ html{
         }
     
         .item4{
+            height: 100%;
 
             @include media ("<desktop"){
                 margin-bottom: 40px;
@@ -479,10 +496,10 @@ html{
             
             ul{
                 padding: 80px 0 0 20px;
-                margin: 0 0 85px 0;
+                @include adaptiv-vaule("margin-bottom", 85 , 30, 1);
     
                 li{
-                    margin-bottom: 10px;
+                    @include adaptiv-vaule("margin-bottom", 30 , 10, 1);
                     
                     &:last-child{
                         margin-bottom: 0;
@@ -534,7 +551,7 @@ html{
 }
 
 .more{
-    @include adaptiv-vaule("padding-bottom", 150 , 50, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 20, 1);
 
     .more-info{
         display: flex;
@@ -631,7 +648,7 @@ html{
         justify-content: space-between;
         margin-bottom: 50px;
 
-        @include media ("<desktop"){
+        @include media ("<600px"){
             flex-direction: column;
         }
 
@@ -711,7 +728,7 @@ html{
     }
 
     iframe{
-        margin-bottom: 100px;
+        @include adaptiv-vaule("margin-bottom", 100, 30, 1);
     }
 }
 
@@ -720,22 +737,22 @@ html{
     display: flex;
     justify-content: space-between;
 
-    @include media ("<desktop"){
+     @include media ("<tablet"){
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
+    } 
 
     .bot-content-tittle{
         padding-right: 30px;
 
-        @include media ("<desktop"){
+         @include media ("<tablet"){
             padding-right: 0;
-        }
+        } 
 
         h2{
-            @include adaptiv-vaule("font-size", 48, 36, 1);
-            line-height: 57px;
+            @include adaptiv-vaule("font-size", 48, 24, 1);
+            @include adaptiv-vaule("font-size", 57, 24, 1);
             text-transform: uppercase;
             color: #FFFFFF;
             max-width: 805px;
@@ -746,11 +763,10 @@ html{
             line-height: 21px;
             color: #FFFFFF;
             max-width: 400px;
-            margin-bottom: 40px;
 
             @include media ("<desktop"){
                 margin: 0  auto;
-                margin-bottom: 40px;
+                @include adaptiv-vaule("margin-bottom", 40, 20, 1);
             }
         }
     }
@@ -759,14 +775,12 @@ html{
         max-width: 400px;
     
         .names{
-            margin-bottom: 40px;
             display: flex;
             justify-content: space-between;
 
-            @include media ("<1425px"){
-                width: 100%;
+             @include media ("<tablet"){
                 flex-direction: column;
-            }
+            } 
 
             input{
                 font-size: 14px;
@@ -782,13 +796,12 @@ html{
                     margin-right: 0;
                 }
 
-                @include media ("<1425px"){
+                 @include media ("<tablet"){
                     max-width: 100%;
-                    width: 100%;
                     margin-right: 0;
 
                     &:first-child{
-                        margin-bottom: 40px;
+                        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
                     }
                 }
             }
@@ -802,7 +815,7 @@ html{
             border:none;
             border-bottom: 1px solid #ffffff;
             padding-bottom: 20px;
-            margin-bottom: 40px;
+            @include adaptiv-vaule("margin-bottom", 40, 20, 1);
 
             &:focus-visible{
                 border: none;
@@ -855,7 +868,23 @@ html{
     padding-left: 70px;
     max-width: 400px;
     margin: 0 auto;
-    margin-bottom: 150px;
+    @include adaptiv-vaule("margin-bottom", 150, 40, 1);
+
+    .block{
+
+        &:first-child{
+            @include adaptiv-vaule("margin-bottom", 70, 40, 1);
+        }
+
+        h3{
+            margin-bottom: 40px;
+        }
+
+        p{
+            margin-bottom: 20px;
+        }
+    }
+
 }
 
 .invest{
@@ -885,7 +914,7 @@ html{
     }
 
     .main-text{
-        margin-bottom: 70px;
+        @include adaptiv-vaule("margin-bottom", 70, 40, 1);
         
         h1{
             font-weight: 600;
@@ -909,30 +938,6 @@ html{
             margin-top: 40px;
         }
     }
-
-    .sub-text{
-        border-left: 1px solid #ffffff;
-        padding-left: 70px;
-        max-width: 400px;
-        margin: 0 auto;
-        margin-bottom: 150px;
-
-        .block{
-
-            &:first-child{
-                margin-bottom: 70px;
-            }
-
-            h3{
-                margin-bottom: 40px;
-            }
-
-            p{
-                margin-bottom: 20px;
-            }
-        }
-
-    }
 }
 
 .sub-info{
@@ -946,7 +951,7 @@ html{
     .filos{
 
         .fil-text{
-            margin-bottom: 70px;
+            @include adaptiv-vaule("margin-bottom", 70, 40, 1);
 
             h2{  
                 text-transform: uppercase;
@@ -966,16 +971,20 @@ html{
                     list-style: none;
                     display: flex;
                     align-items: center;
-                    margin-bottom: 80px;
+                    @include adaptiv-vaule("margin-bottom", 80, 30, 1);
     
                     &:last-child{
                         margin-bottom: 0;
                     }
     
                     p{
-                        margin-right: 40px;
+                        @include adaptiv-vaule("margin-right", 40, 20, 1);
                         border: 1px solid #FFFFFF;
-                        padding: 20px 12px;
+                        max-width: 60px;
+                        max-height: 60px;
+                        min-width: 60px;
+                        min-height: 60px;
+                        padding: 20px 9px ;
                     }
                 }
             }
@@ -986,18 +995,12 @@ html{
         }
 
         .sub-text{
-            border-left:1px solid #FFFFFF;
-            max-width: 400px;
-            padding-left: 70px;
-            margin: 0 auto;
 
             h2{
                 font-size: 18px;
                 line-height: 21px;
                 margin-bottom: 40px;
             }
-
-            
         }
     }
 }
@@ -1028,9 +1031,7 @@ html{
     }
 
     .conn-btn{
-        margin-bottom: 150px;
-
-        
+        @include adaptiv-vaule("margin-bottom", 150, 50, 1);
 
         @include media ("<tablet"){
             display: flex;
@@ -1047,152 +1048,24 @@ html{
     }
 
     .money{
-        margin-bottom: 150px;
+        @include adaptiv-vaule("margin-bottom", 150, 50, 1);
     }
 
     .summ{
 
         .item-1{
-            margin-bottom: 70px;
+            @include adaptiv-vaule("margin-bottom", 70, 40, 1);
         }
     }
 }
 
-.contact-info{
-    display: flex;
-    justify-content: space-between;
-    @include adaptiv-vaule("padding-bottom", 160 , 50, 1);
+.bot-contact{
 
-    @include media ("<desktop"){
-        flex-direction: column;
-    }
-
-    .bot-content-tittle{
-        padding-right: 30px;
-
-        @include media ("<desktop"){
-            padding-right: 0;
-        }
-
-        h2{
-            @include adaptiv-vaule("font-size", 48, 36, 1);
-            line-height: 57px;
-            text-transform: uppercase;
-            color: #FFFFFF;
-            max-width: 580px;
-
-            @include media ("<desktop"){
-                text-align: center;
-                margin: 0 auto;
-                margin-bottom: 40px;
-            }
-        }
-
-        h3{
-            font-size: 18px;
-            line-height: 21px;
-            color: #FFFFFF;
-            max-width: 400px;
-            margin-bottom: 40px;
-
-            @include media ("<desktop"){
-                margin: 0  auto;
-                margin-bottom: 40px;
-            }
-        }
-    }
-
-    .form{
-        max-width: 400px;
-
-        @include media ("<desktop"){
-            margin: 0 auto;
-
-        }
-    
-        .names{
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-
-            @include media ("<1425px"){
-                width: 100%;
-                flex-direction: column;
-            }
-
-            input{
-                font-size: 14px;
-                color: #FFFFFF;
-                background:transparent;
-                max-width: 185px;
-                border:none;
-                border-bottom: 1px solid #ffffff;
-                padding:0 0 20px 0;
-                margin-right: 10px;
-
-                &:last-child{
-                    margin-right: 0;
-                }
-
-                @include media ("<1425px"){
-                    max-width: 100%;
-                    width: 100%;
-                    margin-right: 0;
-
-                    &:first-child{
-                        margin-bottom: 40px;
-                    }
-                }
-            }
-        }
-
-        input{
-            font-size: 14px;
-            color: #FFFFFF;
-            background:transparent;
-            width: 100%;
-            border:none;
-            border-bottom: 1px solid #ffffff;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-
-            &:focus-visible{
-                border: none;
-            }
-        }
-
-        textarea{
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: #FFFFFF;
-            background:transparent;
-            width: 100%;
-            height: 20%;
-            border:none;
-            border-bottom: 1px solid #ffffff;
-            padding-bottom: 20px;
-        }
-
-        p{
-            font-size: 12px;
-            line-height: 14px;
-            color: #FFFFFF;
-            margin-bottom: 40px;
-
-            a{
-                color:rgb(64, 147, 224);
-                font-size: 12px;
-            }
-        }
-
-        .btn{
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            width: 100%;
-        }
+    .bot-content{
+        @include adaptiv-vaule("padding-bottom", 150 , 50, 1);
     }
 }
+
 
 
 //---------------Thanks-------------//@include

@@ -21,4 +21,7 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
   });
 }
+
+;
+new WOW().init();
 //# sourceMappingURL=main.js.map

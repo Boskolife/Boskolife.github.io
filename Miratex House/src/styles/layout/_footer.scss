@@ -2,32 +2,33 @@ footer{
     background:#161616;
     padding: 70px 0 20px 0;
 
+    .dark-page &{
+        padding: 20px 0;
+    }
+
     @include media ("<tablet"){
         padding: 30px 0 20px 0;
     }
 }
-
-
 
 .footer-content{
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
 
+    .dark-page &{
+        display: none;
+    }
+
     @include media ("<desktop"){
         flex-direction: column;
     }
-
 }
 
 .footer-top{
     display: flex;
     flex-direction: column;
     padding-right: 30px;
-
-    .dark-page &{
-        display: none;
-    }
 
     @include media ("<desktop"){
         justify-content: space-between;
@@ -75,10 +76,6 @@ footer{
 
 .footer-middle{
     display: flex;
-
-    .dark-page &{
-        display: none;
-    }
 
     @include media ("<desktop"){
         justify-content: space-around;
@@ -152,6 +149,11 @@ footer{
     justify-content: space-between;
     border-top: 1px solid #ffffff;
     padding-top: 20px;
+
+    .dark-page &{
+        border: none;
+        padding-top: 0;
+    }
 
     @include media ("<900px"){
         flex-direction: column;
