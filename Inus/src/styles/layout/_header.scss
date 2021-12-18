@@ -1,0 +1,283 @@
+header{
+    font-family: 'Nunito', sans-serif;
+    border-bottom: 1px solid #CAC8CA;
+}
+.cont{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn{
+    background: #DE596D;
+    border: 1px solid #DE596D;
+    border-radius: 50px;   
+    padding: 15px 35px; 
+    
+    &:hover{
+        background: #BC1340;
+    }
+
+    &:active{
+        background: #900B2F;
+    }
+
+    &:disabled{
+        background: #CAC8CA;
+    }
+}
+
+.btn-white{
+    background: #ffffff;
+    border: 1px solid #DE596D;
+    border-radius: 50px;   
+    padding: 15px 35px; 
+    
+    &:hover{
+        background: #FFF4F8;
+    }
+
+    &:active{
+        background: #DD8E94;
+    }
+
+    &:disabled{
+        background: #CAC8CA;
+    }
+}
+
+.burger{
+    display: none;
+
+    @include media ("<desktop"){
+        display: block;
+        position: relative;
+        z-index: 1;
+        width: 20px;
+        height: 15px;
+        margin-top: 10px;
+
+        span{
+            position: absolute;
+            width: 15px;
+            height: 1px;
+            background: #DE596D;
+            transition: 0.4s;
+            top: 7px;
+        }
+
+        &::before,&::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: #DE596D;
+            transition: 0.4s;
+        }
+
+        &::before{
+            top: 0;
+        }
+
+        &::after{
+            bottom: 0;
+            width: 15px;
+        }
+    }
+}
+
+.burger_active{
+
+    &::before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    &::after{
+        transform: rotate(-45deg);
+        bottom: 5px;
+        width: 100%;
+    } 
+
+    &::before,&::after{
+
+        @include media ("<desktop"){
+            background:#FFFFFF;
+        }
+    } 
+
+    span{
+        display: none;
+    } 
+}
+
+.top-header{
+    background:#DE596D;
+
+    @include media ("<desktop"){
+        position: absolute;
+        width: 100%;
+        top: -50vh;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    .top-content{
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<desktop"){
+            justify-content: center;
+        }
+    }
+
+    .addres{
+
+        @include media ("<desktop"){
+            padding-right: 50px;
+        }
+        a{
+            color: #ffffff;
+        }
+    }
+
+    .links{
+        display: flex;
+
+        svg{
+            fill: white;
+
+            &:hover{
+                fill: #222022;
+            }
+        
+            &:active{
+                fill: #DD8E94;
+            }
+        }
+
+        .eye{
+            @include adaptiv-vaule("padding-right", 55, 25, 1);
+        }
+
+        .number{
+            @include adaptiv-vaule("padding-right", 55, 25, 1);
+        }
+
+        .app{
+            
+            a{
+                @include adaptiv-vaule("padding-right", 25, 15, 1);
+
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.body_lock{
+    overflow: hidden;
+}
+
+.bot-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+
+    .main-logo{
+        z-index: 1;
+    }
+
+    .link{
+        display: flex;
+
+        .main-links{
+            display: flex;
+            align-items:center;
+            @include adaptiv-vaule("padding-right", 130, 0, 1);
+
+            @include media ("<desktop"){
+                flex-direction: column;
+                align-items:center;
+                position: absolute;
+                padding: 90px 20px;
+                top: -150vh;
+                width: 100%;
+                left: 0;
+                height: 100vh;
+                background: #DE596D;
+                transition: 0.7s;
+            }
+
+            a{
+                @include adaptiv-vaule("padding-right", 50, 20, 1);
+                font-size: 18px;
+            
+                &:active{
+                    color: #DD8E94;
+                }
+
+                @include media ("<desktop"){
+                    padding-right: 0;
+                    @include adaptiv-vaule("font-size", 56, 42, 1);
+                    font-weight: 800;
+                    margin-bottom: 20px;
+                    color: #ffffff;
+
+                    a{
+                        &:active{
+                            color: #DD8E94;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .menu_active{
+            top: 0;
+        }
+
+        .main-icons{
+            display: flex;
+            align-items:center;
+
+            .btn-white{
+                font-size: 18px;
+
+                @include media ("<desktop"){
+                    display: none;
+                }
+            }
+
+            a{
+                @include adaptiv-vaule("padding-right", 75, 0, 1);
+
+                @include media ("<desktop"){
+                    padding-right: 0;
+                }
+
+                svg{
+                    fill:#DE596D;
+
+                    &:hover{
+                        fill:#161516;
+                    }
+                
+                    &:active{
+                        fill:#DD8E94;
+                    }
+                }
+            }
+        }
+    }
+}
+

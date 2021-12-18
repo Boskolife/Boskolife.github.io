@@ -579,7 +579,7 @@ header {
 
 .main-logo {
   z-index: 10;
-  position: relative; }
+  /* position: relative; */ }
   .main-logo svg {
     fill: black;
     transition: all 0.6s ease; }
