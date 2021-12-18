@@ -1,0 +1,46 @@
+header{
+    padding: 40px 0;
+}
+
+.cont{
+    max-width: 1188px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-links{
+    display: flex;
+
+    .link{
+        @include adaptiv-vaule("margin-right", 45, 15, 1);
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    .signup{
+        a{
+            color:#156963;
+            font-weight: 800;
+            @include adaptiv-vaule("font-size", 14, 12, 1);
+        }
+    }
+
+    .signin{
+        a{
+            color:#FFFFFF;
+            font-weight: 800;
+            background: #156963;
+            padding: 10px 30px;
+            @include adaptiv-vaule("font-size", 14, 12, 1);
+        }
+    }
+}
