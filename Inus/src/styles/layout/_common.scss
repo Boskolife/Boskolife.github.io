@@ -12,15 +12,11 @@ body {
 .main-section{
     @include adaptiv-vaule("padding-top", 56, 15, 1);
     @include adaptiv-vaule("padding-bottom", 100, 70, 1);
-    position: relative;
-
-    .content{
-        display: flex;
-    }
+    display: flex;
+    background: #FFF4F8;
 }
 
- .main-content{
-    width: 82%;
+.main-content{
 
     .main-text{
         max-width: 685px;
@@ -29,6 +25,8 @@ body {
         span{
             
             a{
+
+                @include adaptiv-vaule("font-size", 16, 14, 1);
                 &:hover{
                     text-decoration-line: underline;
                 }
@@ -36,67 +34,79 @@ body {
         }
 
         h1{
-            margin-top: 56px;
+            @include adaptiv-vaule("margin-top", 55, 25, 1);
             margin-bottom: 25px;
             line-height: 120%;
         }
 
         p{
             font-family: 'Nunito', sans-serif;
-            font-size: 18px;
+            @include adaptiv-vaule("font-size", 18, 16, 1);
             font-weight: 300;
             margin-bottom: 20px;
             line-height: 150%;
         }
 
         h2{
-            font-size: 40px;
-            @include adaptiv-vaule("margin-bottom", 50, 20, 1);
+            @include adaptiv-vaule("font-size", 40, 24, 1);
+            @include adaptiv-vaule("margin-bottom", 50, 45, 1);
+
         }
     }
+}
 
-    .bot-info{
-        background: #FFD7DA;
+.bot-info{
+    background: #FFD7DA;
+    z-index: 1;
+    
+    .bot-item{
         padding: 50px 0;
         display: flex;
         justify-content: space-between;
         max-width: 940px;
 
-        .item{
-            display: flex;
-            align-items: center;
-            padding-right: 50px;
-
-            .img-item{
-                margin-right: 20px;
-            }
-
-            p{
-                font-weight: 300;
-            }
-
-            h5{
-                font-size: 18px;
-            }
+        @include media ("<tablet"){
+            flex-direction: column;
         }
     }
-} 
+
+    .item{
+        display: flex;
+        align-items: center;
+        padding-right: 50px;
+
+        @include media ("<tablet"){
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .img-item{
+            margin-right: 20px;
+        }
+
+        p{
+            font-weight: 300;
+        }
+
+        h5{
+            font-size: 18px;
+        }
+    }
+}
 
 .main-img{
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
 
     img{
         width:100%;
         height: 100%;
-        z-index: -1;
+        object-fit: cover;
+       
     }
 }
 
 .service{
     @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+    
     
     .cont{
         max-width: 1200px;
@@ -108,31 +118,14 @@ body {
     }
 }
 
+.item-spoller{
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease ,opacity 0.5s ease;
+    z-index: -1;
+}
 
 .spoller{
-
-    .button-spoller{
-        border: none;
-        background: transparent;
-        font-size: 24px;
-        padding: 0;
-        margin-bottom: 60px;
-
-        &::after{
-            content:url(../images/service/arrow.svg);
-            width: 17px;
-            height: 9px;
-            padding-left: 15px;
-
-        }
-    }
-
-    .item-spoller{
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.5s ease ,opacity 0.5s ease;
-        z-index: -1;
-    }
     
     .spoller-item{
         display: flex;
@@ -145,29 +138,62 @@ body {
             border-bottom: 1px solid #CAC8CA;
         }
 
-        @include media ("<desktop"){
+        @include media ("<tablet"){
             flex-wrap: wrap;
+        }
+
+        p{
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            font-weight: 300;
         }
 
         .sub-item-1{
             max-width: 500px;
-            padding-right: 50px;
+            width: 80%;
+
+            @include media ("<tablet"){
+                margin-bottom: 20px;
+            }
         }
 
         .sub-item-2{
+            padding-right: 50px;
+
+            @include media ("<tablet"){
+                margin-bottom: 20px;
+                padding-right: 0;
+            }
+        }
+
+        .sub-item-3{
             display: flex;
             align-items: center;
 
-            p{
-                font-weight: 300;
-                font-size: 18px;
-                padding-right: 80px;
+            @include media ("<tablet"){
+                justify-content: center;
+                width: 100%;
             }
 
             h5{
-                padding-right: 80px;
+                @include adaptiv-vaule("padding-right", 80, 40, 1);
             }
         }
+    }
+}
+
+.button-spoller{
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    padding: 0;
+    margin-bottom: 60px;
+
+    &::after{
+        content:url(../images/service/arrow.svg);
+        width: 17px;
+        height: 9px;
+        padding-left: 15px;
+
     }
 }
 
@@ -176,4 +202,64 @@ body {
     opacity: 1;
     transition: max-height 0.5s ease ,opacity 0.5s ease;
     z-index: 1;
+}
+
+
+.pack{
+    @include adaptiv-vaule("padding-top", 100, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 400, 60, 1);
+    background:url(../images/pack/packimg.png) bottom / 100% 50% no-repeat;
+    background-color:#DE596D ;
+} 
+
+.pack-content{
+    text-align: center;
+    
+
+    .button-spoller{
+        color: #FFFFFF;
+        @include adaptiv-vaule("font-size", 38, 26, 1);
+
+        &::after{
+            content:url(/src/images/pack/arrow.svg)
+        }
+    }
+
+    .item-spoller{
+        display: flex;
+        .item{
+            margin-right: 25px;
+            border: 1px solid #FFFFFF;
+            max-width: 336px;
+            min-height: 337px;
+            padding: 40px;
+            background: #FFFFFF;
+
+            h4{
+                position: relative;
+                margin-bottom: 30px;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    border-bottom: 1px solid #DE596D;
+                    width: 120px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    padding: 15px;
+                }
+            }
+
+            h6{
+                margin-bottom: 40px;
+            }
+
+            h3{
+                margin-bottom: 10px;
+            }
+
+            p{
+                margin-bottom: 30px;
+            }
+        }
+    }
 }

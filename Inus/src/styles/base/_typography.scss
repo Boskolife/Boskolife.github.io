@@ -13,7 +13,7 @@ h6, .h6,
 }
 
 h1, .h1 {
-	@include adaptiv-vaule("font-size", 48, 36, 1);
+	@include adaptiv-vaule("font-size", 48, 24, 1);
 }
 
 h2, .h2 {
@@ -21,11 +21,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: $h3-font-size;
+	@include adaptiv-vaule("font-size", 30, 18, 1);
 }
 
 h4, .h4 {
-	font-size: $h4-font-size;
+	@include adaptiv-vaule("font-size", 24, 18, 1);
 }
 
 h5, .h5 {
@@ -33,7 +33,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-	font-size: $h6-font-size;
+	font-size: 18px;
 }
 
 p {
