@@ -95,5 +95,85 @@ body {
     }
 }
 
+.service{
+    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+    
+    .cont{
+        max-width: 1200px;
+    }
+
+    h2{
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 55 , 25, 1);
+    }
+}
 
 
+.spoller{
+
+    .button-spoller{
+        border: none;
+        background: transparent;
+        font-size: 24px;
+        padding: 0;
+        margin-bottom: 60px;
+
+        &::after{
+            content:url(../images/service/arrow.svg);
+            width: 17px;
+            height: 9px;
+            padding-left: 15px;
+
+        }
+    }
+
+    .item-spoller{
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease ,opacity 0.5s ease;
+        z-index: -1;
+    }
+    
+    .spoller-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 43px 0;
+        border-top: 1px solid #CAC8CA;
+
+        &:last-child{
+            border-bottom: 1px solid #CAC8CA;
+        }
+
+        @include media ("<desktop"){
+            flex-wrap: wrap;
+        }
+
+        .sub-item-1{
+            max-width: 500px;
+            padding-right: 50px;
+        }
+
+        .sub-item-2{
+            display: flex;
+            align-items: center;
+
+            p{
+                font-weight: 300;
+                font-size: 18px;
+                padding-right: 80px;
+            }
+
+            h5{
+                padding-right: 80px;
+            }
+        }
+    }
+}
+
+.active+.item-spoller{
+    max-height: 2000px;
+    opacity: 1;
+    transition: max-height 0.5s ease ,opacity 0.5s ease;
+    z-index: 1;
+}

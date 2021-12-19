@@ -452,7 +452,7 @@ h4, .h4 {
   font-size: 22px; }
 
 h5, .h5 {
-  font-size: 17px; }
+  font-size: 20px; }
 
 h6, .h6 {
   font-size: 15px; }
@@ -862,5 +862,75 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; }
+
+.service {
+  /* Только если меньше контейнера */
+  padding-bottom: 120px; }
+  @media (max-width: 1690px) {
+    .service {
+      padding-bottom: calc(50px + 70 * ((100vw - calc(320px)) / 1370)); } }
+  .service .cont {
+    max-width: 1200px; }
+  .service h2 {
+    text-align: center;
+    /* Только если меньше контейнера */
+    margin-bottom: 55px; }
+    @media (max-width: 1690px) {
+      .service h2 {
+        margin-bottom: calc(25px + 30 * ((100vw - calc(320px)) / 1370)); } }
+
+.spoller .button-spoller {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  padding: 0;
+  margin-bottom: 60px; }
+  .spoller .button-spoller::after {
+    content: url(../images/service/arrow.svg);
+    width: 17px;
+    height: 9px;
+    padding-left: 15px; }
+
+.spoller .item-spoller {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease ,opacity 0.5s ease;
+  z-index: -1; }
+
+.spoller .spoller-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 43px 0;
+  border-top: 1px solid #CAC8CA; }
+  .spoller .spoller-item:last-child {
+    border-bottom: 1px solid #CAC8CA; }
+  @media (max-width: 1023px) {
+    .spoller .spoller-item {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+  .spoller .spoller-item .sub-item-1 {
+    max-width: 500px;
+    padding-right: 50px; }
+  .spoller .spoller-item .sub-item-2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    .spoller .spoller-item .sub-item-2 p {
+      font-weight: 300;
+      font-size: 18px;
+      padding-right: 80px; }
+    .spoller .spoller-item .sub-item-2 h5 {
+      padding-right: 80px; }
+
+.active + .item-spoller {
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.5s ease ,opacity 0.5s ease;
+  z-index: 1; }
 
 /*# sourceMappingURL=main.css.map */
