@@ -998,7 +998,7 @@ body {
       padding-top: calc(40px + 60 * ((100vw - calc(320px)) / 1370)); } }
   @media (max-width: 1690px) {
     .pack {
-      padding-bottom: calc(60px + 340 * ((100vw - calc(320px)) / 1370)); } }
+      padding-bottom: calc(10px + 390 * ((100vw - calc(320px)) / 1370)); } }
 
 .pack-content {
   text-align: center; }
@@ -1010,21 +1010,42 @@ body {
       .pack-content .button-spoller {
         font-size: calc(26px + 12 * ((100vw - calc(320px)) / 1370)); } }
     .pack-content .button-spoller::after {
-      content: url(/src/images/pack/arrow.svg); }
+      content: url(../images/pack/arrow.svg); }
   .pack-content .item-spoller {
     display: -ms-flexbox;
     display: flex; }
-    .pack-content .item-spoller .item {
+    @media (max-width: 1194px) {
+      .pack-content .item-spoller {
+        -ms-flex-pack: distribute;
+        justify-content: space-around; } }
+    @media (max-width: 1194px) {
+      .pack-content .item-spoller {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+    .pack-content .item-spoller .sub-item {
+      /* Только если меньше контейнера */
       margin-right: 25px;
       border: 1px solid #FFFFFF;
       max-width: 336px;
       min-height: 337px;
       padding: 40px;
       background: #FFFFFF; }
-      .pack-content .item-spoller .item h4 {
+      @media (max-width: 1690px) {
+        .pack-content .item-spoller .sub-item {
+          margin-right: calc(15px + 10 * ((100vw - calc(320px)) / 1370)); } }
+      @media (max-width: 1194px) {
+        .pack-content .item-spoller .sub-item {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          margin-bottom: 30px;
+          -ms-flex-pack: distribute;
+          justify-content: space-around; }
+          .pack-content .item-spoller .sub-item:last-child {
+            margin-right: 0; } }
+      .pack-content .item-spoller .sub-item h4 {
         position: relative;
         margin-bottom: 30px; }
-        .pack-content .item-spoller .item h4::after {
+        .pack-content .item-spoller .sub-item h4::after {
           content: '';
           position: absolute;
           border-bottom: 1px solid #DE596D;
@@ -1033,11 +1054,12 @@ body {
           -webkit-transform: translate(-50%);
           transform: translate(-50%);
           padding: 15px; }
-      .pack-content .item-spoller .item h6 {
+      .pack-content .item-spoller .sub-item h6 {
         margin-bottom: 40px; }
-      .pack-content .item-spoller .item h3 {
+      .pack-content .item-spoller .sub-item h3 {
         margin-bottom: 10px; }
-      .pack-content .item-spoller .item p {
-        margin-bottom: 30px; }
+      .pack-content .item-spoller .sub-item p {
+        margin-bottom: 30px;
+        text-decoration: line-through; }
 
 /*# sourceMappingURL=main.css.map */

@@ -207,7 +207,7 @@ body {
 
 .pack{
     @include adaptiv-vaule("padding-top", 100, 40, 1);
-    @include adaptiv-vaule("padding-bottom", 400, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 400, 10, 1);
     background:url(../images/pack/packimg.png) bottom / 100% 50% no-repeat;
     background-color:#DE596D ;
 } 
@@ -221,19 +221,38 @@ body {
         @include adaptiv-vaule("font-size", 38, 26, 1);
 
         &::after{
-            content:url(/src/images/pack/arrow.svg)
+            content:url(../images/pack/arrow.svg)
         }
     }
 
     .item-spoller{
         display: flex;
-        .item{
-            margin-right: 25px;
+
+        @include media ("<1195px"){
+            justify-content: space-around;
+        }
+
+        @include media ("<1195px"){
+            flex-wrap: wrap;
+        }
+
+        .sub-item{
+            @include adaptiv-vaule("margin-right", 25, 15, 1);
             border: 1px solid #FFFFFF;
             max-width: 336px;
             min-height: 337px;
             padding: 40px;
             background: #FFFFFF;
+
+            @include media ("<1195px"){
+                flex-wrap: wrap;
+                margin-bottom: 30px;
+                justify-content: space-around;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
 
             h4{
                 position: relative;
@@ -259,6 +278,7 @@ body {
 
             p{
                 margin-bottom: 30px;
+                text-decoration: line-through;
             }
         }
     }
