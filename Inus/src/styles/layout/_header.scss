@@ -14,6 +14,7 @@ header{
     border: 1px solid #DE596D;
     border-radius: 50px;   
     padding: 15px 35px; 
+    font-family: 'Nunito', sans-serif;
     
     &:hover{
         background: #BC1340;
@@ -33,6 +34,7 @@ header{
     border: 1px solid #DE596D;
     border-radius: 50px;   
     padding: 15px 35px; 
+    font-family: 'Nunito', sans-serif;
     
     &:hover{
         background: #FFF4F8;
@@ -197,6 +199,11 @@ header{
     .link{
         display: flex;
 
+        @include media ("<desktop"){
+            margin: 0;
+            padding: 0;
+        }
+
         .main-links{
             display: flex;
             align-items:center;
@@ -264,7 +271,8 @@ header{
                 @include adaptiv-vaule("padding-right", 75, 0, 1);
 
                 @include media ("<desktop"){
-                    padding-right: 0;
+                    padding: 0;
+                    margin: 0;
                 }
 
                 svg{

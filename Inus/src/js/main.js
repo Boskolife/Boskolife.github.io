@@ -27,3 +27,45 @@ for (i = 0; i < acc.length; i++) {
       this.classList.toggle("active");
   });
 }
+
+
+jQuery(function() {
+  $('.slider').slick({
+    dots:true,
+    speed:1000,
+    autoplay:true,
+    slidesToShow:3,
+    responsive:[
+      {
+        breakpoint:1600,
+        settings: {
+          slidesToShow:2,
+        }
+      },{
+        breakpoint:1140,
+        settings: {
+          slidesToShow:1,
+        }
+      }
+    ]
+  });
+  $('.slider-gallery').slick({
+    dots:true,
+    speed:1000,
+    autoplay:true,
+    slidesToShow:3,
+    responsive:[
+      {
+        breakpoint:1600,
+        settings: {
+          slidesToShow:2,
+        }
+      },{
+        breakpoint:1140,
+        settings: {
+          slidesToShow:1,
+        }
+      }
+    ]
+  });
+});

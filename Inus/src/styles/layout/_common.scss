@@ -8,11 +8,9 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .main-section{
     @include adaptiv-vaule("padding-top", 56, 15, 1);
     @include adaptiv-vaule("padding-bottom", 100, 70, 1);
-    display: flex;
     background: #FFF4F8;
 }
 
@@ -100,13 +98,11 @@ body {
         width:100%;
         height: 100%;
         object-fit: cover;
-       
     }
 }
 
 .service{
     @include adaptiv-vaule("padding-bottom", 120, 50, 1);
-    
     
     .cont{
         max-width: 1200px;
@@ -121,11 +117,16 @@ body {
 .item-spoller{
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.5s ease ,opacity 0.5s ease;
+    transition: max-height 1s ease ,opacity 1s ease;
     z-index: -1;
+    visibility: hidden;
 }
 
 .spoller{
+
+    .button-spoller{
+        color: #000;
+    }
     
     .spoller-item{
         display: flex;
@@ -184,9 +185,11 @@ body {
 .button-spoller{
     border: none;
     background: transparent;
-    font-size: 24px;
+    color: #FFFFFF;
+    @include adaptiv-vaule("font-size", 38, 26, 1);
+    @include adaptiv-vaule("margin-bottom", 55, 15, 1);
+    font-family: 'Source Serif Pro', serif;
     padding: 0;
-    margin-bottom: 60px;
 
     &::after{
         content:url(../images/service/arrow.svg);
@@ -200,8 +203,9 @@ body {
 .active+.item-spoller{
     max-height: 2000px;
     opacity: 1;
-    transition: max-height 0.5s ease ,opacity 0.5s ease;
+    transition: max-height 1s ease ,opacity 1s ease;
     z-index: 1;
+    visibility: visible;
 }
 
 
@@ -210,6 +214,10 @@ body {
     @include adaptiv-vaule("padding-bottom", 400, 10, 1);
     background:url(../images/pack/packimg.png) bottom / 100% 50% no-repeat;
     background-color:#DE596D ;
+
+    @include media ("<tablet"){
+        background: none;
+    }
 } 
 
 .pack-content{
@@ -218,10 +226,14 @@ body {
 
     .button-spoller{
         color: #FFFFFF;
-        @include adaptiv-vaule("font-size", 38, 26, 1);
 
         &::after{
             content:url(../images/pack/arrow.svg)
+        }
+
+        @include media ("<tablet"){
+            color: #000;
+            
         }
     }
 
@@ -230,56 +242,625 @@ body {
 
         @include media ("<1195px"){
             justify-content: space-around;
-        }
-
-        @include media ("<1195px"){
             flex-wrap: wrap;
         }
 
-        .sub-item{
-            @include adaptiv-vaule("margin-right", 25, 15, 1);
-            border: 1px solid #FFFFFF;
-            max-width: 336px;
-            min-height: 337px;
-            padding: 40px;
-            background: #FFFFFF;
+        .item{
+            display: flex;
 
-            @include media ("<1195px"){
-                flex-wrap: wrap;
-                margin-bottom: 30px;
-                justify-content: space-around;
-
-                &:last-child{
-                    margin-right: 0;
-                }
-            }
-
-            h4{
-                position: relative;
-                margin-bottom: 30px;
-                &::after{
-                    content:'';
-                    position: absolute;
-                    border-bottom: 1px solid #DE596D;
-                    width: 120px;
-                    left: 50%;
-                    transform: translate(-50%);
-                    padding: 15px;
-                }
-            }
-
-            h6{
-                margin-bottom: 40px;
-            }
-
-            h3{
-                margin-bottom: 10px;
-            }
-
-            p{
-                margin-bottom: 30px;
-                text-decoration: line-through;
+            @include media ("<tablet"){
+                flex-direction: column;
+                margin-bottom: 60px;
             }
         }
     }
 }
+
+.sub-item{
+    @include adaptiv-vaule("margin-right", 25, 15, 1);
+    border: 1px solid #FFFFFF;
+    max-width: 336px;
+    min-height: 337px;
+    padding: 40px;
+    background: #FFFFFF;
+
+    @include media ("<1195px"){
+        margin-bottom: 30px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    @include media ("<tablet"){
+        max-width: 100%;
+        min-height: 50%;
+        margin-right: 0;
+        padding: 20px;
+        border: none;
+        color: #FFFFFF;
+        text-align: start;
+        background: url(../images/pack/bg/1.png) 100% / cover no-repeat;
+
+        .sub{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    h4{
+        position: relative;
+        margin-bottom: 30px;
+        
+
+        &::after{
+            content:'';
+            position: absolute;
+            border-bottom: 1px solid #DE596D;
+            width: 120px;
+            left: 50%;
+            transform: translate(-50%);
+            padding: 15px;
+
+            @include media ("<tablet"){
+                left: 20%;
+            }
+        }
+    }
+
+    h6{
+        margin-bottom: 40px;
+        font-weight: 300;
+    }
+
+    h3{
+        margin-bottom: 10px;
+
+        @include media ("<tablet"){
+            color: #DD8E94;
+            margin-bottom: 0;
+        }
+    }
+
+    p{
+        margin-bottom: 30px;
+        text-decoration: line-through;
+
+        @include media ("<tablet"){
+            color: #FFFFFF;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.prom{
+    @include adaptiv-vaule("padding-top", 120, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 50, 1);
+}
+
+.prom-content{
+    text-align: center;
+    
+    .button-spoller{
+        color: #000;
+    }
+
+    .item-spoller{
+        display: flex;
+
+        @include media ("<tablet"){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item{
+            margin-right: 25px;
+            max-width: 456px;
+
+            @include media ("<tablet"){
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+
+            .img-item{
+
+                @include media ("<tablet"){
+                    display: none;
+                }
+            }
+
+            .sub-item{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+
+                h4{
+                    &::after{
+                        display: none;
+
+                        @include media ("<tablet"){
+                            display: block;
+                            padding: 5px;
+                        }
+                    }
+
+                    @include media ("<tablet"){
+                        order: 1;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                h6{
+                    @include media ("<tablet"){
+                        order: 2;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                a{
+                    @include media ("<tablet"){
+                        order: 3;
+                        text-align: center;
+                    }
+                }
+
+            }
+
+            .sub{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 25px;
+
+                @include media ("<tablet"){
+                    order: 3;
+                    margin-bottom: 20px;
+                }
+
+                h3,p{
+                    margin-bottom: 0;
+                }
+                
+                h3{
+                    margin-right: 15px;
+                }
+            }
+
+            .item-1{
+
+                @include media ("<tablet"){
+                    background: url(../images/pack/bg/1.png) 100% / cover no-repeat;
+                }
+            }
+            .item-2{
+
+                @include media ("<tablet"){
+                    background: url(../images/pack/bg/2.png) 100% / cover no-repeat;
+                }
+            }
+            .item-3{
+
+                @include media ("<tablet"){
+                    background: url(../images/pack/bg/3.png) 100% / cover no-repeat;
+                }
+            }
+
+        }
+    }
+}
+
+.question{
+    @include adaptiv-vaule("padding-bottom", 180, 50, 1);
+
+
+    .cont{
+        @include media ("<tablet"){
+            padding: 0;
+        }
+    }
+}
+
+.quetion-content{
+    display: flex;
+    justify-content: space-around;
+
+    @include media ("<tablet"){
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .img-item{
+        width: 48%;
+
+        img{
+            width: 100%;
+        }
+        @include media ("<tablet"){
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 48%;
+
+        @include media ("<tablet"){
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        h2{
+        margin-bottom: 25px;
+        }
+        
+        p{
+            @include adaptiv-vaule("margin-bottom", 70, 20, 1);
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            font-weight: 300;
+        }
+
+        .btn{
+            align-self: flex-start;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+.plus{
+    @include adaptiv-vaule("padding-bottom", 120, 40, 1);
+
+    h2{
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 100, 30, 1);
+
+        @include media ("<phone"){
+            text-align: start;
+         }
+    }
+
+    .plus-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media ("<desktop"){
+            justify-content: center;
+        }
+
+        @include media ("<phone"){
+           justify-content: flex-start;
+        }
+
+        .item{
+            max-width:255px;
+            text-align: center;
+            margin-right: 25px;
+            margin-bottom: 30px;
+
+            @include media ("<phone"){
+                display: flex;
+                align-items: center;
+                max-width: 100%;
+                margin-right: 0;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            .img-item{
+                border-radius: 50%;
+                background:#FFF4F8;
+                max-width: 70px;
+                max-height: 70px;
+                min-width: 70px;
+                min-height: 70px;
+                margin: 0 auto;
+
+
+                @include media ("<phone"){
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+            }
+
+            .text{
+
+                @include media ("<phone"){
+                    text-align: start;
+                }
+
+                h5{
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+.slick-track{
+    display: flex;
+    align-items: flex-start;   
+}
+.slick-list{
+    overflow: hidden;
+}
+
+
+
+.about-you{
+
+    @include adaptiv-vaule("padding-bottom", 120, 40, 1);
+
+    .cont{
+        max-width: 100%;
+        @include adaptiv-vaule("padding-left", 250, 20, 1);
+
+        @include media ("<tablet"){
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    }
+}
+
+
+.content{
+    display: flex;
+    position: relative;
+
+    @include media ("<tablet"){
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tittle{
+        padding-top: 140px;
+        max-width: 270px;
+        margin-right: 90px;
+
+        @include media ("<tablet"){
+            width: 100%;
+            margin-bottom: 50px;
+            padding-top: 0;
+        }
+    }
+}
+
+.slider{
+    min-width: 0;
+    width: 80%;
+
+    @include media ("<tablet"){
+        width: 100%;
+    }
+
+    .slick-arrow{
+        position: absolute;
+        font-size: 0;
+        width: 56px;
+        height: 5px;
+        border: none;
+    }
+
+    .slick-prev{
+        position: absolute;
+        background: url(../images/next.svg);
+        top: 60%;
+        left: 0;
+
+        @include media ("<tablet"){
+            top: 60px;
+        }
+    }
+
+    .slick-next{
+        position: absolute;
+        background: url(../images/prev.svg);
+        top: 60%;
+        left: 100px;
+
+        @include media ("<tablet"){
+            top: 60px;
+        }
+    }
+
+    .slick-dots{
+        display: flex;
+
+        @include media ("<tablet"){
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: -25px;
+        }
+
+        li{
+            list-style: none;
+            font-size: 0;
+            width: 215px;
+            height: 1px;
+
+            @include media ("<tablet"){
+                width: 8px;
+                height: 9px;
+                border-radius:50%;
+                padding-right: 30px;
+
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+
+        button{
+            width: 100%;
+            background:#E5E5E5;
+            border: none;
+            transition: 0.5s;
+
+            @include media ("<tablet"){
+                width: 8px;
+                height: 9px;
+                border-radius:50%;
+            }
+        }
+    }
+
+    .slick-active{
+
+        button{
+            background:#DE596D;
+            height: 3px;
+
+            @include media ("<tablet"){
+                width: 8px;
+                height: 9px;
+                border-radius:50%;
+            }
+        }
+    }
+}
+
+.slider-item{
+    @include adaptiv-vaule("padding-right", 25, 0, 1);
+    @include adaptiv-vaule("padding-left", 25, 0, 1);
+
+    .img-item{
+        height: 350px;
+        margin-bottom: 25px;
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    p{
+        font-size: 18px;
+        line-height: 150%;
+    }
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.gallery{
+    @include adaptiv-vaule("padding-top", 100, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 40, 1);
+    background: #DE596D;
+
+    .cont{
+        max-width: 100%;
+        @include adaptiv-vaule("padding-left", 250, 20, 1);
+
+        @include media ("<tablet"){
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    }
+
+    .content-gallery{
+        display: flex;
+        position: relative;
+
+        @include media ("<tablet"){
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .tittle{
+            padding-top: 140px;
+            width: 30%;
+            margin-right: 90px;
+            color: #FFFFFF;
+
+            @include media ("<tablet"){
+                width: 100%;
+                margin-bottom: 50px;
+                padding-top: 0;
+            }
+        }
+
+        .slick-prev{
+            background: url(../images/prevwhite.svg);
+
+        }
+    
+        .slick-next{
+            background: url(../images/nextwhite.svg);
+        }
+
+
+        .slick-dots{
+
+            button{
+                background:#CAC8CA;
+            }
+        }
+        
+        .slick-active{
+
+            button{
+                background:#FFFFFF;
+                height: 3px;
+
+                @include media ("<tablet"){
+                    width: 8px;
+                    height: 9px;
+                    border-radius:50%;
+                }
+            }
+        }
+    }
+}
+
+.cabinet{
+    @include adaptiv-vaule("padding-top", 120, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+
+    .cont{
+        max-width: 100%;
+        @include adaptiv-vaule("padding-left", 250, 20, 1);
+
+        @include media ("<tablet"){
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    }
+
+    .content{
+
+        .slick-prev{
+            top: 80%;
+
+            @include media ("<tablet"){
+                top: 110px;
+            }     
+
+        }
+    
+        .slick-next{
+            top: 80%;
+
+            @include media ("<tablet"){
+                top: 110px;
+            } 
+        }
+    }
+}
+

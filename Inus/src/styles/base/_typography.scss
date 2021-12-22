@@ -29,11 +29,11 @@ h4, .h4 {
 }
 
 h5, .h5 {
-	font-size: 20px;
+	@include adaptiv-vaule("font-size", 20, 18, 1);
 }
 
 h6, .h6 {
-	font-size: 18px;
+	@include adaptiv-vaule("font-size", 18, 16, 1);
 }
 
 p {
@@ -49,8 +49,4 @@ a {
 	&:focus {
 		text-decoration: none;
 	}
-}
-
-button{
-	font-family: 'Nunito', sans-serif;
 }
