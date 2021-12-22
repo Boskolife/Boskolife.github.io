@@ -1,6 +1,8 @@
 header{
     padding: 40px 0;
+    font-family: 'Nunito', sans-serif;
 }
+
 
 .cont{
     max-width: 1188px;
@@ -13,10 +15,15 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .main-logo{
+        z-index: 1;
+    }
 }
 
 .header-links{
     display: flex;
+    align-items: center;
 
     .link{
         @include adaptiv-vaule("margin-right", 45, 15, 1);

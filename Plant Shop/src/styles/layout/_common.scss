@@ -1,5 +1,5 @@
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .cont{
@@ -28,31 +28,49 @@ body {
 }
 
 .main-content{
+    display: flex;
+    position: relative;
 
-    /* .slider{
+    .main-img{
+        width: 50%;
+
+        img{
+            margin:calc(-63vh + 50%) 0 0 calc(-50vw + 100%);
+        }
+    }
+
+    .slider{
         position: relative;
+        width: 50%;
 
         .slick-arrow{
             position: absolute;
-            bottom: -200px;
+            bottom: 0;
             z-index: 1;
             width: 20px;
             height: 22px;
             border:none;
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            color: #333333;
+            font-weight: 500;
 
         }
         .slick-prev{
-            left: 0;
-            background: url(../images/slider/prev.svg);
+            left: 75px;
+            background: url(../images/slider/prev.svg) 0 40%  no-repeat;
+            padding:40px 200px 90px 50px;
+            color: #333333;
         }
     
         .slick-next{
             right: 0;
-            background: url(../images/slider/next.svg);
+            background: url(../images/slider/next.svg) 60% 40%  no-repeat;
             padding:40px 200px 90px 50px;
-            background: #156963;
+            background-color: #156963;
+            color: #fff;
         }
-    } */
+    }
 
     .main-info{
         display: flex;
@@ -69,7 +87,7 @@ body {
         }
 
         p{
-            font-size: 18px;
+            @include adaptiv-vaule("font-size", 18, 16, 1);
             line-height: 178%;
             color: #2C1500;
             opacity: 0.8;
@@ -88,12 +106,12 @@ body {
 
         @include media ("<desktop"){
             flex-wrap: wrap;
-            justify-content: center;
+             justify-content: center;
         }
 
         @include media ("<889px"){
             justify-content: center;
-        }
+        } 
     }
 
     .icon-item{
@@ -101,13 +119,17 @@ body {
         border: 1px solid #E0E0E0;
         padding: 15px 20px;
 
+
         @include media ("<desktop"){
             margin-bottom: 30px;
             margin-right: 15px;
         }
 
-        @include media ("<phone"){
-            margin-right: 0;
+        @include media ("<tablet"){
+
+            &:nth-child(even){
+                margin-right: 0;
+            }
         }
 
         .icon-img{
