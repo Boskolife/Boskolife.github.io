@@ -28,6 +28,7 @@ footer{
 
     @include media ("<700px"){
         margin-right: 0;
+        padding-right: 0;
         order: 1;
     }
 
@@ -51,6 +52,7 @@ footer{
 
     @include media ("<700px"){
         margin-right: 0;
+        padding-right: 0;
     }
 
     h6{
@@ -71,6 +73,7 @@ footer{
 
     .nav{
         display: flex;
+
         .item{
             display: flex;
             flex-direction: column;

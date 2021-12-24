@@ -102,7 +102,8 @@ body {
 }
 
 .service{
-    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+    @include adaptiv-vaule("padding-top", 120, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 40, 1);
     
     .cont{
         max-width: 1200px;
@@ -117,7 +118,7 @@ body {
 .item-spoller{
     max-height: 0;
     opacity: 0;
-    transition: max-height 1s ease ,opacity 1s ease;
+    transition: max-height 1s ease ,opacity 2s ease , visibility 1s ease;
     z-index: -1;
     visibility: hidden;
 }
@@ -203,7 +204,7 @@ body {
 .active+.item-spoller{
     max-height: 2000px;
     opacity: 1;
-    transition: max-height 1s ease ,opacity 1s ease;
+    transition: max-height 1s ease ,opacity 2s ease;
     z-index: 1;
     visibility: visible;
 }
@@ -359,6 +360,10 @@ body {
             margin-right: 25px;
             max-width: 456px;
 
+            &:last-child{
+                margin-right: 0;
+            }
+
             @include media ("<tablet"){
                 margin-bottom: 20px;
                 margin-right: 0;
@@ -372,9 +377,11 @@ body {
             }
 
             .sub-item{
-                margin: 0;
                 display: flex;
                 flex-direction: column;
+                background: #FFF4F8;
+                max-width: 100%;
+                margin: 0;
 
                 h4{
                     &::after{
@@ -640,10 +647,10 @@ body {
 
     @include media ("<tablet"){
         width: 100%;
+        position: relative;
     }
 
     .slick-arrow{
-        position: absolute;
         font-size: 0;
         width: 56px;
         height: 5px;
@@ -657,7 +664,7 @@ body {
         left: 0;
 
         @include media ("<tablet"){
-            top: 60px;
+            top: -30px;
         }
     }
 
@@ -668,18 +675,31 @@ body {
         left: 100px;
 
         @include media ("<tablet"){
-            top: 60px;
+            top: -30px;
         }
     }
 
     .slick-dots{
         display: flex;
+        position: absolute;
+        bottom: -40px;
+        width: 60%;
+
+        @include media ("<desktop"){
+            width: 40%;
+        }
 
         @include media ("<tablet"){
-            position: absolute;
+  
             left: 50%;
-            transform: translate(-50%);
+            transform: translate(-30%);
             bottom: -25px;
+        }
+
+        @include media ("<phone"){
+
+            transform: translate(-60%);
+
         }
 
         li{
@@ -730,8 +750,11 @@ body {
 }
 
 .slider-item{
-    @include adaptiv-vaule("padding-right", 25, 0, 1);
-    @include adaptiv-vaule("padding-left", 25, 0, 1);
+    margin-right: 25px;
+
+    @include media ("<tablet"){
+        margin-right: 0;
+    }
 
     .img-item{
         height: 350px;
@@ -783,8 +806,8 @@ ul{
 
         .tittle{
             padding-top: 140px;
-            width: 30%;
-            margin-right: 90px;
+            width: 300px;
+            margin-right: 95px;
             color: #FFFFFF;
 
             @include media ("<tablet"){
@@ -845,11 +868,17 @@ ul{
 
     .content{
 
+        .tittle{
+            @include media ("<tablet"){
+                max-width: 325px;
+            }
+        }
+
         .slick-prev{
             top: 80%;
 
             @include media ("<tablet"){
-                top: 110px;
+                top: -30px;
             }     
 
         }
@@ -858,8 +887,99 @@ ul{
             top: 80%;
 
             @include media ("<tablet"){
-                top: 110px;
+                top: -30px;
             } 
+        }
+    }
+}
+
+.reviews{
+    font-family: 'Nunito', sans-serif;
+    background:#FFF4F8;
+    @include adaptiv-vaule("padding-top", 100, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 40, 1);
+
+    .tittle{
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 100 , 50, 1);
+    }
+
+    .reviews-content{
+        position: relative;
+       
+
+        .item{
+            background: #FFFFFF;
+            margin:0 10px;
+            padding: 30px;
+
+            @include media ("<tablet"){
+                text-align: center;
+            }
+
+            p{
+                font-weight: 300;
+                @include adaptiv-vaule("font-size", 18, 16, 1);
+                margin-bottom: 15px;
+                line-height: 150%;
+                max-width: 240px;
+
+                @include media ("<1250px"){
+                    max-width: 90%;
+                }
+
+                @include media ("<tablet"){
+                    max-width: 100%;
+                }
+            }
+
+            h6{
+                margin-bottom: 25px;
+            }
+
+            h5{
+                font-weight: 300;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            a{
+                text-decoration: underline;
+
+                &:hover{
+                    color: #DE596D;;
+                }
+            
+                &:active{
+                    color: #900B2F;
+                }
+            
+                &:disabled{
+                    color: #B5AFB5;
+                }
+            }
+        }
+
+        .slick-arrow{
+            font-size: 0;
+            width: 56px;
+            height: 5px;
+            border: none;
+            top:-50px;
+        }
+    
+        .slick-prev{
+            position: absolute;
+            background: url(../images/next.svg);
+            left: 50%;
+            transform: translate(-110%);
+        }
+    
+        .slick-next{
+            position: absolute;
+            background: url(../images/prev.svg);
+            right: 50%;
+            transform: translate(110%);
         }
     }
 }
