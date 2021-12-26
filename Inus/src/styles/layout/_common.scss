@@ -53,6 +53,46 @@ body {
     }
 }
 
+.button-spoller{
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    @include adaptiv-vaule("font-size", 38, 26, 1);
+    @include adaptiv-vaule("margin-bottom", 55, 15, 1);
+    font-family: 'Source Serif Pro', serif;
+    padding: 0;
+
+    svg{
+        stroke: black;
+        transition: 0.5s;
+    }
+}
+
+.item-spoller{
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 1s ease ,opacity 2s ease , visibility 1s ease;
+    z-index: -1;
+    visibility: hidden;
+}
+
+
+.active+.item-spoller{
+    max-height: 2000px;
+    opacity: 1;
+    transition: max-height 1s ease ,opacity 2s ease;
+    z-index: 1;
+    visibility: visible;
+}
+
+.active{
+
+    svg{
+        transform: rotate(180deg);
+        transition: 0.5s;
+    }
+}
+
 .bot-info{
     background: #FFD7DA;
     z-index: 1;
@@ -115,18 +155,15 @@ body {
     }
 }
 
-.item-spoller{
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 1s ease ,opacity 2s ease , visibility 1s ease;
-    z-index: -1;
-    visibility: hidden;
-}
 
 .spoller{
 
     .button-spoller{
         color: #000;
+
+        &::after{
+            transform: rotate(90deg);
+        }
     }
     
     .spoller-item{
@@ -183,33 +220,6 @@ body {
     }
 }
 
-.button-spoller{
-    border: none;
-    background: transparent;
-    color: #FFFFFF;
-    @include adaptiv-vaule("font-size", 38, 26, 1);
-    @include adaptiv-vaule("margin-bottom", 55, 15, 1);
-    font-family: 'Source Serif Pro', serif;
-    padding: 0;
-
-    &::after{
-        content:url(../images/service/arrow.svg);
-        width: 17px;
-        height: 9px;
-        padding-left: 15px;
-
-    }
-}
-
-.active+.item-spoller{
-    max-height: 2000px;
-    opacity: 1;
-    transition: max-height 1s ease ,opacity 2s ease;
-    z-index: 1;
-    visibility: visible;
-}
-
-
 .pack{
     @include adaptiv-vaule("padding-top", 100, 40, 1);
     @include adaptiv-vaule("padding-bottom", 400, 10, 1);
@@ -228,13 +238,16 @@ body {
     .button-spoller{
         color: #FFFFFF;
 
-        &::after{
-            content:url(../images/pack/arrow.svg)
+        svg{
+            stroke: #FFFFFF;
+
+            @include media ("<tablet"){
+                stroke: #000;
+            }
         }
 
         @include media ("<tablet"){
             color: #000;
-            
         }
     }
 
@@ -1065,9 +1078,27 @@ ul{
 
 
 .info-block{
-    background: url(/src/images/info/infpbg.png)no-repeat;
+    background: url(../images/info/infpbg.png)no-repeat;
     @include adaptiv-vaule("padding-top", 100, 40, 1);
     @include adaptiv-vaule("padding-bottom", 100, 40, 1);
+
+    @include media ("<phone"){
+        background: none;
+    }
+
+    .hidden-img{
+        display: none;
+        margin-bottom: 30px;
+
+        img{
+            min-height: 240px;
+            object-fit: cover;
+        }
+        
+        @include media ("<phone"){
+            display: block;
+        }
+    }
 
     .item{
         max-width: 700px;   
@@ -1075,31 +1106,77 @@ ul{
         background: #FFFFFF;
         padding: 60px;
 
+        @include media ("<phone"){
+            width: 100%;
+            min-height: 100%;
+            padding: 0;
+            text-align: center;
+        }
+
         h2{
             margin-bottom: 25px;
+            text-align: start;
         }
 
         p{
             @include adaptiv-vaule("font-size", 18, 16, 1);
             margin-bottom: 60px;
+            text-align: start;
+        }
+
+        .btn{
+            color:#FFFFFF;
+
+            @include media ("<tablet"){
+                text-align: center;
+                align-self: center;
+            }
         }
     }
 }
 
 
 .task{
-    padding: 100px 0;
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+
+    @include media ("<phone"){
+        display: none;
+    }
 
     .top-content{
         display: flex;
         @include adaptiv-vaule("margin-bottom", 100 , 50, 1);
 
+        @include media ("<desktop"){
+            flex-direction: column;
+            align-items: center;
+        }
+
         .img-item{
             width: 48%;
+            padding-right: 20px;
+
+            @include media ("<desktop"){
+                margin-bottom: 30px;
+                width: 100%;
+            }
+
+            img{
+                height: 100%;
+
+                @include media ("<desktop"){
+                   width: 100%;
+                }
+            }
         }
 
         .acor-container {
             width: 48%;
+
+            @include media ("<desktop"){
+                width: 100%;
+            }
 
             .acor-body {
                 margin: 0 auto;
@@ -1129,9 +1206,11 @@ ul{
                 box-sizing: border-box;
                 z-index: 100;
                 font-family: Verdana, sans-serif;   
-                font-size: 18px;
+                @include adaptiv-vaule("font-size", 18, 16, 1);
                 margin: 0 0 5px;
                 transition: color 0.3s;
+
+                
                 
 
                 &::after{
@@ -1168,8 +1247,13 @@ ul{
     
     .bot-content{
         background: #FFFFFF;
-        .tabs{
 
+        .tabs{
+            flex-wrap: wrap;
+
+            @include media ("<desktop"){
+                flex-direction: column;
+            }
             input{
                 display: none;
             }
@@ -1218,17 +1302,123 @@ ul{
             }
     
             label{
-                font-size: 24px;
+                @include adaptiv-vaule("font-size", 24, 18, 1);
                 color: #161516;
                 opacity: 0.6;
                 cursor: pointer;
-                padding-right: 40px;
+                margin-right: 40px;
                 padding-bottom: 10px;
-                border-bottom: 1px solid#CAC8CA;
-    
+                border-bottom: 1px solid#CAC8CA
+            }
+
+            .last{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+.equip{
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+
+    @include media ("<565px"){
+       background: #FFF4F8;
+    }
+
+    .equip-content{
+        display: flex;
+        align-items: center;
+
+        @include media ("<1270px"){
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        .item-1{
+            max-width: 336px;
+            padding-right: 25px;
+
+            @include media ("<956px"){
+                order: 2;
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            h2{
+                margin-bottom: 50px;
+            }
+
+            h4{
+                margin-bottom: 15px;
+            }
+
+            p{
+                font-size: 18px;
+                color: #222022;
+            }
+        }
+
+        .item-2{
+            max-width: 717px;
+            background: #FFF4F8;
+            padding: 75px 200px 75px 75px;
+            @include adaptiv-vaule("padding-right", 200, 0, 1);
+
+            @include media ("<1270px"){
+                padding: 70px;
+                margin-bottom: 30px;
+            }
+
+            @include media ("<956px"){
+                order: 3;
+                text-align: center;
+            }
+
+            @include media ("<565px"){
+                padding: 0;
+                text-align: start;
+            }
+
+            .item{
+                max-width: 440px;
+                display: flex;
+                align-items: center;
+                margin-bottom:30px;
+
                 &:last-child{
-                    padding-right: 0;
+                    margin-bottom: 0;
                 }
+
+                .img-item{
+                    max-width: 32px;
+                    max-height: 32px;
+                    min-width: 32px;
+                    min-height: 32px;
+                    @include adaptiv-vaule("margin-right", 25, 10, 1);
+                }
+            }
+        }
+
+        .item-3{
+            margin-left: -130px;
+
+            @include media ("<1270px"){
+                margin-left: 0;
+            }
+
+            @include media ("<956px"){
+                order: 1;
+                margin-bottom: 30px;
+            }
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
     }
