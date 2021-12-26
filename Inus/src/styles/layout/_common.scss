@@ -546,13 +546,15 @@ body {
 
         .item{
             max-width:255px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             margin-right: 25px;
             margin-bottom: 30px;
 
             @include media ("<phone"){
-                display: flex;
-                align-items: center;
+                flex-direction: row;
                 max-width: 100%;
                 margin-right: 0;
             }
@@ -562,17 +564,19 @@ body {
             }
 
             .img-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 border-radius: 50%;
                 background:#FFF4F8;
                 max-width: 70px;
                 max-height: 70px;
                 min-width: 70px;
                 min-height: 70px;
-                margin: 0 auto;
+                margin-bottom: 15px;
 
 
                 @include media ("<phone"){
-                    margin-bottom: 0;
                     margin-right: 15px;
                 }
             }
@@ -1078,6 +1082,154 @@ ul{
         p{
             @include adaptiv-vaule("font-size", 18, 16, 1);
             margin-bottom: 60px;
+        }
+    }
+}
+
+
+.task{
+    padding: 100px 0;
+
+    .top-content{
+        display: flex;
+        @include adaptiv-vaule("margin-bottom", 100 , 50, 1);
+
+        .img-item{
+            width: 48%;
+        }
+
+        .acor-container {
+            width: 48%;
+
+            .acor-body {
+                margin: 0 auto;
+                height: 0;
+                padding: 0 30px;
+                box-sizing: border-box;
+                transition: color 0.5s, padding 0.5s;
+                overflow: hidden;
+                border-bottom: 1px solid #CAC8CA;
+
+                li::marker{
+                    color: #DE596D;
+                }
+
+                li{
+                    margin-bottom: 15px;
+                    font-family: 'Nunito', sans-serif;
+                    font-weight: 300;
+                }
+            }
+
+            label{
+                cursor: pointer;
+                display: block;
+                padding: 15px 0;
+                width: 100%;
+                box-sizing: border-box;
+                z-index: 100;
+                font-family: Verdana, sans-serif;   
+                font-size: 18px;
+                margin: 0 0 5px;
+                transition: color 0.3s;
+                
+
+                &::after{
+                    display: flex;
+                    justify-content: center;
+                    float: right;
+                    content: url(../images/task/arrow.svg);
+                    width: 25px;
+                    height: 25px;
+                    border-radius:50%;
+                    background: #DE596D;
+                }
+            }
+
+            input{
+                display: none;
+            }
+
+            input:checked + label:after {
+                transition: 0.3s;
+                transform: rotate(180deg);
+                border: none;
+            }
+
+            input:checked + label + .acor-body {
+                height: auto;
+                margin-top: -5px;
+                color: #000;
+                padding: 20px;
+                
+            }
+        }
+    }     
+    
+    .bot-content{
+        background: #FFFFFF;
+        .tabs{
+
+            input{
+                display: none;
+            }
+
+            input:checked +label{
+                opacity: 1;
+                border-bottom: 3px solid#DE596D;
+                transition: 0.4s;
+            }
+
+            input:checked +.content{
+                transition: 0.5s;
+            }
+
+            .content{
+                display: none;
+                margin-top: 40px;
+                transition: 1s;
+
+
+                li{
+                    margin-bottom: 15px;
+                    margin-left: 20px;
+                    list-style: none;
+                    position: relative;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    &::before{
+                        content:'';
+                        position: absolute;
+                        border: 1px solid #DD8E94;
+                        width: 10px;
+                        left: -20px;
+                        top: 8px;
+                    }
+                }
+            }
+            
+            #tab-btn-1:checked~#content-1,
+            #tab-btn-2:checked~#content-2,
+            #tab-btn-3:checked~#content-3 {
+            display: block;
+            }
+    
+            label{
+                font-size: 24px;
+                color: #161516;
+                opacity: 0.6;
+                cursor: pointer;
+                padding-right: 40px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid#CAC8CA;
+    
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
         }
     }
 }

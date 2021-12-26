@@ -2,6 +2,7 @@ header{
     font-family: 'Nunito', sans-serif;
     border-bottom: 1px solid #CAC8CA;
 }
+
 .cont{
     max-width: 1440px;
     width: 100%;
@@ -268,6 +269,7 @@ header{
             }
 
             a{
+                margin: 0;
                 @include adaptiv-vaule("padding-right", 75, 0, 1);
 
                 @include media ("<desktop"){
