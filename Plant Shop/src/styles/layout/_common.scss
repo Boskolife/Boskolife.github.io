@@ -21,6 +21,7 @@ body {
 .main-section{
     @include adaptiv-vaule("padding-top", 70 , 0, 1);
     @include adaptiv-vaule("padding-bottom", 140, 40, 1);
+    margin-bottom: 50px;
     height: 100vh;
 }
 
@@ -32,11 +33,8 @@ body {
     .main-img{
         position: absolute;
         top: -200px;
-        left: -70px;
-
-         img{
-            height: 100%;            
-        } 
+        left: 0px;
+        height: 60%;            
     }
 
     .slider{
@@ -52,21 +50,20 @@ body {
             border:none;
             font-size: 24px;
             font-family: 'Montserrat', sans-serif;
-            color: #333333;
             font-weight: 500;
 
         }
         .slick-prev{
-            left: 75px;
-            background: url(../images/slider/prev.svg) 0 40%  no-repeat;
+            left: 0;
+            background: url(../images/slider/prev.svg) 5% 40%  no-repeat;
             padding:40px 200px 90px 50px;
             color: #333333;
         }
     
         .slick-next{
             right: 0;
-            background: url(../images/slider/next.svg) 60% 40%  no-repeat;
-            padding:40px 200px 90px 50px;
+            background: url(../images/slider/next.svg) 40% 40%  no-repeat;
+            padding:40px 270px 90px 50px;
             background-color: #156963;
             color: #fff;
         }

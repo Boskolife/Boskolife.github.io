@@ -1,4 +1,5 @@
 footer{
+    font-family: 'Work Sans', sans-serif;
     border-top:1px solid#156963;
     @include adaptiv-vaule("padding-top", 60, 20, 1);
     @include adaptiv-vaule("padding-bottom", 70, 20, 1);
@@ -79,7 +80,6 @@ footer{
             
             input{
                 font-size: 12px;
-                opacity: 0.5;
                 padding: 8px;
             }
         }

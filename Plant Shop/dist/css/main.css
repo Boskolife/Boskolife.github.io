@@ -427,7 +427,6 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .h {
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   margin: 0 0 0.5em;
   color: inherit; }
@@ -630,6 +629,7 @@ body {
   padding-top: 70px;
   /* Только если меньше контейнера */
   padding-bottom: 140px;
+  margin-bottom: 50px;
   height: 100vh; }
   @media (max-width: 1180px) {
     .main-section {
@@ -647,9 +647,8 @@ body {
   .main-content .main-img {
     position: absolute;
     top: -200px;
-    left: -70px; }
-    .main-content .main-img img {
-      height: 100%; }
+    left: 0px;
+    height: 60%; }
   .main-content .slider {
     position: relative;
     width: 50%; }
@@ -662,17 +661,16 @@ body {
       border: none;
       font-size: 24px;
       font-family: 'Montserrat', sans-serif;
-      color: #333333;
       font-weight: 500; }
     .main-content .slider .slick-prev {
-      left: 75px;
-      background: url(../images/slider/prev.svg) 0 40% no-repeat;
+      left: 0;
+      background: url(../images/slider/prev.svg) 5% 40% no-repeat;
       padding: 40px 200px 90px 50px;
       color: #333333; }
     .main-content .slider .slick-next {
       right: 0;
-      background: url(../images/slider/next.svg) 60% 40% no-repeat;
-      padding: 40px 200px 90px 50px;
+      background: url(../images/slider/next.svg) 40% 40% no-repeat;
+      padding: 40px 270px 90px 50px;
       background-color: #156963;
       color: #fff; }
   .main-content .main-info {
@@ -872,6 +870,7 @@ body {
       height: 100%; }
 
 footer {
+  font-family: 'Work Sans', sans-serif;
   border-top: 1px solid #156963;
   /* Только если меньше контейнера */
   padding-top: 60px;
@@ -941,7 +940,6 @@ footer {
     border-radius: 2px; }
     .footer-content .item-3 .input input {
       font-size: 12px;
-      opacity: 0.5;
       padding: 8px; }
   .footer-content .item-3 p {
     font-size: 12px;
