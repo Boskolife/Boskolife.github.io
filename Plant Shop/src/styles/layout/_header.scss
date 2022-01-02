@@ -24,6 +24,7 @@ header{
 .header-links{
     display: flex;
     align-items: center;
+    z-index: 2;
 
     .link{
         @include adaptiv-vaule("margin-right", 45, 15, 1);
@@ -33,21 +34,32 @@ header{
         }
     }
 
-    .signup{
+    .basket,.search{
+ 
+        &:hover{
+            transition: 0.4s;
+            transform: rotateY(180deg);
+        } 
+
+    }
+
+    .div{
+        display: flex;
+    }
+
+    .signup,.signin{
+        margin-right: 0;
+
         a{
             color:#156963;
             font-weight: 800;
-            @include adaptiv-vaule("font-size", 14, 12, 1);
-        }
-    }
-
-    .signin{
-        a{
-            color:#FFFFFF;
-            font-weight: 800;
-            background: #156963;
             padding: 10px 30px;
             @include adaptiv-vaule("font-size", 14, 12, 1);
+
+            &:hover{
+                background: #156963;
+                color: #ffffff;
+            }
         }
     }
 }

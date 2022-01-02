@@ -931,6 +931,8 @@ ul{
             background: #FFFFFF;
             margin:0 10px;
             padding: 30px;
+            display: flex;
+            flex-direction: column;
 
             @include media ("<tablet"){
                 text-align: center;
@@ -941,7 +943,7 @@ ul{
                 @include adaptiv-vaule("font-size", 18, 16, 1);
                 margin-bottom: 15px;
                 line-height: 150%;
-                max-width: 240px;
+                max-width: 246px;
 
                 @include media ("<1250px"){
                     max-width: 90%;
@@ -952,18 +954,74 @@ ul{
                 }
             }
 
+            .data{
+                order: 5;
+
+                summary{
+                    cursor: pointer;
+                    
+                    color:#DD8E94;
+                    text-decoration: underline;
+
+                    &:hover{
+                        color: #DE596D;;
+                    }
+                
+                    &:active{
+                        color: #900B2F;
+                    }
+                
+                    &:disabled{
+                        color: #B5AFB5;
+                    }
+
+                    &::after{
+                        content: attr(data-close);
+                    }
+
+                }
+            }
+
+            .data[open]{
+
+                order: 4;
+
+                summary{
+                    margin-bottom: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    &::after{
+                        content: attr(data-open);
+                    }
+
+                    p{
+                        padding-top: 20px;
+                    }
+                }
+            } 
+
             h6{
                 margin-bottom: 25px;
+                order: 2;
             }
 
             h5{
                 font-weight: 300;
                 font-size: 16px;
                 margin-bottom: 10px;
+                order: 1;
             }
 
-            a{
+            p{
+                order: 3;
+                margin: 0;
+            }
+
+            .mail{
                 text-decoration: underline;
+                margin-bottom: 30px;
+                order: 4;
+                margin-top: 15px;
 
                 &:hover{
                     color: #DE596D;;
@@ -1106,8 +1164,8 @@ ul{
         background: #FFFFFF;
         padding: 60px;
 
-        @include media ("<phone"){
-            width: 100%;
+        @include media ("<desktop"){
+            max-width: 100%;
             min-height: 100%;
             padding: 0;
             text-align: center;
@@ -1124,6 +1182,50 @@ ul{
             text-align: start;
         }
 
+        .info-det{
+            margin-bottom: 40px;
+            
+            summary{
+                bottom: 0;
+                margin-bottom: 20px;
+                cursor: pointer;
+                color:#DD8E94;
+                text-decoration: underline;
+
+                &:hover{
+                    color: #DE596D;;
+                }
+            
+                &:active{
+                    color: #900B2F;
+                }
+            
+                &:disabled{
+                    color: #B5AFB5;
+                }
+
+                &::after{
+                    content: attr(data-close);
+                }
+            }
+
+            .img-item{
+                margin-bottom: 30px;
+            }
+        }
+
+        .info-det[open]{
+            animation: info 0.8s;
+
+            summary{
+                margin-bottom: 20px;
+
+                &::after{
+                    content: attr(data-open);
+                }
+            }
+        } 
+
         .btn{
             color:#FFFFFF;
 
@@ -1135,12 +1237,24 @@ ul{
     }
 }
 
+@keyframes info{
+
+    0%{
+        opacity: 0;
+        transform: translate(0 , -20px)
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0 , 0)
+    }
+}
 
 .task{
     @include adaptiv-vaule("padding-top", 100, 50, 1);
     @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
-    @include media ("<phone"){
+    @include media ("<tablet"){
         display: none;
     }
 
@@ -1160,6 +1274,7 @@ ul{
             @include media ("<desktop"){
                 margin-bottom: 30px;
                 width: 100%;
+                padding-right: 0;
             }
 
             img{
@@ -1168,79 +1283,6 @@ ul{
                 @include media ("<desktop"){
                    width: 100%;
                 }
-            }
-        }
-
-        .acor-container {
-            width: 48%;
-
-            @include media ("<desktop"){
-                width: 100%;
-            }
-
-            .acor-body {
-                margin: 0 auto;
-                height: 0;
-                padding: 0 30px;
-                box-sizing: border-box;
-                transition: color 0.5s, padding 0.5s;
-                overflow: hidden;
-                border-bottom: 1px solid #CAC8CA;
-
-                li::marker{
-                    color: #DE596D;
-                }
-
-                li{
-                    margin-bottom: 15px;
-                    font-family: 'Nunito', sans-serif;
-                    font-weight: 300;
-                }
-            }
-
-            label{
-                cursor: pointer;
-                display: block;
-                padding: 15px 0;
-                width: 100%;
-                box-sizing: border-box;
-                z-index: 100;
-                font-family: Verdana, sans-serif;   
-                @include adaptiv-vaule("font-size", 18, 16, 1);
-                margin: 0 0 5px;
-                transition: color 0.3s;
-
-                
-                
-
-                &::after{
-                    display: flex;
-                    justify-content: center;
-                    float: right;
-                    content: url(../images/task/arrow.svg);
-                    width: 25px;
-                    height: 25px;
-                    border-radius:50%;
-                    background: #DE596D;
-                }
-            }
-
-            input{
-                display: none;
-            }
-
-            input:checked + label:after {
-                transition: 0.3s;
-                transform: rotate(180deg);
-                border: none;
-            }
-
-            input:checked + label + .acor-body {
-                height: auto;
-                margin-top: -5px;
-                color: #000;
-                padding: 20px;
-                
             }
         }
     }     
@@ -1315,6 +1357,78 @@ ul{
                 margin-right: 0;
             }
         }
+    }
+}
+
+.acor-container {
+    width: 48%;
+
+    @include media ("<desktop"){
+        width: 100%;
+    }
+
+    .acor-body {
+        margin: 0 auto;
+        height: 0;
+        padding: 0 30px;
+        box-sizing: border-box;
+        transition: color 0.5s, padding 0.5s;
+        overflow: hidden;
+        border-bottom: 1px solid #CAC8CA;
+
+        li::marker{
+            color: #DE596D;
+        }
+
+        li{
+            margin-bottom: 15px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 300;
+        }
+    }
+
+    label{
+        cursor: pointer;
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 100;
+        font-family: Verdana, sans-serif;   
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        margin: 0 0 5px;
+        transition: color 0.3s;
+
+        &::after{
+            display: flex;
+            justify-content: center;
+            float: right;
+            content: url(../images/task/arrow.svg);
+            max-width: 25px;
+            max-height: 25px;
+            min-width: 25px;
+            min-height: 25px;
+            border-radius:50%;
+            background: #DE596D;
+        }
+    }
+
+    input{
+        display: none;
+    }
+
+    input:checked + label:after {
+        transition: 0.3s;
+        transform: rotate(180deg);
+        border: none;
+    }
+
+    input:checked + label + .acor-body {
+        height: auto;
+        margin-top: -5px;
+        color: #000;
+        padding: 20px;
+        
     }
 }
 
@@ -1424,3 +1538,212 @@ ul{
     }
 }
 
+<<<<<<< HEAD
+
+.video{
+    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+
+    .video-content{
+        text-align: center;
+
+        h2{
+            margin-bottom: 55px;
+        }
+
+        video{
+            max-width: 1000px;
+            min-height: 500px;
+            width: 100%;
+        }
+    }
+}
+
+.expert{
+    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+
+    h2{
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+
+    .cont-slider{
+        position: relative;
+        margin-bottom: 60px;
+
+        @include media ("<desktop"){
+            text-align: center;
+        }
+
+        .slick-arrow{
+            font-size: 0;
+            width: 56px;
+            height: 5px;
+            border: none;
+            top:-50px;
+            padding: 10px;
+        }
+    
+        .slick-prev{
+            position: absolute;
+            background: url(../images/next.svg)center no-repeat;
+            left: 50%;
+            transform: translate(-110%);
+        }
+    
+        .slick-next{
+            position: absolute;
+            background: url(../images/prev.svg)center no-repeat;
+            right: 50%;
+            transform: translate(110%);
+        }
+
+        .slick-dots{
+            width: 100%;
+            bottom: -35px;
+        }
+
+        .item{
+
+            padding: 0 25px;
+
+            .img-item{
+                margin-bottom: 25px;
+            }
+
+            h4{
+                margin-bottom: 10px;
+            }
+
+            p{
+                max-width: 300px;
+
+                @include media ("<desktop"){
+                    max-width: 100%;
+                }
+
+            }
+        }  
+    }
+
+    .exp-btn{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.contact-data{
+    background: #FFF4F8;
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 50, 1);
+
+    .contact-content{
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<desktop"){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-1{
+            padding-right: 40px;
+            width: 50%;
+
+            @include media ("<desktop"){
+                text-align:center;
+                margin-bottom: 20px;
+                padding-right: 0;
+            }
+
+            @include media ("<tablet"){
+                order: 2;
+                width: 100%;
+            }
+
+            h3{
+                @include adaptiv-vaule("font-size", 38, 26, 1);
+                margin-bottom: 60px;
+            }
+
+            .form{
+
+                input{
+                    font-size: 18px;
+                    font-weight: 300;
+                    width: 456px;
+                    border: none;
+                    border-bottom: 1px solid #CAC8CA;
+                    padding-bottom: 10px;
+                    margin-bottom: 50px;
+                    background: #FFF4F8;
+                }
+
+                .boxes{
+                    max-width: 400px;
+                    margin-bottom: 60px;
+
+                    @include media ("<tablet"){
+                        max-width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    input{
+                        width: 10px;
+                    }
+
+                    span{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+
+                .box{
+                    margin-bottom: 0;
+                    margin-right: 10px; 
+                    cursor: pointer;
+                }
+            }
+
+            .btn{
+                color:#FFFFFF
+            }
+        }
+
+        .item-2{
+
+            @include media ("<tablet"){
+                order: 2;
+            }
+
+            .acor-container{
+                width: 100%;
+
+                label{
+                    max-width: 700px;
+                    padding: 25px;
+                    font-family: 'Nunito', sans-serif;
+                    background: #FFFFFF;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                }
+
+                .acor-body{
+                    padding:0;
+                    background: #FFFFFF;
+                    margin-bottom: 15px;
+                    border:none;
+                    p{
+                        max-width: 700px;
+                        padding: 0 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+=======
+>>>>>>> parent of c2a3e7a (1)

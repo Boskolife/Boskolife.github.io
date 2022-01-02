@@ -90,5 +90,26 @@ jQuery(function () {
       }
     }]
   });
+<<<<<<< HEAD
+  $('.cont-slider').slick({
+    dots: false,
+    speed: 1000,
+    autoplay: false,
+    slidesToShow: 4,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        dots: true
+      }
+    }]
+  });
+=======
+>>>>>>> parent of c2a3e7a (1)
 });
 //# sourceMappingURL=main.js.map
