@@ -659,7 +659,7 @@ body {
 }
 
 .slider{
-    min-width: 0;
+    min-width: 0px;
     width: 80%;
 
     @include media ("<tablet"){
