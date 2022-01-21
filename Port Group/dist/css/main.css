@@ -578,8 +578,7 @@ header {
   justify-content: space-between; }
 
 .main-logo {
-  z-index: 10;
-  /* position: relative; */ }
+  z-index: 10; }
   .main-logo svg {
     fill: black;
     transition: all 0.6s ease; }

@@ -1,0 +1,91 @@
+header{
+    @include adaptiv-vaule("padding-top", 25, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 10, 1);
+    font-family: 'Lato', sans-serif;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiv-vaule("font-size", 20, 14, 1);
+
+    a{
+        color: #475658;
+    }
+
+    .logo{
+        @include adaptiv-vaule("max-width", 85, 45, 1);
+
+        img{
+            object-fit: contain;
+        }
+    }
+
+
+    .link{
+        display: flex;
+        align-items: center;
+
+        .links{
+
+            @include adaptiv-vaule("padding-right", 100, 0, 1);
+            
+            @include media ("<desktop"){
+                display: none;
+            }
+
+            a{
+                margin-right: 35px;
+
+                &:hover{
+                    border-bottom: 1px solid #000000;
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .tel{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+
+            @include media ("<tablet"){
+                margin-right: 0;
+            }
+
+            &::before{
+                content: url(../images/header/phone.svg);
+                margin-right: 5px;
+            }
+        }
+
+        .button{
+            padding: 15px 50px;
+            border: 1px solid #121761;
+            border-radius: 10px;
+
+            &:hover{
+                background: #121761;
+                color:#fff;
+                transition: all 0.3s ease;
+
+                a{
+                    color: #fff;
+                }
+            }
+
+            @include media ("<tablet"){
+                display: none;
+            }
+
+            a{
+                color:#121761;
+
+            }
+        }
+    }
+}
