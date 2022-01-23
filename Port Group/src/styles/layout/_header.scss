@@ -83,6 +83,7 @@ header{
     align-items: center;
     order: 1;
     margin: 0;
+    padding: 0;
 
     @include media ("<desktop"){
         display: flex;
@@ -95,19 +96,20 @@ header{
     li{
         margin-right: 70px;
 
-        @include media ("<desktop"){
-
-            a{
-                color: #FFFFFF;
-                @include adaptiv-vaule("font-size", 63, 36, 1);
+        a{
+            &:hover{
+                border-bottom:1px solid#3C467A;
             }
+        }
 
+        @include media ("<desktop"){
             margin-right: 0;
             margin-bottom: 35px;
             padding-right: 25px;
 
-            &:hover{
-                text-decoration: underline;
+            a{
+                color: #FFFFFF;
+                @include adaptiv-vaule("font-size", 63, 36, 1); 
             }
         }
 
@@ -130,6 +132,11 @@ header{
     margin: 0;
     padding: 0;
     
+    a{
+        &:hover{
+            border-bottom:1px solid#3C467A;
+        }
+    }
 
     @include media ("<desktop"){
         flex-direction: column;
@@ -146,6 +153,7 @@ header{
 
             &:hover{
                 color: #FFFFFF;
+                
             }
         }
     }
@@ -173,11 +181,15 @@ header{
             }
         }
     }
+
+    .menu-link{
+        position: relative;
+    }
     
-    .sub-menu-list{
-        display: none;
+    .sub-menu-list{      
         position: absolute;
-        top: 0;
+        top: -100vh;
+        transition: 0.5s;
         right: 50%;
         transform: translate(25%);
         padding-top: 30px;
@@ -190,7 +202,7 @@ header{
             background:#FFFFFF;
 
             .sub-menu-list{
-                display: block;
+                top: 0;
                 
                 li{
                     margin-bottom: 10px;

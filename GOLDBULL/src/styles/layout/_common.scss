@@ -1,11 +1,117 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 .container{
     margin: 0 auto;
     width: 100%;
     max-width: 1300px;
     padding: 0 15px;
+}
+
+.popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0; 
+    pointer-events: none;
+    transition: 0.5s all;
+    z-index: 2;
+
+}
+
+.popup-bg.active{
+    opacity: 1;
+    pointer-events: all; 
+    transition: 1s all;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) ;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    width: 300px;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+    button{
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+        border: 2px solid#789CE3;
+        background: #789CE3;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.5s all;
+        border-radius: 10px;
+
+        &:hover {
+            background: #fff;
+            color:#789CE3;
+            transition: 0.5s all;
+        }
+    }
+
+    input{
+        height: 40px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #cfd0d3;
+        padding: 5px;
+
+        &:focus{
+            border-bottom: 1px solid #000;
+        }
+    }
+
+    label{
+        width: 100%;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .label__text {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+
+    &::after{
+        content: '\00D7';
+        color: #789CE3;
+    }
 }
 
 .buttons{
@@ -435,6 +541,7 @@ body {
         text-align: center;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-bottom: 40px;
         
         .item{
             max-width: 320px;

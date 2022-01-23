@@ -103,6 +103,7 @@ header{
 .header-content{
     display: flex;
     justify-content: space-between;
+    align-items:center;
     
     a{
         color: #fff;
@@ -144,10 +145,12 @@ header{
             a{
                 font-size: 36px;
                 margin-bottom: 55px;
+
+                &:hover{
+                    border-bottom: 1px solid #fff;
+                }
             }
         }
-        
-
     
         .login-links{
             position: absolute;
@@ -157,31 +160,30 @@ header{
             border-top:1px solid #FFFFFF;
             max-width: 400px;
             width: 100%;
-            padding-bottom: 40px;
+            margin-bottom: 40px;
             
-
             .login{
+                position: relative;
+
                 &::after{
                     position: absolute;
                     content:'';
                     border: 1px solid #FFFFFF;
-                    left: 40%;
-                    max-width: 300px;
-                    height: 25px; 
-                    
+                    right: -160px;
+
                     @include media ("<phone"){
                         display: none;
                     }
                 } 
-
-                @include media ("<tablet"){
-                    width: 100%;
-                }
             }
 
             a{
-                margin-top: 25px;
+                margin: 25px 0 0 0;
                 font-size: 14px;
+
+                @include media ("<phone"){
+                    border:none;
+                }
 
             }
         }
@@ -254,24 +256,37 @@ header{
                 list-style: none;
             }
         }
+
         a{
             margin-right: 34px;
+
+            &:hover{
+                border-bottom: 1px solid #fff;
+            }
         }
     }
 }
 .login-links{
 
     .login{
+        position: relative;
+        margin-right: 40px;
         &::after{
             content:'';
+            position: absolute;
+            height: 20px;
+            top: 0;
+            right: -20px;
             border: 1px solid #FFFFFF;
-            margin: 0 21px;
-
         }
     }        
     
     a{
-        text-decoration: underline;
+        border-bottom: 1px solid #fff;
+
+        @include media ("<phone"){
+            border:none;
+        }
     } 
 }
 

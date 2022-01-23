@@ -51,9 +51,16 @@
             
             li{
                 list-style: none;
+
                 &:not(:last-child){
                     margin-bottom: 5px;
-              }
+                }
+
+                a{
+                    &:hover{
+                        border-bottom: 1px solid #000;
+                    }
+                }
             }
 
             @include media ("<600px"){
@@ -110,6 +117,7 @@
     .text{
         display: flex;
         align-items: center;
+        
 
         @include media ("<800px"){
             margin-bottom: 15px;
@@ -124,6 +132,7 @@
         a{
             color:#FF4A32;
             font-size: 13px;
+            margin: 0 3px;
 
             &:hover{
                 border-bottom: 1px solid #FF4A32;

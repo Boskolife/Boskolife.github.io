@@ -7,6 +7,7 @@ header{
 .header-top{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     @include adaptiv-vaule("padding-bottom", 115, 30, 1);
 
 

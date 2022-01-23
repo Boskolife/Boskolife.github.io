@@ -534,7 +534,6 @@ input[type='submit'] {
 header {
   background: #373A3C;
   padding: 11px 0;
-  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -714,13 +713,6 @@ header {
         font-size: 50px;
         -ms-flex-pack: center;
         justify-content: center; } }
-
-body {
-  /* font-family: $HelveticaNeue; */
-  padding-top: 50px; }
-  @media (max-width: 767px) {
-    body {
-      padding-top: 40px; } }
 
 .container {
   margin: 0 auto;

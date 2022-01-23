@@ -97,10 +97,13 @@ header{
 
         .basket,.user{
             transition: 0.7s;
+            fill:black;
 
             &:hover{
                 transform: rotateY(180deg);
                 transition: 0.7s;
+                fill: #FF4A32;
+                opacity: 0.7;
             }
         }
     }

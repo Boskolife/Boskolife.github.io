@@ -32,20 +32,16 @@ header{
         &:last-child{
             margin-right: 0;
         }
-    }
+    } 
 
     .basket,.search{
+        transition: 0.7s;
  
         &:hover{
-            transition: 0.4s;
+            transition: 0.7s;
             transform: rotateY(180deg);
         } 
-
-    }
-
-    .div{
-        display: flex;
-    }
+    }   
 
     .signup,.signin{
         margin-right: 0;
@@ -55,11 +51,16 @@ header{
             font-weight: 800;
             padding: 10px 30px;
             @include adaptiv-vaule("font-size", 14, 12, 1);
+            transition: 0.5s;
+            border-radius: 5px;
 
             &:hover{
                 background: #156963;
                 color: #ffffff;
+                transition: 0.5s;
+                
             }
         }
     }
 }
+

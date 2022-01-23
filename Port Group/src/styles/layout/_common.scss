@@ -150,8 +150,7 @@ html{
             @include media("<phone"){
                 margin-bottom: 60px;
                 text-decoration: underline;
-            }
-            
+            }          
         }
     }
 }
@@ -567,6 +566,7 @@ html{
     align-items: center;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @include media ("<desktop"){
         padding:45px 0 0 0;
@@ -597,32 +597,33 @@ html{
             margin-bottom: 30px;
             font-weight: 800;
             font-size: 17px;
-            text-transform: uppercase;
-            
+            text-transform: uppercase;           
         }
         
-        p{
-            
+        p{           
             font-size: 18px;
             max-width: 400px;
             color: #FFFFFF;
         }
     }
     
-   /*  .tittle{
-        overflow: hidden;
+    .tittle{
+
+        @include media ("<desktop"){
+            display: none;
+        }
         
         .top-tittle{
             position: absolute;
-            right: -90px;
-            top: -165px;
+            right: -125px;
+            top: -30px;
             font-size:144px ;
             font-weight: 800;
             text-transform: uppercase;
             text-shadow: #FFFFFF 0px 2px 3px;
             color: #3C467A;
         }
-    } */
+    }
 }
 
 .bot-text{
@@ -658,16 +659,16 @@ html{
             display: none;
         }
 
-       /*  .bot-tittle{
+        .bot-tittle{
             position: absolute;
-            right: -180px;
-            top: -165px;
+            right: -210px;
+            top: -40px;
             font-size:144px ;
             font-weight: 800;
             text-transform: uppercase;
             text-shadow: #FFFFFF 0px 1px 3px;
             color: #3C467A;
-        } */
+        }
     } 
 }
 

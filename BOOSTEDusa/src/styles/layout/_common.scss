@@ -2,7 +2,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 .cont{
     max-width: 1160px;
     width: 100%;
@@ -25,6 +24,127 @@ body {
 
     a{
         color:#fff;
+    }
+}
+
+.popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0; 
+    pointer-events: none;
+    transition: 0.5s all;
+    z-index: 2;
+
+}
+
+.popup-bg.active{
+    opacity: 1;
+    pointer-events: all; 
+    transition: 1s all;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) ;
+    background: #fff;
+    width: 300px;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    
+
+    button{
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+        border: 2px solid #FF4A32;
+        background: #FF4A32;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.5s all;
+
+        &:hover {
+            background: #fff;
+            color:#FF4A32;
+            transition: 0.5s all;
+        }
+    }
+
+    input{
+        height: 40px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #cfd0d3;
+        padding: 5px;
+
+        &:focus{
+            border-bottom: 1px solid #000;
+        }
+    }
+
+    label{
+        width: 100%;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .label__text {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .body-reset{
+        position: relative;
+    }
+    .reset{
+        position: absolute;
+        right: 5px;
+        top: 38px;
+        padding: 5px;
+        background: none;
+        border: none;
+        width: 20px;
+        height: 20px;
+
+        &::after{
+            content: '\00D7';
+            color: #FF4A32;
+        }
+    }
+
+
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+    &::after{
+        content: '\00D7';
+        color: #FF4A32;
     }
 }
 
@@ -189,7 +309,6 @@ body {
 .skate{
     padding-top: 45px;
     @include adaptiv-vaule("height", 735, 400, 1);
-    height: 100%;
     background: url(../images/skate/Rectangle.png)50% 100%/ cover no-repeat;
 
     .title{

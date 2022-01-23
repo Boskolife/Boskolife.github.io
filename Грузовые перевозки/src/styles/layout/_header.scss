@@ -88,16 +88,12 @@ header{
     @include media("<tablet"){
         display: flex;
         justify-content: center;
-     }
+    }
 }
-
 
 .main-logs{
     display: flex;
     justify-content: space-between;
-
-
-
 
     a{
         margin-right: 30px;
@@ -173,11 +169,12 @@ header{
         @include media("<phone"){
             margin-bottom: 10px;
         }
-    }
 
-    a:hover{
-        text-decoration: underline;
-        color: #C8A35F;
-        transition: 0.3s;
+        &:hover{
+            border-bottom: 1px solid#C8A35F;
+            color: #C8A35F;
+            transition: 0.3s;
+        }
     }
+    
 }
