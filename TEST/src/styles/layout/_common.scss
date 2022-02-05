@@ -189,6 +189,7 @@ html{
 
         h3{
             font-style: italic;
+            font-weight: 600;
             margin-bottom: 15px;
             line-height: 24 / 16 * 100%;
         }
@@ -212,6 +213,9 @@ html{
 
         .button{
 
+            a{
+                font-weight: 700;
+            }
             @include media("<800px"){
                 margin-bottom: 15px;
             }
@@ -276,6 +280,7 @@ html{
 
             h4{
                 font-style: italic;
+                font-weight: 600;
                 margin-bottom: 20px;
             }
 
@@ -446,10 +451,6 @@ html{
             max-width: 100%;
             text-align:center;
         }
-
-        h4{
-            @include adaptiv-vaule("margin-bottom", 25 ,15, 1);
-        }
     }
 
     .block-2{
@@ -458,6 +459,15 @@ html{
         justify-content: center;
         align-items:center;
         background: #fff;
+    }
+
+    .blcok-1,.block-2{
+
+        h4{
+            @include adaptiv-vaule("margin-bottom", 25 ,15, 1);
+            font-style: italic;
+            font-weight: 600;
+        }
     }
 }
 

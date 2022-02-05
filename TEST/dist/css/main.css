@@ -622,6 +622,7 @@ header {
 
 .header-title h6 {
   font-style: italic;
+  font-weight: 300;
   color: #595959; }
 
 html {
@@ -787,6 +788,7 @@ html {
         margin-right: 5px; }
   .article-cards .card-text h3 {
     font-style: italic;
+    font-weight: 600;
     margin-bottom: 15px;
     line-height: 150%; }
   .article-cards .card-text p {
@@ -805,6 +807,8 @@ html {
       .article-cards .links {
         -ms-flex-direction: column;
         flex-direction: column; } }
+    .article-cards .links .button a {
+      font-weight: 700; }
     @media (max-width: 799px) {
       .article-cards .links .button {
         margin-bottom: 15px; } }
@@ -842,6 +846,7 @@ html {
         height: 100%; }
     .article-slider .card .card-text h4 {
       font-style: italic;
+      font-weight: 600;
       margin-bottom: 20px; }
     .article-slider .card .card-text p {
       color: #737373;
@@ -984,12 +989,6 @@ html {
         margin-bottom: 20px;
         max-width: 100%;
         text-align: center; } }
-    .banner-content .blcok-1 h4 {
-      /* Только если меньше контейнера */
-      margin-bottom: 25px; }
-      @media (max-width: 1154px) {
-        .banner-content .blcok-1 h4 {
-          margin-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 834)); } }
   .banner-content .block-2 {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -1000,6 +999,14 @@ html {
     -ms-flex-align: center;
     align-items: center;
     background: #fff; }
+  .banner-content .blcok-1 h4, .banner-content .block-2 h4 {
+    /* Только если меньше контейнера */
+    margin-bottom: 25px;
+    font-style: italic;
+    font-weight: 600; }
+    @media (max-width: 1154px) {
+      .banner-content .blcok-1 h4, .banner-content .block-2 h4 {
+        margin-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 834)); } }
 
 footer {
   background: #404040;
@@ -1042,7 +1049,9 @@ footer {
       footer .footer-top .footer-title h2 {
         margin-bottom: 15px; }
       footer .footer-top .footer-title h6 {
-        line-height: 150%; }
+        line-height: 150%;
+        font-weight: 300;
+        font-style: italic; }
       footer .footer-top .footer-title h2, footer .footer-top .footer-title h6 {
         color: #ffff; }
     footer .footer-top .links {
