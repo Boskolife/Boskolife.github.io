@@ -10,5 +10,9 @@ jQuery(function () {
       }
     }]
   });
+  $('.title-slider').slick({
+    dots: true,
+    arrows: false
+  });
 });
 //# sourceMappingURL=main.js.map
