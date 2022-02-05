@@ -1,0 +1,38 @@
+.ibg{
+    position: relative;
+
+    img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+.btn{
+    color: #48974c;
+    border: 1px solid #48974c;
+    background: $white;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 14px;
+    font-family: 'PT Sans';
+    transition: 0.4s;
+    text-transform: uppercase;
+
+    &:hover{
+        color: $white;
+        background: #48974c;
+    }
+}
+
+.slick-track{
+    display: flex;
+}
+
+.slick-list{
+    overflow: hidden;
+}
