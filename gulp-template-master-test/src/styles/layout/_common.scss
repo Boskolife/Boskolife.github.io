@@ -1,0 +1,305 @@
+body{
+    background: #E5E5E5;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.cont{
+   max-width: 1240px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 10px; 
+}
+
+.main-section{
+
+    .main-content{
+
+        .slider{
+            @include adaptiv-vaule("padding-top", 45, 20, 1);
+            @include adaptiv-vaule("padding-bottom", 80, 30, 1);
+            text-align: center;
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+    
+            .img-item{
+                max-width: 880px;
+                height: 100vh;
+                padding: 0 20px;
+    
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            .slick-arrow{
+                position: absolute;
+                top: 50%;
+                margin: -15px 0 0 0;
+                font-size: 0;
+                border:none;
+                background: transparent;
+                width: 50px;
+                height: 50px;
+                z-index: 2;
+            }
+    
+            .slick-prev{
+                background: url(../images/slider/prev.svg) 0 0 / 100% no-repeat ;
+                left: -60px;
+            }
+            .slick-next{
+                background: url(../images/slider/next.svg) 0 0 / 100% no-repeat;
+                right: -60px;
+            }
+        }
+    
+        .info{
+            text-align: center;
+    
+            p,a,span{
+                @include adaptiv-vaule("margin-bottom", 50 , 20, 1);
+                @include adaptiv-vaule("font-size", 24, 18, 1);
+                line-height: 28 / 24 * 100%;
+            }
+    
+            .mail{
+                @include adaptiv-vaule("margin-bottom", 50 , 20, 1);
+            }
+    
+            .contact-links{
+                @include adaptiv-vaule("margin-bottom", 50 , 20, 1);
+                .links{
+                    
+                    a{
+                        
+                        &:not(:last-child){
+                            margin-right:30px ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.price,.contact,.about-me{
+    padding-top: 20px;
+    text-align: center;
+
+    .title{
+        margin-bottom: 20px;
+
+        h2{
+            text-transform: uppercase;
+        }
+    }
+}
+
+.revert{
+    display: flex;
+    flex-direction: row-reverse;
+
+    .img-item{
+        margin-right: 0;
+    }
+
+    .text-item{
+        margin-right: 20px;
+
+        @include media ("<desktop"){
+            margin-right: 0;
+        }
+    }
+}
+
+.price{
+    @include adaptiv-vaule("padding-bottom", 95, 30, 1);
+
+    .price-content{
+        display: flex;
+        justify-content: space-between;
+        @include adaptiv-vaule("padding-right", 80, 15, 1);
+        @include adaptiv-vaule("padding-left", 80, 15, 1);
+        @include adaptiv-vaule("margin-bottom", 100 , 30, 1);
+        height: 580px;
+        
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        @include media ("<desktop"){
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .img-item{
+            max-width: 460px;
+            margin-right: 20px;
+
+            @include media ("<desktop"){
+                width: 100%;
+                margin-bottom: 30px;
+                margin-right: 0;
+            }
+        }
+
+        .text-item{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+
+            @include media ("<desktop"){
+                width: 100%;
+            }
+
+            h3{
+                @include adaptiv-vaule("margin-bottom", 30 , 15, 1);
+            }
+
+            p{
+                @include adaptiv-vaule("font-size", 25, 18, 1);
+                @include adaptiv-vaule("margin-bottom", 45 , 20, 1);
+                
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+
+            ul{
+                padding: 0;
+                margin: 0;
+
+                li{
+                    @include adaptiv-vaule("font-size", 25, 18, 1);
+                    @include adaptiv-vaule("margin-bottom", 45 , 20, 1);
+                }
+            }
+        }
+
+        .studio{
+
+            ul{
+                border-bottom: 1px solid #000000;
+                border-bottom-style:dashed;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.contact{
+    @include adaptiv-vaule("padding-bottom", 160, 30, 1);
+    .title{
+        @include adaptiv-vaule("margin-bottom", 140 , 50, 1);
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p{
+            letter-spacing: 0.34em;
+
+            &:not(:last-child){
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+.about-me{
+    @include adaptiv-vaule("padding-bottom", 140, 30, 1);
+
+    .img-item{
+        @include adaptiv-vaule("margin-bottom", 80 , 30, 1);
+    }
+
+    .text{
+
+        p{
+            letter-spacing: 0.05em;
+        }
+    }
+}
+
+.portfolio{
+    @include adaptiv-vaule("padding-bottom", 100, 30, 1);
+    .portfolio-content{
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+        @include media ("<887px"){
+            justify-content: center;
+        }  
+    
+        .img-item{
+            @include adaptiv-vaule("margin-bottom", 60 , 25, 1);
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 270px;
+            height: 480px;
+            position: relative;
+            background: url(../images/portfolio/portfolio.jpg)no-repeat;
+            transition: 0.5s;
+
+            &:hover{
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,.5);
+                    z-index: 2;
+                }
+
+                a{
+                    opacity: 1;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+            }
+
+            a{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                color: $white;
+                opacity: 0;
+                transition: 0.4s;
+                
+            }
+    
+            @include media ("<560px"){
+                margin-left: 0;
+                margin-right: 0;
+            }
+    
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+
