@@ -182,8 +182,17 @@ header{
         }
     }
 
+    .sub-menu-link{
+            
+        @include media ("<tablet"){
+            display: none;
+        }
+    }
+
     .menu-link{
         position: relative;
+
+       
     }
     
     .sub-menu-list{      

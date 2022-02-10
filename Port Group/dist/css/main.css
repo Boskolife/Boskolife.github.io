@@ -728,6 +728,9 @@ header {
           margin-left: 0; }
         .burger-lang li a {
           font-size: 30px; } }
+  @media (max-width: 767px) {
+    .burger-lang .sub-menu-link {
+      display: none; } }
   .burger-lang .menu-link {
     position: relative; }
   .burger-lang .sub-menu-list {
