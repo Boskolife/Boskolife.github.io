@@ -115,50 +115,71 @@
 
 .detail {
     padding: 100px 0 25px 0;
-}
 
-.content {
-    display: flex;
-    @include adaptiv-vaule("gap", 150, 10, 1);
-
-    .text {
-        max-width: 386px;
-
-        h3 {
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        p {
-            max-width: 374px;
-            margin-bottom: 50px;
-        }
-
-        .btn-wrap {
-
-            a:first-child {
-                margin-bottom: 25px;
-            }
-        }
-    }
-
-    .icons {
+    .content {
         display: flex;
-        gap: 30px;
+        @include adaptiv-vaule("gap", 150, 0, 1);
 
-        .icon-card {
-            max-width: 375px;
-            margin-bottom: 85px;
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
 
-            img {
-                margin-bottom: 30px;
+        .text {
+            max-width: 386px;
+
+            @include media ("<desktop") {
+                max-width: 100%;
+                text-align: center;
             }
 
-            h4 {
-                margin-bottom: 25px;
+            h3 {
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            p {
+                max-width: 374px;
+                margin-bottom: 50px;
+
+                @include media ("<desktop") {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .btn-wrap {
+                a:first-child {
+                    margin-bottom: 25px;
+                }
+
+                @include media ("<desktop") {
+                    margin-bottom: 30px;
+
+                    a:first-child {
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 30px;
+
+            .icon-card {
+                max-width: 375px;
+                margin-bottom: 85px;
+
+                img {
+                    margin-bottom: 30px;
+                }
+
+                h4 {
+                    margin-bottom: 25px;
+                }
             }
         }
     }

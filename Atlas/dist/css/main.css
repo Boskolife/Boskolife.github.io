@@ -676,36 +676,52 @@ input[type='submit'] {
 
 .detail {
   padding: 100px 0 25px 0; }
-
-.content {
-  display: -ms-flexbox;
-  display: flex;
-  /* Только если меньше контейнера */
-  gap: 150px; }
-  @media (max-width: 1290px) {
-    .content {
-      gap: calc(10px + 140 * ((100vw - calc(320px)) / 970)); } }
-  .content .text {
-    max-width: 386px; }
-    .content .text h3 {
-      margin-bottom: 15px; }
-    .content .text h2 {
-      margin-bottom: 20px; }
-    .content .text p {
-      max-width: 374px;
-      margin-bottom: 50px; }
-    .content .text .btn-wrap a:first-child {
-      margin-bottom: 25px; }
-  .content .icons {
+  .detail .content {
     display: -ms-flexbox;
     display: flex;
-    gap: 30px; }
-    .content .icons .icon-card {
-      max-width: 375px;
-      margin-bottom: 85px; }
-      .content .icons .icon-card img {
-        margin-bottom: 30px; }
-      .content .icons .icon-card h4 {
+    /* Только если меньше контейнера */
+    gap: 150px; }
+    @media (max-width: 1290px) {
+      .detail .content {
+        gap: calc(0px + 150 * ((100vw - calc(320px)) / 970)); } }
+    @media (max-width: 1023px) {
+      .detail .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .detail .content .text {
+      max-width: 386px; }
+      @media (max-width: 1023px) {
+        .detail .content .text {
+          max-width: 100%;
+          text-align: center; } }
+      .detail .content .text h3 {
+        margin-bottom: 15px; }
+      .detail .content .text h2 {
+        margin-bottom: 20px; }
+      .detail .content .text p {
+        max-width: 374px;
+        margin-bottom: 50px; }
+        @media (max-width: 1023px) {
+          .detail .content .text p {
+            max-width: 100%;
+            text-align: center; } }
+      .detail .content .text .btn-wrap a:first-child {
         margin-bottom: 25px; }
+      @media (max-width: 1023px) {
+        .detail .content .text .btn-wrap {
+          margin-bottom: 30px; }
+          .detail .content .text .btn-wrap a:first-child {
+            margin-right: 25px; } }
+    .detail .content .icons {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 30px; }
+      .detail .content .icons .icon-card {
+        max-width: 375px;
+        margin-bottom: 85px; }
+        .detail .content .icons .icon-card img {
+          margin-bottom: 30px; }
+        .detail .content .icons .icon-card h4 {
+          margin-bottom: 25px; }
 
 /*# sourceMappingURL=main.css.map */
