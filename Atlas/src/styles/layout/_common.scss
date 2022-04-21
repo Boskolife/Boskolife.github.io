@@ -2,7 +2,7 @@
     background: #1D1D1D;
 }
 
-.button {
+.btn {
     position: relative;
     padding: 18px 25px;
     background: $violet;
@@ -16,6 +16,7 @@
     transition: all 0.5s ease;
     margin-bottom: 100px;
     display: inline-block;
+    min-width: 270px;
 
     &:hover {
         background-size: 100% 100%;
@@ -51,89 +52,114 @@
     padding: 0 15px;
 }
 
-.main-section {
-    height: 100vh;
+.first {
+
+    .content {
+        display: flex;
+    }
+
+    .text {
+        max-width: 590px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 55px;
+            max-width: 455px;
+        }
+
+        .links-app {
+            display: flex;
+
+            a:first-child {
+                margin-right: 30px;
+            }
+        }
+    }
 }
 
-.main-content {
-    display: flex;
+.guarantee {
+
+    .content {
+        display: flex;
+        gap: 230px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        justify-content: center;
+        max-width: 561px;
+
+        h3,
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.detail {
+    padding: 100px 0 25px 0;
 }
 
 .content {
-    max-width: 590px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    @include adaptiv-vaule("gap", 150, 10, 1);
 
-    h3 {
-        margin-bottom: 20px;
+    .text {
+        max-width: 386px;
+
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 374px;
+            margin-bottom: 50px;
+        }
+
+        .btn-wrap {
+
+            a:first-child {
+                margin-bottom: 25px;
+            }
+        }
     }
 
-    h1 {
-        margin-bottom: 40px;
-    }
-
-    p {
-        margin-bottom: 55px;
-        max-width: 455px;
-    }
-
-    .links-app {
+    .icons {
         display: flex;
+        gap: 30px;
 
-        a:first-child {
-            margin-right: 30px;
-        }
-    }
-}
+        .icon-card {
+            max-width: 375px;
+            margin-bottom: 85px;
 
+            img {
+                margin-bottom: 30px;
+            }
 
-.guarantee-content {
-    display: flex;
-    gap: 230px;
-}
-
-.guarantee-text {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    justify-content: center;
-    max-width: 561px;
-
-    h3,
-    h2 {
-        margin-bottom: 15px;
-    }
-
-    p {
-        margin-bottom: 30px;
-    }
-}
-
-.detail-content {
-    display: flex;
-    gap: 150px;
-}
-
-.detail-text {
-    max-width: 386px;
-}
-
-.detail-icons {
-    display: flex;
-    gap: 30px;
-
-    .icon-card {
-        max-width: 375px;
-        margin-bottom: 85px;
-
-        img {
-            margin-bottom: 30px;
-        }
-
-        h4 {
-            margin-bottom: 25px;
+            h4 {
+                margin-bottom: 25px;
+            }
         }
     }
 }
