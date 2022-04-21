@@ -14,7 +14,7 @@
     background-repeat: no-repeat;
     background-size: 0% 100%;
     transition: all 0.5s ease;
-    margin-bottom: 100px;
+    @include adaptiv-vaule("margin-bottom", 100, 30, 1);
     display: inline-block;
     min-width: 270px;
 
@@ -53,6 +53,7 @@
 }
 
 .first {
+    padding: 30px 0;
 
     .content {
         display: flex;
@@ -70,11 +71,11 @@
         }
 
         h1 {
-            margin-bottom: 40px;
+            @include adaptiv-vaule("margin-bottom", 40, 20, 1);
         }
 
         p {
-            margin-bottom: 55px;
+            @include adaptiv-vaule("margin-bottom", 55, 30, 1);
             max-width: 455px;
         }
 
@@ -92,7 +93,11 @@
 
     .content {
         display: flex;
-        gap: 230px;
+        @include adaptiv-vaule("gap", 230, 25, 1);
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
     }
 
     .text {
@@ -101,6 +106,11 @@
         text-align: start;
         justify-content: center;
         max-width: 561px;
+
+        @include media ("<tablet") {
+            text-align: center;
+            max-width: 100%;
+        }
 
         h3,
         h2 {
@@ -114,7 +124,8 @@
 }
 
 .detail {
-    padding: 100px 0 25px 0;
+    @include adaptiv-vaule("padding-top", 100, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 25, 1);
 
     .content {
         display: flex;
@@ -124,63 +135,122 @@
             flex-direction: column;
         }
 
-        .text {
-            max-width: 386px;
+    }
+
+    .text {
+        max-width: 386px;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 374px;
+            margin-bottom: 50px;
 
             @include media ("<desktop") {
                 max-width: 100%;
                 text-align: center;
             }
-
-            h3 {
-                margin-bottom: 15px;
-            }
-
-            h2 {
-                margin-bottom: 20px;
-            }
-
-            p {
-                max-width: 374px;
-                margin-bottom: 50px;
-
-                @include media ("<desktop") {
-                    max-width: 100%;
-                    text-align: center;
-                }
-            }
-
-            .btn-wrap {
-                a:first-child {
-                    margin-bottom: 25px;
-                }
-
-                @include media ("<desktop") {
-                    margin-bottom: 30px;
-
-                    a:first-child {
-                        margin-right: 25px;
-                    }
-                }
-            }
         }
 
-        .icons {
-            display: flex;
-            gap: 30px;
+        .btn-wrap {
 
-            .icon-card {
-                max-width: 375px;
-                margin-bottom: 85px;
+            @include media ("<600px") {
+                display: flex;
+                flex-direction: column;
+            }
 
-                img {
-                    margin-bottom: 30px;
+            a:first-child {
+                margin-bottom: 25px;
+
+                @include media ("<desktop") {
+                    margin-right: 25px;
                 }
 
-                h4 {
-                    margin-bottom: 25px;
+                @include media ("<600px") {
+                    margin-right: 0px;
+                }
+            }
+
+            .btn {
+
+                @include media ("<desktop") {
+                    margin-bottom: 30px;
                 }
             }
         }
     }
+
+    .icons {
+        display: flex;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            text-align: center;
+            justify-content: center;
+        }
+
+        @include media ("<600px") {
+            flex-wrap: wrap;
+        }
+
+        .icon-card {
+            max-width: 375px;
+            @include adaptiv-vaule("padding-bottom", 85, 25, 1);
+
+            img {
+                margin-bottom: 30px;
+            }
+
+            h4 {
+                @include adaptiv-vaule("padding-bottom", 25, 15, 1);
+            }
+        }
+    }
+}
+
+.seo {
+    padding: 30px 0;
+    background: $white;
+
+    .content {
+        display: flex;
+        @include adaptiv-vaule("gap", 170, 30, 1);
+    }
+
+    .text {
+        width: 34%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            color: $black;
+            margin-bottom: 20px;
+        }
+
+        p {
+            @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+            max-width: 374px;
+        }
+
+        .btn {
+            max-width: 270px;
+        }
+    }
+
+    .img {
+        max-width: 55%;
+    }
+
 }
