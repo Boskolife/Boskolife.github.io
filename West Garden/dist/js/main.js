@@ -17,7 +17,7 @@ jQuery(function () {
     }]
   });
   $('.slider-river').slick({
-    dots: true,
+    dots: false,
     arrows: true,
     speed: 1000,
     autoplay: false,

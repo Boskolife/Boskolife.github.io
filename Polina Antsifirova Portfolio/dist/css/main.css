@@ -427,7 +427,8 @@ h6, .h6,
 
 h1, .h1 {
   /* Только если меньше контейнера */
-  font-size: 48px; }
+  font-size: 48px;
+  margin: 0; }
   @media (max-width: 1240px) {
     h1, .h1 {
       font-size: calc(32px + 16 * ((100vw - calc(320px)) / 920)); } }
@@ -458,7 +459,7 @@ h6, .h6 {
   font-size: 15px; }
 
 p {
-  margin: 0 0 1em; }
+  margin: 0; }
 
 a {
   color: #000;
@@ -562,28 +563,27 @@ input[type='submit'] {
 
 header {
   /* Только если меньше контейнера */
-  padding-top: 85px;
+  padding-top: 30px;
   /* Только если меньше контейнера */
-  padding-bottom: 70px; }
+  padding-bottom: 30px; }
   @media (max-width: 1240px) {
     header {
-      padding-top: calc(30px + 55 * ((100vw - calc(320px)) / 920)); } }
+      padding-top: calc(20px + 10 * ((100vw - calc(320px)) / 920)); } }
   @media (max-width: 1240px) {
     header {
-      padding-bottom: calc(20px + 50 * ((100vw - calc(320px)) / 920)); } }
+      padding-bottom: calc(20px + 10 * ((100vw - calc(320px)) / 920)); } }
 
 .header-content {
   text-align: center; }
   .header-content h1 {
-    line-height: 116.66667%;
     /* Только если меньше контейнера */
-    padding-bottom: 70px; }
+    margin-bottom: 50px; }
     @media (max-width: 1240px) {
       .header-content h1 {
-        padding-bottom: calc(30px + 40 * ((100vw - calc(320px)) / 920)); } }
+        margin-bottom: calc(30px + 20 * ((100vw - calc(320px)) / 920)); } }
   .header-content .tab {
     /* Только если меньше контейнера */
-    padding-bottom: 150px;
+    padding-bottom: 35px;
     border-bottom: 1px solid #000;
     border-bottom-style: dashed;
     overflow: hidden;
@@ -593,7 +593,7 @@ header {
     justify-content: space-between; }
     @media (max-width: 1240px) {
       .header-content .tab {
-        padding-bottom: calc(30px + 120 * ((100vw - calc(320px)) / 920)); } }
+        padding-bottom: calc(15px + 20 * ((100vw - calc(320px)) / 920)); } }
     @media (max-width: 767px) {
       .header-content .tab {
         -ms-flex-wrap: wrap;
@@ -629,75 +629,84 @@ html {
   margin: 0 auto;
   padding: 0 10px; }
 
-.main-section .main-content .slider {
+.main-section {
   /* Только если меньше контейнера */
   padding-top: 45px;
   /* Только если меньше контейнера */
-  padding-bottom: 80px;
-  text-align: center;
-  max-width: 880px;
-  margin: 0 auto;
-  position: relative; }
+  padding-bottom: 40px; }
   @media (max-width: 1240px) {
-    .main-section .main-content .slider {
+    .main-section {
       padding-top: calc(20px + 25 * ((100vw - calc(320px)) / 920)); } }
   @media (max-width: 1240px) {
-    .main-section .main-content .slider {
-      padding-bottom: calc(30px + 50 * ((100vw - calc(320px)) / 920)); } }
-  .main-section .main-content .slider .img-item {
+    .main-section {
+      padding-bottom: calc(30px + 10 * ((100vw - calc(320px)) / 920)); } }
+  .main-section .main-content .slider {
+    /* Только если меньше контейнера */
+    padding-bottom: 80px;
+    text-align: center;
     max-width: 880px;
-    height: 100vh;
-    padding: 0 20px; }
-    .main-section .main-content .slider .img-item img {
-      -o-object-fit: cover;
-      object-fit: cover;
+    margin: 0 auto;
+    position: relative; }
+    @media (max-width: 1240px) {
+      .main-section .main-content .slider {
+        padding-bottom: calc(30px + 50 * ((100vw - calc(320px)) / 920)); } }
+    .main-section .main-content .slider .img-item {
       width: 100%;
-      height: 100%; }
-  .main-section .main-content .slider .slick-arrow {
-    position: absolute;
-    top: 50%;
-    margin: -15px 0 0 0;
-    font-size: 0;
-    border: none;
-    background: transparent;
-    width: 50px;
-    height: 50px;
-    z-index: 2; }
-  .main-section .main-content .slider .slick-prev {
-    background: url(../images/slider/prev.svg) 0 0/100% no-repeat;
-    left: -60px; }
-  .main-section .main-content .slider .slick-next {
-    background: url(../images/slider/next.svg) 0 0/100% no-repeat;
-    right: -60px; }
-
-.main-section .main-content .info {
-  text-align: center; }
-  .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
-    /* Только если меньше контейнера */
-    margin-bottom: 50px;
-    /* Только если меньше контейнера */
-    font-size: 24px;
-    line-height: 116.66667%; }
-    @media (max-width: 1240px) {
-      .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
-        margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
-    @media (max-width: 1240px) {
-      .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
-        font-size: calc(18px + 6 * ((100vw - calc(320px)) / 920)); } }
-  .main-section .main-content .info .mail {
-    /* Только если меньше контейнера */
-    margin-bottom: 50px; }
-    @media (max-width: 1240px) {
-      .main-section .main-content .info .mail {
-        margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
-  .main-section .main-content .info .contact-links {
-    /* Только если меньше контейнера */
-    margin-bottom: 50px; }
-    @media (max-width: 1240px) {
-      .main-section .main-content .info .contact-links {
-        margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
-    .main-section .main-content .info .contact-links .links a:not(:last-child) {
-      margin-right: 30px; }
+      height: 100%;
+      padding: 0 20px; }
+      .main-section .main-content .slider .img-item img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+    .main-section .main-content .slider .slick-arrow {
+      position: absolute;
+      top: 50%;
+      margin: -15px 0 0 0;
+      font-size: 0;
+      border: none;
+      background: transparent;
+      width: 50px;
+      height: 50px;
+      z-index: 2; }
+    .main-section .main-content .slider .slick-prev {
+      background: url(../images/slider/prev.svg) 0 0/100% no-repeat;
+      left: -60px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .main-section .main-content .slider .slick-next {
+      background: url(../images/slider/next.svg) 0 0/100% no-repeat;
+      right: -60px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .main-section .main-content .info {
+    text-align: center; }
+    .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
+      /* Только если меньше контейнера */
+      margin-bottom: 50px;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      line-height: 116.66667%; }
+      @media (max-width: 1240px) {
+        .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
+          margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
+      @media (max-width: 1240px) {
+        .main-section .main-content .info p, .main-section .main-content .info a, .main-section .main-content .info span {
+          font-size: calc(18px + 6 * ((100vw - calc(320px)) / 920)); } }
+    .main-section .main-content .info .mail {
+      /* Только если меньше контейнера */
+      margin-bottom: 50px; }
+      @media (max-width: 1240px) {
+        .main-section .main-content .info .mail {
+          margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
+    .main-section .main-content .info .contact-links {
+      /* Только если меньше контейнера */
+      margin-bottom: 50px; }
+      @media (max-width: 1240px) {
+        .main-section .main-content .info .contact-links {
+          margin-bottom: calc(20px + 30 * ((100vw - calc(320px)) / 920)); } }
+      .main-section .main-content .info .contact-links .links a:not(:last-child) {
+        margin-right: 30px; }
 
 .price, .contact, .about-me {
   padding-top: 20px;
@@ -774,7 +783,10 @@ html {
       width: 40%; }
       @media (max-width: 1023px) {
         .price .price-content .text-item {
-          width: 100%; } }
+          text-align: center; } }
+      @media (max-width: 767px) {
+        .price .price-content .text-item {
+          width: 80%; } }
       .price .price-content .text-item h3 {
         /* Только если меньше контейнера */
         margin-bottom: 30px; }

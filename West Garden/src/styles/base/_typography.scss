@@ -23,15 +23,15 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	@include adaptiv-vaule("font-size", 28, 18, 1);
+	@include adaptiv-vaule("font-size", 36, 20, 1);
 }
 
 h4, .h4 {
-	@include adaptiv-vaule("font-size", 16, 14, 1);
+	@include adaptiv-vaule("font-size", 28, 18, 1);
 }
 
 h5, .h5 {
-	font-size: $h5-font-size;
+	@include adaptiv-vaule("font-size", 16, 14, 1);
 }
 
 h6, .h6 {

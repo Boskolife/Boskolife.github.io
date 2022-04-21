@@ -14,11 +14,12 @@ html{
 }
 
 .main-section{
+    @include adaptiv-vaule("padding-top", 45, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 40, 30, 1);
 
     .main-content{
-
+       
         .slider{
-            @include adaptiv-vaule("padding-top", 45, 20, 1);
             @include adaptiv-vaule("padding-bottom", 80, 30, 1);
             text-align: center;
             max-width: 880px;
@@ -26,14 +27,14 @@ html{
             position: relative;
     
             .img-item{
-                max-width: 880px;
-                height: 100vh;
+                width: 100%;
+                height: 100%;
                 padding: 0 20px;
     
                 img{
-                    object-fit: cover;
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
                 }
             }
     
@@ -47,15 +48,18 @@ html{
                 width: 50px;
                 height: 50px;
                 z-index: 2;
+              
             }
     
             .slick-prev{
                 background: url(../images/slider/prev.svg) 0 0 / 100% no-repeat ;
                 left: -60px;
+                transform: translateY(-50%);
             }
             .slick-next{
                 background: url(../images/slider/next.svg) 0 0 / 100% no-repeat;
                 right: -60px;
+                transform: translateY(-50%);
             }
         }
     
@@ -158,7 +162,11 @@ html{
             width: 40%;
 
             @include media ("<desktop"){
-                width: 100%;
+                text-align: center;
+            }
+
+            @include media ("<tablet"){
+                width: 80%;
             }
 
             h3{

@@ -14,6 +14,7 @@ h6, .h6,
 
 h1, .h1 {
 	@include adaptiv-vaule("font-size", 48, 32, 1);
+	margin: 0;
 }
 
 h2, .h2 {
@@ -39,7 +40,7 @@ h6, .h6 {
 }
 
 p {
-	margin: 0 0 1em;
+	margin: 0;
 }
 
 a {

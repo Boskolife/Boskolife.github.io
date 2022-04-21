@@ -457,20 +457,24 @@ h2, .h2 {
 
 h3, .h3 {
   /* Только если меньше контейнера */
-  font-size: 28px; }
+  font-size: 36px; }
   @media (max-width: 1220px) {
     h3, .h3 {
-      font-size: calc(18px + 10 * ((100vw - calc(320px)) / 900)); } }
+      font-size: calc(20px + 16 * ((100vw - calc(320px)) / 900)); } }
 
 h4, .h4 {
   /* Только если меньше контейнера */
-  font-size: 16px; }
+  font-size: 28px; }
   @media (max-width: 1220px) {
     h4, .h4 {
-      font-size: calc(14px + 2 * ((100vw - calc(320px)) / 900)); } }
+      font-size: calc(18px + 10 * ((100vw - calc(320px)) / 900)); } }
 
 h5, .h5 {
-  font-size: 17px; }
+  /* Только если меньше контейнера */
+  font-size: 16px; }
+  @media (max-width: 1220px) {
+    h5, .h5 {
+      font-size: calc(14px + 2 * ((100vw - calc(320px)) / 900)); } }
 
 h6, .h6 {
   font-size: 15px; }
@@ -597,6 +601,25 @@ input[type='submit'] {
       background: #773844;
       color: #fff; } }
 
+.blue-btn {
+  color: #0A3CE4;
+  /* Только если меньше контейнера */
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #0a3de450;
+  transition: all 0.3s ease;
+  max-width: 211px; }
+  @media (max-width: 1220px) {
+    .blue-btn {
+      font-size: calc(16px + 4 * ((100vw - calc(320px)) / 900)); } }
+  .blue-btn:hover {
+    border-bottom: 1px solid #0a3de4; }
+  .blue-btn img {
+    margin-left: 12px;
+    vertical-align: -1px; }
+
 .slick-list {
   overflow: hidden; }
 
@@ -695,7 +718,7 @@ body {
   max-width: 1220px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px; }
+  padding: 0 10px; }
 
 .life {
   /* Только если меньше контейнера */
@@ -789,14 +812,14 @@ body {
       .life-content .life-bg .card {
         max-width: 100px;
         min-height: 60px; } }
-    .life-content .life-bg .card h4 {
+    .life-content .life-bg .card p {
       font-weight: 500;
       letter-spacing: -0.04em;
       line-height: 110%;
       /* Только если меньше контейнера */
       font-size: 16px; }
       @media (max-width: 1220px) {
-        .life-content .life-bg .card h4 {
+        .life-content .life-bg .card p {
           font-size: calc(10px + 6 * ((100vw - calc(320px)) / 900)); } }
     .life-content .life-bg .card .card-img {
       width: 30px;
@@ -810,7 +833,7 @@ body {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
-    .life-content .life-bg .date h4 {
+    .life-content .life-bg .date p {
       margin-right: 10px;
       color: #fff;
       letter-spacing: -0.02em;
@@ -823,13 +846,13 @@ body {
       border-radius: 5px;
       padding: 5px 12px; }
       @media (max-width: 1220px) {
-        .life-content .life-bg .date h4 {
+        .life-content .life-bg .date p {
           font-size: calc(10px + 6 * ((100vw - calc(320px)) / 900)); } }
-      .life-content .life-bg .date h4 span {
+      .life-content .life-bg .date p span {
         color: #A0A747;
         padding-left: 5px;
         letter-spacing: 2px; }
-      .life-content .life-bg .date h4:last-child {
+      .life-content .life-bg .date p:last-child {
         margin-right: 0; }
 
 .cards {
@@ -873,7 +896,7 @@ body {
         color: #fff; }
       .cards .item .item-body img {
         border-radius: 5px; }
-      .cards .item .item-body h3 {
+      .cards .item .item-body h4 {
         position: absolute;
         bottom: 60px;
         left: 20px;
@@ -883,7 +906,7 @@ body {
         line-height: 32px;
         letter-spacing: -0.02em; }
         @media (max-width: 1220px) {
-          .cards .item .item-body h3 {
+          .cards .item .item-body h4 {
             font-size: calc(18px + 10 * ((100vw - calc(320px)) / 900)); } }
       .cards .item .item-body p {
         position: absolute;
@@ -921,7 +944,7 @@ body {
       @media (max-width: 1220px) {
         .map .title h2 {
           margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 900)); } }
-    .map .title h4 {
+    .map .title p {
       font-weight: 500;
       font-size: 16px;
       letter-spacing: 2px;
@@ -982,19 +1005,27 @@ body {
 .slide .slick-arrow {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  /* Только если меньше контейнера */
   width: 80px;
+  /* Только если меньше контейнера */
   height: 80px;
   border-radius: 50%;
   z-index: 3;
   font-size: 0;
   border: none; }
+  @media (max-width: 1220px) {
+    .slide .slick-arrow {
+      width: calc(1px + 79 * ((100vw - calc(320px)) / 900)); } }
+  @media (max-width: 1220px) {
+    .slide .slick-arrow {
+      height: calc(1px + 79 * ((100vw - calc(320px)) / 900)); } }
 
 .slide .slick-prev {
   left: 80px;
   background: url(../images/view/prev.svg) center no-repeat;
   background-color: rgba(0, 0, 0, 0.48);
+  -webkit-transform: translatey(-50%);
+  transform: translatey(-50%);
   -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px); }
 
@@ -1002,6 +1033,8 @@ body {
   right: 80px;
   background: url(../images/view/next.svg) center no-repeat;
   background-color: rgba(0, 0, 0, 0.48);
+  -webkit-transform: translatey(-50%);
+  transform: translatey(-50%);
   -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px); }
 
@@ -1021,9 +1054,6 @@ body {
     background-color: rgba(0, 0, 0, 0.48); }
   .slide .slick-dots li {
     list-style: none; }
-    .slide .slick-dots li:first-child::before {
-      color: #fff;
-      content: 'kodasdk'; }
 
 .view {
   /* Только если меньше контейнера */
@@ -1104,7 +1134,7 @@ body {
         @media (max-width: 1220px) {
           .special .card-text .title h2 {
             font-size: calc(24px + 24 * ((100vw - calc(320px)) / 900)); } }
-      .special .card-text .title h4 {
+      .special .card-text .title p {
         color: #773844;
         letter-spacing: 0.12em;
         font-weight: 500;
@@ -1202,19 +1232,19 @@ body {
         line-height: 120%;
         color: #646562; }
 
-.river-line {
+.river-line, .park-line {
   /* Только если меньше контейнера */
   padding-top: 80px;
   /* Только если меньше контейнера */
   padding-bottom: 80px;
   background: #1F2057; }
   @media (max-width: 1220px) {
-    .river-line {
+    .river-line, .park-line {
       padding-top: calc(30px + 50 * ((100vw - calc(320px)) / 900)); } }
   @media (max-width: 1220px) {
-    .river-line {
+    .river-line, .park-line {
       padding-bottom: calc(30px + 50 * ((100vw - calc(320px)) / 900)); } }
-  .river-line .river-content {
+  .river-line .content, .park-line .content {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -1222,20 +1252,424 @@ body {
     /* Только если меньше контейнера */
     margin-bottom: 40px; }
     @media (max-width: 1220px) {
-      .river-line .river-content {
+      .river-line .content, .park-line .content {
         margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 900)); } }
-  .river-line .title {
+    @media (max-width: 767px) {
+      .river-line .content, .park-line .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .river-line .title, .park-line .title {
     max-width: 400px; }
-    .river-line .title h2 {
-      color: #fff;
-      position: relative; }
-      .river-line .title h2:after {
-        position: absolute;
-        content: url(../images/river-line/river.svg);
-        margin-left: 10px; }
-    .river-line .title p {
+    .river-line .title .title-top, .park-line .title .title-top {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 15px; }
+      .river-line .title .title-top .title-img, .park-line .title .title-top .title-img {
+        margin-left: 10px;
+        width: 72px;
+        height: 32px;
+        /* Только если меньше контейнера */
+        width: 72px;
+        /* Только если меньше контейнера */
+        height: 32px; }
+        @media (max-width: 1220px) {
+          .river-line .title .title-top .title-img, .park-line .title .title-top .title-img {
+            width: calc(40px + 32 * ((100vw - calc(320px)) / 900)); } }
+        @media (max-width: 1220px) {
+          .river-line .title .title-top .title-img, .park-line .title .title-top .title-img {
+            height: calc(25px + 7 * ((100vw - calc(320px)) / 900)); } }
+        .river-line .title .title-top .title-img img, .park-line .title .title-top .title-img img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: contain;
+          object-fit: contain; }
+    .river-line .title h2, .park-line .title h2 {
       color: #fff; }
-  .river-line .slider-river {
+    .river-line .title p, .park-line .title p {
+      color: #fff;
+      letter-spacing: -0.01em; }
+      @media (max-width: 767px) {
+        .river-line .title p, .park-line .title p {
+          margin-bottom: 15px; } }
+  .river-line .btn, .park-line .btn {
+    background: #FFFFFF;
+    color: #1A1A1A;
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 20px; }
+    @media (max-width: 1220px) {
+      .river-line .btn, .park-line .btn {
+        font-size: calc(14px + 6 * ((100vw - calc(320px)) / 900)); } }
+    .river-line .btn:hover, .park-line .btn:hover {
+      background: #d1cdcd; }
+  .river-line .slider-river, .park-line .slider-river {
     position: relative; }
+    .river-line .slider-river .img-item, .park-line .slider-river .img-item {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+      .river-line .slider-river .img-item img, .park-line .slider-river .img-item img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+    .river-line .slider-river p, .park-line .slider-river p {
+      position: absolute;
+      color: #fff;
+      z-index: 2;
+      bottom: 40px;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
+      /* Только если меньше контейнера */
+      font-size: 20px; }
+      @media (max-width: 1220px) {
+        .river-line .slider-river p, .park-line .slider-river p {
+          font-size: calc(10px + 10 * ((100vw - calc(320px)) / 900)); } }
+      @media (max-width: 767px) {
+        .river-line .slider-river p, .park-line .slider-river p {
+          display: none; } }
+
+.park-line {
+  background: #A0A747; }
+
+.lobby {
+  /* Только если меньше контейнера */
+  padding-top: 160px;
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1220px) {
+    .lobby {
+      padding-top: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  @media (max-width: 1220px) {
+    .lobby {
+      padding-bottom: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  .lobby .lobby-content {
+    text-align: center; }
+  .lobby .group {
+    margin-bottom: 12px; }
+  .lobby .title {
+    /* Только если меньше контейнера */
+    margin-bottom: 50px; }
+    @media (max-width: 1220px) {
+      .lobby .title {
+        margin-bottom: calc(30px + 20 * ((100vw - calc(320px)) / 900)); } }
+  .lobby .card-item {
+    background: #fff;
+    padding: 40px 20px 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 20px 48px rgba(234, 227, 217, 0.32); }
+  .lobby .card-title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px; }
+    .lobby .card-title h2 {
+      letter-spacing: -0.03em;
+      line-height: 100%; }
+    .lobby .card-title img {
+      margin-right: 20px; }
+  .lobby .tags {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    /* Только если меньше контейнера */
+    margin-bottom: 40px; }
+    @media (max-width: 1220px) {
+      .lobby .tags {
+        margin-bottom: calc(25px + 15 * ((100vw - calc(320px)) / 900)); } }
+    @media (max-width: 1023px) {
+      .lobby .tags {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+    .lobby .tags .tag {
+      background: #F7F1E9;
+      border-radius: 5px;
+      padding: 8px 16px;
+      text-align: start; }
+      .lobby .tags .tag span {
+        /* Только если меньше контейнера */
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #1A1A1A; }
+        @media (max-width: 1220px) {
+          .lobby .tags .tag span {
+            font-size: calc(16px + 4 * ((100vw - calc(320px)) / 900)); } }
+      .lobby .tags .tag img {
+        margin-right: 7px; }
+  .lobby .card-img {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 12px; }
+
+.aparts {
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1220px) {
+    .aparts {
+      padding-bottom: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  .aparts .title {
+    text-align: center;
+    /* Только если меньше контейнера */
+    margin-bottom: 60px; }
+    @media (max-width: 1220px) {
+      .aparts .title {
+        margin-bottom: calc(30px + 30 * ((100vw - calc(320px)) / 900)); } }
+    .aparts .title h2 {
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: -3px; }
+  .aparts span {
+    border-bottom: 2.5px solid #A0A747; }
+  .aparts .item {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    /* Только если меньше контейнера */
+    padding: 20px;
+    box-shadow: 0px 20px 48px rgba(234, 227, 217, 0.32);
+    border-radius: 12px; }
+    @media (max-width: 1220px) {
+      .aparts .item {
+        padding: calc(10px + 10 * ((100vw - calc(320px)) / 900)); } }
+    .aparts .item:not(:last-child) {
+      margin-bottom: 12px; }
+    @media (max-width: 767px) {
+      .aparts .item {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .aparts .item-text {
+    width: 50%;
+    /* Только если меньше контейнера */
+    padding: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    @media (max-width: 1220px) {
+      .aparts .item-text {
+        padding: calc(0px + 40 * ((100vw - calc(320px)) / 900)); } }
+    @media (max-width: 767px) {
+      .aparts .item-text {
+        width: 100%;
+        margin-bottom: 20px; } }
+    .aparts .item-text h3 {
+      line-height: 111%;
+      letter-spacing: -1px;
+      margin-bottom: 20px; }
+    .aparts .item-text p {
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      max-width: 410px;
+      /* Только если меньше контейнера */
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      /* Только если меньше контейнера */
+      margin-bottom: 80px; }
+      @media (max-width: 1220px) {
+        .aparts .item-text p {
+          font-size: calc(16px + 4 * ((100vw - calc(320px)) / 900)); } }
+      @media (max-width: 1220px) {
+        .aparts .item-text p {
+          margin-bottom: calc(20px + 60 * ((100vw - calc(320px)) / 900)); } }
+  .aparts .img-item {
+    width: 50%; }
+    @media (max-width: 767px) {
+      .aparts .img-item {
+        width: 100%; } }
+    .aparts .img-item img {
+      width: 100%;
+      height: 100%; }
+
+.panorama {
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1220px) {
+    .panorama {
+      padding-bottom: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  .panorama .cont {
+    max-width: 1800px; }
+  .panorama .panorama-content {
+    text-align: center; }
+    .panorama .panorama-content .title {
+      max-width: 772px;
+      margin: 0 auto;
+      /* Только если меньше контейнера */
+      margin-bottom: 50px; }
+      @media (max-width: 1220px) {
+        .panorama .panorama-content .title {
+          margin-bottom: calc(30px + 20 * ((100vw - calc(320px)) / 900)); } }
+      .panorama .panorama-content .title h2 {
+        margin-bottom: 20px; }
+      .panorama .panorama-content .title p {
+        /* Только если меньше контейнера */
+        font-size: 24px;
+        line-height: 133%;
+        text-align: center;
+        letter-spacing: -0.01em;
+        margin-bottom: 30px; }
+        @media (max-width: 1220px) {
+          .panorama .panorama-content .title p {
+            font-size: calc(18px + 6 * ((100vw - calc(320px)) / 900)); } }
+    .panorama .panorama-content .panorama-img img {
+      width: 100%;
+      height: 100%; }
+
+.comfort {
+  /* Только если меньше контейнера */
+  padding-bottom: 80px; }
+  @media (max-width: 1220px) {
+    .comfort {
+      padding-bottom: calc(40px + 40 * ((100vw - calc(320px)) / 900)); } }
+
+.test {
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1220px) {
+    .test {
+      padding-bottom: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  .test .test-content {
+    background: #A0A747;
+    border-radius: 12px; }
+  .test .text {
+    max-width: 772px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 10px; }
+    .test .text h2 {
+      /* Только если меньше контейнера */
+      font-size: 48px;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 15px; }
+      @media (max-width: 1220px) {
+        .test .text h2 {
+          font-size: calc(24px + 24 * ((100vw - calc(320px)) / 900)); } }
+    .test .text p {
+      font-weight: 500;
+      max-width: 640px;
+      margin: 0 auto;
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      line-height: 114%;
+      letter-spacing: -0.02em;
+      color: #E7E9D3;
+      margin-bottom: 40px; }
+      @media (max-width: 1220px) {
+        .test .text p {
+          font-size: calc(16px + 12 * ((100vw - calc(320px)) / 900)); } }
+    .test .text .btn {
+      background: #1A1A1A;
+      color: #fff;
+      padding: 15px 25px;
+      transition: all 0.5s; }
+      .test .text .btn:hover {
+        background: #fff;
+        color: #1A1A1A; }
+  .test .test-img {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    @media (max-width: 767px) {
+      .test .test-img {
+        display: none; } }
+    .test .test-img .img-item:not(:last-child) {
+      margin-right: 5px; }
+
+.repair {
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1220px) {
+    .repair {
+      padding-bottom: calc(40px + 120 * ((100vw - calc(320px)) / 900)); } }
+  .repair .title {
+    text-align: center; }
+    .repair .title h2 {
+      margin-bottom: 20px; }
+    .repair .title p {
+      display: inline-block;
+      border-bottom: 2px solid #A0A747;
+      /* Только если меньше контейнера */
+      margin-bottom: 65px; }
+      @media (max-width: 1220px) {
+        .repair .title p {
+          margin-bottom: calc(30px + 35 * ((100vw - calc(320px)) / 900)); } }
+  .repair .cards {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1159px) {
+      .repair .cards {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .repair .cards .item {
+      max-width: 380px;
+      min-height: 470px;
+      padding: 8px;
+      background: #FFFFFF;
+      border-radius: 12px; }
+      @media (max-width: 1159px) {
+        .repair .cards .item {
+          display: -ms-flexbox;
+          display: flex;
+          max-width: none; } }
+      @media (max-width: 767px) {
+        .repair .cards .item {
+          -ms-flex-direction: column;
+          flex-direction: column;
+          min-height: 100%; }
+          .repair .cards .item:not(:last-child) {
+            margin-bottom: 15px; } }
+    .repair .cards .img-item {
+      margin-bottom: 5px;
+      max-width: 364px;
+      min-height: 222px; }
+      @media (max-width: 1159px) {
+        .repair .cards .img-item {
+          max-width: 100%;
+          height: 100%; } }
+      .repair .cards .img-item img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px; }
+    .repair .cards .text {
+      padding: 16px;
+      height: 100%; }
+      @media (max-width: 1159px) {
+        .repair .cards .text {
+          max-width: none;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -ms-flex-align: start;
+          align-items: start; } }
+      .repair .cards .text h4 {
+        line-height: 114%;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px; }
+        @media (max-width: 1159px) {
+          .repair .cards .text h4 br {
+            display: none; } }
+      .repair .cards .text p {
+        /* Только если меньше контейнера */
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: -0.01em; }
+        @media (max-width: 1220px) {
+          .repair .cards .text p {
+            font-size: calc(16px + 4 * ((100vw - calc(320px)) / 900)); } }
 
 /*# sourceMappingURL=main.css.map */

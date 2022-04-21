@@ -27,6 +27,26 @@
     }
 }
 
+.blue-btn{
+    color:$blue3;
+    @include adaptiv-vaule("font-size", 20, 16, 1);
+    line-height: 100%;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #0a3de450;
+    transition: all 0.3s ease;
+    max-width: 211px;
+
+    &:hover{
+        border-bottom: 1px solid #0a3de4;
+    }
+
+    img{
+        margin-left: 12px;
+        vertical-align: -1px;
+    }
+}
+
 .slick-list{
     overflow: hidden;
 } 
