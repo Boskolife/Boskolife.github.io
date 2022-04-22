@@ -583,7 +583,21 @@ input[type='submit'] {
   font-family: "Ubuntu", sans-serif; }
 
 #wrapper {
-  background: #5e5555; }
+  background: #000;
+  overflow: hidden;
+  position: relative; }
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30%;
+  left: 50%;
+  z-index: 0;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: #3d3d3d;
+  background: radial-gradient(circle, rgba(61, 61, 61, 0.753939) 0%, black 100%); }
 
 .btn {
   position: relative;
@@ -702,32 +716,32 @@ input[type='submit'] {
     position: absolute;
     top: -129px;
     width: 100%;
-    border-bottom: 130px solid black;
+    border-bottom: 130px solid #1D1D1D;
     border-left: 100vw solid transparent;
     z-index: 1; }
     @media (max-width: 1023px) {
       .triangle:before {
-        border-bottom: 90px solid black;
+        border-bottom: 90px solid #1D1D1D;
         top: -88px; } }
     @media (max-width: 767px) {
       .triangle:before {
-        border-bottom: 50px solid black;
+        border-bottom: 50px solid #1D1D1D;
         top: -50px; } }
   .triangle:after {
     content: ' ';
     position: absolute;
     bottom: -129px;
     width: 100%;
-    border-top: 130px solid black;
+    border-top: 130px solid #1D1D1D;
     border-right: 100vw solid transparent;
     z-index: 3; }
     @media (max-width: 1023px) {
       .triangle:after {
-        border-top: 90px solid black;
+        border-top: 90px solid #1D1D1D;
         bottom: -88px; } }
     @media (max-width: 767px) {
       .triangle:after {
-        border-top: 50px solid black;
+        border-top: 50px solid #1D1D1D;
         bottom: -50px; } }
 
 .guarantee {
@@ -736,7 +750,7 @@ input[type='submit'] {
   margin-top: 200px;
   /* Только если меньше контейнера */
   margin-bottom: 150px;
-  background: #000; }
+  background: #1D1D1D; }
   @media (max-width: 1290px) {
     .guarantee {
       margin-top: calc(50px + 150 * ((100vw - calc(320px)) / 970)); } }
@@ -832,11 +846,11 @@ input[type='submit'] {
     @media (max-width: 1023px) {
       .detail:after {
         border-top: 90px solid black;
-        bottom: -88px; } }
+        bottom: -190px; } }
     @media (max-width: 767px) {
       .detail:after {
         border-top: 50px solid black;
-        bottom: -50px; } }
+        bottom: -149px; } }
   .detail .content {
     display: -ms-flexbox;
     display: flex;
@@ -909,15 +923,27 @@ input[type='submit'] {
 
 .seo {
   margin: 100px 0;
-  padding: 100px 0;
-  background: url(../images/seo/seo-bg.jpg) right no-repeat;
-  background-color: #FFFFFF; }
+  padding: 75px 0;
+  position: relative;
+  background: #FFFFFF; }
+  .seo:after {
+    content: ' ';
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-bottom: 130px solid #401FCF;
+    border-left: 100vw solid transparent;
+    z-index: 3; }
+    @media (max-width: 1023px) {
+      .seo:after {
+        border-bottom: 90px solid #401FCF; } }
+    @media (max-width: 767px) {
+      .seo:after {
+        border-bottom: 60px solid #401FCF; } }
   .seo .content {
-    display: -ms-flexbox;
-    display: flex;
     height: 600px; }
   .seo .text {
-    width: 34%;
+    padding-top: 220px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -938,9 +964,40 @@ input[type='submit'] {
           margin-bottom: calc(30px + 30 * ((100vw - calc(320px)) / 970)); } }
     .seo .text .btn {
       max-width: 270px; }
+  .seo .seo-img {
+    overflow: hidden;
+    max-width: 690px;
+    height: 100%; }
+    .seo .seo-img img {
+      position: absolute;
+      /* Только если меньше контейнера */
+      right: 0px;
+      /* Только если меньше контейнера */
+      top: 0px; }
+      @media (max-width: 1290px) {
+        .seo .seo-img img {
+          right: calc(-700px + 700 * ((100vw - calc(320px)) / 970)); } }
+      @media (max-width: 1290px) {
+        .seo .seo-img img {
+          top: calc(-50px + 50 * ((100vw - calc(320px)) / 970)); } }
   .seo .img {
     position: absolute;
+    /* Только если меньше контейнера */
     width: 830px;
-    height: 830px; }
+    /* Только если меньше контейнера */
+    height: 830px;
+    top: -150px;
+    /* Только если меньше контейнера */
+    right: 100px;
+    z-index: 4; }
+    @media (max-width: 1290px) {
+      .seo .img {
+        width: calc(445px + 385 * ((100vw - calc(320px)) / 970)); } }
+    @media (max-width: 1290px) {
+      .seo .img {
+        height: calc(445px + 385 * ((100vw - calc(320px)) / 970)); } }
+    @media (max-width: 1290px) {
+      .seo .img {
+        right: calc(50px + 50 * ((100vw - calc(320px)) / 970)); } }
 
 /*# sourceMappingURL=main.css.map */
