@@ -587,12 +587,8 @@ input[type='submit'] {
 
 .btn {
   position: relative;
-  padding: 18px 25px;
+  padding: 18px 55px 18px 25px;
   background: #401FCF;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
   color: #FFFFFF;
   background-image: linear-gradient(#ED863C, #ED863C);
   background-position: 100% 100%;
@@ -601,8 +597,9 @@ input[type='submit'] {
   transition: all 0.5s ease;
   /* Только если меньше контейнера */
   margin-bottom: 100px;
-  display: inline-block;
-  min-width: 270px; }
+  min-width: 270px;
+  white-space: nowrap;
+  display: inline-block; }
   @media (max-width: 1290px) {
     .btn {
       margin-bottom: calc(30px + 70 * ((100vw - calc(320px)) / 970)); } }
@@ -623,7 +620,10 @@ input[type='submit'] {
   .btn img {
     margin-left: 50px;
     height: 15px;
-    width: 7px; }
+    width: 7px;
+    position: absolute;
+    top: 20px;
+    right: 30px; }
 
 .cont {
   max-width: 1290px;
@@ -670,6 +670,8 @@ input[type='submit'] {
 .guarantee .content {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  align-items: center;
   /* Только если меньше контейнера */
   gap: 230px; }
   @media (max-width: 1290px) {
@@ -681,23 +683,16 @@ input[type='submit'] {
       flex-direction: column; } }
 
 .guarantee .text {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  text-align: start;
-  -ms-flex-pack: center;
-  justify-content: center;
   max-width: 561px; }
   @media (max-width: 767px) {
     .guarantee .text {
-      text-align: center;
-      max-width: 100%; } }
+      text-align: center; } }
   .guarantee .text h3,
   .guarantee .text h2 {
     margin-bottom: 15px; }
   .guarantee .text p {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    line-height: 116.66667%; }
 
 .detail {
   /* Только если меньше контейнера */
