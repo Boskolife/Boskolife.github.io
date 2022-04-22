@@ -635,7 +635,12 @@ input[type='submit'] {
   padding: 30px 0; }
   .first .content {
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    /* Только если меньше контейнера */
+    gap: 230px; }
+    @media (max-width: 1290px) {
+      .first .content {
+        gap: calc(1px + 229 * ((100vw - calc(320px)) / 970)); } }
   .first .text {
     max-width: 590px;
     display: -ms-flexbox;
@@ -666,6 +671,8 @@ input[type='submit'] {
       display: flex; }
       .first .text .links-app a:first-child {
         margin-right: 30px; }
+  .first .img-wrap {
+    width: 50%; }
 
 .guarantee .content {
   display: -ms-flexbox;

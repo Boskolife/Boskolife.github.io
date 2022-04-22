@@ -59,6 +59,7 @@
 
     .content {
         display: flex;
+        @include adaptiv-vaule("gap", 230, 1, 1);
     }
 
     .text {
@@ -88,6 +89,10 @@
                 margin-right: 30px;
             }
         }
+    }
+
+    .img-wrap {
+        width: 50%;
     }
 }
 
