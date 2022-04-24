@@ -19,15 +19,20 @@ footer {
     &:before {
         content: '';
         position: absolute;
-        top: -219px;
+        top: -275px;
         width: 0;
         height: 0;
-        border-bottom: 220px solid $violet;
+        border-bottom: 276px solid $violet;
         border-left: 100vw solid transparent;
+
+        @include media ("<1440px") {
+            top: -200px;
+            border-bottom: 201px solid $violet;
+        }
 
         @include media ("<1230px") {
             top: -150px;
-            border-bottom: 150px solid $violet;
+            border-bottom: 151px solid $violet;
         }
 
         @include media ("<desktop") {

@@ -1,14 +1,11 @@
-$breakpoints: (
-	'xs-phone': 320px,
-	'phone': 480px,
-	'tablet': 768px,
-	'desktop': 1024px,
-	'widescreen': 1200px
-);
+$breakpoints: ('xs-phone': 321px,
+	'phone': 481px,
+	'tablet': 769px,
+	'desktop': 1025px,
+	'widescreen': 1200px);
 
 // keywords
-$media-expressions: (
-	'screen': 'screen',
+$media-expressions: ('screen': 'screen',
 	'print': 'print',
 	'handheld': 'handheld',
 	'landscape': '(orientation: landscape)',
@@ -35,4 +32,3 @@ $media-expressions: (
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
-
