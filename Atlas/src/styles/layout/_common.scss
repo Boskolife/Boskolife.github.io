@@ -1,19 +1,25 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
 #wrapper {
     background: $black;
     overflow: hidden;
     position: relative;
 }
 
+
 .bg {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 30%;
+    top: 0;
     left: 50%;
     z-index: 0;
     transform: translate(-50%);
     background: rgb(61, 61, 61);
-    background: radial-gradient(circle, rgba(61, 61, 61, 0.7539390756302521) 0%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(circle, rgba(61, 61, 61, 0.7539390756302521) 15%, rgba(0, 0, 0, 1) 100%);
 }
 
 .btn {
@@ -70,7 +76,8 @@
 }
 
 .first {
-    padding: 30px 0;
+    padding: 75px 0;
+    position: relative;
 
     .content {
         display: flex;
@@ -133,62 +140,20 @@
     }
 }
 
-.triangle {
-    position: relative;
-
-    &:before {
-        content: ' ';
-        position: absolute;
-        top: -129px;
-        width: 100%;
-        border-bottom: 130px solid #1D1D1D;
-        border-left: 100vw solid transparent;
-        z-index: 1;
-
-        @include media ("<desktop") {
-            border-bottom: 90px solid #1D1D1D;
-            top: -88px;
-        }
-
-        @include media ("<tablet") {
-            border-bottom: 50px solid #1D1D1D;
-            top: -50px;
-        }
-    }
-
-    &:after {
-        content: ' ';
-        position: absolute;
-        bottom: -129px;
-        width: 100%;
-        border-top: 130px solid #1D1D1D;
-        border-right: 100vw solid transparent;
-        z-index: 3;
-
-        @include media ("<desktop") {
-            border-top: 90px solid #1D1D1D;
-            bottom: -88px;
-        }
-
-        @include media ("<tablet") {
-            border-top: 50px solid #1D1D1D;
-            bottom: -50px;
-        }
-    }
-}
-
 .guarantee {
     padding: 50px 0;
     @include adaptiv-vaule("margin-top", 200, 50, 1);
     @include adaptiv-vaule("margin-bottom", 150, 50, 1);
     background: #1D1D1D;
+    transform: skewY(-5deg);
+    border-top: 3px solid $orange;
 
     .content {
-        position: relative;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         min-height: 500px;
+        transform: skewY(5deg);
 
         @include media ("<tablet") {
             flex-direction: column;
@@ -196,7 +161,7 @@
     }
 
     .text {
-        @include adaptiv-vaule("max-width", 561, 180, 1);
+        @include adaptiv-vaule("max-width", 561, 150, 1);
 
         @include media ("<tablet") {
             text-align: center;
@@ -227,12 +192,12 @@
 
         img {
             position: absolute;
-            @include adaptiv-vaule("top", -240, -100, 1);
-            left: 0;
+            @include adaptiv-vaule("top", -225, -30, 1);
+            left: 8%;
             width: 475px;
             height: 820px;
-            @include adaptiv-vaule("width", 475, 240, 1);
-            @include adaptiv-vaule("height", 820, 410, 1);
+            @include adaptiv-vaule("width", 475, 200, 1);
+            @include adaptiv-vaule("height", 820, 350, 1);
             z-index: 2;
 
             @include media ("<tablet") {
@@ -245,41 +210,39 @@
 
 .detail {
     @include adaptiv-vaule("padding-top", 100, 30, 1);
-    @include adaptiv-vaule("padding-bottom", 25, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 120, 1);
     position: relative;
-
-    &:after {
-        content: ' ';
-        position: absolute;
-        bottom: -230px;
-        width: 100%;
-        border-top: 130px solid black;
-        border-right: 100vw solid transparent;
-        z-index: 3;
-
-        @include media ("<desktop") {
-            border-top: 90px solid black;
-            bottom: -190px;
-        }
-
-        @include media ("<tablet") {
-            border-top: 50px solid black;
-            bottom: -149px;
-        }
-    }
 
     .content {
         display: flex;
-        @include adaptiv-vaule("gap", 150, 0, 1);
 
         @include media ("<desktop") {
             flex-direction: column;
         }
 
+        .img-cover {
+            position: absolute;
+            bottom: -600px;
+            right: 120px;
+            @include adaptiv-vaule("right", 120, -500, 1);
+            @include adaptiv-vaule("bottom", -600, -800, 1);
+            z-index: 5;
+            width: 830px;
+            height: 830px;
+            @include adaptiv-vaule("width", 830, 390, 1);
+            @include adaptiv-vaule("height", 830, 390, 1);
+
+            @include media ("<tablet") {
+                bottom: -440px;
+                @include adaptiv-vaule("bottom", -440, -300, 1);
+                @include adaptiv-vaule("left", 1, 10, 1);
+            }
+        }
     }
 
     .text {
         max-width: 386px;
+        margin-right: 100px;
 
         @include media ("<desktop") {
             max-width: 85%;
@@ -330,7 +293,17 @@
 
     .icons {
         display: flex;
-        gap: 30px;
+
+        .card-column {
+
+            &:first-child {
+                margin-right: 30px;
+
+                @include media ("<600px") {
+                    margin-right: 0;
+                }
+            }
+        }
 
         @include media ("<desktop") {
             text-align: center;
@@ -340,57 +313,56 @@
         @include media ("<600px") {
             flex-wrap: wrap;
         }
+    }
 
-        .icon-card {
-            max-width: 375px;
-            @include adaptiv-vaule("padding-bottom", 85, 25, 1);
+    .icon-card {
+        max-width: 400px;
+        @include adaptiv-vaule("margin-bottom", 85, 25, 1);
 
-            img {
-                margin-bottom: 30px;
-            }
+        @include media ("<phone") {
+            text-align: start;
+        }
 
-            h4 {
-                @include adaptiv-vaule("padding-bottom", 25, 15, 1);
-            }
+        img {
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            @include adaptiv-vaule("padding-bottom", 25, 15, 1);
         }
     }
 }
 
 
 .seo {
-    margin: 100px 0;
-    padding: 75px 0;
     position: relative;
-    background: $white;
+    transform: skewY(-5deg);
+    background-color: $white;
+    padding: 40px 0;
+    margin: 0 0 70px 0;
+    overflow: hidden;
+    border-top: 5px solid $violet;
 
-    &:after {
-        content: ' ';
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        border-bottom: 130px solid $violet;
-        border-left: 100vw solid transparent;
-        z-index: 3;
-
-        @include media ("<desktop") {
-            border-bottom: 90px solid $violet;
-        }
-
-        @include media ("<tablet") {
-            border-bottom: 60px solid $violet;
-        }
+    @include media ("<tablet") {
+        border: none;
     }
 
     .content {
         height: 600px;
+        transform: skewY(5deg);
+
+        @include media ("<tablet") {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 
     .text {
-        padding-top: 220px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        padding-top: 180px;
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
 
         h2 {
             color: $black;
@@ -404,30 +376,28 @@
 
         .btn {
             max-width: 270px;
+            margin: 0;
         }
     }
 
     .seo-img {
-        overflow: hidden;
-        max-width: 690px;
-        height: 100%;
+
+        margin: 0 -25px;
 
         img {
             position: absolute;
-            @include adaptiv-vaule("right", 0, -700, 1);
-            @include adaptiv-vaule("top", 0, -50, 1);
+            object-fit: cover;
+            top: -120px;
+            @include adaptiv-vaule("right", -265, -600, 1);
+
+            @include media ("<tablet") {
+                position: static;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
         }
-    }
-
-    .img {
-        position: absolute;
-
-        @include adaptiv-vaule("width", 830, 445, 1);
-        @include adaptiv-vaule("height", 830, 445, 1);
-        top: -150px;
-        @include adaptiv-vaule("right", 100, 50, 1);
-
-        z-index: 4;
     }
 
 }

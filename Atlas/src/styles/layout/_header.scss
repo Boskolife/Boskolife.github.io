@@ -1,0 +1,149 @@
+header {
+    position: relative;
+    @include adaptiv-vaule("height", 110, 60, 1);
+}
+
+.header-burger {
+    display: none;
+
+    @include media("<desktop") {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 15px;
+
+        background: $orange;
+        z-index: 2;
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 6px;
+            background: $white;
+            transition: 0.4s;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            right: 0;
+            background: $white;
+            transition: 0.4s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            width: 15px;
+        }
+    }
+}
+
+.burger_active {
+
+    &::before {
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+        bottom: 4px;
+        width: 100%;
+    }
+
+    &::before,
+    &::after {
+
+        @include media ("<desktop") {
+            background: #FFFFFF;
+        }
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    @include adaptiv-vaule("padding-top", 15, 7, 1);
+    @include adaptiv-vaule("padding-bottom", 15, 7, 1);
+    @include adaptiv-vaule("padding-right", 25, 7, 1);
+    @include adaptiv-vaule("padding-left", 100, 7, 1);
+    background: $violet;
+    @include adaptiv-vaule("margin-right", 30, 1, 1);
+}
+
+.name-logo {
+    margin-right: 30px;
+}
+
+.nav {
+    display: flex;
+
+    @include media ("<desktop") {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            list-style: none;
+            @include adaptiv-vaule("margin-left", 50, 1, 1);
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            a {
+                font-weight: 500;
+                white-space: nowrap;
+                @include adaptiv-vaule("font-size", 22, 1, 1);
+                color: $gray;
+            }
+        }
+    }
+}
+
+.call {
+    display: flex;
+    align-items: center;
+    @include adaptiv-vaule("font-size", 22, 1, 1);
+    @include adaptiv-vaule("padding-top", 42, 7, 1);
+    @include adaptiv-vaule("padding-bottom", 42, 7, 1);
+    @include adaptiv-vaule("padding-right", 115, 7, 1);
+    @include adaptiv-vaule("padding-left", 65, 7, 1);
+    background: $orange;
+    @include adaptiv-vaule("margin-left", 65, 1, 1);
+
+    a {
+        color: $white;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}
