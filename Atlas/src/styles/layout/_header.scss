@@ -186,6 +186,12 @@ header {
             @include media ("<desktop") {
                 color: $white;
                 @include adaptiv-vaule("font-size", 36, 28, 1);
+
+                &:hover {
+                    color: $gray;
+                    transition: 0.3s;
+
+                }
             }
         }
     }

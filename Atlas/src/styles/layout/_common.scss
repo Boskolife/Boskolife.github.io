@@ -493,115 +493,62 @@ html {
             }
         }
 
-        .headline {
-            margin-bottom: 20px;
+    }
 
-            @include media ("<desktop") {
-                margin-bottom: 35px;
-            }
+    .headline {
+        margin-bottom: 20px;
+
+        @include media ("<desktop") {
+            margin-bottom: 35px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 25px;
+        }
+    }
+
+    .description {
+        max-width: 374px;
+        margin-bottom: 50px;
+        font-size: 18px;
+
+        @include media ("<desktop") {
+            margin-bottom: 30px;
+            max-width: 630px;
+        }
+
+        @include media ("<phone") {
+            font-size: 14px;
+        }
+    }
+
+    .btn-wrap {
+
+        @include media ("<tablet") {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .btn {
+
+        @include media ("<tablet") {
+            max-width: 270px;
+        }
+
+        &:first-child {
+            margin-right: 50px;
+            margin-bottom: 30px;
 
             @include media ("<tablet") {
-                margin-bottom: 25px;
+                margin-right: 0;
             }
+
         }
 
-        .description {
-            max-width: 374px;
-            margin-bottom: 50px;
-            font-size: 18px;
-
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                max-width: 630px;
-
-            }
-
-            @include media ("<phone") {
-                font-size: 14px;
-                margin: 0;
-            }
-        }
-
-        .btn {
-
-            &:first-child {
-                margin-right: 50px;
-                margin-bottom: 30px;
-
-                @include media ("<635px") {
-                    margin-right: 0;
-                }
-            }
-
-            &:last-child {
-                margin-bottom: 95px;
-            }
-        }
-
-        .title {
-            margin-bottom: 15px;
-            font-size: 22px;
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
-
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                font-size: 18px
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 20px;
-            }
-
-            @include media ("<phone") {
-                font-size: 15px;
-            }
-        }
-
-        .headline {
-            margin-bottom: 20px;
-
-            @include media ("<desktop") {
-                margin-bottom: 35px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 25px;
-            }
-        }
-
-        .description {
-            max-width: 374px;
-            margin-bottom: 50px;
-            font-size: 18px;
-
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                max-width: 630px;
-
-            }
-
-            @include media ("<phone") {
-                font-size: 14px;
-                margin: 0;
-            }
-        }
-
-        .btn {
-
-            &:first-child {
-                margin-right: 50px;
-                margin-bottom: 30px;
-
-                @include media ("<635px") {
-                    margin-right: 0;
-                }
-            }
-
-            &:last-child {
-                margin-bottom: 95px;
-            }
+        &:last-child {
+            margin-bottom: 95px;
         }
     }
 
