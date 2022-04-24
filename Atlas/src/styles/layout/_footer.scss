@@ -1,0 +1,158 @@
+footer {
+    position: relative;
+    z-index: 10;
+    background: $violet;
+    margin-top: 87px;
+
+    @include media ("<1230px") {
+        margin-top: 60px;
+    }
+
+    @include media ("<desktop") {
+        margin-top: 30px;
+    }
+
+    @include media ("<tablet") {
+        margin-top: 15px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -219px;
+        width: 0;
+        height: 0;
+        border-bottom: 220px solid $violet;
+        border-left: 100vw solid transparent;
+
+        @include media ("<1230px") {
+            top: -150px;
+            border-bottom: 150px solid $violet;
+        }
+
+        @include media ("<desktop") {
+            top: -99px;
+            border-bottom: 100px solid $violet;
+        }
+
+        @include media ("<tablet") {
+            top: -69px;
+            border-bottom: 70px solid $violet;
+        }
+
+        @include media ("<phone") {
+            top: -50px;
+            border-bottom: 50px solid $violet;
+        }
+    }
+}
+
+.footer-top {
+    padding-top: 40px;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text {
+
+            @include adaptiv-vaule(" max-width", 665, 265, 1);
+
+            p {
+                line-height: 25 / 22 * 100%;
+                font-size: 22px;
+                max-width: 665px;
+
+                @include media ("<desktop") {
+                    font-size: 16px;
+                    max-width: 420px;
+                    margin-bottom: 35px;
+                    text-align: center;
+                }
+            }
+
+        }
+
+        .contacts {
+            margin-left: 30px;
+
+            @include media ("<tablet") {
+                margin: 0;
+                text-align: center;
+            }
+
+            .tel {
+                font-size: 35px;
+                line-height: 30 / 34 * 100%;
+                color: $gray;
+
+                @include media ("<desktop") {
+                    font-size: 30px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: $gray;
+                line-height: 14 / 16 * 100%;
+                margin: 10px 0 20px 0;
+            }
+        }
+
+        .mail {
+            display: flex;
+            align-items: center;
+
+            @include media ("<tablet") {
+                justify-content: center;
+            }
+
+            img {
+                margin-right: 15px;
+            }
+
+            a {
+                font-size: 20px;
+                line-height: 17 / 20 * 100%;
+                color: $gray;
+
+                @include media ("<desktop") {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+
+.footer-bot {
+    background: #2D1596;
+}
+
+.terms {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+
+    @include media ("<tablet") {
+        flex-direction: column;
+        text-align: center;
+        font-size: 10px;
+
+        a:first-child {
+            margin-bottom: 15px;
+        }
+    }
+
+    a {
+        color: $gray;
+    }
+}

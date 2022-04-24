@@ -20,24 +20,47 @@ h6,
 
 h1,
 .h1 {
+	font-size: 64px;
+
+	@include media ("<desktop") {
+		font-size: 48px;
+	}
+
+	@include media ("<tablet") {
+		font-size: 36px;
+	}
+
 	font-weight: 700;
-	@include adaptiv-vaule("font-size", 64, 36, 1);
-	line-height: 64 / 74 * 100%;
+	line-height: 74 / 64 * 100%;
 	color: $white;
 }
 
 h2,
 .h2 {
-	@include adaptiv-vaule("font-size", 48, 36, 1);
+	font-size: 48px;
+
+	@include media ("<desktop") {
+		font-size: 36px;
+	}
+
 	font-weight: 700;
-	line-height: 48 / 55 * 100%;
+	line-height: 55 / 48 * 100%;
 	color: $white;
 }
 
 h3,
 .h3 {
-	@include adaptiv-vaule("font-size", 22, 15, 1);
-	line-height: 22 / 24 * 100%;
+	font-size: 22px;
+
+	@include media ("<desktop") {
+		font-size: 18px;
+	}
+
+	@include media ("<phone") {
+		font-size: 15px;
+	}
+
+	line-height: 25 / 22 * 100%;
 	font-weight: 500;
 	color: $gray;
 }
@@ -45,9 +68,9 @@ h3,
 h4,
 .h4 {
 	font-weight: 700;
-	font-size: 25px;
-	line-height: 25 / 29 * 100%;
+	line-height: 1.1;
 	color: $white;
+	font-size: 25px;
 }
 
 h5,
@@ -63,7 +86,7 @@ h6,
 p {
 	color: $gray;
 	margin: 0;
-	@include adaptiv-vaule("font-size", 18, 14, 1);
+	line-height: 21 / 18 * 100%;
 }
 
 a {

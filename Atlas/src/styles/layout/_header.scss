@@ -1,6 +1,21 @@
 header {
     position: relative;
-    @include adaptiv-vaule("height", 110, 60, 1);
+    @include adaptiv-vaule("height", 110, 58, 1);
+    width: 100%;
+}
+
+.burger-wrap {
+    display: none;
+
+    @include media ("<desktop") {
+        display: block;
+        background: $orange;
+        width: 58px;
+        @include adaptiv-vaule("height", 110, 58, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .header-burger {
@@ -9,16 +24,16 @@ header {
     @include media("<desktop") {
         display: block;
         position: relative;
-        width: 30px;
+        z-index: 11;
+        width: 26px;
         height: 15px;
-
-        background: $orange;
         z-index: 2;
 
         span {
             position: absolute;
             width: 100%;
             height: 3px;
+            border-radius: 5px;
             left: 0;
             top: 6px;
             background: $white;
@@ -29,6 +44,7 @@ header {
         &::after {
             content: '';
             position: absolute;
+            border-radius: 5px;
             width: 100%;
             height: 3px;
             right: 0;
@@ -42,12 +58,12 @@ header {
 
         &::after {
             bottom: 0;
-            width: 15px;
         }
     }
 }
 
 .burger_active {
+    z-index: 11;
 
     &::before {
         transform: rotate(45deg);
@@ -86,31 +102,60 @@ header {
 
 .logo-img {
     position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
+    z-index: 10;
     @include adaptiv-vaule("padding-top", 15, 7, 1);
     @include adaptiv-vaule("padding-bottom", 15, 7, 1);
-    @include adaptiv-vaule("padding-right", 25, 7, 1);
-    @include adaptiv-vaule("padding-left", 100, 7, 1);
-    background: $violet;
+    @include adaptiv-vaule("padding-right", 25, 15, 1);
+    @include adaptiv-vaule("padding-left", 100, 15, 1);
     @include adaptiv-vaule("margin-right", 30, 1, 1);
+    background: $violet;
+
+    img {
+        @include adaptiv-vaule("height", 80, 45, 1);
+    }
 }
 
 .name-logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 11;
     margin-right: 30px;
+
+    @include media ("<phone") {
+        @include adaptiv-vaule("margin-left", 420, 60, 1);
+        margin-right: 0
+    }
+
+    img {
+        @include adaptiv-vaule("height", 36, 20, 1);
+    }
 }
 
 .nav {
     display: flex;
 
     @include media ("<desktop") {
-        display: none;
+        position: absolute;
+        z-index: 6;
+        top: -100vh;
+        left: 0;
+        transition: all 0.6s ease;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $orange;
     }
 
     ul {
         display: flex;
         align-items: center;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
 
         li {
             list-style: none;
@@ -120,30 +165,63 @@ header {
                 margin-left: 0;
             }
 
+            @include media ("<desktop") {
+                margin: 0 0 20px 0;
+            }
+
             a {
                 font-weight: 500;
                 white-space: nowrap;
                 @include adaptiv-vaule("font-size", 22, 1, 1);
                 color: $gray;
+
+                &:hover {
+                    color: $white;
+                    transition: 0.3s;
+                }
+
+                @include media ("<desktop") {
+                    color: $white;
+                    @include adaptiv-vaule("font-size", 36, 28, 1);
+                }
             }
         }
     }
 }
 
+.menu_active {
+    top: 0;
+
+}
+
 .call {
     display: flex;
     align-items: center;
-    @include adaptiv-vaule("font-size", 22, 1, 1);
-    @include adaptiv-vaule("padding-top", 42, 7, 1);
-    @include adaptiv-vaule("padding-bottom", 42, 7, 1);
-    @include adaptiv-vaule("padding-right", 115, 7, 1);
-    @include adaptiv-vaule("padding-left", 65, 7, 1);
-    background: $orange;
-    @include adaptiv-vaule("margin-left", 65, 1, 1);
 
     a {
+        @include adaptiv-vaule("padding-top", 42, 7, 1);
+        @include adaptiv-vaule("padding-bottom", 42, 7, 1);
+        @include adaptiv-vaule("padding-right", 115, 7, 1);
+        @include adaptiv-vaule("padding-left", 65, 7, 1);
+        background: $orange;
+        @include adaptiv-vaule("margin-left", 65, 1, 1);
         color: $white;
         font-weight: 500;
         white-space: nowrap;
+        transition: 0.4s;
+        @include adaptiv-vaule("font-size", 22, 1, 1);
+
+        &:hover {
+            background: $violet;
+            transition: 0.4s;
+        }
+
+        @include media ("<desktop") {
+            @include adaptiv-vaule("font-size", 36, 28, 1);
+            background: $violet;
+            margin: 0;
+            padding: 25px;
+            border-radius: 5px;
+        }
     }
 }

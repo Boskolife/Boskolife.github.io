@@ -69,10 +69,10 @@ body {
 }
 
 .cont {
-    max-width: 1290px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .first {
@@ -102,20 +102,43 @@ body {
         }
 
         h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
-            @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+            margin-bottom: 25px;
+
+            @include media ("<desktop") {
+                margin-bottom: 40px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 25px;
+            }
         }
 
         p {
-            @include adaptiv-vaule("margin-bottom", 55, 30, 1);
+            margin-bottom: 55px;
             max-width: 455px;
+            font-size: 18px;
 
             @include media ("<desktop") {
+                margin-bottom: 40px;
                 max-width: 100%;
                 text-align: center;
+                font-size: 15px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 25px;
+            }
+        }
+
+        .btn {
+            margin-bottom: 100px;
+
+            @include media ("<tablet") {
+                margin-bottom: 30px;
             }
         }
 
@@ -124,6 +147,15 @@ body {
 
             a:first-child {
                 margin-right: 30px;
+            }
+
+            a {
+                transition: 0.5s;
+
+                &:hover {
+                    transform: scale(1.3);
+                    transition: 0.5s;
+                }
             }
         }
     }
@@ -142,6 +174,8 @@ body {
 
 .guarantee {
     padding: 50px 0;
+    @include adaptiv-vaule("padding-top", 50, 1, 1);
+    padding-bottom: 50px;
     @include adaptiv-vaule("margin-top", 200, 50, 1);
     @include adaptiv-vaule("margin-bottom", 150, 50, 1);
     background: #1D1D1D;
@@ -173,14 +207,42 @@ body {
             max-width: 100%;
         }
 
-        h3,
+        h3 {
+            margin-bottom: 15px;
+
+            @include media ("<desktop") {
+                margin-bottom: 30px;
+            }
+        }
+
         h2 {
             margin-bottom: 15px;
+
+            @include media ("<desktop") {
+                margin-bottom: 5px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 20px;
+            }
         }
 
         p {
             margin-bottom: 30px;
             line-height: 21 / 18 * 100%;
+            font-size: 18px;
+
+            @include media ("<desktop") {
+                margin-bottom: 60px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 30px;
+            }
+
+            @include media ("<phone") {
+                font-size: 14px;
+            }
         }
 
         .btn {
@@ -193,7 +255,7 @@ body {
         img {
             position: absolute;
             @include adaptiv-vaule("top", -225, -30, 1);
-            left: 8%;
+            left: 0;
             width: 475px;
             height: 820px;
             @include adaptiv-vaule("width", 475, 200, 1);
@@ -210,7 +272,7 @@ body {
 
 .detail {
     @include adaptiv-vaule("padding-top", 100, 30, 1);
-    @include adaptiv-vaule("padding-bottom", 200, 120, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 40, 1);
     position: relative;
 
     .content {
@@ -224,18 +286,18 @@ body {
             position: absolute;
             bottom: -600px;
             right: 120px;
-            @include adaptiv-vaule("right", 120, -500, 1);
-            @include adaptiv-vaule("bottom", -600, -800, 1);
+            @include adaptiv-vaule("right", 120, -700, 1);
+            @include adaptiv-vaule("bottom", -600, -750, 1);
             z-index: 5;
             width: 830px;
             height: 830px;
-            @include adaptiv-vaule("width", 830, 390, 1);
-            @include adaptiv-vaule("height", 830, 390, 1);
+            @include adaptiv-vaule("width", 830, 440, 1);
+            @include adaptiv-vaule("height", 830, 350, 1);
 
             @include media ("<tablet") {
                 bottom: -440px;
-                @include adaptiv-vaule("bottom", -440, -300, 1);
-                @include adaptiv-vaule("left", 1, 10, 1);
+                @include adaptiv-vaule("bottom", -440, -350, 1);
+                @include adaptiv-vaule("left", 1, -12, 1);
             }
         }
     }
@@ -245,50 +307,77 @@ body {
         margin-right: 100px;
 
         @include media ("<desktop") {
-            max-width: 85%;
-            margin: 0 auto;
             text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        @include media ("<phone") {
+            margin: 0;
         }
 
         h3 {
             margin-bottom: 15px;
+
+            @include media ("<desktop") {
+                margin-bottom: 30px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 20px;
+            }
         }
 
         h2 {
             margin-bottom: 20px;
+
+            @include media ("<desktop") {
+                margin-bottom: 35px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 25px;
+            }
         }
 
         p {
             max-width: 374px;
             margin-bottom: 50px;
+            font-size: 18px;
 
             @include media ("<desktop") {
-                max-width: 100%;
-                text-align: center;
+                margin-bottom: 30px;
+                max-width: 630px;
+
+            }
+
+            @include media ("<phone") {
+                font-size: 14px;
+                margin: 0;
             }
         }
 
         .btn-wrap {
 
-            a:first-child {
-                margin-bottom: 25px;
-
-                @include media ("<desktop") {
-                    margin-right: 30px;
-                }
-
-                @include media ("<700px") {
-                    margin-right: 0px;
-                }
-            }
-
             .btn {
 
-                @include media ("<desktop") {
+                &:first-child {
+                    margin-right: 50px;
                     margin-bottom: 30px;
+
+                    @include media ("<635px") {
+                        margin-right: 0;
+
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 95px;
                 }
             }
         }
+
+
     }
 
     .icons {
@@ -317,7 +406,7 @@ body {
 
     .icon-card {
         max-width: 400px;
-        @include adaptiv-vaule("margin-bottom", 85, 25, 1);
+        @include adaptiv-vaule("margin-bottom", 85, 65, 1);
 
         @include media ("<phone") {
             text-align: start;
@@ -330,38 +419,76 @@ body {
         h4 {
             @include adaptiv-vaule("padding-bottom", 25, 15, 1);
         }
+
+        p {
+            font-size: 18px;
+        }
     }
 }
 
 
 .seo {
     position: relative;
-    transform: skewY(-5deg);
+    transform: skewY(-8deg);
     background-color: $white;
-    padding: 40px 0;
-    margin: 0 0 70px 0;
     overflow: hidden;
     border-top: 5px solid $violet;
+    @include adaptiv-vaule("padding-bottom", 90, 30, 1);
 
     @include media ("<tablet") {
         border: none;
     }
 
     .content {
-        height: 600px;
-        transform: skewY(5deg);
+        transform: skewY(8deg);
+        padding: 30px 0;
+
 
         @include media ("<tablet") {
+            margin-top: 200px;
+            height: 600px;
             display: flex;
             flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .seo-img {
+            margin: 0 -25px;
+
+            img {
+                position: absolute;
+                z-index: 3;
+                height: 750px;
+                top: -104px;
+                @include adaptiv-vaule("right", -265, -600, 1);
+                transform: skewY(-5deg);
+
+                @include media ("<tablet") {
+                    position: static;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
 
     .text {
-        padding-top: 180px;
+        @include adaptiv-vaule("padding-top", 180, 50, 1);
+        max-width: 385px;
 
         @include media ("<tablet") {
-            padding: 0;
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: 5px;
+            font-size: 16px;
+
+            @include media ("<tablet") {
+                margin-bottom: 20px;
+            }
         }
 
         h2 {
@@ -371,7 +498,7 @@ body {
 
         p {
             @include adaptiv-vaule("margin-bottom", 60, 30, 1);
-            max-width: 374px;
+
         }
 
         .btn {
@@ -379,25 +506,4 @@ body {
             margin: 0;
         }
     }
-
-    .seo-img {
-
-        margin: 0 -25px;
-
-        img {
-            position: absolute;
-            object-fit: cover;
-            top: -120px;
-            @include adaptiv-vaule("right", -265, -600, 1);
-
-            @include media ("<tablet") {
-                position: static;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
 }
