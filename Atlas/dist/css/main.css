@@ -880,6 +880,9 @@ html {
   transform: translate(-50%);
   background: #3d3d3d;
   background: radial-gradient(circle, rgba(61, 61, 61, 0.753939) 15%, black 100%); }
+  @media (max-width: 767px) {
+    .bg {
+      background: radial-gradient(ellipse, rgba(61, 61, 61, 0.753939) 15%, black 100%); } }
 
 .btn {
   position: relative;
