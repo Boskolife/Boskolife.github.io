@@ -201,7 +201,17 @@ html {
     @include adaptiv-vaule("margin-bottom", 150, 50, 1);
     background: #1D1D1D;
     transform: skewY(-5deg);
-    border-top: 3px solid $orange;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 20px solid transparent;
+        border-left: 100vw solid $orange;
+        border-top: 0px solid $orange;
+    }
 
     .content {
         display: flex;
@@ -318,7 +328,7 @@ html {
             bottom: -600px;
             right: 120px;
             @include adaptiv-vaule("right", 120, -700, 1);
-            @include adaptiv-vaule("bottom", -600, -750, 1);
+            @include adaptiv-vaule("bottom", -600, -550, 1);
             z-index: 5;
             width: 830px;
             height: 830px;
@@ -472,12 +482,23 @@ html {
     transform: skewY(-8deg);
     background-color: $white;
     overflow: hidden;
-    border-top: 5px solid $violet;
     @include adaptiv-vaule("padding-bottom", 90, 30, 1);
 
-    @include media ("<tablet") {
-        border: none;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        border: 20px solid transparent;
+        border-left: 100vw solid $violet;
+        border-top: 0px solid $violet;
+
+        @include media ("<phone") {
+            display: none;
+        }
     }
+
 
     .content {
         transform: skewY(8deg);
@@ -497,7 +518,7 @@ html {
 
             img {
                 position: absolute;
-                z-index: 3;
+                z-index: 2;
                 height: 750px;
                 top: -104px;
                 @include adaptiv-vaule("right", -265, -600, 1);

@@ -602,7 +602,8 @@ header {
     .burger-wrap {
       display: block;
       background: #ED863C;
-      width: 58px;
+      /* Только если меньше контейнера */
+      width: 100px;
       /* Только если меньше контейнера */
       height: 110px;
       display: -ms-flexbox;
@@ -611,6 +612,9 @@ header {
       justify-content: center;
       -ms-flex-align: center;
       align-items: center; } }
+  @media (max-width: 1023px) and (max-width: 1290px) {
+    .burger-wrap {
+      width: calc(65px + 35 * ((100vw - calc(320px)) / 970)); } }
   @media (max-width: 1023px) and (max-width: 1290px) {
     .burger-wrap {
       height: calc(58px + 52 * ((100vw - calc(320px)) / 970)); } }
@@ -1032,7 +1036,7 @@ html {
   background: #1D1D1D;
   -webkit-transform: skewY(-5deg);
   transform: skewY(-5deg);
-  border-top: 3px solid #ED863C; }
+  position: relative; }
   @media (max-width: 1290px) {
     .guarantee {
       padding-top: calc(1px + 49 * ((100vw - calc(320px)) / 970)); } }
@@ -1042,6 +1046,14 @@ html {
   @media (max-width: 1290px) {
     .guarantee {
       margin-bottom: calc(50px + 100 * ((100vw - calc(320px)) / 970)); } }
+  .guarantee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 20px solid transparent;
+    border-left: 100vw solid #ED863C;
+    border-top: 0px solid #ED863C; }
   .guarantee .content {
     display: -ms-flexbox;
     display: flex;
@@ -1176,7 +1188,7 @@ html {
           right: calc(-700px + 820 * ((100vw - calc(320px)) / 970)); } }
       @media (max-width: 1290px) {
         .detail .content .img-cover {
-          bottom: calc(-750px + 150 * ((100vw - calc(320px)) / 970)); } }
+          bottom: calc(-550px + -50 * ((100vw - calc(320px)) / 970)); } }
       @media (max-width: 1290px) {
         .detail .content .img-cover {
           width: calc(440px + 390 * ((100vw - calc(320px)) / 970)); } }
@@ -1295,15 +1307,23 @@ html {
   transform: skewY(-8deg);
   background-color: #FFFFFF;
   overflow: hidden;
-  border-top: 5px solid #401FCF;
   /* Только если меньше контейнера */
   padding-bottom: 90px; }
   @media (max-width: 1290px) {
     .seo {
       padding-bottom: calc(30px + 60 * ((100vw - calc(320px)) / 970)); } }
-  @media (max-width: 767px) {
-    .seo {
-      border: none; } }
+  .seo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border: 20px solid transparent;
+    border-left: 100vw solid #401FCF;
+    border-top: 0px solid #401FCF; }
+    @media (max-width: 479px) {
+      .seo::before {
+        display: none; } }
   .seo .content {
     -webkit-transform: skewY(8deg);
     transform: skewY(8deg);
@@ -1322,7 +1342,7 @@ html {
       margin: 0 -25px; }
       .seo .content .seo-img img {
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         height: 750px;
         top: -104px;
         /* Только если меньше контейнера */

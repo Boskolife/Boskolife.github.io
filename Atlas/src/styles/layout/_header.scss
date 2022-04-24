@@ -10,7 +10,7 @@ header {
     @include media ("<desktop") {
         display: block;
         background: $orange;
-        width: 58px;
+        @include adaptiv-vaule("width", 100, 65, 1);
         @include adaptiv-vaule("height", 110, 58, 1);
         display: flex;
         justify-content: center;
