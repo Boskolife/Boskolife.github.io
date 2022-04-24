@@ -709,111 +709,165 @@ html {
         padding: 50px 0 80px 0;
     }
 
-    .content {
+    .title-text {
+        text-align: center;
+        margin-bottom: 60px;
 
-        .title-text {
-            text-align: center;
-            margin-bottom: 60px;
+        @include media ("<tablet") {
+            margin-bottom: 30px;
+        }
+    }
 
-            h1 {
-                margin-bottom: 20px;
+    .headline {
+        margin-bottom: 20px;
 
-                @include media ("<desktop") {
-                    margin-bottom: 40px;
-                }
-
-                @include media ("<tablet") {
-                    margin-bottom: 25px;
-                }
-            }
-
-            p {
-                max-width: 840px;
-                margin: 0 auto;
-            }
+        @include media ("<desktop") {
+            margin-bottom: 40px;
         }
 
-        .main-text {
-            display: flex;
+        @include media ("<tablet") {
+            margin-bottom: 25px;
         }
+    }
 
-        .img {
-            width: 50%;
-            position: relative;
-            z-index: 1;
-            padding-top: 20px;
-        }
+    .description {
+        max-width: 840px;
+        margin: 0 auto;
+    }
 
-        .text {
-            width: 50%;
+    .main-text {
+        display: flex;
+        position: relative;
+        margin-bottom: 100px;
 
-            /* p {
-                max-width: 400px;
-                font-size: 20px;
-                line-height: 18 / 16 * 100%;
-
-                @include media ("<desktop") {
-                    font-size: 16px;
-                }
-
-                @include media ("<phone") {
-                    font-size: 14px;
-                }
-            } */
-        }
-
-        /* .block-text {
-            @include adaptiv-vaule("height", 400, 150, 1);
-            width: 1200px;
-            display: flex;
-            position: relative;
-            top: 0;
-            left: -280px;
+        @include media ("<870px") {
+            flex-direction: column;
             align-items: center;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-            transform: skewY(-5deg);
-            background: #1D1D1D;
-            margin-bottom: 60px;
+        }
+    }
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                border: 20px solid transparent;
-                border-right: 100vw solid $orange;
-                border-top: 0px solid $orange;
+    .img {
+        width: 50%;
+        position: relative;
+        z-index: 2;
+        padding: 40px 20px 0 0;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include media ("<870px") {
+            min-width: 300px;
+            min-height: 380px;
+            padding: 0 0 20px 0;
+            z-index: 1;
+        }
+
+        @include media ("<phone") {
+            padding-bottom: 0px;
+        }
+    }
+
+    .block {
+        @include adaptiv-vaule("height", 300, 200, 1);
+        width: 1200px;
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 190px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        transform: skewY(-5deg);
+        background: #1D1D1D;
+
+        @include media ("<870px") {
+            left: -25px;
+            @include adaptiv-vaule("top", 520, 260, 1);
+            height: 240px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 5px solid transparent;
+            border-right: 100vw solid $orange;
+            border-top: 0px solid $orange;
+        }
+    }
+
+    .text {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            width: 70%;
+        }
+
+        @include media ("<375px") {
+            width: 100%;
+        }
+
+
+        p {
+            max-width: 500px;
+            font-size: 20px;
+            line-height: 18 / 16 * 100%;
+
+            @include media ("<desktop") {
+                font-size: 16px;
             }
 
-            p {
-                max-width: 400px;
-                @include adaptiv-vaule("max-width", 400, 300, 1);
-                @include adaptiv-vaule("margin-left", 500, 150, 1);
-                ;
-                transform: skewY(5deg);
-                font-size: 20px;
-                line-height: 18 / 16 * 100%;
-
-                @include media ("<desktop") {
-                    font-size: 16px;
-                }
-
-                @include media ("<phone") {
-                    font-size: 14px;
-                }
+            @include media ("<phone") {
+                font-size: 14px;
             }
+        }
+    }
 
-        } */
+    .block-text {
+        @include adaptiv-vaule("padding-top", 160, 100, 1);
+        @include adaptiv-vaule("padding-bottom", 175, 30, 1);
 
-        /* .sub-text {
+        @include media ("<870px") {
+            margin-top: -20px;
+            padding-top: 0;
+            padding-bottom: 100px;
+        }
+    }
 
-            p {
-                @include adaptiv-vaule("margin-left", 215, -130, 1);
+    .sub-text {
 
-                &:first-child {
-                    margin-bottom: 50px;
-                }
+        p:first-child {
+            margin-bottom: 50px;
+
+            @include media ("<phone") {
+                margin-bottom: 20px;
             }
-        } */
+        }
+    }
+
+    .bottom-text {
+        text-align: center;
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 50px;
+
+            @include media ("<phone") {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+        }
     }
 }
