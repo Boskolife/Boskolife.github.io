@@ -2,6 +2,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 #wrapper {
     background: $black;
@@ -101,8 +105,21 @@ body {
             align-items: center;
         }
 
-        h3 {
+        .title {
             margin-bottom: 15px;
+            font-size: 22px;
+
+            @include media ("<desktop") {
+                font-size: 18px;
+            }
+
+            @include media ("<phone") {
+                font-size: 15px;
+            }
+
+            line-height: 25 / 22 * 100%;
+            font-weight: 500;
+            color: $gray;
         }
 
         h1 {
@@ -207,12 +224,22 @@ body {
             max-width: 100%;
         }
 
-        h3 {
+        .title {
+            font-size: 22px;
             margin-bottom: 15px;
+            line-height: 25 / 22 * 100%;
+            font-weight: 500;
+            color: $gray;
 
             @include media ("<desktop") {
                 margin-bottom: 30px;
+                font-size: 18px;
             }
+
+            @include media ("<phone") {
+                font-size: 15px;
+            }
+
         }
 
         h2 {
@@ -316,15 +343,24 @@ body {
             margin: 0;
         }
 
-        h3 {
+        .title {
             margin-bottom: 15px;
+            font-size: 22px;
+            line-height: 25 / 22 * 100%;
+            font-weight: 500;
+            color: $gray;
 
             @include media ("<desktop") {
                 margin-bottom: 30px;
+                font-size: 18px
             }
 
             @include media ("<tablet") {
                 margin-bottom: 20px;
+            }
+
+            @include media ("<phone") {
+                font-size: 15px;
             }
         }
 
