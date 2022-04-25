@@ -116,11 +116,6 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 175px;
-
-        @include media ("<desktop") {
-            padding-top: 150px;
-        }
 
         @include media ("<tablet") {
             align-items: center;
@@ -199,7 +194,7 @@ body {
             transition: 0.5s;
 
             &:hover {
-                transform: scale(1.3);
+                transform: scale(1.1);
                 transition: 0.5s;
             }
         }
@@ -376,7 +371,7 @@ body {
         }
     }
 
-    .img-cover {
+    /* .img-cover {
         position: absolute;
         z-index: 5;
         @include adaptiv-vaule("right", 120, -700, 1);
@@ -388,7 +383,7 @@ body {
             @include adaptiv-vaule("bottom", -440, -350, 1);
             @include adaptiv-vaule("left", 1, -12, 1);
         }
-    }
+    } */
 
     .text {
         max-width: 386px;
@@ -485,33 +480,27 @@ body {
 
     .icons {
         display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        gap: 30px;
 
         @include media ("<desktop") {
-            text-align: start;
-        }
-
-        @include media ("<600px") {
-            flex-wrap: wrap;
-        }
-    }
-
-    .card-column {
-
-        &:first-child {
-            margin-right: 30px;
-
-            @include media ("<600px") {
-                margin-right: 0;
-            }
+            width: 100%;
         }
     }
 
     .icon-card {
         max-width: 400px;
-        @include adaptiv-vaule("margin-bottom", 85, 65, 1);
+        margin-bottom: 85px;
+
+        @include media ("<1000px") {
+            max-width: 300px;
+            margin-bottom: 60px;
+        }
+
 
         @include media ("<phone") {
-            text-align: start;
+            max-width: 100%;
         }
 
         img {
@@ -528,6 +517,7 @@ body {
 
         p {
             font-size: 18px;
+            max-width: 350px;
         }
     }
 }
@@ -537,8 +527,6 @@ body {
     position: relative;
     transform: skewY(-4deg);
     background-color: $white;
-    overflow: hidden;
-    @include adaptiv-vaule("padding-bottom", 140, 30, 1);
 
     @include media (">1750px") {
         transform: skewY(-4deg);
@@ -563,44 +551,96 @@ body {
 
     .content {
         transform: skewY(4deg);
-        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         @include media ("<tablet") {
-            margin-top: 200px;
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
         }
     }
 
-    .seo-img {
-        margin: 0 -25px;
+    .img {
+        width: 50%;
+        height: 100%;
+        transform: skewY(-4deg);
 
-        img {
-            position: absolute;
-            z-index: 2;
+        @include media ("<tablet") {
+            overflow: hidden;
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    .img-wrap {
+        position: relative;
+        height: 100%;
+        max-width: 690px;
+        top: -21px;
+        @include adaptiv-vaule("right", -200, -300, 1);
+        transform: skewY(0deg);
+
+        @include media ("<1220px") {
+            top: -14px;
+        }
+
+        @include media ("<tablet") {
+            top: 0;
+            left: 0;
             height: 100%;
-            width: 680px;
-            top: -95px;
-            @include adaptiv-vaule("right", -265, -600, 1);
-            transform: skewY(-5deg);
+            width: 100%;
+            transform: skewY(0deg);
 
-            @include media ("<tablet") {
-                position: static;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
+        }
+    }
+
+    .img-cover {
+        position: absolute;
+        z-index: 6;
+        top: -175px;
+        @include adaptiv-vaule("right", -100, -500, 1);
+        max-height: 830px;
+        max-width: 830px;
+
+        @include media ("<desktop") {
+            top: 0;
+            max-height: 600px;
+            max-width: 600px;
+        }
+
+        @include media ("<tablet") {
+            top: -40px;
+            left: 50%;
+            transform: translate(-50%);
+
+        }
+
+        @include media ("<550px") {
+            max-height: 400px;
+            max-width: 400px;
+        }
+
+        @include media ("<phone") {
+            max-height: 350px;
+            max-width: 350px;
         }
     }
 
     .text {
-        @include adaptiv-vaule("padding-top", 180, 50, 1);
-        max-width: 385px;
+        /*  max-width: 385px; */
+        width: 40%;
+        padding-bottom: 100px;
+        padding-top: 100px;
+        overflow: hidden;
+        margin-right: 30px;
 
         @include media ("<tablet") {
             text-align: center;
+            padding-top: 50px;
+            width: 100%;
+
         }
 
     }

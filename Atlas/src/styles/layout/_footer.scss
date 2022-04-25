@@ -2,31 +2,16 @@ footer {
     position: relative;
     z-index: 10;
     background: $violet;
-    margin-top: 50px;
+    margin-top: 10px;
 
-    @include media (">1750px") {
-        margin-top: 50px;
-    }
-
-    @include media ("<1230px") {
-        margin-top: 60px;
-    }
-
-    @include media ("<desktop") {
-        margin-top: 30px;
-    }
-
-    @include media ("<tablet") {
-        margin-top: 15px;
-    }
 
     &:before {
         content: '';
         position: absolute;
-        top: -150px;
+        top: -99px;
         width: 0;
         height: 0;
-        border-bottom: 150px solid $violet;
+        border-bottom: 100px solid $violet;
         border-left: 100vw solid transparent;
 
 
@@ -40,36 +25,23 @@ footer {
             border-bottom: 147px solid $violet;
         }
 
-        @include media ("<1440px") {
-            top: -200px;
-            border-bottom: 201px solid $violet;
-        }
-
-        @include media ("<1230px") {
-            top: -150px;
-            border-bottom: 151px solid $violet;
-        }
-
-        @include media ("<desktop") {
-            top: -102px;
-            border-bottom: 102px solid $violet;
-        }
 
         @include media ("<tablet") {
-            top: -69px;
-            border-bottom: 70px solid $violet;
-        }
-
-        @include media ("<phone") {
             top: -50px;
             border-bottom: 50px solid $violet;
         }
+
+
     }
 }
 
 .footer-top {
     padding-top: 40px;
     padding-bottom: 40px;
+
+    @include media ("<phone") {
+        padding-top: 20px;
+    }
 
     .content {
         display: flex;
@@ -130,11 +102,16 @@ footer {
 
                 &:hover {
                     color: $white;
+
+                    svg {
+                        fill: $white;
+                    }
                 }
             }
 
-            img {
+            svg {
                 margin-right: 15px;
+                fill: $gray;
             }
 
             p {
@@ -178,27 +155,11 @@ footer {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     @include media ("<tablet") {
         flex-direction: column;
         text-align: center;
-    }
-
-    a {
-        font-size: 12px;
-
-        &:hover {
-            color: $white;
-        }
-
-        @include media ("<desktop") {
-            font-size: 10px;
-        }
-
-        @include media ("<tablet") {
-            font-size: 12px;
-            margin-bottom: 30px;
-        }
     }
 
     p {
@@ -209,6 +170,30 @@ footer {
         }
     }
 
+    span {
+
+        a {
+            font-size: 12px;
+
+            &:hover {
+                color: $white;
+            }
+
+            @include media ("<desktop") {
+                font-size: 10px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 12px;
+            }
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 30px;
+        }
+    }
+
+    span,
     a,
     p {
         color: $gray;
