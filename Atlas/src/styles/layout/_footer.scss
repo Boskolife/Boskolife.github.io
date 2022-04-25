@@ -2,7 +2,7 @@ footer {
     position: relative;
     z-index: 10;
     background: $violet;
-    margin-top: 87px;
+    margin-top: 50px;
 
     @include media (">1750px") {
         margin-top: 50px;
@@ -23,10 +23,10 @@ footer {
     &:before {
         content: '';
         position: absolute;
-        top: -275px;
+        top: -150px;
         width: 0;
         height: 0;
-        border-bottom: 276px solid $violet;
+        border-bottom: 150px solid $violet;
         border-left: 100vw solid transparent;
 
 

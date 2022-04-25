@@ -123,6 +123,11 @@ header {
         padding: 0 25px 0 0;
     }
 
+    img {
+        width: 90%;
+        height: 90%;
+    }
+
     @include media ("<highscreen") {
         height: 100px;
         width: 120px;
@@ -133,8 +138,8 @@ header {
     }
 
     @include media ("<1250px") {
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
     }
 
     @include media ("<desktop") {
@@ -230,12 +235,16 @@ header {
         a {
             font-weight: 500;
             white-space: nowrap;
-            @include adaptiv-vaule("font-size", 22, 1, 1);
+            font-size: 22px;
             color: $gray;
 
             &:hover {
                 color: $white;
                 transition: 0.3s;
+            }
+
+            @include media ("<1250px") {
+                font-size: 16px;
             }
 
             @include media ("<1000px") {
@@ -273,8 +282,7 @@ header {
         white-space: nowrap;
         transition: 0.4s;
         font-size: 22px;
-        height: 110px;
-        width: 310px;
+        padding: 43px 116px 43px 65px;
 
         &:hover {
             background: $violet;
@@ -282,19 +290,11 @@ header {
         }
 
         @include media ("<highscreen") {
-            height: 100px;
-            width: 280px;
-            font-size: 16px;
+            padding: 35px 45px 35px 45px;
         }
 
         @include media ("<1250px") {
-            height: 100px;
-            width: 265px;
-        }
-
-        @include media ("<desktop") {
-            height: 80px;
-            width: 250px;
+            font-size: 16px;
         }
 
         @include media ("<1000px") {
@@ -304,8 +304,6 @@ header {
             padding: 25px;
             border-radius: 5px;
             font-size: 16px;
-            height: 100px;
-            width: 280px;
 
             &:hover {
                 background: #2e1699;
