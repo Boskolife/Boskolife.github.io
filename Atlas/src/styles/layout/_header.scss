@@ -125,11 +125,7 @@ header {
     }
 
     @include media ("<highscreen") {
-        padding: 15px 20px 15px 90px;
-    }
-
-    @include media ("<1250px") {
-        padding: 11px 10px 10px 50px;
+        padding: 10px 20px 10px 90px;
     }
 
     @include media ("<desktop") {
