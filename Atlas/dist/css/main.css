@@ -1689,6 +1689,8 @@ footer {
             font-size: 30px; } }
       .footer-top .content .contacts a {
         color: #B3B3B3; }
+        .footer-top .content .contacts a:hover {
+          color: #FFFFFF; }
       .footer-top .content .contacts img {
         margin-right: 15px; }
       .footer-top .content .contacts p {
@@ -1725,6 +1727,8 @@ footer {
       text-align: center; } }
   .terms a {
     font-size: 12px; }
+    .terms a:hover {
+      color: #FFFFFF; }
     @media (max-width: 1024px) {
       .terms a {
         font-size: 10px; } }

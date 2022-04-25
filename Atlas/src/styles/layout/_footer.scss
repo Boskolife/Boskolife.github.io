@@ -127,6 +127,10 @@ footer {
 
             a {
                 color: $gray;
+
+                &:hover {
+                    color: $white;
+                }
             }
 
             img {
@@ -181,8 +185,11 @@ footer {
     }
 
     a {
-
         font-size: 12px;
+
+        &:hover {
+            color: $white;
+        }
 
         @include media ("<desktop") {
             font-size: 10px;
