@@ -2,9 +2,9 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 #wrapper {
     background: $black;
@@ -23,12 +23,13 @@ html {
     top: 0;
     left: 50%;
     z-index: 0;
+
     transform: translate(-50%);
     background: rgb(61, 61, 61);
     background: radial-gradient(circle, rgba(61, 61, 61, 0.7539390756302521) 15%, rgba(0, 0, 0, 1) 100%);
 
-    @include media ("<tablet") {
-        background: radial-gradient(ellipse, rgba(61, 61, 61, 0.7539390756302521) 15%, rgba(0, 0, 0, 1) 100%);
+    @include media ("<desktop") {
+        background: radial-gradient(ellipse, rgba(61, 61, 61, 0.7539390756302521) -10%, rgba(0, 0, 0, 1) 100%);
     }
 }
 
@@ -46,6 +47,7 @@ html {
     min-width: 270px;
     white-space: nowrap;
     display: inline-block;
+    font-size: 18px;
 
 
     &:hover {
@@ -86,201 +88,158 @@ html {
 }
 
 .first {
-    padding: 75px 0;
+    padding: 75px 0 40px 0;
     position: relative;
+
+    @include media ("<desktop") {
+        padding: 130px 0 30px 0;
+    }
+
+    @include media ("<tablet") {
+        padding: 60px 0 35px 0;
+    }
 
     .content {
         display: flex;
-        @include adaptiv-vaule("gap", 230, 1, 1);
+        justify-content: space-between;
 
-        @include media ("<desktop") {
+
+        @include media ("<tablet") {
             flex-direction: column-reverse;
             align-items: center;
-            gap: 0;
         }
     }
 
     .text {
-        max-width: 590px;
+        width: 49%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        padding-top: 175px;
 
         @include media ("<desktop") {
+            padding-top: 150px;
+        }
+
+        @include media ("<tablet") {
             align-items: center;
+            width: 100%;
+            padding-top: 0;
         }
 
-        .title {
-            margin-bottom: 15px;
-            font-size: 22px;
+    }
 
-            @include media ("<desktop") {
-                font-size: 18px;
-            }
+    .title {
+        margin-bottom: 15px;
+        font-size: 22px;
 
-            @include media ("<phone") {
-                font-size: 15px;
-            }
-
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
-        }
-
-        .headline {
-            margin-bottom: 25px;
-
-            @include media ("<desktop") {
-                margin-bottom: 40px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 25px;
-            }
-        }
-
-        .description {
-            margin-bottom: 55px;
-            max-width: 455px;
+        @include media ("<desktop") {
             font-size: 18px;
-
-            @include media ("<desktop") {
-                margin-bottom: 40px;
-                max-width: 100%;
-                text-align: center;
-                font-size: 15px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 25px;
-            }
         }
 
-        .btn {
-            margin-bottom: 100px;
-
-            @include media ("<tablet") {
-                margin-bottom: 30px;
-            }
+        @include media ("<phone") {
+            font-size: 15px;
         }
 
-        .links-app {
-            display: flex;
+        line-height: 25 / 22 * 100%;
+        font-weight: 500;
+        color: $gray;
+    }
 
-            a:first-child {
-                margin-right: 30px;
-            }
+    .headline {
+        margin-bottom: 25px;
 
-            a {
-                transition: 0.5s;
-
-                &:hover {
-                    transform: scale(1.3);
-                    transition: 0.5s;
-                }
-            }
+        @include media ("<desktop") {
+            margin-bottom: 40px;
         }
 
-        .title {
-            margin-bottom: 15px;
-            font-size: 22px;
-
-            @include media ("<desktop") {
-                font-size: 18px;
-            }
-
-            @include media ("<phone") {
-                font-size: 15px;
-            }
-
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
-        }
-
-        .headline {
+        @include media ("<tablet") {
             margin-bottom: 25px;
+        }
+    }
 
-            @include media ("<desktop") {
-                margin-bottom: 40px;
-            }
+    .description {
+        margin-bottom: 55px;
+        max-width: 455px;
+        font-size: 18px;
 
-            @include media ("<tablet") {
-                margin-bottom: 25px;
-            }
+        @include media ("<tablet") {
+            margin-bottom: 40px;
+            max-width: 100%;
+            text-align: center;
+            font-size: 15px;
         }
 
-        .description {
-            margin-bottom: 55px;
-            max-width: 455px;
-            font-size: 18px;
+        @include media ("<tablet") {
+            margin-bottom: 25px;
+        }
+    }
 
-            @include media ("<desktop") {
-                margin-bottom: 40px;
-                max-width: 100%;
-                text-align: center;
-                font-size: 15px;
-            }
+    .btn {
+        margin-bottom: 100px;
 
-            @include media ("<tablet") {
-                margin-bottom: 25px;
-            }
+        @include media ("<desktop") {
+            margin-bottom: 60px;
         }
 
-        .btn {
-            margin-bottom: 100px;
+        @include media ("<tablet") {
+            margin-bottom: 30px;
+        }
+    }
 
-            @include media ("<tablet") {
-                margin-bottom: 30px;
-            }
+    .links-app {
+        display: flex;
+
+        a:first-child {
+            margin-right: 30px;
         }
 
-        .links-app {
-            display: flex;
+        a {
+            transition: 0.5s;
 
-            a:first-child {
-                margin-right: 30px;
-            }
-
-            a {
+            &:hover {
+                transform: scale(1.3);
                 transition: 0.5s;
-
-                &:hover {
-                    transform: scale(1.3);
-                    transition: 0.5s;
-                }
             }
         }
     }
 
     .img-wrap {
-        width: 50%;
+        width: 49%;
 
         @include media ("<desktop") {
-            width: 100%;
             text-align: center;
             min-height: 350px;
-            margin-bottom: 20px;
+            margin-left: 20px
+        }
+
+        @include media ("<tablet") {
+            margin: 0 0 10px 0;
+            width: 100%;
         }
     }
 }
 
 .guarantee {
     @include adaptiv-vaule("padding-top", 50, 1, 1);
-    padding-bottom: 50px;
+    padding-bottom: 105px;
     @include adaptiv-vaule("margin-top", 200, 50, 1);
     @include adaptiv-vaule("margin-bottom", 150, 50, 1);
     background: #1D1D1D;
     transform: skewY(-5deg);
     position: relative;
 
+    @include media ("<desktop") {
+        padding-bottom: 50px;
+    }
+
     &::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        border: 20px solid transparent;
+        border: 10px solid transparent;
         border-left: 100vw solid $orange;
         border-top: 0px solid $orange;
     }
@@ -303,138 +262,111 @@ html {
         @include media ("<tablet") {
             text-align: center;
             min-height: 640px;
-            @include adaptiv-vaule("padding-top", 700, 325, 1);
+            max-width: 100%;
+            @include adaptiv-vaule("padding-top", 700, 330, 1);
         }
 
         @include media ("<phone") {
             max-width: 100%;
         }
+    }
 
-        .title {
-            font-size: 22px;
-            margin-bottom: 15px;
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
+    .title {
+        font-size: 22px;
+        margin-bottom: 15px;
+        line-height: 25 / 22 * 100%;
+        font-weight: 500;
+        color: $gray;
 
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                font-size: 18px;
-            }
-
-            @include media ("<phone") {
-                font-size: 15px;
-            }
+        @include media ("<desktop") {
+            margin-bottom: 5px;
+            font-size: 16px;
         }
 
-        .head-line {
-            margin-bottom: 15px;
-
-            @include media ("<desktop") {
-                margin-bottom: 5px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 20px;
-            }
+        @include media ("<phone") {
+            font-size: 15px;
         }
+    }
 
-        .description {
+    .headline {
+        margin-bottom: 15px;
+
+        @include media ("<desktop") {
             margin-bottom: 30px;
-            line-height: 21 / 18 * 100%;
-            font-size: 18px;
-
-            @include media ("<desktop") {
-                margin-bottom: 60px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 30px;
-            }
-
-            @include media ("<phone") {
-                font-size: 14px;
-            }
+            width: 300px;
         }
 
-        .btn {
-            margin-bottom: 0;
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+
+    .description {
+        margin-bottom: 30px;
+        line-height: 21 / 18 * 100%;
+        font-size: 18px;
+
+        @include media ("<desktop") {
+            margin-bottom: 60px;
         }
 
-        .title {
-            font-size: 22px;
-            margin-bottom: 15px;
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
-
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                font-size: 18px;
-            }
-
-            @include media ("<phone") {
-                font-size: 15px;
-            }
-        }
-
-        .head-line {
-            margin-bottom: 15px;
-
-            @include media ("<desktop") {
-                margin-bottom: 5px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 20px;
-            }
-        }
-
-        .description {
+        @include media ("<tablet") {
             margin-bottom: 30px;
-            line-height: 21 / 18 * 100%;
-            font-size: 18px;
-
-            @include media ("<desktop") {
-                margin-bottom: 60px;
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 30px;
-            }
-
-            @include media ("<phone") {
-                font-size: 14px;
-            }
         }
 
-        .btn {
-            margin-bottom: 0;
+        @include media ("<phone") {
+            font-size: 14px;
         }
+    }
+
+    .btn {
+        margin-bottom: 0;
     }
 
     .img-wrap {
 
         img {
             position: absolute;
-            @include adaptiv-vaule("top", -225, -30, 1);
+            top: -160px;
             left: 0;
             @include adaptiv-vaule("width", 475, 200, 1);
             @include adaptiv-vaule("height", 820, 350, 1);
             z-index: 2;
 
+            @include media ("<widescreen") {
+                top: -170px;
+            }
+
+            @include media ("<desktop") {
+                top: -100px;
+            }
+
             @include media ("<tablet") {
+                top: -70px;
                 left: 50%;
                 transform: translate(-50%)
+            }
+
+            @include media ("<phone") {
+                top: -50px;
+            }
+
+            @include media ("<325px") {
+                top: -30px;
             }
         }
     }
 }
 
 .detail {
-    @include adaptiv-vaule("padding-top", 100, 30, 1);
+    padding-top: 100px;
     @include adaptiv-vaule("padding-bottom", 200, 40, 1);
     position: relative;
+
+    @include media ("<desktop") {
+        padding-top: 30px;
+    }
 
     .content {
         display: flex;
@@ -471,28 +403,27 @@ html {
         @include media ("<phone") {
             margin: 0;
         }
+    }
 
-        .title {
-            margin-bottom: 15px;
-            font-size: 22px;
-            line-height: 25 / 22 * 100%;
-            font-weight: 500;
-            color: $gray;
+    .title {
+        margin-bottom: 15px;
+        font-size: 22px;
+        line-height: 25 / 22 * 100%;
+        font-weight: 500;
+        color: $gray;
 
-            @include media ("<desktop") {
-                margin-bottom: 30px;
-                font-size: 18px
-            }
-
-            @include media ("<tablet") {
-                margin-bottom: 20px;
-            }
-
-            @include media ("<phone") {
-                font-size: 15px;
-            }
+        @include media ("<desktop") {
+            margin-bottom: 30px;
+            font-size: 16px
         }
 
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+
+        @include media ("<phone") {
+            font-size: 15px;
+        }
     }
 
     .headline {
@@ -555,11 +486,8 @@ html {
     .icons {
         display: flex;
 
-
-
         @include media ("<desktop") {
             text-align: start;
-            justify-content: center;
         }
 
         @include media ("<600px") {
@@ -590,8 +518,12 @@ html {
             margin-bottom: 30px;
         }
 
-        h4 {
-            @include adaptiv-vaule("padding-bottom", 25, 15, 1);
+        h3 {
+            margin-bottom: 25px;
+
+            @include media ("<phone") {
+                margin-bottom: 20px;
+            }
         }
 
         p {
@@ -606,7 +538,12 @@ html {
     transform: skewY(-8deg);
     background-color: $white;
     overflow: hidden;
-    @include adaptiv-vaule("padding-bottom", 90, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 30, 1);
+
+    @include media (">1750px") {
+        transform: skewY(0deg);
+        padding-bottom: 40px;
+    }
 
     &::before {
         content: '';
@@ -628,6 +565,9 @@ html {
         transform: skewY(8deg);
         padding: 30px 0;
 
+        @include media (">1750px") {
+            transform: skewY(0deg);
+        }
 
         @include media ("<tablet") {
             margin-top: 200px;
@@ -644,10 +584,15 @@ html {
         img {
             position: absolute;
             z-index: 2;
-            height: 750px;
-            top: -104px;
+            height: 800px;
+            top: -95px;
             @include adaptiv-vaule("right", -265, -600, 1);
             transform: skewY(-5deg);
+
+            @include media (">1750px") {
+                transform: skewY(0deg);
+                top: -40px;
+            }
 
             @include media ("<tablet") {
                 position: static;
@@ -681,10 +626,26 @@ html {
     .headline {
         color: $black;
         margin-bottom: 20px;
+
+        @include media ("<desktop") {
+            margin-bottom: 30px;
+        }
+
+        @include media ("<phone") {
+            margin-bottom: 20px;
+        }
     }
 
     .description {
         @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+
+        p {
+            font-size: 18px;
+
+            @include media ("<phone") {
+                font-size: 14px;
+            }
+        }
 
     }
 

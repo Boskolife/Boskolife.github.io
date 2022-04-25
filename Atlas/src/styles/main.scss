@@ -2,7 +2,8 @@ $breakpoints: ('xs-phone': 321px,
 	'phone': 481px,
 	'tablet': 769px,
 	'desktop': 1025px,
-	'widescreen': 1200px);
+	'widescreen': 1200px,
+	'highscreen': 1440px);
 
 // keywords
 $media-expressions: ('screen': 'screen',
