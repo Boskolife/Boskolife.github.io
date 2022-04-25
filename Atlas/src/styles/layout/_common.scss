@@ -525,124 +525,50 @@ body {
 
 .seo {
     position: relative;
-    transform: skewY(-4deg);
+    transform: skewY(-5deg);
     background-color: $white;
-
-    @include media (">1750px") {
-        transform: skewY(-4deg);
-        padding-bottom: 40px;
-    }
+    margin: 55px 0;
 
     &::before {
         content: '';
         position: absolute;
-        top: 0;
+        top: -10px;
         left: 0;
-        z-index: 3;
-        border: 20px solid transparent;
+        border: 10px solid transparent;
         border-left: 100vw solid $violet;
-        border-top: 0px solid $violet;
-
-        @include media ("<phone") {
-            display: none;
-        }
+        border-bottom: 0px solid $violet;
     }
 
+    .cont {
+        overflow: hidden;
+    }
 
     .content {
-        transform: skewY(4deg);
+        transform: skewY(5deg);
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 100px 0;
 
-        @include media ("<tablet") {
+        @include media ("<tablet_bg") {
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
         }
     }
 
-    .img {
-        width: 50%;
-        height: 100%;
-        transform: skewY(-4deg);
+    .text {
+        width: 100%;
+        max-width: 390px;
 
-        @include media ("<tablet") {
-            overflow: hidden;
-            width: 100%;
-            height: 50%;
-        }
-    }
-
-    .img-wrap {
-        position: relative;
-        height: 100%;
-        max-width: 690px;
-        top: -21px;
-        @include adaptiv-vaule("right", -200, -300, 1);
-        transform: skewY(0deg);
-
-        @include media ("<1220px") {
-            top: -14px;
-        }
-
-        @include media ("<tablet") {
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            transform: skewY(0deg);
-
-        }
-    }
-
-    .img-cover {
-        position: absolute;
-        z-index: 6;
-        top: -175px;
-        @include adaptiv-vaule("right", -100, -500, 1);
-        max-height: 830px;
-        max-width: 830px;
-
-        @include media ("<desktop") {
-            top: 0;
-            max-height: 600px;
-            max-width: 600px;
-        }
-
-        @include media ("<tablet") {
-            top: -40px;
-            left: 50%;
-            transform: translate(-50%);
-
-        }
-
-        @include media ("<550px") {
-            max-height: 400px;
-            max-width: 400px;
-        }
-
-        @include media ("<phone") {
-            max-height: 350px;
+        @include media ("<930px") {
             max-width: 350px;
         }
-    }
 
-    .text {
-        /*  max-width: 385px; */
-        width: 40%;
-        padding-bottom: 100px;
-        padding-top: 100px;
-        overflow: hidden;
-        margin-right: 30px;
-
-        @include media ("<tablet") {
+        @include media ("<tablet_bg") {
+            max-width: 100%;
             text-align: center;
-            padding-top: 50px;
-            width: 100%;
-
         }
-
     }
 
     .title {
@@ -669,20 +595,101 @@ body {
 
     .description {
         @include adaptiv-vaule("margin-bottom", 60, 30, 1);
-
-        p {
-            font-size: 18px;
-
-            @include media ("<phone") {
-                font-size: 14px;
-            }
-        }
-
+        @include adaptiv-vaule("font-size", 18, 14, 1);
     }
 
     .btn {
-        max-width: 270px;
         margin: 0;
+    }
+
+    .img-wrap {
+        position: absolute;
+        top: -15%;
+        right: -20px;
+        width: 100%;
+        height: 115%;
+        max-width: 45%;
+
+        @include media ("<tablet_bg") {
+            position: relative;
+            top: -140px;
+            right: 0;
+            height: 600px;
+            width: 120%;
+            max-width: 120%;
+        }
+
+        @include media ("<phone") {
+            height: 400px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .img-cover-wrap {
+        position: absolute;
+        top: -280px;
+        right: 0;
+        width: 100%;
+        max-width: 830px;
+        height: auto;
+
+        @include media ("<1600px") {
+            top: -160px;
+            max-width: 700px;
+        }
+
+        @include media ("<1300px") {
+            top: -70px;
+            max-width: 600px;
+        }
+
+        @include media ("<1200px") {
+            top: 0;
+            right: -95px;
+        }
+
+        @include media ("<tablet_bg") {
+            right: auto;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        @include media ("<phone") {
+            top: -30px;
+            left: 60%;
+            right: auto;
+            width: 400px;
+            max-width: 400px;
+            transform: translate(-50%);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -88px;
+            width: 480px;
+            height: 50px;
+            display: none;
+            background-color: $white;
+
+            @include media ("<phone") {
+                display: block;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
