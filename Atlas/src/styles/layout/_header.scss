@@ -174,8 +174,18 @@ header {
     }
 
     img {
-        width: 135px;
-        @include adaptiv-vaule("height", 36, 20, 1);
+        width: 145px;
+        height: 35px;
+
+        @include media ("<desktop") {
+            width: 115px;
+            height: 30px;
+        }
+
+        @include media ("<tablet") {
+            width: 80px;
+            height: 20px;
+        }
     }
 }
 

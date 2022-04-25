@@ -724,12 +724,16 @@ header {
     .name-logo {
       margin: 0; } }
   .name-logo img {
-    width: 135px;
-    /* Только если меньше контейнера */
-    height: 36px; }
-    @media (max-width: 1290px) {
+    width: 145px;
+    height: 35px; }
+    @media (max-width: 1024px) {
       .name-logo img {
-        height: calc(20px + 16 * ((100vw - calc(320px)) / 970)); } }
+        width: 115px;
+        height: 30px; } }
+    @media (max-width: 768px) {
+      .name-logo img {
+        width: 80px;
+        height: 20px; } }
 
 .nav {
   display: -ms-flexbox;
@@ -1337,8 +1341,8 @@ body {
       padding-bottom: calc(30px + 110 * ((100vw - calc(320px)) / 970)); } }
   @media (min-width: 1751px) {
     .seo {
-      -webkit-transform: skewY(0deg);
-      transform: skewY(0deg);
+      -webkit-transform: skewY(-4deg);
+      transform: skewY(-4deg);
       padding-bottom: 40px; } }
   .seo::before {
     content: '';
@@ -1358,8 +1362,8 @@ body {
     padding: 30px 0; }
     @media (min-width: 1751px) {
       .seo .content {
-        -webkit-transform: skewY(0deg);
-        transform: skewY(0deg); } }
+        -webkit-transform: skewY(4deg);
+        transform: skewY(4deg); } }
     @media (max-width: 768px) {
       .seo .content {
         margin-top: 200px;
@@ -1388,7 +1392,7 @@ body {
         .seo .seo-img img {
           -webkit-transform: skewY(0deg);
           transform: skewY(0deg);
-          top: -40px; } }
+          top: -60px; } }
       @media (max-width: 768px) {
         .seo .seo-img img {
           position: static;
@@ -1591,7 +1595,7 @@ footer {
   margin-top: 87px; }
   @media (min-width: 1751px) {
     footer {
-      margin-top: 0; } }
+      margin-top: 50px; } }
   @media (max-width: 1229px) {
     footer {
       margin-top: 60px; } }
@@ -1611,7 +1615,12 @@ footer {
     border-left: 100vw solid transparent; }
     @media (min-width: 1751px) {
       footer:before {
-        display: none; } }
+        top: -119px;
+        border-bottom: 120px solid #401FCF; } }
+    @media (min-width: 2001px) {
+      footer:before {
+        top: -146px;
+        border-bottom: 147px solid #401FCF; } }
     @media (max-width: 1439px) {
       footer:before {
         top: -200px;
@@ -1678,6 +1687,10 @@ footer {
         @media (max-width: 768px) {
           .footer-top .content .contacts .tel {
             font-size: 30px; } }
+      .footer-top .content .contacts a {
+        color: #B3B3B3; }
+      .footer-top .content .contacts img {
+        margin-right: 15px; }
       .footer-top .content .contacts p {
         font-size: 14px;
         color: #B3B3B3;

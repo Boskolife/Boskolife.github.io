@@ -5,7 +5,7 @@ footer {
     margin-top: 87px;
 
     @include media (">1750px") {
-        margin-top: 0;
+        margin-top: 50px;
     }
 
     @include media ("<1230px") {
@@ -29,8 +29,15 @@ footer {
         border-bottom: 276px solid $violet;
         border-left: 100vw solid transparent;
 
+
         @include media (">1750px") {
-            display: none;
+            top: -119px;
+            border-bottom: 120px solid $violet;
+        }
+
+        @include media (">2000px") {
+            top: -146px;
+            border-bottom: 147px solid $violet;
         }
 
         @include media ("<1440px") {
@@ -116,6 +123,14 @@ footer {
                 @include media ("<tablet") {
                     font-size: 30px;
                 }
+            }
+
+            a {
+                color: $gray;
+            }
+
+            img {
+                margin-right: 15px;
             }
 
             p {

@@ -541,7 +541,7 @@ body {
     @include adaptiv-vaule("padding-bottom", 140, 30, 1);
 
     @include media (">1750px") {
-        transform: skewY(0deg);
+        transform: skewY(-4deg);
         padding-bottom: 40px;
     }
 
@@ -566,7 +566,7 @@ body {
         padding: 30px 0;
 
         @include media (">1750px") {
-            transform: skewY(0deg);
+            transform: skewY(4deg);
         }
 
         @include media ("<tablet") {
@@ -591,7 +591,7 @@ body {
 
             @include media (">1750px") {
                 transform: skewY(0deg);
-                top: -40px;
+                top: -60px;
             }
 
             @include media ("<tablet") {
