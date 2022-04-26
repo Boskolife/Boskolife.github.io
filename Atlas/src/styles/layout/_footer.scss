@@ -119,6 +119,7 @@ footer {
 
         @include media ("<tablet") {
             font-size: 15px;
+            justify-content: center;
         }
 
         img {
