@@ -717,12 +717,12 @@ body {
 
 .local {
     position: relative;
-    padding: 140px 0 180px 0;
-    @include adaptiv-vaule("padding-top", 140, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 180, 80, 1);
+    padding-top: 140px;
+    padding-bottom: 180px;
 
-    @include media ("<desktop") {
-        padding: 65px 0 130px 0;
+    @include media ("<widescreen") {
+        padding-top: 65px;
+        padding-bottom: 130px;
     }
 
     @include media ("<tablet") {
@@ -741,7 +741,7 @@ body {
     .headline {
         margin-bottom: 20px;
 
-        @include media ("<desktop") {
+        @include media ("<widescreen") {
             margin-bottom: 40px;
         }
 
@@ -753,19 +753,18 @@ body {
     .description {
         max-width: 840px;
         margin: 0 auto;
+        font-size: 18px;
 
-        p {
-            font-size: 18px;
-
-            @include media ("<tablet") {
-                font-size: 14px;
-            }
+        @include media ("<tablet") {
+            font-size: 14px;
         }
+
     }
 
     .main-text {
         display: flex;
         position: relative;
+        align-items: center;
         margin-bottom: 100px;
 
         @include media ("<desktop") {
@@ -781,6 +780,7 @@ body {
         padding: 40px 20px 0 0;
         min-width: 300px;
         min-height: 380px;
+        max-height: 850px;
 
         @include media ("<desktop") {
             z-index: 0;
@@ -800,7 +800,6 @@ body {
         flex-direction: column;
         align-items: center;
         position: relative;
-        z-index: 2;
 
         @include media ("<tablet") {
             width: 100%;
@@ -810,12 +809,13 @@ body {
     .block-text,
     .sub-text {
         p {
-            max-width: 400px;
+            max-width: 500px;
             font-size: 20px;
             margin: 0 auto;
 
             @include media ("<widescreen") {
                 font-size: 16px;
+                max-width: 500px;
             }
 
             @include media ("<desktop") {
@@ -874,7 +874,11 @@ body {
         width: 100%;
 
         p:first-child {
-            margin-bottom: 65px;
+            margin-bottom: 50px;
+
+            @include media ("<desktop") {
+                margin-bottom: 65px;
+            }
 
             @include media ("<phone") {
                 margin-bottom: 20px;
@@ -962,11 +966,11 @@ body {
 
         @include media ("<widescreen") {
             font-size: 16px;
+            margin-bottom: 20px;
         }
 
         @include media ("<phone") {
             font-size: 15px;
-            margin-bottom: 20px;
         }
     }
 
@@ -978,11 +982,11 @@ body {
 
         @include media ("<widescreen") {
             font-size: 48px;
+            margin-bottom: 20px;
         }
 
         @include media ("<phone") {
             font-size: 36px;
-            margin-bottom: 20px;
         }
     }
 
@@ -994,6 +998,7 @@ body {
 
         @include media ("<widescreen") {
             font-size: 18px;
+            margin-bottom: 70px;
         }
 
         @include media ("<phone") {
@@ -1009,6 +1014,7 @@ body {
 
         @include media ("<widescreen") {
             font-size: 32px;
+            margin-bottom: 25px;
         }
     }
 
@@ -1016,6 +1022,7 @@ body {
 
         @include media ("<widescreen") {
             display: flex;
+            justify-content: center;
         }
 
         @include media ("<tablet") {
@@ -1025,11 +1032,17 @@ body {
 
     .card {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         min-height: 90px;
+
+        @include media ("<widescreen") {
+            max-width: 350px;
+        }
 
         @include media ("<tablet") {
             flex-direction: column;
+            max-width: 100%;
+
         }
 
         &:first-child {
@@ -1077,7 +1090,7 @@ body {
             margin-bottom: 5px;
         }
 
-        h5 {
+        span {
             font-style: italic;
             font-weight: 300;
             font-size: 12px;
@@ -1101,7 +1114,7 @@ body {
 
     .form {
         max-width: 515px;
-        max-height: 100%;
+        max-height: 670px;
         background: linear-gradient(180deg, rgba(177, 168, 168, 0.6) 0%, rgba(23, 23, 23, 0.228) 100%);
         border: 1px solid #FFFFFF;
         backdrop-filter: blur(55px);
