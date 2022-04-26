@@ -159,24 +159,25 @@ body {
         max-width: 455px;
         font-size: 18px;
 
+        @include media ("<desktop") {
+            font-size: 15px;
+            margin-bottom: 95px;
+        }
+
         @include media ("<tablet") {
             margin-bottom: 40px;
             max-width: 100%;
             text-align: center;
-            font-size: 15px;
         }
 
-        @include media ("<tablet") {
-            margin-bottom: 25px;
+        @include media ("<phone") {
+            margin-bottom: 50px;
+            font-size: 14px;
         }
     }
 
     .btn {
         margin-bottom: 100px;
-
-        @include media ("<desktop") {
-            margin-bottom: 60px;
-        }
 
         @include media ("<tablet") {
             margin-bottom: 30px;
@@ -280,6 +281,7 @@ body {
 
         @include media ("<phone") {
             font-size: 15px;
+            margin-bottom: 20px;
         }
     }
 
@@ -294,6 +296,10 @@ body {
         @include media ("<tablet") {
             margin-bottom: 20px;
             width: 100%;
+        }
+
+        @include media ("<phone") {
+            margin-bottom: 30px;
         }
     }
 
@@ -500,7 +506,7 @@ body {
 
         @include media ("<tablet") {
             max-width: 100%;
-            margin-bottom: 30px;
+            margin-bottom: 65px;
         }
 
         img {
@@ -604,7 +610,12 @@ body {
 
     .description {
         @include adaptiv-vaule("margin-bottom", 60, 30, 1);
-        @include adaptiv-vaule("font-size", 18, 14, 1);
+        font-size: 18px;
+
+        @include media ("<phone") {
+            margin-bottom: 14px;
+        }
+
     }
 
     .btn {
