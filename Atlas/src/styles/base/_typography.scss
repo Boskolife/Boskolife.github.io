@@ -16,13 +16,14 @@ h6,
 	font-family: $headings-font-family;
 	color: $headings-color;
 	margin: 0;
+	font-weight: 700;
 }
 
 h1,
 .h1 {
 	font-size: 64px;
 
-	@include media ("<desktop") {
+	@include media ("<widescreen") {
 		font-size: 48px;
 	}
 
@@ -30,7 +31,6 @@ h1,
 		font-size: 36px;
 	}
 
-	font-weight: 700;
 	line-height: 74 / 64 * 100%;
 	color: $white;
 }
@@ -43,14 +43,12 @@ h2,
 		font-size: 36px;
 	}
 
-	font-weight: 700;
 	line-height: 55 / 48 * 100%;
 	color: $white;
 }
 
 h3,
 .h3 {
-	font-weight: 700;
 	line-height: 1.1;
 	color: $white;
 	font-size: 25px;
