@@ -371,23 +371,13 @@ body {
         }
     }
 
-    /* .img-cover {
-        position: absolute;
-        z-index: 5;
-        @include adaptiv-vaule("right", 120, -700, 1);
-        @include adaptiv-vaule("bottom", -600, -550, 1);
-        @include adaptiv-vaule("width", 830, 440, 1);
-        @include adaptiv-vaule("height", 830, 350, 1);
-
-        @include media ("<tablet") {
-            @include adaptiv-vaule("bottom", -440, -350, 1);
-            @include adaptiv-vaule("left", 1, -12, 1);
-        }
-    } */
-
     .text {
-        max-width: 386px;
-        margin-right: 100px;
+        max-width: 400px;
+        margin-right: 50px;
+
+        @include media ("<widescreen") {
+            max-width: 300px;
+        }
 
         @include media ("<desktop") {
             text-align: center;
@@ -407,6 +397,8 @@ body {
         font-weight: 500;
         color: $gray;
 
+
+
         @include media ("<desktop") {
             margin-bottom: 30px;
             font-size: 16px
@@ -423,6 +415,10 @@ body {
 
     .headline {
         margin-bottom: 20px;
+
+        @include media ("<widescreen") {
+            font-size: 36px;
+        }
 
         @include media ("<desktop") {
             margin-bottom: 35px;
@@ -481,8 +477,8 @@ body {
     .icons {
         display: flex;
         flex-wrap: wrap;
-        width: 70%;
-        gap: 30px;
+        justify-content: space-between;
+        width: 65%;
 
         @include media ("<desktop") {
             width: 100%;
@@ -490,17 +486,21 @@ body {
     }
 
     .icon-card {
-        max-width: 400px;
+        max-width: 350px;
         margin-bottom: 85px;
 
-        @include media ("<1000px") {
+        @include media ("<widescreen") {
             max-width: 300px;
             margin-bottom: 60px;
         }
 
+        @include media ("<desktop") {
+            max-width: 350px;
+        }
 
-        @include media ("<phone") {
+        @include media ("<tablet") {
             max-width: 100%;
+            margin-bottom: 30px;
         }
 
         img {
@@ -518,6 +518,10 @@ body {
         p {
             font-size: 18px;
             max-width: 350px;
+
+            @include media ("<tablet") {
+                max-width: 100%;
+            }
         }
     }
 }

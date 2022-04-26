@@ -37,7 +37,7 @@ header {
         bottom: 20px;
     }
 
-    @include media("<1000px") {
+    @include media("<minscreeen") {
         display: block;
     }
 
@@ -77,7 +77,7 @@ header {
     display: flex;
     align-items: center;
 
-    @include media ("<1000px") {
+    @include media ("<minscreeen") {
         justify-content: space-between;
         width: 100%;
     }
@@ -96,7 +96,7 @@ header {
     }
 
     @include media ("<highscreen") {
-        padding: 10px 20px 10px 90px;
+        padding: 17px 20px 13px 90px;
     }
 
     @include media ("<widescreen") {
@@ -104,7 +104,7 @@ header {
 
     }
 
-    @include media ("<1000px") {
+    @include media ("<minscreeen") {
         margin: 0;
     }
 
@@ -124,7 +124,7 @@ header {
     margin-right: 15px;
     z-index: 2;
 
-    @include media ("<1000px") {
+    @include media ("<minscreeen") {
         margin: 0;
     }
 
@@ -142,7 +142,7 @@ header {
 .nav {
     display: flex;
 
-    @include media ("<1000px") {
+    @include media ("<minscreeen") {
         position: absolute;
         z-index: 1;
         top: -100vh;
@@ -160,7 +160,7 @@ header {
         display: flex;
         align-items: center;
 
-        @include media ("<1000px") {
+        @include media ("<minscreeen") {
             flex-direction: column;
         }
     }
@@ -173,7 +173,7 @@ header {
             margin-left: 0;
         }
 
-        @include media ("<1000px") {
+        @include media ("<minscreeen") {
             margin: 0 0 20px 0;
         }
 
@@ -192,7 +192,7 @@ header {
                 font-size: 16px;
             }
 
-            @include media ("<1000px") {
+            @include media ("<minscreeen") {
                 color: $white;
                 @include adaptiv-vaule("font-size", 36, 22, 1);
 
@@ -223,15 +223,15 @@ header {
         }
 
         @include media ("<highscreen") {
-            padding: 42px 45px 40px 45px;
+            padding: 42px 45px 41px 45px;
         }
 
         @include media ("<widescreen") {
             font-size: 16px;
-            padding: 25px;
+            padding: 21px 20px 20px 20px;
         }
 
-        @include media ("<1000px") {
+        @include media ("<minscreeen") {
             @include adaptiv-vaule("font-size", 36, 22, 1);
             background: $violet;
             margin: 0;
