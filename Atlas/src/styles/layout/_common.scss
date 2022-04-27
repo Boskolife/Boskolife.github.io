@@ -1,15 +1,24 @@
 body {
     font-family: 'Ubuntu', sans-serif;
+    height: 100%;
 }
 
-/* html {
-    scroll-behavior: smooth;
-} */
+html {
+    /* scroll-behavior: smooth; */
+    height: 100%;
+}
 
 #wrapper {
+    min-height: 100%;
     background: $black;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
 }
 
 .body_lock {
@@ -43,7 +52,6 @@ body {
     background-repeat: no-repeat;
     background-size: 0% 100%;
     transition: all 0.5s ease;
-    @include adaptiv-vaule("margin-bottom", 100, 30, 1);
     min-width: 270px;
     white-space: nowrap;
     display: inline-block;
@@ -154,10 +162,11 @@ body {
         }
     }
 
-    .description {
+    .first-description {
         margin-bottom: 55px;
         max-width: 455px;
         font-size: 18px;
+        text-align: start;
 
         @include media ("<desktop") {
             font-size: 15px;
@@ -285,7 +294,7 @@ body {
         }
     }
 
-    .headline {
+    .guarantee-headline {
         margin-bottom: 15px;
 
         @include media ("<desktop") {
@@ -303,7 +312,7 @@ body {
         }
     }
 
-    .description {
+    .guarantee-description {
         margin-bottom: 30px;
         line-height: 21 / 18 * 100%;
         font-size: 18px;
@@ -419,7 +428,7 @@ body {
         }
     }
 
-    .headline {
+    .detail-headline {
         margin-bottom: 20px;
 
         @include media ("<widescreen") {
@@ -435,7 +444,7 @@ body {
         }
     }
 
-    .description {
+    .detail-description {
         max-width: 374px;
         margin-bottom: 50px;
         font-size: 18px;
@@ -595,7 +604,7 @@ body {
         }
     }
 
-    .headline {
+    .seo-headline {
         color: $black;
         margin-bottom: 20px;
 
@@ -608,7 +617,7 @@ body {
         }
     }
 
-    .description {
+    .seo-description {
         @include adaptiv-vaule("margin-bottom", 60, 30, 1);
         font-size: 18px;
 
@@ -714,52 +723,81 @@ body {
 
 /* ------------------------------------Local Seo--------------------------- */
 
+.title-text {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 140px;
+
+    @include media ("<widescreen") {
+        margin-bottom: 30px;
+        padding-top: 65px;
+    }
+
+    @include media ("<tablet") {
+        padding-top: 50px;
+    }
+}
+
+.headline {
+    margin-bottom: 20px;
+
+    @include media ("<widescreen") {
+        margin-bottom: 40px;
+    }
+
+    @include media ("<tablet") {
+        margin-bottom: 25px;
+    }
+}
+
+.description {
+    max-width: 840px;
+    margin: 0 auto;
+    font-size: 18px;
+
+    @include media ("<tablet") {
+        font-size: 14px;
+    }
+}
+
+.general {
+    font-size: 18px;
+    max-width: 750px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+
+    @include media ("<desktop") {
+        max-width: 400px;
+    }
+
+    @include media ("<tablet") {
+        max-width: 350px;
+        padding-bottom: 35px;
+    }
+
+    @include media ("<phone") {
+        font-size: 14px;
+        max-width: 100%;
+    }
+}
+
+.bottom-text {
+    text-align: center;
+}
 
 .local {
     position: relative;
-    padding-top: 140px;
     padding-bottom: 180px;
 
     @include media ("<widescreen") {
-        padding-top: 65px;
         padding-bottom: 130px;
     }
 
     @include media ("<tablet") {
-        padding: 50px 0 80px 0;
+        padding-bottom: 80px;
     }
 
-    .title-text {
-        text-align: center;
-        margin-bottom: 60px;
 
-        @include media ("<widescreen") {
-            margin-bottom: 30px;
-        }
-    }
-
-    .headline {
-        margin-bottom: 20px;
-
-        @include media ("<widescreen") {
-            margin-bottom: 40px;
-        }
-
-        @include media ("<tablet") {
-            margin-bottom: 25px;
-        }
-    }
-
-    .description {
-        max-width: 840px;
-        margin: 0 auto;
-        font-size: 18px;
-
-        @include media ("<tablet") {
-            font-size: 14px;
-        }
-
-    }
 
     .main-text {
         display: flex;
@@ -886,30 +924,7 @@ body {
         }
     }
 
-    .bottom-text {
-        text-align: center;
-    }
 
-    .bottom-deskription {
-        font-size: 18px;
-        max-width: 750px;
-        padding-bottom: 50px;
-        margin: 0 auto;
-
-        @include media ("<desktop") {
-            max-width: 400px;
-        }
-
-        @include media ("<tablet") {
-            max-width: 350px;
-            padding-bottom: 35px;
-        }
-
-        @include media ("<phone") {
-            font-size: 14px;
-            max-width: 300px;
-        }
-    }
 
     .btn {
         margin: 0;
@@ -968,14 +983,12 @@ body {
         }
     }
 
-    .headline {
-        font-size: 64px;
+    .head-title {
         line-height: 74 / 64 * 100%;
         margin-bottom: 30px;
         color: $white;
 
         @include media ("<widescreen") {
-            font-size: 48px;
             margin-bottom: 20px;
         }
 
@@ -1227,4 +1240,187 @@ body {
             max-height: 300px;
         }
     }
+}
+
+/* ---------------------- SEO Guarantee -------------------- */
+
+
+.seo-guarantee {
+    position: relative;
+    padding-bottom: 170px;
+
+    @include media ("<widescreen") {
+        padding-bottom: 115px;
+    }
+
+    @include media ("<tablet") {
+        padding-bottom: 65px;
+    }
+
+    .title-text {
+        margin-bottom: 65px;
+
+        @include media ("<widescreen") {
+            margin-bottom: 100px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 25px;
+        }
+    }
+
+    .block-text {
+        display: flex;
+        align-items: center;
+        padding-bottom: 120px;
+
+        @include media ("<widescreen") {
+            padding-bottom: 130px;
+        }
+
+        @include media ("<minscreen") {
+            flex-direction: column-reverse;
+        }
+
+        @include media ("<tablet") {
+            padding-bottom: 50px;
+        }
+
+    }
+
+    .main-text {
+        max-width: 510px;
+        margin-right: 100px;
+
+        @include media ("<widescreen") {
+            margin-right: 50px;
+            max-width: 400px;
+        }
+
+        @include media ("<minscreen") {
+            margin-right: 0;
+            text-align: center;
+        }
+
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 23 / 20 * 100%;
+
+            @include media ("<widescreen") {
+                font-size: 16px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 14px;
+            }
+        }
+
+        p:nth-child(1) {
+            margin-bottom: 70px;
+
+            @include media ("<widescreen") {
+                margin-bottom: 65px;
+            }
+
+            @include media ("<minscreen") {
+                max-width: 400px;
+                margin: 0 auto;
+                transform: skewY(0deg);
+            }
+
+            @include media ("<phone") {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+
+        p:nth-child(2) {
+            margin-bottom: 70px;
+
+            @include media ("<widescreen") {
+                margin-bottom: 65px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    .bg-text {
+
+        @include media ("<minscreen") {
+            background: #1D1D1D;
+            min-height: 250px;
+            transform: skewY(-5deg);
+            width: 101vw;
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            margin-bottom: 40px;
+
+
+            @include media ("<phone") {
+                min-height: 200px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 3px solid transparent;
+                border-right: 100vw solid $orange;
+                border-top: 0px solid $orange;
+            }
+        }
+    }
+
+    .main-bg {
+        position: relative;
+        z-index: 1;
+
+        @include media ("<minscreen") {
+            max-width: 450px;
+            max-height: 540px;
+        }
+    }
+
+    .block {
+        background: #1D1D1D;
+        transform: skewY(-5deg);
+        min-height: 330px;
+        min-width: 700px;
+        position: absolute;
+        top: 60px;
+        right: -250px;
+        z-index: -1;
+        overflow: hidden;
+
+        @include media (">1720px") {
+            right: -350px;
+        }
+
+        @include media ("<minscreen") {
+            display: none;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 10px solid transparent;
+            border-right: 100vw solid $orange;
+            border-top: 0px solid $orange;
+        }
+    }
+
 }
