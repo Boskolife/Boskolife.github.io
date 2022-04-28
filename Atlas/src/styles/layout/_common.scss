@@ -2004,7 +2004,27 @@ main {
 
 .local-busines {
     position: relative;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
+
+    @include media("<tablet") {
+        margin-bottom: 80px;
+    }
+
+    @include media("<phone") {
+        margin-bottom: 50px;
+    }
+
+    .content {
+        margin-bottom: 200px;
+
+        @include media("<widescreen") {
+            margin-bottom: 130px;
+        }
+
+        @include media("<tablet") {
+            margin-bottom: 60px;
+        }
+    }
 
     .busines-description {
         max-width: 700px;
@@ -2094,6 +2114,16 @@ main {
                 }
             }
         }
+    }
+}
+
+.graph {
+    text-align: center;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -2211,5 +2241,5 @@ main {
 }
 
 .busines-seo {
-    margin: 0;
+    margin: 0 0 55px 0;
 }
