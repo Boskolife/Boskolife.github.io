@@ -39,7 +39,7 @@ h2,
 .h2 {
 	font-size: 48px;
 
-	@include media ("<desktop") {
+	@include media ("<widescreen") {
 		font-size: 36px;
 	}
 
