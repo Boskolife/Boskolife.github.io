@@ -1030,7 +1030,8 @@ main {
 
         @include media ("<widescreen") {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         @include media ("<tablet") {
@@ -1042,9 +1043,11 @@ main {
         display: flex;
         align-items: flex-start;
         min-height: 90px;
+        margin: 0 0 45px 0;
 
         @include media ("<widescreen") {
-            max-width: 350px;
+            max-width: 375px;
+
         }
 
         @include media ("<tablet") {
@@ -1052,18 +1055,6 @@ main {
             align-items: center;
             max-width: 100%;
 
-        }
-
-        &:first-child {
-            margin: 0 0 45px 0;
-
-            @include media ("<widescreen") {
-                margin: 0 80px 0 0;
-            }
-
-            @include media ("<tablet") {
-                margin: 0 0 60px 0;
-            }
         }
     }
 
@@ -1125,7 +1116,7 @@ main {
         position: relative;
     }
 
-    .form {
+    form {
         max-width: 515px;
         background: linear-gradient(180deg, rgba(177, 168, 168, 0.6) 0%, rgba(23, 23, 23, 0.228) 100%);
         border: 1px solid #FFFFFF;
@@ -1134,10 +1125,10 @@ main {
         padding: 50px 50px 80px 50px;
         position: relative;
         z-index: 1;
-        margin-top: 50px;
 
         @include media ("<tablet") {
             max-width: 100%;
+            margin-top: 50px;
         }
 
         @include media ("<xs-phone") {
@@ -1202,15 +1193,19 @@ main {
         margin-bottom: 25px;
     }
 
-    .btn {
-        border: none;
-        display: block;
-        margin: 0 auto;
+    .btn-wrap {
 
-        @include media ("<xs-phone") {
-            min-width: 100%;
+        .btn {
+            border: none;
+            display: block;
+            margin: 0 auto;
+
+            @include media ("<xs-phone") {
+                min-width: 100%;
+            }
         }
     }
+
 
 
     .bg-img {
@@ -1478,10 +1473,9 @@ main {
         text-align: start;
         max-width: 530px;
 
-
-
         @include media ("<minscreen") {
             text-align: center;
+            max-width: 750px;
         }
     }
 
@@ -1499,6 +1493,7 @@ main {
 
     .pack-description {
         max-width: 400px;
+        font-size: 18px;
 
         @include media ("<widescreen") {
             font-size: 15px;
@@ -1507,6 +1502,11 @@ main {
         @include media ("<minscreen") {
             margin: 0 auto;
             margin-bottom: 35px;
+            max-width: 100%;
+        }
+
+        @include media ("<phone") {
+            font-size: 14px;
         }
     }
 }
@@ -1517,12 +1517,13 @@ main {
     transform: skewY(-5deg);
     padding: 150px 0;
 
+
     @include media ("<widescreen") {
-        padding: 100px 0 150px 0;
+        padding: 100px 0;
     }
 
     @include media ("<phone") {
-        padding: 70px 0 120px 0;
+        padding: 70px 0;
     }
 
     .cont {
@@ -1555,14 +1556,13 @@ main {
             justify-content: space-between;
         }
 
-        @include media ("<920px") {
+        @include media ("<tablet-max") {
             flex-direction: column;
             align-items: center;
         }
     }
 
-    .premium,
-    .platinum {
+    .tariff-price {
         max-width: 440px;
         text-align: center;
 
@@ -1573,11 +1573,23 @@ main {
         @include media ("<widescreen") {
             max-width: 270px;
         }
+
+        @include media ("<tablet-max") {
+            max-width: 440px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 380px;
+        }
+
+        @include media ("<phone") {
+            max-width: 270px;
+        }
     }
 
     .premium {
 
-        @include media ("<920px") {
+        @include media ("<tablet-max") {
             order: 2;
             margin-bottom: 80px;
         }
@@ -1589,95 +1601,8 @@ main {
 
     .platinum {
 
-        @include media ("<920px") {
+        @include media ("<tablet-max") {
             order: 3;
-        }
-    }
-
-    .pro {
-        max-width: 480px;
-        text-align: center;
-        margin-top: -40px;
-
-        @include media ("<highscreen") {
-            max-width: 420px;
-            margin-top: -30px;
-        }
-
-        @include media ("<widescreen") {
-            max-width: 300px;
-        }
-
-        @include media ("<920px") {
-            order: 1;
-            margin-bottom: 80px;
-        }
-
-        @include media ("<phone") {
-            margin-bottom: 40px;
-        }
-
-        .price {
-            margin-bottom: -100px;
-            max-width: 200px;
-            max-height: 200px;
-            min-width: 200px;
-            min-height: 200px;
-
-            @include media ("<highscreen") {
-                max-width: 170px;
-                max-height: 170px;
-                min-width: 170px;
-                min-height: 170px;
-                margin-bottom: -85px;
-            }
-
-            @include media ("<widescreen") {
-                max-width: 130px;
-                max-height: 130px;
-                min-width: 130px;
-                min-height: 130px;
-                margin-bottom: -60px;
-            }
-
-            p {
-                color: $violet;
-                font-size: 55px;
-
-                @include media ("<widescreen") {
-                    font-size: 33px;
-                }
-            }
-
-            span {
-                font-size: 20px;
-
-                @include media ("<widescreen") {
-                    font-size: 14px;
-                }
-            }
-        }
-
-        .name {
-            background: $violet;
-            min-height: 340px;
-
-
-            @include media ("<highscreen") {
-                min-height: 280px;
-            }
-
-            @include media ("<widescreen") {
-                min-height: 200px;
-            }
-
-            p {
-                padding: 0 85px;
-
-                @include media ("<widescreen") {
-                    padding: 0 50px;
-                }
-            }
         }
     }
 
@@ -1707,6 +1632,30 @@ main {
         }
 
         @include media ("<widescreen") {
+            max-width: 115px;
+            max-height: 115px;
+            min-width: 115px;
+            min-height: 115px;
+            margin-bottom: -55px;
+        }
+
+        @include media ("<tablet-max") {
+            max-width: 190px;
+            max-height: 190px;
+            min-width: 190px;
+            min-height: 190px;
+            margin-bottom: -90px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 150px;
+            max-height: 150px;
+            min-width: 150px;
+            min-height: 150px;
+            margin-bottom: -80px;
+        }
+
+        @include media ("<phone") {
             max-width: 115px;
             max-height: 115px;
             min-width: 115px;
@@ -1759,6 +1708,19 @@ main {
             margin-bottom: 20px;
         }
 
+        @include media ("<tablet-max") {
+            min-height: 310px;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+
+        @include media ("<phone") {
+            min-height: 190px;
+            margin-bottom: 20px;
+        }
+
         h2 {
             font-size: 55px;
             line-height: 63 / 55 * 100%;
@@ -1771,17 +1733,34 @@ main {
             @include media ("<widescreen") {
                 font-size: 33px;
             }
+
+            @include media ("<tablet-max") {
+                font-size: 55px;
+            }
+
+            @include media ("<phone") {
+                font-size: 33px;
+            }
         }
 
         p {
             font-weight: 300;
-            font-size: 12px;
+            font-size: 14px;
             line-height: 15 / 12 * 100%;
             color: $white;
             padding: 0 75px;
 
             @include media ("<widescreen") {
                 padding: 0 45px;
+                font-size: 12px;
+            }
+
+            @include media ("<tablet-max") {
+                font-size: 14px;
+            }
+
+            @include media ("<phone") {
+                font-size: 12px;
             }
         }
     }
@@ -1792,10 +1771,10 @@ main {
         margin-top: -200px;
         width: 90%;
         background: $white;
-        padding-top: 240px;
+        padding: 240px 0 50px 0;
 
         @include media ("<widescreen") {
-            padding-top: 200px;
+            padding: 200px 0 50px 0;
         }
 
         li {
@@ -1804,15 +1783,20 @@ main {
             line-height: 19 / 16 * 100%;
             padding: 25px 72px;
 
-            @include media ("<highscreen") {
-                padding: 25px 50px;
-            }
-
             @include media ("<widescreen") {
                 font-size: 14px;
                 padding: 15px;
             }
 
+            @include media ("<tablet-max") {
+                padding: 25px 35px;
+                font-size: 16px;
+            }
+
+            @include media ("<phone") {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
 
             &:nth-child(odd) {
                 background: #E2E0E0;
@@ -1826,6 +1810,149 @@ main {
 
         @include media ("<widescreen") {
             max-width: 238px;
+        }
+    }
+}
+
+.pro {
+    max-width: 480px;
+    text-align: center;
+    margin-top: -40px;
+
+    @include media ("<highscreen") {
+        max-width: 420px;
+        margin-top: -30px;
+    }
+
+    @include media ("<widescreen") {
+        min-width: 300px;
+    }
+
+    @include media ("<tablet-max") {
+        order: 1;
+        margin-bottom: 80px;
+        max-width: 480px;
+    }
+
+    @include media ("<tablet") {
+        max-width: 420px;
+    }
+
+    @include media ("<phone") {
+        max-width: 300px;
+    }
+
+    .price {
+        margin-bottom: -100px;
+        max-width: 200px;
+        max-height: 200px;
+        min-width: 200px;
+        min-height: 200px;
+
+        @include media ("<highscreen") {
+            max-width: 170px;
+            max-height: 170px;
+            min-width: 170px;
+            min-height: 170px;
+            margin-bottom: -85px;
+        }
+
+        @include media ("<widescreen") {
+            max-width: 130px;
+            max-height: 130px;
+            min-width: 130px;
+            min-height: 130px;
+            margin-bottom: -60px;
+        }
+
+        @include media ("<tablet-max") {
+            margin-bottom: -100px;
+            max-width: 200px;
+            max-height: 200px;
+            min-width: 200px;
+            min-height: 200px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 170px;
+            max-height: 170px;
+            min-width: 170px;
+            min-height: 170px;
+            margin-bottom: -85px;
+        }
+
+        @include media ("<phone") {
+            max-width: 130px;
+            max-height: 130px;
+            min-width: 130px;
+            min-height: 130px;
+            margin-bottom: -60px;
+        }
+
+        p {
+            color: $violet;
+            font-size: 55px;
+
+            @include media ("<widescreen") {
+                font-size: 33px;
+            }
+
+            @include media ("<tablet-max") {
+                font-size: 55px;
+            }
+
+            @include media ("<phone") {
+                font-size: 33px;
+            }
+        }
+
+        span {
+            font-size: 20px;
+
+            @include media ("<widescreen") {
+                font-size: 14px;
+            }
+
+            @include media ("<tablet-max") {
+                font-size: 20px;
+            }
+
+            @include media ("<phone") {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .name {
+        background: $violet;
+        min-height: 340px;
+
+        @include media ("<highscreen") {
+            min-height: 280px;
+        }
+
+        @include media ("<widescreen") {
+            min-height: 200px;
+        }
+
+        @include media ("<tablet-max") {
+            min-height: 340px;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+
+        @include media ("<phone") {
+            min-height: 200px;
+        }
+
+        p {
+            padding: 0 85px;
+
+            @include media ("<widescreen") {
+                padding: 0 50px;
+            }
         }
     }
 }
