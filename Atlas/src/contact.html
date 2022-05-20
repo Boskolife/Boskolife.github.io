@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="bg">
+        </div>
+        //= templates/header.html
+        <main id="main">
+            <section class="contact">
+                <div class="cont">
+                    <h1 class="title">Start a conversation</h1>
+                </div>
+                <div class="map">
+                    <a href="#">
+                        <img src="./images/contact/map-bg.png" alt="image not found">
+                    </a>
+                </div>
+                <div class="link-form">
+                    <div class="links">
+                        <div class="link-wrap">
+                            <img class="icon-wrap" src="./images/contact/phone.svg" alt="image not found">
+                            <div class="text">
+                                <a class="link" href="tel:+123456789011">+1
+                                    (234) 567.890.11 </a>
+                                <p class="name">Monday–Friday 9am-6pm</p>
+                            </div>
+                        </div>
+                        <div class="link-wrap">
+                            <img class="icon-wrap" src="./images/contact/skype.svg" alt="image not found">
+                            <a class="link" href="skype:exampleskypename?call">exampleskypename</a>
+                        </div>
+                        <div class="link-wrap">
+                            <img class="icon-wrap" src="./images/contact/mail.svg" alt="image not found">
+                            <a class="link" href="mailto:getintouch@atlaslocal.co.uk">getintouch@atlaslocal.co.uk</a>
+                        </div>
+                        <div class="link-wrap">
+                            <img class="icon-wrap location-icon" src="./images/contact/location.svg"
+                                alt="image not found">
+                            <div class="text">
+                                <p class="loc">51
+                                    Somestreet
+                                    Cambridge,
+                                    Cambridgeshire CB4 3AA, United Kingdom </p>
+                                <p class="name">Our office is open: Mon to Fri from 8am to
+                                    6pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab form-contact">
+                        <form action="#" method="post" class="form">
+                            <input class="url" type="url" required placeholder="Website URL *">
+                            <input class="data gap" type="text" name="name" placeholder="Name*" required>
+                            <input class="data" type="email" name="mail" placeholder="Email*" required>
+                            <input class="data gap" type="tel" name="tel" placeholder="Phone" required>
+                            <input class="data" type="text" name="company" placeholder="Company" required>
+                            <textarea name="text" placeholder="Details"></textarea>
+                            <p class="sub-info">Please, let us know any particular things to check and the best time
+                                to
+                                contact you by
+                                phone (if provided).</p>
+                            <button type="submit" href="#" class="btn form-btn"> <img src="./images/main/arrow.svg"
+                                    alt="image not found"> Hear
+                                from
+                                an
+                                expent</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
+
+</html>
