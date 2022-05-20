@@ -654,7 +654,6 @@ main {
             text-align: center;
         }
 
-
     }
 
     .form-btn {
@@ -1206,7 +1205,6 @@ input,
 textarea {
     border: none;
     background: transparent;
-    outline: none;
     color: $white;
     border-bottom: 1px solid $white;
     padding: 10px 0;
@@ -2262,16 +2260,18 @@ textarea {
     margin: 0 0 55px 0;
 }
 
+/* ----------------------------Contact----------------- */
+
 .contact {
     position: relative;
     padding: 150px 0 150px 0;
 
-    @include media ("<widescreen") {
-        padding: 100px 0 100px 0;
+    @include media ("<highscreen") {
+        padding: 100px 0 50px 0;
     }
 
-    @include media ("<tablet") {
-        padding: 50px 0 100px 0;
+    @include media ("<widescreen") {
+        padding: 100px 0 100px 0;
     }
 
     .title {
@@ -2285,7 +2285,8 @@ textarea {
         }
 
         @include media ("<tablet") {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
+            font-size: 36px;
         }
     }
 
@@ -2296,6 +2297,10 @@ textarea {
 
         @include media ("<highscreen") {
             margin-bottom: 200px;
+        }
+
+        @include media ("<tablet-max-2") {
+            margin-bottom: 0;
         }
 
         img {
@@ -2353,12 +2358,6 @@ textarea {
             margin-top: 40px;
         }
 
-        img {
-            margin-right: 25px;
-            width: 29px;
-            height: 29px;
-            object-fit: contain;
-        }
     }
 
     .link-wrap {
@@ -2367,7 +2366,8 @@ textarea {
         margin: 0 55px 30px 0;
 
         @include media ("<tablet-max-2") {
-            margin: 0 0 30px 0;
+            margin: 0 0 45px 0;
+            align-items: flex-start;
 
             &:last-child {
                 margin: 0;
@@ -2375,7 +2375,29 @@ textarea {
         }
     }
 
-    .link {
+    .icon-wrap {
+        margin: 0px 25px 0 0;
+        width: 29px;
+        height: 29px;
+        object-fit: contain;
+    }
+
+    .location-icon {
+
+        @include media ("<tablet-max-2") {
+            margin-top: 4px;
+        }
+    }
+
+    .text {
+
+        .name {
+            margin-top: 5px;
+        }
+    }
+
+    .link,
+    .loc {
         font-weight: 500;
         font-size: 20px;
         line-height: 23 / 20 * 100%;
@@ -2383,6 +2405,14 @@ textarea {
 
         @include media ("<highscreen") {
             font-size: 18px;
+        }
+    }
+
+    .link {
+
+        &:hover {
+            color: #7E7D7D;
+            transition: all 0.4s ease;
         }
     }
 

@@ -17,8 +17,6 @@ textarea {
 	-webkit-border-radius: 0;
 	outline: none;
 	box-sizing: border-box;
-	border: 1px solid $form-element-border-color;
-	color: $black;
 	// &:hover {
 
 	// }
@@ -32,9 +30,7 @@ textarea {
 	}
 }
 
-input[attribute="value"] {
-	
-}
+input[attribute="value"] {}
 
 select {
 	-webkit-border-radius: 0;
@@ -54,8 +50,6 @@ input[type='submit'] {
 	-webkit-border-radius: 0;
 	cursor: pointer;
 	font-family: $base-font-sans-serif;
-	
-	&:hover {
-       
-    }
+
+	&:hover {}
 }

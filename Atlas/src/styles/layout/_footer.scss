@@ -47,7 +47,7 @@ footer {
             max-width: 665px;
             text-align: start;
 
-            @include media ("<desktop") {
+            @include media ("<widescreen") {
                 font-size: 16px;
                 margin-bottom: 35px;
             }
@@ -104,7 +104,7 @@ footer {
         color: $gray;
         white-space: nowrap;
 
-        @include media ("<desktop") {
+        @include media ("<widescreen") {
             font-size: 30px;
         }
     }
@@ -152,7 +152,7 @@ footer {
     p {
         font-size: 12px;
 
-        @include media ("<desktop") {
+        @include media ("<widescreen") {
             font-size: 10px;
         }
     }
@@ -166,7 +166,7 @@ footer {
                 color: $white;
             }
 
-            @include media ("<desktop") {
+            @include media ("<widescreen") {
                 font-size: 10px;
             }
 
