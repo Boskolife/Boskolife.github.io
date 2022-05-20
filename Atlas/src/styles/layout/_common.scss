@@ -2441,3 +2441,123 @@ textarea {
         }
     }
 }
+
+
+/* -------------------------Studies-------------------- */
+
+.studies {
+    position: relative;
+    padding: 140px 0 100px 0;
+
+    @include media ("<widescreen") {
+        padding: 100px 0 100px 0;
+    }
+
+    @include media ("<tablet") {
+        padding: 60px 0 100px 0;
+    }
+
+    .title-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+
+        @include media ("<tablet-max") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .text {
+        width: 45%;
+        text-align: start;
+
+        @include media ("<tablet-max") {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .sub-title {
+        color: $gray;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 25 / 22 * 100%;
+
+        @include media ("<widescreen") {
+            font-size: 18px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 15px;
+        }
+    }
+
+    .headline {
+        margin: 15px 0 40px 0;
+
+        @include media ("<widescreen") {
+            margin: 20px 0 50px 0;
+        }
+
+        @include media ("<tablet") {
+            margin: 20px 0 40px 0;
+        }
+    }
+
+    .description {
+        font-size: 18px;
+        line-height: 21 / 18 * 100%;
+        color: $gray;
+        margin-bottom: 75px;
+
+        @include media ("<widescreen") {
+            font-size: 15px;
+            margin-bottom: 90px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 14px;
+            margin-bottom: 45px;
+        }
+    }
+
+    .link-app {
+
+        @include media ("<phone") {
+
+            img {
+                max-width: 130px;
+                max-height: 45px;
+            }
+        }
+
+        &:first-child {
+            margin: 0 30px 0 0;
+
+            @include media ("<phone") {
+                margin: 0 5px 0 0;
+            }
+        }
+
+    }
+
+    .title-img {
+        width: 54%;
+
+        @include media ("<tablet-max") {
+            margin-bottom: 60px;
+            width: 50%;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        img {
+            min-width: 300px;
+            min-height: 365px;
+        }
+
+    }
+}
