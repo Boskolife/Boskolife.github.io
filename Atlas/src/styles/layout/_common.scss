@@ -58,6 +58,10 @@ main {
     font-size: 18px;
     font-weight: 700;
 
+    @include media ("<phone") {
+        text-align: start;
+    }
+
 
     &:hover {
         background-size: 100% 100%;
@@ -90,7 +94,7 @@ main {
 }
 
 .cont {
-    max-width: 1290px;
+    max-width: 1350px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
@@ -663,6 +667,7 @@ main {
             color: $gray;
             font-size: 18px;
             line-height: 21 / 18 * 100%;
+            padding: 0 5px;
         }
 
         @include media ("<tablet_bg") {
@@ -1219,7 +1224,7 @@ form {
     }
 
     @include media ("<xs-phone") {
-        padding: 30px 25px 15px 25px;
+        padding: 25px 15px 15px 15px;
     }
 }
 
@@ -1229,12 +1234,18 @@ textarea {
     background: transparent;
     color: $white;
     border-bottom: 1px solid $white;
-    padding: 10px 0;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
 
     &::placeholder {
         color: $white;
         font-size: 18px;
         line-height: 21 / 18 * 100%;
+    }
+
+    &:focus {
+        border: none;
+
     }
 }
 
@@ -1259,6 +1270,10 @@ textarea {
 
 .gap {
     margin-right: 20px;
+
+    @include media ("<phone") {
+        margin-right: 0;
+    }
 }
 
 textarea {
@@ -1860,6 +1875,7 @@ textarea {
 
         @include media ("<phone") {
             min-width: 243px;
+            text-align: center;
         }
     }
 
@@ -2573,16 +2589,7 @@ textarea {
 
         @include media ("<tablet-max") {
             margin-bottom: 60px;
-            width: 50%;
-        }
-
-        @include media ("<phone") {
             width: 100%;
-        }
-
-        img {
-            min-width: 300px;
-            min-height: 365px;
         }
     }
 }
@@ -2613,6 +2620,9 @@ textarea {
     .card {
         width: 49%;
         margin-bottom: 100px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
 
         @include media ("<widescreen") {
             margin-bottom: 50px;
@@ -2624,10 +2634,15 @@ textarea {
         }
     }
 
+    .info {
+        flex: 1 1 auto;
+    }
+
     .img-card {
-        max-width: 645px;
-        max-height: 385px;
+        width: 100%;
+        height: 385px;
         margin-bottom: 25px;
+        position: relative;
 
         @include media ("<widescreen") {
             margin-bottom: 15px;
@@ -2635,11 +2650,13 @@ textarea {
 
         @include media ("<tablet") {
             margin: 0 0 10px 0;
-            max-width: 100%;
-            max-height: 100%;
+            max-height: 200px;
         }
 
         img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -2680,18 +2697,13 @@ textarea {
 
         @include media ("<tablet") {
             margin-bottom: 35px;
-            font-size: 10px;
         }
-
 
         @include media ("<phone") {
             padding: 0 15px;
         }
     }
 
-    .btn-card {
-        font-size: 16px;
-    }
 }
 
 .download {
@@ -2704,6 +2716,7 @@ textarea {
         line-height: 55 / 48 *100%;
         margin-bottom: 110px;
         text-align: center;
+        padding: 0 15px;
 
         @include media ("<widescreen") {
             margin-bottom: 80px;
@@ -2723,8 +2736,9 @@ textarea {
     }
 
     .icon {
-        width: 33.33%;
+        width: 30%;
         margin-bottom: 150px;
+        padding: 0 15px;
 
         @include media ("<widescreen") {
             width: 50%;
@@ -2760,6 +2774,7 @@ textarea {
         margin: 50px 0 80px 0;
         display: flex;
         justify-content: space-around;
+        padding: 0 15px;
 
         @include media ("<widescreen") {
             margin: 0 0 60px 0
@@ -2771,7 +2786,10 @@ textarea {
     }
 
     .btn-wrap {
-        width: 40%;
+        width: 34%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
 
         @include media ("<tablet") {
             width: 100%;
@@ -2784,10 +2802,15 @@ textarea {
     }
 
     .btn-text {
+        flex: 1 1 auto;
+    }
+
+    .text {
         font-size: 20px;
         line-height: 23/ 20 * 100%;
         color: $gray;
         margin-bottom: 90px;
+
 
         @include media ("<widescreen") {
             margin-bottom: 65px;
@@ -2797,6 +2820,499 @@ textarea {
         @include media ("<tablet") {
             margin-bottom: 40px;
             font-size: 14px;
+        }
+    }
+}
+
+
+/* -------------------------Cases----------------------- */
+
+.case {
+    padding: 170px 0 45px 0;
+    position: relative;
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    @include media ("<minscreen") {
+        padding: 150px 0 0 0;
+    }
+
+    @include media ("<tablet") {
+        padding: 40px 0 10px 0;
+    }
+
+    .cont {
+        @include media ("<minscreen") {
+            padding: 0;
+        }
+    }
+
+    .title {
+        font-size: 55px;
+        line-height: 115%;
+        margin-bottom: 75px;
+
+        @include media ("<minscreen") {
+            margin-bottom: 60px;
+            padding: 0 15px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 40px;
+            font-size: 30px;
+        }
+
+        span {
+            color: $violet;
+        }
+    }
+
+    .case-img {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include media ("<phone") {
+                min-height: 185px;
+            }
+        }
+    }
+}
+
+.project-type {
+    position: relative;
+    padding: 0 0 200px 0;
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    @include media ("<minscreen") {
+        padding: 0 0 150px 0;
+    }
+
+    @include media ("<tablet") {
+        padding: 0 0 100px 0;
+    }
+
+    .container {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .text-wrap {
+        padding: 35px 0 70px 0;
+
+        @include media ("<tablet") {
+            padding: 20px 15px 50px 15px;
+        }
+
+        p {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            margin-left: 40px;
+            padding: 0;
+
+            @include media ("<tablet") {
+                margin-left: 20px;
+            }
+        }
+
+        li {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24 / 20 * 100%;
+            color: $white;
+            list-style: inside;
+            margin-bottom: 5px;
+
+            &::marker {
+                color: $white;
+            }
+
+            @include media ("<minscreen") {
+                font-size: 18px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .type-content {
+        display: flex;
+        padding: 35px 0;
+
+        @include media ("<tablet") {
+            padding: 20px 0;
+        }
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 37 / 30 * 100%;
+        margin-bottom: 16px;
+
+        @include media ("<minscreen") {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24 / 20 * 100%;
+        margin-bottom: 16px;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .type-img {
+        position: relative;
+        width: 65%;
+        min-height: 1200px;
+        display: flex;
+        align-items: flex-end;
+        margin-right: 60px;
+
+        @include media ("<minscreen") {
+            margin-right: 50px;
+        }
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 30px;
+        }
+
+        @include media ("<580px") {
+            min-height: 700px;
+        }
+
+        @include media ("<phone") {
+            min-height: 500px;
+        }
+
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn {
+            position: relative;
+            width: 100%;
+            border-radius: 0;
+            padding: 7px 0;
+            z-index: 2;
+
+            @include media ("<tablet") {
+                padding: 12px 0;
+            }
+
+            @include media ("<phone") {
+                padding: 7px 0;
+            }
+
+            img {
+                width: 32px;
+                height: 32px;
+
+                @include media ("<tablet") {
+                    width: 23px;
+                    height: 23px;
+                }
+
+                @include media ("<phone") {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+
+    .type-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 40%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        .btn-wrap {
+            text-align: center;
+        }
+
+        .btn-orange-sm {
+            min-width: 100%;
+
+            @include media ("<desktop") {
+                min-width: 270px;
+            }
+        }
+    }
+
+    .text-block {
+
+        h2 {
+            @include media ("<minscreen") {
+                margin-bottom: 16px;
+            }
+        }
+
+        p {
+            margin-bottom: 40px;
+
+            @include media ("<minscreen") {
+                margin-bottom: 25px;
+            }
+
+            @include media ("<tablet") {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .seo-person {
+        display: flex;
+        margin-bottom: 25px;
+        padding-top: 50px;
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+
+        @include media ("<phone") {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    .img-logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+
+    .name {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22 / 18 * 100%;
+        margin-bottom: 0;
+        color: $white;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+        }
+    }
+
+    .sub-name {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16 / 13 * 100%;
+        color: $white;
+
+        @include media ("<tablet") {
+            font-size: 15px;
+        }
+    }
+
+    .text-img {
+        min-height: 450px;
+        width: 100%;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .block-img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 35px 0;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+    }
+
+    .img-wrap {
+        position: relative;
+        width: 49.5%;
+        height: 550px;
+        border-radius: 3px;
+        overflow: hidden;
+
+        @include media ("<minscreen") {
+            height: 450px;
+            width: 49.3%;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        @include media ("<phone") {
+            height: 280px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .web {
+        display: flex;
+        padding: 35px 0;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include media ("<tablet") {
+            padding: 20px 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+    }
+
+    .web-text {
+        width: 46%;
+        margin-right: 50px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin: 0 0 35px 0;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .img-web {
+        width: 100%;
+        max-width: 50%;
+        border-radius: 3px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        a {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 29 / 24 * 100%;
+            text-decoration-line: underline;
+            color: $white;
+
+            @include media ("<tablet") {
+                font-size: 0;
+            }
+        }
+
+        img {
+            vertical-align: middle;
+
+            @include media ("<tablet") {
+                width: 25px;
+                height: 35px;
+            }
+
+            &:first-child {
+                margin-right: 15px;
+            }
+
+            &:last-child {
+                margin-left: 15px;
+            }
         }
     }
 }
