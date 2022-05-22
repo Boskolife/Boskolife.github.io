@@ -3316,3 +3316,305 @@ textarea {
         }
     }
 }
+
+/* ---------------------------Blog------------------------- */
+
+.blog {
+    position: relative;
+    padding: 70px 0 40px 0;
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    @include media ("<widescreen") {
+        padding: 50px 0 130px 0;
+    }
+
+    @include media ("<tablet") {
+        padding: 70px 0 60px 0;
+    }
+
+    .blog-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .title {
+        font-size: 55px;
+        margin-right: 90px;
+
+        @include media ("<tablet") {
+            font-size: 36px;
+            margin: 0 0 60px 0;
+            padding: 0 15px;
+
+        }
+    }
+
+    .blog-img {
+        position: relative;
+        min-height: 450px;
+        width: 70%;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.blog-text {
+    position: relative;
+    padding: 0 0 150px 0;
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .blog-text-content {
+        margin-bottom: 100px;
+
+        @include media ("<widescreen") {
+            margin-bottom: 40px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 60px;
+        }
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38 / 32 * 100%;
+        margin-bottom: 55px;
+        text-align: center;
+
+        @include media ("<widescreen") {
+            margin-bottom: 65px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 18px;
+            margin-bottom: 60px;
+            padding: 0 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
+        }
+    }
+
+    .blog-img {
+        margin-bottom: 30px;
+        min-height: 480px;
+        max-height: 590px;
+        width: 100%;
+        position: relative;
+
+        @include media ("<widescreen") {
+            margin-bottom: 40px;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+
+    .description {
+        max-width: 100%;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21 / 18 * 100%;
+        margin-bottom: 15px;
+
+        @include media ("<widescreen") {
+            margin-bottom: 40px;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+            margin-bottom: 25px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
+        }
+    }
+
+    .block-text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        @include media ("<widescreen") {
+            margin-bottom: 30px;
+        }
+
+        @include media ("<tablet-max") {
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .block-description {
+        width: 55%;
+        margin: 0 15px 0 0;
+
+        @include media ("<widescreen") {
+            width: 45%;
+        }
+
+        @include media ("<tablet-max") {
+            width: 100%;
+            margin: 0;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
+        }
+    }
+
+    .block-img {
+        width: 39%;
+        min-height: 550px;
+        position: relative;
+
+        @include media ("<widescreen") {
+            width: 50%;
+        }
+
+        @include media ("<tablet-max") {
+            margin-bottom: 50px;
+            width: 100%;
+            max-height: 450px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .hidden {
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .person-icon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+
+        @include media ("<phone") {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    .icon-img {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 15px 0 0;
+
+
+        @include media ("<phone") {
+            margin: 0 0 20px 0;
+            width: 75px;
+            height: 75px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .person-icon {
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21 / 18 * 100%;
+        margin-bottom: 3px;
+    }
+
+    .sub-name {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 15 / 13 * 100%;
+        color: $white;
+    }
+
+    .date {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21 / 16 * 100%;
+        color: $white;
+    }
+}

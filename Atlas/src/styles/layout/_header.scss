@@ -165,13 +165,15 @@ header {
         }
     }
 
-    li {
+    .menu-li {
         list-style: none;
         @include adaptiv-vaule("margin-left", 50, 1, 1);
+        position: relative;
 
         &:first-child {
             margin-left: 0;
         }
+
 
         @include media ("<minscreen") {
             margin: 0 0 20px 0;
@@ -204,6 +206,72 @@ header {
             }
         }
     }
+
+    .list {
+        text-align: center;
+        margin-bottom: 0;
+        z-index: 1;
+
+        img {
+            vertical-align: 6px;
+            margin-left: 5px;
+            transition: all 0.5s ease;
+
+            @include media ("<minscreen") {
+                display: none;
+            }
+        }
+
+
+        &:hover {
+
+            img {
+                transform: rotate(180deg);
+                transition: all 0.5s ease;
+            }
+
+            .sub-menu {
+                top: 0;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        margin-top: 20px;
+        padding: 15px 0;
+        transition: all 0.7s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include media ("<minscreen") {
+            top: 0;
+            position: static;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        a,
+        li {
+            padding: 5px 0;
+
+            @include media ("<minscreen") {
+                padding: 0;
+                margin-bottom: 20px;
+
+                &:first-child {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+    }
+
 
     .call {
         display: flex;
