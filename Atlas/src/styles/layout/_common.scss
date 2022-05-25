@@ -1,6 +1,7 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     height: 100%;
+    z-index: 1;
 }
 
 html {
@@ -3002,7 +3003,6 @@ textarea {
     .type-img {
         position: relative;
         width: 65%;
-        min-height: 1200px;
         display: flex;
         align-items: flex-end;
         margin-right: 60px;
@@ -3012,30 +3012,22 @@ textarea {
         }
 
         @include media ("<desktop") {
+            margin: 0 0 50px 0;
             width: 100%;
-            margin-right: 0;
-            margin-bottom: 50px;
-        }
-
-        @include media ("<tablet") {
-            margin-bottom: 30px;
-        }
-
-        @include media ("<580px") {
-            min-height: 700px;
-        }
-
-        @include media ("<phone") {
-            min-height: 500px;
+            display: flex;
+            justify-content: center;
         }
 
         .img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+            @include media (">desktop") {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .btn {
@@ -3166,18 +3158,8 @@ textarea {
     }
 
     .text-img {
-        min-height: 450px;
+        height: auto;
         width: 100%;
-        position: relative;
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 
     .block-img {
@@ -3196,7 +3178,7 @@ textarea {
 
     .img-wrap {
         position: relative;
-        width: 49.5%;
+        width: 49.4%;
         height: 550px;
         border-radius: 3px;
         overflow: hidden;
@@ -3323,12 +3305,6 @@ textarea {
     position: relative;
     padding: 70px 0 40px 0;
 
-    .cont {
-
-        @include media ("<tablet") {
-            padding: 0;
-        }
-    }
 
     @include media ("<widescreen") {
         padding: 50px 0 130px 0;
@@ -3338,12 +3314,23 @@ textarea {
         padding: 70px 0 60px 0;
     }
 
+    @include media ("<phone") {
+        padding: 70px 0 0 0;
+    }
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
     .blog-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             flex-direction: column;
             justify-content: center;
         }
@@ -3352,8 +3339,11 @@ textarea {
     .title {
         font-size: 55px;
         margin-right: 90px;
+        width: 29%;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
+            text-align: center;
+            width: 100%;
             font-size: 36px;
             margin: 0 0 60px 0;
             padding: 0 15px;
@@ -3366,8 +3356,12 @@ textarea {
         min-height: 450px;
         width: 70%;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             width: 100%;
+        }
+
+        @include media ("<phone") {
+            display: none;
         }
 
         img {
@@ -3404,6 +3398,14 @@ textarea {
         }
     }
 
+    .text-title {
+
+        @include media ("<phone") {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
     .title {
         font-weight: 700;
         font-size: 32px;
@@ -3426,11 +3428,11 @@ textarea {
         }
     }
 
-    .blog-img {
+    .blog-text-img {
         margin-bottom: 30px;
-        min-height: 480px;
-        max-height: 590px;
         width: 100%;
+        min-height: 470px;
+        max-height: 590px;
         position: relative;
 
         @include media ("<widescreen") {
@@ -3438,7 +3440,7 @@ textarea {
         }
 
         @include media ("<phone") {
-            display: none;
+            margin-bottom: 60px;
         }
 
         img {
@@ -3462,9 +3464,12 @@ textarea {
             margin-bottom: 40px;
         }
 
+        @include media ("<desktop") {
+            margin-bottom: 25px;
+        }
+
         @include media ("<tablet") {
             padding: 0 15px;
-            margin-bottom: 25px;
         }
 
         @include media ("<phone") {
@@ -3481,7 +3486,7 @@ textarea {
             margin-bottom: 30px;
         }
 
-        @include media ("<tablet-max") {
+        @include media ("<desktop") {
             flex-direction: column-reverse;
             align-items: center;
             justify-content: center;
@@ -3492,11 +3497,7 @@ textarea {
         width: 55%;
         margin: 0 15px 0 0;
 
-        @include media ("<widescreen") {
-            width: 45%;
-        }
-
-        @include media ("<tablet-max") {
+        @include media ("<desktop") {
             width: 100%;
             margin: 0;
         }
@@ -3515,23 +3516,19 @@ textarea {
         min-height: 550px;
         position: relative;
 
-        @include media ("<widescreen") {
-            width: 50%;
-        }
-
-        @include media ("<tablet-max") {
-            margin-bottom: 50px;
+        @include media ("<desktop") {
             width: 100%;
+            margin-bottom: 50px;
             max-height: 450px;
         }
 
         img {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             object-fit: cover;
-            width: 100%;
-            height: 100%;
         }
     }
 
