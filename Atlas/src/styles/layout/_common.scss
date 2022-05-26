@@ -1179,6 +1179,14 @@ main {
         position: relative;
     }
 
+    .btn-wrap {
+        text-align: center;
+    }
+
+    .btn {
+        border: none;
+    }
+
     .bg-img {
         position: absolute;
         top: 70px;
@@ -2565,7 +2573,18 @@ textarea {
         }
     }
 
+    .links-app {
+        display: flex;
+    }
+
     .link-app {
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+
 
         @include media ("<phone") {
 
@@ -3733,7 +3752,7 @@ textarea {
 
     .cards-company {
         max-height: 940px;
-        overflow: scroll;
+        overflow: auto;
 
         @include media ("<widescreen") {
             max-height: 830px;
@@ -3749,6 +3768,32 @@ textarea {
 
     .card-blog {
         width: 100%;
+        display: block;
+
+        &:hover {
+            transition: all 0.4s ease;
+
+            .card-img {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: $black;
+                    opacity: 0.4;
+                    transition: all 1s ease;
+                }
+            }
+
+            .card-title {
+                background: $orange;
+                transition: all 0.4s ease;
+            }
+        }
 
         @include media ("<desktop") {
             width: 75%;
@@ -3758,14 +3803,12 @@ textarea {
             width: 100%;
         }
 
-
         &:not(:last-child) {
             margin-bottom: 50px;
 
             @include media ("<widescreen") {
                 margin-bottom: 30px;
             }
-
 
             @include media ("<tablet") {
                 margin-bottom: 25px;
@@ -3778,11 +3821,14 @@ textarea {
         img {
             width: 100%;
             height: auto;
+
         }
     }
 
     .card-title {
         font-weight: 700;
+        display: block;
+        color: $white;
         font-size: 25px;
         line-height: 29 / 25 *100%;
         padding: 15px 30px;
@@ -3791,10 +3837,12 @@ textarea {
 
         @include media ("<widescreen") {
             font-size: 15px;
+            padding: 8px 20px;
         }
 
         @include media ("<tablet") {
             font-size: 13px;
+            padding: 6px 15px;
         }
     }
 
@@ -3896,5 +3944,9 @@ textarea {
             color: $gray;
             font-size: 18px;
         }
+    }
+
+    button {
+        border: none;
     }
 }
