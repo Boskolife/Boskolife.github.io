@@ -3641,13 +3641,18 @@ textarea {
     padding: 140px 0 200px 0;
 
     @include media ("<widescreen") {
-        padding: 650px 0 180px 0;
+        padding: 65px 0 180px 0;
     }
 
     @include media ("<tablet") {
         padding: 50px 0 100px 0;
     }
 
+    .cont {
+        @include media ("<phone") {
+            padding: 0;
+        }
+    }
 
     .title-text {
         text-align: center;
@@ -3710,6 +3715,11 @@ textarea {
         @include media ("<tablet") {
             margin: 0 0 25px 0;
             width: 100%;
+            padding: 0 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
         }
 
         img {
@@ -3724,6 +3734,7 @@ textarea {
         @include media ("<desktop") {
             width: 100%;
         }
+
     }
 
     .text {
@@ -3747,6 +3758,11 @@ textarea {
             font-size: 14px;
             width: 100%;
             text-align: center;
+            padding: 0 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 0 10px;
         }
     }
 
@@ -3767,8 +3783,9 @@ textarea {
     }
 
     .card-blog {
-        width: 100%;
         display: block;
+        max-width: 645px;
+        width: 100%;
 
         &:hover {
             transition: all 0.4s ease;
@@ -3777,21 +3794,13 @@ textarea {
                 position: relative;
 
                 &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: $black;
                     opacity: 0.4;
-                    transition: all 1s ease;
+                    transition: all 0.4s ease;
                 }
             }
 
             .card-title {
                 background: $orange;
-                transition: all 0.4s ease;
             }
         }
 
@@ -3817,11 +3826,29 @@ textarea {
     }
 
     .card-img {
+        position: relative;
+        @include adaptiv-vaule("min-height", 380, 190, 1);
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background: $black;
+            transition: all 0.4s ease;
+        }
 
         img {
+            position: absolute;
             width: 100%;
-            height: auto;
-
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
         }
     }
 
@@ -3834,6 +3861,7 @@ textarea {
         padding: 15px 30px;
         background: #5F5F5F;
         margin: 0;
+        transition: all 0.4s ease;
 
         @include media ("<widescreen") {
             font-size: 15px;

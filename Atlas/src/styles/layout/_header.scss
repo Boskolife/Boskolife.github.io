@@ -153,7 +153,7 @@ header {
         align-items: center;
         justify-content: center;
         background: $orange;
-        padding: 70px 25px;
+        padding: 70px 25px 0 25px;
     }
 
     ul {
@@ -164,6 +164,7 @@ header {
             flex-direction: column;
             overflow: scroll;
             padding: 0 25px;
+            width: 100%;
         }
     }
 
@@ -280,7 +281,6 @@ header {
                 }
             }
         }
-
     }
 
 
