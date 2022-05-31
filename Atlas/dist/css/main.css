@@ -1811,14 +1811,8 @@ main {
   .tell-about .bg-img {
     position: absolute;
     top: 70px;
-    right: -26vh;
+    right: -60%;
     z-index: 0; }
-    @media (max-width: 1249px) {
-      .tell-about .bg-img {
-        right: -41vh; } }
-    @media (max-width: 1023px) {
-      .tell-about .bg-img {
-        right: -30vh; } }
     @media (max-width: 768px) {
       .tell-about .bg-img {
         top: -250px;
@@ -2702,13 +2696,13 @@ textarea {
 /* ----------------------------Contact----------------- */
 .contact {
   position: relative;
-  padding: 150px 0 150px 0; }
-  @media (max-width: 1439px) {
-    .contact {
-      padding: 100px 0 50px 0; } }
+  padding: 150px 0 250px 0; }
   @media (max-width: 1249px) {
     .contact {
-      padding: 100px 0 100px 0; } }
+      padding: 100px 0 200px 0; } }
+  @media (max-width: 480px) {
+    .contact {
+      padding: 100px 0 150px 0; } }
   .contact .title {
     font-size: 48px;
     line-height: 125%;
@@ -2721,25 +2715,10 @@ textarea {
       .contact .title {
         margin-bottom: 50px;
         font-size: 36px; } }
-  .contact .map {
+  .contact .map-wrap {
     position: relative;
-    margin-bottom: 30px;
     min-height: 760px; }
-    @media (max-width: 1439px) {
-      .contact .map {
-        margin-bottom: 200px; } }
-    @media (max-width: 929px) {
-      .contact .map {
-        margin-bottom: 0; } }
-    .contact .map img {
-      position: absolute;
-      top: -5px;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-    .contact .map::before {
+    .contact .map-wrap::before {
       content: '';
       position: absolute;
       top: -10px;
@@ -2749,39 +2728,60 @@ textarea {
       border-top: 0px solid #ED863C;
       -webkit-transform: rotate(-0.31deg);
       transform: rotate(-0.31deg); }
-  .contact .link-form {
-    max-width: 1530px;
+  .contact .map {
+    position: absolute;
+    top: -5px;
+    left: 0;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+    height: 70%;
+    z-index: 1; }
+    @media (max-width: 1023px) {
+      .contact .map {
+        height: 65%; } }
+    @media (max-width: 929px) {
+      .contact .map {
+        height: 676px; } }
+    .contact .map img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .contact .link-form {
+    position: relative;
+    width: 100%;
+    max-width: 1530px;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin: 0 auto;
+    padding: 200px 15px 0 15px; }
     @media (max-width: 929px) {
       .contact .link-form {
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
         -ms-flex-align: center;
         align-items: center;
-        margin-top: -150px; } }
+        padding: 500px 15px 0 15px; } }
   .contact .links {
     width: 65%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    z-index: 2; }
     @media (max-width: 1439px) {
       .contact .links {
-        font-size: 18px;
-        width: 100%; } }
-    @media (max-width: 1249px) {
-      .contact .links {
-        width: 100%; } }
+        font-size: 18px; } }
     @media (max-width: 929px) {
       .contact .links {
         -ms-flex-direction: column;
         flex-direction: column;
-        max-width: 515px;
-        margin-top: 40px; } }
+        width: 100%;
+        margin-top: 80px; } }
   .contact .link-wrap {
     display: -ms-flexbox;
     display: flex;
@@ -2823,19 +2823,6 @@ textarea {
     font-size: 12px;
     line-height: 116.66667%;
     color: #7E7D7D; }
-  .contact .form-contact {
-    position: absolute;
-    bottom: 170px;
-    right: 50px; }
-    @media (max-width: 1439px) {
-      .contact .form-contact {
-        bottom: 310px; } }
-    @media (max-width: 1249px) {
-      .contact .form-contact {
-        top: 420px; } }
-    @media (max-width: 929px) {
-      .contact .form-contact {
-        position: static; } }
 
 /* -------------------------Studies-------------------- */
 .studies {
@@ -3326,7 +3313,10 @@ textarea {
     width: 40px;
     height: 40px;
     margin-right: 15px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    overflow: hidden;
+    -o-object-fit: cover;
+    object-fit: cover; }
   .project-type .name {
     display: block;
     font-weight: 700;
@@ -3664,6 +3654,7 @@ textarea {
     width: 37px;
     height: 37px;
     border-radius: 50%;
+    overflow: hidden;
     position: relative;
     margin: 0 15px 0 0; }
     @media (max-width: 480px) {
