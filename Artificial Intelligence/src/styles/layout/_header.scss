@@ -1,6 +1,8 @@
 header {
-    background: rgba(44, 54, 71, 1);
+    background: rgb(55, 68, 88);
     padding: 20px 0;
+    display: flex;
+    z-index: 5;
     position: relative;
 
     @include media ("<desktop") {
@@ -20,20 +22,24 @@ header {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
     margin-right: 80px;
-    width: 50%;
-    position: relative;
+    width: 35%;
+    z-index: 2;
 
     @include media ("<desktop") {
         margin: 0;
-        width: 100%;
+    }
+
+    @include media ("<phone") {
+        width: 80%;
     }
 
     img {
         margin-right: 15px;
-        animation: logo 2s linear;
+        animation: logo 1.5s linear;
+
+        max-width: 45px;
+        max-height: 55px;
 
         @include media ("<phone") {
             width: 30px;
@@ -45,6 +51,7 @@ header {
         font-weight: 600;
         font-size: 23px;
         color: $blue;
+        margin: 0;
 
         @include media ("<desktop") {
             font-size: 18px;
@@ -69,6 +76,7 @@ header {
 
 .logo-btn {
     display: flex;
+    align-items: center;
 }
 
 .nav {
@@ -76,15 +84,22 @@ header {
     align-items: center;
     justify-content: space-between;
     transition: all 0.5s ease;
-    width: 100%;
+    width: 65%;
 
     @include media ("<desktop") {
         position: absolute;
         flex-direction: column;
+        right: 0;
         top: -100vh;
-        left: 0;
         height: 100vh;
-        padding: 0 0 30px 0;
+        width: 35%;
+        padding: 80px 0 0px 0;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    @include media ("<tablet") {
+        width: 100%;
     }
 }
 
@@ -97,23 +112,29 @@ header {
         justify-content: center;
         width: 100%;
         height: 100%;
+        overflow: scroll;
+        padding: 0 15px;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
     }
 }
 
 .nav-menu-item {
+    transition: all 0.3s ease;
 
     &:not(:last-child) {
         margin-right: 40px;
 
         @include media ("<desktop") {
-            margin: 0 0 80px 0;
-        }
-
-        @include media ("<tablet") {
-            margin: 0 0 45px 0;
+            margin: 0 0 30px 0;
         }
     }
 
+    &:hover {
+        transform: scale(1.2);
+    }
 
     a {
         font-weight: 600;
@@ -128,38 +149,33 @@ header {
 
         @include media ("<desktop") {
             color: $blue;
-            font-size: 48px;
+            font-size: 36px;
         }
 
         @include media ("<tablet") {
-            font-size: 36px;
+            font-size: 24px;
         }
     }
 }
 
 .btn {
-    padding: 15px 30px;
-    background: $blue;
     border-radius: 10px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    color: $white;
-    transition: all 0.4s ease;
 
-    &:hover {
-        color: $blue;
-        background: $white;
-    }
+
 
     @include media ("<desktop") {
-        font-size: 48px;
+        font-size: 36px;
         padding: 30px;
+        margin: 15px 0 30px 0;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     @include media ("<tablet") {
         padding: 15px 30px;
-        font-size: 36px;
+        font-size: 24px;
     }
 }
 
@@ -168,6 +184,7 @@ header {
     width: 40px;
     height: 30px;
     position: relative;
+    z-index: 2;
 
     @include media ("<desktop") {
         display: block;
@@ -202,13 +219,10 @@ header {
     span {
         top: 13px;
 
-
         @include media ("<phone") {
             top: 11px;
         }
     }
-
-
 }
 
 .burger_active {
@@ -217,19 +231,28 @@ header {
         transform: rotate(45deg);
         top: 14px;
         left: 0;
+        background: $blue;
+
+        @include media ("<phone") {
+            top: 9px;
+        }
     }
 
     &::after {
         transform: rotate(-45deg);
         bottom: 13px;
         left: 0;
+        background: $blue;
     }
 
     span {
         opacity: 0;
+        background: $blue;
     }
 }
 
 .menu_active {
+    right: 0;
     top: 0;
+    opacity: 1;
 }

@@ -60,4 +60,20 @@ if (linkClose) {
 }
 
 ;
+jQuery(function () {
+  $('.slider').slick({
+    dots: true,
+    arrows: false,
+    speed: 1000,
+    autoplay: false,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    infinite: true,
+    centerMode: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {}
+    }]
+  });
+});
 //# sourceMappingURL=main.js.map
