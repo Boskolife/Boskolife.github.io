@@ -60,7 +60,7 @@ jQuery(function () {
     speed: 1000,
     autoplay: false,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 5,
     infinite: true,
     centerMode: true,
     responsive: [

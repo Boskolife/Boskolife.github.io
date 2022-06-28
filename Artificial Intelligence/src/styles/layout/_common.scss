@@ -7,6 +7,10 @@ body {
     height: 100%;
 }
 
+.body_lock {
+    overflow: hidden;
+}
+
 #wrapper {
     min-height: 100%;
     display: flex;
@@ -39,6 +43,7 @@ main {
     color: $white;
     transition: all 0.4s ease;
     text-align: center;
+    display: inline-block;
 
     &:hover {
         color: $blue;
@@ -58,11 +63,11 @@ main {
     padding: 50px 0 100px 0;
 
     @include media ("<desktop") {
-        padding: 25px 0 50px 0;
+        padding: 45px 0 50px 0;
     }
 
     @include media ("<desktop") {
-        padding: 15px 0 35px 0;
+        padding: 30px 0 35px 0;
     }
 }
 
@@ -217,6 +222,11 @@ main {
 
 /* ---------------------#Learning----------------------- */
 
+.head {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+}
 
 .learning {
     padding: 130px 0 170px 0;
@@ -273,12 +283,6 @@ main {
             width: 100%;
             text-align: center;
         }
-    }
-
-    .head {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 130%;
     }
 
     .headline {
