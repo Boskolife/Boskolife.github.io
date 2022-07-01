@@ -1,0 +1,589 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Jost';
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.btn {
+    background: #292F36;
+    border-radius: 18px;
+    padding: 22px 35px;
+    color: $white;
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 0.72px;
+    transition: all 0.4s ease;
+
+    svg {
+        vertical-align: -2px;
+        margin-left: 15px;
+    }
+
+    path {
+        stroke: $golden;
+    }
+
+    @include media ("<tablet") {
+        font-size: 16px;
+    }
+
+    &:hover {
+        background: $golden;
+
+        path {
+            stroke: $black;
+        }
+    }
+}
+
+.cont {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.body_lock {
+    overflow: hidden;
+}
+
+
+/* ----------------------#Main-section------------------------- */
+
+.main-section {
+    @include adaptiv-vaule("padding-bottom", 170, 70, 1);
+
+    .main-content {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        @include adaptiv-vaule("margin-bottom", 170, 60, 1);
+    }
+
+    .main-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 0px 0px 0px 290px;
+        object-fit: cover;
+
+        @include media ("<tablet") {
+            border-radius: 0;
+        }
+    }
+
+    .main-text {
+        max-width: 600px;
+        min-height: 830px;
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            min-height: 500px;
+            text-align: center;
+        }
+    }
+
+    .headline {
+        font-size: 80px;
+        letter-spacing: 0.22px;
+        margin-bottom: 20px;
+
+        @include media ("<widescreen") {
+            font-size: 64px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 48px;
+        }
+
+        @include media ("<phone") {
+            font-size: 36px;
+        }
+    }
+
+    .description {
+        font-size: 22px;
+        margin-bottom: 35px;
+        color: $gray;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .card {
+        text-align: center;
+        max-width: 320px;
+        margin-bottom: 30px;
+
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+    }
+
+    .card-title {
+        font-size: 25px;
+        line-height: 39 / 25 *100%;
+        letter-spacing: 0.22px;
+        color: $black;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .card-description {
+        font-size: 22px;
+        line-height: 33 / 22 * 100%;
+        letter-spacing: 0.22px;
+        color: $gray;
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .sub-btn {
+        font-size: 18px;
+        letter-spacing: 0.36px;
+        color: $gray;
+        padding: 15px;
+        border-radius: 10px;
+        transition: all 0.4s ease;
+
+        &:hover {
+            background: $black;
+            color: $white;
+        }
+
+        img {
+            margin-left: 10px;
+            vertical-align: -2px;
+        }
+    }
+}
+
+
+/* ----------------------#Design------------------------- */
+
+
+.design {
+    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+
+    .design-content {
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .design-text {
+        width: 45%;
+        margin-right: 30px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+
+    .design-title {
+        font-size: 50px;
+        line-height: 65 / 50 * 100%;
+        letter-spacing: 0.22px;
+        margin-bottom: 40px;
+
+        @include media ("<widescreen") {
+            font-size: 36px;
+        }
+
+        @include media ("<desktop") {
+            font-size: 38px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+    }
+
+    .design-decription {
+        font-size: 22px;
+        line-height: 33 / 22 * 100%;
+        letter-spacing: 0.22px;
+        margin-bottom: 40px;
+        color: $gray;
+
+        @include media ("<widescreen") {
+            font-size: 18px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+    }
+
+    .tel {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+
+        img {
+            margin-right: 20px;
+        }
+
+        a,
+        p {
+            font-size: 24px;
+            letter-spacing: 0.22px;
+            color: $gray;
+
+            @include media ("<widescreen") {
+                font-size: 18px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 16px;
+            }
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .design-img {
+        width: 54%;
+        border-radius: 0px 326px 0px 123px;
+
+        @include media ("<desktop") {
+            text-align: center;
+            width: 100%;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+}
+
+
+/* ----------------------#Reviews------------------------- */
+
+.reviews {
+    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+
+    .reviews-content {
+        background: #F4F0EC;
+        border-radius: 70px;
+        padding: 100px 50px 120px 50px;
+        @include adaptiv-vaule("padding-top", 100, 25, 1);
+        @include adaptiv-vaule("padding-bottom", 120, 15, 1);
+        @include adaptiv-vaule("padding-right", 50, 20, 1);
+        @include adaptiv-vaule("padding-left", 50, 20, 1);
+    }
+
+    .reviews-title {
+        font-size: 45px;
+        line-height: 58 / 45 * 100%;
+        letter-spacing: 0.22px;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @include media ("<widescreen") {
+            margin-bottom: 35px;
+            font-size: 38px;
+        }
+
+        @include media ("<desktop") {
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 22px;
+        }
+    }
+
+    .cards-review {
+        display: flex;
+        justify-content: space-around;
+
+        @include media ("<desktop") {
+            flex-wrap: wrap;
+        }
+    }
+
+    .card {
+        background: $white;
+        border-radius: 30px;
+        width: 32%;
+        padding: 50px 30px;
+
+        @include adaptiv-vaule("padding-top", 50, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+        @include adaptiv-vaule("padding-right", 50, 15, 1);
+        @include adaptiv-vaule("padding-left", 30, 15, 1);
+
+        @include media ("<desktop") {
+            width: 48%;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<tablet") {
+            width: 80%;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .portrait {
+        width: 77px;
+        height: 77px;
+        border-radius: 50%;
+        margin-right: 20px;
+        overflow: hidden;
+    }
+
+    .name {
+        font-size: 25px;
+        letter-spacing: 0.22px;
+        margin-bottom: 8px;
+
+        @include media ("<widescreen") {
+            font-size: 18px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .location {
+        font-size: 18px;
+        letter-spacing: 0.22px;
+        color: $gray;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .review {
+        font-size: 20px;
+        letter-spacing: 0.22px;
+        line-height: 30 / 20 * 100%;
+        color: $gray;
+
+        @include media ("<widescreen") {
+            font-size: 18px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+/* ----------------------#Brands------------------------- */
+
+
+.brands {
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+    .brands-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .brand-logo {
+        width: 120px;
+        margin: 0 15px 40px 15px;
+    }
+}
+
+/* ----------------------#Projects------------------------- */
+
+
+.projects {
+    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+
+    .projects-content {
+        text-align: center;
+    }
+
+    .project-title {
+        font-size: 47px;
+        letter-spacing: 0.22px;
+        margin-bottom: 20px;
+
+        @include media ("<widescreen") {
+            font-size: 38px;
+        }
+
+        @include media ("<desktop") {
+            font-size: 28px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 22px;
+        }
+
+        @include media ("<phone") {
+            font-size: 18px;
+        }
+    }
+
+    .project-description {
+        font-size: 22px;
+        letter-spacing: 0.22px;
+        margin: 0 auto;
+        margin-bottom: 70px;
+        max-width: 780px;
+
+        @include media ("<desktop") {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+    }
+
+    .projects-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: start;
+
+        @include media ("<tablet") {
+            justify-content: center;
+        }
+    }
+
+    .block {
+        margin-bottom: 60px;
+        width: 49%;
+
+        @include media ("<tablet") {
+            width: 70%;
+            margin-bottom: 35px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .block-img {
+        border-radius: 0px 80px 0px 0px;
+        margin-bottom: 25px;
+        position: relative;
+        overflow: hidden;
+        padding: 0 0 128% 0;
+    }
+
+    .block-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            letter-spacing: 0.22px;
+            font-size: 24px;
+            margin-bottom: 8px;
+
+            @include media ("<desktop") {
+                font-size: 18px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 16px;
+            }
+        }
+
+        span {
+            letter-spacing: 0.22px;
+            font-size: 22px;
+
+
+            @include media ("<desktop") {
+                font-size: 16px;
+            }
+
+            @include media ("<tablet") {
+                font-size: 14px;
+            }
+        }
+
+        .project-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            padding: 23px 28px;
+            background: #F4F0EC;
+            transition: all 0.4s ease;
+
+            @include media ("<desktop") {
+                width: 50px;
+                height: 50px;
+                padding: 15px 23px;
+            }
+
+            &:hover {
+                background: $golden;
+            }
+        }
+    }
+}
