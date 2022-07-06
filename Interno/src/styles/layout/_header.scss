@@ -37,10 +37,10 @@ header {
         display: flex;
         align-items: center;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             position: absolute;
-            right: 0;
-            top: -100vh;
+            right: -100vw;
+            top: 0;
             height: 100vh;
             width: 40%;
             align-items: center;
@@ -53,28 +53,33 @@ header {
             z-index: 2;
         }
 
+        @include media ("<tablet") {
+            width: 60%;
+        }
+
         @include media ("<phone") {
             width: 100%;
+            background: rgba(255, 255, 255, 1);
         }
     }
 
     .menu_active {
-        top: 0;
+        right: 0;
     }
 
     .menu {
         display: flex;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             flex-direction: column;
             text-align: center;
         }
     }
 
     .menu-item {
-        margin-right: 40px;
+        margin-left: 40px;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             margin: 0 0 40px 0;
         }
 
@@ -87,10 +92,6 @@ header {
                 color: $golden;
             }
         }
-
-        &::last-child {
-            margin-right: 0;
-        }
     }
 
     .header-burger {
@@ -102,7 +103,7 @@ header {
         cursor: pointer;
         z-index: 3;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             display: block;
         }
 
