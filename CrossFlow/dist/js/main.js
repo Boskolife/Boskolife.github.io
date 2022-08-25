@@ -44,13 +44,28 @@ destroySlidersOnResize(".me-slider", 99999, {
   speed: 1000
 });
 destroySlidersOnResize(".awards-slider", 99999, {
-  spaceBetween: 20,
+  spaceBetween: 10,
   slidesPerView: 4,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  speed: 1000
+  speed: 1000,
+  loop: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    760: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 4
+    }
+  }
 });
 /* header */
 
