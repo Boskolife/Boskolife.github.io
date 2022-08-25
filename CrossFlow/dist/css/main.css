@@ -577,6 +577,71 @@ input[type='submit'] {
   -o-object-fit: cover;
   object-fit: cover; }
 
+.cont {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px; }
+  @media (max-width: 479px) {
+    .cont {
+      padding: 0 10px; } }
+
+.yellow-btn {
+  padding: 15px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  background: #FDB604;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all .3s ease;
+  text-align: center; }
+  @media (max-width: 479px) {
+    .yellow-btn {
+      font-size: 14px; } }
+  .yellow-btn:hover {
+    background: #FFA500; }
+
+.grey-btn {
+  padding: 15px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #efefef;
+  background: #4F4F4F;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  transition: all .3s ease;
+  text-align: center; }
+  @media (max-width: 479px) {
+    .grey-btn {
+      font-size: 14px; } }
+  .grey-btn:hover {
+    background: #666565; }
+
+.component-title {
+  padding: 10px 0 10px 0;
+  /* Только если меньше контейнера */
+  padding-right: 90px;
+  /* Только если меньше контейнера */
+  padding-left: 90px;
+  background: #000000;
+  /* Только если меньше контейнера */
+  font-size: 20px;
+  color: #efefef;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block; }
+  @media (max-width: 1350px) {
+    .component-title {
+      padding-right: calc(40px + 50 * ((100vw - calc(320px)) / 1030)); } }
+  @media (max-width: 1350px) {
+    .component-title {
+      padding-left: calc(40px + 50 * ((100vw - calc(320px)) / 1030)); } }
+  @media (max-width: 1350px) {
+    .component-title {
+      font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1030)); } }
+
 .body_lock {
   overflow: hidden; }
 
@@ -993,78 +1058,12 @@ header {
 body {
   background: #fff; }
 
-.cont {
-  max-width: 1350px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px; }
-  @media (max-width: 479px) {
-    .cont {
-      padding: 0 10px; } }
-
-.yellow-btn {
-  padding: 15px 35px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #000000;
-  background: #FDB604;
-  border-radius: 10px;
-  display: inline-block;
-  transition: all .3s ease;
-  text-align: center; }
-  @media (max-width: 479px) {
-    .yellow-btn {
-      font-size: 14px; } }
-  .yellow-btn:hover {
-    background: #FFA500; }
-
-.grey-btn {
-  padding: 15px 35px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #efefef;
-  background: #4F4F4F;
-  border-radius: 10px;
-  display: inline-block;
-  text-align: center;
-  transition: all .3s ease;
-  text-align: center; }
-  @media (max-width: 479px) {
-    .grey-btn {
-      font-size: 14px; } }
-  .grey-btn:hover {
-    background: #666565; }
-
-.component-title {
-  padding: 10px 0 10px 0;
-  /* Только если меньше контейнера */
-  padding-right: 90px;
-  /* Только если меньше контейнера */
-  padding-left: 90px;
-  background: #000000;
-  /* Только если меньше контейнера */
-  font-size: 20px;
-  color: #efefef;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block; }
-  @media (max-width: 1350px) {
-    .component-title {
-      padding-right: calc(40px + 50 * ((100vw - calc(320px)) / 1030)); } }
-  @media (max-width: 1350px) {
-    .component-title {
-      padding-left: calc(40px + 50 * ((100vw - calc(320px)) / 1030)); } }
-  @media (max-width: 1350px) {
-    .component-title {
-      font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1030)); } }
-
 /* -----------------------------------------#Main------------------------------------- */
 .main-section {
   padding-bottom: 50px;
   padding-top: 100px; }
   .main-section .cont {
-    min-height: calc(100vh - 150px); }
-  .main-section .main-content {
+    min-height: calc(100vh - 150px);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -1072,7 +1071,7 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between; }
     @media (max-width: 767px) {
-      .main-section .main-content {
+      .main-section .cont {
         -ms-flex-direction: column;
         flex-direction: column; } }
   .main-section .main-text {
@@ -1346,11 +1345,11 @@ body {
     @media (max-width: 767px) {
       .main-swiper .slide-img {
         width: 60%;
-        margin-bottom: 35px; } }
+        margin-bottom: 35px;
+        padding: 0 0 60% 0; } }
     @media (max-width: 479px) {
       .main-swiper .slide-img {
-        width: 100%;
-        padding: 0 0 50% 0; } }
+        width: 100%; } }
   .main-swiper .slide-text {
     width: 63%; }
     @media (max-width: 767px) {
@@ -1452,21 +1451,22 @@ body {
       height: 14px;
       fill: #000000; }
 
-/* -----------------------------------------#Main-swiper------------------------------------- */
+/* -----------------------------------------#Awards-swiper------------------------------------- */
 .awards {
   /* Только если меньше контейнера */
-  padding-top: 120px;
+  padding-top: 60px;
   /* Только если меньше контейнера */
-  padding-bottom: 120px;
+  padding-bottom: 60px;
   -webkit-transform: skewY(-3deg);
   transform: skewY(-3deg);
-  text-align: center; }
+  text-align: center;
+  background: #F9F9F9; }
   @media (max-width: 1350px) {
     .awards {
-      padding-top: calc(30px + 90 * ((100vw - calc(320px)) / 1030)); } }
+      padding-top: calc(30px + 30 * ((100vw - calc(320px)) / 1030)); } }
   @media (max-width: 1350px) {
     .awards {
-      padding-bottom: calc(30px + 90 * ((100vw - calc(320px)) / 1030)); } }
+      padding-bottom: calc(30px + 30 * ((100vw - calc(320px)) / 1030)); } }
   .awards .component-title {
     -webkit-transform: skewY(3deg);
     transform: skewY(3deg);
@@ -1504,14 +1504,14 @@ body {
 /* -----------------------------------------#Cases------------------------------------- */
 .cases {
   /* Только если меньше контейнера */
-  padding-top: 200px;
+  padding-top: 150px;
   /* Только если меньше контейнера */
   padding-bottom: 200px;
   position: relative;
   height: 100%; }
   @media (max-width: 1350px) {
     .cases {
-      padding-top: calc(100px + 100 * ((100vw - calc(320px)) / 1030)); } }
+      padding-top: calc(100px + 50 * ((100vw - calc(320px)) / 1030)); } }
   @media (max-width: 1350px) {
     .cases {
       padding-bottom: calc(100px + 100 * ((100vw - calc(320px)) / 1030)); } }

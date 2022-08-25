@@ -2,71 +2,6 @@ body {
     background: #fff;
 }
 
-.cont {
-    max-width: 1350px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-
-    @include media ("<phone") {
-        padding: 0 10px;
-    }
-}
-
-.yellow-btn {
-    padding: 15px 35px;
-    font-weight: 600;
-    font-size: 16px;
-    color: $black;
-    background: $yellow;
-    border-radius: 10px;
-    display: inline-block;
-    transition: all .3s ease;
-    text-align: center;
-
-    @include media ("<phone") {
-        font-size: 14px;
-    }
-
-    &:hover {
-        background: #FFA500;
-    }
-}
-
-.grey-btn {
-    padding: 15px 35px;
-    font-weight: 600;
-    font-size: 16px;
-    color: $white;
-    background: $gray_02;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: center;
-    transition: all .3s ease;
-    text-align: center;
-
-    @include media ("<phone") {
-        font-size: 14px;
-    }
-
-    &:hover {
-        background: #666565;
-    }
-}
-
-.component-title {
-    padding: 10px 0 10px 0;
-    @include adaptiv-vaule("padding-right", 90, 40, 1);
-    @include adaptiv-vaule("padding-left", 90, 40, 1);
-    background: $black;
-    @include adaptiv-vaule("font-size", 20, 15, 1);
-    color: $white;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-}
-
-
 /* -----------------------------------------#Main------------------------------------- */
 
 .main-section {
@@ -75,9 +10,6 @@ body {
 
     .cont {
         min-height: calc(100vh - 150px);
-    }
-
-    .main-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -388,11 +320,11 @@ body {
         @include media ("<tablet") {
             width: 60%;
             margin-bottom: 35px;
+            padding: 0 0 60% 0;
         }
 
         @include media ("<phone") {
             width: 100%;
-            padding: 0 0 50% 0;
         }
     }
 
@@ -520,14 +452,15 @@ body {
 }
 
 
-/* -----------------------------------------#Main-swiper------------------------------------- */
+/* -----------------------------------------#Awards-swiper------------------------------------- */
 
 
 .awards {
-    @include adaptiv-vaule("padding-top", 120, 30, 1);
-    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
+    @include adaptiv-vaule("padding-top", 60, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 60, 30, 1);
     transform: skewY(-3deg);
     text-align: center;
+    background: #F9F9F9;
 
     .component-title {
         transform: skewY(3deg);
@@ -572,7 +505,7 @@ body {
 
 
 .cases {
-    @include adaptiv-vaule("padding-top", 200, 100, 1);
+    @include adaptiv-vaule("padding-top", 150, 100, 1);
     @include adaptiv-vaule("padding-bottom", 200, 100, 1);
     position: relative;
     height: 100%;
