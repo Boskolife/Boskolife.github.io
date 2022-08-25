@@ -1010,14 +1010,13 @@ body {
   background: #FDB604;
   border-radius: 10px;
   display: inline-block;
-  transition: all 0.4s ease;
+  transition: all .3s ease;
   text-align: center; }
   @media (max-width: 479px) {
     .yellow-btn {
       font-size: 14px; } }
   .yellow-btn:hover {
-    background: #ebaa06;
-    color: #efefef; }
+    background: #FFA500; }
 
 .grey-btn {
   padding: 15px 35px;
@@ -1028,7 +1027,7 @@ body {
   border-radius: 10px;
   display: inline-block;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all .3s ease;
   text-align: center; }
   @media (max-width: 479px) {
     .grey-btn {
