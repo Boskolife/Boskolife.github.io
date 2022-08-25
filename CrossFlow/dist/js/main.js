@@ -61,48 +61,36 @@ window.onload = function () {
     var targetElement = e.target;
 
     if (window.innerWidth < 1024) {
-      if (targetElement.classList.contains('arrows')) {
+      if (targetElement.classList.contains('arrow')) {
         targetElement.closest('.menu-item').classList.toggle('menu-item_active');
-        targetElement.closest('.menu').classList.toggle('opacity-links');
       }
     }
   }
 };
 
 var burger = document.querySelector(".burger");
-var menuBody = document.querySelector(".menu-wrap");
-var linkClose = document.querySelectorAll(".link-close");
 
 if (burger) {
-  burger.addEventListener("click", function (e) {
-    document.body.classList.toggle("body_lock");
-    document.body.classList.toggle("active");
-
-    if (burger.classList.contains('burger_active')) {
-      burger.classList.add('burger_finish');
-      burger.classList.remove('burger_active');
-    } else {
-      burger.classList.add('burger_active');
-      burger.classList.remove('burger_finish');
-    }
-
-    menuBody.classList.toggle("menu_active");
-  });
+  burgerOutsideClick();
+  burger.addEventListener("click", openMenu);
 }
 
 ;
 
-if (linkClose.length) {
-  for (var i = 0; i < linkClose.length; ++i) {
-    linkClose[i].addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock");
-      document.body.classList.remove("active");
-      burger.classList.remove("burger_active");
-      burger.classList.add('burger_finish');
-      menuBody.classList.remove("menu_active");
-    });
-  }
+function openMenu(e) {
+  document.body.classList.toggle("body_lock");
+  document.body.classList.toggle("active");
+  menuBody.classList.toggle("menu_active");
 }
 
-;
+function closeMenu(e) {
+  document.body.classList.remove("body_lock");
+  document.body.classList.remove("active");
+  menuBody.classList.remove("menu_active");
+}
+
+function burgerOutsideClick() {
+  var backdrop = document.querySelector('.backdrop');
+  backdrop.addEventListener('click', closeMenu);
+}
 //# sourceMappingURL=main.js.map
