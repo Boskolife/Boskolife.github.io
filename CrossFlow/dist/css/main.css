@@ -981,7 +981,10 @@ header {
     width: 18px;
     height: 18px; }
   header .search-btn:hover svg {
-    fill: #efefef; }
+    fill: #FDB604; }
+    @media (max-width: 1023px) {
+      header .search-btn:hover svg {
+        fill: #efefef; } }
   header .account {
     margin-left: 20px; }
     @media (max-width: 1199px) {
@@ -1491,7 +1494,7 @@ body {
   -webkit-transform: skewY(-3deg);
   transform: skewY(-3deg);
   text-align: center;
-  background: red; }
+  background: #F9F9F9; }
   @media (max-width: 1350px) {
     .awards {
       padding-top: calc(30px + 30 * ((100vw - calc(320px)) / 1030)); } }
@@ -1954,8 +1957,12 @@ body {
         -ms-flex-align: center;
         align-items: center; } }
     #footer .bot .title:hover {
-      text-decoration: underline;
-      color: #efefef; }
+      color: #efefef;
+      text-decoration: underline; }
+    #footer .bot .text {
+      font-weight: 400;
+      font-size: 14px;
+      margin: 0; }
   #footer .socials {
     display: -ms-flexbox;
     display: flex; }

@@ -431,7 +431,11 @@ header{
         &:hover{
 
             svg{
-                fill: $white;
+                fill: $yellow;
+
+                @include media('<desktop'){
+                    fill: $white;
+                }
             }
         }
     }

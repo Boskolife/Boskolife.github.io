@@ -205,9 +205,15 @@
         .title{
     
             &:hover{
-                text-decoration: underline;
                 color: $white;
+                text-decoration: underline;
             }
+        }
+
+        .text{
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0;
         }
     }
 
