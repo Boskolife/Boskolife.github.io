@@ -71,12 +71,14 @@ body {
 
 .main-section {
     padding-bottom: 50px;
-    padding-top: 70px;
+    padding-top: 100px;
+
 
     .main-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: 100vh;
 
         @include media ("<tablet") {
             flex-direction: column;
