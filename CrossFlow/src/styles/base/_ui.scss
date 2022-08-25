@@ -1,3 +1,14 @@
+.body_lock{
+    overflow: hidden;
+}
+
+.transparent{
+
+    header{
+        background-color: transparent; 
+    }
+}
+
 .ibg {
     position: absolute;
     top: 0;
@@ -34,7 +45,7 @@
     }
 
     &:hover {
-        background: #FFA500;
+        background: $yellow_h;
     }
 }
 

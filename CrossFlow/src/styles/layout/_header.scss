@@ -1,14 +1,3 @@
-.body_lock{
-    overflow: hidden;
-}
-
-.transparent{
-
-    header{
-        background-color: transparent; 
-    }
-}
-
 header{
     position: absolute;
     width: 100%;
@@ -40,8 +29,8 @@ header{
         }
     }
     
-    .container{
-        max-width: 1330px;
+    .cont{
+        max-width: 1570px;
     }
 
     .content{
