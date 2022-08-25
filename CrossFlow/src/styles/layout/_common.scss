@@ -42,8 +42,12 @@ body {
     background: $gray_02;
     border-radius: 10px;
     display: inline-block;
-    transition: all 0.4s ease;
     text-align: center;
+    transition: all 0.4s ease;
+<<<<<<< Updated upstream
+    text-align: center;
+=======
+>>>>>>> Stashed changes
 
     @include media ("<phone") {
         font-size: 14px;
@@ -347,6 +351,10 @@ body {
     }
 
     .btn-wrap {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         @include media ("<phone") {
             .grey-btn {
                 width: 100%;
@@ -419,9 +427,9 @@ body {
     .pers-img {
         width: 76px;
         height: 76px;
+        position: relative;
         border-radius: 50%;
         overflow: hidden;
-        object-fit: cover;
         margin-right: 15px;
 
         @include media ("<tablet") {

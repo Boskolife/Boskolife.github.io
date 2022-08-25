@@ -1130,8 +1130,13 @@ body {
   background: #4F4F4F;
   border-radius: 10px;
   display: inline-block;
+<<<<<<< Updated upstream
   transition: all 0.4s ease;
   text-align: center; }
+=======
+  text-align: center;
+  transition: all 0.4s ease; }
+>>>>>>> Stashed changes
   @media (max-width: 479px) {
     .grey-btn {
       font-size: 14px; } }
@@ -1481,10 +1486,9 @@ body {
   .main-swiper .pers-img {
     width: 76px;
     height: 76px;
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
-    -o-object-fit: cover;
-    object-fit: cover;
     margin-right: 15px; }
     @media (max-width: 767px) {
       .main-swiper .pers-img {
