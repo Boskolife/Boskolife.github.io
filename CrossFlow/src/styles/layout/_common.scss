@@ -1,0 +1,383 @@
+.cont {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include media ("<phone") {
+        padding: 0 10px;
+    }
+}
+
+.yellow-btn {
+    padding: 15px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    color: $black;
+    background: $yellow;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.4s ease;
+
+    @include media ("<phone") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: #e2a304;
+    }
+}
+
+.grey-btn {
+    padding: 15px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    color: $white;
+    background: $gray-2;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.4s ease;
+    max-width: 220px;
+
+    @include media ("<phone") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: #666565;
+    }
+}
+
+.component-title {
+    padding: 10px 0 10px 0;
+    @include adaptiv-vaule("padding-right", 90, 40, 1);
+    @include adaptiv-vaule("padding-left", 90, 40, 1);
+    background: $black;
+    @include adaptiv-vaule("font-size", 20, 15, 1);
+    color: $white;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+/* -----------------------------------------#Main------------------------------------- */
+
+.main-section {
+    margin-bottom: 70px;
+
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .main-text {
+        width: 40%;
+        margin-right: 20px;
+
+        @include media ("<tablet") {
+            width: 80%;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-right: 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .main-title {
+        margin-bottom: 30px;
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .main-description {
+        font-size: 12px;
+        line-height: 18 / 12 * 100%;
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .main-img {
+        width: 55%;
+
+        @include media ("<tablet") {
+            width: 73%;
+        }
+    }
+}
+
+
+
+/* -----------------------------------------#About------------------------------------- */
+
+.about {
+    margin-bottom: 80px;
+
+    .about-content {
+        text-align: center;
+    }
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 85, 30, 1);
+    }
+
+    .description {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 125px;
+        @include adaptiv-vaule("margin-bottom", 125, 50, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .solutions {
+        text-align: start;
+        margin-right: 50px;
+
+        @include media ("<desktop") {
+            margin: 0 0 70px 0;
+            text-align: center;
+        }
+
+        @include media ("<tablet") {
+            margin: 0 0 45px 0;
+        }
+    }
+
+    .solution-title {
+        margin-bottom: 115px;
+
+        @include media ("<desktop") {
+            margin-bottom: 15px;
+        }
+    }
+
+    .solution-description {
+        font-size: 20px;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .numbers {
+        text-align: start;
+
+        @include media ("<desktop") {
+            text-align: center
+        }
+    }
+
+    .numbers-title {
+        @include adaptiv-vaule("font-size", 26, 18, 1);
+        margin-bottom: 100px;
+
+        @include media ("<desktop") {
+            margin-bottom: 50px;
+        }
+    }
+
+    .box-number {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .box {
+        display: flex;
+
+        &:first-child {
+            margin-right: 50px;
+
+            @include media ("<tablet") {
+                margin-right: 25px
+            }
+        }
+
+        span {
+            @include adaptiv-vaule("font-size", 96, 48, 1);
+            margin-right: 25px;
+
+            @include media ("<tablet") {
+                margin-right: 15px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 13px;
+
+            @include media ("<tablet") {
+                font-size: 16px;
+                margin-top: 7px;
+            }
+        }
+    }
+
+    .gallery {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .img-block {
+        position: relative;
+        width: 30%;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0 0 40% 0;
+        margin-bottom: 70px;
+
+        @include media ("<tablet") {
+            width: 48%;
+            padding: 0 0 60% 0;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            padding: 0 0 100% 0;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+/* -----------------------------------------#Solutions------------------------------------- */
+
+
+.solutions {
+    @include adaptiv-vaule("margin-bottom", 150, 50, 1);
+
+    .solutions-content {
+        text-align: center;
+    }
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 65, 35, 1);
+    }
+
+    .solutions-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+
+    .card {
+        width: 31%;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 35px;
+
+        @include media ("<900px") {
+            width: 48%;
+        }
+
+        @include media ("<650px") {
+            width: 89%;
+            margin: 0 auto;
+            margin-bottom: 35px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .img-card {
+        position: relative;
+        padding: 0 0 90% 0;
+        margin-bottom: 20px;
+
+        @include media ("<650px") {
+            padding: 0 0 60% 0;
+        }
+    }
+
+    .card-title {
+        @include adaptiv-vaule("font-size", 25, 18, 1);
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+    }
+
+    .card-description {
+        font-size: 15px;
+        flex: 1 1 auto;
+        @include adaptiv-vaule("margin-bottom", 65, 30, 1);
+    }
+}
+
+
+/* -----------------------------------------#Main-swiper------------------------------------- */
+
+.main-swiper {
+
+    .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slide-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0 0 32% 0;
+        width: 32%;
+    }
+
+    .slide-text {
+        width: 63%;
+    }
+
+    .component-title {
+        margin-bottom: 35px;
+    }
+
+    .slide-title {
+        margin-bottom: 80px;
+    }
+
+    .personal-info {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .pers-img {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    .name {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .job,
+    .sub-name {
+        font-size: 15px;
+    }
+}
