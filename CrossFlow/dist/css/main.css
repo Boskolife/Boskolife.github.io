@@ -441,7 +441,8 @@ h6,
 h1,
 .h1 {
   /* Только если меньше контейнера */
-  font-size: 36px; }
+  font-size: 36px;
+  line-height: 150%; }
   @media (max-width: 1350px) {
     h1,
     .h1 {
@@ -450,7 +451,8 @@ h1,
 h2,
 .h2 {
   /* Только если меньше контейнера */
-  font-size: 32px; }
+  font-size: 32px;
+  line-height: 150%; }
   @media (max-width: 1350px) {
     h2,
     .h2 {
@@ -592,7 +594,8 @@ input[type='submit'] {
     .yellow-btn {
       font-size: 14px; } }
   .yellow-btn:hover {
-    background: #e2a304; }
+    background: #ebaa06;
+    color: #efefef; }
 
 .grey-btn {
   padding: 15px 35px;
@@ -635,7 +638,7 @@ input[type='submit'] {
 
 /* -----------------------------------------#Main------------------------------------- */
 .main-section {
-  margin-bottom: 70px; }
+  padding-bottom: 35px; }
   .main-section .main-content {
     display: -ms-flexbox;
     display: flex;
@@ -679,7 +682,8 @@ input[type='submit'] {
 
 /* -----------------------------------------#About------------------------------------- */
 .about {
-  margin-bottom: 80px; }
+  padding-top: 35px;
+  padding-bottom: 40px; }
   .about .about-content {
     text-align: center; }
   .about .component-title {
@@ -707,15 +711,15 @@ input[type='submit'] {
         flex-direction: column;
         -ms-flex-align: center;
         align-items: center; } }
-  .about .solutions {
+  .about .solution {
     text-align: start;
     margin-right: 50px; }
     @media (max-width: 1023px) {
-      .about .solutions {
+      .about .solution {
         margin: 0 0 70px 0;
         text-align: center; } }
     @media (max-width: 767px) {
-      .about .solutions {
+      .about .solution {
         margin: 0 0 45px 0; } }
   .about .solution-title {
     margin-bottom: 115px; }
@@ -723,7 +727,8 @@ input[type='submit'] {
       .about .solution-title {
         margin-bottom: 15px; } }
   .about .solution-description {
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 150%; }
     @media (max-width: 767px) {
       .about .solution-description {
         font-size: 16px; } }
@@ -747,6 +752,12 @@ input[type='submit'] {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (max-width: 767px) {
+      .about .box-number {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center; } }
   .about .box {
     display: -ms-flexbox;
     display: flex; }
@@ -755,6 +766,9 @@ input[type='submit'] {
       @media (max-width: 767px) {
         .about .box:first-child {
           margin-right: 25px; } }
+      @media (max-width: 479px) {
+        .about .box:first-child {
+          margin: 0 0 20px 0; } }
     .about .box span {
       /* Только если меньше контейнера */
       font-size: 96px;
@@ -767,7 +781,8 @@ input[type='submit'] {
           margin-right: 15px; } }
     .about .box p {
       font-size: 20px;
-      margin-top: 13px; }
+      margin-top: 13px;
+      line-height: 150%; }
       @media (max-width: 767px) {
         .about .box p {
           font-size: 16px;
@@ -801,6 +816,7 @@ input[type='submit'] {
 
 /* -----------------------------------------#Solutions------------------------------------- */
 .solutions {
+  padding-top: 40px;
   /* Только если меньше контейнера */
   margin-bottom: 150px; }
   @media (max-width: 1350px) {
@@ -851,7 +867,8 @@ input[type='submit'] {
     /* Только если меньше контейнера */
     font-size: 25px;
     /* Только если меньше контейнера */
-    margin-bottom: 60px; }
+    margin-bottom: 60px;
+    line-height: 152%; }
     @media (max-width: 1350px) {
       .solutions .card-title {
         font-size: calc(18px + 7 * ((100vw - calc(320px)) / 1030)); } }
@@ -863,56 +880,69 @@ input[type='submit'] {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     /* Только если меньше контейнера */
-    margin-bottom: 65px; }
+    margin-bottom: 65px;
+    line-height: 146.66667%; }
     @media (max-width: 1350px) {
       .solutions .card-description {
         margin-bottom: calc(30px + 35 * ((100vw - calc(320px)) / 1030)); } }
 
 /* -----------------------------------------#Main-swiper------------------------------------- */
-.main-swiper .swiper-slide {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-.main-swiper .slide-img {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 0 0 32% 0;
-  width: 32%; }
-
-.main-swiper .slide-text {
-  width: 63%; }
-
-.main-swiper .component-title {
-  margin-bottom: 35px; }
-
-.main-swiper .slide-title {
-  margin-bottom: 80px; }
-
-.main-swiper .personal-info {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: start;
-  align-items: flex-start; }
-
-.main-swiper .pers-img {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  overflow: hidden;
-  -o-object-fit: cover;
-  object-fit: cover;
-  margin-right: 15px; }
-
-.main-swiper .name {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 5px; }
-
-.main-swiper .job,
-.main-swiper .sub-name {
-  font-size: 15px; }
+.main-swiper {
+  padding-bottom: 120px; }
+  .main-swiper .swiper-slide {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .main-swiper .slide-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0 0 32% 0;
+    width: 32%; }
+  .main-swiper .slide-text {
+    width: 63%; }
+  .main-swiper .component-title {
+    margin-bottom: 35px; }
+  .main-swiper .slide-title {
+    margin-bottom: 80px; }
+  .main-swiper .personal-info {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .main-swiper .pers-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    overflow: hidden;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-right: 15px; }
+  .main-swiper .name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px; }
+  .main-swiper .job,
+  .main-swiper .sub-name {
+    font-size: 15px; }
+  .main-swiper .sub-name {
+    margin-top: 5px; }
+  .main-swiper .controls {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 50px; }
+  .main-swiper .swiper-button-prev,
+  .main-swiper .swiper-button-next {
+    position: static;
+    top: auto; }
+    .main-swiper .swiper-button-prev::after,
+    .main-swiper .swiper-button-next::after {
+      color: #000000;
+      font-size: 20px; }
 
 /*# sourceMappingURL=main.css.map */

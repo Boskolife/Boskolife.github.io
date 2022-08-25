@@ -31,10 +31,15 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".me-slider", 960, {
+destroySlidersOnResize(".me-slider", 99999, {
   spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination"
-  }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  speed: 1000
 });
 //# sourceMappingURL=main.js.map
