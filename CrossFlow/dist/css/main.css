@@ -1449,8 +1449,8 @@ header {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin-top: 50px; }
     .main-swiper .controls .swiper-pagination-bullet {
       background: #BDBDBD;
@@ -1464,16 +1464,23 @@ header {
       height: 11px;
       border-radius: 5px; }
   .main-swiper .swiper-pagination {
-    position: static; }
+    position: static;
+    width: auto !important;
+    margin: 0 50px; }
   .main-swiper .swiper-button-prev,
   .main-swiper .swiper-button-next {
     position: static;
-    top: auto; }
+    top: auto;
+    width: 30px;
+    height: 30px;
+    margin: 0; }
     .main-swiper .swiper-button-prev::after,
     .main-swiper .swiper-button-next::after {
-      color: #000000;
-      font-size: 20px;
-      width: 30px;
-      height: 30px; }
+      content: none; }
+    .main-swiper .swiper-button-prev svg,
+    .main-swiper .swiper-button-next svg {
+      width: 23px;
+      height: 14px;
+      fill: #000000; }
 
 /*# sourceMappingURL=main.css.map */
