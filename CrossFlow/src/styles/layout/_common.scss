@@ -279,7 +279,7 @@
 
 .solutions {
     padding-top: 40px;
-    @include adaptiv-vaule("margin-bottom", 150, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 75, 25, 1);
 
     .solutions-content {
         text-align: center;
@@ -345,7 +345,8 @@
 /* -----------------------------------------#Main-swiper------------------------------------- */
 
 .main-swiper {
-    padding-bottom: 120px;
+    @include adaptiv-vaule("padding-top", 75, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
 
     .swiper-slide {
         display: flex;
@@ -442,10 +443,34 @@
             content: none;
         }
 
-        svg{
+        svg {
             width: 23px;
             height: 14px;
             fill: $black;
         }
+    }
+}
+
+
+/* -----------------------------------------#Main-swiper------------------------------------- */
+
+
+.awards {
+    @include adaptiv-vaule("padding-top", 120, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
+    transform: skewY(-5deg);
+    text-align: center;
+    background: #ebaa06;
+
+    .component-title {
+        transform: skewY(5deg);
+    }
+
+    .awards-slider {
+        transform: skewY(5deg);
+    }
+
+    .component-title {
+        margin-bottom: 115px;
     }
 }

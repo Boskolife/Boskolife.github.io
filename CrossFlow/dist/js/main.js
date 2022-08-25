@@ -43,6 +43,15 @@ destroySlidersOnResize(".me-slider", 99999, {
   },
   speed: 1000
 });
+destroySlidersOnResize(".awards-slider", 99999, {
+  spaceBetween: 20,
+  slidesPerView: 4,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  speed: 1000
+});
 /* header */
 
 window.onload = function () {
