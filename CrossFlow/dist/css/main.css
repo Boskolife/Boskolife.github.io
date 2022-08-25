@@ -1061,7 +1061,35 @@ body {
 /* -----------------------------------------#Main------------------------------------- */
 .main-section {
   padding-bottom: 50px;
-  padding-top: 100px; }
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden; }
+  .main-section::before {
+    content: '';
+    position: absolute;
+    -webkit-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    bottom: 42px;
+    left: 0;
+    border: 10px solid transparent;
+    border-right: 100vw solid #FDB604;
+    border-top: 0px solid #FDB604; }
+    @media (max-width: 767px) {
+      .main-section::before {
+        bottom: 50px; } }
+  .main-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    -webkit-transform: skewY(-2.6deg);
+    transform: skewY(-2.6deg); }
+    @media (max-width: 767px) {
+      .main-section::after {
+        bottom: -43px; } }
   .main-section .cont {
     min-height: calc(100vh - 150px);
     display: -ms-flexbox;
@@ -1099,7 +1127,9 @@ body {
       .main-section .main-description {
         margin-bottom: 20px; } }
   .main-section .main-img {
-    width: 52%; }
+    width: 52%;
+    -ms-flex-item-align: end;
+    align-self: flex-end; }
     @media (max-width: 767px) {
       .main-section .main-img {
         width: 73%; } }
@@ -1349,7 +1379,8 @@ body {
         padding: 0 0 60% 0; } }
     @media (max-width: 479px) {
       .main-swiper .slide-img {
-        width: 100%; } }
+        width: 100%;
+        padding: 0 0 100% 0; } }
   .main-swiper .slide-text {
     width: 63%; }
     @media (max-width: 767px) {
@@ -1460,7 +1491,7 @@ body {
   -webkit-transform: skewY(-3deg);
   transform: skewY(-3deg);
   text-align: center;
-  background: #F9F9F9; }
+  background: red; }
   @media (max-width: 1350px) {
     .awards {
       padding-top: calc(30px + 30 * ((100vw - calc(320px)) / 1030)); } }
@@ -1504,14 +1535,16 @@ body {
 /* -----------------------------------------#Cases------------------------------------- */
 .cases {
   /* Только если меньше контейнера */
-  padding-top: 150px;
+  padding-top: 130px;
   /* Только если меньше контейнера */
   padding-bottom: 200px;
   position: relative;
-  height: 100%; }
+  height: 100%;
+  -webkit-transform: skewY(-3deg);
+  transform: skewY(-3deg); }
   @media (max-width: 1350px) {
     .cases {
-      padding-top: calc(100px + 50 * ((100vw - calc(320px)) / 1030)); } }
+      padding-top: calc(100px + 30 * ((100vw - calc(320px)) / 1030)); } }
   @media (max-width: 1350px) {
     .cases {
       padding-bottom: calc(100px + 100 * ((100vw - calc(320px)) / 1030)); } }
@@ -1523,7 +1556,9 @@ body {
     -webkit-column-gap: 40px;
     -moz-column-gap: 40px;
     column-gap: 40px;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr;
+    -webkit-transform: skewY(3deg);
+    transform: skewY(3deg); }
     @media (max-width: 1023px) {
       .cases .cases-content {
         grid-template-columns: 1fr;
@@ -1535,25 +1570,12 @@ body {
     .cases .block-text {
       text-align: center; } }
   .cases .component-title {
-    /* Только если меньше контейнера */
-    margin-bottom: 40px; }
-    @media (max-width: 1350px) {
-      .cases .component-title {
-        margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 1030)); } }
+    margin-bottom: 20px; }
   .cases .case-title {
-    /* Только если меньше контейнера */
-    margin-bottom: 50px; }
-    @media (max-width: 1350px) {
-      .cases .case-title {
-        margin-bottom: calc(25px + 25 * ((100vw - calc(320px)) / 1030)); } }
+    margin-bottom: 25px; }
   .cases .cases-description {
-    /* Только если меньше контейнера */
-    margin-bottom: 80px; }
-    @media (max-width: 1350px) {
-      .cases .cases-description {
-        margin-bottom: calc(40px + 40 * ((100vw - calc(320px)) / 1030)); } }
+    margin-bottom: 20px; }
   .cases .block-company {
-    background: url(../images/Main-page/Cases/block-bg.jpg) 0 0/cover no-repeat;
     border-radius: 10px;
     display: -ms-flexbox;
     display: flex;
@@ -1740,6 +1762,10 @@ body {
         .consultation form input,
         .consultation form textarea {
           margin-bottom: 15px; } }
+      .consultation form input:focus,
+      .consultation form textarea:focus {
+        border: 1px solid #FDB604;
+        transition: all 0.3s ease; }
       .consultation form input::-webkit-input-placeholder, .consultation form textarea::-webkit-input-placeholder {
         color: #000000; }
       .consultation form input::-moz-placeholder, .consultation form textarea::-moz-placeholder {

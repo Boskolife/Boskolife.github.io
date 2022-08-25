@@ -7,6 +7,38 @@ body {
 .main-section {
     padding-bottom: 50px;
     padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        transform: skewY(-3deg);
+        bottom: 42px;
+        left: 0;
+        border: 10px solid transparent;
+        border-right: 100vw solid $yellow;
+        border-top: 0px solid $yellow;
+
+        @include media ("<tablet") {
+            bottom: 50px;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        transform: skewY(-2.6deg);
+
+        @include media ("<tablet") {
+            bottom: -43px;
+        }
+    }
 
     .cont {
         min-height: calc(100vh - 150px);
@@ -56,6 +88,7 @@ body {
 
     .main-img {
         width: 52%;
+        align-self: flex-end;
 
         @include media ("<tablet") {
             width: 73%;
@@ -325,6 +358,7 @@ body {
 
         @include media ("<phone") {
             width: 100%;
+            padding: 0 0 100% 0;
         }
     }
 
@@ -460,7 +494,7 @@ body {
     @include adaptiv-vaule("padding-bottom", 60, 30, 1);
     transform: skewY(-3deg);
     text-align: center;
-    background: #F9F9F9;
+    background: red;
 
     .component-title {
         transform: skewY(3deg);
@@ -505,10 +539,11 @@ body {
 
 
 .cases {
-    @include adaptiv-vaule("padding-top", 150, 100, 1);
+    @include adaptiv-vaule("padding-top", 130, 100, 1);
     @include adaptiv-vaule("padding-bottom", 200, 100, 1);
     position: relative;
     height: 100%;
+    transform: skewY(-3deg);
 
     .cases-bg {
         z-index: -1;
@@ -519,6 +554,7 @@ body {
         row-gap: 50px;
         column-gap: 40px;
         grid-template-columns: 1fr 1fr;
+        transform: skewY(3deg);
 
         @include media ("<desktop") {
             grid-template-columns: 1fr;
@@ -534,19 +570,18 @@ body {
     }
 
     .component-title {
-        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+        margin-bottom: 20px;
     }
 
     .case-title {
-        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        margin-bottom: 25px;
     }
 
     .cases-description {
-        @include adaptiv-vaule("margin-bottom", 80, 40, 1);
+        margin-bottom: 20px;
     }
 
     .block-company {
-        background: url(../images/Main-page/Cases/block-bg.jpg) 0 0/cover no-repeat;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -589,6 +624,7 @@ body {
             }
         }
     }
+
 
     .logo-company {
         width: 300px;
@@ -720,6 +756,11 @@ body {
 
             @include media ("<tablet") {
                 margin-bottom: 15px;
+            }
+
+            &:focus {
+                border: 1px solid $yellow;
+                transition: all 0.3s ease;
             }
 
             &::placeholder {
