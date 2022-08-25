@@ -1452,6 +1452,19 @@ header {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin-top: 50px; }
+    .main-swiper .controls .swiper-pagination-bullet {
+      background: #BDBDBD;
+      width: 76px;
+      height: 11px;
+      border-radius: 5px;
+      opacity: 1; }
+    .main-swiper .controls .swiper-pagination-bullet-active {
+      background: #FDB604;
+      width: 76px;
+      height: 11px;
+      border-radius: 5px; }
+  .main-swiper .swiper-pagination {
+    position: static; }
   .main-swiper .swiper-button-prev,
   .main-swiper .swiper-button-next {
     position: static;
@@ -1459,6 +1472,8 @@ header {
     .main-swiper .swiper-button-prev::after,
     .main-swiper .swiper-button-next::after {
       color: #000000;
-      font-size: 20px; }
+      font-size: 20px;
+      width: 30px;
+      height: 30px; }
 
 /*# sourceMappingURL=main.css.map */
