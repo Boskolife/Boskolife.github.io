@@ -54,7 +54,7 @@ destroySlidersOnResize(".awards-slider", 99999, {
     320: {
       slidesPerView: 1
     },
-    480: {
+    550: {
       slidesPerView: 2
     },
 

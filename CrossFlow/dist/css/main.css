@@ -1061,8 +1061,8 @@ body {
 
 /* -----------------------------------------#Main------------------------------------- */
 .main-section {
-  padding-bottom: 35px;
-  padding-top: 35px; }
+  padding-bottom: 50px;
+  padding-top: 70px; }
   .main-section .main-content {
     display: -ms-flexbox;
     display: flex;
@@ -1529,7 +1529,7 @@ body {
         -webkit-column-gap: 0;
         -moz-column-gap: 0;
         column-gap: 0;
-        row-gap: 20px; } }
+        row-gap: 30px; } }
   @media (max-width: 1023px) {
     .cases .block-text {
       text-align: center; } }
@@ -1587,15 +1587,18 @@ body {
       .cases .block-company {
         padding-left: calc(10px + 10 * ((100vw - calc(320px)) / 1030)); } }
     @media (min-width: 1025px) {
-      .cases .block-company:hover::before {
+      .cases .block-company::before {
         position: absolute;
         content: '';
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1; }
+        background: rgba(0, 0, 0, 0);
+        z-index: 1;
+        transition: all 0.3s ease; }
+      .cases .block-company:hover::before {
+        background: rgba(0, 0, 0, 0.4); }
       .cases .block-company:hover .yellow-btn,
       .cases .block-company:hover .block-description {
         visibility: visible;
