@@ -24,7 +24,8 @@
     }
 
     &:hover {
-        background: #e2a304;
+        background: #ebaa06;
+        color: $white;
     }
 }
 
@@ -64,7 +65,7 @@
 /* -----------------------------------------#Main------------------------------------- */
 
 .main-section {
-    margin-bottom: 70px;
+    padding-bottom: 35px;
 
     .main-content {
         display: flex;
@@ -124,7 +125,8 @@
 /* -----------------------------------------#About------------------------------------- */
 
 .about {
-    margin-bottom: 80px;
+    padding-top: 35px;
+    padding-bottom: 40px;
 
     .about-content {
         text-align: center;
@@ -147,7 +149,7 @@
         }
     }
 
-    .solutions {
+    .solution {
         text-align: start;
         margin-right: 50px;
 
@@ -171,6 +173,7 @@
 
     .solution-description {
         font-size: 20px;
+        line-height: 30 / 20 * 100%;
 
         @include media ("<tablet") {
             font-size: 16px;
@@ -197,6 +200,11 @@
     .box-number {
         display: flex;
         justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .box {
@@ -207,6 +215,10 @@
 
             @include media ("<tablet") {
                 margin-right: 25px
+            }
+
+            @include media ("<phone") {
+                margin: 0 0 20px 0;
             }
         }
 
@@ -222,6 +234,7 @@
         p {
             font-size: 20px;
             margin-top: 13px;
+            line-height: 30 / 20 * 100%;
 
             @include media ("<tablet") {
                 font-size: 16px;
@@ -265,6 +278,7 @@
 
 
 .solutions {
+    padding-top: 40px;
     @include adaptiv-vaule("margin-bottom", 150, 50, 1);
 
     .solutions-content {
@@ -279,7 +293,6 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-
     }
 
     .card {
@@ -317,12 +330,14 @@
     .card-title {
         @include adaptiv-vaule("font-size", 25, 18, 1);
         @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+        line-height: 38 / 25 * 100%;
     }
 
     .card-description {
         font-size: 15px;
         flex: 1 1 auto;
         @include adaptiv-vaule("margin-bottom", 65, 30, 1);
+        line-height: 22 / 15 * 100%;
     }
 }
 
@@ -330,6 +345,7 @@
 /* -----------------------------------------#Main-swiper------------------------------------- */
 
 .main-swiper {
+    padding-bottom: 120px;
 
     .swiper-slide {
         display: flex;
@@ -379,5 +395,27 @@
     .job,
     .sub-name {
         font-size: 15px;
+    }
+
+    .sub-name {
+        margin-top: 5px;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        top: auto;
+
+        &::after {
+            color: $black;
+            font-size: 20px;
+        }
     }
 }
