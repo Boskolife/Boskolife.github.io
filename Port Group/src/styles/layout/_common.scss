@@ -3,61 +3,61 @@ body {
 }
 
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-.main-section{
+.main-section {
     position: relative;
 }
 
-.container{
+.container {
     max-width: 1320px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px 0 110px;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         padding: 0 20px;
     }
-    
+
 }
 
-.button{
+.button {
     background: #3C467A;
     padding: 10px;
     color: #FFFFFF;
     font-weight: 800;
     font-size: 20px;
 
-    &:hover{
+    &:hover {
         background: #272f58;
     }
 }
 
-.main-section{
+.main-section {
     padding: 30px 0 70px 0;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         padding: 40px 0 35px 0;
     }
 }
 
 
-.links{
+.links {
     display: flex;
     flex-direction: column;
     position: fixed;
     margin-top: -30px;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         display: none;
     }
 
-    .item-link{
+    .item-link {
         padding-left: 55px;
 
-        a{
+        a {
             writing-mode: vertical-lr;
             padding-bottom: 30px;
             color: #3C467A;
@@ -65,18 +65,18 @@ html{
             transform: rotate(180deg);
         }
 
-        .arrow{
+        .arrow {
             margin-left: 4px;
 
-            img{
+            img {
                 transform: rotate(180deg);
             }
         }
     }
 }
 
-.main-text{
-    h1{
+.main-text {
+    h1 {
         @include adaptiv-vaule("max-width", 1000, 305, 1);
         line-height: 120%;
         color: #3C467A;
@@ -84,18 +84,18 @@ html{
 
     }
 
-    h3{
+    h3 {
         margin-bottom: 40px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 14px;
         }
 
     }
 }
 
-.main-img{
-    width:100%;
+.main-img {
+    width: 100%;
     height: 518px;
     background: url(../images/mainimg.jpg) 0 0/cover no-repeat;
     margin-bottom: 75px;
@@ -103,30 +103,30 @@ html{
     flex-direction: column;
     justify-content: center;
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         margin-bottom: 40px;
     }
 
-    @include media("<phone"){
+    @include media("<phone") {
         justify-content: flex-end;
         margin-bottom: 50px;
     }
 
-    .main-img-text{
+    .main-img-text {
         display: flex;
         flex-direction: column;
         padding-left: 100px;
 
-        @include media("<phone"){
+        @include media("<phone") {
             padding-left: 33px;
         }
 
-        p{
+        p {
             color: #FFFFFF;
             font-size: 14px;
         }
 
-        h2{
+        h2 {
             color: #FFFFFF;
             margin-bottom: 70px;
             font-size: 52px;
@@ -135,30 +135,30 @@ html{
             max-width: 472px;
             width: 100%;
 
-            @include media("<tablet"){
-                font-size:36px;
-                margin-bottom:33px;
+            @include media("<tablet") {
+                font-size: 36px;
+                margin-bottom: 33px;
                 max-width: 472px;
                 padding-right: 10px;
             }
         }
 
-        a{
+        a {
             color: #FFFFFF;
             font-size: 14px;
-            
-            @include media("<phone"){
+
+            @include media("<phone") {
                 margin-bottom: 60px;
                 text-decoration: underline;
-            }          
+            }
         }
     }
 }
 
-.main-info{
-    margin-bottom:35px;
+.main-info {
+    margin-bottom: 35px;
 
-    p{
+    p {
         font-size: 17px;
         line-height: 120%;
         text-align: center;
@@ -166,43 +166,43 @@ html{
         width: 100%;
         margin: 0 auto;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 14px;
         }
     }
 }
 
-.main-button{
+.main-button {
     display: flex;
     justify-content: center;
 
-    .button{
+    .button {
         padding: 15px 60px;
     }
 }
 
-.about-service{
+.about-service {
     padding: 0 0 80px 0;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         position: relative;
     }
 
-    h3{
-      font-size: 17px;
-      font-weight: 800;  
-      text-transform: uppercase;
-      @include adaptiv-vaule("margin-bottom", 60 , 15, 1);
+    h3 {
+        font-size: 17px;
+        font-weight: 800;
+        text-transform: uppercase;
+        @include adaptiv-vaule("margin-bottom", 60, 15, 1);
     }
 }
 
-.service-item-block{
+.service-item-block {
     display: flex;
     justify-content: space-between;
     margin: 0 -20px;
     position: relative;
 
-    .slick-dots{
+    .slick-dots {
         display: flex;
         position: absolute;
         bottom: -60px;
@@ -210,43 +210,43 @@ html{
         transform: translate(-50%);
     }
 
-    .item-block{
+    .item-block {
         display: flex;
         flex-direction: column;
         padding: 0 20px;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             align-items: center;
         }
-        
-        
-        .item-content{
+
+
+        .item-content {
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             margin-bottom: 25px;
-            max-width:370px;
+            max-width: 370px;
             min-height: 275px;
-            
-            img{
+
+            img {
                 position: absolute;
                 z-index: -1;
             }
 
-            p{
-                bottom:13px;
+            p {
+                bottom: 13px;
                 color: #FFFFFF;
                 font-size: rem-calc(58px);
                 font-weight: 800;
                 line-height: 100%;
                 letter-spacing: -0.06em;
-    
-                @include media ("<1360px"){
+
+                @include media ("<1360px") {
                     font-size: rem-calc(50px);
                 }
-    
-                @include media ("<widescreen"){
+
+                @include media ("<widescreen") {
                     font-size: rem-calc(41px);
                 }
             }
@@ -254,34 +254,34 @@ html{
     }
 }
 
-.item-button{
-    
-    a{
+.item-button {
+
+    a {
         font-size: 14px;
         font-weight: 800;
         border-bottom: 1px solid #000;
-        
+
     }
 
-    img{
+    img {
         vertical-align: middle;
         padding-left: 10px;
     }
 }
 
-.slider{
+.slider {
     position: relative;
 }
 
-.slick-track{
+.slick-track {
     display: flex;
 }
 
-.slick-list{
+.slick-list {
     overflow: hidden;
 }
 
-.slick-dots{
+.slick-dots {
     display: flex;
     position: absolute;
     bottom: 0;
@@ -289,47 +289,47 @@ html{
     transform: translate(-50%);
     padding: 0;
 
-    button{
+    button {
         font-size: 0;
-        width:15px;
+        width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color:transparent;
+        background-color: transparent;
         border: none;
-        
+
     }
 
-    .slick-active{
-        
-        button{
-            background-color: #3C467A;
-            border:1px solid #C4C4C4;
-        } 
-    } 
+    .slick-active {
 
-    li{
+        button {
+            background-color: #3C467A;
+            border: 1px solid #C4C4C4;
+        }
+    }
+
+    li {
         list-style: none;
         margin: 0 10px;
-        border:1px solid #C4C4C4;
+        border: 1px solid #C4C4C4;
         border-radius: 50%;
         padding: 2px 2px 17px 2px;
-        height:20px;
+        height: 20px;
         display: flex;
-        
+
     }
 }
 
-.challenges{
+.challenges {
     padding: 0 0 100px 0;
 
-    h3{
+    h3 {
         font-size: 17px;
         font-weight: 800;
         text-transform: uppercase;
         margin-bottom: 100px;
     }
 
-    ol{
+    ol {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
@@ -337,11 +337,11 @@ html{
         padding: 0;
         margin: 0;
 
-        @include media("<desktop"){
-            flex-direction:column;
+        @include media("<desktop") {
+            flex-direction: column;
         }
 
-        li{
+        li {
             counter-increment: my-awesome-counter;
             display: flex;
             align-items: flex-start;
@@ -349,16 +349,16 @@ html{
             margin-bottom: 90px;
             list-style: none;
 
-            
-            &:nth-child(odd){
+
+            &:nth-child(odd) {
                 padding-right: 20px;
             }
-            
+
             &:nth-child(-n+6)::before {
-                content: "0" counter(my-awesome-counter);
+                content: "0"counter(my-awesome-counter);
             }
-            
-            &::before{
+
+            &::before {
                 content: counter(my-awesome-counter);
                 font-weight: bold;
                 font-size: 80px;
@@ -367,19 +367,19 @@ html{
                 color: #3C467A;
             }
 
-            @include media("<desktop"){
-    
-                &:nth-child(even){
-                    flex-direction:row-reverse;
+            @include media("<desktop") {
+
+                &:nth-child(even) {
+                    flex-direction: row-reverse;
                 }
             }
 
-            p{
+            p {
                 font-size: 17px;
                 max-width: 365px;
                 margin-top: 7px;
 
-                @include media ("<tablet"){
+                @include media ("<tablet") {
                     font-size: 13px;
                 }
             }
@@ -387,56 +387,56 @@ html{
     }
 }
 
-.project{
+.project {
     padding: 0 0 70px 0;
 
-    @include media ("<tablet"){
-        max-width:100vw;
+    @include media ("<tablet") {
+        max-width: 100vw;
     }
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0;
         }
     }
 }
 
-.project-content{
+.project-content {
     display: grid;
-    row-gap:75px;
-    column-gap: 80px ;
+    row-gap: 75px;
+    column-gap: 80px;
     grid-template-columns: 1fr 1fr;
 
-    @include media ("<desktop"){
-        grid-template-columns:1fr;
+    @include media ("<desktop") {
+        grid-template-columns: 1fr;
         display: flex;
         flex-direction: column;
-        row-gap:0;
-        align-items:stretch;
+        row-gap: 0;
+        align-items: stretch;
     }
 }
 
 
-.project-text{
+.project-text {
     display: grid;
     grid-auto-flow: row;
-    grid-template:0.1fr 0.1fr / 1fr;
+    grid-template: 0.1fr 0.1fr / 1fr;
     align-self: flex-start;
     margin-bottom: 75px;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         padding-left: 20px;
         margin-bottom: 0;
     }
 
-    h3{
+    h3 {
         margin-bottom: 12px;
         font-size: 17px;
         text-transform: uppercase;
     }
 
-    p{
+    p {
         font-size: 18px;
         max-width: 400px;
         margin-bottom: 45px;
@@ -445,71 +445,73 @@ html{
     }
 
 }
-.project-button{
 
-    @include media ("<tablet"){
+.project-button {
+
+    @include media ("<tablet") {
         display: none;
     }
 
-    .button{
+    .button {
         padding: 15px 35px;
     }
 
-    img{
+    img {
         vertical-align: 3px;
         padding-left: 20px;
     }
 }
-.block{
 
+.block {
     grid-row: span 2;
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         margin-bottom: 20px;
     }
 
-    @include media("<tablet"){
-        margin-bottom:0;
+    @include media("<tablet") {
+        margin-bottom: 0;
     }
-    
-    h2{
+
+    h2 {
         margin-bottom: 10px;
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             font-size: 20px;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             display: none;
         }
     }
 
-    p{
-        @include media("<desktop"){
+    p {
+        @include media("<desktop") {
             font-size: 10px;
         }
-        @include media ("<tablet"){
+
+        @include media ("<tablet") {
             display: none;
         }
     }
 
-    .block-img{
+    .block-img {
         position: relative;
-        max-width:554px;
-        width:100%;
+        max-width: 554px;
+        width: 100%;
         min-height: 554px;
         margin: 0 0 20px 0;
 
-        @include media ("<desktop"){
-            max-width:100vw;
+        @include media ("<desktop") {
+            max-width: 100vw;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             margin: 0;
         }
-        
 
-        img{
+
+        img {
             position: absolute;
             top: 0;
             left: 0;
@@ -519,10 +521,10 @@ html{
         }
     }
 
-    .block-text{
-        
-        h2{
-            @include media ("<tablet"){
+    .block-text {
+
+        h2 {
+            @include media ("<tablet") {
                 display: block;
                 position: absolute;
                 bottom: 130px;
@@ -532,19 +534,19 @@ html{
             }
         }
 
-        p{
-            @include media ("<tablet"){
+        p {
+            @include media ("<tablet") {
                 display: block;
                 position: absolute;
                 bottom: 85px;
                 left: 30px;
                 color: #FFFFFF;
                 font-size: 13px;
-                width:320px;
+                width: 320px;
             }
         }
 
-        a{
+        a {
             position: absolute;
             bottom: 20px;
             right: 25px;
@@ -552,72 +554,73 @@ html{
             font-size: 20px;
             border-bottom: 1px solid #FFFFFF;
 
-            @include media (">tablet"){
+            @include media (">tablet") {
                 display: none;
             }
         }
     }
-} 
+}
 
 
-.partners{
+.partners {
     background: #3C467A;
-    padding:90px 0 120px 0;
+    padding: 90px 0 120px 0;
     align-items: center;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 
-    @include media ("<desktop"){
-        padding:45px 0 0 0;
+    @include media ("<desktop") {
+        padding: 45px 0 0 0;
     }
 
 }
 
-.partners-content{
+.partners-content {
     align-items: center;
     margin-bottom: 75px;
 }
 
-.top-text{
+.top-text {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 75px;
     position: relative;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         display: none;
     }
 
-    .text{
-        width:100%;
-        h3{
+    .text {
+        width: 100%;
+
+        h3 {
             color: #FFFFFF;
             margin-bottom: 30px;
             font-weight: 800;
             font-size: 17px;
-            text-transform: uppercase;           
+            text-transform: uppercase;
         }
-        
-        p{           
+
+        p {
             font-size: 18px;
             max-width: 400px;
             color: #FFFFFF;
         }
     }
-    
-    .tittle{
 
-        @include media ("<desktop"){
+    .tittle {
+
+        @include media ("<desktop") {
             display: none;
         }
-        
-        .top-tittle{
+
+        .top-tittle {
             position: absolute;
             right: -125px;
             top: -30px;
-            font-size:144px ;
+            font-size: 144px;
             font-weight: 800;
             text-transform: uppercase;
             text-shadow: #FFFFFF 0px 2px 3px;
@@ -626,135 +629,137 @@ html{
     }
 }
 
-.bot-text{
+.bot-text {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 75px;
     position: relative;
 
-    .text{
-        width:100%;
-        h3{
+    .text {
+        width: 100%;
+
+        h3 {
             color: #FFFFFF;
             margin-bottom: 30px;
             font-weight: 800;
             font-size: 17px;
             text-transform: uppercase;
-            
+
         }
-        
-        p{
-            
+
+        p {
+
             font-size: 18px;
             max-width: 400px;
             color: #FFFFFF;
         }
     }
-    
-    .tittle{
+
+    .tittle {
         overflow: hidden;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             display: none;
         }
 
-        .bot-tittle{
+        .bot-tittle {
             position: absolute;
             right: -210px;
             top: -40px;
-            font-size:144px ;
+            font-size: 144px;
             font-weight: 800;
             text-transform: uppercase;
             text-shadow: #FFFFFF 0px 1px 3px;
             color: #3C467A;
         }
-    } 
+    }
 }
 
-.partners-logo{
+.partners-logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 140px; 
-    
-    @include media ("<desktop"){
-        flex-wrap: wrap; 
-    }
-    
-    .img{
-        margin-bottom: 50px;
-        max-width:220px;
-        width:22%;
+    margin-bottom: 140px;
 
-        @include media ("<tablet"){
+    @include media ("<desktop") {
+        flex-wrap: wrap;
+    }
+
+    .img {
+        margin-bottom: 50px;
+        max-width: 220px;
+        width: 22%;
+
+        @include media ("<tablet") {
             max-width: 100%;
-            width:48%;
+            width: 48%;
             display: flex;
             justify-content: center;
         }
-        @include media ("<phone"){
-            width:44%;      
+
+        @include media ("<phone") {
+            width: 44%;
         }
     }
 }
 
-.icons{
+.icons {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     padding-bottom: 120px;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         flex-direction: column;
         padding-bottom: 30px;
     }
-    
-    .icon{
-        @include media ("<desktop"){
-            border-bottom:1px solid #FFFFFF;
+
+    .icon {
+        @include media ("<desktop") {
+            border-bottom: 1px solid #FFFFFF;
             padding: 75px;
-            width:100%;
+            width: 100%;
         }
 
-        &:last-child{
+        &:last-child {
 
-            .icon-img{
+            .icon-img {
                 border-right: none;
             }
         }
     }
-   
-    .icon-img{
+
+    .icon-img {
         height: 125px;
         border-right: 1px solid #FFFFFF;
         padding: 0 80px;
         margin-bottom: 60px;
 
-        
 
-        @include media ("<desktop"){
+
+        @include media ("<desktop") {
             border-right: 0px;
             padding: 0;
         }
 
 
-        img{
-            padding-top:25px ;
-            
+        img {
+            padding-top: 25px;
+
         }
     }
 
-    p{
+    p {
         color: #FFFFFF;
         font-weight: 800;
         font-size: 15px;
         text-transform: uppercase;
         text-align: center;
 
-        
-        @include media ("<desktop"){
+
+        @include media ("<desktop") {
             padding-right: 0;
         }
 
@@ -762,72 +767,73 @@ html{
 
 }
 
-.partners-bot{
+.partners-bot {
 
     padding: 120px 0;
 
-    p{
+    p {
         font-weight: 600;
         font-size: 17px;
         line-height: 120%;
-        max-width:625px;
+        max-width: 625px;
         text-align: center;
         margin: 0 auto;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 13px;
         }
     }
 
-    .partners-button{
+    .partners-button {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 35px;
 
-        .button{
+        .button {
             padding: 15px 60px;
         }
     }
 }
 
-.development{
+.development {
     padding: 0 0 90px 0;
 
-    span{
+    span {
         font-weight: 800;
         font-size: 18px;
     }
 }
 
-.top-dev-text{
+.top-dev-text {
     margin-bottom: 75px;
 
 
-    h4{
+    h4 {
         font-weight: 800;
         font-size: 17px;
         text-transform: uppercase;
         margin-bottom: 45px;
     }
 
-    p{
-        color: #A6A6A6;;
+    p {
+        color: #A6A6A6;
+        ;
         font-size: 18px;
         margin-bottom: 15px;
     }
 
-    h2{
+    h2 {
         @include adaptiv-vaule("font-size", 57, 36, 1);
         max-width: 950px;
         line-height: 130%;
         margin-bottom: 50px;
     }
 
-    .hidden{
+    .hidden {
         display: none;
 
-        @include media("<phone"){
+        @include media("<phone") {
             display: block;
             color: #20263C;
             font-weight: 600;
@@ -836,39 +842,39 @@ html{
     }
 }
 
-.bot-dev-text{
+.bot-dev-text {
     border-top: 1px solid #000000;
     padding-top: 50px;
     display: flex;
     justify-content: space-between;
     position: relative;
 
-    .text-card{
+    .text-card {
         padding-right: 20px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             padding: 0;
         }
 
-        &:last-child{
+        &:last-child {
             padding: 0;
         }
 
-        p{
+        p {
             font-weight: 600;
-            font-size: 18px;  
+            font-size: 18px;
             color: #A6A6A6;
             margin-bottom: 15px;
         }
 
-        h3{
+        h3 {
             font-weight: 600;
             font-size: 25px;
             margin-bottom: 50px;
         }
     }
 
-    .slick-dots{
+    .slick-dots {
         display: flex;
         position: absolute;
         bottom: -60px;
@@ -880,76 +886,82 @@ html{
 
 /* ----------------------Page2---------------------- */
 
-.agency{
+.agency {
     padding: 60px 0 80px 0;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         padding: 40px 0 60px 0;
     }
 
-    @include media ("<tablet"){
-        max-width:100vw;
+    @include media ("<tablet") {
+        max-width: 100vw;
         padding: 40px 0 40px 0;
     }
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0;
         }
     }
 }
-.content-agency{
-    
-    h1{
+
+.content-agency {
+
+    h1 {
         @include adaptiv-vaule("width", 600, 150, 1);
         @include adaptiv-vaule("margin-bottom", 135, 60, 1);
-        @include media ("<phone"){
+
+        @include media ("<phone") {
             padding-left: 20px;
         }
     }
-    img{
+
+    img {
         object-fit: cover;
     }
 }
 
-.about-us{
+.about-us {
     padding: 0 0 60px 0;
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0;
         }
     }
-    @include media ("<tablet"){
+
+    @include media ("<tablet") {
         padding: 0 0 20px 0;
     }
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         padding: 0 0 120px 0;
     }
 
 
-    h2{
+    h2 {
         @include adaptiv-vaule("font-size", 57, 36, 1);
         @include adaptiv-vaule("margin-bottom", 55, 20, 1);
-        @include media ("<phone"){
+
+        @include media ("<phone") {
             padding: 0 20px;
         }
     }
 }
 
-.about-us-text{
+.about-us-text {
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         padding: 0 20px;
     }
-    
 
-    .main-text{
+
+    .main-text {
         margin-bottom: 50px;
-        p{
+
+        p {
             font-weight: 800;
             font-size: 16px;
             line-height: 120%;
@@ -957,243 +969,246 @@ html{
         }
     }
 
-    .sub-text{
+    .sub-text {
         display: flex;
         justify-content: space-between;
         margin-bottom: 150px;
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             margin-bottom: 40px;
         }
 
-        @include media("<tablet"){
+        @include media("<tablet") {
             flex-direction: column;
             margin-bottom: 60px;
 
-            p:first-child{
-                margin-bottom:10px;
+            p:first-child {
+                margin-bottom: 10px;
             }
         }
 
-        p:first-child{
+        p:first-child {
             padding-right: 25px;
         }
 
-        p{
+        p {
             width: 543px;
             font-weight: 600;
             font-size: 18px;
             line-height: 120%;
 
-            @include media("<tablet"){
-                width:100%;
+            @include media("<tablet") {
+                width: 100%;
             }
         }
     }
 }
 
-.about-us-info{
+.about-us-info {
     display: flex;
     justify-content: space-between;
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .img-us{
+    .img-us {
         width: 543px;
         padding-right: 30px;
 
 
-        img{
-            width:100%;
+        img {
+            width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             margin-bottom: 40px;
-            width:100%;
+            width: 100%;
             height: 305px;
         }
 
-        @include media("<tablet"){
+        @include media("<tablet") {
             padding: 0;
         }
 
-        
+
     }
 
-    .about-tittle{
+    .about-tittle {
         width: 543px;
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             display: flex;
             justify-content: space-between;
             width: 100%;
         }
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             flex-direction: column;
             padding: 0 20px;
         }
 
-        .tittle-item{
+        .tittle-item {
             margin-bottom: 50px;
             width: 380px;
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 width: 100%;
             }
-            
-            &:first-child{
+
+            &:first-child {
                 padding-right: 30px;
 
-                @include media ("<phone"){
+                @include media ("<phone") {
                     padding-right: 0;
                 }
             }
-            h3{
+
+            h3 {
                 margin-bottom: 20px;
             }
 
-            p{
+            p {
                 text-align: start;
             }
         }
     }
 }
 
-.partners{
+.partners {
 
-    .net{
+    .net {
         padding: 0 0 60px 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        
 
-        @include media ("<desktop"){
+
+        @include media ("<desktop") {
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr;
 
-            h3{
+            h3 {
                 display: none;
             }
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(6,1fr);
+            grid-template-rows: repeat(6, 1fr);
 
         }
 
-        li{
+        li {
             font-weight: 600;
             font-size: 18px;
             line-height: 130%;
             color: #FFFFFF;
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 font-size: 14px;
             }
         }
 
-        h3{
+        h3 {
             color: #FFFFFF;
         }
-        
-        .net-item{
+
+        .net-item {
             padding: 40px;
 
-            &:nth-child(1){
-                border-bottom:1px solid #FFFFFF;
+            &:nth-child(1) {
+                border-bottom: 1px solid #FFFFFF;
                 border-right: 1px solid #FFFFFF;
 
-                @include media ("<tablet"){
-                    border:none;
+                @include media ("<tablet") {
+                    border: none;
                 }
             }
 
-            &:nth-child(2){
-                border-bottom:1px solid #FFFFFF;
+            &:nth-child(2) {
+                border-bottom: 1px solid #FFFFFF;
                 border-right: 1px solid #FFFFFF;
 
-                @include media("<desktop"){
+                @include media("<desktop") {
                     border-right: none;
                 }
 
-                @include media ("<tablet"){
-                    border:none;
+                @include media ("<tablet") {
+                    border: none;
                 }
             }
 
-            &:nth-child(3){
-                border-bottom:1px solid #FFFFFF;
+            &:nth-child(3) {
+                border-bottom: 1px solid #FFFFFF;
 
-                @include media("<desktop"){
-                    border-right: 1px solid #FFFFFF;;
+                @include media("<desktop") {
+                    border-right: 1px solid #FFFFFF;
+                    ;
                 }
 
-                @include media ("<tablet"){
-                    border:none;
+                @include media ("<tablet") {
+                    border: none;
                 }
             }
 
-            &:nth-child(4){
+            &:nth-child(4) {
                 border-right: 1px solid #FFFFFF;
 
-                @include media("<desktop"){
+                @include media("<desktop") {
                     border-right: none;
-                    border-bottom:1px solid #FFFFFF;
+                    border-bottom: 1px solid #FFFFFF;
                 }
 
-                @include media ("<tablet"){
-                    border:none;
+                @include media ("<tablet") {
+                    border: none;
                 }
             }
 
-            &:nth-child(5){
+            &:nth-child(5) {
                 border-right: 1px solid #FFFFFF;
 
-                @include media ("<tablet"){
-                    border:none;
+                @include media ("<tablet") {
+                    border: none;
                 }
             }
 
-            @include media ("<tablet"){
+            @include media ("<tablet") {
                 margin: 0;
-                
-                &:nth-child(even){
-                    margin-left:25%;
+
+                &:nth-child(even) {
+                    margin-left: 25%;
                 }
             }
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 margin: 0;
             }
         }
     }
 }
 
-.reviews{
+.reviews {
     padding: 35px 0 120px 0;
 
-    h3{
+    h3 {
         margin-bottom: 45px;
     }
 }
 
-.reviews-content{
+.reviews-content {
     display: flex;
     justify-content: space-between;
 
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         position: relative;
-        .slick-dots{
+
+        .slick-dots {
             display: flex;
             position: absolute;
             bottom: -60px;
@@ -1204,95 +1219,95 @@ html{
     }
 }
 
-.reviews-item{
+.reviews-item {
 
-    width:562px;
+    width: 562px;
 
-    &:first-child{
+    &:first-child {
         padding-right: 25px;
     }
 
-    .item-head{
+    .item-head {
         display: flex;
         align-items: center;
         margin-bottom: 30px;
 
-        .img-head{
+        .img-head {
             padding-right: 30px;
         }
 
-        .text-head{
+        .text-head {
             color: #3C467A;
 
-            h4{
+            h4 {
                 @include adaptiv-vaule("font-size", 24, 18, 1);
             }
 
-            p{
+            p {
                 @include adaptiv-vaule("font-size", 18, 12, 1);
-               
+
             }
         }
     }
 
-    .item-content{
-        
-        h3{
+    .item-content {
+
+        h3 {
             @include adaptiv-vaule("font-size", 57, 24, 1);
             text-transform: none;
         }
 
-        p{
+        p {
             @include adaptiv-vaule("font-size", 18, 13, 1);
             line-height: 120%;
             margin-bottom: 30px;
-            
-            @include media ("<tablet"){
+
+            @include media ("<tablet") {
                 width: 95%;
             }
         }
 
-        span{
+        span {
             font-weight: 800;
             font-size: 18px;
         }
     }
 }
 
-.carrer{
+.carrer {
     padding: 0 0 60px 0;
 
-    .career-content{
-        h3{
-            margin-bottom:35px;
+    .career-content {
+        h3 {
+            margin-bottom: 35px;
         }
 
-        p{
+        p {
             font-size: 43px;
             line-height: 130%;
             font-weight: 800;
             color: #3C467A;
             margin-bottom: 50px;
-            max-width:930px;
+            max-width: 930px;
 
-            @include media ("<tablet"){
-                font-size:24px;
+            @include media ("<tablet") {
+                font-size: 24px;
             }
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 color: #000000;
                 font-size: 24px;
             }
         }
 
-        a{
+        a {
             font-weight: 800;
             font-size: 14px;
             text-transform: uppercase;
-            
-            img{
+
+            img {
                 vertical-align: middle;
-                margin-left:20px;
+                margin-left: 20px;
             }
         }
     }
@@ -1301,221 +1316,223 @@ html{
 
 /* ------------------------Page3--------------------- */
 
-.blog{
+.blog {
 
-    padding:75px 0 100px 0;
-    
-    @include media ("<desktop"){
+    padding: 75px 0 100px 0;
+
+    @include media ("<desktop") {
         padding: 60px 0 60px 0;
     }
-    
-    @include media ("<tablet"){
+
+    @include media ("<tablet") {
         padding: 45px 0 60px 0;
     }
-    
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         padding: 45px 0 80px 0;
     }
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
-            padding:0;
+        @include media ("<phone") {
+            padding: 0;
         }
     }
 
-    .main-blog{
+    .main-blog {
 
-        h1{
-            @include adaptiv-vaule("margin-bottom", 60 , 30, 1);
+        h1 {
+            @include adaptiv-vaule("margin-bottom", 60, 30, 1);
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 padding: 0 20px;
             }
         }
     }
 }
 
-.blog-content{
+.blog-content {
     padding: 0 0 75px 0;
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
-            padding:0;
+        @include media ("<phone") {
+            padding: 0;
         }
     }
 }
 
-.blog-list{
+.blog-list {
 
-    @include media ("<phone"){
+    @include media ("<phone") {
 
-        &:last-child{
+        &:last-child {
             margin-bottom: 120px;
         }
     }
 }
 
-.item-blog{
+.item-blog {
     margin-bottom: 160px;
     position: relative;
-    &::after{
+
+    &::after {
         position: absolute;
         content: '';
         border: 1px solid #000000;
-        width:635px;
+        width: 635px;
         left: 50%;
         transform: translate(-50%);
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             display: none;
         }
- 
+
     }
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         border: none;
         margin-bottom: 0;
 
-        &:last-child{
+        &:last-child {
             margin-bottom: 120px;
         }
     }
 }
 
-.blog-head{
+.blog-head {
     margin-bottom: 35px;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         margin-bottom: 0;
-     }
-    .logo-blog{
-        display: flex;
-        align-items:center;
+    }
 
-        @include media ("<phone"){
-           display: none;
+    .logo-blog {
+        display: flex;
+        align-items: center;
+
+        @include media ("<phone") {
+            display: none;
         }
 
-        p{
+        p {
             padding-left: 30px;
             color: #C4C4C4;
             font-weight: 600;
             font-size: 25px;
-            
-            @include media ("<phone"){
+
+            @include media ("<phone") {
                 font-size: 15px;
             }
         }
     }
 }
 
-.blog-text{
+.blog-text {
     margin-bottom: 50px;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         display: none;
     }
-    
-    h3{
-       font-size: 57px;
-       margin-bottom:30px; 
-       text-transform: none;
+
+    h3 {
+        font-size: 57px;
+        margin-bottom: 30px;
+        text-transform: none;
     }
 
-    p{
+    p {
         font-size: 18px;
         margin-bottom: 30px;
     }
 
-    a{
+    a {
         font-weight: 800;
         font-size: 18px;
-        border-bottom:1px solid #000000;
+        border-bottom: 1px solid #000000;
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             display: none;
         }
     }
 }
 
-.img-blog{
-    width:100%;
+.img-blog {
+    width: 100%;
     margin-bottom: 80px;
- 
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         margin-bottom: -3px;
         position: relative;
     }
 
-    img{
-        width:100%;
+    img {
+        width: 100%;
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             height: 600px;
             object-fit: cover;
         }
-        
+
     }
 }
 
-.blog-button{
+.blog-button {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    
 
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         margin-bottom: 45px;
     }
 
-    a{
+    a {
         font-size: 17px;
         padding: 20px 35px;
     }
 
-    img{
+    img {
         vertical-align: 3px;
         margin-left: 25px;
     }
 }
 
-.hidden-blog{
+.hidden-blog {
     display: none;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         display: flex;
-        align-items:center;
+        align-items: center;
         padding: 0 20px;
         position: absolute;
         bottom: 145px;
         left: 10px;
         color: #FFFFFF;
 
-        img{
-            width:35px;
+        img {
+            width: 35px;
             height: 35px;
             margin-right: 10px;
         }
 
-        p{
+        p {
             font-size: 15px;
         }
     }
 }
 
-.hidden-text{
+.hidden-text {
     display: none;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         display: block;
         position: absolute;
         bottom: 40px;
         left: 30px;
         color: #FFFFFF;
-        
-        h3{
+
+        h3 {
             font-weight: 800;
             font-size: 35px;
             line-height: 130%;
@@ -1525,82 +1542,82 @@ html{
 
 /*---------------------Page4---------------------*/
 
-.main-service{
+.main-service {
     padding: 75px 0 80px 0;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         padding: 55px 0 60px 0;
     }
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         padding: 45px 0 45px 0;
     }
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0;
         }
     }
 
-    h1{
-        @include adaptiv-vaule("margin-bottom", 150 , 30, 1);
+    h1 {
+        @include adaptiv-vaule("margin-bottom", 150, 30, 1);
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0 20px;
         }
     }
 }
 
-.service-img{
+.service-img {
     display: flex;
     justify-content: space-between;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         flex-direction: column;
-        width:100%;
+        width: 100%;
     }
 
-    .service-img-item{
+    .service-img-item {
         position: relative;
         padding-right: 30px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             padding-right: 0;
             margin-bottom: 10px;
         }
 
-        &:last-child{
+        &:last-child {
             padding-right: 0;
         }
 
-        img{
+        img {
             z-index: -1;
 
-            @include media ("<tablet"){
-                width:100%;
+            @include media ("<tablet") {
+                width: 100%;
                 object-fit: cover;
             }
         }
 
-        p{
+        p {
             position: absolute;
             bottom: 0;
             font-weight: 800;
-            color:#FFFFFF;
+            color: #FFFFFF;
             font-size: 115px;
             line-height: 84%;
             padding-right: 10px;
 
-            @include media ("<1200px"){
+            @include media ("<1200px") {
                 font-size: 78px;
             }
 
-            @include media ("<930px"){
+            @include media ("<930px") {
                 font-size: 60px;
             }
 
-            @include media ("<tablet"){
+            @include media ("<tablet") {
                 font-weight: 800;
                 font-size: 96px;
                 padding-right: 0;
@@ -1609,81 +1626,83 @@ html{
     }
 }
 
-.offer{
+.offer {
     padding: 0 0 80px 0;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         padding: 0 0 45px 0;
     }
 }
 
-.offer-tittle{
+.offer-tittle {
     margin-bottom: 70px;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         margin-bottom: 45px;
     }
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         margin-bottom: 30px;
     }
 
-    h2{
+    h2 {
         font-weight: 800;
         font-size: 57px;
         color: #3C467A;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 45px;
         }
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             font-size: 36px;
             margin-bottom: 8px;
         }
     }
 
-    p{
+    p {
         font-size: 24px;
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             font-size: 20px;
         }
     }
 }
 
-.offer-text{
+.offer-text {
     display: flex;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         flex-direction: column;
     }
 }
-.text-block{
+
+.text-block {
     display: flex;
     align-items: center;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         display: flex;
         align-items: flex-start;
         flex-direction: row;
         margin-bottom: 60px;
     }
 
-    &:first-child{
+    &:first-child {
         padding-right: 5px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             padding-right: 0;
         }
 
     }
 
-    h3{
+    h3 {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         color: #D6E6EE;
@@ -1692,102 +1711,103 @@ html{
         text-transform: none;
         padding-left: 20px;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             writing-mode: horizontal-tb;
             transform: rotate(0);
             padding-left: 0;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
             padding-left: 20px;
         }
     }
 
-    ul{
+    ul {
         padding: 0;
         margin: 0;
     }
 
-    li{
+    li {
         list-style: none;
         font-weight: 600;
         font-size: 24px;
         margin-bottom: 10px;
         letter-spacing: -0.06em;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             font-size: 18px;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             margin-bottom: 25px;
         }
     }
 }
 
 
-.customer{
+.customer {
     padding: 0 0 80px 0;
 
-    .container{
+    .container {
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             padding: 0;
         }
     }
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         padding: 0 0 70px 0;
     }
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         padding: 0 0 60px 0;
     }
 }
 
-.customer-block{
+.customer-block {
     margin-bottom: 150px;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         margin-bottom: 90px
     }
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         margin-bottom: 50px
     }
 
-    h3{
+    h3 {
         font-weight: 800;
         color: #3C467A;
         margin-bottom: 40px;
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             margin-bottom: 25px;
             text-align: center;
         }
     }
 
-    .customer-img{
+    .customer-img {
         margin-bottom: 25px;
 
-        img{
-            @include media ("<phone"){
+        img {
+            @include media ("<phone") {
                 object-fit: cover;
                 min-height: 340px;
-                width:100%;
+                width: 100%;
             }
         }
     }
 
-    .customer-text{
+    .customer-text {
         margin-bottom: 40px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             padding: 0 20px;
         }
 
-        p{
+        p {
             font-size: 18px;
             line-height: 120%;
             max-width: 1100px;
@@ -1795,113 +1815,113 @@ html{
     }
 }
 
-.content-items{
+.content-items {
     display: flex;
     justify-content: space-between;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         padding: 0 20px;
     }
 
-    span{
+    span {
         font-weight: 800;
     }
-    
-    p{
+
+    p {
         margin-bottom: 10px;
         max-width: 550px;
         font-size: 20px;
         line-height: 180%;
 
-        p{
-            @include media ("<1230px"){
+        p {
+            @include media ("<1230px") {
                 margin-bottom: 20px;
             }
         }
     }
 }
 
-.card{
+.card {
 
-    img{
+    img {
         object-fit: cover;
         min-height: 300px;
 
-        @include media ("<1230px"){
+        @include media ("<1230px") {
             min-height: 200px;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             object-fit: cover;
             min-height: 300px;
         }
     }
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         margin-bottom: 45px;
     }
 
-    p{
-        @include media ("<tablet"){
+    p {
+        @include media ("<tablet") {
             margin-bottom: 20px;
         }
     }
 }
 
-.spot-1{
+.spot-1 {
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         align-items: center;
         flex-direction: column;
     }
-    
-    .item-1{
-       padding-right: 30px;
-        
-        @include media ("<tablet"){
+
+    .item-1 {
+        padding-right: 30px;
+
+        @include media ("<tablet") {
             padding-right: 0;
         }
 
-        .sub-item-1{
+        .sub-item-1 {
             margin-bottom: 40px;
 
 
-            @include media ("<1230px"){
+            @include media ("<1230px") {
                 max-width: 370px;
                 margin-bottom: 30px;
             }
 
-            @include media ("<tablet"){
-                width:100%;
+            @include media ("<tablet") {
+                width: 100%;
             }
         }
-    
-        .sub-item-2{
 
-            @include media ("<1230px"){
+        .sub-item-2 {
+
+            @include media ("<1230px") {
                 max-width: 370px;
             }
-        }   
+        }
     }
-    
-    .item-2{
-        .sub-item{
 
-            p{
-                @include media ("<1230px"){
+    .item-2 {
+        .sub-item {
+
+            p {
+                @include media ("<1230px") {
                     max-width: 320px;
                 }
             }
 
-            img{
+            img {
                 object-fit: cover;
 
-                @include media ("<1230px"){
+                @include media ("<1230px") {
                     max-width: 370px;
                     min-height: 520px;
                 }
 
-                @include media("<tablet"){
+                @include media("<tablet") {
                     min-height: 300px;
                 }
             }
@@ -1909,89 +1929,89 @@ html{
     }
 }
 
-.spot-2{
+.spot-2 {
     flex-direction: column;
 
-    .item-1{
+    .item-1 {
         margin-bottom: 40px;
 
-        p{
+        p {
             max-width: 560px;
         }
 
-        .sub-item{
+        .sub-item {
 
-            @include media("<tablet"){
+            @include media("<tablet") {
                 display: flex;
                 flex-direction: column;
-                align-items:center;
+                align-items: center;
             }
         }
     }
 
-    .item-2{
+    .item-2 {
         display: flex;
         justify-content: space-between;
 
-        @include media("<tablet"){
+        @include media("<tablet") {
             flex-direction: column;
-            align-items:center;
+            align-items: center;
         }
 
-        .sub-item-1{
+        .sub-item-1 {
             padding-right: 20px;
 
-            @include media("<tablet"){
+            @include media("<tablet") {
                 padding-right: 0;
             }
         }
 
-        .sub-item-2{
+        .sub-item-2 {
 
-            p{
+            p {
                 max-width: 580px;
             }
         }
     }
 }
 
-.spot-3{
+.spot-3 {
     flex-direction: column;
 
 
-    .item-1{
+    .item-1 {
         display: flex;
         justify-content: space-between;
         margin-bottom: 60px;
 
-        @include media("<tablet"){
+        @include media("<tablet") {
             flex-direction: column;
-            align-items:center;
+            align-items: center;
         }
 
-        .sub-item-1{
+        .sub-item-1 {
             padding-right: 30px;
 
-            @include media("<tablet"){
+            @include media("<tablet") {
                 padding-right: 0;
-            } 
+            }
         }
     }
 
-    .item-2{
+    .item-2 {
 
-        @include media("<tablet"){
-        display: flex;
-        flex-direction: column;
-        align-items:center;
+        @include media("<tablet") {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .sub-item-1{
-            p{
+        .sub-item-1 {
+            p {
                 max-width: 700px;
                 text-align: center;
 
-                @include media ("<phone"){
+                @include media ("<phone") {
                     text-align: start;
                 }
             }
@@ -1999,83 +2019,85 @@ html{
     }
 }
 
-.lifestyle{
-    background:#3C467A ;
+.lifestyle {
+    background: #3C467A;
     padding: 90px 0 40px 0;
 
-    .lifestyle-img{
+    .lifestyle-img {
         margin-bottom: 120px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             display: none;
         }
     }
 }
 
-.lifestyle-tittle{
+.lifestyle-tittle {
     margin-bottom: 50px;
-    h2{
-        color:#FFFFFF;
+
+    h2 {
+        color: #FFFFFF;
         font-size: 57px;
         max-width: 800px;
         line-height: 130%;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 36px;
             text-align: center;
         }
 
-        @include media ("<phone"){
+        @include media ("<phone") {
             text-align: start;
         }
     }
 }
 
-.lifestyle-content{
+.lifestyle-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         flex-direction: column;
         align-items: center;
     }
-    @include media ("<phone"){
+
+    @include media ("<phone") {
         align-items: flex-start;
     }
 
-    .block-text{
+    .block-text {
         padding-right: 20px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             margin-bottom: 70px;
             padding-right: 0;
 
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
             }
         }
 
-        h3{
+        h3 {
             font-size: 25px;
             color: #FFFFFF;
             padding-bottom: 10px;
             border-bottom: 1px solid #FFFFFF;
             margin-bottom: 20px;
 
-            @include media ("<desktop"){
+            @include media ("<desktop") {
                 font-size: 20px;
             }
         }
 
-        ul{
+        ul {
             padding: 0;
             margin: 0;
-            
-           
+
+
         }
 
-        li{
+        li {
             list-style: none;
             font-weight: 600;
             font-size: 20px;
@@ -2085,99 +2107,102 @@ html{
             line-height: 180%;
             max-width: 330px;
 
-            @include media ("<desktop"){
+            @include media ("<desktop") {
                 font-size: 16px;
             }
 
-            span{
+            span {
                 font-weight: 800;
             }
         }
     }
 }
 
-.outsource{
+.outsource {
     padding: 75px 0 135px 0;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         padding: 40px 0 90px 0;
     }
 
 }
 
-.outsource-img{
+.outsource-img {
     margin-bottom: 120px;
 
-    @include media ("<tablet"){
+    @include media ("<tablet") {
         display: none;
     }
 }
 
-.outsource-tittle{
+.outsource-tittle {
     margin-bottom: 50px;
-    h2{
+
+    h2 {
         font-weight: 800;
         font-size: 57px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             font-size: 48px;
         }
-        @include media ("<phone"){
+
+        @include media ("<phone") {
             font-size: 36px;
         }
     }
 }
 
-.outsource-text{
+.outsource-text {
     margin-bottom: 25px;
     display: flex;
     align-items: flex-start;
 
-    h3{
+    h3 {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         color: #D6E6EE;
         font-weight: 800;
         font-size: 57px;
-        
+
         text-transform: none;
         padding-left: 20px;
     }
 
-    ul{
+    ul {
         padding: 0;
         margin: 0;
     }
 
-    li{
+    li {
         list-style: none;
         margin-bottom: 10px;
         letter-spacing: -0.06em;
         font-weight: 600;
         font-size: 20px;
         line-height: 180%;
-        
-        &:first-child{
+
+        &:first-child {
             margin-bottom: 40px;
             max-width: 740px;
         }
-        &:last-child{
+
+        &:last-child {
             max-width: 550px;
         }
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             font-size: 18px;
         }
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             margin-bottom: 25px;
         }
     }
 }
 
-.outsource-bot-text{
+.outsource-bot-text {
 
-    p{
+    p {
         font-weight: 800;
         font-size: 20px;
         line-height: 180%;
@@ -2188,35 +2213,35 @@ html{
 
 /*--------------------Page5-------------------- */
 
-.form-list{
+.form-list {
     padding: 90px 0 80px 0;
     box-sizing: border-box;
 
 
-    @include media("<phone"){
+    @include media("<phone") {
         padding: 40px 0 40px 0;
     }
 
-    h1{
+    h1 {
         margin-bottom: 60px;
     }
 }
 
-.form-content{
+.form-content {
     display: flex;
     justify-content: space-between;
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         flex-direction: column;
     }
 }
 
-.form-block{
+.form-block {
     padding: 50px 80px;
     width: 60%;
     border: 1px solid #000000;
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         margin-bottom: 40px;
         width: 100%;
         display: flex;
@@ -2224,170 +2249,175 @@ html{
         align-items: center;
     }
 
-    @include media("<phone"){
+    @include media("<phone") {
         padding: 30px 25px;
     }
 
-    input{
+    input {
         padding: 15px 30px;
     }
 
-    .form-tittle{
+    .form-tittle {
         margin-bottom: 50px;
 
-        h2{
+        h2 {
             font-size: 17px;
         }
     }
 
-    .select{
+    .select {
         margin-bottom: 20px;
-        max-width:580px;
+        max-width: 580px;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             width: 100%;
         }
 
-        select{
-            padding:15px 30px;
-            width:100%;
+        select {
+            padding: 15px 30px;
+            width: 100%;
             background: transparent;
 
-            @include media ("<phone"){
+            @include media ("<phone") {
                 padding: 15px;
             }
         }
     }
 
-    .input{
+    .input {
         margin-bottom: 30px;
 
-        @include media ("<desktop"){
+        @include media ("<desktop") {
             text-align: center;
         }
 
-        h3{
+        h3 {
             font-size: 15px;
             margin-bottom: 20px;
             line-height: 198.5%;
         }
 
-        
-        .input-items{
+
+        .input-items {
             flex-direction: column;
 
-            .label{
-                margin-bottom:10px;
+            .label {
+                margin-bottom: 10px;
 
-                label{
+                label {
                     @include adaptiv-vaule("font-size", 16, 14, 1);
                 }
             }
-            input{
+
+            input {
                 margin-right: 20px;
-                
+
             }
         }
     }
 
-    .button{
+    .button {
         padding: 20px 35px;
         border: 0;
         font-size: 17px;
-    
-        @include media ("<phone"){
+
+        @include media ("<phone") {
             display: flex;
             margin: 0 auto;
             padding: 15px 60px;
             font-size: 20px;
         }
-    
-        img{
+
+        img {
             vertical-align: 3px;
-            padding-left:100px;
-    
-            @include media ("<phone"){
+            padding-left: 100px;
+
+            @include media ("<phone") {
                 display: none;
             }
         }
     }
 }
 
-.contact-info{
+.contact-info {
     margin-bottom: 40px;
-    max-width:580px;
+    max-width: 580px;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         width: 100%;
     }
 
-    .name{
-        margin-bottom: 20px;
-        input{
-            width:100%;
-        }
-    }
-    .surname{
+    .name {
         margin-bottom: 20px;
 
-        input{
-            width:100%;
+        input {
+            width: 100%;
         }
     }
-    .mail{
+
+    .surname {
         margin-bottom: 20px;
 
-        input{
-           width:100%;
+        input {
+            width: 100%;
         }
     }
-    .message{
 
-        textarea{
+    .mail {
+        margin-bottom: 20px;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .message {
+
+        textarea {
             padding: 15px 30px;
-            width:100%;
+            width: 100%;
             height: 240px;
         }
     }
 }
 
-.communication{
+.communication {
     padding-left: 30px;
 
-    @include media ("<desktop"){
+    @include media ("<desktop") {
         padding: 0;
     }
 
-    .logo{
+    .logo {
         margin-bottom: 100px;
 
-        @include media ("<tablet"){
+        @include media ("<tablet") {
             margin: 0;
         }
-        
-        .tittle{
+
+        .tittle {
             background: #20263C;
             padding: 30px 50px 5px 5px;
 
-            h2{
+            h2 {
                 font-weight: 800;
                 @include adaptiv-vaule("font-size", 64, 48, 1);
                 line-height: 85.5%;
-                max-width:420px;
-                color:#FFFFFF;
+                max-width: 420px;
+                color: #FFFFFF;
             }
         }
-    
-        .button{
-            
-            a{
+
+        .button {
+
+            a {
                 display: flex;
                 justify-content: space-between;
-                color:#FFFFFF;
+                color: #FFFFFF;
                 text-transform: uppercase;
             }
-    
-            img{
+
+            img {
                 margin-top: 5px;
                 height: 9px;
             }
@@ -2396,66 +2426,66 @@ html{
 }
 
 
-.connection{
+.connection {
 
-    @include media("<desktop"){
+    @include media("<desktop") {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    @include media("<tablet"){
+    @include media("<tablet") {
         display: none;
     }
 
-    .adress{
+    .adress {
         margin-bottom: 70px;
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             flex: 0 1 50%;
         }
-        h3{
+
+        h3 {
             color: #3C467A;
             margin-bottom: 30px;
         }
-    
-        p{
+
+        p {
             margin-bottom: 15px;
         }
-    
-        address{
+
+        address {
             margin-top: 15px;
         }
     }
-    
-    .contacting{
+
+    .contacting {
         display: flex;
         flex-direction: column;
 
-        @include media("<desktop"){
+        @include media("<desktop") {
             flex: 0 1 50%;
             text-align: start;
         }
 
-        a{
+        a {
             margin-bottom: 15px;
         }
 
-        h3{
+        h3 {
             color: #3C467A;
             margin-bottom: 30px;
         }
     }
-    
-    .network{
-        h3{
+
+    .network {
+        h3 {
             color: #3C467A;
             margin-bottom: 30px;
         }
-    
-        img{
+
+        img {
             margin-right: 15px;
         }
     }
 }
-
