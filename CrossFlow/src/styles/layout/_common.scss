@@ -241,9 +241,9 @@ body {
             padding: 0 0 100% 0;
             margin-bottom: 30px;
         }
-        
-        &::before{
-            content:'';
+
+        &::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -255,18 +255,18 @@ body {
             transition: all .3s ease 0s;
         }
 
-        &:hover{
-            
-            img{
+        &:hover {
+
+            img {
                 transform: scale(1.1);
             }
 
-            &::before{
+            &::before {
                 opacity: 50%;
             }
         }
 
-        img{
+        img {
             transition: all .3s ease 0s;
         }
     }
@@ -1195,6 +1195,12 @@ body {
     @include adaptiv-vaule("padding-top", 150, 70, 1);
     @include adaptiv-vaule("padding-bottom", 40, 15, 1);
 
+    .cont {
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
     .main-blog-img {
         width: 100%;
         min-height: 650px;
@@ -1214,6 +1220,24 @@ body {
 
     .title {
         @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 10px;
+        }
+
+        .text {
+            @include media ("<desktop") {
+                margin-bottom: 20px;
+            }
+        }
 
         .blog-title {
             margin-bottom: 5px;
@@ -1221,6 +1245,27 @@ body {
 
         p {
             font-style: italic;
+        }
+
+    }
+
+    .icons {
+
+        a {
+            margin-left: 10px;
+
+            @include media ("<desktop") {
+                margin: 0 10px 0 0;
+            }
+
+            svg {
+                fill: #D3D3D3;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    fill: $yellow;
+                }
+            }
         }
     }
 
@@ -1277,6 +1322,12 @@ body {
 
     .third-block {
         margin-bottom: 30px;
+    }
+
+    .blog-description {
+        @include media ("<tablet") {
+            padding: 0 10px;
+        }
     }
 
 }
