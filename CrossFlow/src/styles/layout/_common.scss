@@ -1038,21 +1038,36 @@ body {
         margin-top: 50px;
     }
 
+    .arrow-wrap{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 130px;
+        margin-left: 50px;
+
+        @include media ("<phone") {
+            max-width: 100px;
+            margin-left: 25px;
+        }
+    }
+
     .swiper-pagination-bullet {
         width: 500px;
     }
 
     .swiper-pagination {
         position: static;
+        border-radius: 5px;
 
         .swiper-pagination-progressbar-fill {
             background: $black;
+            border-radius: 5px;
         }
     }
 
     .swiper-button-prev,
     .swiper-button-next {
-        position: absolute;
+        position: relative;
         top: auto;
         width: 30px;
         height: 30px;
@@ -1069,27 +1084,17 @@ body {
         }
     }
 
-    .swiper-button-prev {
-        margin-right: 100px;
+    .swiper-button-disabled{
+        svg{
+            fill: $gray;
+        }
     }
 }
 
 /* --------------------------#Board----------------------------- */
 
-.board {
+.board-slider {
     padding: 75px 0 0 0;
-
-    .slider-title {
-        margin-bottom: 25px;
-    }
-
-    .slider-description {
-        margin-bottom: 45px;
-    }
-
-    .board-slider {
-        padding-bottom: 50px;
-    }
 
     .swaiper-slide {
         width: 24%;
@@ -1107,50 +1112,6 @@ body {
         overflow: hidden;
         margin-bottom: 20px;
     }
-
-    .controls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50px;
-    }
-
-    .swiper-pagination-bullet {
-        width: 500px;
-    }
-
-    .swiper-pagination {
-        position: static;
-        max-width: 600px;
-
-        .swiper-pagination-progressbar-fill {
-            background: $black;
-        }
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        position: absolute;
-        top: auto;
-        width: 30px;
-        height: 30px;
-        margin: 0;
-
-        &::after {
-            content: none;
-        }
-
-        svg {
-            width: 23px;
-            height: 14px;
-            fill: $yellow;
-        }
-    }
-
-    .swiper-button-prev {
-        margin-right: 100px;
-    }
-
 }
 
 /* --------------------------#Video----------------------------- */
