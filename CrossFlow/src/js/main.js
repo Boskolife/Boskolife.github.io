@@ -67,6 +67,68 @@ destroySlidersOnResize(".awards-slider", 99999, {
   },
 });
 
+destroySlidersOnResize(".team-slider", 99999, {
+  spaceBetween: 40,
+  slidesPerView: 3,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  speed: 1000,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+
+    1024: {
+      slidesPerView: 3
+    },
+
+  },
+
+});
+destroySlidersOnResize(".board-slider", 99999, {
+  spaceBetween: 40,
+  slidesPerView: 4,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  speed: 1000,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+
+    760: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 4
+    }
+  },
+});
+
 /* header */
 
 window.onload = function () {
