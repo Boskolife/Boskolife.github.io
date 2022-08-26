@@ -797,7 +797,7 @@ body {
 //-------------#About-page----------//
 
 /* --------------------------#Main-section-about----------------------------- */
-.main-img {
+.main-img-about {
     position: relative;
     overflow: hidden;
     margin: 84px 0 30px 0;
@@ -1089,6 +1089,7 @@ body {
 
     .swiper-pagination {
         position: static;
+        max-width: 600px;
 
         .swiper-pagination-progressbar-fill {
             background: $black;
@@ -1156,4 +1157,98 @@ body {
             object-fit: cover;
         }
     }
+}
+
+//-------------#Blog-page----------//
+
+/* --------------------------#Main-blog----------------------------- */
+
+.main-blog {
+    @include adaptiv-vaule("padding-top", 150, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 40, 15, 1);
+
+    .main-blog-img {
+        width: 100%;
+        min-height: 650px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        @include media ("<desktop") {
+            min-height: 450px;
+        }
+
+        @include media ("<phone_max") {
+            min-height: 300px;
+        }
+    }
+
+    .title {
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+
+        .blog-title {
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-style: italic;
+        }
+    }
+
+    .first-block {
+        margin-bottom: 35px;
+    }
+
+    .block-blog {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .block-img {
+            position: relative;
+            width: 49%;
+            min-height: 375px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 20px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 0 30px 0;
+                min-height: 300px;
+            }
+        }
+
+        .blog-description {
+            width: 48%;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+        }
+    }
+
+    .second-block {
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+    }
+
+    .blog-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 220px;
+        margin-bottom: 30px;
+    }
+
+    .third-block {
+        margin-bottom: 30px;
+    }
+
 }
