@@ -1526,3 +1526,70 @@ body {
         overflow: hidden;
     }
 }
+
+//-------------#About-page----------//
+
+/* --------------------------#Carrers----------------------------- */
+
+.carrers {
+    @include adaptiv-vaule("margin-bottom", 115, 50, 1);
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 75, 35, 1);
+    }
+
+    .carrers-title {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
+
+    .carrers-description {
+        @include adaptiv-vaule("margin-bottom", 150, 60, 1);
+    }
+
+    .carrers-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 75px;
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+            row-gap: 35px;
+        }
+    }
+
+    .card-img {
+        position: relative;
+        width: 100%;
+        min-height: 170px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 35px;
+
+        @include media ("<tablet") {
+            min-height: 250px;
+        }
+    }
+
+    .card-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            @include adaptiv-vaule("font-size", 20, 14, 1);
+            font-weight: 600;
+        }
+
+        svg {
+            margin-right: 50px;
+            @include adaptiv-vaule("margin-right", 50, 10, 1);
+            fill: $black;
+            transition: all 0.3s ease;
+
+            &:hover {
+                fill: $yellow;
+            }
+        }
+    }
+}
