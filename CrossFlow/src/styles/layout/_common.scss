@@ -887,8 +887,7 @@ body {
         @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
 
-    .about-text,
-    .about-info {
+    .about-text {
         display: flex;
         justify-content: space-between;
         @include adaptiv-vaule("margin-bottom", 90, 40, 1);
@@ -898,20 +897,16 @@ body {
         }
     }
 
-    .descrip,
-    .block-info {
-        width: 47.5%;
+    .about-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
+        @include adaptiv-vaule("margin-bottom", 80, 30, 1);
 
-        @include media ("<desktop") {
-            width: 100%;
-        }
-
-        &:first-child {
-            margin-right: 20px;
-
-            @include media ("<desktop") {
-                margin: 0 0 20px 0;
-            }
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+            column-gap: 30px;
         }
     }
 
@@ -944,33 +939,18 @@ body {
     }
 
     .value-box {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
 
-        @include media ("<desktop") {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
-
-    .value-block {
-        width: 31%;
-
-        @include media ("<desktop") {
-            width: 45%;
-            margin: 0 10px 40px 10px;
-        }
-
-        @include media ("<tablet_min") {
-            width: 100%;
-            margin: 0 0 40px 0;
+        @include media ("<tablet") {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
         }
 
         @include media ("<phone") {
-            &:last-child {
-                margin-bottom: 0;
-            }
+            grid-template-columns: 1fr;
         }
     }
 
@@ -1005,7 +985,7 @@ body {
     .swiper-slide {
         text-align: center;
 
-        img{
+        img {
             margin-bottom: 20px;
         }
 
@@ -1321,11 +1301,25 @@ body {
         row-gap: 55px;
         column-gap: 40px;
 
+        @include media ("<desktop") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
     }
 
     .card {
         position: relative;
-        @include adaptiv-vaule("margin-bottom", 45, 25, 1);
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
 
     .card-link {
@@ -1344,6 +1338,10 @@ body {
         width: 100%;
         min-height: 250px;
         margin-bottom: 15px;
+
+        img {
+            transition: all 0.3s ease;
+        }
     }
 
     .card-title {
@@ -1372,26 +1370,25 @@ body {
     }
 
     .news-cards {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        @include adaptiv-vaule("margin-bottom", 75, 40, 1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 30px;
+        @include adaptiv-vaule("margin-bottom", 75, 30, 1);
 
         @include media ("<tablet") {
-            flex-direction: column;
+            grid-template-columns: 1fr;
         }
     }
 
     .card {
         position: relative;
-        width: 49%;
-        text-align: start;
 
-        @include media ("<tablet") {
-            width: 100%;
-
-            &:not(:last-child) {
-                margin-bottom: 35px;
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1);
+                }
             }
         }
     }
@@ -1412,6 +1409,10 @@ body {
         width: 100%;
         min-height: 400px;
         margin-bottom: 20px;
+
+        img {
+            transition: all 0.3s ease;
+        }
 
         @include media ("<tablet") {
             min-height: 300px;
@@ -1452,6 +1453,14 @@ body {
 
     .card {
         position: relative;
+
+        &:hover {
+            .papers-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
 
     .card-link {
@@ -1470,6 +1479,10 @@ body {
         margin-bottom: 15px;
         border-radius: 10px;
         overflow: hidden;
+
+        img {
+            transition: all 0.3s ease;
+        }
     }
 }
 
@@ -1577,6 +1590,20 @@ body {
         .name {
             margin: 0 10px;
         }
+    }
+}
+
+/* --------------------------#Hub-video----------------------------- */
+
+
+.hub-video {
+
+    .video-box {
+        @include adaptiv-vaule("margin-bottom", 100, 35, 1);
+    }
+
+    .btn-wrap {
+        text-align: center;
     }
 }
 
