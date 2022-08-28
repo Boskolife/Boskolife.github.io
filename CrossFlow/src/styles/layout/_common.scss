@@ -1038,7 +1038,7 @@ body {
         margin-top: 50px;
     }
 
-    .arrow-wrap{
+    .arrow-wrap {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -1084,8 +1084,8 @@ body {
         }
     }
 
-    .swiper-button-disabled{
-        svg{
+    .swiper-button-disabled {
+        svg {
             fill: $gray;
         }
     }
@@ -1519,6 +1519,32 @@ body {
         }
     }
 
+    .card {
+        position: relative;
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1)
+                }
+            }
+
+            svg {
+                fill: $yellow;
+                transform: translateX(10px);
+            }
+        }
+
+        .card-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    }
+
     .card-img {
         position: relative;
         width: 100%;
@@ -1527,6 +1553,10 @@ body {
         overflow: hidden;
         margin-bottom: 35px;
 
+        img {
+            transition: all 0.3s ease;
+        }
+
         @include media ("<tablet") {
             min-height: 250px;
         }
@@ -1534,7 +1564,6 @@ body {
 
     .card-text {
         display: flex;
-        align-items: center;
         justify-content: space-between;
 
         p {
@@ -1547,10 +1576,21 @@ body {
             @include adaptiv-vaule("margin-right", 50, 10, 1);
             fill: $black;
             transition: all 0.3s ease;
+            min-width: 22px;
+            width: 22px;
 
-            &:hover {
-                fill: $yellow;
+            @include media ("<phone") {
+                min-width: 15px;
+                width: 15px;
             }
+        }
+
+        .date {
+            white-space: nowrap;
+        }
+
+        .name {
+            margin: 0 10px;
         }
     }
 }
