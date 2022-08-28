@@ -112,6 +112,7 @@ header{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 1;
     
         @include media('<desktop'){
             position: relative;
@@ -337,11 +338,14 @@ header{
         @include media('>=desktop'){
             position: absolute;
             top: 100%;
-            left: 0;
-            min-width: 150px;
-            visibility: hidden;
+            left: -15px;
+            min-width: 190px;
+            background-color: $gray_01;
+            padding: 15px;
+            border-radius: 10px;
             transition: all .3s ease 0s;
             transform: translate(0, 10px);
+            visibility: hidden;
             opacity: 0;
             pointer-events: none;
         }
