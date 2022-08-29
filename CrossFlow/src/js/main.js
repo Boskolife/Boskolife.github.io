@@ -192,25 +192,39 @@ function burgerOutsideClick() {
 
 const reviewsBlock = document.querySelectorAll(".cart-wrap");
 
-reviewsBlock.forEach(function(review){
+reviewsBlock.forEach(function (review) {
   const btnOpen = review.querySelector('.rev-open');
   const btnClose = review.querySelector('.rev-close');
   const backdropPopUp = review.querySelector('.backdrop-pop-up');
 
-  if(btnOpen){
-    btnOpen.addEventListener('click', function(){
+  if (btnOpen) {
+    btnOpen.addEventListener('click', function () {
       review.classList.add("active_review");
       document.body.classList.add("body_lock");
     });
 
-    btnClose.addEventListener('click', function(){
+    btnClose.addEventListener('click', function () {
       review.classList.remove("active_review");
       document.body.classList.remove("body_lock");
     });
 
-    backdropPopUp.addEventListener('click', function(){
+    backdropPopUp.addEventListener('click', function () {
       review.classList.remove("active_review");
       document.body.classList.remove("body_lock");
     });
   }
 });
+
+
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}

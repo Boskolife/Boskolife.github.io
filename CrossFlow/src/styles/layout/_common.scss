@@ -92,6 +92,21 @@ body {
     }
 }
 
+.logos-main {
+    padding: 30px 0;
+
+    .cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-img {
+        margin: 0 10px 20px 10px;
+    }
+
+}
 
 
 /* -----------------------------------------#About------------------------------------- */
@@ -750,7 +765,7 @@ body {
 */
 
 .consultation {
-    @include adaptiv-vaule("padding-top", 180, 40, 1);
+    @include adaptiv-vaule("padding-top", 180, 100, 1);
     @include adaptiv-vaule("padding-bottom", 200, 40, 1);
     text-align: center;
     position: relative;
@@ -812,6 +827,84 @@ body {
         textarea {
             min-height: 220px;
             margin-bottom: 0;
+        }
+
+        .selectBox {
+            cursor: pointer;
+
+            select {
+                width: 100%;
+                border: 1px solid #C2C2C2;
+                padding: 25px 25px 25px 40px;
+                border-radius: 10px;
+                margin-bottom: 35px;
+                background: $white;
+            }
+        }
+
+        .selectBox {
+            position: relative;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            display: none;
+
+            label {
+                display: block;
+                border: 1px #dadada solid;
+                margin-bottom: 30px;
+                border: 1px solid #C2C2C2;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                background: $white;
+                text-align: start;
+            }
+
+            input {
+                margin: 0 5px 0 0;
+            }
+        }
+
+        .custom-checkbox {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .custom-checkbox+label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            position: relative;
+            width: 15px;
+            height: 15px;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 15px;
+                height: 15px;
+                border: 1px solid red;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border-radius: 5px;
+                margin-right: 5px;
+                background: #fff;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+            }
         }
     }
 
@@ -2242,75 +2335,10 @@ body {
         max-width: 630px;
     }
 
+
 }
 
 
 //-------------#contacts-page----------//
 
 /* --------------------------#contacts----------------------------- */
-
-.contacts{
-    
-    .tabs2__item-wrap{
-        position: relative;
-        padding: 50px 5px 20px;
-        background-color: orange;
-        transition: all 0.3s ease;
-    }
-    
-    .tabs2__nav-btn{
-        position: absolute;
-        top: 0;
-        padding: 5px 15px;
-        outline: none;
-        border: none;
-        
-        @include media ('<tablet'){
-            position: relative;
-            width: 100%;
-        }
-    }
-    
-    .tab2_btn1{
-        left: 15%;
-    
-        @include media ('<tablet'){
-            left: 0;
-        }
-    }
-    
-    .tab2_btn2{
-        left: 50%;
-        transform: translate(-50%);
-    
-        @include media ('<tablet'){
-            left: 0;
-            transform: translate(0%);
-        }
-    }
-    
-    .tab2_btn3{
-        right: 15%;
-    
-        @include media ('<tablet'){
-            right: 0;
-        }
-    }
-    
-    .tab2_active{
-        transition: all 0.3s ease;
-    }
-    
-    .tabs2__item{
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-    }
-    
-    .tab2__item_active{
-        max-height: 500px;
-        visibility: visible;
-        opacity: 1;
-        transition: max-height 2s ease, opacity 1s ease;
-    }
-}
