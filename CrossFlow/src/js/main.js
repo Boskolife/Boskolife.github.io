@@ -173,3 +173,30 @@ function burgerOutsideClick() {
   let backdrop = document.querySelector('.backdrop');
   backdrop.addEventListener('click', closeMenu);
 }
+
+/* about popup */
+
+const reviewsBlock = document.querySelectorAll(".cart-wrap");
+
+reviewsBlock.forEach(function(review){
+  const btnOpen = review.querySelector('.rev-open');
+  const btnClose = review.querySelector('.rev-close');
+  const backdropPopUp = review.querySelector('.backdrop-pop-up');
+
+  if(btnOpen){
+    btnOpen.addEventListener('click', function(){
+      review.classList.add("active_review");
+      document.body.classList.add("body_lock");
+    });
+
+    btnClose.addEventListener('click', function(){
+      review.classList.remove("active_review");
+      document.body.classList.remove("body_lock");
+    });
+
+    backdropPopUp.addEventListener('click', function(){
+      review.classList.remove("active_review");
+      document.body.classList.remove("body_lock");
+    });
+  }
+});
