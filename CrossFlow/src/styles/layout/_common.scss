@@ -2303,36 +2303,10 @@ body {
         max-width: 630px;
     }
 
-    .videos {
-        padding-bottom: 70px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 75px;
-        column-gap: 30px;
-
-        @include media ("<desktop_sm") {
-            grid-template-columns: 1fr;
-            row-gap: 40px;
-        }
-    }
-
-    .video-box {
-        border-radius: 10px;
-        overflow: hidden;
-
-        iframe {
-            width: 100%;
-            min-height: 400px;
-            margin-bottom: 20px;
-
-            @include media ("<phone") {
-                min-height: 300px;
-            }
-        }
-
-        h3 {
-            @include adaptiv-vaule("font-size", 20, 18, 1);
-        }
-    }
 
 }
+
+
+//-------------#contacts-page----------//
+
+/* --------------------------#contacts----------------------------- */
