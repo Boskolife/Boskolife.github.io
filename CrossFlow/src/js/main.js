@@ -133,6 +133,20 @@ destroySlidersOnResize(".board-slider", 99999, {
   },
 });
 
+destroySlidersOnResize(".contact-slider", 99999, {
+  spaceBetween: 40,
+  speed: 1000,
+  pagination: '.swiper-pagination',
+  paginationClickable: true,
+  paginationType: "custom",
+  paginationCustomRender: function(swiper, current, total) {
+    var names = [];
+    $(".swiper-wrapper .swiper-slide").each(function(i) {
+      names.push($(this).data("name"));
+    });
+  }
+});
+
 /* header */
 
 window.onload = function () {
