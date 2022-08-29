@@ -92,6 +92,21 @@ body {
     }
 }
 
+.logos-main {
+    padding: 30px 0;
+
+    .cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-img {
+        margin: 0 10px 20px 10px;
+    }
+
+}
 
 
 /* -----------------------------------------#About------------------------------------- */
@@ -750,7 +765,7 @@ body {
 */
 
 .consultation {
-    @include adaptiv-vaule("padding-top", 180, 40, 1);
+    @include adaptiv-vaule("padding-top", 180, 100, 1);
     @include adaptiv-vaule("padding-bottom", 200, 40, 1);
     text-align: center;
     position: relative;
@@ -812,6 +827,84 @@ body {
         textarea {
             min-height: 220px;
             margin-bottom: 0;
+        }
+
+        .selectBox {
+            cursor: pointer;
+
+            select {
+                width: 100%;
+                border: 1px solid #C2C2C2;
+                padding: 25px 25px 25px 40px;
+                border-radius: 10px;
+                margin-bottom: 35px;
+                background: $white;
+            }
+        }
+
+        .selectBox {
+            position: relative;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            display: none;
+
+            label {
+                display: block;
+                border: 1px #dadada solid;
+                margin-bottom: 30px;
+                border: 1px solid #C2C2C2;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                background: $white;
+                text-align: start;
+            }
+
+            input {
+                margin: 0 5px 0 0;
+            }
+        }
+
+        .custom-checkbox {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .custom-checkbox+label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            position: relative;
+            width: 15px;
+            height: 15px;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 15px;
+                height: 15px;
+                border: 1px solid red;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border-radius: 5px;
+                margin-right: 5px;
+                background: #fff;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+            }
         }
     }
 
@@ -2240,6 +2333,38 @@ body {
 
     .tutorial-description {
         max-width: 630px;
+    }
+
+    .videos {
+        padding-bottom: 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 75px;
+        column-gap: 30px;
+
+        @include media ("<desktop_sm") {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+        }
+    }
+
+    .video-box {
+        border-radius: 10px;
+        overflow: hidden;
+
+        iframe {
+            width: 100%;
+            min-height: 400px;
+            margin-bottom: 20px;
+
+            @include media ("<phone") {
+                min-height: 300px;
+            }
+        }
+
+        h3 {
+            @include adaptiv-vaule("font-size", 20, 18, 1);
+        }
     }
 
 }
