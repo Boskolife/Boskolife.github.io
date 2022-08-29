@@ -133,18 +133,20 @@ destroySlidersOnResize(".board-slider", 99999, {
   },
 });
 
+
+let textBoolets = document.querySelectorAll('[data-name]');
+
 destroySlidersOnResize(".contact-slider", 99999, {
   spaceBetween: 40,
+  autoHeight: true,
   speed: 1000,
-  pagination: '.swiper-pagination',
-  paginationClickable: true,
-  paginationType: "custom",
-  paginationCustomRender: function(swiper, current, total) {
-    var names = [];
-    $(".swiper-wrapper .swiper-slide").each(function(i) {
-      names.push($(this).data("name"));
-    });
-  }
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (textBoolets[index].getAttribute('data-name')) + '</span>';
+      },
+  },
 });
 
 /* header */
