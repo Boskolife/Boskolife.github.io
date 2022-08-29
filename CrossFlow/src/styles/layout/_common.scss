@@ -145,6 +145,7 @@ body {
 
     .solution-description {
         font-size: 20px;
+        max-width: 480px;
         line-height: 30 / 20 * 100%;
 
         @include media ("<tablet") {
@@ -601,6 +602,7 @@ body {
     }
 
     .cases-description {
+        max-width: 480px;
         margin-bottom: 20px;
     }
 
@@ -664,6 +666,10 @@ body {
         @include adaptiv-vaule("margin-bottom", 65, 25, 1);
         color: #fff;
         z-index: 2;
+    }
+
+    .block-description {
+        max-width: 480px;
     }
 
     .yellow-btn,
@@ -745,9 +751,22 @@ body {
 
 
 .consultation {
-    @include adaptiv-vaule("padding-top", 140, 40, 1);
+    @include adaptiv-vaule("padding-top", 180, 40, 1);
     @include adaptiv-vaule("padding-bottom", 200, 40, 1);
     text-align: center;
+    position: relative;
+    background: hsla(0, 0%, 74%, 0.1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -55px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        transform: skewY(-3deg);
+    }
 
     .consultation-content {
         display: flex;
@@ -886,6 +905,7 @@ body {
     .about-title {
         @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
+
 
     .about-text {
         display: flex;
@@ -1087,6 +1107,7 @@ body {
     }
 
     .video-description {
+        max-width: 480px;
         margin-bottom: 70px;
         @include adaptiv-vaule("margin-bottom", 70, 35, 1);
     }
@@ -1432,6 +1453,7 @@ body {
     }
 
     .papers-description {
+        max-width: 480px;
         @include adaptiv-vaule("margin-bottom", 100, 45, 1);
     }
 
@@ -1763,7 +1785,6 @@ body {
     border-bottom: 3px solid #EBEBEB;
 
     .solutions-text {
-        @include adaptiv-vaule("padding-bottom", 120, 30, 1);
 
         @include media ("<phone") {
             text-align: center
@@ -1774,6 +1795,14 @@ body {
     .solutions-title,
     .solutions-description {
         @include adaptiv-vaule("margin-bottom", 45, 20, 1);
+    }
+
+    .solutions-title {
+        max-width: 700px;
+    }
+
+    .solutions-description {
+        max-width: 630px;
     }
 
     .network {
@@ -1916,6 +1945,7 @@ body {
     }
 
     .cases-description {
+        max-width: 515px;
         @include adaptiv-vaule("margin-bottom", 100, 40, 1);
     }
 
@@ -1995,6 +2025,7 @@ body {
 
         @include media ("<tablet") {
             flex-direction: column-reverse;
+            padding: 0;
         }
     }
 
@@ -2004,7 +2035,8 @@ body {
 
         @include media ("<tablet") {
             width: 100%;
-            margin: 0
+            margin: 0;
+            padding: 0 15px;
         }
     }
 
@@ -2028,8 +2060,186 @@ body {
 
         @include media ("<tablet") {
             width: 100%;
-            min-height: 300px;
             margin-bottom: 40px;
         }
+
+        @include media ("<phone") {
+            min-height: 300px;
+        }
     }
+}
+
+//-------------#News-(page)----------//
+
+/* --------------------------#News-subpage----------------------------- */
+
+.news-subpage {
+    @include adaptiv-vaule("padding-top", 230, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .main-img {
+        position: relative;
+        min-height: 650px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+
+        @include media ("<tablet") {
+            min-height: 400px;
+        }
+    }
+
+    .news-subtitle {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .news-subdescription {
+        margin-bottom: 30px;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .payments {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 75, 55, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        .text {
+            width: 47%;
+            margin-right: 30px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+
+            h3 {
+                @include adaptiv-vaule("font-size", 20, 18, 1);
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+        }
+
+        .img {
+            width: 49%;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 470px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 auto;
+                min-height: 450px;
+            }
+
+            @include media ("<phone") {
+                min-height: 300px;
+            }
+        }
+    }
+
+    .quote {
+        max-width: 1070px;
+        margin: 0 auto;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        span {
+            @include adaptiv-vaule("font-size", 36, 20, 1);
+            font-style: italic;
+            font-weight: 600;
+            line-height: 54 / 36 * 100%;
+        }
+
+        p {
+            margin-top: 30px;
+            @include adaptiv-vaule("font-size", 20, 18, 1);
+            font-weight: 700;
+        }
+    }
+}
+
+
+.question {
+    text-align: center;
+    padding-top: 180px;
+    @include adaptiv-vaule("padding-top", 180, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 70, 1);
+    background: hsla(0, 0%, 74%, 0.1);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -55px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        transform: skewY(-3deg);
+    }
+
+    h4 {
+        @include adaptiv-vaule("font-size", 36, 25, 1);
+        line-height: 54 / 36 * 100%;
+        font-weight: 700;
+        @include adaptiv-vaule("margin-bottom", 65, 45, 1);
+    }
+
+    p {
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 36 / 24 * 100%;
+        @include adaptiv-vaule("margin-bottom", 65, 35, 1);
+    }
+}
+
+
+//-------------#Tutorial-page----------//
+
+/* --------------------------#Tutorial----------------------------- */
+
+
+.tutorial {
+
+    .component-title,
+    .tutorial-title,
+    .tutorial-description {
+        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
+        max-width: 630px;
+    }
+
+    .tutorial-title {
+        max-width: 500px;
+    }
+
+    .tutorial-description {
+        max-width: 630px;
+    }
+
 }
