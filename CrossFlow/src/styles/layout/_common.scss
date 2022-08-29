@@ -1725,7 +1725,7 @@ body {
 /* --------------------------#Cases----------------------------- */
 
 .cases-page {
-    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
 
 
     .component-title {
@@ -1737,7 +1737,6 @@ body {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         column-gap: 40px;
         row-gap: 40px;
-        @include adaptiv-vaule("padding-bottom", 110, 50, 1);
 
         @include media ("<desktop") {
             grid-template-columns: 1fr 1fr 1fr;
@@ -1757,6 +1756,13 @@ body {
         align-items: center;
         justify-content: center;
     }
+}
+
+/* --------------------------#studies-cards----------------------------- */
+
+.cards-info-news {
+    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+
 
     .cases-title {
         margin-bottom: 20px;
@@ -1823,6 +1829,60 @@ body {
 
         img {
             transition: all 0.3s ease;
+        }
+    }
+}
+
+//-------------#News-page----------//
+
+/* --------------------------#News-page----------------------------- */
+
+.news-page {
+    @include adaptiv-vaule("padding-top", 230, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+    .cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .news-text {
+        width: 49%;
+        margin-right: 30px;
+
+        @include media ("<tablet") {
+            width: 100%;
+            margin: 0
+        }
+    }
+
+    .component-title,
+    .news-title,
+    .news-description {
+        @include adaptiv-vaule("margin-bottom", 45, 25, 1);
+    }
+
+
+    .news-img {
+        width: 48%;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 650px;
+
+        @include media ("<desktop") {
+            min-height: 500px;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+            min-height: 300px;
+            margin-bottom: 40px;
         }
     }
 }
