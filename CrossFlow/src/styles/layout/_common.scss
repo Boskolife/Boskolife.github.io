@@ -1489,6 +1489,7 @@ body {
     }
 
     .carrers-description {
+        max-width: 515px;
         @include adaptiv-vaule("margin-bottom", 150, 60, 1);
     }
 
@@ -1527,6 +1528,8 @@ body {
             width: 100%;
             height: 100%;
             z-index: 1;
+            border: none;
+            background-color: transparent;
         }
     }
 
@@ -1577,6 +1580,150 @@ body {
         .name {
             margin: 0 10px;
         }
+    }
+
+
+    .overflow{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(7px);
+        transition: all .5s ease 0s;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+
+    }
+
+    .cart-pop-up{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1050px;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        background-color: #F2F2F2;
+        border-radius: 5px;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease 0s;
+        overflow: auto;
+        height: 70%;
+
+        @include media ("<desktop") {
+            top: 5%;
+            height: 90%;
+            transform: translate(-50%);
+        }
+    }
+    
+    .title-wrap{
+        position: relative;
+        padding: 50px 80px;
+        background-color: $yellow;
+
+        @include media ("<tablet") {
+            padding: 40px;
+        }
+
+        @include media ("<phone") {
+            padding: 20px 40px;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .title{
+        font-weight: 600;
+        font-size: 32px;
+        color: $black;
+        @include adaptiv-vaule("font-size", 32, 20, 1);
+    }
+
+    .text-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 45px 80px;
+        flex: 1;
+
+        @include media ("<tablet") {
+            padding: 40px;
+        }
+
+        @include media ("<phone") {
+            padding: 20px;
+        }
+    }
+
+    .list{
+        margin: 0 0 50px 0;
+
+        @include media ("<phone") {
+            margin: 0 0 25px 0;
+        }
+    }
+
+    .item{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.85;
+        color: $black;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+        }
+
+        @include media ("<phone") {
+            font-size: 16px;
+        }
+    }
+
+    .btn-wrap{
+        text-align: center;
+
+        @include media ("<phone_max") {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .yellow-btn, .grey-btn{
+        padding: 17px 35px;
+        min-width: 180px;
+        margin: 0 25px;
+        border: none;
+
+        @include media ("<phone_max") {
+            margin: 10px 0;
+        }
+    }
+}
+
+.active_review {
+
+    .overflow{
+        visibility: visible;
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .cart-pop-up{
+        visibility: visible;
+        opacity: 1;
+        z-index: 3;
     }
 }
 
