@@ -749,7 +749,6 @@ body {
 /* -----------------------------------------#Consultation------------------------------------- 
 */
 
-
 .consultation {
     @include adaptiv-vaule("padding-top", 180, 40, 1);
     @include adaptiv-vaule("padding-bottom", 200, 40, 1);
@@ -1618,7 +1617,7 @@ body {
     }
 
 
-    .overflow{
+    .overflow {
         position: fixed;
         top: 0;
         left: 0;
@@ -1633,7 +1632,7 @@ body {
 
     }
 
-    .cart-pop-up{
+    .cart-pop-up {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -1659,8 +1658,8 @@ body {
             transform: translate(-50%);
         }
     }
-    
-    .title-wrap{
+
+    .title-wrap {
         position: relative;
         padding: 50px 80px;
         background-color: $yellow;
@@ -1673,21 +1672,21 @@ body {
             padding: 20px 40px;
         }
 
-        img{
+        img {
             position: absolute;
             top: 0;
             right: 0;
         }
     }
 
-    .title{
+    .title {
         font-weight: 600;
         font-size: 32px;
         color: $black;
         @include adaptiv-vaule("font-size", 32, 20, 1);
     }
 
-    .text-wrap{
+    .text-wrap {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1703,7 +1702,7 @@ body {
         }
     }
 
-    .list{
+    .list {
         margin: 0 0 50px 0;
 
         @include media ("<phone") {
@@ -1711,7 +1710,7 @@ body {
         }
     }
 
-    .item{
+    .item {
         font-weight: 400;
         font-size: 20px;
         line-height: 1.85;
@@ -1726,7 +1725,7 @@ body {
         }
     }
 
-    .btn-wrap{
+    .btn-wrap {
         text-align: center;
 
         @include media ("<phone_max") {
@@ -1735,7 +1734,8 @@ body {
         }
     }
 
-    .yellow-btn, .grey-btn{
+    .yellow-btn,
+    .grey-btn {
         padding: 17px 35px;
         min-width: 180px;
         margin: 0 25px;
@@ -1749,13 +1749,13 @@ body {
 
 .active_review {
 
-    .overflow{
+    .overflow {
         visibility: visible;
         opacity: 1;
         z-index: 3;
     }
 
-    .cart-pop-up{
+    .cart-pop-up {
         visibility: visible;
         opacity: 1;
         z-index: 3;
