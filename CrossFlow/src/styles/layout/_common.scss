@@ -2248,6 +2248,12 @@ body {
 /* --------------------------#contacts----------------------------- */
 
 .contacts {
+    text-align: center;
+    position: relative;
+
+    .cont{
+        width: auto;
+    }
 
     .swiper-pagination {
         position: relative;
@@ -2311,12 +2317,26 @@ body {
         padding: 50px 0 150px 0;
     }
 
-    .selectBox {
-        max-width: 485px;
+    .slide1{
+        min-height: 1100px;
+        padding: 50px 0;
+
+        @include media ("<desktop") {
+            min-height: 1600px;
+        }
     }
 
     button {
         border: none;
+    }
+
+    .consultation{
+        background-color: transparent;
+        padding: 0;
+
+        &::before{
+            display: none;
+        }
     }
 
     .slide2 {

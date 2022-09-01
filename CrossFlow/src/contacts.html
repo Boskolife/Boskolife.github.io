@@ -16,59 +16,18 @@
     <div id="wrapper">
         //= templates/header.html
         <main id="main">
-            <section class="contacts">
-                <div class="main-img-all carrers-main-img">
-                    <img class="ibg" src="./images/Contacts/bg.jpg" alt="image not found">
-                </div>
-                <div class="cont">
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper contact-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" data-name="General enquiries">
-                                <div class="consultation-content">
-                                    <form action="#" id="send" method="get" class="form">
-                                        <input type="text" name="Name" placeholder="Name">
-                                        <input type="email" name="mail" placeholder="Email">
-                                        <input type="text" name="Business name" placeholder="Business name">
-                                        <div class="multiselect">
-                                            <div class="selectBox" onclick="showCheckboxes()">
-                                                <select>
-                                                    <option>Question ?</option>
-                                                </select>
-                                                <div class="overSelect"></div>
-                                            </div>
-                                            <div id="checkboxes">
-                                                <label for="one"><input type="checkbox" id="one" />Number 1</label>
-                                                <label for="two"><input type="checkbox" id="two" />Number 2</label>
-                                                <label for="three"><input type="checkbox" id="three" />Number 3</label>
-                                            </div>
-                                        </div>
-                                        <textarea name="text" placeholder="Message"></textarea>
-                                    </form>
-                                    <div class="consultation-text"><span class="component-title">Contact form for consultation
-                                        </span>
-                                        <h2 class="consultation-title">Lorem ipsum dolor sit amet,
-                                            consectetur</h2>
-                                        <p class="consultation-description">Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                            veniam,
-                                            quis nostrud exercitation ullamco laboris nisi Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>Lorem ipsum
-                                            dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                            veniam,
-                                            quis nostrud exercitation ullamco laboris nisi Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    </div>
-                                </div>
-                                <div class="btn-wrap"><button type="submit" form="send" class="yellow-btn">Call to action</button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide2" data-name="Media enquiries">
+            <div class="main-img-all carrers-main-img">
+                <img class="ibg" src="./images/Contacts/bg.jpg" alt="image not found">
+            </div>
+            <div class="contacts">
+                <div class="swiper-pagination"></div>
+                <div class="swiper contact-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide1" data-name="General enquiries">
+                            //= templates/main_form.html
+                        </div>
+                        <div class="swiper-slide" data-name="Media enquiries">
+                            <div class="cont slide2">
                                 <form class="form" action="#">
                                     <input type="text" placeholder="Name">
                                     <input type="email" placeholder="Email">
@@ -87,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
         //= templates/footer.html
     </div>

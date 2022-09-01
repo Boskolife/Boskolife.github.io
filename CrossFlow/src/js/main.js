@@ -139,6 +139,7 @@ let textBoolets = document.querySelectorAll('[data-name]');
 destroySlidersOnResize(".contact-slider", 99999, {
   spaceBetween: 40,
   autoHeight: true,
+  allowTouchMove: false,
   speed: 1000,
   pagination: {
     el: '.swiper-pagination',
@@ -223,10 +224,10 @@ var expanded = false;
 function showCheckboxes() {
   var checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
-    checkboxes.style.display = "block";
+    checkboxes.classList.add("active");
     expanded = true;
   } else {
-    checkboxes.style.display = "none";
+    checkboxes.classList.remove("active");
     expanded = false;
   }
 }

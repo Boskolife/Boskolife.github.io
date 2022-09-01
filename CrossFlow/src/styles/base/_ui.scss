@@ -144,8 +144,7 @@
     .selectBox {
         cursor: pointer;
 
-        select {
-            width: 100%;
+        option {
             border: 1px solid #C2C2C2;
             padding: 25px 25px 25px 40px;
             border-radius: 10px;
@@ -153,6 +152,11 @@
             appearance: none;
             background: #efefef url(../images/Tutorials-page/arrow.svg)right / 15px 15px no-repeat;
             background-position-x: calc(100% - 10px);
+            text-align: left;
+
+            @include media ("<tablet") {
+                margin-bottom: 15px;
+            }
         }
     }
 
@@ -169,7 +173,18 @@
     }
 
     #checkboxes {
-        display: none;
+        max-height: 0px;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease 0s;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            max-height: 999px;
+            transition: all 1s ease 0s;
+        }
 
         label {
             display: block;
