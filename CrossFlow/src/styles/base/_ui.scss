@@ -1,4 +1,4 @@
-.body_lock{
+.body_lock {
     overflow: hidden;
 }
 
@@ -150,7 +150,9 @@
             padding: 25px 25px 25px 40px;
             border-radius: 10px;
             margin-bottom: 35px;
-            background: $white;
+            appearance: none;
+            background: #efefef url(../images/Tutorials-page/arrow.svg)right / 15px 15px no-repeat;
+            background-position-x: calc(100% - 10px);
         }
     }
 
