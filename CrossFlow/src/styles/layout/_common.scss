@@ -863,6 +863,14 @@ body {
         @include media ("<desktop") {
             flex-direction: column;
         }
+
+        .descrip{
+            width: 48%;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+        }
     }
 
     .about-info {
@@ -872,9 +880,12 @@ body {
         row-gap: 40px;
         @include adaptiv-vaule("margin-bottom", 80, 30, 1);
 
+        @include media ("<desktop") {
+            column-gap: 30px;
+        }
+
         @include media ("<tablet") {
             grid-template-columns: 1fr;
-            column-gap: 30px;
         }
     }
 
@@ -912,9 +923,12 @@ body {
         column-gap: 60px;
         row-gap: 40px;
 
+        @include media ("<desktop") {
+            column-gap: 30px;
+        }
+
         @include media ("<tablet") {
             grid-template-columns: 1fr 1fr;
-            column-gap: 30px;
         }
 
         @include media ("<phone") {
