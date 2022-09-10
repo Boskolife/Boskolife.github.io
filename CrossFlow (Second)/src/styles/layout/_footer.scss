@@ -1,6 +1,6 @@
 footer {
     background: $gray_02;
-    padding: 5px 0;
+    padding: 8px 0;
 }
 
 .cont {
@@ -8,22 +8,37 @@ footer {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        @include media ("<phone") {
+            flex-direction: column;
+        }
+
         p {
             color: #fff;
             font-size: 14px;
+
+            @include media ("<phone") {
+                margin-bottom: 5px;
+            }
         }
 
         .logo-link {
             margin: 0 3px;
 
+            @include media ("<phone") {
+                margin: 5px 0;
+            }
+
             svg {
                 fill: #fff;
                 transition: all 0.3s ease;
+                object-fit: contain;
 
                 &:hover {
                     fill: $yellow;
