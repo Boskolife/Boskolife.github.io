@@ -1,0 +1,34 @@
+footer {
+    background: $gray_02;
+    padding: 5px 0;
+}
+
+.cont {
+    max-width: 1630px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footer-content {
+        p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .logo-link {
+            margin: 0 3px;
+
+            svg {
+                fill: #fff;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    fill: $yellow;
+                }
+            }
+        }
+    }
+}
