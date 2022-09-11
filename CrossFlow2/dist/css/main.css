@@ -765,23 +765,26 @@ html {
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse; } }
   .video-section .video {
-    width: 48%;
     margin-right: 30px;
     border-radius: 10px;
+    width: 50%;
+    height: 400px;
     overflow: hidden; }
     @media (max-width: 1023px) {
       .video-section .video {
-        width: 100%;
-        margin: 0; } }
+        margin: 0;
+        max-width: 670px;
+        width: 100%; } }
+    @media (max-width: 767px) {
+      .video-section .video {
+        height: 300px; } }
     .video-section .video iframe {
       width: 100%;
-      min-height: 400px; }
+      height: 100%; }
   .video-section .video-text {
-    width: 41%;
     text-align: start; }
     @media (max-width: 1023px) {
       .video-section .video-text {
-        width: 100%;
         margin-bottom: 30px;
         text-align: center; } }
   .video-section .vieo-title {
@@ -810,8 +813,8 @@ html {
       padding-bottom: calc(60px + 140 * ((100vw - calc(320px)) / 980)); } }
   .about-us .blur-circle {
     background: #FFFFFF;
-    -webkit-filter: blur(300px);
-    filter: blur(300px);
+    -webkit-filter: blur(80px);
+    filter: blur(80px);
     position: absolute;
     z-index: 1;
     width: 760px;
@@ -825,10 +828,10 @@ html {
     right: -10%; }
   .about-us .blur-square {
     background: #FFFFFF;
-    -webkit-filter: blur(100px);
-    filter: blur(100px);
+    -webkit-filter: blur(70px);
+    filter: blur(70px);
     position: absolute;
-    width: 1740px;
+    width: 100%;
     height: 390px;
     bottom: -20%;
     left: 50%;
@@ -1051,37 +1054,31 @@ html {
       .key .key-description {
         margin-bottom: calc(50px + 60 * ((100vw - calc(320px)) / 980)); } }
   .key .key-cards {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
     /* Только если меньше контейнера */
     margin-bottom: 100px; }
     @media (max-width: 1300px) {
       .key .key-cards {
         margin-bottom: calc(40px + 60 * ((100vw - calc(320px)) / 980)); } }
-    @media (max-width: 1023px) {
+    @media (max-width: 1199px) {
       .key .key-cards {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -ms-flex-pack: center;
-        justify-content: center; } }
+        grid-template-columns: 1fr 1fr;
+        row-gap: 35px; } }
+    @media (max-width: 767px) {
+      .key .key-cards {
+        grid-template-columns: 1fr; } }
   .key .card-wrap {
-    width: 30%;
     min-height: 600px;
     border-radius: 15px;
     padding: 4px;
     background: #fdb604;
     background: linear-gradient(137deg, #fdb604 0%, rgba(255, 255, 255, 0) 21%, rgba(255, 255, 255, 0) 74%, #fdb604 100%); }
-    @media (max-width: 1023px) {
-      .key .card-wrap {
-        width: 45%;
-        margin: 0 5px 35px 5px; } }
     @media (max-width: 767px) {
       .key .card-wrap {
-        width: 100%;
         min-height: 450px; } }
   .key .card {
     width: 100%;
@@ -1146,7 +1143,7 @@ html {
     color: #000; }
 
 .form {
-  padding: 100px 0 50px 0;
+  padding: 160px 0 50px 0;
   text-align: center;
   background: #E5E5E5;
   position: relative;
@@ -1154,10 +1151,10 @@ html {
   .form::before {
     position: absolute;
     content: '';
-    top: -65px;
+    top: -70px;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 140px;
     background: #fff;
     -webkit-transform: skewY(-4deg);
     transform: skewY(-4deg); }
@@ -1244,11 +1241,11 @@ html {
   .form .confirm {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: start;
+    align-items: flex-start;
     margin-bottom: 35px; }
     .form .confirm input {
-      margin: 0 10px 0 0;
+      margin: 5px 10px 0 0;
       width: 20px; }
     .form .confirm label {
       width: 98.5%;
@@ -1257,6 +1254,9 @@ html {
       line-height: 150%;
       color: #B6B6B6;
       cursor: pointer; }
+      @media (max-width: 479px) {
+        .form .confirm label {
+          font-size: 12px; } }
   .form .yellow-btn {
     border: none; }
 
@@ -1290,7 +1290,7 @@ footer {
       margin: 0 3px; }
       @media (max-width: 479px) {
         .cont .footer-content .logo-link {
-          margin: 5px 0; } }
+          margin: 15px; } }
       .cont .footer-content .logo-link svg {
         fill: #fff;
         transition: all 0.3s ease;
