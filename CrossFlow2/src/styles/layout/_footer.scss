@@ -18,7 +18,8 @@ footer {
             flex-direction: column;
         }
 
-        p {
+        p,
+        a {
             color: #fff;
             font-size: 14px;
 
@@ -27,11 +28,19 @@ footer {
             }
         }
 
+        a {
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+
         .logo-link {
             margin: 0 3px;
 
             @include media ("<phone") {
-                margin: 15px;
+                margin: 20px 15px;
             }
 
             svg {

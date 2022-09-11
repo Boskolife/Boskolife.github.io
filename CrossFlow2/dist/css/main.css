@@ -1072,18 +1072,21 @@ html {
       .key .key-cards {
         grid-template-columns: 1fr; } }
   .key .card-wrap {
-    min-height: 600px;
+    height: 600px;
     border-radius: 15px;
     padding: 4px;
     background: #fdb604;
     background: linear-gradient(137deg, #fdb604 0%, rgba(255, 255, 255, 0) 21%, rgba(255, 255, 255, 0) 74%, #fdb604 100%); }
+    @media (max-width: 1023px) {
+      .key .card-wrap {
+        height: 525px; } }
     @media (max-width: 767px) {
       .key .card-wrap {
-        min-height: 450px; } }
+        height: 450px; } }
   .key .card {
     width: 100%;
     border-radius: 15px;
-    min-height: 600px;
+    height: 100%;
     /* Только если меньше контейнера */
     padding-top: 60px;
     /* Только если меньше контейнера */
@@ -1280,17 +1283,23 @@ footer {
       .cont .footer-content {
         -ms-flex-direction: column;
         flex-direction: column; } }
-    .cont .footer-content p {
+    .cont .footer-content p,
+    .cont .footer-content a {
       color: #fff;
       font-size: 14px; }
       @media (max-width: 479px) {
-        .cont .footer-content p {
+        .cont .footer-content p,
+        .cont .footer-content a {
           margin-bottom: 5px; } }
+    .cont .footer-content a {
+      transition: all 0.3s ease; }
+      .cont .footer-content a:hover {
+        color: #FDB604; }
     .cont .footer-content .logo-link {
       margin: 0 3px; }
       @media (max-width: 479px) {
         .cont .footer-content .logo-link {
-          margin: 15px; } }
+          margin: 20px 15px; } }
       .cont .footer-content .logo-link svg {
         fill: #fff;
         transition: all 0.3s ease;

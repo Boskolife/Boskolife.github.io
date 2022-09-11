@@ -460,21 +460,25 @@ html {
     }
 
     .card-wrap {
-        min-height: 600px;
+        height: 600px;
         border-radius: 15px;
         padding: 4px;
         background: rgb(253, 182, 4);
         background: linear-gradient(137deg, rgba(253, 182, 4, 1) 0%, rgba(255, 255, 255, 0) 21%, rgba(255, 255, 255, 0) 74%, rgba(253, 182, 4, 1) 100%);
 
+        @include media ("<desktop") {
+            height: 525px;
+        }
+
         @include media ("<tablet") {
-            min-height: 450px;
+            height: 450px;
         }
     }
 
     .card {
         width: 100%;
         border-radius: 15px;
-        min-height: 600px;
+        height: 100%;
         @include adaptiv-vaule("padding-top", 60, 15, 1);
         @include adaptiv-vaule("padding-bottom", 60, 15, 1);
         @include adaptiv-vaule("padding-right", 60, 15, 1);
