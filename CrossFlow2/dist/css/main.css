@@ -1266,46 +1266,45 @@ html {
 footer {
   background: #4F4F4F;
   padding: 8px 0; }
-
-.cont {
-  max-width: 1630px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px; }
-  .cont .footer-content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    @media (max-width: 479px) {
-      .cont .footer-content {
-        -ms-flex-direction: column;
-        flex-direction: column; } }
-    .cont .footer-content p,
-    .cont .footer-content a {
-      color: #fff;
-      font-size: 14px; }
+  footer .cont {
+    max-width: 1630px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px; }
+    footer .cont .footer-content {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
       @media (max-width: 479px) {
-        .cont .footer-content p,
-        .cont .footer-content a {
-          margin-bottom: 5px; } }
-    .cont .footer-content a {
-      transition: all 0.3s ease; }
-      .cont .footer-content a:hover {
-        color: #FDB604; }
-    .cont .footer-content .logo-link {
-      margin: 0 3px; }
-      @media (max-width: 479px) {
-        .cont .footer-content .logo-link {
-          margin: 20px 15px; } }
-      .cont .footer-content .logo-link svg {
-        fill: #fff;
-        transition: all 0.3s ease;
-        -o-object-fit: contain;
-        object-fit: contain; }
-        .cont .footer-content .logo-link svg:hover {
-          fill: #FDB604; }
+        footer .cont .footer-content {
+          -ms-flex-direction: column;
+          flex-direction: column; } }
+      footer .cont .footer-content p,
+      footer .cont .footer-content a {
+        color: #fff;
+        font-size: 14px; }
+        @media (max-width: 479px) {
+          footer .cont .footer-content p,
+          footer .cont .footer-content a {
+            margin-bottom: 5px; } }
+      footer .cont .footer-content a {
+        transition: all 0.3s ease; }
+        footer .cont .footer-content a:hover {
+          color: #FDB604; }
+      footer .cont .footer-content .logo-link {
+        margin: 0 3px; }
+        @media (max-width: 479px) {
+          footer .cont .footer-content .logo-link {
+            margin: 20px 15px; } }
+        footer .cont .footer-content .logo-link svg {
+          fill: #fff;
+          transition: all 0.3s ease;
+          -o-object-fit: contain;
+          object-fit: contain; }
+          footer .cont .footer-content .logo-link svg:hover {
+            fill: #FDB604; }
 
 /*# sourceMappingURL=main.css.map */
