@@ -2,17 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.cont {
-    max-width: 1350px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-
-    @include media ("<phone") {
-        padding: 0 10px;
-    }
-}
-
 .main-section {
     @include adaptiv-vaule("padding-top", 215, 120, 1);
     @include adaptiv-vaule("padding-bottom", 130, 60, 1);
@@ -497,7 +486,7 @@ html {
             content: '';
             z-index: -1;
             bottom: 0;
-            left: 35px;
+            left: 12%;
             width: 80%;
             height: 10%;
             position: absolute;
