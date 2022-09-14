@@ -604,23 +604,6 @@ input[type='submit'] {
   .yellow-btn:hover {
     background: #e2a303; }
 
-.grey-btn {
-  padding: 15px 35px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff;
-  background: #4F4F4F;
-  border-radius: 10px;
-  display: inline-block;
-  text-align: center;
-  transition: all .3s ease;
-  text-align: center; }
-  @media (max-width: 479px) {
-    .grey-btn {
-      font-size: 14px; } }
-  .grey-btn:hover {
-    background: #666565; }
-
 html {
   scroll-behavior: smooth; }
 
