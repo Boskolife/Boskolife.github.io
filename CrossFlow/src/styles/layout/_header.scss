@@ -1,16 +1,16 @@
-header{
+header {
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     padding: 25px 0;
-    z-index: 2;
+    z-index: 11;
     background-color: $gray_01;
 
-    @include media('<phone_max'){
+    @include media('<phone_max') {
         padding: 20px 0;
 
-        &::before{
+        &::before {
             content: '';
             position: absolute;
             top: 0;
@@ -21,37 +21,37 @@ header{
             z-index: 2;
             opacity: 0;
             transition: opacity 0s ease 0;
-    
-            .active &{
+
+            .active & {
                 transition: opacity 0s ease .8s;
                 opacity: 1;
             }
         }
     }
-    
-    .cont{
+
+    .cont {
         max-width: 1570px;
     }
 
-    .content{
+    .content {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    button{
+    button {
         border: none;
         background-color: transparent;
     }
 
-    .logo{
+    .logo {
         position: relative;
         z-index: 2;
 
-        .dark{
+        .dark {
             transition: all 1s ease 0s;
-            
-            @include media('<phone_max'){
+
+            @include media('<phone_max') {
                 position: relative;
 
                 .active & {
@@ -65,11 +65,11 @@ header{
             }
         }
 
-        .white{
-            display:  none;
+        .white {
+            display: none;
             transition: all 1s ease 0s;
 
-            @include media('<phone_max'){
+            @include media('<phone_max') {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -88,7 +88,7 @@ header{
         }
     }
 
-    .overflow{
+    .overflow {
         position: absolute;
         top: 0;
         right: 0;
@@ -101,25 +101,25 @@ header{
         opacity: 0;
         z-index: -1;
 
-        .active &{
+        .active & {
             visibility: visible;
             opacity: 1;
             z-index: 1;
         }
     }
-    
-    .control{
+
+    .control {
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 1;
-    
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             position: relative;
         }
     }
-    
-    .arrow{
+
+    .arrow {
         position: relative;
         width: 20px;
         height: 9px;
@@ -128,46 +128,46 @@ header{
         justify-content: center;
         margin-left: 10px;
         transition: all .3s ease 0s;
-        
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             width: 30px;
             height: 15px;
             margin-left: 30px;
 
-            &:hover{
-    
-                svg{
+            &:hover {
+
+                svg {
                     fill: $yellow;
                 }
             }
         }
-        
-        @include media('<phone_max'){
+
+        @include media('<phone_max') {
             position: absolute;
             right: -45px;
             margin: 0;
         }
 
-        svg{
+        svg {
             width: 8px;
             height: 5px;
             fill: $black;
             transition: all .3s ease 0s;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 fill: $white;
                 width: 15px;
                 height: 9px;
                 z-index: -1;
-            } 
+            }
         }
     }
-    
-    .menu-wrap{
+
+    .menu-wrap {
         display: flex;
         align-items: center;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             position: fixed;
             flex-direction: column;
             justify-content: space-between;
@@ -181,98 +181,98 @@ header{
             padding: 80px 65px;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             padding: 100px 30px;
         }
 
-        @include media('<phone_max'){
+        @include media('<phone_max') {
             width: 100%;
         }
-      
+
         .active & {
-            
-            @include media('<desktop'){
+
+            @include media('<desktop') {
                 right: 0;
             }
         }
     }
-    
-    .menu{
+
+    .menu {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
         padding: 0;
         margin: 0;
-    
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             flex-direction: column;
             align-items: flex-start;
             order: 2;
         }
 
-        @include media('<phone_max'){
+        @include media('<phone_max') {
             align-items: center;
         }
     }
-    
-    .menu-item{
+
+    .menu-item {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 0 20px;
-    
-        @include media('>=desktop') { 
 
-            &:hover{
+        @include media('>=desktop') {
 
-                .sub-menu{
+            &:hover {
+
+                .sub-menu {
                     transform: translate(0, 0);
                     opacity: 1;
                     visibility: visible;
                     pointer-events: auto;
                 }
-    
-                .arrow{
-    
-                    svg{
+
+                .arrow {
+
+                    svg {
                         transform: rotate3d(1, 0, 0, 180deg);
                         fill: $yellow;
                     }
                 }
-    
-                .link{
+
+                .link {
                     color: $yellow;
-    
-                    &::before{
+
+                    &::before {
                         width: 100%;
                     }
                 }
             }
         }
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             margin: 0 10px;
         }
-    
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             flex-direction: column;
             margin: 0;
             margin-bottom: 20px;
             align-items: flex-start;
         }
 
-        @include media('<phone_max'){
+        @include media('<phone_max') {
             align-items: center;
         }
     }
-    
-    .menu-item_active {
-    
-        @include media('<desktop'){
 
-            .sub-menu{
+    .menu-item_active {
+
+        @include media('<desktop') {
+
+            .sub-menu {
                 max-height: 500px;
                 opacity: 1;
                 visibility: visible;
@@ -281,34 +281,34 @@ header{
                 text-align: center;
                 margin: 30px 0 0 20px;
             }
-    
-            .arrow{
 
-                svg{
+            .arrow {
+
+                svg {
                     transform: rotate3d(1, 0, 0, 180deg);
                     fill: $yellow;
                 }
             }
         }
 
-        @include media('<phone_max'){
+        @include media('<phone_max') {
 
-            .sub-menu{
+            .sub-menu {
                 margin: 20px 0 0 0;
             }
         }
     }
 
-        
-    .link{
+
+    .link {
         transition: all .3s ease 0s;
         font-size: 16px;
         font-weight: 500;
-    
-        @include media('>=desktop'){
-            
-            &::before{
-                content:'';
+
+        @include media('>=desktop') {
+
+            &::before {
+                content: '';
                 position: absolute;
                 left: 0;
                 bottom: -6px;
@@ -319,23 +319,23 @@ header{
             }
         }
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             color: $white;
             font-size: 25px;
 
-            &:hover{
+            &:hover {
                 color: $yellow;
             }
         }
     }
-    
-    .sub-menu{
+
+    .sub-menu {
         position: relative;
         list-style: none;
         padding: 15px 0;
         margin: 0;
-    
-        @include media('>=desktop'){
+
+        @include media('>=desktop') {
             position: absolute;
             top: 100%;
             left: -15px;
@@ -349,8 +349,8 @@ header{
             opacity: 0;
             pointer-events: none;
         }
-    
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             max-height: 0;
             min-width: 200px;
             visibility: hidden;
@@ -360,117 +360,118 @@ header{
             text-align: center;
             padding: 0;
         }
-            
-        li{
-            &::after{
+
+        li {
+            &::after {
                 display: none;
             }
         }
     }
-    
-    .sub-item{
+
+    .sub-item {
         padding: 5px 0;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             text-align: left;
         }
 
-        @include media('<phone_max'){
-            text-align: center;            
+        @include media('<phone_max') {
+            text-align: center;
         }
-    
-        a{
+
+        a {
             font-size: 15px;
             transition: all .2s ease 0s;
-            
-            @include media('<desktop'){
+
+            @include media('<desktop') {
                 font-size: 18px;
                 color: $white;
             }
-    
-            &:hover{
+
+            &:hover {
                 color: $yellow;
             }
         }
     }
-    
-    .search-btn, .account-btn{
+
+    .search-btn,
+    .account-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0;
 
-        svg{
+        svg {
             transition: all .3s ease 0s;
         }
     }
 
-    .search{
+    .search {
         margin: 0 20px;
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             margin: 0 10px;
         }
 
-        @include media('<desktop'){
-           order: 3;
-           margin: 50px 0 0 0;
+        @include media('<desktop') {
+            order: 3;
+            margin: 50px 0 0 0;
         }
     }
-    
+
     .search-btn {
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             background-color: $yellow;
             width: 48px;
             height: 48px;
             border-radius: 9px;
         }
 
-        svg{
+        svg {
             width: 18px;
             height: 18px;
         }
 
-        &:hover{
+        &:hover {
 
-            svg{
+            svg {
                 fill: $yellow;
 
-                @include media('<desktop'){
+                @include media('<desktop') {
                     fill: $white;
                 }
             }
         }
     }
 
-    .account{
+    .account {
         margin-left: 20px;
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             margin-left: 10px;
         }
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             order: 1;
             margin: 0 0 50px 0;
         }
     }
 
-    .account-btn{
+    .account-btn {
 
-        &:hover{
+        &:hover {
 
-            svg{
+            svg {
                 fill: $yellow;
             }
         }
 
-        svg{
+        svg {
             width: 22px;
             height: 22px;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 fill: $white;
                 width: 47px;
                 height: 47px;
@@ -482,18 +483,18 @@ header{
 
 /* ---------------burger */
 
-.burger{
+.burger {
     display: none;
     position: relative;
     width: 30px;
     height: 20px;
     z-index: 2;
 
-    @include media('<desktop'){
+    @include media('<desktop') {
         display: block;
     }
 
-    span{
+    span {
         position: absolute;
         top: 8px;
         left: 0;
@@ -504,9 +505,10 @@ header{
         transition: all .7s ease 0s;
         z-index: 2;
     }
-    
-    &::before, &::after{
-        content:'';
+
+    &::before,
+    &::after {
+        content: '';
         position: absolute;
         height: 4px;
         width: 100%;
@@ -516,36 +518,37 @@ header{
         z-index: 1;
     }
 
-    &::before{
+    &::before {
         top: 0;
         width: 50%;
         left: 0;
     }
 
-    &::after{
+    &::after {
         bottom: 0;
         width: 50%;
         right: 0;
     }
 
-    .active &{
-    
-        span{
+    .active & {
+
+        span {
             transform: rotate(-45deg);
             top: 9px;
         }
 
-        &::before, &::after{
+        &::before,
+        &::after {
             transform: rotate(45deg);
             background-color: $white;
         }
-        
-        &::before{
+
+        &::before {
             top: 4px;
             left: 3px;
         }
 
-        &::after{
+        &::after {
             bottom: 2px;
             right: 2px;
         }

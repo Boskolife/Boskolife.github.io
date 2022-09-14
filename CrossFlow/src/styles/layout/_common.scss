@@ -864,7 +864,7 @@ body {
             flex-direction: column;
         }
 
-        .descrip{
+        .descrip {
             width: 48%;
 
             @include media ("<desktop") {
@@ -1784,33 +1784,7 @@ body {
         @include adaptiv-vaule("margin-bottom", 70, 35, 1);
     }
 
-    /* .boxes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 35px;
 }
-
-.box {
-    width: 400px;
-    height: 150px;
-    background-color: #EBEBEB;
-    border-radius: 5px;
-    margin-bottom: 40px;
-} */
-
-    /*  .btn-wrap {
-
-        .grey-btn {
-            &:first-child {
-                margin-right: 50px;
-            }
-        }
-    } */
-}
-
 
 /* --------------------------#Solutions-cardbox----------------------------- */
 
@@ -2274,7 +2248,7 @@ body {
     text-align: center;
     position: relative;
 
-    .cont{
+    .cont {
         width: auto;
     }
 
@@ -2340,7 +2314,7 @@ body {
         padding: 50px 0 150px 0;
     }
 
-    .slide1{
+    .slide1 {
         min-height: 1100px;
         padding: 50px 0;
 
@@ -2353,11 +2327,11 @@ body {
         border: none;
     }
 
-    .consultation{
+    .consultation {
         background-color: transparent;
         padding: 0;
 
-        &::before{
+        &::before {
             display: none;
         }
     }
@@ -2430,5 +2404,339 @@ body {
         &:hover {
             color: $yellow;
         }
+    }
+}
+
+
+//-------------#Partners-page----------//
+
+/* --------------------------#Partners----------------------------- */
+
+.partners {
+
+    .partners-content,
+    .component-title {
+        margin-bottom: 50px;
+    }
+
+    .partners-block {
+        @include adaptiv-vaule("margin-bottom", 85, 35, 1);
+
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 110, 45, 1);
+
+        @include media ("<desktop") {
+            flex-wrap: wrap;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .block-text {
+        width: 44%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        }
+    }
+
+
+
+    .block-img {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        min-height: 620px;
+        width: 48%;
+
+        @include media ("<desktop") {
+            min-height: 400px;
+            width: 100%;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+    }
+
+    .full-img {
+        position: relative;
+        width: 100%;
+        min-height: 620px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            min-height: 400px;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+    }
+}
+
+/* --------------------------#Benefits----------------------------- */
+
+.benefits {
+    padding-bottom: 50px;
+
+    .content {
+        @include adaptiv-vaule("margin-bottom", 180, 50, 1);
+    }
+
+    .benefits-title {
+        margin-bottom: 30px;
+    }
+
+    .block-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .text {
+            max-width: 560px;
+
+            @include media ("<desktop") {
+                max-width: 100%;
+            }
+
+            &:first-child {
+                margin-right: 30px;
+
+                @include media ("<desktop") {
+                    margin: 0 0 25px 0;
+                }
+            }
+        }
+    }
+
+    .rate {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 70px;
+        row-gap: 160px;
+        @include adaptiv-vaule("margin-bottom", 85, 35, 1);
+
+        @include media ("<desktop_sm") {
+            grid-template-columns: 1fr;
+            row-gap: 80px;
+        }
+
+        @include media ("<tablet") {
+            row-gap: 40px;
+        }
+
+        .block-img {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+
+            @include media ("<desktop_sm") {
+                min-height: 400px;
+            }
+
+            @include media ("<tablet") {
+                min-height: 280px;
+            }
+        }
+
+        .block-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 89%;
+
+            @include media ("<desktop_sm") {
+                width: 100%;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+            }
+        }
+
+        .block-list {
+            margin: 20px 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                color: $black;
+                font-size: 20px;
+                line-height: 30 / 20 * 100%;
+                position: relative;
+                margin-left: 30px;
+
+                @include media ("<tablet") {
+                    font-size: 16px;
+                }
+
+                &::before {
+                    content: url(../images/Partners-page/list-item.svg);
+                    position: absolute;
+                    top: 3px;
+                    left: -30px;
+                }
+            }
+        }
+    }
+
+    .btn-wrap {
+        text-align: center;
+    }
+}
+
+
+/* --------------------------#Partners-form----------------------------- */
+
+
+
+.partners-form {
+    padding: 160px 0 50px 0;
+    @include adaptiv-vaule("padding-top", 160, 70, 1);
+    text-align: center;
+    background: rgba(189, 189, 189, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: -70px;
+        left: 0;
+        width: 100%;
+        height: 140px;
+        background: #fff;
+        transform: skewY(-4deg);
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .description {
+        margin-bottom: 30px;
+    }
+
+    form {
+
+        .string {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include media ("<desktop") {
+                flex-direction: column;
+            }
+
+            input {
+                width: 48%;
+
+                @include media ("<desktop") {
+                    width: 100%;
+                }
+            }
+        }
+
+        input,
+        textarea {
+            background: $white;
+            border: 1px solid $gray_04;
+            border-radius: 10px;
+            padding: 25px 25px 25px 40px;
+            width: 100%;
+            @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+
+            @include media ("<tablet") {
+                padding: 15px;
+            }
+
+            &:focus {
+                border: 1px solid $yellow;
+            }
+
+            &::placeholder {
+                color: $black;
+            }
+        }
+
+        textarea {
+            height: 240px;
+        }
+    }
+
+    .checkboxes {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptiv-vaule("margin-bottom", 15, 5, 1);
+
+        .check-text {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            &:last-child {
+                label {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        input {
+            margin: 0 20px;
+            width: 22px;
+            height: 22px;
+
+            @include media ("<tablet") {
+                margin: 0 10px 0 0;
+            }
+        }
+
+        label {
+            font-size: 20px;
+            line-height: 30 / 20 * 100%;
+            @include adaptiv-vaule("margin-right", 60, 30, 1);
+
+            @include media ("<tablet") {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .text {
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+    }
+
+
+    .yellow-btn {
+        border: none;
     }
 }
