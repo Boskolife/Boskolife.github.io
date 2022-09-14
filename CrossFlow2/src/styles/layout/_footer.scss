@@ -35,11 +35,18 @@ footer {
                 }
             }
 
+            .logo {
+                @include media ("<phone") {
+                    margin: 20px 0;
+                }
+
+            }
+
             .logo-link {
                 margin: 0 3px;
 
                 @include media ("<phone") {
-                    margin: 20px 15px;
+                    margin: 0 15px;
                 }
 
                 svg {
