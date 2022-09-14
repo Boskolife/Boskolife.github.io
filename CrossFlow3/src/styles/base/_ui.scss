@@ -37,24 +37,3 @@
         background: $yellow_h;
     }
 }
-
-.grey-btn {
-    padding: 15px 35px;
-    font-weight: 600;
-    font-size: 16px;
-    color: $white;
-    background: $gray_02;
-    border-radius: 10px;
-    display: inline-block;
-    text-align: center;
-    transition: all .3s ease;
-    text-align: center;
-
-    @include media ("<phone") {
-        font-size: 14px;
-    }
-
-    &:hover {
-        background: #666565;
-    }
-}
