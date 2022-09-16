@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFlow</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400italic,regular,500,600,700" rel="stylesheet" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="cont">
+                <div class="content">
+                    <a href="index.html" class="logo">
+                        <img class="dark" src="./images/icons/logo-dark.svg" alt="icon">
+                        <img class="white" src="./images/icons/logo-white.svg" alt="icon">
+                    </a>
+                    <div class="overflow backdrop"></div>
+                    <nav class="menu-wrap">
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <div class="control">
+                                    <a class="link" href="about.html">About us</a>
+                                    <a class="arrow" href="#">
+                                        <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.58346 4.14066C3.77872 4.33592 4.0953 4.33592 4.29057 4.14066L7.47255 0.958682C7.66781 0.76342 7.66781 0.446838 7.47255 0.251575C7.27728 0.0563133 6.9607 0.0563133 6.76544 0.251575L3.93701 3.08L1.10858 0.251575C0.913322 0.0563133 0.59674 0.0563133 0.401478 0.251575C0.206216 0.446838 0.206216 0.76342 0.401478 0.958682L3.58346 4.14066ZM3.43701 2.78711V3.78711H4.43701V2.78711H3.43701Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="sub-item"><a href="carrers.html">Careers</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="link" href="solutions.html">Our solutions</a></li>
+                            <li class="menu-item"><a class="link" href="partners.html">Partners</a></li>
+                            <li class="menu-item"><a class="link" href="cases.html">Case studio</a></li>
+                            <li class="menu-item">
+                                <div class="control">
+                                    <a class="link" href="hub.html">Knowledge Hub</a>
+                                    <a class="arrow" href="#">
+                                        <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.58346 4.14066C3.77872 4.33592 4.0953 4.33592 4.29057 4.14066L7.47255 0.958682C7.66781 0.76342 7.66781 0.446838 7.47255 0.251575C7.27728 0.0563133 6.9607 0.0563133 6.76544 0.251575L3.93701 3.08L1.10858 0.251575C0.913322 0.0563133 0.59674 0.0563133 0.401478 0.251575C0.206216 0.446838 0.206216 0.76342 0.401478 0.958682L3.58346 4.14066ZM3.43701 2.78711V3.78711H4.43701V2.78711H3.43701Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="sub-item"><a href="news.html">News</a></li>
+                                    <li class="sub-item"><a href="tutorials.html">Tutorials</a></li>
+                                    <li class="sub-item"><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="link" href="contacts.html">Contacts</a></li>
+                        </ul>
+                        <div class="search">
+                            <!-- <div class="search-popup">
+                                <input type="text">
+                                <input type="submit">
+                            </div> -->
+                            <button class="search-btn">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.2275 12.7363C14.5546 13.0593 14.8758 13.3732 15.1939 13.6911C16.0203 14.5149 16.8476 15.3367 17.668 16.1666C18.0142 16.5165 18.0882 16.9694 17.8941 17.3853C17.709 17.7812 17.3018 18.0262 16.8636 17.9992C16.5565 17.9802 16.3134 17.8332 16.1003 17.6192C15.0418 16.5575 13.9794 15.4987 12.9199 14.4369C12.8559 14.373 12.8098 14.29 12.7598 14.222C9.08319 17.0364 4.02094 16.0236 1.53083 12.6334C-0.800205 9.45606 -0.437044 4.94806 2.40422 2.23466C5.34052 -0.569717 9.80451 -0.755676 12.9409 1.79776C16.1273 4.39218 16.8927 9.17312 14.2275 12.7363ZM7.91167 13.7131C11.1181 13.7161 13.6982 11.1467 13.7062 7.94139C13.7132 4.72711 11.1291 2.14068 7.91167 2.14368C4.70524 2.14668 2.1301 4.72311 2.1311 7.9284C2.1311 11.1347 4.70524 13.7101 7.91167 13.7131Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="account">
+                            <button class="account-btn">
+                                <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.50566e-07 11.0004C-0.00171823 4.92747 4.91371 0.0060209 10.9884 5.5085e-06C17.0725 -0.00600988 21.9991 4.91544 22 10.9987C22 17.082 17.0725 22.006 10.9901 22C4.91543 21.994 0.00171913 17.0768 4.50566e-07 11.0004ZM8.376 13.6274C7.14457 12.7638 6.40209 11.614 6.24569 10.1359C6.08843 8.65014 6.53787 7.34651 7.58541 6.2732C9.42268 4.39038 12.4347 4.34655 14.3115 6.17008C15.2533 7.08528 15.7595 8.20242 15.7775 9.51893C15.8016 11.2625 15.0393 12.6108 13.6309 13.6309C15.6331 14.5263 16.9531 16.0087 17.6036 18.0891C20.3157 15.6357 21.6021 11.4095 20.0175 7.40323C18.4346 3.39784 14.3605 0.908329 10.0105 1.3423C5.69572 1.77369 2.18359 5.0452 1.43768 9.32472C1.07418 11.4129 1.36463 13.4143 2.30647 15.316C2.82723 16.3679 3.51986 17.2917 4.39209 18.102C5.05293 15.9975 6.37288 14.5229 8.376 13.6274ZM10.9936 20.7119C12.9082 20.6964 14.6733 20.1808 16.2871 19.1436C16.4495 19.0387 16.4796 18.9382 16.4383 18.7603C15.7715 15.8712 13.0861 14.0399 10.1428 14.4739C7.87758 14.8082 5.99648 16.5836 5.55049 18.8058C5.52127 18.9502 5.55049 19.0361 5.68197 19.1212C7.29839 20.1679 9.06863 20.6929 10.9936 20.711V20.7119ZM14.4928 9.62807C14.4997 7.69713 12.9443 6.13227 11.0099 6.12109C9.08582 6.11078 7.51322 7.6765 7.50721 9.60744C7.50119 11.541 9.05746 13.1058 10.9893 13.111C12.9228 13.1161 14.4851 11.5624 14.4919 9.62807H14.4928Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </nav>
+                    <button class="burger">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="news-subpage">
+                <div class="cont">
+                    <div class="main-img">
+                        <img class="ibg" src="./images/News-(page)/main-img.jpg" alt="image not found">
+                    </div>
+                    <h2 class="news-subtitle">
+                        Crossflow – The Working Capital Marketplace, has launched advanced machine learning capabilities
+                        to the service matching
+                        institutional funders to corporates and their suppliers.
+                    </h2>
+                    <p class="news-subdescription">
+                        This next generation of Artificial Intelligence (AI) adds enhanced sentiment and sector analysis
+                        capabilities to the
+                        Crossflow platform which provides 24/7 data and news service monitoring. The algorithm
+                        dynamically aligns cost of
+                        finance to risk and provides funders with additional confidence that Crossflow is taking a risk
+                        aligned approach when
+                        utilising funds. At a time where funder confidence is vital, this capability supports increased
+                        funding capacity,
+                        ensuring clients can access financing at best available rates through its working capital
+                        programme.
+                    </p>
+                    <div class="payments">
+                        <div class="text">
+                            <h3>About Crossflow Payments</h3>
+                            <p>
+                                Crossflow Payments is a technology driven alternative finance platform delivering an
+                                innovative supply chain finance
+                                solution to large corporates and their suppliers. Its unique payment platform improves
+                                working capital for businesses
+                                whilst providing suppliers with access to finance without the need for onerous personal
+                                guarantees. Crossflow is backed
+                                by a range of sophisticated institutional investors providing significant firepower,
+                                enabling it to play a crucial role
+                                in helping businesses seize opportunities for growth. The business is an effective
+                                industry ambassador setting voluntary
+                                standards on a range of issues including cyber security, funds segregation, payment
+                                authentication and Crossflows
+                                InvoiceProtectTM minimising the risk of fraudulent transactions.</p>
+                        </div>
+                        <div class="img">
+                            <img class="ibg" src="./images/News-(page)/sub-img.jpg" alt="image not found">
+                        </div>
+                    </div>
+                    <div class="quote">
+                        <span>“Our platform is a best-in-class solution; however, technology doesn’t stand still and we
+                            continue to innovate in areas
+                            such as AI. This continued investment is vital to supporting our solid risk management
+                            framework and providing optimal
+                            value to our clients”</span>
+                        <p>CEO, Tony Duggan, commented:</p>
+                    </div>
+                </div>
+            </section>
+            <section class="question">
+                <div class="cont">
+                    <h4>Are you looking to implement new strategy and unlock business goals with flexible working
+                        capital?</h4>
+                    <p>Learn how to implement the sustainability strategy in partnership with your suppliers.</p>
+                    <a href="#" class="yellow-btn">Call to action</a>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="top">
+                <div class="cont">
+                    <a class="footer-logo" href="index.html"><img src="./images/icons/logo-white.svg" alt="icon"></a>
+                    <nav class="footer-menu">
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <div class="control">
+                                    <a class="title link" href="#">About us</a>
+                                    <button class="arrow">
+                                        <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.58346 4.14066C3.77872 4.33592 4.0953 4.33592 4.29057 4.14066L7.47255 0.958682C7.66781 0.76342 7.66781 0.446838 7.47255 0.251575C7.27728 0.0563133 6.9607 0.0563133 6.76544 0.251575L3.93701 3.08L1.10858 0.251575C0.913322 0.0563133 0.59674 0.0563133 0.401478 0.251575C0.206216 0.446838 0.206216 0.76342 0.401478 0.958682L3.58346 4.14066ZM3.43701 2.78711V3.78711H4.43701V2.78711H3.43701Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="sub-item"><a class="link" href="#">Careers</a></li>
+                                    <li class="sub-item"><a class="link" href="#">Why Crossflow</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="title link" href="#">Partners</a></li>
+                            <li class="menu-item"><a class="title link" href="#">Our solutions</a></li>
+                            <li class="menu-item"><a class="title link" href="#">Case studio</a></li>
+                            <li class="menu-item">
+                                <div class="control">
+                                    <a class="title link" href="#">About us</a>
+                                    <button class="arrow">
+                                        <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.58346 4.14066C3.77872 4.33592 4.0953 4.33592 4.29057 4.14066L7.47255 0.958682C7.66781 0.76342 7.66781 0.446838 7.47255 0.251575C7.27728 0.0563133 6.9607 0.0563133 6.76544 0.251575L3.93701 3.08L1.10858 0.251575C0.913322 0.0563133 0.59674 0.0563133 0.401478 0.251575C0.206216 0.446838 0.206216 0.76342 0.401478 0.958682L3.58346 4.14066ZM3.43701 2.78711V3.78711H4.43701V2.78711H3.43701Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="sub-item"><a class="link" href="#">News</a></li>
+                                    <li class="sub-item"><a class="link" href="#">Case studios</a></li>
+                                    <li class="sub-item"><a class="link" href="#">Whitepapers</a></li>
+                                    <li class="sub-item"><a class="link" href="#">Tutorials</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="title link" href="#">Contacts</a></li>
+                        </ul>
+                    </nav>
+                    <form class="footer-form" action="#">
+                        <p class="text">Subscription</p>
+                        <div class="input-wrap">
+                            <input type="email" placeholder="Your Email" required>
+                            <button class="btn-footer">
+                                <svg viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.3199 19.5341C12.0648 19.5215 11.888 19.3876 11.7737 19.1629C11.4747 18.5736 11.1734 17.9852 10.8729 17.3959C10.0113 15.7071 9.152 14.0175 8.28332 12.3323C8.23167 12.2319 8.12759 12.1329 8.02194 12.0838C5.65224 10.985 3.27785 9.89427 0.908148 8.7954C0.763368 8.72844 0.611545 8.62353 0.527807 8.49706C0.32355 8.18979 0.490242 7.84309 0.894061 7.68834C1.9537 7.28212 3.01489 6.88037 4.07531 6.47713C9.21696 4.52192 14.3586 2.56672 19.501 0.616721C19.6513 0.559434 19.8344 0.516282 19.9878 0.541578C20.3682 0.604073 20.5372 0.9597 20.3846 1.33541C20.1717 1.85918 19.9495 2.37923 19.7296 2.90077C17.4663 8.28055 15.2015 13.6596 12.9398 19.0401C12.8255 19.3117 12.6706 19.52 12.3192 19.5341H12.3199ZM17.3685 2.62624C12.3974 4.51671 7.46003 6.3938 2.48508 8.28651C4.52922 9.2284 6.52562 10.1487 8.49854 11.0579C11.4614 8.24187 14.4032 5.44596 17.3693 2.62624H17.3685ZM12.28 17.5968C14.2741 12.8591 16.2478 8.16747 18.2246 3.47141C15.2672 6.28294 12.3215 9.08258 9.36878 11.8896C10.3275 13.7682 11.2932 15.6624 12.2808 17.5968H12.28Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <img class="icon-bg" src="./images/icons/footer-icon-bg.svg" alt="icon">
+            </div>
+            <div class="bot">
+                <div class="cont">
+                    <p class="text">Copyright Crossflow 2022</p>
+                    <div class="socials">
+                        <a class="social-link" href="#" target="_blank">
+                            <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.7773 0H3.22266C1.44583 0 0 1.44583 0 3.22266V18.7773C0 20.5542 1.44583 22 3.22266 22H18.7773C20.5542 22 22 20.5542 22 18.7773V3.22266C22 1.44583 20.5542 0 18.7773 0ZM7.77734 17.4453H5.19922V8.42188H7.77734V17.4453ZM7.77734 7.13281H5.19922V4.55469H7.77734V7.13281ZM16.8008 17.4453H14.2227V12.2891C14.2227 11.5784 13.6443 11 12.9336 11C12.2229 11 11.6445 11.5784 11.6445 12.2891V17.4453H9.06641V8.42188H11.6445V8.90779C12.3199 8.69781 12.7587 8.42188 13.5781 8.42188C15.3266 8.42372 16.8008 9.99225 16.8008 11.8459V17.4453Z"/>
+                            </svg>
+                        </a>
+                        <a class="social-link" href="#" target="_blank">
+                            <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.6429 0H2.35714C1.0558 0 0 1.0558 0 2.35714V19.6429C0 20.9442 1.0558 22 2.35714 22H19.6429C20.9442 22 22 20.9442 22 19.6429V2.35714C22 1.0558 20.9442 0 19.6429 0ZM17.2415 7.79821C17.2513 7.93571 17.2513 8.07812 17.2513 8.21562C17.2513 12.4732 14.0103 17.379 8.08795 17.379C6.26116 17.379 4.56696 16.8487 3.14286 15.9353C3.40313 15.9647 3.65357 15.9746 3.91875 15.9746C5.42634 15.9746 6.81116 15.4638 7.91607 14.5996C6.50179 14.5701 5.31339 13.642 4.9058 12.3652C5.40179 12.4388 5.84866 12.4388 6.35938 12.3062C4.88616 12.0067 3.78125 10.7103 3.78125 9.14375V9.10446C4.20848 9.34509 4.70937 9.49241 5.23482 9.51205C4.79307 9.21821 4.43093 8.81958 4.18072 8.35173C3.93052 7.88388 3.80002 7.36136 3.80089 6.8308C3.80089 6.2317 3.95804 5.6817 4.23795 5.20536C5.82411 7.15982 8.2058 8.43661 10.8772 8.57411C10.4205 6.38884 12.0558 4.61607 14.0201 4.61607C14.9482 4.61607 15.783 5.00402 16.3723 5.63259C17.0991 5.49509 17.7964 5.225 18.4152 4.8567C18.1746 5.60312 17.6688 6.2317 17.0009 6.62946C17.6491 6.56071 18.2777 6.37902 18.8571 6.12857C18.4201 6.77187 17.8701 7.34152 17.2415 7.79821Z"/>
+                            </svg>
+                        </a>
+                        <a class="social-link youtube" href="#" target="_blank">
+                            <svg viewBox="0 0 33 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32.2933 3.4518C32.1066 2.78566 31.7428 2.18256 31.2407 1.70663C30.7244 1.21607 30.0916 0.865156 29.4021 0.687017C26.8215 0.00681409 16.4824 0.00681424 16.4824 0.00681424C12.1721 -0.0422254 7.86293 0.173463 3.57913 0.652663C2.88957 0.843963 2.25797 1.20272 1.74052 1.69702C1.23208 2.18621 0.863813 2.78946 0.671432 3.45043C0.209297 5.94003 -0.0152404 8.46791 0.000848101 11C-0.0156417 13.5298 0.208344 16.0569 0.671432 18.5496C0.85969 19.2078 1.22659 19.8083 1.7364 20.2934C2.2462 20.7784 2.88106 21.1288 3.57913 21.3143C6.19413 21.9932 16.4824 21.9932 16.4824 21.9932C20.7981 22.0423 25.1128 21.8266 29.4021 21.3473C30.0916 21.1692 30.7244 20.8183 31.2407 20.3277C31.7426 19.8519 32.106 19.2487 32.2919 18.5825C32.7661 16.0939 32.9967 13.565 32.9804 11.0316C33.016 8.48751 32.7858 5.94665 32.2933 3.45043V3.4518ZM13.1954 15.7051V6.29629L21.7976 11.0014L13.1954 15.7051Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <a class="title" href="https://krockds.com/" target="_blank">Website by Krock DS</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
