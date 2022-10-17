@@ -235,7 +235,7 @@
         @include media ('<laptop'){
             min-width: 1000px;
             max-width: 1000px;
-        }
+        } 
 
         @include media ('<widescreen'){
             min-width: 700px;
