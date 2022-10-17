@@ -1,3 +1,28 @@
-body {
-    
+
+
+.main-section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text{
+        text-align: center;
+    }
+
+    .title{
+        font-weight: 600;
+        font-size: 128px;
+        color: #FEF5F5;
+    }
+
+    .sub-title{
+        font-weight: 600;
+        font-size: 64px;
+        color: #FEF5F5;
+    }
+}
+
+.sec{
+    min-height: 200vh;
 }

@@ -538,4 +538,26 @@ input[type='submit'] {
   cursor: pointer;
   font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
 
+.main-section {
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .main-section .text {
+    text-align: center; }
+  .main-section .title {
+    font-weight: 600;
+    font-size: 128px;
+    color: #FEF5F5; }
+  .main-section .sub-title {
+    font-weight: 600;
+    font-size: 64px;
+    color: #FEF5F5; }
+
+.sec {
+  min-height: 200vh; }
+
 /*# sourceMappingURL=main.css.map */
