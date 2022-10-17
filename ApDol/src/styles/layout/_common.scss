@@ -1,25 +1,221 @@
+#wrapper{
+    overflow: hidden;
+}
 
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----------.main-section------------ */
 
 .main-section{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    min-height: 1830px;
+    max-width: 2000px;
+    margin: 0 auto;
+
+    @include media ('<=widescreen'){
+        min-height: 940px;
+    }
+
+    @include media ('<=tablet'){
+        min-height: 640px;
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 45px;
+        width: 100%;
+        height: 450px;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(254,254,254,1) 100%);
+        z-index: 4;
+
+        @include media ('<=widescreen'){
+            bottom: 0;
+        }
+
+        @include media ('<=tablet'){
+            height: 200px;
+        }
+
+        @include media ('<=tablet'){
+            height: 150px;
+            bottom: 5px;
+        }
+    }
 
     .text{
+        position: absolute;
         text-align: center;
+        z-index: 2;
+        top: 415px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        padding: 0 20px;
+
+        @include media ('<=widescreen'){
+            top: 120px;
+        }
+
+        @include media ('<=tablet'){
+            top: 160px;
+        }
     }
 
     .title{
         font-weight: 600;
-        font-size: 128px;
+        line-height: 1.2;
         color: #FEF5F5;
+        margin-bottom: 10px;
+        @include adaptiv-vaule("font-size", 128, 30, 1);
+
+        @include media ('<=phone'){
+            font-size: 40px;
+        }
     }
 
     .sub-title{
         font-weight: 600;
-        font-size: 64px;
         color: #FEF5F5;
+        margin: 0;
+        @include adaptiv-vaule("font-size", 64, 20, 1);
+    }
+
+    #sky, #m1, #m2, #m3, #cloud1, #cloud2, #cloud3{
+        position: absolute;
+    }
+
+    #sky, #m1, #m2, #m3 {
+        min-width: 2000px;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include media ('<=widescreen'){
+            min-width: 1200px;
+        }
+
+        @include media ('<=tablet'){
+            min-width: 768px;
+        }
+    }
+
+    #sky{
+        top: 0;
+    }
+
+    #m1 {
+        top: 325px;
+        z-index: 1;
+
+        @include media ('<=widescreen'){
+            top: 195px;
+        }
+
+        @include media ('<=tablet'){
+            top: 125px;
+        }
+    }
+
+    #m2 {
+        top: 475px;
+        z-index: 3;
+
+        @include media ('<=widescreen'){
+            top: 265px;
+        }
+
+        @include media ('<=tablet'){
+            top: 185px;
+            z-index: 1;
+        }
+    }
+
+    #m3 {
+        top: 390px;
+        z-index: 3;
+
+        @include media ('<=widescreen'){
+            top: 100px;
+        }
+    }
+
+    #cloud1{
+        min-width: 1100px;
+        left: -60px;
+        bottom: 340px;
+        z-index: 4;
+
+        @include media ('<=widescreen'){
+            min-width: 800px;
+            bottom: 240px;
+        }
+
+        @include media ('<=tablet'){
+            min-width: 400px;
+            max-width: 400px;
+            bottom: 80px;
+        }
+
+        @include media ('<=phone'){
+            min-width: 300px;
+            max-width: 300px;
+        }
+    }
+
+    #cloud2{
+        min-width: 1300px;
+        left: -100px;
+        bottom: -325px;
+        z-index: 4;
+
+        @include media ('<=widescreen'){
+            min-width: 900px;
+            bottom: -240px;
+        }
+
+        @include media ('<=tablet'){
+            min-width: 500px;
+            max-width: 500px;
+            bottom: -140px;
+        }
+
+        @include media ('<=phone'){
+            min-width: 300px;
+            max-width: 300px;
+            bottom: -70px;
+        }
+    }
+
+    #cloud3{
+        min-width: 1300px;
+        right: -300px;
+        bottom: -15px;
+        z-index: 4;
+
+        @include media ('<=widescreen'){
+            min-width: 900px;
+            bottom: -40;
+        }
+
+        @include media ('<=tablet'){
+            min-width: 500px;
+            max-width: 500px;
+            right: -100px;
+            bottom: -40px;
+        }
+
+        @include media ('<=phone'){
+            min-width: 300px;
+            max-width: 300px;
+            bottom: 0px;
+        }
     }
 }
 
