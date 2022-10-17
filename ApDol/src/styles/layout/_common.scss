@@ -13,15 +13,19 @@
 
 .main-section{
     position: relative;
-    min-height: 1830px;
+    min-height: 1785px;
     max-width: 2000px;
     margin: 0 auto;
 
-    @include media ('<=widescreen'){
+    @include media ('<laptop'){
+        min-height: 1205px;
+    }
+
+    @include media ('<widescreen'){
         min-height: 940px;
     }
 
-    @include media ('<=tablet'){
+    @include media ('<tablet'){
         min-height: 640px;
     }
 
@@ -29,22 +33,18 @@
         content:'';
         position: absolute;
         left: 0;
-        bottom: 45px;
+        bottom: 0;
         width: 100%;
         height: 450px;
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(254,254,254,1) 100%);
         z-index: 4;
 
-        @include media ('<=widescreen'){
-            bottom: 0;
-        }
-
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             height: 200px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             height: 150px;
             bottom: 5px;
         }
@@ -60,11 +60,15 @@
         width: 100%;
         padding: 0 20px;
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
+            top: 220px;
+        }
+
+        @include media ('<widescreen'){
             top: 120px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             top: 160px;
         }
     }
@@ -76,7 +80,7 @@
         margin-bottom: 10px;
         @include adaptiv-vaule("font-size", 128, 30, 1);
 
-        @include media ('<=phone'){
+        @include media ('<phone'){
             font-size: 40px;
         }
     }
@@ -97,11 +101,15 @@
         left: 50%;
         transform: translate(-50%);
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
+            min-width: 1440px;
+        }
+
+        @include media ('<widescreen'){
             min-width: 1200px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             min-width: 768px;
         }
     }
@@ -114,11 +122,15 @@
         top: 325px;
         z-index: 1;
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
+            top: 235px;
+        }
+
+        @include media ('<widescreen'){
             top: 195px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             top: 125px;
         }
     }
@@ -127,11 +139,15 @@
         top: 475px;
         z-index: 3;
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
+            top: 350px;
+        }
+
+        @include media ('<widescreen'){
             top: 265px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<tablet'){
             top: 185px;
             z-index: 1;
         }
@@ -141,7 +157,11 @@
         top: 390px;
         z-index: 3;
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
+            top: 200px;
+        }
+
+        @include media ('<widescreen'){
             top: 100px;
         }
     }
@@ -152,18 +172,24 @@
         bottom: 340px;
         z-index: 4;
 
-        @include media ('<=widescreen'){
-            min-width: 800px;
+        @include media ('<laptop'){
+            min-width: 600px;
+            max-width: 600px;
             bottom: 240px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<widescreen'){
             min-width: 400px;
             max-width: 400px;
+        }
+
+        @include media ('<tablet'){
+            min-width: 300px;
+            max-width: 300px;
             bottom: 80px;
         }
 
-        @include media ('<=phone'){
+        @include media ('<phone'){
             min-width: 300px;
             max-width: 300px;
         }
@@ -175,18 +201,25 @@
         bottom: -325px;
         z-index: 4;
 
-        @include media ('<=widescreen'){
+        @include media ('<laptop'){
             min-width: 900px;
+            max-width: 900px;
             bottom: -240px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<widescreen'){
+            min-width: 700px;
+            max-width: 700px;
+            bottom: -240px;
+        }
+
+        @include media ('<tablet'){
             min-width: 500px;
             max-width: 500px;
             bottom: -140px;
         }
 
-        @include media ('<=phone'){
+        @include media ('<phone'){
             min-width: 300px;
             max-width: 300px;
             bottom: -70px;
@@ -199,19 +232,25 @@
         bottom: -15px;
         z-index: 4;
 
-        @include media ('<=widescreen'){
-            min-width: 900px;
-            bottom: -40;
+        @include media ('<laptop'){
+            min-width: 1000px;
+            max-width: 1000px;
         }
 
-        @include media ('<=tablet'){
+        @include media ('<widescreen'){
+            min-width: 700px;
+            max-width: 700px;
+            bottom: -40px;
+        }
+
+        @include media ('<tablet'){
             min-width: 500px;
             max-width: 500px;
             right: -100px;
             bottom: -40px;
         }
 
-        @include media ('<=phone'){
+        @include media ('<phone'){
             min-width: 300px;
             max-width: 300px;
             bottom: 0px;

@@ -550,32 +550,32 @@ input[type='submit'] {
 /* ----------.main-section------------ */
 .main-section {
   position: relative;
-  min-height: 1830px;
+  min-height: 1785px;
   max-width: 2000px;
   margin: 0 auto; }
-  @media (max-width: 1200px) {
+  @media (max-width: 1439px) {
+    .main-section {
+      min-height: 1205px; } }
+  @media (max-width: 1199px) {
     .main-section {
       min-height: 940px; } }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .main-section {
       min-height: 640px; } }
   .main-section::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 45px;
+    bottom: 0;
     width: 100%;
     height: 450px;
     background: white;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fefefe 100%);
     z-index: 4; }
-    @media (max-width: 1200px) {
-      .main-section::after {
-        bottom: 0; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section::after {
         height: 200px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section::after {
         height: 150px;
         bottom: 5px; } }
@@ -589,10 +589,13 @@ input[type='submit'] {
     transform: translate(-50%);
     width: 100%;
     padding: 0 20px; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
+      .main-section .text {
+        top: 220px; } }
+    @media (max-width: 1199px) {
       .main-section .text {
         top: 120px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section .text {
         top: 160px; } }
   .main-section .title {
@@ -605,7 +608,7 @@ input[type='submit'] {
     @media (max-width: 1360px) {
       .main-section .title {
         font-size: calc(30px + 98 * ((100vw - calc(320px)) / 1040)); } }
-    @media (max-width: 480px) {
+    @media (max-width: 479px) {
       .main-section .title {
         font-size: 40px; } }
   .main-section .sub-title {
@@ -624,10 +627,13 @@ input[type='submit'] {
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%); }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
+      .main-section #sky, .main-section #m1, .main-section #m2, .main-section #m3 {
+        min-width: 1440px; } }
+    @media (max-width: 1199px) {
       .main-section #sky, .main-section #m1, .main-section #m2, .main-section #m3 {
         min-width: 1200px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section #sky, .main-section #m1, .main-section #m2, .main-section #m3 {
         min-width: 768px; } }
   .main-section #sky {
@@ -635,26 +641,35 @@ input[type='submit'] {
   .main-section #m1 {
     top: 325px;
     z-index: 1; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
+      .main-section #m1 {
+        top: 235px; } }
+    @media (max-width: 1199px) {
       .main-section #m1 {
         top: 195px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section #m1 {
         top: 125px; } }
   .main-section #m2 {
     top: 475px;
     z-index: 3; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
+      .main-section #m2 {
+        top: 350px; } }
+    @media (max-width: 1199px) {
       .main-section #m2 {
         top: 265px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .main-section #m2 {
         top: 185px;
         z-index: 1; } }
   .main-section #m3 {
     top: 390px;
     z-index: 3; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
+      .main-section #m3 {
+        top: 200px; } }
+    @media (max-width: 1199px) {
       .main-section #m3 {
         top: 100px; } }
   .main-section #cloud1 {
@@ -662,16 +677,21 @@ input[type='submit'] {
     left: -60px;
     bottom: 340px;
     z-index: 4; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
       .main-section #cloud1 {
-        min-width: 800px;
+        min-width: 600px;
+        max-width: 600px;
         bottom: 240px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
       .main-section #cloud1 {
         min-width: 400px;
-        max-width: 400px;
+        max-width: 400px; } }
+    @media (max-width: 767px) {
+      .main-section #cloud1 {
+        min-width: 300px;
+        max-width: 300px;
         bottom: 80px; } }
-    @media (max-width: 480px) {
+    @media (max-width: 479px) {
       .main-section #cloud1 {
         min-width: 300px;
         max-width: 300px; } }
@@ -680,16 +700,22 @@ input[type='submit'] {
     left: -100px;
     bottom: -325px;
     z-index: 4; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
       .main-section #cloud2 {
         min-width: 900px;
+        max-width: 900px;
         bottom: -240px; } }
-    @media (max-width: 768px) {
+    @media (max-width: 1199px) {
+      .main-section #cloud2 {
+        min-width: 700px;
+        max-width: 700px;
+        bottom: -240px; } }
+    @media (max-width: 767px) {
       .main-section #cloud2 {
         min-width: 500px;
         max-width: 500px;
         bottom: -140px; } }
-    @media (max-width: 480px) {
+    @media (max-width: 479px) {
       .main-section #cloud2 {
         min-width: 300px;
         max-width: 300px;
@@ -699,17 +725,22 @@ input[type='submit'] {
     right: -300px;
     bottom: -15px;
     z-index: 4; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1439px) {
       .main-section #cloud3 {
-        min-width: 900px;
-        bottom: -40; } }
-    @media (max-width: 768px) {
+        min-width: 1000px;
+        max-width: 1000px; } }
+    @media (max-width: 1199px) {
+      .main-section #cloud3 {
+        min-width: 700px;
+        max-width: 700px;
+        bottom: -40px; } }
+    @media (max-width: 767px) {
       .main-section #cloud3 {
         min-width: 500px;
         max-width: 500px;
         right: -100px;
         bottom: -40px; } }
-    @media (max-width: 480px) {
+    @media (max-width: 479px) {
       .main-section #cloud3 {
         min-width: 300px;
         max-width: 300px;
