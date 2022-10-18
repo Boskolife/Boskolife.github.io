@@ -9,40 +9,45 @@ let text = document.getElementById('text');
 let msec = document.getElementById('msec');
 
 
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
   let value = window.scrollY;
   let laptop = window.matchMedia("(min-width: 1450px)");
   let widescreen = window.matchMedia("(min-width: 1200px)");
   let tablet = window.matchMedia("(min-width: 768px)");
   let phone = window.matchMedia("(min-width: 480px)");
 
-  if (laptop.matches) { 
+  if (laptop.matches) {
     m2.style.top = 475 + value * 0.05 + 'px';
     m3.style.top = 390 + value * -0.3 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
-    cloud2.style.left = -100+ value * -0.3 + 'px';
+    cloud2.style.left = -100 + value * -0.3 + 'px';
     cloud3.style.right = -300 + value * -0.3 + 'px';
     cloud1.style.bottom = 340 + value * 0.2 + 'px';
     cloud2.style.bottom = -325 + value * 0.2 + 'px';
     cloud3.style.bottom = -15 + value * 0.2 + 'px';
     text.style.top = 415 + value * 0.3 + 'px';
     msec.style.minHeight = 1785 + value * -0.3 + 'px';
-  }  else if (widescreen.matches) { 
+  } else if (widescreen.matches) {
     m2.style.top = 350 + value * 0.05 + 'px';
     m3.style.top = 200 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
-    cloud2.style.left = -100+ value * -0.3 + 'px';
+    cloud2.style.left = -100 + value * -0.3 + 'px';
     cloud3.style.right = -300 + value * -0.3 + 'px';
     cloud1.style.bottom = 240 + value * 0.1 + 'px';
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -15 + value * 0.1 + 'px';
     text.style.top = 220 + value * 0.3 + 'px';
+<<<<<<< Updated upstream
     msec.style.minHeight = 1205 + value * -0.2 + 'px';
   }  else if (tablet.matches) {
+=======
+    msec.style.minHeight = 1205 + value * -0.3 + 'px';
+  } else if (tablet.matches) {
+>>>>>>> Stashed changes
     m2.style.top = 265 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
-    cloud2.style.left = -100+ value * -0.3 + 'px';
+    cloud2.style.left = -100 + value * -0.3 + 'px';
     cloud3.style.right = -300 + value * -0.3 + 'px';
     cloud1.style.bottom = 240 + value * 0.1 + 'px';
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
@@ -53,7 +58,7 @@ window.addEventListener('scroll', function(){
     m2.style.top = 185 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
-    cloud2.style.left = -100+ value * -0.3 + 'px';
+    cloud2.style.left = -100 + value * -0.3 + 'px';
     cloud3.style.right = -100 + value * -0.3 + 'px';
     cloud1.style.bottom = 80 + value * 0.1 + 'px';
     cloud2.style.bottom = -140 + value * 0.1 + 'px';
@@ -64,7 +69,7 @@ window.addEventListener('scroll', function(){
     m2.style.top = 185 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
-    cloud2.style.left = -100+ value * -0.3 + 'px';
+    cloud2.style.left = -100 + value * -0.3 + 'px';
     cloud3.style.right = -100 + value * -0.3 + 'px';
     cloud1.style.bottom = 80 + value * 0.1 + 'px';
     cloud2.style.bottom = -70 + value * 0.1 + 'px';
@@ -76,3 +81,22 @@ window.addEventListener('scroll', function(){
 
 
 /* ///// */
+
+const burger = document.querySelector(".burger_menu");
+const menuBody = document.querySelector(".nav");
+const linkClose = document.querySelector(".link-close");
+if (burger) {
+  burger.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    burger.classList.toggle("burger_active");
+    menuBody.classList.toggle("menu_active");
+  });
+};
+
+if (linkClose) {
+  linkClose.addEventListener("click", function (e) {
+    document.body.classList.remove("body_lock");
+    burger.classList.remove("burger_active");
+    menuBody.classList.remove("menu_active");
+  });
+};
