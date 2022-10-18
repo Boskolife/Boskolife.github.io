@@ -859,16 +859,11 @@ header {
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%); }
-<<<<<<< Updated upstream
     @media (max-width: 1449px) {
-      .main-section #sky, .main-section #m1, .main-section #m2, .main-section #m3 {
-=======
-    @media (max-width: 1439px) {
       .main-section #sky,
       .main-section #m1,
       .main-section #m2,
       .main-section #m3 {
->>>>>>> Stashed changes
         min-width: 1440px; } }
     @media (max-width: 1199px) {
       .main-section #sky,

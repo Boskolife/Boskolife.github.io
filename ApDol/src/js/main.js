@@ -37,13 +37,8 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -15 + value * 0.1 + 'px';
     text.style.top = 220 + value * 0.3 + 'px';
-<<<<<<< Updated upstream
     msec.style.minHeight = 1205 + value * -0.2 + 'px';
-  }  else if (tablet.matches) {
-=======
-    msec.style.minHeight = 1205 + value * -0.3 + 'px';
   } else if (tablet.matches) {
->>>>>>> Stashed changes
     m2.style.top = 265 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
