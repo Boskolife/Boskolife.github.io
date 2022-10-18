@@ -11,7 +11,7 @@ let msec = document.getElementById('msec');
 
 window.addEventListener('scroll', function(){
   let value = window.scrollY;
-  let laptop = window.matchMedia("(min-width: 1440px)");
+  let laptop = window.matchMedia("(min-width: 1450px)");
   let widescreen = window.matchMedia("(min-width: 1200px)");
   let tablet = window.matchMedia("(min-width: 768px)");
   let phone = window.matchMedia("(min-width: 480px)");
@@ -29,7 +29,7 @@ window.addEventListener('scroll', function(){
     msec.style.minHeight = 1785 + value * -0.3 + 'px';
   }  else if (widescreen.matches) { 
     m2.style.top = 350 + value * 0.05 + 'px';
-    m3.style.top = 200 + value * -0.3 + 'px';
+    m3.style.top = 200 + value * -0.2 + 'px';
     cloud1.style.left = -60 + value * -0.3 + 'px';
     cloud2.style.left = -100+ value * -0.3 + 'px';
     cloud3.style.right = -300 + value * -0.3 + 'px';
@@ -37,7 +37,7 @@ window.addEventListener('scroll', function(){
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -15 + value * 0.1 + 'px';
     text.style.top = 220 + value * 0.3 + 'px';
-    msec.style.minHeight = 1205 + value * -0.3 + 'px';
+    msec.style.minHeight = 1205 + value * -0.2 + 'px';
   }  else if (tablet.matches) {
     m2.style.top = 265 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';

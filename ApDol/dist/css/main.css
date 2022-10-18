@@ -553,7 +553,7 @@ input[type='submit'] {
   min-height: 1785px;
   max-width: 2000px;
   margin: 0 auto; }
-  @media (max-width: 1439px) {
+  @media (max-width: 1449px) {
     .main-section {
       min-height: 1205px; } }
   @media (max-width: 1199px) {
@@ -589,7 +589,7 @@ input[type='submit'] {
     transform: translate(-50%);
     width: 100%;
     padding: 0 20px; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section .text {
         top: 220px; } }
     @media (max-width: 1199px) {
@@ -627,7 +627,7 @@ input[type='submit'] {
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%); }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #sky, .main-section #m1, .main-section #m2, .main-section #m3 {
         min-width: 1440px; } }
     @media (max-width: 1199px) {
@@ -641,7 +641,7 @@ input[type='submit'] {
   .main-section #m1 {
     top: 325px;
     z-index: 1; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #m1 {
         top: 235px; } }
     @media (max-width: 1199px) {
@@ -653,7 +653,7 @@ input[type='submit'] {
   .main-section #m2 {
     top: 475px;
     z-index: 3; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #m2 {
         top: 350px; } }
     @media (max-width: 1199px) {
@@ -666,7 +666,7 @@ input[type='submit'] {
   .main-section #m3 {
     top: 390px;
     z-index: 3; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #m3 {
         top: 200px; } }
     @media (max-width: 1199px) {
@@ -677,7 +677,7 @@ input[type='submit'] {
     left: -60px;
     bottom: 340px;
     z-index: 4; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #cloud1 {
         min-width: 600px;
         max-width: 600px;
@@ -700,7 +700,7 @@ input[type='submit'] {
     left: -100px;
     bottom: -325px;
     z-index: 4; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #cloud2 {
         min-width: 900px;
         max-width: 900px;
@@ -725,7 +725,7 @@ input[type='submit'] {
     right: -300px;
     bottom: -15px;
     z-index: 4; }
-    @media (max-width: 1439px) {
+    @media (max-width: 1449px) {
       .main-section #cloud3 {
         min-width: 1000px;
         max-width: 1000px; } }
