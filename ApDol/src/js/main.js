@@ -1,5 +1,7 @@
 /* paralax */
 
+"use strict"
+
 let m2 = document.getElementById('m2');
 let m3 = document.getElementById('m3');
 let cloud1 = document.getElementById('cloud1');
@@ -95,3 +97,4 @@ if (linkClose) {
     menuBody.classList.remove("menu_active");
   });
 };
+

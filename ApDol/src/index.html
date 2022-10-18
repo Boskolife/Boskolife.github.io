@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Альпійська долина</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Cormorant:300,regular,500,600,700,300italic,italic,500italic,600italic,700italic"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:regular,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -22,9 +22,6 @@
                 <div id="text" class="text">
                     <h1 class="title">Альпійська долина</h1>
                     <p class="sub-title">місце активного відпочинку</p>
-                    <div class="btn">
-                        <a href="#">Знайти нас</a>
-                    </div>
                 </div>
                 <img id="sky" src="./images/mountains/sky.png" alt="img">
                 <img id="m1" src="./images/mountains/1.png" alt="img">
@@ -37,7 +34,7 @@
             <section class="about_us">
                 <div class="container">
                     <div class="content">
-                        <div class="img_block">
+                        <div class="img_block parallax">
                             <img src="./images/skier_bg.jpg" alt="image not found">
                             <img class="skier" src="./images/skier.png" alt="image not found">
                         </div>
@@ -45,13 +42,6 @@
                             <h2 class="title">Про нас</h2>
                             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
                                 blandit condimentum magna, pretium iaculis diam
-                                malesuada sit amet. Aenean non odio id ligula scelerisque condimentum. Vestibulum justo
-                                lorem, pellentesque in lacinia
-                                eget, ultricies eu ligula. Quisque faucibus posuere euismod. Sed vitae pretium augue.
-                                <br>
-                                <br>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit condimentum
-                                magna, pretium iaculis diam
                                 malesuada sit amet. Aenean non odio id ligula scelerisque condimentum. Vestibulum justo
                                 lorem, pellentesque in lacinia
                                 eget, ultricies eu ligula. Quisque faucibus posuere euismod. Sed vitae pretium augue.
@@ -65,21 +55,24 @@
                     <div class="content">
                         <h2 class="title">Галерея</h2>
                         <div class="gallery_block">
-                            <div class="bigger set">
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_1.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_1.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_1.jpg">
                                 <img class="ibg" src="./images/galerry/gallery_1.jpg" alt="image not found">
-                            </div>
-                            <div class="smaller set">
-                                <img class="ibg" src="./images/galerry/gallery_2.jpg" alt="image not found">
-                            </div>
-                            <div class="gallery_item set">
-                                <img class="ibg" src="./images/galerry/gallery_2.jpg" alt="image not found">
-                            </div>
-                            <div class="gallery_item set">
-                                <img class="ibg" src="./images/galerry/gallery_2.jpg" alt="image not found">
-                            </div>
-                            <div class="gallery_item set">
-                                <img class="ibg" src="./images/galerry/gallery_2.jpg" alt="image not found">
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

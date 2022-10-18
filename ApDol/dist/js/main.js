@@ -1,6 +1,6 @@
+/* paralax */
 "use strict";
 
-/* paralax */
 var m2 = document.getElementById('m2');
 var m3 = document.getElementById('m3');
 var cloud1 = document.getElementById('cloud1');

@@ -15,10 +15,59 @@ header {
     }
 
     .logo {
+        width: 101px;
+
         svg {
             fill: $white;
+            stroke: $white;
             position: relative;
             z-index: 2;
+
+            path {
+                stroke-dasharray: 500;
+                stroke-dashoffset: 0;
+                animation: peak 4s ease-out;
+            }
+
+            .text {
+                stroke: none;
+                animation: text 3s ease-out;
+            }
+        }
+
+        @keyframes text {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes peak {
+
+            0% {
+                stroke-dashoffset: 550;
+                fill: none;
+            }
+
+            40% {
+                stroke-dashoffset: 1000;
+            }
+
+            80% {
+                stroke-dashoffset: 1100;
+            }
+
+            100% {
+                stroke-dashoffset: 1100;
+                fill: $white;
+            }
         }
     }
 
@@ -29,7 +78,7 @@ header {
     }
 
     .nav {
-        @include media ("<desktop") {
+        @include media ("<tablet") {
             position: absolute;
             top: -100vh;
             right: 0;
@@ -48,9 +97,9 @@ header {
     }
 
     .nav-menu {
-        margin-right: 75px;
+        @include adaptiv-vaule("margin-right", 45, 5, 1);
 
-        @include media ("<desktop") {
+        @include media ("<tablet") {
             flex-direction: column;
             margin: 0 0 30px 0;
             padding: 0 46px;
@@ -59,9 +108,9 @@ header {
     }
 
     .menu-item {
-        margin-left: 45px;
+        @include adaptiv-vaule("margin-left", 45, 10, 1);
 
-        @include media ("<desktop") {
+        @include media ("<tablet") {
             margin: 0 0 25px 0;
         }
 
@@ -70,23 +119,19 @@ header {
             font-weight: 600;
             padding: 10px 15px;
             border-radius: 10px;
-            font-size: 20px;
+            @include adaptiv-vaule("font-size", 20, 16, 1);
 
-            @include media ("<desktop") {
+            @include media ("<tablet") {
                 color: $black;
                 padding: 0 10px;
                 font-size: 36px;
-            }
-
-            @include media ("<tablet") {
-                font-size: 24px;
             }
 
             &:hover {
                 background: rgba(255, 255, 255, 0.85);
                 color: $black;
 
-                @include media ("<desktop") {
+                @include media ("<tablet") {
                     background: none;
                 }
             }
@@ -103,19 +148,19 @@ header {
             transition: all 0.3s ease;
             padding: 10px 15px;
 
-            @include media ("<desktop") {
+            @include media ("<tablet") {
                 color: $black;
                 font-size: 36px;
             }
 
-            @include media ("<tablet") {
+            @include media ("<phone") {
                 font-size: 24px;
             }
 
             &:hover {
                 background: rgba(255, 255, 255, 0.6);
 
-                @include media ("<desktop") {
+                @include media ("<tablet") {
                     background: none;
                 }
             }
@@ -131,7 +176,7 @@ header {
         cursor: pointer;
         z-index: 3;
 
-        @include media ("<desktop") {
+        @include media ("<tablet") {
             display: block;
         }
 
