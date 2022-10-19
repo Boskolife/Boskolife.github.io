@@ -1,7 +1,5 @@
 /* paralax */
 
-"use strict"
-
 let m2 = document.getElementById('m2');
 let m3 = document.getElementById('m3');
 let cloud1 = document.getElementById('cloud1');
@@ -9,14 +7,20 @@ let cloud2 = document.getElementById('cloud2');
 let cloud3 = document.getElementById('cloud3');
 let text = document.getElementById('text');
 let msec = document.getElementById('msec');
+let tsec = document.getElementById('tsec');
 
 
 window.addEventListener('scroll', function () {
   let value = window.scrollY;
+  let endParalax = tsec.offsetTop + tsec.offsetHeight;
   let laptop = window.matchMedia("(min-width: 1450px)");
   let widescreen = window.matchMedia("(min-width: 1200px)");
   let tablet = window.matchMedia("(min-width: 768px)");
   let phone = window.matchMedia("(min-width: 480px)");
+
+  if (value > endParalax) {
+    return;
+  }
 
   if (laptop.matches) {
     m2.style.top = 475 + value * 0.05 + 'px';

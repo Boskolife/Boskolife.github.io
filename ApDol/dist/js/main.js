@@ -1,6 +1,6 @@
-/* paralax */
 "use strict";
 
+/* paralax */
 var m2 = document.getElementById('m2');
 var m3 = document.getElementById('m3');
 var cloud1 = document.getElementById('cloud1');
@@ -8,12 +8,18 @@ var cloud2 = document.getElementById('cloud2');
 var cloud3 = document.getElementById('cloud3');
 var text = document.getElementById('text');
 var msec = document.getElementById('msec');
+var tsec = document.getElementById('tsec');
 window.addEventListener('scroll', function () {
   var value = window.scrollY;
+  var endParalax = tsec.offsetTop + tsec.offsetHeight;
   var laptop = window.matchMedia("(min-width: 1450px)");
   var widescreen = window.matchMedia("(min-width: 1200px)");
   var tablet = window.matchMedia("(min-width: 768px)");
   var phone = window.matchMedia("(min-width: 480px)");
+
+  if (value > endParalax) {
+    return;
+  }
 
   if (laptop.matches) {
     m2.style.top = 475 + value * 0.05 + 'px';
