@@ -591,7 +591,11 @@ header {
       header .header_content {
         padding: 10px 0; } }
   header .logo {
-    width: 101px; }
+    width: 101px;
+    margin-top: 5px; }
+    @media (max-width: 767px) {
+      header .logo {
+        width: 60px; } }
     header .logo svg {
       fill: #fff;
       stroke: #fff;
@@ -646,12 +650,21 @@ header {
   100% {
     stroke-dashoffset: 1100;
     fill: #fff; } }
+  header .menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
   header .nav-menu,
   header .nav {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
   @media (max-width: 859px) {
     header .nav {
       position: absolute;
@@ -659,16 +672,17 @@ header {
       right: 0;
       -ms-flex-direction: column;
       flex-direction: column;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.6);
       width: 50%;
       height: 100vh;
-      -ms-flex-pack: center;
-      justify-content: center;
       transition: all 0.5s ease;
-      padding: 60px 30px 30px 30px; } }
+      padding: 80px 30px 30px 30px; } }
   @media (max-width: 767px) {
     header .nav {
       width: 100%; } }
+  @media (max-width: 479px) {
+    header .nav {
+      background: url(../images/header/burger_bg.jpg) cover no-repeat; } }
   header .nav-menu {
     /* Только если меньше контейнера */
     margin-right: 45px; }
@@ -681,7 +695,9 @@ header {
         flex-direction: column;
         margin: 0 0 30px 0;
         padding: 0 46px;
-        overflow: auto; } }
+        overflow: auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto; } }
   header .menu-item {
     /* Только если меньше контейнера */
     margin-left: 45px; }
@@ -690,8 +706,10 @@ header {
         margin-left: calc(10px + 35 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 859px) {
       header .menu-item {
-        margin: 0 0 25px 0;
-        text-align: center; } }
+        margin: 0 0 20px 0;
+        text-align: center; }
+        header .menu-item:last-child {
+          margin: 0; } }
     header .menu-item a {
       color: #fff;
       font-weight: 400;
@@ -704,7 +722,6 @@ header {
           font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
       @media (max-width: 859px) {
         header .menu-item a {
-          color: #272727;
           padding: 0 10px;
           font-size: 36px; } }
       header .menu-item a:hover {
@@ -713,6 +730,23 @@ header {
         @media (max-width: 859px) {
           header .menu-item a:hover {
             background: none; } }
+  header .social_links {
+    display: none; }
+    @media (max-width: 859px) {
+      header .social_links {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        border-top: 1px solid #EEEEEE;
+        padding: 10px 0;
+        width: 100%; }
+        header .social_links a:not(:last-child) {
+          margin-right: 20px; }
+        header .social_links svg {
+          fill: #D9D9D9; } }
   header .header-btn a {
     color: #272727;
     font-weight: 400;
@@ -725,20 +759,20 @@ header {
     @media (max-width: 1360px) {
       header .header-btn a {
         font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
-    @media (max-width: 859px) {
+    @media (max-width: 767px) {
       header .header-btn a {
-        font-size: 36px; } }
-    @media (max-width: 479px) {
-      header .header-btn a {
-        font-size: 24px; } }
+        padding: 10px; } }
     header .header-btn a:hover {
-      background: rgba(255, 255, 255, 0.6); }
+      background: rgba(255, 255, 255, 0.85); }
   header .phone_img {
-    margin-left: 30px; }
-    @media (max-width: 859px) {
+    margin: 0 10px; }
+    @media (max-width: 767px) {
       header .phone_img {
-        display: none; } }
+        width: 40px;
+        height: 40px; } }
     header .phone_img svg {
+      width: 100%;
+      height: 100%;
       fill: #fff;
       transition: all 0.3s ease; }
       header .phone_img svg:hover {
@@ -1099,6 +1133,9 @@ header {
           left: 50%;
           -webkit-transform: translateX(-50%);
           transform: translateX(-50%); } }
+      .about_us .img_block .skier img {
+        width: 100%;
+        height: 100%; }
   .about_us .text_block {
     max-width: 530px;
     margin-left: 35px; }
@@ -1265,11 +1302,13 @@ header {
         row-gap: 30px; } }
     @media (max-width: 767px) {
       .gallery .gallery_block {
-        grid-template-columns: 1fr;
         row-gap: 25px;
-        -webkit-column-gap: 0;
-        -moz-column-gap: 0;
-        column-gap: 0; } }
+        -webkit-column-gap: 10px;
+        -moz-column-gap: 10px;
+        column-gap: 10px; } }
+    @media (max-width: 479px) {
+      .gallery .gallery_block {
+        grid-template-columns: 1fr; } }
   .gallery .set {
     height: 400px;
     width: 100%;
@@ -1300,7 +1339,8 @@ header {
     padding-right: 30px;
     /* Только если меньше контейнера */
     padding-left: 30px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    overflow: hidden; }
     @media (max-width: 1360px) {
       .gallery .price_block {
         padding-top: calc(10px + 30 * ((100vw - calc(320px)) / 1040)); } }
@@ -1468,12 +1508,16 @@ header {
       .gallery .price_body {
         margin-bottom: calc(20px + 15 * ((100vw - calc(320px)) / 1040)); } }
   .gallery .price_list_title {
-    font-size: 24px;
     /* Только если меньше контейнера */
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    /* Только если меньше контейнера */
+    font-size: 24px; }
     @media (max-width: 1360px) {
       .gallery .price_list_title {
         margin-bottom: calc(20px + 5 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .price_list_title {
+        font-size: calc(18px + 6 * ((100vw - calc(320px)) / 1040)); } }
   .gallery .price_item {
     display: -ms-flexbox;
     display: flex;
@@ -1483,7 +1527,17 @@ header {
     justify-content: space-between;
     background: #A6B7C6;
     padding: 20px 30px;
+    /* Только если меньше контейнера */
+    padding-right: 30px;
+    /* Только если меньше контейнера */
+    padding-left: 30px;
     border-radius: 40px; }
+    @media (max-width: 1360px) {
+      .gallery .price_item {
+        padding-right: calc(10px + 20 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .price_item {
+        padding-left: calc(10px + 20 * ((100vw - calc(320px)) / 1040)); } }
     .gallery .price_item:not(:last-child) {
       margin-bottom: 10px; }
   .gallery .position {
@@ -1507,10 +1561,33 @@ header {
         display: block;
         margin-bottom: 10px;
         font-size: 15px; } }
+  .gallery .hidden {
+    margin: 0; }
+  .gallery .color {
+    color: #E78752; }
   .gallery .notice {
     background: #E78752;
-    padding: 15px 0;
-    border-radius: 15px; }
+    padding: 0 5px;
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    /* Только если меньше контейнера */
+    margin-right: -30px;
+    /* Только если меньше контейнера */
+    margin-left: -30px; }
+    @media (max-width: 1360px) {
+      .gallery .notice {
+        padding-top: calc(5px + 10 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .notice {
+        padding-bottom: calc(5px + 10 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .notice {
+        margin-right: calc(-10px + -20 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .notice {
+        margin-left: calc(-10px + -20 * ((100vw - calc(320px)) / 1040)); } }
     .gallery .notice p {
       font-family: 'Cormorant';
       /* Только если меньше контейнера */

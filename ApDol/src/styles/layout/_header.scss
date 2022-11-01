@@ -16,6 +16,11 @@ header {
 
     .logo {
         width: 101px;
+        margin-top: 5px;
+
+        @include media ("<tablet") {
+            width: 60px;
+        }
 
         svg {
             fill: $white;
@@ -71,10 +76,17 @@ header {
         }
     }
 
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .nav-menu,
     .nav {
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     .nav {
@@ -83,16 +95,20 @@ header {
             top: -100vh;
             right: 0;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(0, 0, 0, 0.6);
             width: 50%;
             height: 100vh;
-            justify-content: center;
             transition: all 0.5s ease;
-            padding: 60px 30px 30px 30px;
+            padding: 80px 30px 30px 30px;
+
         }
 
         @include media ("<tablet") {
             width: 100%;
+        }
+
+        @include media ("<phone") {
+            background: url(../images/header/burger_bg.jpg)cover no-repeat;
         }
     }
 
@@ -104,6 +120,7 @@ header {
             margin: 0 0 30px 0;
             padding: 0 46px;
             overflow: auto;
+            flex: 1 1 auto;
         }
     }
 
@@ -111,7 +128,12 @@ header {
         @include adaptiv-vaule("margin-left", 45, 10, 1);
 
         @include media ("<tablet_max") {
-            margin: 0 0 25px 0;
+            margin: 0 0 20px 0;
+
+            &:last-child {
+                margin: 0;
+            }
+
             text-align: center;
         }
 
@@ -123,7 +145,6 @@ header {
             @include adaptiv-vaule("font-size", 18, 16, 1);
 
             @include media ("<tablet_max") {
-                color: $black;
                 padding: 0 10px;
                 font-size: 36px;
             }
@@ -139,6 +160,31 @@ header {
         }
     }
 
+    .social_links {
+        display: none;
+
+        @include media ("<tablet_max") {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #EEEEEE;
+            padding: 10px 0;
+            width: 100%;
+
+            a {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+
+            svg {
+                fill: $white_1;
+            }
+        }
+
+
+    }
+
     .header-btn {
         a {
             color: $black;
@@ -149,28 +195,27 @@ header {
             transition: all 0.3s ease;
             padding: 10px 15px;
 
-            @include media ("<tablet_max") {
-                font-size: 36px;
-            }
-
-            @include media ("<phone") {
-                font-size: 24px;
+            @include media ("<tablet") {
+                padding: 10px;
             }
 
             &:hover {
-                background: rgba(255, 255, 255, 0.6);
+                background: rgba(255, 255, 255, 0.85);
             }
         }
     }
 
     .phone_img {
-        margin-left: 30px;
+        margin: 0 10px;
 
-        @include media ("<tablet_max") {
-            display: none;
+        @include media ("<tablet") {
+            width: 40px;
+            height: 40px;
         }
 
         svg {
+            width: 100%;
+            height: 100%;
             fill: $white;
             transition: all 0.3s ease;
 
