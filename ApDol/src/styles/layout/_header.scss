@@ -108,7 +108,7 @@ header {
         }
 
         @include media ("<phone") {
-            background: url(../images/header/burger_bg.jpg)cover no-repeat;
+            background: url(../images/header/burger_bg.jpg)100% 100% / cover no-repeat;
         }
     }
 
