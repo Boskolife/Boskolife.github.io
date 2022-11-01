@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Альпійська долина</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic"
+        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Cormorant:regular,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -51,15 +54,26 @@
                 </div>
             </section>
             <section class="gallery">
+                <div class="gallery_bg">
+                    <img class="ibg" src="/src/images/gallery/gallery_bg.png" alt="image not found">
+                </div>
                 <div class="container">
                     <div class="content">
-                        <h2 class="title">Галерея</h2>
+                        <div class="toggle">
+                            <h2 class="title_gallery">Галерея</h2>
+                            <div class="toggle-box">
+                                <span>Зима</span>
+                                <input class="switch" id="switch_1" type="checkbox">
+                                <label for="switch_1" class="switch_for"></label>
+                                <span>Літо</span>
+                            </div>
+                        </div>
                         <div class="gallery_block">
                             <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_1.jpg">
                                 <img class="ibg" src="./images/gallery/gallery_1.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
-                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            <a class="set" data-fancybox="gallery" href="/src/files/galllery_video.MP4">
+                                <video class="ibg" src="./files/galllery_video.MP4" loop autoplay muted></video>
                             </a>
                             <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
                                 <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
@@ -70,9 +84,174 @@
                             <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_2.jpg">
                                 <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_1.jpg">
-                                <img class="ibg" src="./images/gallery/gallery_1.jpg" alt="image not found">
-                            </a>
+                        </div>
+                        <div class="price_block">
+                            <h2 class="title_price">Прайс</h2>
+                            <div class="offers">
+                                <h3 class="offer_title">
+                                    Спецпропозиції
+                                </h3>
+                                <div class="offers_box">
+                                    <div class="box">
+                                        <h4 class="box_title">
+                                            Безліміт “3 години”
+                                        </h4>
+                                        <div class="card">
+                                            <img class="ibg" src="/src/images/price/img_1.jpg" alt="image not found">
+                                            <div class="card_content">
+                                                <div class="info">
+                                                    <img src="./images/gallery/calendar.svg" alt="image not found">
+                                                    <span>пн-пт</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/clock.svg" alt="image not found">
+                                                    <span>3 години</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/ski.svg" alt="image not found">
+                                                    <span>прокат спорядження</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/skier.svg" alt="image not found">
+                                                    <span>послуги підйомника</span>
+                                                </div>
+                                            </div>
+                                            <a href="tel:123456789" class="price_btn">360 грн</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <h4 class="box_title">
+                                            Безліміт “День”
+                                        </h4>
+                                        <div class="card">
+                                            <img class="ibg" src="./images/price/img_2.jpg" alt="image not found">
+                                            <div class="card_content">
+                                                <div class="info">
+                                                    <img src="./images/gallery/calendar.svg" alt="image not found">
+                                                    <span>пн-пт</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/clock.svg" alt="image not found">
+                                                    <span>3 години</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/ski.svg" alt="image not found">
+                                                    <span>прокат спорядження</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/skier.svg" alt="image not found">
+                                                    <span>послуги підйомника</span>
+                                                </div>
+                                            </div>
+                                            <a href="tel:123456789" class="price_btn">400 грн</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <h4 class="box_title">
+                                            Безліміт “Учнівський”
+                                        </h4>
+                                        <div class="card">
+                                            <img class="ibg" src="./images/price/img_3.jpg" alt="image not found">
+                                            <div class="card_content">
+                                                <div class="info">
+                                                    <img src="./images/gallery/calendar.svg" alt="image not found">
+                                                    <span>пн-пт</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/clock.svg" alt="image not found">
+                                                    <span>3 години</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/ski.svg" alt="image not found">
+                                                    <span>прокат спорядження</span>
+                                                </div>
+                                                <div class="info">
+                                                    <img src="./images/gallery/skier.svg" alt="image not found">
+                                                    <span>послуги підйомника</span>
+                                                </div>
+                                            </div>
+                                            <a href="tel:123456789" class="price_btn">240 грн</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price_list">
+                                <div class="price_body">
+                                    <h4 class="price_list_title">Прокат cпорядження (будні дні)</h4>
+                                    <div class="price_item">
+                                        <p class="position">Лижі/сноуборд</p>
+                                        <p class="position">100 грн/1-ша година (+50 за кожну наступну годину)
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Тюбінг</p>
+                                        <p class="position">70 гривень(30 хвилин)</p>
+                                    </div>
+                                </div>
+                                <div class="price_body">
+                                    <h4 class="price_list_title">Прокат cпорядження (вихідні дні)</h4>
+                                    <div class="price_item">
+                                        <p class="position">Лижі/сноуборд</p>
+                                        <p class="position">150 грн/1-ша година (+50 за кожну наступну годину)
+
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Тюбінг</p>
+                                        <p class="position">90 гривень(30 хвилин)</p>
+                                    </div>
+                                </div>
+                                <div class="price_body">
+                                    <h4 class="price_list_title">Підйомник (будні дні)</h4>
+                                    <div class="price_item">
+                                        <p class="position">Разовий підйом</p>
+                                        <p class="position">20 грн
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Абонемент на 3 години</p>
+                                        <p class="position">210 грн</p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Діти до 6 років</p>
+                                        <p class="position">безкоштовно
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Діти 6-12 років</p>
+                                        <p class="position">120 грн</p>
+                                    </div>
+                                </div>
+                                <div class="price_body">
+                                    <h4 class="price_list_title">Підйомник (вихідні дні)</h4>
+                                    <div class="price_item">
+                                        <p class="position">Разовий підйом</p>
+                                        <p class="position">20 грн
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Абонемент на 2 години</p>
+                                        <p class="position">280 грн</p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Абонемент на 3 години</p>
+                                        <p class="position">360 грн
+                                        </p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Діти до 6 років</p>
+                                        <p class="position">безкоштовно</p>
+                                    </div>
+                                    <div class="price_item">
+                                        <p class="position">Діти 6-12 років</p>
+                                        <p class="position">150 грн</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notice">
+                                <p>За комплект спорядження під заставу необхідно залишити документи або гроші у розмірі
+                                    4 тисяч гривень.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

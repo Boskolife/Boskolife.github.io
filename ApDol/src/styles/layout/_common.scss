@@ -11,6 +11,10 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+
+    @include media ("<tablet") {
+        padding: 0 10px;
+    }
 }
 
 /* ----------.main-section------------ */
@@ -78,7 +82,6 @@
     }
 
     .title {
-        font-weight: 600;
         line-height: 1.2;
         color: #FEF5F5;
         margin-bottom: 10px;
@@ -90,10 +93,9 @@
     }
 
     .sub-title {
-        font-weight: 600;
         color: #FEF5F5;
         margin: 0;
-        @include adaptiv-vaule("font-size", 64, 20, 1);
+        @include adaptiv-vaule("font-size", 36, 20, 1);
     }
 
     #sky,
@@ -273,7 +275,8 @@
 
 .about_us {
     /* min-height: 200vh; */
-    padding: 80px 0;
+    @include adaptiv-vaule("padding-top", 80, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
 
     .content {
@@ -296,7 +299,7 @@
 
         .skier {
             position: absolute;
-            bottom: -15%;
+            bottom: -20%;
             right: -20px;
 
             @include media ("<desktop") {
@@ -327,14 +330,28 @@
 
     .description {
         @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 28 / 20 * 100%;
     }
 }
 
 .gallery {
     @include adaptiv-vaule("padding-top", 150, 30, 1);
     @include adaptiv-vaule("padding-bottom", 100, 50, 1);
-    background: rgb(146, 146, 226);
+    background: $white_1;
     position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 42.5%;
+        width: 100%;
+        height: 400px;
+        z-index: 0;
+        background: $white_1;
+        transform: skewY(10deg);
+    }
 
     &::before {
         content: '';
@@ -343,7 +360,7 @@
         left: 0;
         @include adaptiv-vaule("height", 150, 50, 1);
         width: 100vw;
-        background: rgb(146, 146, 226);
+        background: $purple;
         transform: skewY(-4deg);
 
         @include media ("<tablet") {
@@ -359,19 +376,114 @@
         }
     }
 
+    .gallery_bg {
+
+        img {
+            z-index: -1;
+            height: 50%;
+            background: $purple;
+        }
+    }
+
     .content {
         text-align: center;
     }
 
-    .title {
+    .title_gallery {
         margin-bottom: 50px;
+        position: relative;
+        @include adaptiv-vaule("padding-bottom", 70, 45, 1);
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: $black;
+            bottom: 0;
+            left: 0;
+        }
+
     }
+
+
+    /*--------Переключатель-------*/
+
+    .toggle {
+        position: relative;
+
+        .toggle-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            width: 300px;
+            padding: 15px 50px;
+            background: $purple;
+            @include adaptiv-vaule("top", 80, 40, 1);
+            left: 50%;
+            transform: translateX(-50%);
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        .switch {
+            margin: 0 40px;
+            display: none;
+
+            &:checked+.switch_for {
+                &::before {
+                    left: 28px;
+                }
+
+                &::after {
+                    background: $orange;
+                }
+            }
+        }
+
+        .switch_for {
+            position: relative;
+            cursor: pointer;
+            width: 50px;
+            height: 24px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 24px;
+                background: $blue;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            &::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background: $white;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
 
     .gallery_block {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 40px;
         column-gap: 25px;
+        @include adaptiv-vaule("margin-bottom", 260, 100, 1);
 
         @include media ("<960px") {
             grid-template-columns: 1fr 1fr;
@@ -379,25 +491,224 @@
         }
 
         @include media ("<tablet") {
+            grid-template-columns: 1fr;
             row-gap: 25px;
+            column-gap: 0;
         }
     }
 
     .set {
-        position: relative;
         height: 400px;
-        position: relative;
+        width: 100%;
         border-radius: 15px;
         overflow: hidden;
+        position: relative;
+
+        @include media ("<tablet") {
+            height: 300px;
+        }
+
+        video {
+            width: 100%;
+        }
 
         &:first-child {
             width: 100%;
             grid-column: span 2;
         }
 
-        &:nth-child(n+6) {
+        &:nth-child(n+7) {
             width: 100%;
             grid-column: span 2;
+        }
+    }
+
+
+    .price_block {
+        position: relative;
+        z-index: 1;
+        background: $blue_2;
+        padding: 40px 30px;
+        @include adaptiv-vaule("padding-top", 40, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 40, 10, 1);
+        @include adaptiv-vaule("padding-right", 30, 10, 1);
+        @include adaptiv-vaule("padding-left", 30, 10, 1);
+        border-radius: 30px;
+
+        .title_price {
+            color: $white_1;
+            @include adaptiv-vaule("margin-bottom", 50, 30, 1);
+        }
+
+        .offers {
+            @include adaptiv-vaule("margin-bottom", 65, 35, 1);
+        }
+
+        .offer_title {
+            background: $orange;
+            display: inline-block;
+            border-radius: 10px;
+            padding: 10px 30px;
+        }
+
+        .offers_box {
+            border: 3px solid $orange;
+            border-radius: 30px;
+            @include adaptiv-vaule("padding-top", 30, 10, 1);
+            @include adaptiv-vaule("padding-bottom", 30, 10, 1);
+            @include adaptiv-vaule("padding-right", 30, 10, 1);
+            @include adaptiv-vaule("padding-left", 30, 10, 1);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            @include media ("<desktop") {
+                flex-wrap: wrap;
+            }
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            width: 315px;
+
+            @include media ("<desktop") {
+                width: 46%;
+
+                &:not(:last-child) {
+                    margin: 0 0 30px 0;
+                }
+            }
+
+            @include media ("<phone_max") {
+                width: 100%;
+            }
+        }
+
+        .box_title {
+            background: $white_1;
+            padding: 10px 12px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 20px;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            @include media ("<tablet") {
+                height: 350px;
+            }
+
+            @include media ("<phone") {
+                height: 300px;
+            }
+
+            .ibg {
+                z-index: -1;
+            }
+        }
+
+        .card_content {
+            background: $white_1;
+            padding: 25px 30px;
+            @include adaptiv-vaule("padding-top", 25, 10, 1);
+            @include adaptiv-vaule("padding-bottom", 25, 10, 1);
+            @include adaptiv-vaule("padding-right", 30, 15, 1);
+            @include adaptiv-vaule("padding-left", 30, 15, 1);
+            border-radius: 20px;
+            width: 90%;
+            @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            text-align: start;
+
+            @include media ("<phone_max") {
+                justify-content: center;
+            }
+
+            @include media ("<phone") {
+                justify-content: flex-start;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            img {
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        .price_btn {
+            background: $orange;
+            font-size: 20px;
+            border-radius: 40px;
+            padding: 10px 20px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .price_body {
+        @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+    }
+
+    .price_list_title {
+        font-size: 24px;
+        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+    }
+
+    .price_item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $purple;
+        padding: 20px 30px;
+        border-radius: 40px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .position {
+        @include adaptiv-vaule("font-size", 20, 15, 1);
+
+        &:first-child {
+            margin-right: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    }
+
+    .notice {
+        background: $orange;
+        padding: 15px 0;
+        border-radius: 15px;
+
+        p {
+            font-family: 'Cormorant';
+            @include adaptiv-vaule("font-size", 20, 15, 1);
+            font-weight: 600;
         }
     }
 }
