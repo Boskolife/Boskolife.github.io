@@ -80,13 +80,13 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 4;
     }
 
     .nav-menu,
     .nav {
         display: flex;
         align-items: center;
-        justify-content: center;
     }
 
     .nav {
@@ -95,7 +95,7 @@ header {
             top: -100vh;
             right: 0;
             flex-direction: column;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             width: 50%;
             height: 100vh;
             transition: all 0.5s ease;
@@ -103,12 +103,12 @@ header {
 
         }
 
-        @include media ("<tablet") {
+        @include media ("<phone") {
             width: 100%;
         }
 
         @include media ("<phone") {
-            background: url(../images/header/burger_bg.jpg)100% 100% / cover no-repeat;
+            background: url(../images/header/burger_bg.jpg)100% 100% /cover no-repeat;
         }
     }
 
@@ -276,20 +276,17 @@ header {
         &::after {
             transform: rotate(-45deg);
             bottom: 8px;
-            background: $black;
         }
 
         &::before {
             transform: rotate(45deg);
             top: 10px;
-            background: $black;
         }
 
         span {
             opacity: 0;
             visibility: hidden;
             animation: fly 0.7s ease;
-            background: $black;
         }
     }
 
