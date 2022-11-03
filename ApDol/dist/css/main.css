@@ -663,7 +663,9 @@ header {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
   @media (max-width: 859px) {
     header .nav {
       position: absolute;
@@ -764,11 +766,9 @@ header {
     header .header-btn a:hover {
       background: rgba(255, 255, 255, 0.85); }
   header .phone_img {
-    margin: 0 10px; }
-    @media (max-width: 767px) {
-      header .phone_img {
-        width: 40px;
-        height: 40px; } }
+    margin: 0 20px;
+    width: 50px;
+    height: 50px; }
     header .phone_img svg {
       width: 100%;
       height: 100%;
@@ -1198,7 +1198,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 2000px;
     z-index: -1;
     height: 2200px;
     background: #A6B7C6; }
@@ -1348,7 +1348,7 @@ header {
     padding-right: 30px;
     /* Только если меньше контейнера */
     padding-left: 30px;
-    border-radius: 30px;
+    border-radius: 15px;
     overflow: hidden; }
     @media (max-width: 1360px) {
       .gallery .price_block {
@@ -1378,11 +1378,11 @@ header {
     .gallery .price_block .offer_title {
       background: #E78752;
       display: inline-block;
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 10px 30px; }
     .gallery .price_block .offers_box {
       border: 3px solid #E78752;
-      border-radius: 30px;
+      border-radius: 15px;
       /* Только если меньше контейнера */
       padding-top: 30px;
       /* Только если меньше контейнера */
@@ -1437,10 +1437,10 @@ header {
       padding: 10px 12px;
       width: 100%;
       font-weight: 600;
-      border-radius: 10px; }
+      border-radius: 15px; }
     .gallery .price_block .card {
       position: relative;
-      border-radius: 20px;
+      border-radius: 15px;
       width: 100%;
       height: 400px;
       overflow: hidden;
@@ -1465,7 +1465,7 @@ header {
       padding-right: 30px;
       /* Только если меньше контейнера */
       padding-left: 30px;
-      border-radius: 20px;
+      border-radius: 15px;
       width: 90%;
       /* Только если меньше контейнера */
       margin-bottom: 50px; }
@@ -1517,7 +1517,7 @@ header {
     margin-bottom: 35px; }
     @media (max-width: 1360px) {
       .gallery .price_body {
-        margin-bottom: calc(20px + 15 * ((100vw - calc(320px)) / 1040)); } }
+        margin-bottom: calc(15px + 20 * ((100vw - calc(320px)) / 1040)); } }
   .gallery .price_list_title {
     /* Только если меньше контейнера */
     margin-bottom: 25px;
@@ -1525,7 +1525,7 @@ header {
     font-size: 24px; }
     @media (max-width: 1360px) {
       .gallery .price_list_title {
-        margin-bottom: calc(20px + 5 * ((100vw - calc(320px)) / 1040)); } }
+        margin-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .gallery .price_list_title {
         font-size: calc(18px + 6 * ((100vw - calc(320px)) / 1040)); } }
@@ -1537,12 +1537,21 @@ header {
     -ms-flex-pack: justify;
     justify-content: space-between;
     background: #A6B7C6;
-    padding: 20px 30px;
+    /* Только если меньше контейнера */
+    padding-top: 20px;
+    /* Только если меньше контейнера */
+    padding-bottom: 20px;
     /* Только если меньше контейнера */
     padding-right: 30px;
     /* Только если меньше контейнера */
     padding-left: 30px;
-    border-radius: 40px; }
+    border-radius: 15px; }
+    @media (max-width: 1360px) {
+      .gallery .price_item {
+        padding-top: calc(10px + 10 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .gallery .price_item {
+        padding-bottom: calc(10px + 10 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .gallery .price_item {
         padding-right: calc(10px + 20 * ((100vw - calc(320px)) / 1040)); } }
@@ -1571,7 +1580,7 @@ header {
       .gallery .hidden {
         display: block;
         margin-bottom: 10px;
-        font-size: 15px; } }
+        font-size: 14px; } }
   .gallery .hidden {
     margin: 0; }
   .gallery .color {
@@ -1606,7 +1615,7 @@ header {
       font-weight: 600; }
       @media (max-width: 1360px) {
         .gallery .notice p {
-          font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1040)); } }
+          font-size: calc(12px + 8 * ((100vw - calc(320px)) / 1040)); } }
 
 .reviews {
   padding: 25px 0;
@@ -1614,10 +1623,10 @@ header {
   background: #A6B7C6; }
   .reviews .reviews_title {
     /* Только если меньше контейнера */
-    padding-bottom: 50px; }
+    margin-bottom: 50px; }
     @media (max-width: 1360px) {
       .reviews .reviews_title {
-        padding-bottom: calc(25px + 25 * ((100vw - calc(320px)) / 1040)); } }
+        margin-bottom: calc(25px + 25 * ((100vw - calc(320px)) / 1040)); } }
   .reviews .swiper .swiper-pagination {
     bottom: 0; }
   .reviews .swiper .swiper-pagination-bullet {
@@ -1644,11 +1653,12 @@ header {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    width: 510px;
+    max-width: 510px;
     height: 140px;
     background: #D9D9D9;
     border-radius: 15px;
-    padding: 25px; }
+    padding: 25px;
+    margin: 0 25px; }
   .reviews .swiper .slide_img {
     width: 100px;
     height: 135px;
@@ -1688,11 +1698,11 @@ header {
   .contact::before {
     content: '';
     position: absolute;
-    top: -105px;
+    top: -140px;
     left: 0;
     background: #A6B7C6;
     width: 100%;
-    height: 250px;
+    height: 280px;
     -webkit-transform: skewY(8deg);
     transform: skewY(8deg);
     z-index: -1; }
@@ -1703,7 +1713,7 @@ header {
     margin-bottom: 25px; }
   .contact .contact_body {
     background: #545B60;
-    border-radius: 30px;
+    border-radius: 15px;
     padding: 40px 60px;
     /* Только если меньше контейнера */
     padding-top: 40px;
@@ -1748,20 +1758,35 @@ header {
     text-align: start;
     background: #D9D9D9;
     padding: 15px 20px;
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    /* Только если меньше контейнера */
+    padding-right: 20px;
+    /* Только если меньше контейнера */
+    padding-left: 20px;
     width: 100%;
     margin-bottom: 15px;
     margin-right: 20px;
     border-radius: 15px;
     /* Только если меньше контейнера */
-    font-size: 18px;
-    transition: all 0.3s ease; }
+    font-size: 18px; }
+    @media (max-width: 1360px) {
+      .contact .info {
+        padding-top: calc(7px + 8 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .info {
+        padding-bottom: calc(7px + 8 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .info {
+        padding-right: calc(10px + 10 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .info {
+        padding-left: calc(10px + 10 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .contact .info {
         font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
-    .contact .info:hover {
-      background: #E78752;
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1); }
     .contact .info .data {
       /* Только если меньше контейнера */
       font-size: 18px;
@@ -1769,6 +1794,12 @@ header {
       @media (max-width: 1360px) {
         .contact .info .data {
           font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+  .contact .hover {
+    transition: all 0.3s ease; }
+    .contact .hover:hover {
+      background: #E78752;
+      -webkit-transform: scale(1.035);
+      transform: scale(1.035); }
   .contact .notice {
     color: #fff;
     /* Только если меньше контейнера */
@@ -1786,9 +1817,28 @@ header {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     background: #D9D9D9;
-    padding: 15px 20px;
+    /* Только если меньше контейнера */
+    padding-top: 10px;
+    /* Только если меньше контейнера */
+    padding-bottom: 10px;
+    /* Только если меньше контейнера */
+    padding-right: 10px;
+    /* Только если меньше контейнера */
+    padding-left: 10px;
     border-radius: 15px;
     width: 100%; }
+    @media (max-width: 1360px) {
+      .contact .social_links .links {
+        padding-top: calc(7px + 3 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .social_links .links {
+        padding-bottom: calc(7px + 3 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .social_links .links {
+        padding-right: calc(7px + 3 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .social_links .links {
+        padding-left: calc(7px + 3 * ((100vw - calc(320px)) / 1040)); } }
     .contact .social_links .links a {
       width: 35px;
       height: 35px;
@@ -1798,6 +1848,10 @@ header {
       align-items: center;
       -ms-flex-pack: center;
       justify-content: center; }
+      @media (max-width: 767px) {
+        .contact .social_links .links a {
+          idth: 20px;
+          height: 20px; } }
       .contact .social_links .links a:not(:last-child) {
         /* Только если меньше контейнера */
         margin-right: 25px; }
@@ -1805,6 +1859,8 @@ header {
           .contact .social_links .links a:not(:last-child) {
             margin-right: calc(20px + 5 * ((100vw - calc(320px)) / 1040)); } }
     .contact .social_links .links svg {
+      width: 100%;
+      height: 100%;
       fill: #43484C;
       transition: all 0.3s ease; }
       .contact .social_links .links svg:hover {
@@ -1833,17 +1889,37 @@ header {
       right: -30px;
       background: #E78752;
       border-radius: 15px;
-      padding: 15px;
-      font-size: 20px;
-      min-width: 235px; }
+      /* Только если меньше контейнера */
+      padding-top: 15px;
+      /* Только если меньше контейнера */
+      padding-bottom: 15px;
+      /* Только если меньше контейнера */
+      padding-right: 15px;
+      /* Только если меньше контейнера */
+      padding-left: 15px;
+      /* Только если меньше контейнера */
+      font-size: 20px; }
       @media (max-width: 1360px) {
         .contact .contact_video .stiker {
-          right: calc(5px + -35 * ((100vw - calc(320px)) / 1040)); } }
+          right: calc(0px + -30 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          padding-top: calc(7px + 8 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          padding-bottom: calc(7px + 8 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          padding-right: calc(10px + 5 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          padding-left: calc(10px + 5 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          font-size: calc(14px + 6 * ((100vw - calc(320px)) / 1040)); } }
       @media (max-width: 479px) {
         .contact .contact_video .stiker {
-          right: 50%;
-          -webkit-transform: translateX(50%);
-          transform: translateX(50%); } }
+          right: 0; } }
 
 .map {
   width: 100%;

@@ -131,11 +131,10 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 }
 
 destroySlidersOnResize(".reviews-slider", 9999, {
-  spaceBetween: 50,
   slidesPerView: 2,
   watchOverflow: true,
   speed: 800,
-  centerInsufficientSlides: true,
+
 
   navigation: {
     nextEl: '.swiper-button-next',
