@@ -467,13 +467,11 @@ h6,
 .h6 {
   font-size: 15px; }
 
-p {
-  margin: 0;
-  color: #272727; }
-
+p,
 span {
   margin: 0;
-  color: #272727; }
+  color: #272727;
+  font-family: 'Source Serif Pro'; }
 
 ul {
   padding: 0;
@@ -485,7 +483,8 @@ a {
   font-family: 'Source Serif Pro';
   color: #272727;
   text-decoration: none;
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  margin: 0; }
   a:hover, a:focus {
     text-decoration: none; }
 
@@ -1608,5 +1607,258 @@ header {
       @media (max-width: 1360px) {
         .gallery .notice p {
           font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1040)); } }
+
+.reviews {
+  padding: 25px 0;
+  text-align: center;
+  background: #A6B7C6; }
+  .reviews .reviews_title {
+    /* Только если меньше контейнера */
+    padding-bottom: 50px; }
+    @media (max-width: 1360px) {
+      .reviews .reviews_title {
+        padding-bottom: calc(25px + 25 * ((100vw - calc(320px)) / 1040)); } }
+  .reviews .swiper .swiper-pagination {
+    bottom: 0; }
+  .reviews .swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7D8993;
+    opacity: 0.7; }
+  .reviews .swiper .swiper-pagination-bullet-active {
+    background: #3F454A;
+    opacity: 1; }
+  .reviews .swiper .swiper-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    height: 250px;
+    width: 1180px;
+    margin: 0 auto; }
+  .reviews .swiper .swiper-slide {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 510px;
+    height: 140px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    padding: 25px; }
+  .reviews .swiper .slide_img {
+    width: 100px;
+    height: 135px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 25px; }
+  .reviews .swiper .slider_text {
+    width: 75%;
+    text-align: start; }
+  .reviews .swiper .name {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600; }
+  .reviews .swiper .description {
+    font-size: 18px; }
+  .reviews .swiper .swiper-button-prev,
+  .reviews .swiper .swiper-button-next {
+    position: absolute;
+    top: 40%; }
+  .reviews .swiper .swiper-button-prev {
+    left: 0; }
+    .reviews .swiper .swiper-button-prev:after {
+      content: url(../images/reviews/arrow-prev.svg); }
+  .reviews .swiper .swiper-button-next {
+    right: 0; }
+    .reviews .swiper .swiper-button-next:after {
+      content: url(../images/reviews/arrow-next.svg); }
+
+.contact {
+  padding: 25px 0 0 0;
+  text-align: center;
+  background: #D3D5D7;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: -105px;
+    left: 0;
+    background: #A6B7C6;
+    width: 100%;
+    height: 250px;
+    -webkit-transform: skewY(8deg);
+    transform: skewY(8deg);
+    z-index: -1; }
+  @media (max-width: 479px) {
+    .contact .container {
+      padding: 0; } }
+  .contact .contact_title {
+    margin-bottom: 25px; }
+  .contact .contact_body {
+    background: #545B60;
+    border-radius: 30px;
+    padding: 40px 60px;
+    /* Только если меньше контейнера */
+    padding-top: 40px;
+    /* Только если меньше контейнера */
+    padding-bottom: 40px;
+    /* Только если меньше контейнера */
+    padding-right: 60px;
+    /* Только если меньше контейнера */
+    padding-left: 60px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1360px) {
+      .contact .contact_body {
+        padding-top: calc(15px + 25 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .contact_body {
+        padding-bottom: calc(15px + 25 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .contact_body {
+        padding-right: calc(15px + 45 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1360px) {
+      .contact .contact_body {
+        padding-left: calc(15px + 45 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1023px) {
+      .contact .contact_body {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .contact .contact_content {
+    width: 39%; }
+    @media (max-width: 1023px) {
+      .contact .contact_content {
+        width: 80%;
+        margin-bottom: 45px; } }
+    @media (max-width: 767px) {
+      .contact .contact_content {
+        width: 100%; } }
+  .contact .info {
+    text-align: start;
+    background: #D9D9D9;
+    padding: 15px 20px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    border-radius: 15px;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    transition: all 0.3s ease; }
+    @media (max-width: 1360px) {
+      .contact .info {
+        font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+    .contact .info:hover {
+      background: #E78752;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+    .contact .info .data {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      margin-left: 10px; }
+      @media (max-width: 1360px) {
+        .contact .info .data {
+          font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+  .contact .notice {
+    color: #fff;
+    /* Только если меньше контейнера */
+    font-size: 20px; }
+    @media (max-width: 1360px) {
+      .contact .notice {
+        font-size: calc(16px + 4 * ((100vw - calc(320px)) / 1040)); } }
+  .contact .social_links .link_title {
+    margin: 30px 0 15px 0; }
+  .contact .social_links .links {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #D9D9D9;
+    padding: 15px 20px;
+    border-radius: 15px;
+    width: 100%; }
+    .contact .social_links .links a {
+      width: 35px;
+      height: 35px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .contact .social_links .links a:not(:last-child) {
+        /* Только если меньше контейнера */
+        margin-right: 25px; }
+        @media (max-width: 1360px) {
+          .contact .social_links .links a:not(:last-child) {
+            margin-right: calc(20px + 5 * ((100vw - calc(320px)) / 1040)); } }
+    .contact .social_links .links svg {
+      fill: #43484C;
+      transition: all 0.3s ease; }
+      .contact .social_links .links svg:hover {
+        fill: #E78752;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2); }
+  .contact .contact_video {
+    width: 50%;
+    height: 260px;
+    position: relative; }
+    @media (max-width: 1023px) {
+      .contact .contact_video {
+        width: 100%;
+        height: 300px; } }
+    @media (max-width: 767px) {
+      .contact .contact_video {
+        height: 250px; } }
+    .contact .contact_video video {
+      border-radius: 15px;
+      width: 100%;
+      height: 100%; }
+    .contact .contact_video .stiker {
+      position: absolute;
+      top: -27px;
+      /* Только если меньше контейнера */
+      right: -30px;
+      background: #E78752;
+      border-radius: 15px;
+      padding: 15px;
+      font-size: 20px;
+      min-width: 235px; }
+      @media (max-width: 1360px) {
+        .contact .contact_video .stiker {
+          right: calc(5px + -35 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 479px) {
+        .contact .contact_video .stiker {
+          right: 50%;
+          -webkit-transform: translateX(50%);
+          transform: translateX(50%); } }
+
+.map {
+  width: 100%;
+  height: 50vh;
+  position: relative; }
+  .map iframe {
+    width: 100%;
+    height: 100%; }
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #43484C; }
+  footer .terms {
+    color: #fff;
+    font-size: 12px; }
 
 /*# sourceMappingURL=main.css.map */

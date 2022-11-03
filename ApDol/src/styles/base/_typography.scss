@@ -49,15 +49,13 @@ h6,
     font-size: $h6-font-size;
 }
 
-p {
-    margin: 0;
-    color: $black;
-}
-
+p,
 span {
     margin: 0;
     color: $black;
+    font-family: 'Source Serif Pro';
 }
+
 
 ul {
     padding: 0;
@@ -73,6 +71,7 @@ a {
     color: $base-link-color;
     text-decoration: none;
     transition: all .3s ease;
+    margin: 0;
 
     &:hover,
     &:focus {
