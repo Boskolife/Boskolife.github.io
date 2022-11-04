@@ -393,17 +393,16 @@
         }
     }
 
-
-
     &::before {
         content: '';
         position: absolute;
         top: -66px;
         left: 0;
-        @include adaptiv-vaule("height", 150, 50, 1);
+        @include adaptiv-vaule("height", 200, 50, 1);
         width: 100vw;
-        background: $purple;
+        background-color: $purple;
         transform: skewY(-4deg);
+        transition: background-color 2s ease 0s;
 
         @include media ("<tablet") {
             top: -58px;
@@ -416,32 +415,81 @@
         @include media ("<phone") {
             top: -35px;
         }
+
+        .weather & {
+            background-color: $blue_3;
+        }
     }
 
     .gallery_bg {
         position: absolute;
         top: 0;
         left: 0;
-        width: 2000px;
+        width: 100%;
+        min-height: 2000px;
         z-index: -1;
-        height: 2200px;
-        background: $purple;
+        background-color: $purple;
+        overflow: hidden;
+        transition: background-color 2s ease 0s;
+
+        .weather & {
+            background-color: $blue_3;
+        }
 
         &::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -5%;
+            bottom: -465px;
             width: 100%;
-            height: 400px;
+            height: 900px;
             z-index: 0;
             background: $white_1;
-            transform: skewY(4deg);
+            transform: skewY(15deg);
+
+            @include media ("<desktop") {
+                bottom: -330px;
+            }
+
+            @include media ("<phone") {
+                display: none;
+            }
         }
 
         img {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            transform: translate(-50%);
+            min-width: 2000px;
+
+            @include media ("<desktop") {
+                min-width: 1024px;
+            }
+
+            @include media ("<phone") {
+                min-width: 480px;
+            }
+        }
+    }
+
+    .winter-bg {
+        opacity: 80%;
+        transition: all 2s ease 0s;
+
+        .weather & {
+            opacity: 0;
+            transition: all 2s ease 0s;
+        }
+    }
+
+    .summer-bg {
+        opacity: 0;
+        transition: all 2s ease 0s;
+
+        .weather & {
+            opacity: 80%;
+            transition: all 2s ease 0s;
         }
     }
 
@@ -479,10 +527,15 @@
             position: absolute;
             width: 300px;
             padding: 15px 50px;
-            background: $purple;
+            background-color: $purple;
             @include adaptiv-vaule("top", 80, 40, 1);
             left: 50%;
             transform: translateX(-50%);
+            transition: background-color 2s ease 0s;
+
+            .weather & {
+                background-color: $blue_3;
+            }
 
             span {
                 font-size: 20px;
@@ -544,6 +597,7 @@
         row-gap: 40px;
         column-gap: 25px;
         @include adaptiv-vaule("margin-bottom", 260, 100, 1);
+        transition: all 1s ease 0s;
 
         @include media ("<960px") {
             grid-template-columns: 1fr 1fr;
@@ -556,8 +610,8 @@
         }
 
         @include media ("<phone") {
-            grid-template-columns: 1fr;
-            column-gap: 0;
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -584,6 +638,34 @@
         &:nth-child(n+7) {
             width: 100%;
             grid-column: span 2;
+        }
+    }
+
+    .winter {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+
+        .weather &{
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(40px);
+        }
+    }
+
+    .summer {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(40px);
+
+        .weather &{
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
         }
     }
 
@@ -620,16 +702,12 @@
             border: 3px solid $orange;
             border-radius: 15px;
             @include adaptiv-vaule("padding-top", 30, 10, 1);
-            @include adaptiv-vaule("padding-bottom", 30, 10, 1);
             @include adaptiv-vaule("padding-right", 30, 10, 1);
             @include adaptiv-vaule("padding-left", 30, 10, 1);
             display: flex;
             align-items: center;
             justify-content: space-around;
-
-            @include media ("<desktop") {
-                flex-wrap: wrap;
-            }
+            flex-wrap: wrap;
         }
 
         .box {
@@ -639,17 +717,15 @@
             align-items: center;
             margin: 0 10px;
             width: 315px;
+            margin-bottom: 30px;
 
             @include media ("<desktop") {
                 width: 46%;
-
-                &:not(:last-child) {
-                    margin: 0 0 30px 0;
-                }
             }
 
             @include media ("<phone_max") {
                 width: 100%;
+                margin-bottom: 20px;
             }
         }
 
@@ -955,7 +1031,7 @@
             margin-bottom: 45px;
         }
 
-        @include media ("<tablet") {
+        @include media ("<phone") {
             width: 100%;
         }
     }
@@ -1012,6 +1088,10 @@
             @include adaptiv-vaule("padding-left", 10, 7, 1);
             border-radius: 15px;
             width: 100%;
+
+            @include media ("<phone") {
+                justify-content: center;
+            }
 
             a {
                 width: 35px;

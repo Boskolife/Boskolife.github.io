@@ -1,4 +1,4 @@
-/* paralax */
+/* parallax */
 
 let m2 = document.getElementById('m2');
 let m3 = document.getElementById('m3');
@@ -80,7 +80,6 @@ window.addEventListener('scroll', function () {
   }
 })
 
-
 /* ///// */
 
 const burger = document.querySelector(".burger_menu");
@@ -101,7 +100,6 @@ if (linkClose) {
     menuBody.classList.remove("menu_active");
   });
 };
-
 
 // Swiper:
 
@@ -147,7 +145,6 @@ destroySlidersOnResize(".reviews-slider", 9999, {
   },
 });
 
-
 /* Parallax Cursor Position */
 
 document.addEventListener("mousemove", parallax);
@@ -160,5 +157,15 @@ function parallax(event) {
     shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 }
+
+/* ///// */
+
+/* toggle button */
+
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', ()=>{
+  document.body.classList.toggle('weather');
+})
 
 /* ///// */

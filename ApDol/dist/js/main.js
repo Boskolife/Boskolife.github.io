@@ -6,7 +6,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-/* paralax */
+/* parallax */
 var m2 = document.getElementById('m2');
 var m3 = document.getElementById('m3');
 var cloud1 = document.getElementById('cloud1');
@@ -159,5 +159,14 @@ function parallax(event) {
     shift.style.transform = "translateX(".concat(x, "px) translateY(").concat(y, "px)");
   });
 }
+/* ///// */
+
+/* toggle button */
+
+
+var checkbox = document.getElementById('checkbox');
+checkbox.addEventListener('change', function () {
+  document.body.classList.toggle('weather');
+});
 /* ///// */
 //# sourceMappingURL=main.js.map

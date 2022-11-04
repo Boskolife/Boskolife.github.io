@@ -64,7 +64,11 @@
                             <div class="skier-bg">
                                 <img src="./images/skier_bg.jpg" alt="image not found">
                             </div>
-                            <img class="skier" id="parallax" value="-2" src="./images/skier.png" alt="image not found"></div>
+                            <picture>
+                                <source srcset="./images/skier.webp" type="image/webp">
+                                <img class="skier" id="parallax" value="-2" alt="img" width="755" height="467" src="./images/skier.png">
+                            </picture>
+                        </div>
                         <div class="text_block">
                             <h2 class="title">Про нас</h2>
                             <p class="description">Lorem ipsum dolor sit amet,
@@ -83,44 +87,61 @@
                 </div>
             </section>
             <section class="gallery">
-                <div class="gallery_bg"><img src="./images/gallery/gallery_bg.png" alt="image not found"></div>
+                <div class="gallery_bg">
+                    <picture class="winter-bg">
+                        <source srcset="./images/gallery/gallery_bg.webp" type="image/webp">
+                        <img alt="img" width="1440" height="1714" src="./images/gallery/gallery_bg.png">
+                    </picture>
+                    <picture class="summer-bg">
+                        <source srcset="./images/gallery/gallery_bg_sum.webp" type="image/webp">
+                        <img alt="img" width="1440" height="1714" src="./images/gallery/gallery_bg_sum.png">
+                    </picture>
+                </div>
                 <div class="container">
                     <div class="content">
                         <div class="toggle">
                             <h2 class="title_gallery">Галерея</h2>
-                            <div class="toggle-box"><span>Зима</span><input class="switch" id="switch_1"
-                                    type="checkbox"><label for="switch_1" class="switch_for"></label><span>Літо</span>
+                            <div class="toggle-box">
+                                <span>Зима</span>
+                                <input type="checkbox" class="checkbox switch" id="checkbox">
+                                <label for="checkbox" class="switch_for"></label>
+                                <span>Літо</span>
                             </div>
                         </div>
                         <div class="gallery_block winter">
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/gallery_1.jpg"><img
-                                    class="ibg" src="./images/gallery/gallery_1.jpg" alt="image not found"></a><a
-                                class="set" data-fancybox="gallery" href="./files/galllery_video.MP4"><video class="ibg"
-                                    src="./files/galllery_video.MP4" loop autoplay muted></video></a><a class="set"
-                                data-fancybox="gallery" href="./images/gallery/gallery_2.jpg"><img class="ibg"
-                                    src="./images/gallery/gallery_2.jpg" alt="image not found"></a><a class="set"
-                                data-fancybox="gallery" href="./images/gallery/gallery_2.jpg"><img class="ibg"
-                                    src="./images/gallery/gallery_2.jpg" alt="image not found"></a><a class="set"
-                                data-fancybox="gallery" href="./images/gallery/gallery_2.jpg"><img class="ibg"
-                                    src="./images/gallery/gallery_2.jpg" alt="image not found"></a>
+                            <a class="set" data-fancybox="winter" href="./images/gallery/gallery_1.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_1.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="winter" href="./files/galllery_video.MP4">
+                                <video class="ibg" src="./files/galllery_video.MP4" loop autoplay muted></video>
+                            </a>
+                            <a class="set" data-fancybox="winter" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="winter" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
+                            <a class="set" data-fancybox="winter" href="./images/gallery/gallery_2.jpg">
+                                <img class="ibg" src="./images/gallery/gallery_2.jpg" alt="image not found">
+                            </a>
                         </div>
-                        <!--  <div class="gallery_block summer">
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/summer/img_1.jpg">
+                        <div class="gallery_block summer">
+                            <a class="set" data-fancybox="summer" href="./images/gallery/summer/img_1.jpg">
                                 <img class="ibg" src="./images/gallery/summer/img_1.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/summer/img_1.jpg">
+                            <a class="set" data-fancybox="summer" href="./images/gallery/summer/img_1.jpg">
                                 <img class="ibg" src="./images/gallery/summer/img_1.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/summer/img_1.jpg">
+                            <a class="set" data-fancybox="summer" href="./images/gallery/summer/img_1.jpg">
                                 <img class="ibg" src="./images/gallery/summer/img_1.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/summer/img_1.jpg">
+                            <a class="set" data-fancybox="summer" href="./images/gallery/summer/img_1.jpg">
                                 <img class="ibg" src="./images/gallery/summer/img_1.jpg" alt="image not found">
                             </a>
-                            <a class="set" data-fancybox="gallery" href="./images/gallery/summer/img_1.jpg">
+                            <a class="set" data-fancybox="summer" href="./images/gallery/summer/img_1.jpg">
                                 <img class="ibg" src="./images/gallery/summer/img_1.jpg" alt="image not found">
                             </a>
-                        </div> -->
+                        </div>
                         <div class="price_block">
                             <h2 class="title_price">Прайс</h2>
                             <div class="offers">
