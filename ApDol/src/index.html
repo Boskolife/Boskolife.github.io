@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant:regular,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -26,11 +26,35 @@
                 <div id="text" class="text">
                     <h1 class="title">Альпійська долина</h1>
                     <p class="sub-title">місце активного відпочинку</p>
-                </div><img id="sky" src="./images/mountains/sky.png" alt="img"><img id="m1"
-                    src="./images/mountains/1.png" alt="img"><img id="m2" src="./images/mountains/2.png" alt="img"><img
-                    id="m3" src="./images/mountains/m3.png" alt="img"><img id="cloud1"
-                    src="./images/mountains/cloud1.png" alt="img"><img id="cloud2" src="./images/mountains/cloud2.png"
-                    alt="img"><img id="cloud3" src="./images/mountains/cloud2.png" alt="img">
+                </div>
+                <picture>
+                    <source srcset="./images/mountains/sky.webp" type="image/webp">
+                    <img id="sky" alt="img" width="1420" height="541" src="./images/mountains/sky.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/1.webp" type="image/webp">
+                    <img id="m1" alt="img" width="1420" height="642" src="./images/mountains/1.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/2.webp" type="image/webp">
+                    <img id="m2" alt="img" width="1109" height="436" src="./images/mountains/2.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/m3.webp" type="image/webp">
+                    <img id="m3" alt="img" width="1440" height="1002" src="./images/mountains/m3.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/cloud1.webp" type="image/webp">
+                    <img id="cloud1" alt="img" width="735" height="376" src="./images/mountains/cloud1.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/cloud2.webp" type="image/webp">
+                    <img id="cloud2" alt="img" width="1038" height="578" src="./images/mountains/cloud2.png">
+                </picture>
+                <picture>
+                    <source srcset="./images/mountains/cloud2.webp" type="image/webp">
+                    <img id="cloud3" alt="img" width="1038" height="578" src="./images/mountains/cloud2.png">
+                </picture>
             </section>
             <section class="about_us" id="tsec">
                 <div class="container">
