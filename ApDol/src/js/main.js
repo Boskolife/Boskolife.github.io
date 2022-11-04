@@ -12,7 +12,7 @@ let tsec = document.getElementById('tsec');
 
 window.addEventListener('scroll', function () {
   let value = window.scrollY;
-  let endParalax = tsec.offsetTop + tsec.offsetHeight;
+  let endParalax = tsec.offsetTop;
   let laptop = window.matchMedia("(min-width: 1450px)");
   let widescreen = window.matchMedia("(min-width: 1200px)");
   let tablet = window.matchMedia("(min-width: 768px)");

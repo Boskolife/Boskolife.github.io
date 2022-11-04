@@ -17,7 +17,7 @@ var msec = document.getElementById('msec');
 var tsec = document.getElementById('tsec');
 window.addEventListener('scroll', function () {
   var value = window.scrollY;
-  var endParalax = tsec.offsetTop + tsec.offsetHeight;
+  var endParalax = tsec.offsetTop;
   var laptop = window.matchMedia("(min-width: 1450px)");
   var widescreen = window.matchMedia("(min-width: 1200px)");
   var tablet = window.matchMedia("(min-width: 768px)");
