@@ -1092,17 +1092,16 @@ header {
         bottom: 0px; } }
 
 .about_us {
-  /* min-height: 200vh; */
   /* Только если меньше контейнера */
   padding-top: 80px;
   /* Только если меньше контейнера */
-  padding-bottom: 100px; }
+  padding-bottom: 120px; }
   @media (max-width: 1360px) {
     .about_us {
       padding-top: calc(50px + 30 * ((100vw - calc(320px)) / 1040)); } }
   @media (max-width: 1360px) {
     .about_us {
-      padding-bottom: calc(80px + 20 * ((100vw - calc(320px)) / 1040)); } }
+      padding-bottom: calc(80px + 40 * ((100vw - calc(320px)) / 1040)); } }
   .about_us .content {
     display: -ms-flexbox;
     display: flex;
@@ -1110,61 +1109,91 @@ header {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       .about_us .content {
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse; } }
   .about_us .img_block {
     width: 49%;
     position: relative; }
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       .about_us .img_block {
         width: 100%; } }
-    .about_us .img_block .skier {
+  .about_us .skier-bg {
+    position: relative;
+    border-radius: 20px;
+    -webkit-transform: perspective(290px) rotateY(5deg);
+    transform: perspective(290px) rotateY(5deg);
+    overflow: hidden;
+    margin-left: 20px; }
+    @media (max-width: 1023px) {
+      .about_us .skier-bg {
+        margin-left: 10%;
+        width: 60%; } }
+    @media (max-width: 767px) {
+      .about_us .skier-bg {
+        width: auto; } }
+    @media (max-width: 479px) {
+      .about_us .skier-bg {
+        margin-left: 5%; } }
+    .about_us .skier-bg::before {
+      content: '';
       position: absolute;
-      bottom: -20%;
-      right: -20px; }
-      @media (max-width: 1023px) {
-        .about_us .img_block .skier {
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); } }
-      .about_us .img_block .skier img {
-        width: 100%;
-        height: 100%; }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.1); }
+  .about_us .skier {
+    position: absolute;
+    right: 0%;
+    bottom: -90px;
+    min-width: 115%; }
+    @media (max-width: 1023px) {
+      .about_us .skier {
+        min-width: 90%;
+        width: 90%; } }
+    @media (max-width: 767px) {
+      .about_us .skier {
+        min-width: 100%;
+        width: 100%; } }
+    @media (max-width: 479px) {
+      .about_us .skier {
+        bottom: -50px; } }
   .about_us .text_block {
     max-width: 530px;
     margin-left: 35px; }
     @media (max-width: 1023px) {
       .about_us .text_block {
-        max-width: 50%; } }
-    @media (max-width: 767px) {
-      .about_us .text_block {
-        margin: 0 0 30px 0;
+        margin: 0 0 90px 0;
         max-width: 100%;
         text-align: center; } }
+    @media (max-width: 479px) {
+      .about_us .text_block {
+        margin: 0 0 40px 0; } }
   .about_us .title {
     margin-bottom: 25px; }
   .about_us .description {
     /* Только если меньше контейнера */
     font-size: 20px;
-    line-height: 140%; }
+    line-height: 1.4; }
     @media (max-width: 1360px) {
       .about_us .description {
-        font-size: calc(16px + 4 * ((100vw - calc(320px)) / 1040)); } }
+        font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 479px) {
+      .about_us .description {
+        text-align: left; } }
 
 .gallery {
-  /* Только если меньше контейнера */
-  padding-top: 150px;
+  padding-top: 30px;
   /* Только если меньше контейнера */
   padding-bottom: 100px;
   background: #D9D9D9;
   position: relative;
   z-index: 1;
   /*--------Переключатель-------*/ }
-  @media (max-width: 1360px) {
-    .gallery {
-      padding-top: calc(30px + 120 * ((100vw - calc(320px)) / 1040)); } }
   @media (max-width: 1360px) {
     .gallery {
       padding-bottom: calc(50px + 50 * ((100vw - calc(320px)) / 1040)); } }

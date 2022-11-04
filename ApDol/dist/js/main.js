@@ -147,4 +147,17 @@ destroySlidersOnResize(".reviews-slider", 9999, {
     clickable: true
   }
 });
+/* Parallax Cursor Position */
+
+document.addEventListener("mousemove", parallax);
+
+function parallax(event) {
+  this.querySelectorAll(".parallax-wrap #parallax").forEach(function (shift) {
+    var position = shift.getAttribute("value");
+    var x = (window.innerWidth - event.pageX * position) / 90;
+    var y = (window.innerHeight - event.pageY * position) / 90;
+    shift.style.transform = "translateX(".concat(x, "px) translateY(").concat(y, "px)");
+  });
+}
+/* ///// */
 //# sourceMappingURL=main.js.map

@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant:regular,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
@@ -59,8 +60,11 @@
             <section class="about_us" id="tsec">
                 <div class="container">
                     <div class="content">
-                        <div class="img_block parallax"><img src="./images/skier_bg.jpg" alt="image not found"><img
-                                class="skier" src="./images/skier.png" alt="image not found"></div>
+                        <div class="img_block parallax-wrap">
+                            <div class="skier-bg">
+                                <img src="./images/skier_bg.jpg" alt="image not found">
+                            </div>
+                            <img class="skier" id="parallax" value="-2" src="./images/skier.png" alt="image not found"></div>
                         <div class="text_block">
                             <h2 class="title">Про нас</h2>
                             <p class="description">Lorem ipsum dolor sit amet,

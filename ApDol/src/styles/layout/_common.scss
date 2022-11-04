@@ -274,9 +274,8 @@
 }
 
 .about_us {
-    /* min-height: 200vh; */
     @include adaptiv-vaule("padding-top", 80, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 100, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 80, 1);
 
 
     .content {
@@ -284,7 +283,7 @@
         align-items: center;
         justify-content: space-between;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             flex-direction: column-reverse;
         }
     }
@@ -293,24 +292,61 @@
         width: 49%;
         position: relative;
 
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .skier-bg {
+        position: relative;
+        border-radius: 20px;
+        transform: perspective(290px) rotateY(5deg);
+        overflow: hidden;
+        margin-left: 20px;
+
+        @include media ("<desktop") {
+            margin-left: 10%;
+            width: 60%;
+        }
+
         @include media ("<tablet") {
+            width: auto;
+        }
+
+        @include media ("<phone") {
+            margin-left: 5%;
+        }
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .skier {
+        position: absolute;
+        right: 0%;
+        bottom: -90px;
+        min-width: 115%;
+
+        @include media ("<desktop") {
+            min-width: 90%;
+            width: 90%;
+        }
+
+        @include media ("<tablet") {
+            min-width: 100%;
             width: 100%;
         }
 
-        .skier {
-            position: absolute;
-            bottom: -20%;
-            right: -20px;
-
-            @include media ("<desktop") {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
+        @include media ('<phone') {
+            bottom: -50px;
         }
     }
 
@@ -319,13 +355,13 @@
         margin-left: 35px;
 
         @include media ("<desktop") {
-            max-width: 50%;
-        }
-
-        @include media ("<tablet") {
-            margin: 0 0 30px 0;
+            margin: 0 0 90px 0;
             max-width: 100%;
             text-align: center;
+        }
+
+        @include media ("<phone") {
+            margin: 0 0 40px 0;
         }
     }
 
@@ -334,13 +370,17 @@
     }
 
     .description {
-        @include adaptiv-vaule("font-size", 20, 16, 1);
-        line-height: 28 / 20 * 100%;
+        @include adaptiv-vaule("font-size", 20, 15, 1);
+        line-height: 1.4;
+
+        @include media ("<phone") {
+            text-align: left;
+        }
     }
 }
 
 .gallery {
-    @include adaptiv-vaule("padding-top", 150, 30, 1);
+    padding-top: 30px;
     @include adaptiv-vaule("padding-bottom", 100, 50, 1);
     background: $white_1;
     position: relative;
