@@ -679,7 +679,7 @@ header {
       width: 50%;
       height: 100vh;
       transition: all 0.5s ease;
-      padding: 80px 30px;
+      padding: 80px 30px 70px 30px;
       width: 100%;
       background: url(../images/header/burger_bg.jpg) 100% 100%/cover no-repeat; } }
   header .nav-menu {
@@ -697,44 +697,40 @@ header {
         overflow: auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto; } }
-  header .menu-item:not(:first-child) {
+  header .menu-item {
     /* Только если меньше контейнера */
     margin-left: 45px; }
     @media (max-width: 1360px) {
-      header .menu-item:not(:first-child) {
+      header .menu-item {
         margin-left: calc(1px + 44 * ((100vw - calc(320px)) / 1040)); } }
-  @media (max-width: 1023px) {
-    header .menu-item {
-      text-align: center; }
-      header .menu-item:not(:first-child) {
-        margin: 0 0 0 16px; }
-      header .menu-item:last-child {
-        margin: 0; } }
-  @media (max-width: 859px) {
-    header .menu-item {
-      margin: 0 0 20px 0; } }
-  header .menu-item a {
-    color: #fff;
-    font-weight: 400;
-    padding: 10px 15px;
-    border-radius: 10px;
-    /* Только если меньше контейнера */
-    font-size: 18px; }
-    @media (max-width: 1360px) {
-      header .menu-item a {
-        font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1023px) {
-      header .menu-item a {
-        padding: 0 10px; } }
+      header .menu-item {
+        margin-left: 10px; } }
     @media (max-width: 859px) {
-      header .menu-item a {
-        font-size: 36px; } }
-    header .menu-item a:hover {
-      background: rgba(255, 255, 255, 0.85);
-      color: #272727; }
+      header .menu-item {
+        margin: 0 0 20px 0; } }
+    header .menu-item a {
+      color: #fff;
+      font-weight: 400;
+      padding: 10px 15px;
+      border-radius: 10px;
+      /* Только если меньше контейнера */
+      font-size: 18px; }
+      @media (max-width: 1360px) {
+        header .menu-item a {
+          font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+      @media (max-width: 1023px) {
+        header .menu-item a {
+          padding: 0 10px; } }
       @media (max-width: 859px) {
-        header .menu-item a:hover {
-          background: none; } }
+        header .menu-item a {
+          font-size: 36px; } }
+      header .menu-item a:hover {
+        background: rgba(255, 255, 255, 0.85);
+        color: #272727; }
+        @media (max-width: 859px) {
+          header .menu-item a:hover {
+            background: none; } }
   header .social_links {
     display: none; }
     @media (max-width: 859px) {

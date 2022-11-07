@@ -102,7 +102,7 @@ header {
             width: 50%;
             height: 100vh;
             transition: all 0.5s ease;
-            padding: 80px 30px;
+            padding: 80px 30px 70px 30px;
             width: 100%;
             background: url(../images/header/burger_bg.jpg)100% 100% /cover no-repeat;
         }
@@ -121,22 +121,10 @@ header {
     }
 
     .menu-item {
-
-        &:not(:first-child){
-            @include adaptiv-vaule("margin-left", 45, 1, 1);
-        }
+        @include adaptiv-vaule("margin-left", 45, 1, 1);
 
         @include media ("<desktop") {
-            
-            &:not(:first-child){
-                margin: 0 0 0 16px;
-            }
-
-            &:last-child {
-                margin: 0;
-            }
-
-            text-align: center;
+            margin-left: 10px;
         }
 
         @include media ("<tablet_max") {
