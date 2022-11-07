@@ -1233,7 +1233,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 2000px;
+    min-height: 1550px;
     background-color: #A6B7C6;
     overflow: hidden;
     transition: background-color 2s ease 0s; }
@@ -1243,16 +1243,16 @@ html {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -465px;
+      bottom: -400px;
       width: 100%;
-      height: 900px;
+      height: 750px;
       z-index: 0;
       background: #D9D9D9;
       -webkit-transform: skewY(15deg);
       transform: skewY(15deg); }
       @media (max-width: 1023px) {
         .gallery .gallery_bg::after {
-          bottom: -330px; } }
+          bottom: 0px; } }
       @media (max-width: 479px) {
         .gallery .gallery_bg::after {
           display: none; } }
@@ -1268,9 +1268,9 @@ html {
           min-width: 1024px; } }
       @media (max-width: 479px) {
         .gallery .gallery_bg img {
-          min-width: 480px; } }
+          display: none; } }
   .gallery .winter-bg {
-    opacity: 80%;
+    opacity: 90%;
     transition: all 2s ease 0s; }
     .weather .gallery .winter-bg {
       opacity: 0;
