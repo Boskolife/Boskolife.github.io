@@ -591,6 +591,8 @@ header {
       header .header_content {
         padding: 10px 0; } }
   header .logo {
+    position: relative;
+    z-index: 5;
     width: 101px;
     margin-top: 5px; }
     @media (max-width: 767px) {
@@ -677,19 +679,15 @@ header {
       width: 50%;
       height: 100vh;
       transition: all 0.5s ease;
-      padding: 80px 30px 30px 30px; } }
-  @media (max-width: 479px) {
-    header .nav {
-      width: 100%; } }
-  @media (max-width: 479px) {
-    header .nav {
+      padding: 80px 30px;
+      width: 100%;
       background: url(../images/header/burger_bg.jpg) 100% 100%/cover no-repeat; } }
   header .nav-menu {
     /* Только если меньше контейнера */
     margin-right: 45px; }
     @media (max-width: 1360px) {
       header .nav-menu {
-        margin-right: calc(5px + 40 * ((100vw - calc(320px)) / 1040)); } }
+        margin-right: calc(1px + 44 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 859px) {
       header .nav-menu {
         -ms-flex-direction: column;
@@ -699,38 +697,44 @@ header {
         overflow: auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto; } }
-  header .menu-item {
+  header .menu-item:not(:first-child) {
     /* Только если меньше контейнера */
     margin-left: 45px; }
     @media (max-width: 1360px) {
-      header .menu-item {
-        margin-left: calc(10px + 35 * ((100vw - calc(320px)) / 1040)); } }
+      header .menu-item:not(:first-child) {
+        margin-left: calc(1px + 44 * ((100vw - calc(320px)) / 1040)); } }
+  @media (max-width: 1023px) {
+    header .menu-item {
+      text-align: center; }
+      header .menu-item:not(:first-child) {
+        margin: 0 0 0 16px; }
+      header .menu-item:last-child {
+        margin: 0; } }
+  @media (max-width: 859px) {
+    header .menu-item {
+      margin: 0 0 20px 0; } }
+  header .menu-item a {
+    color: #fff;
+    font-weight: 400;
+    padding: 10px 15px;
+    border-radius: 10px;
+    /* Только если меньше контейнера */
+    font-size: 18px; }
+    @media (max-width: 1360px) {
+      header .menu-item a {
+        font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+    @media (max-width: 1023px) {
+      header .menu-item a {
+        padding: 0 10px; } }
     @media (max-width: 859px) {
-      header .menu-item {
-        margin: 0 0 20px 0;
-        text-align: center; }
-        header .menu-item:last-child {
-          margin: 0; } }
-    header .menu-item a {
-      color: #fff;
-      font-weight: 400;
-      padding: 10px 15px;
-      border-radius: 10px;
-      /* Только если меньше контейнера */
-      font-size: 18px; }
-      @media (max-width: 1360px) {
-        header .menu-item a {
-          font-size: calc(16px + 2 * ((100vw - calc(320px)) / 1040)); } }
+      header .menu-item a {
+        font-size: 36px; } }
+    header .menu-item a:hover {
+      background: rgba(255, 255, 255, 0.85);
+      color: #272727; }
       @media (max-width: 859px) {
-        header .menu-item a {
-          padding: 0 10px;
-          font-size: 36px; } }
-      header .menu-item a:hover {
-        background: rgba(255, 255, 255, 0.85);
-        color: #272727; }
-        @media (max-width: 859px) {
-          header .menu-item a:hover {
-            background: none; } }
+        header .menu-item a:hover {
+          background: none; } }
   header .social_links {
     display: none; }
     @media (max-width: 859px) {
@@ -766,7 +770,7 @@ header {
     header .header-btn a:hover {
       background: rgba(255, 255, 255, 0.85); }
   header .phone_img {
-    margin: 0 20px;
+    margin: 0 15px;
     width: 50px;
     height: 50px; }
     header .phone_img svg {
@@ -1401,9 +1405,11 @@ html {
     .gallery .set:first-child {
       width: 100%;
       grid-column: span 2; }
-    .gallery .set:nth-child(n+7) {
+    .gallery .set:nth-child(5n) {
       width: 100%;
       grid-column: span 2; }
+    .gallery .set:nth-child(5) {
+      grid-column: span 1; }
   .gallery .winter {
     position: relative;
     opacity: 1;
@@ -1651,7 +1657,7 @@ html {
     font-size: 20px; }
     @media (max-width: 1360px) {
       .gallery .position {
-        font-size: calc(15px + 5 * ((100vw - calc(320px)) / 1040)); } }
+        font-size: calc(16px + 4 * ((100vw - calc(320px)) / 1040)); } }
     .gallery .position:first-child {
       margin-right: 10px;
       white-space: nowrap; }
@@ -1666,7 +1672,7 @@ html {
       .gallery .hidden {
         display: block;
         margin-bottom: 10px;
-        font-size: 14px; } }
+        font-size: 16px; } }
   .gallery .hidden {
     margin: 0; }
   .gallery .color {
@@ -1701,7 +1707,7 @@ html {
       font-weight: 600; }
       @media (max-width: 1360px) {
         .gallery .notice p {
-          font-size: calc(12px + 8 * ((100vw - calc(320px)) / 1040)); } }
+          font-size: calc(16px + 4 * ((100vw - calc(320px)) / 1040)); } }
 
 .reviews {
   position: relative;
@@ -1791,13 +1797,16 @@ html {
     @media (max-width: 767px) {
       .reviews .arrow {
         display: none; } }
-    .reviews .arrow::after {
-      display: none; }
-    .reviews .arrow svg {
-      fill: #7D8993;
-      transition: all .3s ease 0s; }
-    .reviews .arrow:hover svg {
-      fill: #E78752; }
+  .reviews .swiper-button-prev::after,
+  .reviews .swiper-button-next::after {
+    display: none; }
+  .reviews .swiper-button-prev svg,
+  .reviews .swiper-button-next svg {
+    fill: #7D8993;
+    transition: all .3s ease 0s; }
+  .reviews .swiper-button-prev:hover svg,
+  .reviews .swiper-button-next:hover svg {
+    fill: #E78752; }
   .reviews #pagination {
     position: relative;
     bottom: 0;
@@ -1981,8 +1990,8 @@ html {
       justify-content: center; }
       @media (max-width: 767px) {
         .contact .social_links .links a {
-          idth: 20px;
-          height: 20px; } }
+          idth: 25px;
+          height: 25px; } }
       .contact .social_links .links a:not(:last-child) {
         /* Только если меньше контейнера */
         margin-right: 25px; }
@@ -2041,10 +2050,10 @@ html {
           padding-bottom: calc(7px + 8 * ((100vw - calc(320px)) / 1040)); } }
       @media (max-width: 1360px) {
         .contact .contact_video .stiker {
-          padding-right: calc(10px + 5 * ((100vw - calc(320px)) / 1040)); } }
+          padding-right: calc(15px + 0 * ((100vw - calc(320px)) / 1040)); } }
       @media (max-width: 1360px) {
         .contact .contact_video .stiker {
-          padding-left: calc(10px + 5 * ((100vw - calc(320px)) / 1040)); } }
+          padding-left: calc(15px + 0 * ((100vw - calc(320px)) / 1040)); } }
       @media (max-width: 1360px) {
         .contact .contact_video .stiker {
           font-size: calc(14px + 6 * ((100vw - calc(320px)) / 1040)); } }

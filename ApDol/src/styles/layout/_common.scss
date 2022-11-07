@@ -636,11 +636,20 @@ html {
             width: 100%;
             grid-column: span 2;
         }
-
-        &:nth-child(n+7) {
+        
+        &:nth-child(5n) {
             width: 100%;
             grid-column: span 2;
         }
+
+        &:nth-child(5) {
+            grid-column: span 1;
+        }
+
+
+
+
+
     }
 
     .winter {
@@ -831,7 +840,7 @@ html {
     }
 
     .position {
-        @include adaptiv-vaule("font-size", 20, 15, 1);
+        @include adaptiv-vaule("font-size", 20, 16, 1);
 
         &:first-child {
             margin-right: 10px;
@@ -852,7 +861,7 @@ html {
         @include media ("<tablet") {
             display: block;
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 
@@ -874,7 +883,7 @@ html {
 
         p {
             font-family: 'Cormorant';
-            @include adaptiv-vaule("font-size", 20, 12, 1);
+            @include adaptiv-vaule("font-size", 20, 16, 1);
             font-weight: 600;
         }
     }
@@ -907,6 +916,7 @@ html {
         position: relative;
     }
 
+
     .reviews_title {
         text-align: center;
         @include adaptiv-vaule("margin-bottom", 50, 25, 1);
@@ -916,7 +926,7 @@ html {
         display: flex;
         align-items: center;
     }
-    
+
     .reviews-slider {
         max-width: 1070px;
     }
@@ -986,17 +996,20 @@ html {
             display: none;
         }
 
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
         &::after {
             display: none;
         }
-
+    
         svg {
             fill: #7D8993;
             transition: all .3s ease 0s;
         }
 
         &:hover{
-
+            
             svg {
                 fill: $orange;
             }
@@ -1153,8 +1166,8 @@ html {
                 justify-content: center;
 
                 @include media ("<tablet") {
-                    idth: 20px;
-                    height: 20px;
+                    idth: 25px;
+                    height: 25px;
                 }
 
                 &:not(:last-child) {
@@ -1205,8 +1218,8 @@ html {
             border-radius: 15px;
             @include adaptiv-vaule("padding-top", 15, 7, 1);
             @include adaptiv-vaule("padding-bottom", 15, 7, 1);
-            @include adaptiv-vaule("padding-right", 15, 10, 1);
-            @include adaptiv-vaule("padding-left", 15, 10, 1);
+            @include adaptiv-vaule("padding-right", 15, 15, 1);
+            @include adaptiv-vaule("padding-left", 15, 15, 1);
             @include adaptiv-vaule("font-size", 20, 14, 1);
 
             @include media ("<phone") {
