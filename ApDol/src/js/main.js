@@ -42,7 +42,7 @@ window.addEventListener('scroll', function () {
     cloud1.style.bottom = 240 + value * 0.1 + 'px';
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -15 + value * 0.1 + 'px';
-    text.style.top = 220 + value * 0.3 + 'px';
+    text.style.top = 270 + value * 0.3 + 'px';
     msec.style.minHeight = 1205 + value * -0.2 + 'px';
   } else if (tablet.matches) {
     m2.style.top = 265 + value * 0.05 + 'px';
@@ -53,7 +53,7 @@ window.addEventListener('scroll', function () {
     cloud1.style.bottom = 240 + value * 0.1 + 'px';
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -40 + value * 0.1 + 'px';
-    text.style.top = 120 + value * 0.3 + 'px';
+    text.style.top = 220 + value * 0.3 + 'px';
     msec.style.minHeight = 940 + value * -0.2 + 'px';
   } else if (phone.matches) {
     m2.style.top = 185 + value * 0.05 + 'px';
@@ -84,7 +84,7 @@ window.addEventListener('scroll', function () {
 
 const burger = document.querySelector(".burger_menu");
 const menuBody = document.querySelector(".nav");
-const linkClose = document.querySelector(".link-close");
+const linkClose = document.querySelectorAll(".link-close");
 if (burger) {
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
@@ -93,12 +93,14 @@ if (burger) {
   });
 };
 
-if (linkClose) {
-  linkClose.addEventListener("click", function (e) {
-    document.body.classList.remove("body_lock");
-    burger.classList.remove("burger_active");
-    menuBody.classList.remove("menu_active");
-  });
+if (linkClose.length) {
+  for(var i =0;i<linkClose.length;++i){
+    linkClose[i].addEventListener("click", function (e) {
+      document.body.classList.remove("body_lock");
+      burger.classList.remove("burger_active");
+      menuBody.classList.remove("menu_active");
+    })
+  }
 };
 
 // Swiper:
@@ -130,9 +132,9 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 
 destroySlidersOnResize(".reviews-slider", 9999, {
   slidesPerView: 2,
+  spaceBetween: 50,
   watchOverflow: true,
   speed: 800,
-
 
   navigation: {
     nextEl: '.swiper-button-next',
@@ -143,21 +145,36 @@ destroySlidersOnResize(".reviews-slider", 9999, {
     el: ".swiper-pagination",
     clickable: true,
   },
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 50
+    },
+
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    }
+  }
 });
 
 /* Parallax Cursor Position */
 
 document.addEventListener("mousemove", parallax);
 function parallax(event) {
-  this.querySelectorAll(".parallax-wrap #parallax").forEach((shift) => {
-    const position = shift.getAttribute("value");
-    const x = (window.innerWidth - event.pageX * position) / 90;
-    const y = (window.innerHeight - event.pageY * position) / 90;
 
-    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-  });
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    this.querySelectorAll(".parallax-wrap #parallax").forEach((shift) => {
+      const position = shift.getAttribute("value");
+      const x = (window.innerWidth - event.pageX * position) / 90;
+      const y = (window.innerHeight - event.pageY * position) / 90;
+
+      shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  }
 }
-
+  
 /* ///// */
 
 /* toggle button */
