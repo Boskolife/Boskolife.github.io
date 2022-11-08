@@ -1863,10 +1863,10 @@ html {
     justify-content: space-between; }
     @media (max-width: 1360px) {
       .contact .contact_body {
-        padding-top: calc(15px + 25 * ((100vw - calc(320px)) / 1040)); } }
+        padding-top: calc(25px + 15 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .contact .contact_body {
-        padding-bottom: calc(15px + 25 * ((100vw - calc(320px)) / 1040)); } }
+        padding-bottom: calc(25px + 15 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .contact .contact_body {
         padding-right: calc(15px + 45 * ((100vw - calc(320px)) / 1040)); } }
