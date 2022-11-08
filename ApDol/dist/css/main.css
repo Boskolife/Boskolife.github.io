@@ -894,23 +894,6 @@ html {
   @media (max-width: 767px) {
     .main-section {
       min-height: 640px; } }
-  .main-section::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 450px;
-    background: white;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fefefe 100%);
-    z-index: 4; }
-    @media (max-width: 767px) {
-      .main-section::after {
-        height: 200px; } }
-    @media (max-width: 767px) {
-      .main-section::after {
-        height: 150px;
-        bottom: 5px; } }
   .main-section .text {
     position: absolute;
     text-align: center;
@@ -1020,6 +1003,24 @@ html {
     @media (max-width: 1199px) {
       .main-section #m3 {
         top: 100px; } }
+    .main-section #m3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 450px;
+      background: white;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fefefe 100%);
+      z-index: 4; }
+      @media (max-width: 767px) {
+        .main-section #m3::after {
+          height: 200px; } }
+      @media (max-width: 767px) {
+        .main-section #m3::after {
+          height: 150px; } }
+    .main-section #m3 img {
+      width: 100%; }
   .main-section #cloud1 {
     min-width: 1100px;
     left: -60px;
@@ -1096,12 +1097,7 @@ html {
 
 .about_us {
   /* Только если меньше контейнера */
-  padding-top: 80px;
-  /* Только если меньше контейнера */
   padding-bottom: 120px; }
-  @media (max-width: 1360px) {
-    .about_us {
-      padding-top: calc(50px + 30 * ((100vw - calc(320px)) / 1040)); } }
   @media (max-width: 1360px) {
     .about_us {
       padding-bottom: calc(80px + 40 * ((100vw - calc(320px)) / 1040)); } }

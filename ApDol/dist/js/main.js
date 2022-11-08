@@ -37,7 +37,6 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -325 + value * 0.2 + 'px';
     cloud3.style.bottom = -15 + value * 0.2 + 'px';
     text.style.top = 415 + value * 0.3 + 'px';
-    msec.style.minHeight = 1785 + value * -0.3 + 'px';
   } else if (widescreen.matches) {
     m2.style.top = 350 + value * 0.05 + 'px';
     m3.style.top = 200 + value * -0.2 + 'px';
@@ -48,7 +47,6 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -15 + value * 0.1 + 'px';
     text.style.top = 270 + value * 0.3 + 'px';
-    msec.style.minHeight = 1205 + value * -0.2 + 'px';
   } else if (tablet.matches) {
     m2.style.top = 265 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
@@ -59,7 +57,6 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -240 + value * 0.1 + 'px';
     cloud3.style.bottom = -40 + value * 0.1 + 'px';
     text.style.top = 220 + value * 0.3 + 'px';
-    msec.style.minHeight = 940 + value * -0.2 + 'px';
   } else if (phone.matches) {
     m2.style.top = 185 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
@@ -70,7 +67,6 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -140 + value * 0.1 + 'px';
     cloud3.style.bottom = -40 + value * 0.1 + 'px';
     text.style.top = 160 + value * 0.3 + 'px';
-    msec.style.minHeight = 640 + value * -0.2 + 'px';
   } else {
     m2.style.top = 185 + value * 0.05 + 'px';
     m3.style.top = 100 + value * -0.2 + 'px';
@@ -81,7 +77,6 @@ window.addEventListener('scroll', function () {
     cloud2.style.bottom = -70 + value * 0.1 + 'px';
     cloud3.style.bottom = value * 0.1 + 'px';
     text.style.top = 160 + value * 0.3 + 'px';
-    msec.style.minHeight = 640 + value * -0.2 + 'px';
   }
 });
 /* ///// */
