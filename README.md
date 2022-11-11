@@ -9,9 +9,9 @@
     </a>
   </div>
 
-  <h1>
+  <h1 align="center">
       Hi everyone!
-      <img src="https://media.giphy.com/media/mYxaNIP9suGG4murEa/giphy.gif" width="100px" alt= "image not found" >
+      <img src="https://media.giphy.com/media/mYxaNIP9suGG4murEa/giphy.gif" width="100px" alt= "image not found"  align="center">
   </h1>
   
 
