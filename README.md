@@ -24,7 +24,7 @@
   
   I`m junior front-end developer from Ukraine <img src="https://media.giphy.com/media/VxKgxmwZOmsDga4KrR/giphy.gif" width="25" height="25px"/>
   
-  - :telescope: I'm studying frontend developer.
+  - :closed_book: I'm studying frontend developer.
 
   - :telescope: I have a desire to learn and develop in this area.
   
