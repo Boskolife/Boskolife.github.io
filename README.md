@@ -30,6 +30,10 @@
   
   - :telescope: I`m looking for a permanent job to gain experience.
 
-  - :mailbox: How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](https://t.me/boskolife)
+  - :mailbox: How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](https://t.me/boskolife).
+
+  ---
+  
+  ### :hammer_and_wrench: Languages and Tools :
   
 
