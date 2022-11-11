@@ -11,7 +11,7 @@
 
   <h1 align="center">
       Hi everyone!
-      <img src="https://media.giphy.com/media/mYxaNIP9suGG4murEa/giphy.gif" width="80px" height="50px"  top="20px" alt= "image not found" >
+      <img src="https://media.giphy.com/media/mYxaNIP9suGG4murEa/giphy.gif" width="50px" alt= "image not found" >
   </h1>
   
 
