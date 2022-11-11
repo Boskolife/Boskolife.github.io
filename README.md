@@ -22,7 +22,7 @@
   
   :man_technologist: About me:
   
-  I`m junior front-end developer from Uktaine <img src="https://media.giphy.com/media/VxKgxmwZOmsDga4KrR/giphy.gif" width="60"/> .
+  I`m junior front-end developer from Uktaine <img src="https://media.giphy.com/media/VxKgxmwZOmsDga4KrR/giphy.gif" width="30" height="30px"/> .
   
   
   
