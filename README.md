@@ -9,7 +9,7 @@
     </a>
   </div>
 
-  <h1 align="center">
+  <h1>
       Hi everyone!
       <img src="https://media.giphy.com/media/mYxaNIP9suGG4murEa/giphy.gif" width="100px" alt= "image not found" >
   </h1>
