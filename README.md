@@ -24,6 +24,7 @@
   
   I`m junior front-end developer from Ukraine <img src="https://media.giphy.com/media/VxKgxmwZOmsDga4KrR/giphy.gif" width="25" height="25px"/>
   
+  - :telescope: I’m working as a Software Engineer and contributing to frontend and backend for building web applications.
   
   
 
