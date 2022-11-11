@@ -54,6 +54,6 @@
   
 ### :fire: My Stats :
 
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=boskolife&theme=merko&hide_border=true&border_radius=5)](https://git.io/streak-stats)   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=boskolife&theme=merko&hide_border=true&border_radius=5&line_height=20)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=boskolife&theme=merko&hide_border=true&border_radius=5)](https://git.io/streak-stats)   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=boskolife&theme=merko&hide_border=true&border_radius=5&line_height=10)](https://github.com/anuraghazra/github-readme-stats)
   
 
