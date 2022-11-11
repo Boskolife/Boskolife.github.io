@@ -22,5 +22,7 @@
   
   :man_technologist: About me:
   
+  I`m junior front-end developer from Uktaine :ukraine:.
+  
 
 
