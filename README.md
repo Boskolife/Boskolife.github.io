@@ -24,8 +24,12 @@
   
   I`m junior front-end developer from Ukraine <img src="https://media.giphy.com/media/VxKgxmwZOmsDga4KrR/giphy.gif" width="25" height="25px"/>
   
-  - :telescope: I’m working as a Software Engineer and contributing to frontend and backend for building web applications.
-  
-  
+  - :telescope: I'm studying frontend developer.
 
+  - :telescope: I have a desire to learn and develop in this area.
+  
+  - :telescope: I am looking for a permanent job to gain experience.
+
+  - :mailbox:How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](your-linkedin-url)
+  
 
