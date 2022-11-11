@@ -26,10 +26,10 @@
   
   - :closed_book: I'm studying frontend developer.
 
-  - :telescope: I have a desire to learn and develop in this area.
+  - :mortar_board: I have a desire to learn and develop in this area.
   
   - :telescope: I am looking for a permanent job to gain experience.
 
-  - :mailbox:How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](https://t.me/boskolife)
+  - :mailbox: How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](https://t.me/boskolife)
   
 
