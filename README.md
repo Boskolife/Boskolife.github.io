@@ -30,6 +30,6 @@
   
   - :telescope: I am looking for a permanent job to gain experience.
 
-  - :mailbox:How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](your-linkedin-url)
+  - :mailbox:How to reach me: [![Telegram](https://img.shields.io/badge/-telegram-blue?style=flat&logo=telegram&logoColor=white)](https://t.me/boskolife)
   
 
