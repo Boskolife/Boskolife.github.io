@@ -4,6 +4,7 @@
 </div>
 
 <div id="badges" align="center"> 
+  <a href="https://www.linkedin.com/in/serhii-mukhamedianov-4263a1230">
   <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge"/>
-   <img src="https://img.shields.io/badge/Instagram-white?logo=Instagram&logoColor=red&style=for-the-badge)"/>
+    </a>
 </div>
