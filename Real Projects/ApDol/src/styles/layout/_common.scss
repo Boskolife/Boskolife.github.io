@@ -822,7 +822,7 @@ html {
 
     .price_list_title {
         @include adaptiv-vaule("margin-bottom", 25, 15, 1);
-        @include adaptiv-vaule("font-size", 24, 18, 1);
+        @include adaptiv-vaule("font-size", 24, 20, 1);
     }
 
     .price_item {

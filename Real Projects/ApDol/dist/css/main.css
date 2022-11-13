@@ -1612,7 +1612,7 @@ html {
         margin-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 1040)); } }
     @media (max-width: 1360px) {
       .gallery .price_list_title {
-        font-size: calc(18px + 6 * ((100vw - calc(320px)) / 1040)); } }
+        font-size: calc(20px + 4 * ((100vw - calc(320px)) / 1040)); } }
   .gallery .price_item {
     display: -ms-flexbox;
     display: flex;
