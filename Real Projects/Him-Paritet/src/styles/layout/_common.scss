@@ -19,9 +19,6 @@ html {
     overflow: hidden;
 }
 
-
-
-
 .body_lock {
     overflow: hidden;
 }
@@ -474,10 +471,11 @@ html {
         @include adaptiv-vaule("top", -250, -200, 1);
         @include adaptiv-vaule("left", -250, -200, 1);
         @include adaptiv-vaule("height", 400, 300, 1);
-        animation:partners_rotate 4s linear infinite;
-        transform: rotate(32deg);
+        animation:partners_rotate 5s linear infinite;
+        border: 1px solid $blue;
     
         .small-circle {
+            border: 1px solid $blue;
             right: 34px;
            @include adaptiv-vaule("top", 315, 245, 1);
 
@@ -510,7 +508,7 @@ html {
         position: absolute;
         width: 360px;
         height: 360px;
-        animation: rotate 4s linear infinite;
+        animation: rotate 6s linear infinite;
         bottom: -30%;
         right: 15%;
 

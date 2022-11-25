@@ -556,24 +556,24 @@ input[type='submit'] {
   -o-object-fit: cover;
   object-fit: cover; }
 
-.btn_wrap_blue {
+.btn_wrap_blue a {
   background: #4079EE;
   padding: 20px 25px;
   border-radius: 90px;
   min-width: 200px;
-  transition: all 0.3s ease; }
-  .btn_wrap_blue a {
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 114.28571%; }
-  .btn_wrap_blue svg {
-    width: 15px;
-    height: 15px;
-    margin-left: 15px;
-    vertical-align: -3px; }
-  .btn_wrap_blue:hover {
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 114.28571%; }
+  .btn_wrap_blue a:hover {
     background: #0CC689; }
+
+.btn_wrap_blue svg {
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
+  vertical-align: -3px; }
 
 .cont {
   max-width: 1190px;
@@ -673,6 +673,42 @@ input[type='submit'] {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@-webkit-keyframes over_anim2 {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes over_anim2 {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@-webkit-keyframes over_anim1 {
+  0% {
+    height: 1px; }
+  40% {
+    height: 100%; }
+  80% {
+    height: 100%; }
+  100% {
+    height: 0; } }
+
+@keyframes over_anim1 {
+  0% {
+    height: 1px; }
+  40% {
+    height: 100%; }
+  80% {
+    height: 100%; }
+  100% {
+    height: 0; } }
 
 @-webkit-keyframes rotate_logo {
   0% {
@@ -850,7 +886,15 @@ input[type='submit'] {
     -webkit-transform: translateY(0);
     transform: translateY(0); } }
 
-@keyframes scale {
+@-webkit-keyframes scale_logo {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes scale_logo {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0); }
@@ -886,46 +930,40 @@ header {
     margin-right: 15px;
     z-index: 2;
     max-width: 240px;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
+    .header_content .logo .elem {
+      position: absolute;
+      top: 0;
+      left: 48px;
+      width: 2px;
+      height: 100%;
+      display: block;
+      border-radius: 10px;
+      background-color: #0CC689;
+      -webkit-animation-name: over_anim1;
+      animation-name: over_anim1;
+      -webkit-animation-duration: 2.3s;
+      animation-duration: 2.3s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards; }
     .header_content .logo svg {
       width: 100%;
       height: 100%; }
       .header_content .logo svg path:nth-child(1) {
-        -webkit-animation: rotate_logo 1s linear;
-        animation: rotate_logo 1s linear; }
-      .header_content .logo svg path:nth-child(2) {
-        -webkit-animation: translate 0.5s linear;
-        animation: translate 0.5s linear; }
-      .header_content .logo svg path:nth-child(3) {
-        -webkit-animation: translate 0.7s linear;
-        animation: translate 0.7s linear; }
-      .header_content .logo svg path:nth-child(4) {
-        -webkit-animation: translate 0.9s linear;
-        animation: translate 0.9s linear; }
-      .header_content .logo svg path:nth-child(5) {
-        -webkit-animation: translate 1.1s linear;
-        animation: translate 1.1s linear; }
-      .header_content .logo svg path:nth-child(6) {
-        -webkit-animation: translate 1.3s linear;
-        animation: translate 1.3s linear; }
-      .header_content .logo svg path:nth-child(7) {
-        -webkit-animation: translate 1.6s linear;
-        animation: translate 1.6s linear; }
-      .header_content .logo svg path:nth-child(8) {
-        -webkit-animation: translate 1.8s linear;
-        animation: translate 1.8s linear; }
-      .header_content .logo svg path:nth-child(9) {
-        -webkit-animation: translate 2s linear;
-        animation: translate 2s linear; }
-      .header_content .logo svg path:nth-child(10) {
-        -webkit-animation: translate 2.2s linear;
-        animation: translate 2.2s linear; }
-      .header_content .logo svg path:nth-child(11) {
-        -webkit-animation: translate 2.4s linear;
-        animation: translate 2.4s linear; }
-      .header_content .logo svg path:nth-child(12) {
-        -webkit-animation: translate 2.6s linear;
-        animation: translate 2.6s linear; }
+        -webkit-animation: rotate 1s linear;
+        animation: rotate 1s linear; }
+      .header_content .logo svg path:nth-child(2), .header_content .logo svg path:nth-child(3), .header_content .logo svg path:nth-child(4), .header_content .logo svg path:nth-child(5), .header_content .logo svg path:nth-child(6), .header_content .logo svg path:nth-child(7), .header_content .logo svg path:nth-child(8), .header_content .logo svg path:nth-child(9), .header_content .logo svg path:nth-child(10), .header_content .logo svg path:nth-child(11), .header_content .logo svg path:nth-child(12) {
+        -webkit-animation-name: over_anim2;
+        animation-name: over_anim2;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-delay: .5s;
+        animation-delay: .5s;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%); }
       .header_content .logo svg path:nth-child(13) {
         -webkit-animation: translate_4 2s linear;
         animation: translate_4 2s linear; }
@@ -1108,7 +1146,7 @@ header {
         width: 40px;
         height: 40px;
         padding: 0;
-        transition: background 0.5s ease , width 0s ease;
+        transition: background 0.5s ease, width 0s ease;
         background: #0CC689 url(../images/Header/search_icon.svg) center no-repeat; } }
     .header_content .search input:focus {
       border: 1px solid #4079EE; }
@@ -1772,10 +1810,9 @@ html {
     left: -250px;
     /* Только если меньше контейнера */
     height: 400px;
-    -webkit-animation: partners_rotate 4s linear infinite;
-    animation: partners_rotate 4s linear infinite;
-    -webkit-transform: rotate(32deg);
-    transform: rotate(32deg); }
+    -webkit-animation: partners_rotate 5s linear infinite;
+    animation: partners_rotate 5s linear infinite;
+    border: 1px solid #4079EE; }
     @media (max-width: 1190px) {
       .partners .big-circle {
         top: calc(-200px + -50 * ((100vw - calc(375px)) / 815)); } }
@@ -1786,6 +1823,7 @@ html {
       .partners .big-circle {
         height: calc(300px + 100 * ((100vw - calc(375px)) / 815)); } }
     .partners .big-circle .small-circle {
+      border: 1px solid #4079EE;
       right: 34px;
       /* Только если меньше контейнера */
       top: 315px; }
@@ -1830,8 +1868,8 @@ html {
     position: absolute;
     width: 360px;
     height: 360px;
-    -webkit-animation: rotate 4s linear infinite;
-    animation: rotate 4s linear infinite;
+    -webkit-animation: rotate 6s linear infinite;
+    animation: rotate 6s linear infinite;
     bottom: -30%;
     right: 15%; }
     @media (max-width: 649px) {

@@ -9,17 +9,20 @@
 
 
 .btn_wrap_blue {
-    background: $blue;
-    padding: 20px 25px;
-    border-radius: 90px;
-    min-width: 200px;
-    transition: all 0.3s ease;
-
-    a {
+    a{
+        background: $blue;
+        padding: 20px 25px;
+        border-radius: 90px;
+        min-width: 200px;
+        transition: all 0.3s ease;
         color: $white;
         font-size: 14px;
         font-weight: 600;
         line-height: 16 / 14 * 100%;
+
+        &:hover {
+            background: $green;
+        }
     }
 
     svg {
@@ -29,9 +32,7 @@
         vertical-align: -3px;
     }
 
-    &:hover {
-        background: $green;
-    }
+   
 }
 
 
