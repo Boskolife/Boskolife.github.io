@@ -1,0 +1,371 @@
+header {
+    padding: 35px 0;
+    @include adaptiv-vaule("padding-top", 35, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 35, 10, 1);
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    .logo {
+        margin-right: 15px;
+        z-index: 2;
+        max-width: 240px;
+        width: 100%;
+
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .nav {
+
+        @include media ("<tablet") {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            right: -100%;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            height: 100vh;
+            transition: all 0.3s ease;
+            padding: 70px 50px 30px 50px;
+            z-index: 1;
+            overflow: auto;
+        }
+
+        @include media ("<phone_max") {
+            width: 100%;
+            padding: 70px 20px 20px 30px;
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        
+        @include media ("<tablet") {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+        }
+
+        @include media ("<phone_max") {
+            align-items: center;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        top: -2px;
+        right: -13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+
+        @include media ("<tablet") {
+            top: 0;
+            right: -25px;
+        }
+
+        svg {
+            transition: all .7s ease;
+            position: relative;
+            z-index: -1;
+        }
+    }
+
+    .control{
+        margin-right: 10px;
+
+        @include media ("<tablet") {
+            margin: 0;
+        }
+    }
+
+
+    .menu-item {
+        position: relative;
+        margin-right: 50px;
+
+        @include media ("<desktop") {
+            margin-right: 15px;
+        }
+
+        @include media ("<tablet") {
+            margin: 0 0 15px 0;
+        }
+
+        @include media (">=tablet") {
+
+            &:hover {
+
+                .arrow {
+
+                    svg {
+                        transform: rotate3d(1, 0, 0, 180deg);
+                        fill: $blue;
+                    }
+                }
+
+                .sub-menu {
+                    top: 15px;
+                    transition: all 0.5s ease;
+                    visibility: visible;
+                    pointer-events: all;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .link {
+            transition: all 0.3s ease;
+            font-size: 14px;
+
+            @include media ("<tablet") {
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .menu-item_active {
+
+        @include media('<tablet') {
+
+            .sub-menu {
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transition: all 0.5s ease 0s;
+                text-align: center;
+                margin: 20px 0 0 0;
+            }
+
+            .arrow {
+
+                svg {
+                    transform: rotate3d(1, 0, 0, 180deg);
+                    fill: $blue;
+                }
+            }
+        }
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding-top: 15px;
+        transition: all 0.7s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 0;
+
+
+        @include media('<tablet') {
+            position: static;
+            max-height: 0;
+            visibility: hidden;
+            transition: all .7s ease 0s;
+            opacity: 0;
+            pointer-events: none;
+            text-align: center;
+            padding: 0;
+        }
+    }
+
+    .sub-item {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .search {
+
+        form {
+            display: flex;
+            align-items: center;
+
+        }
+
+        input {
+            position: relative;
+            border: 1px solid #E6E8EC;
+            border-radius: 62px;
+            padding: 9px 15px;
+            outline: none;
+            @include adaptiv-vaule("width", 312, 20, 1);
+            z-index: 2;
+
+            @include media ("<tablet") {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                transition: background 0.5s ease , width 0s ease;
+                background: $green url(../images/Header/search_icon.svg) center no-repeat;
+            }
+
+            &:focus {
+                border: 1px solid $blue;
+
+                @include media ("<tablet") {
+                    transition: width 0.5s ease;
+                    position: absolute;
+                    width: 220px;
+                    background: transparent;
+                    padding: 0 15px;
+                    right: 45px;
+
+                    &::placeholder {
+                        font-size: 12px;
+                    }
+                }
+
+                @include media ("<550px") {
+                    width: 100%;
+                    bottom:-50px;
+                    right: 0;
+                }
+            }
+
+            &::placeholder {
+                font-size: 14px;
+                transition: all 0 ease;
+
+                @include media ("<tablet") {
+                    font-size: 0;
+                }
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: $green;
+            transition: all 0.3s ease;
+            z-index: 2;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+
+            &:hover {
+                background: $blue;
+            }
+
+            svg {
+                fill: $white;
+                margin-top: 5px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    .burger_menu {
+        display: none;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $green;
+        position: relative;
+        cursor: pointer;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            border-radius: 2px;
+            background: $white;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.4s ease;
+        }
+
+        span {
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            border-radius: 2px;
+            background: $white;
+            top: 19px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.4s ease;
+            opacity: 1;
+        }
+
+        &::after {
+            bottom: 12px;
+        }
+
+        &::before {
+            top: 12px;
+        }
+    }
+
+    .burger_active {
+        &::after {
+            transform: rotate(30deg) translateX(-108%);
+            width: 8px;
+        }
+
+        &::before {
+            transform: rotate(-30deg) translateX(-108%);
+            width: 8px;
+
+        }
+    }
+
+    .menu_active {
+        right: 0;
+    }
+}
