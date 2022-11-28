@@ -1,5 +1,5 @@
-.ibg{
-    position:absolute;
+.ibg {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -7,9 +7,9 @@
     object-fit: cover;
 }
 
-
 .btn_wrap_blue {
-    a{
+
+    a {
         background: $blue;
         padding: 20px 25px;
         border-radius: 90px;
@@ -19,6 +19,7 @@
         font-size: 14px;
         font-weight: 600;
         line-height: 16 / 14 * 100%;
+        display: inline-block;
 
         &:hover {
             background: $green;
@@ -31,16 +32,13 @@
         margin-left: 15px;
         vertical-align: -3px;
     }
-
-   
 }
 
-
 .cont {
-    max-width: 1190px;
+    max-width: 1350px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 30px;
 
     @include media ("<phone") {
         padding: 0 30px;
@@ -68,8 +66,6 @@
 }
 
 .blur_circle_blue {
-    bottom: -35%;
-    left: -22%;
     width: 950px;
     height: 760px;
     background: radial-gradient(50% 50% at 50% 50%, #191D7A 25%, rgba(51, 59, 145, 0) 100%);
@@ -77,8 +73,6 @@
 }
 
 .blur_circle_green {
-    top: 3%;
-    right: -25%;
     width: 830px;
     height: 665px;
     background: radial-gradient(50% 50% at 50% 50%, #197A63 5%, rgba(51, 145, 100, 0) 100%);
@@ -88,7 +82,6 @@
 .big-circle {
     @include adaptiv-vaule("width", 400, 300, 1);
     @include adaptiv-vaule("height", 400, 300, 1);
-    animation: about_rotate 4s linear infinite;
 
     .small-circle {
         width: 25px;
@@ -99,5 +92,4 @@
 .middle-circle {
     width: 60px;
     height: 60px;
-    animation: scale 4s ease-in-out infinite;
 }

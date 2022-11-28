@@ -4,15 +4,19 @@ html {
     ::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     ::-webkit-scrollbar-track {
         background-color: $white;
     }
-    
+
     ::-webkit-scrollbar-thumb {
-        background:$green;
+        background: $green;
         border-radius: 5px;
     }
+}
+
+body {
+    background: $white;
 }
 
 #wrapper {
@@ -171,7 +175,7 @@ html {
         @include adaptiv-vaule("height", 220, 60, 1);
         @include adaptiv-vaule("top", -85, -25, 1);
         @include adaptiv-vaule("left", 120, 25, 1);
-        animation: rotate 5s linear infinite;
+        animation: rotate_dashed 5s linear infinite;
 
         svg {
             width: 100%;
@@ -273,22 +277,26 @@ html {
     .big-circle {
         top: -200px;
         right: -200px;
+        animation: about_rotate 5s linear infinite;
 
         .small-circle {
             left: 34px;
-            top: 315px;
+            @include adaptiv-vaule("top", 315, 245, 1);
         }
     }
 
     .middle-circle {
+
         left: -30px;
         top: 150px;
+        animation: scale 4s linear infinite;
     }
 
     .big-circle,
     .small-circle,
     .middle-circle {
-        @include media ("<phone_max") {
+
+        @include media ("<tablet") {
             display: none;
         }
     }
@@ -413,7 +421,7 @@ html {
             width: 1px;
             height: 100px;
             margin-bottom: 30px;
-            position: static;
+            top: 0;
         }
 
         &:nth-child(4) {
@@ -426,7 +434,7 @@ html {
             }
         }
 
-        /*     &::after,
+        &::after,
         &::before {
             position: absolute;
             content: '';
@@ -439,12 +447,22 @@ html {
         &::before {
             top: -6px;
             left: -12px;
+
+            @include media ("<phone") {
+                top:-11px;
+                left: -6px;
+            }
         }
 
         &::after {
-            top: -6px;
+            bottom: -6px;
             right: -12px;
-        } */
+
+            @include media ("<phone") {
+                bottom:-11px;
+                left: -6px;
+            }
+        }
     }
 }
 
@@ -471,13 +489,13 @@ html {
         @include adaptiv-vaule("top", -250, -200, 1);
         @include adaptiv-vaule("left", -250, -200, 1);
         @include adaptiv-vaule("height", 400, 300, 1);
-        animation:partners_rotate 5s linear infinite;
+        animation: partners_rotate 5s linear infinite;
         border: 1px solid $blue;
-    
+
         .small-circle {
             border: 1px solid $blue;
             right: 34px;
-           @include adaptiv-vaule("top", 315, 245, 1);
+            @include adaptiv-vaule("top", 315, 245, 1);
 
         }
     }
@@ -504,11 +522,11 @@ html {
         }
     }
 
-    .dashed_circle{
+    .dashed_circle {
         position: absolute;
         width: 360px;
         height: 360px;
-        animation: rotate 6s linear infinite;
+        animation: rotate_dashed 6s linear infinite;
         bottom: -30%;
         right: 15%;
 
@@ -517,7 +535,7 @@ html {
         }
     }
 
-    .partners_content{
+    .partners_content {
         position: relative;
         text-align: center;
         z-index: 2;
@@ -577,6 +595,8 @@ html {
 
         @include media ("<phone") {
             width: 40px;
+            min-width: 40px;
+            height: 40px;
         }
 
         img {
@@ -599,6 +619,333 @@ html {
 
         @include media ("<tablet") {
             font-size: 16px;
+        }
+    }
+}
+
+/* ------------------- Trust_partners ---------------- */
+
+.trust_partners {
+    @include adaptiv-vaule("padding-top", 120, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 70, 1);
+    text-align: center;
+
+    .trust_partners_title {
+        @include adaptiv-vaule("margin-bottom", 50, 35, 1);
+    }
+
+    .trust_partners_logo_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+
+        @include media ("<tablet") {
+            justify-content: space-between;
+        }
+
+    }
+
+    .logo {
+        width: 23%;
+        max-height: 130px;
+
+        @include media ("<desktop") {
+            width: 30%;
+        }
+
+        @include media ("<tablet") {
+            width: 45%;
+        }
+    }
+}
+
+/* ------------------- Client ---------------- */
+
+.client {
+    @include adaptiv-vaule("padding-top", 190, 120, 1);
+    @include adaptiv-vaule("padding-bottom", 190, 120, 1);
+    @include adaptiv-vaule("height", 700, 565, 1);
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: $white;
+
+    .small-circle,
+    .middle-circle,
+    .big-circle {
+        border-color: #E3E3E4;
+    }
+
+    .big-circle {
+        @include adaptiv-vaule("bottom", -170, -140, 1);
+        left: -100px;
+        @include adaptiv-vaule("width", 440, 230, 1);
+        @include adaptiv-vaule("height", 440, 230, 1);
+        animation: client_rotate 8s linear infinite;
+
+        .small-circle {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            @include adaptiv-vaule("top", 0, -12, 1);
+            @include adaptiv-vaule("right", 135, 100, 1);
+        }
+    }
+
+    @keyframes client_rotate {
+        0% {
+            transform: rotate(-47deg);
+        }
+
+        25% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(74deg);
+        }
+
+        75% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(-47deg);
+        }
+    }
+
+    .middle-circle {
+        @include adaptiv-vaule("width", 220, 110, 1);
+        @include adaptiv-vaule("height", 220, 110, 1);
+        @include adaptiv-vaule("top", -110, -55, 1);
+        @include adaptiv-vaule("right", 180, 55, 1);
+        animation: scale 5s linear infinite;
+    }
+
+    .dashed_circle {
+        position: absolute;
+        animation: rotate_dashed 5s linear infinite;
+        @include adaptiv-vaule("width", 220, 110, 1);
+        @include adaptiv-vaule("height", 220, 110, 1);
+        @include adaptiv-vaule("top", -110, -55, 1);
+        @include adaptiv-vaule("right", 35, -35, 1);
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .client_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .cont {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .client_content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .client_title {
+        margin-bottom: 20px;
+        color: $white;
+    }
+
+    .client_description {
+        max-width: 600px;
+        font-size: 18px;
+        line-height: 30 / 18 * 100%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+}
+
+/* ------------------- Contact ---------------- */
+
+.contact {
+    @include adaptiv-vaule("padding-top", 140, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 70, 70, 1);
+
+    .contact_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .contact_links {
+        width: 46%;
+
+        @include media ("<desktop") {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        @include media ("<phone_max") {
+            width: 100%;
+        }
+    }
+
+    .contact_links_title {
+        @include adaptiv-vaule("font-size", 42, 22, 1);
+        @include adaptiv-vaule("margin-bottom", 70, 20, 1);
+    }
+
+    .link_text {
+        display: flex;
+        align-items: center;
+        @include adaptiv-vaule("font-size", 18, 15, 1);
+        color: $gray_1;
+        max-width: min-content;
+        white-space: nowrap;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        .link_img {
+            @include adaptiv-vaule("margin-right", 20, 10, 1);
+            @include adaptiv-vaule("width", 50, 30, 1);
+            @include adaptiv-vaule("height", 50, 30, 1);
+            border-radius: 50%;
+            overflow: hidden;
+            background: $green;
+            transition: all .3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            img {
+                width: 13px;
+                height: 15px;
+    
+                @include media ("<tablet") {
+                    width: 8px;
+                    height: 10px;
+                }
+            }
+        }
+
+        &:hover {
+
+            .link_img {
+                background: $blue;
+                transform: scale(1.1)
+            }
+        }
+    }
+
+    .form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+        @include adaptiv-vaule("padding-top", 40, 30, 1);
+        @include adaptiv-vaule("padding-bottom", 40, 30, 1);
+        @include adaptiv-vaule("padding-right", 40, 20, 1);
+        @include adaptiv-vaule("padding-left", 40, 20, 1);
+
+        @include media ("<desktop") {
+            width: 80%;
+        }
+
+        @include media ("<phone_max") {
+            width: 100%;
+        }
+    }
+
+    .form_title {
+        @include adaptiv-vaule("font-size", 28, 24, 1);
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    input,
+    textarea {
+        background: #FFFFFF;
+        border: 1px solid #DDE1E0;
+        border-radius: 12px;
+        padding: 8px;
+
+        &:focus{
+            border: 1px solid $blue;
+        }
+    }
+
+    input {
+        height: 50px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    textarea {
+        margin-bottom: 30px;
+        height: 80px;
+    }
+
+    .areas {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @include media ("<tablet") {
+            gap: 0;
+        }
+    }
+
+    .name,
+    .subname {
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    button {
+        border: none;
+        background: $blue;
+        border-radius: 90px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 20px;
+        color: $white;
+        transition: all .3s ease;
+
+        &:hover{
+            background: $green;
         }
     }
 }

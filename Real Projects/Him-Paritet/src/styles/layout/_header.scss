@@ -22,8 +22,8 @@ header {
 
         .elem {
             position: absolute;
-            top: 0;
-            left: 48px;
+            top: -3px;
+            left: -3px;
             width: 2px;
             height: 100%;
             display: block;
@@ -39,9 +39,6 @@ header {
             height: 100%;
 
             path {
-                &:nth-child(1) {
-                    animation: rotate 1s linear;
-                }
 
                 &:nth-child(2),
                 &:nth-child(3),
@@ -61,24 +58,17 @@ header {
                     transform: translateX(-100%);
                 }
 
-                &:nth-child(13) {
-                    animation: translate_4 2s linear;
-                }
-
-                &:nth-child(14) {
-                    animation: translate_3 2s linear;
-                }
-
-                &:nth-child(15) {
-                    animation: translate_3 2s linear;
-                }
-
-                &:nth-child(16) {
-                    animation: translate_2 2s linear;
-                }
-
+                &:nth-child(1),
+                &:nth-child(13),
+                &:nth-child(14),
+                &:nth-child(15),
+                &:nth-child(16),
                 &:nth-child(17) {
-                    animation: scale 1s linear;
+                    animation-name: over_anim2;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-delay: .5s;
+                    transform: translateX(-100%);
                 }
             }
         }
