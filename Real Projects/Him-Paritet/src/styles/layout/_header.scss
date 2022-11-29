@@ -7,6 +7,93 @@ header {
     width: 100%;
 }
 
+.search {
+
+    form {
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        position: relative;
+        border: 1px solid #E6E8EC;
+        border-radius: 62px;
+        padding: 9px 15px;
+        outline: none;
+        @include adaptiv-vaule("width", 312, 20, 1);
+        z-index: 2;
+
+        @include media ("<tablet") {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            transition: background 0.5s ease, width 0s ease;
+            background: $green url(../images/Header/search_icon.svg) center no-repeat;
+        }
+
+        &:focus {
+            border: 1px solid $blue;
+
+            @include media ("<tablet") {
+                transition: width 0.5s ease;
+                position: absolute;
+                width: 220px;
+                background: transparent;
+                padding: 0 15px;
+                right: 45px;
+
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+
+            @include media ("<550px") {
+                width: 100%;
+                bottom: -50px;
+                right: 0;
+            }
+        }
+
+        &::placeholder {
+            font-size: 14px;
+            transition: all 0 ease;
+
+            @include media ("<tablet") {
+                font-size: 0;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5px;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: $green;
+        transition: all 0.3s ease;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        &:hover {
+            background: $blue;
+        }
+
+        svg {
+            fill: $white;
+            margin-top: 5px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
 .header_content {
     display: flex;
     align-items: center;
@@ -263,93 +350,6 @@ header {
         margin-left: 20px;
     }
 
-    .search {
-
-        form {
-            display: flex;
-            align-items: center;
-
-        }
-
-        input {
-            position: relative;
-            border: 1px solid #E6E8EC;
-            border-radius: 62px;
-            padding: 9px 15px;
-            outline: none;
-            @include adaptiv-vaule("width", 312, 20, 1);
-            z-index: 2;
-
-            @include media ("<tablet") {
-                width: 40px;
-                height: 40px;
-                padding: 0;
-                transition: background 0.5s ease, width 0s ease;
-                background: $green url(../images/Header/search_icon.svg) center no-repeat;
-            }
-
-            &:focus {
-                border: 1px solid $blue;
-
-                @include media ("<tablet") {
-                    transition: width 0.5s ease;
-                    position: absolute;
-                    width: 220px;
-                    background: transparent;
-                    padding: 0 15px;
-                    right: 45px;
-
-                    &::placeholder {
-                        font-size: 12px;
-                    }
-                }
-
-                @include media ("<550px") {
-                    width: 100%;
-                    bottom: -50px;
-                    right: 0;
-                }
-            }
-
-            &::placeholder {
-                font-size: 14px;
-                transition: all 0 ease;
-
-                @include media ("<tablet") {
-                    font-size: 0;
-                }
-            }
-        }
-
-        button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 5px;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: $green;
-            transition: all 0.3s ease;
-            z-index: 2;
-
-            @include media ("<tablet") {
-                display: none;
-            }
-
-            &:hover {
-                background: $blue;
-            }
-
-            svg {
-                fill: $white;
-                margin-top: 5px;
-                width: 16px;
-                height: 16px;
-            }
-        }
-    }
 
     .burger_menu {
         display: none;
