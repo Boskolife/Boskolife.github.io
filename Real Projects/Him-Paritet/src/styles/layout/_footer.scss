@@ -9,6 +9,7 @@ footer {
         width: 828.86px;
         height: 665.64px;
         transform: rotate(30deg);
+        z-index: 1;
 
         @include media ("<tablet") {
             display: none;
