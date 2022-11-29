@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
+        rel="stylesheet" />
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header.html
+        <main id="main">
+            <section class="prod_description">
+                <div class="cont">
+                    <div class="bread_crumb"></div>
+                    <div class="prod_description_content">
+                        <div class="prod_description_img">
+                            <img class="ibg" src="./images/production_description/prod_img.jpg"
+                                alt="image not found">
+                        </div>
+                        <div class="prod_description_body">
+                            <h2 class="prod_description_body_title">Барій сірчанокислий</h2>
+                            <p class="category_name"><span>Категорія:</span> Лакофарбова продукція
+                                та розчинники</p>
+                            <p class="category_name"><span>Формула:</span> BaSO4</p>
+                            <h3 class="product_description_title">Опис</h3>
+                            <p class="product_description">
+                                Барій сірчанокислий (сульфат барію) – є неорганічним з’єднанням, має
+                                молекулярну формулу BaSO4. У природному середовищі він знаходиться в
+                                мінеральному бариті.
+                                Барій сірчанокислий зовні виглядає як кристалічний порошок, не має
+                                запаху, не розчиняється у воді.
+                                Осаджений сульфат барію широко застосовується в таких галузях, як
+                                лакофарбові покриття, пігменти, папір, пластик, гума, чорнило,
+                                шкіра, кераміка і т. д. Завдяки своїй чистоті, низькому
+                                маслопоглинанню, високій температурі горіння, нерозчинності у воді,
+                                точному значенню pH і більш тривалому терміну придатності,
+                                нетоксичності і ефективності він знаходить досить широке
+                                застосування в різних сферах. Щоб гарантувати якість, осаджений
+                                сульфат барію проходить строгі випробування за певними параметрами.
+                                Осаджений сульфат барію являє собою синтетичний сульфат барію,
+                                осаджений з певним розміром частинок. Ці продукти можуть бути
+                                ефективно використані для промислових фарб, емалей і пластмас, а
+                                також можуть бути успішно використані в клеях, покриттях і
+                                герметиках.
+                            </p>
+                            <h3 class="product_use_title">Застосування</h3>
+                            <ul class="use_list">
+                                <li class="use_item">Як білий пігмент захисного покриття, відомого як «літопон»;</li>
+                                <li class="use_item">В поєднанні з сульфідом натрію його використовують для отримання дрібних частинок пігменту однакового розміру, відомих як «блан фікс»;</li>
+                                <li class="use_item">Як наповнювач в автомобільних фарбах, пластмасах та гумових виробах;</li>
+                                <li class="use_item">Cульфат барію використовують для виробництва інших солей барію;</li>
+                                <li class="use_item">сульфат барію при змішуванні з іншими компонентами використовують як білий пігмент для фарби.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <div class="cont">
+                    <div class="contact_content">
+                        <div class="contact_links">
+                            <h3 class="contact_links_title">Зверніться до нас,
+                                щоб дізнатися <i class="blue_word">більше.</i>
+                            </h3>
+                            <a class="link_text" href="tel:">
+                                <i class="link_img">
+                                    <img src="./images/contact/phone.svg" alt="image not found">
+                                </i>
+                                +38 (098) 026-72-71
+                            </a>
+                            <a class="link_text" href="tel:">
+                                <i class="link_img">
+                                    <img src="./images/contact/phone.svg" alt="image not found">
+                                </i>
+                                +38 (099) 190-05-97
+                            </a>
+                            <a class="link_text" href="tel:">
+                                <i class="link_img">
+                                    <img src="./images/contact/location.svg" alt="image not found">
+                                </i>
+                                Україна , м. Харків, пров. Микитинський.33
+                            </a>
+                        </div>
+                        <form class="form" action="#" method="get">
+                            <h4 class="form_title">Напишіть нам</h4>
+                            <div class="areas">
+                                <div class="name">
+                                    <label for="name">Ім'я*</label>
+                                    <input id="name" type="text" required>
+                                </div>
+                                <div class="subname">
+                                    <label for="subname">Фамілія*</label>
+                                    <input id="subname" type="text" required>
+                                </div>
+                            </div>
+                            <label for="mail">Email*</label>
+                            <input id="mail" type="email" required>
+                            <label for="message">Ваше Повідомлення</label>
+                            <textarea id="message" name="message"></textarea>
+                            <button type="submit">Подзвонити нам</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
+
+</html>

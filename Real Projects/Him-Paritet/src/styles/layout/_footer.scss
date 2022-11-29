@@ -72,6 +72,8 @@ footer {
                 }
 
                 .sub-menu {
+                    top: 17px;
+                    left: 0;
                     max-height: 500px;
                     opacity: 1;
                     visibility: visible;
@@ -84,15 +86,18 @@ footer {
     }
 
     .sub-menu {
-        position: static;
-        max-height: 0;
+        position: absolute;
+        top: 100%;
+        left: -10px;
+        padding-top: 15px;
+        transition: all 0.7s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         visibility: hidden;
-        transition: all .7s ease 0s;
-        opacity: 0;
         pointer-events: none;
-        text-align: center;
-        padding: 0;
-
+        opacity: 0;
+        z-index: 0;
 
         @include media('<tablet') {
             position: static;
@@ -124,7 +129,6 @@ footer {
 
     .link {
         color: $white;
-        white-space: nowrap;
 
         &:hover {
             color: $blue;
