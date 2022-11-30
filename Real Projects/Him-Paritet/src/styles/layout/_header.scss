@@ -1,27 +1,29 @@
 header {
-    padding: 35px 0;
-    @include adaptiv-vaule("padding-top", 35, 10, 1);
-    @include adaptiv-vaule("padding-bottom", 35, 10, 1);
+    @include adaptiv-vaule("padding-top", 25, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 10, 1);
     position: relative;
-    z-index: 5;
+    z-index: 1;
     width: 100%;
+    background: #F4FBF7;
 }
 
 .search {
-    position: relative;
+
+    /*  position: relative; */
     form {
         display: flex;
         align-items: center;
     }
 
     input {
-     
+        position: relative;
         border: 1px solid #E6E8EC;
         border-radius: 62px;
         padding: 9px 15px;
         outline: none;
+        background: transparent;
         @include adaptiv-vaule("width", 312, 20, 1);
-        z-index: 4;
+        z-index: 1;
 
         @include media ("<tablet") {
             width: 40px;
@@ -47,9 +49,9 @@ header {
                 }
             }
 
-            @include media ("<550px") {
+            @include media ("<phone_max") {
                 width: 100%;
-                bottom: -50px;
+                bottom: -53px;
                 right: 0;
             }
         }
@@ -99,11 +101,10 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 
     .logo {
         margin-right: 15px;
-        z-index: 2;
         max-width: 240px;
         width: 100%;
         position: relative;
@@ -163,25 +164,28 @@ header {
     }
 
     .nav {
+        display: flex;
+        align-items: center;
 
         @include media ("<tablet") {
             position: fixed;
-            display: flex;
-            align-items: center;
             justify-content: center;
+            height: 100vh;
             top: 0;
             right: -100%;
             width: 50%;
-            background: rgba(255, 255, 255, 0.8);
-            height: 100vh;
+            background: $white;
             transition: all 0.3s ease;
-            padding: 70px 50px 30px 50px;
-            overflow: auto;
+            z-index: 2;
+            @include adaptiv-vaule("padding-top", 70, 50, 1);
+            @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+            @include adaptiv-vaule("padding-right", 30, 10, 1);
+            @include adaptiv-vaule("padding-left", 30, 10, 1);
+        
         }
 
         @include media ("<phone_max") {
             width: 100%;
-            padding: 70px 20px 20px 30px;
         }
     }
 
@@ -191,10 +195,11 @@ header {
 
         @include media ("<tablet") {
             width: 100%;
+            height: 100%;
             flex-direction: column;
-            justify-content: center;
             align-items: flex-start;
-            text-align: center;
+            justify-content: center;
+            overflow: scroll;
         }
 
         @include media ("<phone_max") {
@@ -211,16 +216,21 @@ header {
         justify-content: center;
         width: 25px;
         height: 25px;
+        z-index: 1;
 
         @include media ("<tablet") {
-            top: 0;
-            right: -25px;
+           top: 15px;
+            right: 0;
         }
 
         svg {
             transition: all .7s ease;
             position: relative;
             z-index: -1;
+
+            path {
+                z-index: -1;
+            }
         }
     }
 
@@ -236,13 +246,19 @@ header {
     .menu-item {
         position: relative;
         margin-right: 50px;
+        text-align: start;
+
 
         @include media ("<desktop") {
             margin-right: 15px;
         }
 
         @include media ("<tablet") {
-            margin: 0 0 15px 0;
+            padding: 15px 0;
+            border-top: 1px solid #EDEDED;
+            width: 80%;
+            text-align: center;
+            margin: 0;
         }
 
         @include media (">=tablet") {
@@ -267,9 +283,24 @@ header {
             }
         }
 
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            @include media ("<tablet") {
+                border-bottom: 1px solid #EDEDED;
+            }
+        }
+
+
         .link {
             transition: all 0.3s ease;
             font-size: 14px;
+            text-transform: capitalize;
+
 
             @include media ("<tablet") {
                 font-size: 20px;
@@ -280,9 +311,6 @@ header {
             }
         }
 
-        &:last-child {
-            margin-right: 0;
-        }
     }
 
     .menu-item_active {
@@ -322,9 +350,11 @@ header {
         pointer-events: none;
         opacity: 0;
         z-index: 0;
-        background: $white;
+        background: #F4FBF7;
         border-radius: 10px;
-        padding:10px;
+        padding: 10px;
+        text-align: start;
+
 
 
         @include media('<tablet') {
@@ -336,11 +366,14 @@ header {
             pointer-events: none;
             text-align: center;
             padding: 0;
+            background: transparent;
         }
     }
 
     .sub-item {
         margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
 
         &:last-child {
             margin-bottom: 0;

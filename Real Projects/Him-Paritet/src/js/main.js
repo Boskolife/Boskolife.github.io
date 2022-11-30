@@ -10,6 +10,8 @@ if (burger) {
   });
 };
 
+
+
 if (linkClose.length) {
   for(var i =0;i<linkClose.length;++i){
     linkClose[i].addEventListener("click", function (e) {

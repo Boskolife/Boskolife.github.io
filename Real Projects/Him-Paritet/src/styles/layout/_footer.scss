@@ -111,6 +111,16 @@ footer {
         }
     }
 
+    .sub-item {
+        margin-bottom: 10px;
+        text-align: start;
+        max-width: 130px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     .menu-item_active {
 
         @include media('<tablet') {
