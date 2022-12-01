@@ -1,15 +1,13 @@
 header {
     @include adaptiv-vaule("padding-top", 25, 10, 1);
     @include adaptiv-vaule("padding-bottom", 25, 10, 1);
-    position: relative;
+    position: absolute;
     z-index: 2;
     width: 100%;
-    background: #F4FBF7;
+    background: $white;
 }
 
 .search {
-
-    /*  position: relative; */
     form {
         display: flex;
         align-items: center;
@@ -178,18 +176,14 @@ header {
             height: 100vh;
             top: 0;
             right: -100%;
-            width: 50%;
+            width: 100%;
             background: $white;
             transition: all 0.3s ease;
             z-index: 2;
-            @include adaptiv-vaule("padding-top", 70, 70, 1);
+            padding-top: 50px;
             @include adaptiv-vaule("padding-bottom", 30, 15, 1);
             @include adaptiv-vaule("padding-right", 30, 10, 1);
             @include adaptiv-vaule("padding-left", 30, 10, 1);
-        }
-
-        @include media ("<phone_max") {
-            width: 100%;
         }
     }
 
@@ -203,7 +197,6 @@ header {
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            overflow: auto;
         }
 
         @include media ("<phone_max") {
@@ -214,23 +207,18 @@ header {
     .arrow {
         position: absolute;
         top: 2px;
-        right: -8px;
+        right: -1px;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 16px;
-        height: 16px;  
+        height: 16px;
 
         @include media ("<tablet") {
-            top: 15px;
-            right: 120px;
             width: 25px;
             height: 25px;
         }
 
-         @include media ("<phone") {
-            right: 20px;
-        }
 
         svg {
             transition: all .7s ease;
@@ -247,9 +235,12 @@ header {
 
     .control {
         margin-right: 10px;
+        max-width: 200px;
+        margin: 0 auto;
+        position: relative;
 
-        @include media ("<tablet") {
-            margin: 0;
+        .link{
+            margin-right: 15px;
         }
     }
 
@@ -257,17 +248,17 @@ header {
     .menu-item {
         position: relative;
         margin-right: 50px;
-        text-align: start;
+        text-align: center;
 
         @include media ("<desktop") {
             margin-right: 15px;
         }
 
         @include media ("<tablet") {
+            width: 100%;
             padding: 15px 0;
             border-top: 1px solid #EDEDED;
-            text-align: start;
-            margin: 0;
+            margin-right: 0;
         }
 
         @include media (">=tablet") {
@@ -360,7 +351,7 @@ header {
         visibility: hidden;
         pointer-events: none;
         opacity: 0;
-        background: #F4FBF7;
+        background: $white;
         border-radius: 10px;
         padding: 10px;
         text-align: start;
@@ -389,10 +380,6 @@ header {
         margin-bottom: 10px;
         text-align: start;
         width: 100%;
-
-        @include media ("<tablet") {
-            text-align: start;
-        }
 
         @include media ("<phone_max") {
             text-align: center;
@@ -475,5 +462,16 @@ header {
 
     .menu_active {
         right: 0;
+    }
+}
+
+.blue {
+    background: transparent;
+
+    .header_content {
+
+        .sub-menu {
+            background: #F4FBF7;
+        }
     }
 }
