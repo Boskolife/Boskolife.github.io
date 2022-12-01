@@ -59,6 +59,7 @@ header {
         &::placeholder {
             font-size: 14px;
             transition: all 0 ease;
+            color: #23262F;
 
             @include media ("<tablet") {
                 font-size: 0;

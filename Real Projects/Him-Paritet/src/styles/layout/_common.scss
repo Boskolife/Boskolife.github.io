@@ -121,7 +121,7 @@ body {
     }
 
     .main_title {
-        margin-bottom: 30px;
+        @include adaptiv-vaule("margin-bottom", 30, 25, 1);
     }
 
     .description {
@@ -168,8 +168,8 @@ body {
 
 .category {
     background: $black;
-    @include adaptiv-vaule("padding-top", 120, 30, 1);
-    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
+    @include adaptiv-vaule("padding-top", 120, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 70, 1);
     position: relative;
     overflow: hidden;
 
@@ -214,7 +214,7 @@ body {
     }
 
     .category_title {
-        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        margin-bottom: 50px;
         color: $white;
     }
 
@@ -272,17 +272,16 @@ body {
     .card_text {
         transition: all 0.3s ease;
         color: $white;
-        @include adaptiv-vaule("font-size", 22, 18, 1);
+        line-height: 28 / 22 * 100%;
+        @include adaptiv-vaule("font-size", 22, 20, 1);
     }
-
-
 }
 
 /* ------------------- About_us ---------------- */
 
 .about_us {
-    @include adaptiv-vaule("padding-top", 140, 30, 1);
-    @include adaptiv-vaule("padding-bottom", 70, 30, 1);
+    @include adaptiv-vaule("padding-top", 140, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 70, 35, 1);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -345,7 +344,7 @@ body {
         color: $gray_1;
         max-width: 800px;
         margin: 0 auto;
-        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 40, 1);
         @include adaptiv-vaule("font-size", 18, 15, 1);
 
         @include media ("<phone") {
@@ -365,7 +364,7 @@ body {
 /* ------------------- Experts ---------------- */
 
 .experts {
-    @include adaptiv-vaule("padding-top", 70, 30, 1);
+    @include adaptiv-vaule("padding-top", 70, 35, 1);
     @include adaptiv-vaule("padding-bottom", 140, 70, 1);
     text-align: center;
 
@@ -373,7 +372,7 @@ body {
     .experts_title {
         max-width: 850px;
         margin: 0 auto;
-        @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+        @include adaptiv-vaule("margin-bottom", 60, 40, 1);
     }
 
     .services {
@@ -618,11 +617,12 @@ body {
         }
     }
 
-    .item_text {
+    .description {
         color: $white;
         text-transform: uppercase;
         font-weight: 600;
         text-align: start;
+        font-size: 20px;
 
         @include media ("<widescreen") {
             font-size: 18px;
@@ -642,7 +642,7 @@ body {
     text-align: center;
 
     .trust_partners_title {
-        @include adaptiv-vaule("margin-bottom", 50, 35, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 45, 1);
     }
 
     .trust_partners_logo_wrap {
@@ -781,7 +781,7 @@ body {
         font-size: 18px;
         line-height: 30 / 18 * 100%;
         margin: 0 auto;
-        margin-bottom: 30px;
+        @include adaptiv-vaule("margin-bottom", 30, 25, 1);
 
         @include media ("<tablet") {
             font-size: 16px;
@@ -792,8 +792,8 @@ body {
 /* ------------------- Contact ---------------- */
 
 .contact {
-    @include adaptiv-vaule("padding-top", 140, 70, 1);
-    @include adaptiv-vaule("padding-bottom", 70, 70, 1);
+    @include adaptiv-vaule("padding-top", 115, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 70, 1);
 
     .contact_content {
         display: flex;
@@ -819,7 +819,7 @@ body {
     }
 
     .contact_links_title {
-        @include adaptiv-vaule("font-size", 42, 22, 1);
+        @include adaptiv-vaule("font-size", 48, 30, 1);
         @include adaptiv-vaule("margin-bottom", 70, 20, 1);
     }
 
@@ -830,6 +830,11 @@ body {
         color: $gray_1;
         max-width: min-content;
         white-space: nowrap;
+
+        @include media ("<phone") {
+            white-space: normal;
+            max-width: 100%;
+        }
 
         &:not(:last-child) {
             margin-bottom: 15px;
@@ -846,6 +851,10 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include media ("<phone") {
+                min-width: 30px;
+            }
 
             img {
                 width: 13px;
@@ -875,7 +884,7 @@ body {
         background: #FFFFFF;
         box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
         @include adaptiv-vaule("padding-top", 40, 30, 1);
-        @include adaptiv-vaule("padding-bottom", 40, 30, 1);
+        padding-bottom: 30px;
         @include adaptiv-vaule("padding-right", 40, 20, 1);
         @include adaptiv-vaule("padding-left", 40, 20, 1);
 
@@ -1031,7 +1040,7 @@ body {
             background: #FFFFFF;
             border-top: 1px solid #EDEDED;
         }
-       
+
     }
 
     .tabs_menu {
@@ -1072,7 +1081,7 @@ body {
             transition: all 1s ease;
 
             @include media ("<tablet") {
-                right:99.5%;
+                right: 99.5%;
             }
         }
 
@@ -1139,7 +1148,7 @@ body {
         width: 75%;
         position: relative;
 
-     /*    &::after {
+        /*    &::after {
             position: absolute;
             content: '';
             top: -1px;
@@ -1161,7 +1170,7 @@ body {
             padding-right: 0;
             padding-top: 20px;
 
-        /*     &::before {
+            /*     &::before {
                 position: absolute;
                 content: '';
                 top: 0;
@@ -1221,7 +1230,7 @@ body {
                     font-size: 14px;
                 }
 
-                &:focus{
+                &:focus {
                     position: static;
                     border: 1px solid $blue;
                 }
@@ -1232,7 +1241,7 @@ body {
                 align-items: center;
                 justify-content: center;
 
-                svg{
+                svg {
                     margin: 0;
                 }
             }
@@ -1405,14 +1414,14 @@ body {
     }
 
     .prod_description_body_title {
-        @include adaptiv-vaule("font-size", 32, 22, 1);
+        @include adaptiv-vaule("font-size", 32, 20, 1);
         color: $blue;
         margin-bottom: 20px;
     }
 
     .category_name {
         color: $black;
-        font-size: 14px;
+        @include adaptiv-vaule("font-size", 14, 12, 1);
         letter-spacing: -0.01em;
         font-weight: 500;
         margin-bottom: 10px;
@@ -1428,7 +1437,7 @@ body {
 
     .product_description_title,
     .product_use_title {
-        @include adaptiv-vaule("font-size", 20, 18, 1);
+        @include adaptiv-vaule("font-size", 20, 16, 1);
         margin-bottom: 15px;
     }
 
