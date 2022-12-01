@@ -2,7 +2,7 @@ header {
     @include adaptiv-vaule("padding-top", 25, 10, 1);
     @include adaptiv-vaule("padding-bottom", 25, 10, 1);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     background: #F4FBF7;
 }
@@ -110,6 +110,10 @@ header {
         width: 100%;
         position: relative;
 
+        @include media ("<phone") {
+            width: 168px;
+        }
+
         .elem {
             position: absolute;
             top: -3px;
@@ -178,11 +182,10 @@ header {
             background: $white;
             transition: all 0.3s ease;
             z-index: 2;
-            @include adaptiv-vaule("padding-top", 70, 50, 1);
+            @include adaptiv-vaule("padding-top", 70, 70, 1);
             @include adaptiv-vaule("padding-bottom", 30, 15, 1);
             @include adaptiv-vaule("padding-right", 30, 10, 1);
             @include adaptiv-vaule("padding-left", 30, 10, 1);
-        
         }
 
         @include media ("<phone_max") {
@@ -200,7 +203,7 @@ header {
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            overflow: scroll;
+            overflow: auto;
         }
 
         @include media ("<phone_max") {
@@ -210,24 +213,31 @@ header {
 
     .arrow {
         position: absolute;
-        top: -2px;
-        right: -13px;
+        top: 2px;
+        right: -8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 25px;
-        height: 25px;
-        z-index: 1;
+        width: 16px;
+        height: 16px;  
 
         @include media ("<tablet") {
-           top: 15px;
-            right: 0;
+            top: 15px;
+            right: 120px;
+            width: 25px;
+            height: 25px;
+        }
+
+         @include media ("<phone") {
+            right: 20px;
         }
 
         svg {
             transition: all .7s ease;
             position: relative;
             z-index: -1;
+            width: 100%;
+            height: 100%;
 
             path {
                 z-index: -1;
@@ -249,7 +259,6 @@ header {
         margin-right: 50px;
         text-align: start;
 
-
         @include media ("<desktop") {
             margin-right: 15px;
         }
@@ -257,8 +266,7 @@ header {
         @include media ("<tablet") {
             padding: 15px 0;
             border-top: 1px solid #EDEDED;
-            width: 80%;
-            text-align: center;
+            text-align: start;
             margin: 0;
         }
 
@@ -280,12 +288,14 @@ header {
                     visibility: visible;
                     pointer-events: all;
                     opacity: 1;
+                    z-index: 5;
                 }
             }
         }
 
-        @include media ("<phone") {
+        @include media ("<phone_max") {
             width: 100%;
+            text-align: center;
         }
 
         &:last-child {
@@ -324,7 +334,7 @@ header {
                 visibility: visible;
                 pointer-events: auto;
                 transition: all 0.5s ease 0s;
-                text-align: center;
+                text-align: start;
                 margin: 20px 0 0 0;
             }
 
@@ -350,12 +360,12 @@ header {
         visibility: hidden;
         pointer-events: none;
         opacity: 0;
-        z-index: 0;
         background: #F4FBF7;
         border-radius: 10px;
         padding: 10px;
         text-align: start;
-
+        width: 200px;
+        z-index: 3;
 
 
         @include media('<tablet') {
@@ -365,16 +375,28 @@ header {
             transition: all .7s ease 0s;
             opacity: 0;
             pointer-events: none;
-            text-align: center;
             padding: 0;
             background: transparent;
+            width: 100%;
+        }
+
+        @include media ("<phone_max") {
+            text-align: center;
         }
     }
 
     .sub-item {
         margin-bottom: 10px;
-        text-align: center;
+        text-align: start;
         width: 100%;
+
+        @include media ("<tablet") {
+            text-align: start;
+        }
+
+        @include media ("<phone_max") {
+            text-align: center;
+        }
 
         &:last-child {
             margin-bottom: 0;

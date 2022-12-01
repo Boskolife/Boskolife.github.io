@@ -86,11 +86,9 @@ footer {
     }
 
     .sub-menu {
-        position: absolute;
-        top: 100%;
-        left: -10px;
+        max-height: 0;
         padding-top: 15px;
-        transition: all 0.7s ease;
+        transition: all .7s ease;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -98,16 +96,9 @@ footer {
         pointer-events: none;
         opacity: 0;
         z-index: 0;
+        position: static;
 
         @include media('<tablet') {
-            position: static;
-            max-height: 0;
-            visibility: hidden;
-            transition: all .7s ease 0s;
-            opacity: 0;
-            pointer-events: none;
-            text-align: center;
-            padding: 0;
         }
     }
 
