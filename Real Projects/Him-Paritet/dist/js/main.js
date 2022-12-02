@@ -6,6 +6,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+// Burger
 var burger = document.querySelector(".burger_menu");
 var menuBody = document.querySelector(".nav");
 var linkClose = document.querySelectorAll(".link-close");
@@ -30,7 +31,33 @@ if (linkClose.length) {
   }
 }
 
+; // Category btn
+
+var category = document.querySelector(".category_btn");
+var tabsBody = document.querySelector(".tabs__nav");
+var tabClose = document.querySelectorAll(".tab-close");
+
+if (category) {
+  category.addEventListener("click", function (e) {
+    document.body.classList.add("body_lock");
+    category.classList.add("category_btn_active");
+    tabsBody.classList.add("tabs__nav_active");
+  });
+}
+
 ;
+
+if (tabClose.length) {
+  for (var i = 0; i < tabClose.length; ++i) {
+    tabClose[i].addEventListener("click", function (e) {
+      document.body.classList.remove("body_lock");
+      category.classList.remove("category_btn_active");
+      tabsBody.classList.remove("tabs__nav_active");
+    });
+  }
+}
+
+; // Click arrow
 
 window.onload = function () {
   document.addEventListener("click", documentActions);
@@ -41,6 +68,7 @@ window.onload = function () {
     if (window.innerWidth < 768) {
       if (targetElement.classList.contains('arrow')) {
         targetElement.closest('.menu-item').classList.toggle('menu-item_active');
+        targetElement.closest('.arrow').classList.toggle('arrow_open');
       }
     }
   }

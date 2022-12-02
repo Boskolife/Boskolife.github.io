@@ -2,7 +2,7 @@ header {
     @include adaptiv-vaule("padding-top", 25, 10, 1);
     @include adaptiv-vaule("padding-bottom", 25, 10, 1);
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     width: 100%;
     background: $white;
 }
@@ -210,7 +210,7 @@ header {
         right: -1px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         width: 16px;
         height: 16px;
 
@@ -219,6 +219,10 @@ header {
             height: 25px;
         }
 
+        @include media ("<phone") {
+            width: 50%;
+            justify-content: flex-end;
+        }
 
         svg {
             transition: all .7s ease;
@@ -227,9 +231,22 @@ header {
             width: 100%;
             height: 100%;
 
+            @include media ("<tablet") {
+                transform: rotate(-90deg);
+                width: 25px;
+                height: 25px;
+            }
+
             path {
                 z-index: -1;
             }
+        }
+
+        .tabs__nav_title {
+            color: $blue;
+            font-size: 24px;
+            display: none;
+            margin-left: 230px;
         }
     }
 
@@ -239,7 +256,11 @@ header {
         margin: 0 auto;
         position: relative;
 
-        .link{
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+
+        .link {
             margin-right: 15px;
         }
     }
@@ -269,7 +290,6 @@ header {
 
                     svg {
                         transform: rotate3d(1, 0, 0, 180deg);
-                        fill: $blue;
                     }
                 }
 
@@ -284,9 +304,9 @@ header {
             }
         }
 
-        @include media ("<phone_max") {
+        @include media ("<phone") {
             width: 100%;
-            text-align: center;
+            text-align: start;
         }
 
         &:last-child {
@@ -302,7 +322,6 @@ header {
             transition: all 0.3s ease;
             font-size: 14px;
             text-transform: capitalize;
-
 
             @include media ("<tablet") {
                 font-size: 20px;
@@ -320,22 +339,39 @@ header {
         @include media('<tablet') {
 
             .sub-menu {
-                max-height: 500px;
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
                 transition: all 0.5s ease 0s;
-                text-align: start;
-                margin: 20px 0 0 0;
+                text-align: center;
+                padding-top: 70px;
             }
+        }
+    }
 
-            .arrow {
+    .arrow_open {
+        position: fixed;
+        top: 15px;
+        left: 30px;
+        width: 40px;
+        height: 40px;
+        background: $blue;
+        border-radius: 50%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-                svg {
-                    transform: rotate3d(1, 0, 0, 180deg);
-                    fill: $blue;
-                }
+        svg {
+            transform: rotate(-90deg);
+
+            path {
+                fill: $white;
             }
+        }
+
+        .tabs__nav_title {
+            display: block;
         }
     }
 
@@ -360,19 +396,23 @@ header {
 
 
         @include media('<tablet') {
-            position: static;
-            max-height: 0;
             visibility: hidden;
             transition: all .7s ease 0s;
             opacity: 0;
             pointer-events: none;
             padding: 0;
-            background: transparent;
+            background: $white;
+            height: 100%;
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: flex-start;
         }
 
         @include media ("<phone_max") {
             text-align: center;
+
         }
     }
 
@@ -381,12 +421,53 @@ header {
         text-align: start;
         width: 100%;
 
-        @include media ("<phone_max") {
-            text-align: center;
+        @include media ("<tablet") {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+
+        svg {
+            display: none;
+
+            @include media ("<tablet") {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+
+                path {
+                    fill: $green;
+                }
+            }
+        }
+
+        &:first-child {
+            border-top: 1px solid #EDEDED;
+            padding-top: 20px;
         }
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        .link {
+
+            @include media ("<tablet") {
+                font-size: 14px;
+                font-weight: 600;
+                color: rgba(18, 17, 17, 0.8);
+                width: 100%;
+                padding: 0 10px 10px 30px;
+            }
         }
     }
 

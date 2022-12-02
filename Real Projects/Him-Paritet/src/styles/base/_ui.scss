@@ -93,3 +93,75 @@
     width: 60px;
     height: 60px;
 }
+
+.tabs__btn {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    @include adaptiv-vaule("padding-top", 7, 5, 1);
+    @include adaptiv-vaule("padding-bottom", 7, 5, 1);
+    @include adaptiv-vaule("padding-right", 30, 1, 1);
+    transition: all .3s ease;
+    position: relative;
+
+    &:not(:last-child){
+        margin-bottom: 30px;
+    }
+
+    @include media ("<tablet") {
+        padding:0 30px;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: $green;
+        opacity: 0;
+        transition: all 1s ease;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            right: 99.5%;
+        }
+    }
+
+    svg {
+        @include adaptiv-vaule("margin-right", 20, 10, 1);
+        min-width: 24px;
+
+        path {
+            transition: all .3s ease;
+            fill: #D3D3D3;
+        }
+    }
+}
+
+.tab_text {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(18, 17, 17, 0.8);
+}
+
+.tabs__btn_active {
+    position: relative;
+
+    &::after {
+        opacity: 1;
+    }
+
+    svg {
+
+        path {
+            transition: all .3s ease;
+            fill: $green;
+        }
+    }
+
+    .tab_text {
+        color: $black;
+    }
+}
