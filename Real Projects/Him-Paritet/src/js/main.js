@@ -58,6 +58,7 @@ window.onload = function () {
       if (window.innerWidth < 768) {
           if (targetElement.classList.contains('arrow')) {
               targetElement.closest('.menu-item').classList.toggle('menu-item_active');
+              targetElement.closest('.arrow_tab_wrap').classList.toggle('arrow_tab_wrap_active');
               targetElement.closest('.arrow').classList.toggle('arrow_open');
           }
       }

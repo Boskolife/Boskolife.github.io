@@ -1,10 +1,13 @@
 header {
-    @include adaptiv-vaule("padding-top", 25, 10, 1);
-    @include adaptiv-vaule("padding-bottom", 25, 10, 1);
+    padding: 25px 0;
     position: absolute;
     z-index: 5;
     width: 100%;
     background: $white;
+
+    @include media ("<desktop") {
+        padding: 15px 0;
+    }
 }
 
 .search {
@@ -221,7 +224,6 @@ header {
 
         @include media ("<phone") {
             width: 50%;
-            justify-content: flex-end;
         }
 
         svg {
@@ -236,17 +238,6 @@ header {
                 width: 25px;
                 height: 25px;
             }
-
-            path {
-                z-index: -1;
-            }
-        }
-
-        .tabs__nav_title {
-            color: $blue;
-            font-size: 24px;
-            display: none;
-            margin-left: 230px;
         }
     }
 
@@ -349,25 +340,41 @@ header {
         }
     }
 
-    .arrow_open {
-        position: fixed;
-        top: 15px;
-        left: 30px;
-        width: 40px;
-        height: 40px;
-        background: $blue;
-        border-radius: 50%;
-        z-index: 5;
+    .arrow_tab_wrap{
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 5;
+
+        .tabs__nav_title {
+            color: $blue;
+            font-size: 24px;
+            display: none;
+        }
+    }
+
+    .arrow_tab_wrap_active{
+        position: fixed;
+        top: 15px;
+        left: 30px;
+
+        .tabs__nav_title{
+            display: block;
+        }
+    }
+
+    .arrow_open {
+        background: $blue;
+        border-radius: 50%;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        position: static;
+        margin-right: 15px;
 
         svg {
-            transform: rotate(-90deg);
-
-            path {
-                fill: $white;
-            }
+            transform: rotate(90deg);
+            fill: $white;
         }
 
         .tabs__nav_title {
@@ -425,6 +432,7 @@ header {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
+            padding-left: 30px;
 
             &:not(:last-child) {
                 margin-bottom: 20px;
@@ -442,7 +450,7 @@ header {
                 display: block;
                 width: 20px;
                 height: 20px;
-                margin-right: 10px;
+                margin: 3px 10px 0 0;
 
                 path {
                     fill: $green;
@@ -466,7 +474,7 @@ header {
                 font-weight: 600;
                 color: rgba(18, 17, 17, 0.8);
                 width: 100%;
-                padding: 0 10px 10px 30px;
+                padding: 0 10px 10px 0px;
             }
         }
     }
