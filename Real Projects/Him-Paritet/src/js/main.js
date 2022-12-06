@@ -13,7 +13,6 @@ if (burger) {
 };
 
 
-
 if (linkClose.length) {
   for(var i =0;i<linkClose.length;++i){
     linkClose[i].addEventListener("click", function (e) {
@@ -36,8 +35,6 @@ if (category) {
     tabsBody.classList.add("tabs__nav_active");
   });
 };
-
-
 
 if (tabClose.length) {
   for(var i =0;i<tabClose.length;++i){

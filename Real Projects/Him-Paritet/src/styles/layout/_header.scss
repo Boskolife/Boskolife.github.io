@@ -52,7 +52,7 @@ header {
 
             @include media ("<phone_max") {
                 width: 100%;
-                bottom: -53px;
+                bottom: -45px;
                 right: 0;
             }
         }
@@ -227,7 +227,7 @@ header {
         }
 
         svg {
-            transition: all .7s ease;
+            transition: all .7s ease fill 0s ease;
             position: relative;
             z-index: -1;
             width: 100%;
@@ -356,6 +356,7 @@ header {
     .arrow_tab_wrap_active{
         position: fixed;
         top: 15px;
+        @include adaptiv-vaule("top", 19, 15, 1);
         left: 30px;
 
         .tabs__nav_title{
@@ -446,33 +447,18 @@ header {
             justify-content: flex-start;
             padding-left: 30px;
 
+            &:first-child {
+                border-top: 1px solid #EDEDED;
+                padding-top: 20px;
+            }
+
             &:not(:last-child) {
-                margin-bottom: 20px;
+                margin-bottom: 10px;
             }
         }
 
         @include media ("<phone") {
             text-align: start;
-        }
-
-        svg {
-            display: none;
-
-            @include media ("<tablet") {
-                display: block;
-                width: 20px;
-                height: 20px;
-                margin: 3px 10px 0 0;
-
-                path {
-                    fill: $green;
-                }
-            }
-        }
-
-        &:first-child {
-            border-top: 1px solid #EDEDED;
-            padding-top: 20px;
         }
 
         &:last-child {
@@ -486,7 +472,24 @@ header {
                 font-weight: 600;
                 color: rgba(18, 17, 17, 0.8);
                 width: 100%;
-                padding: 0 10px 10px 0px;
+                display: flex;
+                align-items: center;
+                padding: 5px 0;
+            }
+
+            svg {
+                display: none;
+    
+                @include media ("<tablet") {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    margin: 3px 10px 0 0;
+    
+                    path {
+                        fill: #D3D3D3;
+                    }
+                }
             }
         }
     }
@@ -572,7 +575,11 @@ header {
     .header_content {
 
         .sub-menu {
-            background: #F4FBF7;
+            background-color: #F4FBF7;
+
+            @include media ("<tablet") {
+                background-color: $white;
+            }
         }
     }
 }
