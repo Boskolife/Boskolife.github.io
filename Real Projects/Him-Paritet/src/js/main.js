@@ -1,7 +1,9 @@
+
 // Burger
 const burger = document.querySelector(".burger_menu");
 const menuBody = document.querySelector(".nav");
 const linkClose = document.querySelectorAll(".link-close");
+
 if (burger) {
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");

@@ -364,17 +364,29 @@ header {
     }
 
     .arrow_open {
-        background: $blue;
-        border-radius: 50%;
         justify-content: center;
         width: 40px;
         height: 40px;
         position: static;
         margin-right: 15px;
 
+        &::after{
+            position:absolute;
+            content:'';
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $blue;
+            z-index: -2;
+        }
+
         svg {
             transform: rotate(90deg);
             fill: $white;
+            width: 30px;
+            height: 30px;
         }
 
         .tabs__nav_title {

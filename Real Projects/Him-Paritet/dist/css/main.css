@@ -1118,18 +1118,28 @@ header {
     .header_content .arrow_tab_wrap_active .tabs__nav_title {
       display: block; }
   .header_content .arrow_open {
-    background: #4079EE;
-    border-radius: 50%;
     -ms-flex-pack: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     position: static;
     margin-right: 15px; }
+    .header_content .arrow_open::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #4079EE;
+      z-index: -2; }
     .header_content .arrow_open svg {
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg);
-      fill: #FFFFFF; }
+      fill: #FFFFFF;
+      width: 30px;
+      height: 30px; }
     .header_content .arrow_open .tabs__nav_title {
       display: block; }
   .header_content .sub-menu {
