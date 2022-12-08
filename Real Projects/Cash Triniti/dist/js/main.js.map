@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["jQuery","greeting","console","log"],"mappings":";;AAAAA,MAAM,CAAC,YAAW;AACdC,EAAAA,QAAQ;AACX,CAFK,CAAN;;AAIA,IAAIA,QAAQ,GAAG,SAAXA,QAAW;AAAA,SAAMC,OAAO,CAACC,GAAR,CAAY,KAAZ,CAAN;AAAA,CAAf","sourcesContent":["jQuery(function() {\r\n    greeting();\r\n});\r\n \r\nlet greeting = () => console.log(\"Hi!\");"],"file":"main.js"}
