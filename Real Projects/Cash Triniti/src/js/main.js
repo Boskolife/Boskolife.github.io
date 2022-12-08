@@ -15,7 +15,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
         if (!sliderSelector.classList.contains("swiper-initialized")) {
           swiper = new Swiper(selector, init);
         }
-      } else if (sliderSelector.classList.contains("swiper-initialized")) {
+      } else if (sliderSelector?.classList.contains("swiper-initialized")) {
         swiper.destroy();
       }
     };
@@ -32,4 +32,33 @@ destroySlidersOnResize(".me-slider", 960, {
       el: ".swiper-pagination",
     },
 });
-  
+
+initCustomSlider();
+
+function initCustomSlider() {
+  const form = document.querySelector("#investForm");
+  const sliderWrap = document.querySelector(".invest-range");
+  const htmlRange = sliderWrap.querySelector('input[type="range"]');
+  const slider = form.querySelector("#slider");
+  const result = form.querySelector("#sliderResult");
+
+  const formatNumber = (number) => Number(number).toFixed();
+
+  noUiSlider.create(slider, {
+    start: 0,
+    connect: true,
+    range: {
+      min: 0,
+      max: 2000,
+    },
+    tooltips: {
+      to: (num) => `$ ${formatNumber(num)}`,
+    },
+  });
+
+  slider.noUiSlider.on("update", (event) => {
+    const value = event[0];
+    htmlRange.value = value;
+    result.textContent = `$ ${formatNumber(value)}`;
+  });
+}

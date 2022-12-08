@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Title</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/nouislider.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -18,7 +20,18 @@
             <section class="main-section">
                 <div class="container">
                     <div class="content">
-
+                        <section>
+                            <form id="investForm">
+                                <div class="invest-range">
+                                    <input type="range" min="0" max="2000">
+                                    <div id="slider"></div>
+                                </div>
+                                <div>
+                                    I want to invest
+                                    <span id="sliderResult"></span>
+                                </div>
+                            </form>
+                        </section>
                     </div>
                 </div>
             </section>
