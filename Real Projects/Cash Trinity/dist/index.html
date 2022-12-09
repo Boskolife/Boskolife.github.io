@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:regular,700" rel="stylesheet" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./js/nouislider.min.js" defer></script>
     <script src="./js/main.js" defer></script>
     <script src="./js/circletype.min.js"></script>
 </head>
@@ -26,7 +27,7 @@
                         <ul class="nav_menu">
                             <li class="menu_item"> <a class="link" href="#lending">Why private lending?</a></li>
                             <li class="menu_item"> <a class="link" href="#work">How it works</a></li>
-                            <li class="menu_item"> <a class="link" href="#">Invest now</a></li>
+                            <li class="menu_item"> <a class="link" href="#form_tab">Invest now</a></li>
                             <li class="menu_item"> <a class="link" href="#">Compound Interest calculator</a></li>
                         </ul>
                     </nav>
@@ -301,6 +302,67 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section id="form_tab" class="form">
+                <div class="cont">
+                    <span class="tip">Invest now</span>
+                    <h2 class="form_title">
+                        Please, provide us the your investment information and we will contact you back and get started!
+                    </h2>
+                    <form id="investForm">
+                        <p class="input_title" for="time_in">Would you like to invest</p>
+                        <div id="time_in" class="time_invest">
+                            <div class="check_wrap">
+                                <input id="check_1" class="check" type="radio">
+                                <label for="check_1">Once</label>
+                            </div>
+                            <div class="check_wrap">
+                                <input id="check_2" class="check" type="radio">
+                                <label for="check_2">Weekly</label>
+                            </div>
+                            <div class="check_wrap">
+                                <input id="check_3" class="check" type="radio"> 
+                                <label for="check_3">Monthly</label>
+                            </div>
+                            <div class="check_wrap">
+                                <input id="check_4" class="check" type="radio"> 
+                                <label for="check_4">Annually</label>
+                            </div>
+                        </div>
+                        <div class="invest-range">
+                            <input class="range" type="range" min="5" max="2000">
+                            <div class="custom_range" id="slider"></div>
+                        </div>
+                        <div class="invest_result">
+                            <p class="invest_tip">I want to invest</p>
+                            <span id="sliderResult"></span>
+                        </div>
+                        <p class="input_title" for="time_out">How often would you like to get your interest paid out?</p>
+                        <div id="time_out" class="time_invest">
+                            <div class="check_wrap time_wrap">
+                                <input id="check_5" class="check" type="radio"> 
+                                <label for="check_5">Monthly</label>
+                            </div>
+                            <div class="check_wrap time_wrap">
+                                <input id="check_6" class="check" type="radio"> 
+                                <label for="check_6">Annually</label>
+                            </div>
+                            <div class="check_wrap time_wrap">
+                                <input id="check_7" class="check" type="radio"> 
+                                <label for="check_7">Compound Interest</label>
+                            </div>
+                        </div>
+                        <div class="user_data">
+                            <label for="name">Full Name*</label>
+                            <input id="name" class="username input_data" type="text" required>
+                            <label for="mail">Email address*</label>
+                            <input class="user_mail input_data" type="email" required>
+                            <label for="text">your message</label>
+                            <textarea id="text" class="textarea input_data"></textarea>
+                            <input type="submit" value="Send now" class="btn_from">
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>

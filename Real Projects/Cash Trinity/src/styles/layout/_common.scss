@@ -1,9 +1,8 @@
-
-body{
+body {
     background-color: #F8F9FB;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -264,6 +263,215 @@ html{
     }
 }
 
-.second_slider{
+.second_slider {
     background-color: $white;
+}
+
+// ---------- Form
+
+
+.form {
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+    text-align: center;
+
+    .tip {
+        color: $blue;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .form_title {
+        max-width: 740px;
+        margin: 0 auto;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 48 / 40 * 100%;
+        @include adaptiv-vaule("font-size", 40, 28, 1);
+        @include adaptiv-vaule("margin-bottom", 55, 40, 1);
+    }
+
+    form {
+        text-align: start;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .input_title {
+        color: $gray;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .time_invest {
+        margin: 20px 0 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include media ("<phone_max") {
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    .check_wrap {
+        width: 19%;
+
+        @include media ("<phone_max") {
+            width: 35%;
+        }
+
+        &:not(:last-child) {
+            margin-right: 40px;
+
+            @include media ("<phone_max") {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .check {
+        margin-right: 10px;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        &:checked+label {
+
+            &::before {
+                background-color: transparent;
+                background: url(../images/form/tick.svg) center no-repeat;
+            }
+        }
+    }
+
+    .check+label {
+        display: inline-flex;
+        align-items: center;
+
+        &::before {
+            left: 0;
+            top: 0;
+            content: '';
+            width: 24px;
+            height: 24px;
+            border: 2px solid #E6E8EC;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+
+    label {
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .invest-range {
+        margin-bottom: 25px;
+        background: #FFFFFF;
+        border: 1px solid #E6E8EC;
+        border-radius: 24px;
+        padding:44px 32px;
+        width: 100%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+
+        @include media ("<tablet") {
+            padding: 30px 20px;
+        }
+    }
+
+    .range {
+        display: none;
+    }
+
+    .invest_result {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .invest_tip {
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: $gray;
+    }
+
+    .time_wrap {
+        width: 28%;
+
+        @include media ("<tablet") {
+            width: 40%;
+            margin-bottom: 20px;
+
+            &:nth-child(3) {
+                width: 90%;
+            }
+        }
+    }
+
+    #sliderResult {
+        color: $blue;
+        font-weight: 600;
+        font-size: 28px;
+    }
+
+    .user_data {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-top: 2px solid #E6E8EC;
+        padding-top: 30px;
+
+        label {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: $gray;
+        }
+
+        .input_data {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            background: #FFFFFF;
+            border: 1px solid #E6E8EC;
+            height: 50px;
+            padding: 5px 10px;
+            font-size: 14px;
+
+            &:focus{
+                border: 1px solid #4A97FF;
+            }
+        }
+
+        .textarea{
+            height: 120px;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        .btn_from {
+            background-color: $blue;
+            border-radius: 12px;
+            padding: 13px;
+            border: none;
+            color: $white;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all .3s ease;
+
+            &:hover{
+                background-color: #0C43C8;
+            }
+
+            &:disabled{
+                background-color: #A8C2FF;
+            }
+        }
+
+    }
 }

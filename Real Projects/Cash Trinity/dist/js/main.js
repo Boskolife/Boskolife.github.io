@@ -75,4 +75,36 @@ if (linkClose.length) {
 
 ;
 new CircleType(document.getElementById('simple_arc'));
+initCustomSlider();
+
+function initCustomSlider() {
+  var form = document.querySelector("#investForm");
+  var sliderWrap = document.querySelector(".invest-range");
+  var htmlRange = sliderWrap.querySelector('input[type="range"]');
+  var slider = form.querySelector("#slider");
+  var result = form.querySelector("#sliderResult");
+
+  var formatNumber = function formatNumber(number) {
+    return Number(number).toFixed();
+  };
+
+  noUiSlider.create(slider, {
+    start: 5,
+    connect: true,
+    range: {
+      min: 0,
+      max: 2000
+    },
+    tooltips: {
+      to: function to(num) {
+        return "$ ".concat(formatNumber(num));
+      }
+    }
+  });
+  slider.noUiSlider.on("update", function (event) {
+    var value = event[0];
+    htmlRange.value = value;
+    result.textContent = "$ ".concat(formatNumber(value));
+  });
+}
 //# sourceMappingURL=main.js.map
