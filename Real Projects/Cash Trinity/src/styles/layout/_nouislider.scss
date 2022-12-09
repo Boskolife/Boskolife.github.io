@@ -390,11 +390,15 @@
   }
 
   .noUi-tooltip {
-    background: #3772FF;
-    color: #fff;
+    background: $blue;
+    color: $white;
     border-radius: 11px;
     padding: 6px 12px;
     font-weight: 600;
     font-size: 18px;
+  }
+
+  .noUi-connect {
+    background: $blue;
   }
 }

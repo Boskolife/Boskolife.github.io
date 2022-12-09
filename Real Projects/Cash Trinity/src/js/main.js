@@ -84,7 +84,7 @@ function initCustomSlider() {
 
   noUiSlider.create(slider, {
     start: 5,
-    connect: true,
+    connect: 'lower',
     range: {
       min: 5,
       max: 2000,
