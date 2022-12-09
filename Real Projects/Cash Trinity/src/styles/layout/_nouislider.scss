@@ -360,6 +360,8 @@
   width: 85%;
   margin: 0 auto;
   height: 8px;
+  border:none;
+  background-color: #E6E8EC;;
   position: relative;
 }
 
@@ -367,6 +369,7 @@
 .noUi-base {
   height: 8px;
   border-radius: 32px;
+  border:none;
 }
 
 .noUi-horizontal {

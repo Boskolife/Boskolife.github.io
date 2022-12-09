@@ -80,6 +80,7 @@ header {
 
         @include media ("<desktop") {
             width: 70%;
+            padding-left: 30px;
 
             &:not(:last-child) {
                 border-bottom: 1px solid #E6E8EC;
@@ -103,9 +104,6 @@ header {
             font-size: 28px;
         }
 
-        @include media ("<phone_max") {
-            padding-left: 30px;
-        }
 
         &:hover {
             text-shadow: 1px 1px 2px $white;

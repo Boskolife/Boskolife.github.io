@@ -92,7 +92,7 @@ function initCustomSlider() {
     start: 5,
     connect: true,
     range: {
-      min: 0,
+      min: 5,
       max: 2000
     },
     tooltips: {
