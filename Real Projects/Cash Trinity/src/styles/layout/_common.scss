@@ -1,0 +1,269 @@
+
+body{
+    background-color: #F8F9FB;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+// ---------- Main
+
+.main-section {
+    padding-top: 90px;
+    @include adaptiv-vaule("padding-bottom", 100, 65, 1);
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 0 0 32px 32px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%);
+
+    .circle_btn {
+        width: 162px;
+        height: 162px;
+        border-radius: 50%;
+        background: $blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $white;
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        font-size: 11px;
+        font-weight: 600;
+        animation: anim_circle_rotate 10s linear infinite;
+
+        &:hover {
+            animation-duration: 20s;
+        }
+
+        .btn_title {
+            position: absolute;
+        }
+    }
+
+    @keyframes anim_circle_rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .main_img_bg {
+        position: absolute;
+        min-width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .main-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .main_title {
+        width: 65%;
+        font-weight: 500;
+        font-size: 88px;
+        letter-spacing: -0.04em;
+        color: $white;
+        margin-right: 15px;
+
+        @include media ("<widescreen") {
+            font-size: 48px;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+            line-height: 126%;
+            margin: 0 0 100px 0;
+        }
+
+        @include media ("<phone") {
+            font-size: 36px;
+        }
+
+        span {
+            background: rgba(55, 114, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 13px;
+            transform: matrix(1, 0, 0, 1, 0, 0);
+            padding: 5px 10px;
+
+            @include media ("<tablet") {
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .description {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 25 / 20 * 100%;
+        letter-spacing: 1px;
+        color: $white;
+        text-align: right;
+        margin-top: 25px;
+
+        @include media ("<tablet") {
+            text-align: left;
+            margin: 0;
+        }
+    }
+}
+
+// ---------- Lending
+
+.lending {
+    padding: 130px 30px 130px 0;
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+    padding-right: 30px;
+
+    @include media ("<tablet") {
+        padding-right: 0;
+    }
+
+    .tip {
+        color: $blue;
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .lending_title {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 60, 29, 1);
+        margin-bottom: 80px;
+
+        @include media ("<desktop") {
+            margin-bottom: 55px;
+        }
+
+    }
+
+    .lending_slider {
+        position: relative;
+        max-height: 500px;
+
+        @include media ("<tablet") {
+            padding-bottom: 30px;
+            max-height: 100%;
+        }
+
+        .swiper-pagination-progressbar {
+            top: 50%;
+            left: 99%;
+            height: 80px;
+            width: 4px;
+            transform: translateY(-50%);
+            border-radius: 400px;
+            background-color: #E6E8EC;
+
+            @include media ("<tablet") {
+                top: 99%;
+                width: 100%;
+                height: 4px;
+                left: 0;
+            }
+        }
+
+        .swiper-pagination-progressbar-fill {
+            background-color: $blue;
+            border-radius: 400px;
+        }
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .slider_text {
+        width: 49%;
+        margin-right: 30px;
+
+        @include media ("<tablet") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .slider_number {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        letter-spacing: -0.01em;
+        font-family: 'DM Sans';
+        margin-bottom: 25px;
+
+        span {
+            color: $blue;
+        }
+    }
+
+    .slider_title {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 28, 20, 1);
+        margin-bottom: 15px;
+        padding-top: 25px;
+        border-top: 2px solid #E6E8EC;
+        display: inline-block;
+    }
+
+    .slider_description {
+        font-size: 14px;
+        color: $gray;
+        line-height: 24 / 14 * 100%;
+    }
+
+    .slider_img {
+        position: relative;
+        width: 39%;
+        margin-right: 30px;
+        height: 480px;
+        border-radius: 24px;
+        overflow: hidden;
+
+        @include media ("<tablet") {
+            width: 70%;
+            margin: 0 0 20px 0;
+            height: 350px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            height: 225px;
+        }
+    }
+}
+
+.second_slider{
+    background-color: $white;
+}
