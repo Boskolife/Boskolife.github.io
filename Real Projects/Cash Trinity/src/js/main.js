@@ -78,6 +78,7 @@ try {
   console.log("err: ", err);
 }
 
+initHeader();
 initCustomSlider();
 initChart();
 
@@ -107,6 +108,37 @@ function initCustomSlider() {
     const value = event[0];
     htmlRange.value = value;
     result.textContent = `$ ${formatNumber(value)}`;
+  });
+}
+
+function initHeader() {
+  const header = document.querySelector("#header");
+  const sections = [...document.querySelectorAll(".transparent-header")];
+
+  if (!header || !sections) return;
+
+  const sectionsPositions = sections.map((section) => {
+    const sectionStartPos = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionEnd = sectionStartPos + sectionHeight;
+    return {
+      start: sectionStartPos,
+      end: sectionEnd,
+    };
+  });
+
+  document.addEventListener("scroll", () => {
+    const currentScrollPosY = window.scrollY;
+
+    const isHeaderOverlaySection = sectionsPositions.find(
+      (pos) =>
+        currentScrollPosY >= pos.start &&
+        currentScrollPosY <= pos.end - header.offsetHeight
+    );
+
+    isHeaderOverlaySection
+      ? header.classList.add("transparent")
+      : header.classList.remove("transparent");
   });
 }
 

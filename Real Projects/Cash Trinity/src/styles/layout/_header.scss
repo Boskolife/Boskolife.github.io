@@ -4,6 +4,18 @@ header {
     position: fixed;
     z-index: 3;
     width: 100%;
+    background-color: $white;
+    color: $black;
+    transition: background-color .3s ease-out, color .3s ease-out;
+
+    &.transparent {
+        background-color: transparent;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
 }
 
 .header_content {
@@ -16,7 +28,6 @@ header {
         font-size: 33px;
         letter-spacing: -0.03em;
         text-transform: uppercase;
-        color: $white;
         z-index: 3;
         display: flex;
 
@@ -98,7 +109,6 @@ header {
         font-weight: 500;
         font-size: 18px;
         @include adaptiv-vaule("font-size", 18, 10, 1);
-        color: $white;
 
         @include media ("<desktop") {
             font-size: 28px;
