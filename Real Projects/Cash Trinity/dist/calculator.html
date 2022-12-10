@@ -10,12 +10,13 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:regular,700" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./js/highcharts.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
 <body>
     <div id="wrapper">
-        <header id="header">
+        <header id="header" class="transparent">
             <div class="cont">
                 <div class="header_content">
                     <a href="index.html" class="logo">Cash Trinity<span>.</span></a>
@@ -42,33 +43,33 @@
                             <div class="data_block">
                                 <form action="#">
                                     <p class="input_title">Investment:</p>
-                                    <input class="summ_area" type="text">
+                                    <input id="investmentInput" class="summ_area" type="text">
                                     <p class="input_title ">Would you like to invest</p>
                                     <div id="time_in" class="time_invest">
                                         <div class="check_wrap">
-                                            <input type="radio" checked id="check_1" class="check"
+                                            <input type="radio" checked id="onceRadio" class="check"
                                                 value="Once" name="invest">
-                                            <label for="check_1">Once</label>
+                                            <label for="onceRadio">Once</label>
                                         </div>
                                         <div class="check_wrap">
-                                            <input type="radio" id="check_2" class="check"
+                                            <input type="radio" id="weeklyRadio" class="check"
                                                 value="Weekly" name="invest">
-                                            <label for="check_2">Weekly</label>
+                                            <label for="weeklyRadio">Weekly</label>
                                         </div>
                                         <div class="check_wrap">
-                                            <input type="radio" id="check_3" class="check"
+                                            <input type="radio" id="monthlyRadio" class="check"
                                                 value="Monthly" name="invest">
-                                            <label for="check_3">Monthly</label>
+                                            <label for="monthlyRadio">Monthly</label>
                                         </div>
                                         <div class="check_wrap">
-                                            <input type="radio" id="check_4" class="check"
+                                            <input type="radio" id="annuallyRadio" class="check"
                                                 value="Annually" name="invest">
-                                            <label for="check_4">Annually</label>
+                                            <label for="annuallyRadio">Annually</label>
                                         </div>
                                     </div>
                                     <p class="input_title">Number of years: (max 50)</p>
                                     <div class="years">
-                                        <input class="summ_area" type="text">
+                                        <input id="numberOfYearsInput" class="summ_area" type="text">
                                         <div class="rate">
                                             <p class="input_title">Monthly interest rate</p>
                                             <span class="percent">13%</span>
@@ -81,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="info_block">
-                                <img src="./images/calc/calc.jpg" alt="image not found">
+                                <div id="chart"></div>
                                 <div class="total_numbers">
                                     <div class="total_invest">
                                         <span class="tip">Total invested</span>

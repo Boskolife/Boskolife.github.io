@@ -632,13 +632,21 @@ header {
   padding-bottom: 25px;
   position: fixed;
   z-index: 3;
-  width: 100%; }
+  width: 100%;
+  background-color: #ffffff;
+  color: #23262F;
+  transition: background-color .3s ease-out, color .3s ease-out; }
   @media (max-width: 1350px) {
     header {
       padding-top: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1350px) {
     header {
       padding-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
+  header.transparent {
+    background-color: transparent;
+    color: #ffffff; }
+    header.transparent a {
+      color: #ffffff; }
 
 .header_content {
   display: -ms-flexbox;
@@ -652,7 +660,6 @@ header {
     font-size: 33px;
     letter-spacing: -0.03em;
     text-transform: uppercase;
-    color: #ffffff;
     z-index: 3;
     display: -ms-flexbox;
     display: flex; }
@@ -719,8 +726,7 @@ header {
     font-weight: 500;
     font-size: 18px;
     /* Только если меньше контейнера */
-    font-size: 18px;
-    color: #ffffff; }
+    font-size: 18px; }
     @media (max-width: 1350px) {
       .header_content .link {
         font-size: calc(10px + 8 * ((100vw - calc(375px)) / 975)); } }
@@ -1920,10 +1926,13 @@ footer {
 
 .noUi-horizontal .noUi-tooltip {
   background: #3772FF;
-  color: #fff;
+  color: #ffffff;
   border-radius: 11px;
   padding: 6px 12px;
   font-weight: 600;
   font-size: 18px; }
+
+.noUi-horizontal .noUi-connect {
+  background: #3772FF; }
 
 /*# sourceMappingURL=main.css.map */
