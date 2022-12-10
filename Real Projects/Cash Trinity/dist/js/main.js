@@ -91,8 +91,8 @@ initChart();
 initCircleBtn();
 
 function initCurve() {
-  var curveTextWrap = document.querySelector('.curve-text-wrap');
-  console.log('curveTextWrap: ', curveTextWrap);
+  var curveTextWrap = document.querySelector(".curve-text-wrap");
+  console.log("curveTextWrap: ", curveTextWrap);
   var simple_arc1 = document.getElementById("simple_arc1");
   var simple_arc2 = document.getElementById("simple_arc2");
   var simple_arc3 = document.getElementById("simple_arc3");
@@ -100,10 +100,10 @@ function initCurve() {
   new CircleType(simple_arc1).radius(120);
   new CircleType(simple_arc2).radius(120);
   new CircleType(simple_arc3).radius(120);
-  simple_arc1.classList.add('curve-text');
-  simple_arc2.classList.add('curve-text');
-  simple_arc3.classList.add('curve-text');
-  curveTextWrap.classList.add('active');
+  simple_arc1.classList.add("curve-text");
+  simple_arc2.classList.add("curve-text");
+  simple_arc3.classList.add("curve-text");
+  curveTextWrap.classList.add("active");
 }
 
 function initCustomSlider() {
@@ -139,21 +139,17 @@ function initCustomSlider() {
 }
 
 function initCircleBtn() {
-  var circleBtn = document.querySelector('.circle_btn');
-  var mainSection = document.querySelector('.main-section');
+  var circleBtn = document.querySelector(".circle_btn");
+  var mainSection = document.querySelector(".main-section");
+  if (!circleBtn && !mainSection) return;
   checkMainSection();
-  document.addEventListener('scroll', checkMainSection);
+  document.addEventListener("scroll", checkMainSection);
   window.addEventListener("resize", checkMainSection);
 
   function checkMainSection() {
     var mainSecHeight = mainSection.offsetHeight;
     var currentScrollPosY = window.scrollY;
-
-    if (currentScrollPosY > mainSecHeight) {
-      circleBtn.classList.add('sticky');
-    } else {
-      circleBtn.classList.remove('sticky');
-    }
+    currentScrollPosY > mainSecHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
   }
 }
 
@@ -221,7 +217,7 @@ function initChart() {
     draw();
   });
   investmentInput.addEventListener("blur", function (event) {
-    if (event.target.value.includes('$')) return;
+    if (event.target.value.includes("$")) return;
     event.target.value = "".concat(event.target.value, "$");
   });
   investmentInput.addEventListener("click", function () {
@@ -240,7 +236,7 @@ function initChart() {
   });
   numberOfYearsInput.addEventListener("blur", function (event) {
     var value = event.target.value;
-    if (value.includes('year')) return;
+    if (value.includes("year")) return;
 
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;

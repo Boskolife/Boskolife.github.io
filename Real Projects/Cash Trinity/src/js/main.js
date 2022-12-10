@@ -79,22 +79,22 @@ initChart();
 initCircleBtn();
 
 function initCurve() {
-  const curveTextWrap = document.querySelector('.curve-text-wrap');
-  console.log('curveTextWrap: ', curveTextWrap);
+  const curveTextWrap = document.querySelector(".curve-text-wrap");
+  console.log("curveTextWrap: ", curveTextWrap);
   const simple_arc1 = document.getElementById("simple_arc1");
   const simple_arc2 = document.getElementById("simple_arc2");
   const simple_arc3 = document.getElementById("simple_arc3");
 
-  if(!simple_arc1 || !simple_arc2 || !simple_arc3) return;
+  if (!simple_arc1 || !simple_arc2 || !simple_arc3) return;
 
   new CircleType(simple_arc1).radius(120);
   new CircleType(simple_arc2).radius(120);
   new CircleType(simple_arc3).radius(120);
- 
-  simple_arc1.classList.add('curve-text');
-  simple_arc2.classList.add('curve-text');
-  simple_arc3.classList.add('curve-text');
-  curveTextWrap.classList.add('active');
+
+  simple_arc1.classList.add("curve-text");
+  simple_arc2.classList.add("curve-text");
+  simple_arc3.classList.add("curve-text");
+  curveTextWrap.classList.add("active");
 }
 
 function initCustomSlider() {
@@ -127,23 +127,23 @@ function initCustomSlider() {
 }
 
 function initCircleBtn() {
-  const circleBtn = document.querySelector('.circle_btn');
-  const mainSection = document.querySelector('.main-section');
+  const circleBtn = document.querySelector(".circle_btn");
+  const mainSection = document.querySelector(".main-section");
+
+  if(!circleBtn && !mainSection) return;
 
   checkMainSection();
 
-  document.addEventListener('scroll', checkMainSection);
+  document.addEventListener("scroll", checkMainSection);
   window.addEventListener("resize", checkMainSection);
 
   function checkMainSection() {
     const mainSecHeight = mainSection.offsetHeight;
     const currentScrollPosY = window.scrollY;
 
-    if(currentScrollPosY > mainSecHeight) {
-      circleBtn.classList.add('sticky')
-    } else {
-      circleBtn.classList.remove('sticky')
-    }
+    currentScrollPosY > mainSecHeight
+      ? circleBtn.classList.add("sticky")
+      : circleBtn.classList.remove("sticky");
   }
 }
 
@@ -221,8 +221,8 @@ function initChart() {
   });
 
   investmentInput.addEventListener("blur", (event) => {
-    if(event.target.value.includes('$')) return;
-  
+    if (event.target.value.includes("$")) return;
+
     event.target.value = `${event.target.value}$`;
   });
 
@@ -245,7 +245,7 @@ function initChart() {
   numberOfYearsInput.addEventListener("blur", (event) => {
     const value = event.target.value;
 
-    if(value.includes('year')) return;
+    if (value.includes("year")) return;
 
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;
@@ -255,7 +255,7 @@ function initChart() {
       event.target.value = MIN_YEARS;
       numberOfYearsInputValue = MIN_YEARS;
     }
-    numberOfYearsInputValue  = event.target.value;
+    numberOfYearsInputValue = event.target.value;
     event.target.value = `${numberOfYearsInputValue} ${
       +numberOfYearsInputValue > 1 ? "years" : "year"
     }`;
