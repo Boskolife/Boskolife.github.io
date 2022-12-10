@@ -185,6 +185,8 @@ function initChart() {
   });
 
   investmentInput.addEventListener("blur", (event) => {
+    if(event.target.value.includes('$')) return;
+  
     event.target.value = `${event.target.value}$`;
   });
 
@@ -206,6 +208,9 @@ function initChart() {
 
   numberOfYearsInput.addEventListener("blur", (event) => {
     const value = event.target.value;
+
+    if(value.includes('year')) return;
+
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;
       numberOfYearsInputValue = MAX_YEARS;

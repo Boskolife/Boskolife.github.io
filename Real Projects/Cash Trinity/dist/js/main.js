@@ -190,6 +190,7 @@ function initChart() {
     draw();
   });
   investmentInput.addEventListener("blur", function (event) {
+    if (event.target.value.includes('$')) return;
     event.target.value = "".concat(event.target.value, "$");
   });
   investmentInput.addEventListener("click", function () {
@@ -208,6 +209,7 @@ function initChart() {
   });
   numberOfYearsInput.addEventListener("blur", function (event) {
     var value = event.target.value;
+    if (value.includes('year')) return;
 
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;
