@@ -76,6 +76,7 @@ initCurve();
 initHeader();
 initCustomSlider();
 initChart();
+initCircleBtn();
 
 function initCurve() {
   const curveTextWrap = document.querySelector('.curve-text-wrap');
@@ -123,6 +124,27 @@ function initCustomSlider() {
     htmlRange.value = value;
     result.textContent = `$ ${formatNumber(value)}`;
   });
+}
+
+function initCircleBtn() {
+  const circleBtn = document.querySelector('.circle_btn');
+  const mainSection = document.querySelector('.main-section');
+
+  checkMainSection();
+
+  document.addEventListener('scroll', checkMainSection);
+  window.addEventListener("resize", checkMainSection);
+
+  function checkMainSection() {
+    const mainSecHeight = mainSection.offsetHeight;
+    const currentScrollPosY = window.scrollY;
+
+    if(currentScrollPosY > mainSecHeight) {
+      circleBtn.classList.add('sticky')
+    } else {
+      circleBtn.classList.remove('sticky')
+    }
+  }
 }
 
 function initHeader() {

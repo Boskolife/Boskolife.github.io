@@ -88,6 +88,7 @@ initCurve();
 initHeader();
 initCustomSlider();
 initChart();
+initCircleBtn();
 
 function initCurve() {
   var curveTextWrap = document.querySelector('.curve-text-wrap');
@@ -135,6 +136,25 @@ function initCustomSlider() {
     htmlRange.value = value;
     result.textContent = "$ ".concat(formatNumber(value));
   });
+}
+
+function initCircleBtn() {
+  var circleBtn = document.querySelector('.circle_btn');
+  var mainSection = document.querySelector('.main-section');
+  checkMainSection();
+  document.addEventListener('scroll', checkMainSection);
+  window.addEventListener("resize", checkMainSection);
+
+  function checkMainSection() {
+    var mainSecHeight = mainSection.offsetHeight;
+    var currentScrollPosY = window.scrollY;
+
+    if (currentScrollPosY > mainSecHeight) {
+      circleBtn.classList.add('sticky');
+    } else {
+      circleBtn.classList.remove('sticky');
+    }
+  }
 }
 
 function initHeader() {
