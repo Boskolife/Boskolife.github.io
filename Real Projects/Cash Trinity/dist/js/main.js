@@ -106,22 +106,6 @@ function initCurve() {
   curveTextWrap.classList.add("active");
 }
 
-function initCurve() {
-  var curveTextWrap = document.querySelector('.curve-text-wrap');
-  console.log('curveTextWrap: ', curveTextWrap);
-  var simple_arc1 = document.getElementById("simple_arc1");
-  var simple_arc2 = document.getElementById("simple_arc2");
-  var simple_arc3 = document.getElementById("simple_arc3");
-  if (!simple_arc1 || !simple_arc2 || !simple_arc3) return;
-  new CircleType(simple_arc1).radius(120);
-  new CircleType(simple_arc2).radius(120);
-  new CircleType(simple_arc3).radius(120);
-  simple_arc1.classList.add('curve-text');
-  simple_arc2.classList.add('curve-text');
-  simple_arc3.classList.add('curve-text');
-  curveTextWrap.classList.add('active');
-}
-
 function initCustomSlider() {
   var form = document.querySelector("#investForm");
   if (!form) return;
