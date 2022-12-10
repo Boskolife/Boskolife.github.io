@@ -79,8 +79,6 @@ try {
 }
 
 initHeader();
-window.addEventListener('resize', initHeader);
-
 initCustomSlider();
 initChart();
 
@@ -119,28 +117,29 @@ function initHeader() {
 
   if (!header || !sections) return;
 
-  const sectionsPositions = sections.map((section) => {
-    const sectionStartPos = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionEnd = sectionStartPos + sectionHeight;
-    return {
-      start: sectionStartPos,
-      end: sectionEnd,
-    };
-  });
+  checkHeaderOverlay()
 
-  checkHeaderOverlay(window.scrollY)
+  document.addEventListener("scroll", checkHeaderOverlay);
 
-  document.addEventListener("scroll", () => {
+  window.addEventListener('resize', checkHeaderOverlay);
+
+  function checkHeaderOverlay() {
+    const sectionsPositions = sections.map((section) => {
+      const sectionStartPos = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionEnd = sectionStartPos + sectionHeight;
+      return {
+        start: sectionStartPos,
+        end: sectionEnd,
+      };
+    });
+
     const currentScrollPosY = window.scrollY;
-    checkHeaderOverlay(currentScrollPosY);
-  });
 
-  function checkHeaderOverlay(posY) {
     const isHeaderOverlaySection = sectionsPositions.find(
       (pos) =>
-        posY >= pos.start &&
-        posY <= pos.end - header.offsetHeight
+        currentScrollPosY >= pos.start &&
+        currentScrollPosY <= pos.end - header.offsetHeight
     );
 
     isHeaderOverlaySection
