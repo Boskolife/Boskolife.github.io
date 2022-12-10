@@ -703,10 +703,20 @@ header {
         flex-direction: column;
         width: 100%;
         text-align: center;
-        padding-right: 30px; } }
+        /* Только если меньше контейнера */
+        padding-right: 30px;
+        /* Только если меньше контейнера */
+        padding-left: 30px; } }
+  @media (max-width: 1023px) and (max-width: 1350px) {
+    .header_content .nav_menu {
+      padding-right: calc(0px + 30 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1023px) and (max-width: 1350px) {
+    .header_content .nav_menu {
+      padding-left: calc(0px + 30 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 649px) {
       .header_content .nav_menu {
-        text-align: start; } }
+        text-align: start;
+        padding: 0 30px 0 0; } }
   .header_content .menu_item {
     /* Только если меньше контейнера */
     margin-left: 30px;
@@ -716,15 +726,15 @@ header {
         margin-left: calc(5px + 25 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1023px) {
       .header_content .menu_item {
-        width: 70%;
-        padding-left: 30px; }
+        width: 100%; }
         .header_content .menu_item:not(:last-child) {
           border-bottom: 1px solid #E6E8EC;
           padding-bottom: 20px;
           margin: 0 0 20px 0; } }
     @media (max-width: 649px) {
       .header_content .menu_item {
-        width: 100%; } }
+        width: 100%;
+        padding-left: 30px; } }
     .header_content .menu_item::after {
       position: absolute;
       content: '';
@@ -734,6 +744,9 @@ header {
       height: 1.5px;
       background-color: #3772FF;
       transition: all .3s ease-in-out; }
+      @media (max-width: 1023px) {
+        .header_content .menu_item::after {
+          display: none; } }
     .header_content .menu_item:hover::after {
       width: 100%; }
   .header_content .link {
@@ -1119,9 +1132,10 @@ html {
     overflow: hidden; }
     @media (max-width: 767px) {
       .lending .slider_img {
-        width: 70%;
+        width: 75%;
+        height: 390px;
         margin: 0 0 20px 0; } }
-    @media (max-width: 649px) {
+    @media (max-width: 479px) {
       .lending .slider_img {
         width: 315px; }
         .lending .slider_img img {

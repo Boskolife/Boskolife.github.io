@@ -80,11 +80,13 @@ header {
             flex-direction: column;
             width: 100%;
             text-align: center;
-            padding-right: 30px;
+            @include adaptiv-vaule("padding-right", 30, 0, 1);
+            @include adaptiv-vaule("padding-left", 30, 0, 1);
         }
 
         @include media ("<phone_max") {
-            text-align: start
+            text-align: start;
+            padding: 0 30px 0 0;
         }
     }
 
@@ -93,8 +95,7 @@ header {
         position: relative;
 
         @include media ("<desktop") {
-            width: 70%;
-            padding-left: 30px;
+            width: 100%;
 
             &:not(:last-child) {
                 border-bottom: 1px solid #E6E8EC;
@@ -105,9 +106,10 @@ header {
 
         @include media ("<phone_max") {
             width: 100%;
+            padding-left: 30px;
         }
-        
-        &::after{
+
+        &::after {
             position: absolute;
             content: '';
             bottom: -3px;
@@ -116,10 +118,15 @@ header {
             height: 1.5px;
             background-color: $blue;
             transition: all .3s ease-in-out;
+
+            @include media ("<desktop") {
+                display: none;
+            }
         }
 
-        &:hover{
-            &::after{
+        &:hover {
+
+            &::after {
                 width: 100%;
             }
         }

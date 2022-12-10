@@ -348,11 +348,12 @@ html {
         overflow: hidden;
 
         @include media ("<tablet") {
-            width: 70%;
+            width: 75%;
+            height: 390px;
             margin: 0 0 20px 0;
         }
 
-        @include media ("<phone_max") {
+        @include media ("<phone") {
             width: 315px;
 
             img {
