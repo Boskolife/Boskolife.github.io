@@ -863,21 +863,41 @@ html {
     position: absolute;
     bottom: 0;
     right: 1%;
-    font-size: 11px;
-    font-weight: 600;
-    -webkit-animation: anim_circle_rotate 10s linear infinite;
-    animation: anim_circle_rotate 10s linear infinite; }
+    font-weight: 500;
+    font-size: 16px; }
     @media (max-width: 767px) {
       .main-section .circle_btn {
         bottom: -15%; } }
     @media (max-width: 479px) {
       .main-section .circle_btn {
         display: none; } }
-    .main-section .circle_btn:hover {
-      -webkit-animation-duration: 20s;
-      animation-duration: 20s; }
     .main-section .circle_btn .btn_title {
       position: absolute; }
+  .main-section .curve-text-wrap {
+    opacity: 0; }
+    .main-section .curve-text-wrap.active {
+      opacity: 1;
+      position: absolute;
+      right: 0;
+      font-weight: 400;
+      border-radius: 50%;
+      width: 162px;
+      height: 162px;
+      font-size: 11px;
+      -webkit-animation: anim_circle_rotate 10s linear infinite;
+      animation: anim_circle_rotate 10s linear infinite; }
+  .main-section .curve-text {
+    position: absolute;
+    width: 162px;
+    height: 162px;
+    left: 0;
+    top: 0; }
+    .main-section .curve-text:nth-child(2) {
+      -webkit-transform: rotate(120deg);
+      transform: rotate(120deg); }
+    .main-section .curve-text:nth-child(3) {
+      -webkit-transform: rotate(240deg);
+      transform: rotate(240deg); }
   .main-section .mob_btn {
     display: none; }
     @media (max-width: 479px) {
