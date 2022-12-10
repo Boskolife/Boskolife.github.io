@@ -5,7 +5,7 @@ body {
 html {
     scroll-behavior: smooth;
 
-    
+
     ::-webkit-scrollbar {
         width: 10px;
         border-radius: 4px;
@@ -25,24 +25,24 @@ html {
     }
 }
 
-.body_lock{
+.body_lock {
     overflow: hidden;
 
-    .logo{
+    .logo {
         color: $white;
     }
 
-    .menu_item{
+    .menu_item {
 
-        a{
+        a {
             color: $white;
         }
     }
 
-    
     .burger_active {
+
         &::after,
-        &::before{
+        &::before {
             background-color: $white;
         }
     }
@@ -52,8 +52,8 @@ html {
 // ---------- Main
 
 .main-section {
-    padding-top: 90px;
-    @include adaptiv-vaule("padding-bottom", 100, 65, 1);
+    padding-top: 120px;
+    @include adaptiv-vaule("padding-bottom", 100, 95, 1);
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -74,10 +74,18 @@ html {
         flex-direction: column;
         color: $white;
         position: absolute;
-        bottom: 10%;
-        right: 0;
+        bottom: 0;
+        right: 1%;
         font-weight: 500;
         font-size: 16px;
+
+        @include media ("<tablet") {
+            bottom: -15%;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
 
         .btn_title {
             position: absolute;
@@ -110,6 +118,28 @@ html {
         }
         &:nth-child(3) {
             transform: rotate(240deg);
+        }
+    }
+
+    .mob_btn {
+        display: none;
+
+        @include media ("<phone") {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom:2%;
+            display: block;
+            min-width: 315px;
+            background-color: $blue;
+            box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            color: $white;
+            font-size: 15px;
+            font-weight: 600;
+            z-index: 5;
         }
     }
 
@@ -147,13 +177,14 @@ html {
         width: 65%;
         font-weight: 500;
         font-size: 88px;
+        @include adaptiv-vaule("font-size", 88, 36, 1);
         letter-spacing: -0.04em;
         color: $white;
         margin-right: 15px;
 
-        @include media ("<widescreen") {
+      /*   @include media ("<desktop") {
             font-size: 48px;
-        }
+        } */
 
         @include media ("<tablet") {
             width: 100%;
@@ -161,9 +192,9 @@ html {
             margin: 0 0 100px 0;
         }
 
-        @include media ("<phone") {
+     /*    @include media ("<phone") {
             font-size: 36px;
-        }
+        } */
 
         span {
             background: rgba(55, 114, 255, 0.85);
