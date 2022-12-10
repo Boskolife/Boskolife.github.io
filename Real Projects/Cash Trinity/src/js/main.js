@@ -117,11 +117,11 @@ function initHeader() {
 
   if (!header || !sections) return;
 
-  checkHeaderOverlay()
+  checkHeaderOverlay();
 
   document.addEventListener("scroll", checkHeaderOverlay);
 
-  window.addEventListener('resize', checkHeaderOverlay);
+  window.addEventListener("resize", checkHeaderOverlay);
 
   function checkHeaderOverlay() {
     const sectionsPositions = sections.map((section) => {
@@ -164,15 +164,32 @@ function initChart() {
   const annuallyRadio = document.querySelector("#annuallyRadio");
   let timeInvest = 1;
   const RATE = 13;
+  const MAX_MONTHES = 12;
   const numberOfYearsInput = document.querySelector("#numberOfYearsInput");
+  const investedRes = document.querySelectorAll(".investedRes");
+  const interestedRes = document.querySelectorAll(".interestedRes");
+  const savingsRes = document.querySelectorAll(".savingsRes");
+
+  let investmentInputValue = "";
+  let numberOfYearsInputValue = "";
 
   investmentInput.addEventListener("input", (event) => {
     const value = event.target.value;
     if (!onlyDigitsRgx.test(value)) {
       event.target.value = "";
+      investedRes.forEach((el) => (el.textContent = "$0"));
       return;
     }
+    investmentInputValue = value;
     draw();
+  });
+
+  investmentInput.addEventListener("blur", (event) => {
+    event.target.value = `${event.target.value}$`;
+  });
+
+  investmentInput.addEventListener("click", () => {
+    investmentInput.select();
   });
 
   numberOfYearsInput.addEventListener("input", (event) => {
@@ -183,14 +200,24 @@ function initChart() {
     }
   });
 
+  numberOfYearsInput.addEventListener("click", () => {
+    numberOfYearsInput.select();
+  });
+
   numberOfYearsInput.addEventListener("blur", (event) => {
     const value = event.target.value;
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;
+      numberOfYearsInputValue = MAX_YEARS;
     }
     if (+value < MIN_YEARS) {
       event.target.value = MIN_YEARS;
+      numberOfYearsInputValue = MIN_YEARS;
     }
+    numberOfYearsInputValue  = event.target.value;
+    event.target.value = `${numberOfYearsInputValue} ${
+      +numberOfYearsInputValue > 1 ? "years" : "year"
+    }`;
     draw();
   });
 
@@ -198,19 +225,19 @@ function initChart() {
     // TODO: formula
     switch (event.target) {
       case onceRadio:
-        timeInvest = 2;
+        timeInvest = 1;
         draw();
         break;
       case weeklyRadio:
-        timeInvest = 2.5;
+        timeInvest = 1;
         draw();
         break;
       case monthlyRadio:
-        timeInvest = 3;
+        timeInvest = 1;
         draw();
         break;
       case annuallyRadio:
-        timeInvest = 4;
+        timeInvest = 1;
         draw();
         break;
       default:
@@ -218,20 +245,46 @@ function initChart() {
     }
   });
 
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  });
+
   draw();
 
   function draw() {
     // TODO: formula
-    const interest = new Array(+numberOfYearsInput.value + 1)
+    const interest = new Array(+numberOfYearsInputValue + 1)
       .fill(0)
       .map((_, ind) => {
-        const res =
-          ((+investmentInput.value * +numberOfYearsInput.value * timeInvest) /
-            RATE) *
-          ind;
+        if (!ind) return +investmentInputValue;
 
+        const res = +investmentInputValue * Math.pow(1 + RATE / 100, ind);
         return +res.toFixed();
       });
+
+    investmentInputValue
+      ? investedRes.forEach(
+          (el) => (el.textContent = formatter.format(investmentInputValue))
+        )
+      : investedRes.forEach((el) => (el.textContent = "$0"));
+
+    interest.length > 1
+      ? savingsRes.forEach(
+          (el) => (el.textContent = formatter.format(interest.at(-1)))
+        )
+      : savingsRes.forEach((el) => (el.textContent = "$0"));
+
+    interest.length > 1
+      ? interestedRes.forEach(
+          (el) => (el.textContent = formatter.format(interest.at(-1)))
+        )
+      : interestedRes.forEach((el) => (el.textContent = "$0"));
 
     // TODO: do we need two more?
     const savings = [];
