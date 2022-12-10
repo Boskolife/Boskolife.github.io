@@ -72,15 +72,29 @@ if (linkClose.length) {
   }
 }
 
-try {
-  new CircleType(document.getElementById("simple_arc"));
-} catch (err) {
-  console.log("err: ", err);
-}
-
+initCurve();
 initHeader();
 initCustomSlider();
 initChart();
+
+function initCurve() {
+  const curveTextWrap = document.querySelector('.curve-text-wrap');
+  console.log('curveTextWrap: ', curveTextWrap);
+  const simple_arc1 = document.getElementById("simple_arc1");
+  const simple_arc2 = document.getElementById("simple_arc2");
+  const simple_arc3 = document.getElementById("simple_arc3");
+
+  if(!simple_arc1 || !simple_arc2 || !simple_arc3) return;
+
+  new CircleType(simple_arc1).radius(120);
+  new CircleType(simple_arc2).radius(120);
+  new CircleType(simple_arc3).radius(120);
+ 
+  simple_arc1.classList.add('curve-text');
+  simple_arc2.classList.add('curve-text');
+  simple_arc3.classList.add('curve-text');
+  curveTextWrap.classList.add('active');
+}
 
 function initCustomSlider() {
   const form = document.querySelector("#investForm");
