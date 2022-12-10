@@ -132,22 +132,26 @@ function initHeader() {
   var sections = _toConsumableArray(document.querySelectorAll(".transparent-header"));
 
   if (!header || !sections) return;
-  var sectionsPositions = sections.map(function (section) {
-    var sectionStartPos = section.offsetTop;
-    var sectionHeight = section.offsetHeight;
-    var sectionEnd = sectionStartPos + sectionHeight;
-    return {
-      start: sectionStartPos,
-      end: sectionEnd
-    };
-  });
-  document.addEventListener("scroll", function () {
+  checkHeaderOverlay();
+  document.addEventListener("scroll", checkHeaderOverlay);
+  window.addEventListener('resize', checkHeaderOverlay);
+
+  function checkHeaderOverlay() {
+    var sectionsPositions = sections.map(function (section) {
+      var sectionStartPos = section.offsetTop;
+      var sectionHeight = section.offsetHeight;
+      var sectionEnd = sectionStartPos + sectionHeight;
+      return {
+        start: sectionStartPos,
+        end: sectionEnd
+      };
+    });
     var currentScrollPosY = window.scrollY;
     var isHeaderOverlaySection = sectionsPositions.find(function (pos) {
       return currentScrollPosY >= pos.start && currentScrollPosY <= pos.end - header.offsetHeight;
     });
     isHeaderOverlaySection ? header.classList.add("transparent") : header.classList.remove("transparent");
-  });
+  }
 }
 
 function initChart() {
