@@ -635,7 +635,8 @@ header {
   width: 100%;
   background-color: #ffffff;
   color: #23262F;
-  transition: background-color .3s ease-out, color .3s ease-out; }
+  transition: background-color .3s ease-out, color .3s ease-out;
+  box-shadow: 0px 2px 5px rgba(35, 38, 47, 0.1); }
   @media (max-width: 1350px) {
     header {
       padding-top: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
@@ -644,7 +645,13 @@ header {
       padding-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
   header.transparent {
     background-color: transparent;
-    color: #ffffff; }
+    color: #ffffff;
+    box-shadow: none; }
+    header.transparent .link:hover {
+      text-shadow: 1px 1px 2px #ffffff; }
+      @media (max-width: 1023px) {
+        header.transparent .link:hover {
+          text-shadow: none; } }
     header.transparent a {
       color: #ffffff; }
 
@@ -726,7 +733,8 @@ header {
     font-weight: 500;
     font-size: 18px;
     /* Только если меньше контейнера */
-    font-size: 18px; }
+    font-size: 18px;
+    transition: all .3s ease; }
     @media (max-width: 1350px) {
       .header_content .link {
         font-size: calc(10px + 8 * ((100vw - calc(375px)) / 975)); } }
@@ -734,7 +742,7 @@ header {
       .header_content .link {
         font-size: 28px; } }
     .header_content .link:hover {
-      text-shadow: 1px 1px 2px #ffffff; }
+      text-shadow: 1px 1px 2px #23262F; }
       @media (max-width: 1023px) {
         .header_content .link:hover {
           text-shadow: none; } }
@@ -797,12 +805,32 @@ body {
 
 html {
   scroll-behavior: smooth; }
+  html ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 4px; }
+    @media (max-width: 767px) {
+      html ::-webkit-scrollbar {
+        width: 5px; } }
+  html ::-webkit-scrollbar-track {
+    background-color: #ffffff; }
+  html ::-webkit-scrollbar-thumb {
+    background: #3772FF;
+    border-radius: 4px; }
+
+.body_lock {
+  overflow: hidden; }
+  .body_lock .logo {
+    color: #ffffff; }
+  .body_lock .menu_item a {
+    color: #ffffff; }
+  .body_lock .burger_active::after, .body_lock .burger_active::before {
+    background-color: #ffffff; }
 
 .main-section {
   padding-top: 90px;
   /* Только если меньше контейнера */
   padding-bottom: 100px;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -1413,6 +1441,10 @@ html {
     padding: 20px;
     background-color: #F8F9FB;
     border-radius: 16px; }
+    .calculator .total_savings .input_title {
+      color: #23262F;
+      font-size: 18px;
+      font-weight: 500; }
     .calculator .total_savings .total_blue {
       /* Только если меньше контейнера */
       font-size: 32px;
@@ -1451,10 +1483,18 @@ html {
         flex-wrap: wrap; } }
   .calculator .total_invest {
     border: 1px solid #E6E8EC;
-    padding: 20px;
-    width: 100%;
+    padding: 10px;
     text-align: center;
-    height: 100px; }
+    height: 100px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
     @media (max-width: 649px) {
       .calculator .total_invest {
         width: 50%;
@@ -1469,6 +1509,10 @@ html {
       @media (max-width: 649px) {
         .calculator .total_invest:last-child {
           border-radius: 16px; } }
+      .calculator .total_invest:last-child .tip {
+        color: #23262F;
+        font-size: 18px;
+        font-weight: 500; }
       .calculator .total_invest:last-child .summ {
         color: #3772FF;
         /* Только если меньше контейнера */
@@ -1480,7 +1524,7 @@ html {
       color: #777E91;
       font-size: 12px; }
     .calculator .total_invest .summ {
-      margin-top: 10px;
+      margin-top: 5px;
       /* Только если меньше контейнера */
       font-size: 24px;
       font-weight: 500;
@@ -1488,10 +1532,16 @@ html {
       @media (max-width: 1350px) {
         .calculator .total_invest .summ {
           font-size: calc(20px + 4 * ((100vw - calc(375px)) / 975)); } }
-  @media (max-width: 649px) {
-    .calculator .all_total {
-      width: 100%;
-      margin: 0; } }
+  .calculator .all_total {
+    /* Только если меньше контейнера */
+    min-width: 260px; }
+    @media (max-width: 1350px) {
+      .calculator .all_total {
+        min-width: calc(1px + 259 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 649px) {
+      .calculator .all_total {
+        width: 100%;
+        margin: 0; } }
 
 footer {
   /* Только если меньше контейнера */

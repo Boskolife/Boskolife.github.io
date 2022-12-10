@@ -4,6 +4,48 @@ body {
 
 html {
     scroll-behavior: smooth;
+
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 4px;
+
+        @include media ("<tablet") {
+            width: 5px;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: $white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $blue;
+        border-radius: 4px;
+    }
+}
+
+.body_lock{
+    overflow: hidden;
+
+    .logo{
+        color: $white;
+    }
+
+    .menu_item{
+
+        a{
+            color: $white;
+        }
+    }
+
+    
+    .burger_active {
+        &::after,
+        &::before{
+            background-color: $white;
+        }
+    }
 }
 
 
@@ -12,7 +54,7 @@ html {
 .main-section {
     padding-top: 90px;
     @include adaptiv-vaule("padding-bottom", 100, 65, 1);
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -680,6 +722,12 @@ html {
         background-color: #F8F9FB;
         border-radius: 16px;
 
+        .input_title {
+            color: $black;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
         .total_blue {
             @include adaptiv-vaule("font-size", 32, 28, 1);
             font-weight: 600;
@@ -719,10 +767,14 @@ html {
 
     .total_invest {
         border: 1px solid #E6E8EC;
-        padding: 20px;
-        width: 100%;
+        padding: 10px;
         text-align: center;
         height: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         @include media ("<phone_max") {
             width: 50%;
@@ -745,6 +797,12 @@ html {
                 border-radius: 16px;
             }
 
+            .tip {
+                color: $black;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
             .summ {
                 color: $blue;
                 @include adaptiv-vaule("font-size", 32, 28, 1);
@@ -757,7 +815,7 @@ html {
         }
 
         .summ {
-            margin-top: 10px;
+            margin-top: 5px;
             @include adaptiv-vaule("font-size", 24, 20, 1);
             font-weight: 500;
             letter-spacing: -1px;
@@ -765,6 +823,7 @@ html {
     }
 
     .all_total {
+        @include adaptiv-vaule("min-width", 260, 1, 1);
 
         @include media ("<phone_max") {
             width: 100%;
