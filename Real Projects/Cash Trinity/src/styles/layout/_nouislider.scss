@@ -365,6 +365,10 @@
   position: relative;
 }
 
+.noUi-touch-area{
+  cursor: pointer;
+}
+
 .noUi-connects,
 .noUi-base {
   height: 8px;
@@ -396,6 +400,16 @@
     padding: 6px 12px;
     font-weight: 600;
     font-size: 18px;
+    bottom:140%;
+
+    &::after {
+      content: ''; 
+      position: absolute; 
+      left: 15px; 
+      bottom: -20px; 
+      border: 10px solid transparent;
+      border-top: 10px solid $blue; 
+    }
   }
 
   .noUi-connect {

@@ -647,11 +647,6 @@ header {
     background-color: transparent;
     color: #ffffff;
     box-shadow: none; }
-    header.transparent .link:hover {
-      text-shadow: 1px 1px 2px #ffffff; }
-      @media (max-width: 1023px) {
-        header.transparent .link:hover {
-          text-shadow: none; } }
     header.transparent a {
       color: #ffffff; }
 
@@ -714,7 +709,8 @@ header {
         text-align: start; } }
   .header_content .menu_item {
     /* Только если меньше контейнера */
-    margin-left: 30px; }
+    margin-left: 30px;
+    position: relative; }
     @media (max-width: 1350px) {
       .header_content .menu_item {
         margin-left: calc(5px + 25 * ((100vw - calc(375px)) / 975)); } }
@@ -729,6 +725,17 @@ header {
     @media (max-width: 649px) {
       .header_content .menu_item {
         width: 100%; } }
+    .header_content .menu_item::after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 1.5px;
+      background-color: #3772FF;
+      transition: all .3s ease-in-out; }
+    .header_content .menu_item:hover::after {
+      width: 100%; }
   .header_content .link {
     font-weight: 500;
     font-size: 18px;
@@ -741,11 +748,6 @@ header {
     @media (max-width: 1023px) {
       .header_content .link {
         font-size: 28px; } }
-    .header_content .link:hover {
-      text-shadow: 1px 1px 2px #23262F; }
-      @media (max-width: 1023px) {
-        .header_content .link:hover {
-          text-shadow: none; } }
   .header_content .burger_menu {
     display: none; }
     @media (max-width: 1023px) {
@@ -1140,17 +1142,15 @@ html {
         align-items: flex-start;
         -ms-flex-pack: justify;
         justify-content: space-between; } }
-  .form .check_wrap {
-    width: 19%; }
+  @media (max-width: 479px) {
+    .form .check_wrap {
+      width: 40%; } }
+  .form .check_wrap:not(:last-child) {
+    margin-right: 40px; }
     @media (max-width: 649px) {
-      .form .check_wrap {
-        width: 35%; } }
-    .form .check_wrap:not(:last-child) {
-      margin-right: 40px; }
-      @media (max-width: 649px) {
-        .form .check_wrap:not(:last-child) {
-          margin-right: 0;
-          margin-bottom: 20px; } }
+      .form .check_wrap:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 20px; } }
   .form .check {
     margin-right: 10px;
     position: absolute;
@@ -1158,7 +1158,7 @@ html {
     opacity: 0; }
     .form .check:checked + label::before {
       background-color: transparent;
-      background: url(../images/form/tick.svg) center no-repeat; }
+      background: url(../images/form/tick.svg) 4px 4px no-repeat; }
   .form .check + label {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1204,14 +1204,12 @@ html {
     margin-bottom: 10px;
     color: #777E91;
     text-transform: uppercase; }
-  .form .time_wrap {
-    width: 28%; }
-    @media (max-width: 767px) {
-      .form .time_wrap {
-        width: 40%;
-        margin-bottom: 20px; }
-        .form .time_wrap:nth-child(3) {
-          width: 90%; } }
+  @media (max-width: 479px) {
+    .form .time_wrap {
+      width: 40%;
+      margin-bottom: 20px; }
+      .form .time_wrap:nth-child(3) {
+        width: 90%; } }
   .form #sliderResult {
     color: #3772FF;
     font-weight: 600;
@@ -1333,10 +1331,10 @@ html {
         width: 100%; } }
   .calculator form {
     /* Только если меньше контейнера */
-    margin-bottom: 55px; }
+    margin-bottom: 100px; }
     @media (max-width: 1350px) {
       .calculator form {
-        margin-bottom: calc(30px + 25 * ((100vw - calc(375px)) / 975)); } }
+        margin-bottom: calc(30px + 70 * ((100vw - calc(375px)) / 975)); } }
   .calculator .input_title {
     font-weight: 700;
     font-size: 12px;
@@ -1443,7 +1441,7 @@ html {
     border-radius: 16px; }
     .calculator .total_savings .input_title {
       color: #23262F;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500; }
     .calculator .total_savings .total_blue {
       /* Только если меньше контейнера */
@@ -1511,7 +1509,7 @@ html {
           border-radius: 16px; } }
       .calculator .total_invest:last-child .tip {
         color: #23262F;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500; }
       .calculator .total_invest:last-child .summ {
         color: #3772FF;
@@ -1960,6 +1958,9 @@ footer {
   background-color: #E6E8EC;
   position: relative; }
 
+.noUi-touch-area {
+  cursor: pointer; }
+
 .noUi-connects,
 .noUi-base {
   height: 8px;
@@ -1984,7 +1985,15 @@ footer {
   border-radius: 11px;
   padding: 6px 12px;
   font-weight: 600;
-  font-size: 18px; }
+  font-size: 18px;
+  bottom: 140%; }
+  .noUi-horizontal .noUi-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: -20px;
+    border: 10px solid transparent;
+    border-top: 10px solid #3772FF; }
 
 .noUi-horizontal .noUi-connect {
   background: #3772FF; }

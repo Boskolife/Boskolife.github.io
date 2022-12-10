@@ -14,17 +14,6 @@ header {
         color: $white;
         box-shadow: none;
 
-        .link {
-
-            &:hover {
-                text-shadow: 1px 1px 2px $white;
-
-                @include media ("<desktop") {
-                    text-shadow: none;
-                }
-            }
-        }
-
         a {
             color: $white;
         }
@@ -101,6 +90,7 @@ header {
 
     .menu_item {
         @include adaptiv-vaule("margin-left", 30, 5, 1);
+        position: relative;
 
         @include media ("<desktop") {
             width: 70%;
@@ -116,6 +106,23 @@ header {
         @include media ("<phone_max") {
             width: 100%;
         }
+        
+        &::after{
+            position: absolute;
+            content: '';
+            bottom: -3px;
+            left: 0;
+            width: 0%;
+            height: 1.5px;
+            background-color: $blue;
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
     }
 
     .link {
@@ -126,15 +133,6 @@ header {
 
         @include media ("<desktop") {
             font-size: 28px;
-        }
-
-
-        &:hover {
-            text-shadow: 1px 1px 2px $black;
-
-            @include media ("<desktop") {
-                text-shadow: none;
-            }
         }
     }
 
