@@ -79,6 +79,8 @@ try {
 }
 
 initHeader();
+window.addEventListener('resize', initHeader);
+
 initCustomSlider();
 initChart();
 
@@ -127,19 +129,24 @@ function initHeader() {
     };
   });
 
+  checkHeaderOverlay(window.scrollY)
+
   document.addEventListener("scroll", () => {
     const currentScrollPosY = window.scrollY;
+    checkHeaderOverlay(currentScrollPosY);
+  });
 
+  function checkHeaderOverlay(posY) {
     const isHeaderOverlaySection = sectionsPositions.find(
       (pos) =>
-        currentScrollPosY >= pos.start &&
-        currentScrollPosY <= pos.end - header.offsetHeight
+        posY >= pos.start &&
+        posY <= pos.end - header.offsetHeight
     );
 
     isHeaderOverlaySection
       ? header.classList.add("transparent")
       : header.classList.remove("transparent");
-  });
+  }
 }
 
 function initChart() {
