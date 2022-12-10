@@ -134,7 +134,7 @@ function initHeader() {
   if (!header || !sections) return;
   checkHeaderOverlay();
   document.addEventListener("scroll", checkHeaderOverlay);
-  window.addEventListener('resize', checkHeaderOverlay);
+  window.addEventListener("resize", checkHeaderOverlay);
 
   function checkHeaderOverlay() {
     var sectionsPositions = sections.map(function (section) {
@@ -168,16 +168,32 @@ function initChart() {
   var annuallyRadio = document.querySelector("#annuallyRadio");
   var timeInvest = 1;
   var RATE = 13;
+  var MAX_MONTHES = 12;
   var numberOfYearsInput = document.querySelector("#numberOfYearsInput");
+  var investedRes = document.querySelectorAll(".investedRes");
+  var interestedRes = document.querySelectorAll(".interestedRes");
+  var savingsRes = document.querySelectorAll(".savingsRes");
+  var investmentInputValue = "";
+  var numberOfYearsInputValue = "";
   investmentInput.addEventListener("input", function (event) {
     var value = event.target.value;
 
     if (!onlyDigitsRgx.test(value)) {
       event.target.value = "";
+      investedRes.forEach(function (el) {
+        return el.textContent = "$0";
+      });
       return;
     }
 
+    investmentInputValue = value;
     draw();
+  });
+  investmentInput.addEventListener("blur", function (event) {
+    event.target.value = "".concat(event.target.value, "$");
+  });
+  investmentInput.addEventListener("click", function () {
+    investmentInput.select();
   });
   numberOfYearsInput.addEventListener("input", function (event) {
     var value = event.target.value;
@@ -187,39 +203,46 @@ function initChart() {
       return;
     }
   });
+  numberOfYearsInput.addEventListener("click", function () {
+    numberOfYearsInput.select();
+  });
   numberOfYearsInput.addEventListener("blur", function (event) {
     var value = event.target.value;
 
     if (+value > MAX_YEARS) {
       event.target.value = MAX_YEARS;
+      numberOfYearsInputValue = MAX_YEARS;
     }
 
     if (+value < MIN_YEARS) {
       event.target.value = MIN_YEARS;
+      numberOfYearsInputValue = MIN_YEARS;
     }
 
+    numberOfYearsInputValue = event.target.value;
+    event.target.value = "".concat(numberOfYearsInputValue, " ").concat(+numberOfYearsInputValue > 1 ? "years" : "year");
     draw();
   });
   document.addEventListener("click", function (event) {
     // TODO: formula
     switch (event.target) {
       case onceRadio:
-        timeInvest = 2;
+        timeInvest = 1;
         draw();
         break;
 
       case weeklyRadio:
-        timeInvest = 2.5;
+        timeInvest = 1;
         draw();
         break;
 
       case monthlyRadio:
-        timeInvest = 3;
+        timeInvest = 1;
         draw();
         break;
 
       case annuallyRadio:
-        timeInvest = 4;
+        timeInvest = 1;
         draw();
         break;
 
@@ -227,13 +250,37 @@ function initChart() {
         break;
     }
   });
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0 // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+
+  });
   draw();
 
   function draw() {
     // TODO: formula
-    var interest = new Array(+numberOfYearsInput.value + 1).fill(0).map(function (_, ind) {
-      var res = +investmentInput.value * +numberOfYearsInput.value * timeInvest / RATE * ind;
+    var interest = new Array(+numberOfYearsInputValue + 1).fill(0).map(function (_, ind) {
+      if (!ind) return +investmentInputValue;
+      var res = +investmentInputValue * Math.pow(1 + RATE / 100, ind);
       return +res.toFixed();
+    });
+    investmentInputValue ? investedRes.forEach(function (el) {
+      return el.textContent = formatter.format(investmentInputValue);
+    }) : investedRes.forEach(function (el) {
+      return el.textContent = "$0";
+    });
+    interest.length > 1 ? savingsRes.forEach(function (el) {
+      return el.textContent = formatter.format(interest.at(-1));
+    }) : savingsRes.forEach(function (el) {
+      return el.textContent = "$0";
+    });
+    interest.length > 1 ? interestedRes.forEach(function (el) {
+      return el.textContent = formatter.format(interest.at(-1));
+    }) : interestedRes.forEach(function (el) {
+      return el.textContent = "$0";
     }); // TODO: do we need two more?
 
     var savings = [];
