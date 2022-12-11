@@ -37,7 +37,7 @@ function initBurgerMenu() {
       menuBody.classList.toggle("menu_active");
     });
   }
-  
+
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
@@ -81,7 +81,6 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 
 function initCurve() {
   const curveTextWrap = document.querySelector(".curve-text-wrap");
-  console.log("curveTextWrap: ", curveTextWrap);
   const simple_arc1 = document.getElementById("simple_arc1");
   const simple_arc2 = document.getElementById("simple_arc2");
   const simple_arc3 = document.getElementById("simple_arc3");
@@ -131,7 +130,7 @@ function initCircleBtn() {
   const circleBtn = document.querySelector(".circle_btn");
   const mainSection = document.querySelector(".main-section");
 
-  if(!circleBtn && !mainSection) return;
+  if (!circleBtn && !mainSection) return;
 
   checkMainSection();
 
@@ -196,20 +195,33 @@ function initChart() {
   const MAX_YEARS = 50;
   const MIN_YEARS = 1;
   const investmentInput = document.querySelector("#investmentInput");
+  investmentInput.value = `500$`;
   const onceRadio = document.querySelector("#onceRadio");
   const weeklyRadio = document.querySelector("#weeklyRadio");
   const monthlyRadio = document.querySelector("#monthlyRadio");
   const annuallyRadio = document.querySelector("#annuallyRadio");
   let timeInvest = 1;
-  const RATE = 13;
-  const MAX_MONTHES = 12;
+  let isOnceChecked = true;
+  let isAnnually = false;
+  const RATE = 0.13;
   const numberOfYearsInput = document.querySelector("#numberOfYearsInput");
+  numberOfYearsInput.value = `15 years`;
   const investedRes = document.querySelectorAll(".investedRes");
   const interestedRes = document.querySelectorAll(".interestedRes");
   const savingsRes = document.querySelectorAll(".savingsRes");
 
-  let investmentInputValue = "";
-  let numberOfYearsInputValue = "";
+  let investmentInputValue = "500";
+  let numberOfYearsInputValue = "15";
+
+  const calcTotalInvested = (originalInvest, timeInvest) => {
+    if(isOnceChecked) {
+      return +originalInvest * +timeInvest
+    }
+    if(!isAnnually) {
+      return (+originalInvest * (+timeInvest * +numberOfYearsInputValue)) + +originalInvest
+    }
+    return (+originalInvest * +numberOfYearsInputValue) + +originalInvest;
+  }
 
   investmentInput.addEventListener("input", (event) => {
     const value = event.target.value;
@@ -225,7 +237,7 @@ function initChart() {
   investmentInput.addEventListener("blur", (event) => {
     if (event.target.value.includes("$")) return;
 
-    event.target.value = `${event.target.value}$`;
+    event.target.value = `${event.target.value || 500}$`;
   });
 
   investmentInput.addEventListener("click", () => {
@@ -245,7 +257,7 @@ function initChart() {
   });
 
   numberOfYearsInput.addEventListener("blur", (event) => {
-    const value = event.target.value;
+    const value = event.target.value || "15";
 
     if (value.includes("year")) return;
 
@@ -257,7 +269,7 @@ function initChart() {
       event.target.value = MIN_YEARS;
       numberOfYearsInputValue = MIN_YEARS;
     }
-    numberOfYearsInputValue = event.target.value;
+    numberOfYearsInputValue = event.target.value || value;
     event.target.value = `${numberOfYearsInputValue} ${
       +numberOfYearsInputValue > 1 ? "years" : "year"
     }`;
@@ -265,22 +277,29 @@ function initChart() {
   });
 
   document.addEventListener("click", (event) => {
-    // TODO: formula
     switch (event.target) {
       case onceRadio:
         timeInvest = 1;
+        isOnceChecked = true;
+        isAnnually = false;
         draw();
         break;
       case weeklyRadio:
-        timeInvest = 1;
+        timeInvest = 52;
+        isOnceChecked = false;
+        isAnnually = false;
         draw();
         break;
       case monthlyRadio:
-        timeInvest = 1;
+        timeInvest = 12;
+        isOnceChecked = false;
+        isAnnually = false;
         draw();
         break;
       case annuallyRadio:
         timeInvest = 1;
+        isOnceChecked = false;
+        isAnnually = true;
         draw();
         break;
       default:
@@ -298,22 +317,43 @@ function initChart() {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
 
+  const calculateFormula = (
+    originalInvest,
+    rate,
+    numberOfTimes,
+    numberOfYears
+  ) => {
+    const onceFormula =
+      +originalInvest *
+      Math.pow(1 + rate / numberOfTimes, numberOfTimes * numberOfYears);
+
+    const res =
+      numberOfTimes === 1 && isOnceChecked
+        ? onceFormula
+        : onceFormula +
+          (+originalInvest *
+            (Math.pow(1 + rate / numberOfTimes, numberOfTimes * numberOfYears) -
+              1)) /
+            (rate / numberOfTimes);
+    return +res.toFixed();
+  };
+
   draw();
 
   function draw() {
-    // TODO: formula
     const interest = new Array(+numberOfYearsInputValue + 1)
       .fill(0)
       .map((_, ind) => {
         if (!ind) return +investmentInputValue;
-
-        const res = +investmentInputValue * Math.pow(1 + RATE / 100, ind);
-        return +res.toFixed();
+        return calculateFormula(investmentInputValue, RATE, timeInvest, ind);
       });
 
     investmentInputValue
       ? investedRes.forEach(
-          (el) => (el.textContent = formatter.format(investmentInputValue))
+          (el) =>
+            (el.textContent = formatter.format(
+              calcTotalInvested(investmentInputValue, timeInvest)
+            ))
         )
       : investedRes.forEach((el) => (el.textContent = "$0"));
 
@@ -325,7 +365,11 @@ function initChart() {
 
     interest.length > 1
       ? interestedRes.forEach(
-          (el) => (el.textContent = formatter.format(interest.at(-1)))
+          (el) => {
+            const totalInvested = calcTotalInvested(investmentInputValue, timeInvest);
+            const result = interest.at(-1) - +totalInvested;
+            el.textContent = formatter.format(result);
+          }
         )
       : interestedRes.forEach((el) => (el.textContent = "$0"));
 
