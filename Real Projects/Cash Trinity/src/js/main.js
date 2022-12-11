@@ -141,8 +141,9 @@ function initCircleBtn() {
   function checkMainSection() {
     const mainSecHeight = mainSection.offsetHeight;
     const currentScrollPosY = window.scrollY;
+    const circleBtnHeight = circleBtn.offsetHeight;
 
-    currentScrollPosY > mainSecHeight
+    currentScrollPosY > mainSecHeight - circleBtnHeight
       ? circleBtn.classList.add("sticky")
       : circleBtn.classList.remove("sticky");
   }
