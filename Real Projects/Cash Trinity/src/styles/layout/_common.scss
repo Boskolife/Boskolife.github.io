@@ -82,38 +82,77 @@ html {
 
         @include media ("<tablet") {
             bottom: -15%;
+            right: 0;
         }
 
         @include media ("<phone") {
-            display: none;
+            transform: scale(0.8);
+            right: -20px;
         }
 
-        &:hover{
+        &:hover {
             background-color: #0C43C8;
         }
 
-        .btn_title{
+        .btn_title {
             font-weight: 500;
             font-size: 16px;
             text-transform: uppercase;
             color: $white;
+            margin: 20px 0 10px 0;
         }
     }
 
-    .sticky{
+    .sticky {
         position: fixed;
         right: 1%;
         bottom: 2%;
         z-index: 5;
         transform: scale(0.7);
 
-        .btn_title{
+        @include media ("<phone") {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 2%;
+            display: block;
+            min-width: 300px;
+            background-color: $blue;
+            box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            color: $white;
+            font-size: 15px;
+            font-weight: 600;
+            z-index: 5;
+            height: auto;
+        }
+
+        .btn_arrow {
+
+            @include media ("<phone") {
+                display: none;
+            }
+        }
+
+        .btn_title {
             font-size: 14px;
+        }
+
+        .curve-text-wrap {
+            @include media ("<phone") {
+                display: none;
+            }
         }
     }
 
+
     .curve-text-wrap {
         opacity: 0;
+
+
+
         &.active {
             opacity: 1;
             position: absolute;
@@ -133,33 +172,13 @@ html {
         height: 162px;
         left: 0;
         top: 0;
+
         &:nth-child(2) {
             transform: rotate(120deg);
         }
+
         &:nth-child(3) {
             transform: rotate(240deg);
-        }
-    }
-
-    .mob_btn {
-        display: none;
-
-        @include media ("<phone") {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom:2%;
-            display: block;
-            min-width: 315px;
-            background-color: $blue;
-            box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            color: $white;
-            font-size: 15px;
-            font-weight: 600;
-            z-index: 5;
         }
     }
 
@@ -180,6 +199,24 @@ html {
         top: 0;
         left: 0;
         z-index: -1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .main_img_bg_phone {
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+            position: absolute;
+            min-width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     }
 
     .main-content {
@@ -202,19 +239,11 @@ html {
         color: $white;
         margin-right: 15px;
 
-      /*   @include media ("<desktop") {
-            font-size: 48px;
-        } */
-
         @include media ("<tablet") {
             width: 100%;
             line-height: 126%;
             margin: 0 0 100px 0;
         }
-
-     /*    @include media ("<phone") {
-            font-size: 36px;
-        } */
 
         span {
             background: rgba(55, 114, 255, 0.85);
@@ -241,6 +270,10 @@ html {
         @include media ("<tablet") {
             text-align: left;
             margin: 0;
+        }
+
+        @include media ("<phone") {
+            max-width: 170px;
         }
     }
 }
@@ -271,11 +304,15 @@ html {
 
     .lending_title {
         font-weight: 500;
-        @include adaptiv-vaule("font-size", 60, 29, 1);
+        @include adaptiv-vaule("font-size", 60, 30, 1);
         margin-bottom: 80px;
 
         @include media ("<desktop") {
             margin-bottom: 55px;
+        }
+
+        @include media ("<tablet") {
+            margin-bottom: 35px;
         }
 
     }
@@ -299,7 +336,7 @@ html {
             background-color: #E6E8EC;
 
             @include media ("<tablet") {
-                top: 99%;
+                top: 100%;
                 width: 100%;
                 height: 4px;
                 left: 0;
@@ -374,18 +411,13 @@ html {
         }
 
         @include media ("<phone") {
-            width: 315px;
-
-            img {
-                object-fit: fill;
-            }
+            width: 350px;
+            height: 300px;
         }
 
-        @include media ("<phone") {
-            height: 225px;
+        @include media ("<375px") {
+            width: 100%;
         }
-
-
     }
 }
 
@@ -610,7 +642,7 @@ html {
 // ---------- Calculator
 
 .calculator {
-    padding-top: 150px;
+    @include adaptiv-vaule("padding-top", 150, 100, 1);
     @include adaptiv-vaule("padding-bottom", 60, 40, 1);
     background-color: #F8F9FB;
 
@@ -658,6 +690,7 @@ html {
 
         @include media ("<phone") {
             width: 100%;
+            border: none;
         }
     }
 
@@ -781,6 +814,10 @@ html {
         .input_title {
             white-space: nowrap;
             margin-bottom: 10px;
+
+            @include media ("<phone_max") {
+                margin: 0;
+            }
         }
 
         .percent {
@@ -828,6 +865,13 @@ html {
         }
     }
 
+    #chart {
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
     .total_numbers {
         display: flex;
         align-items: center;
@@ -857,6 +901,10 @@ html {
             &:nth-child(2) {
                 border-radius: 0 16px 16px 0;
             }
+        }
+
+        @include media ("<phone") {
+            display: none;
         }
 
         &:first-child {
@@ -905,14 +953,14 @@ html {
         }
     }
 
-    #chart{
+    #chart {
         max-height: 365px;
         margin-bottom: 30px;
         border-radius: 24px;
     }
 
-   .highcharts-background{
-    fill: #F8F9FB;
-    padding: 10px;
-   }
+    .highcharts-background {
+        fill: #F8F9FB;
+        padding: 10px;
+    }
 }

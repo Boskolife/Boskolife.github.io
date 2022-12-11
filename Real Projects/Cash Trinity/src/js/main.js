@@ -12,6 +12,7 @@ destroySlidersOnResize(".lending_slider", 9999, {
   mousewheel: {
     sensitivity: 1,
   },
+  autoHeight:true,
 
   pagination: {
     el: ".swiper-pagination",
