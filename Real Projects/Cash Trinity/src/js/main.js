@@ -190,7 +190,6 @@ function initChart() {
 
   if (!chartContainer) return;
 
-  let chart;
   const onlyDigitsRgx = /^\d+$/;
   const MAX_YEARS = 50;
   const MIN_YEARS = 1;
@@ -214,14 +213,17 @@ function initChart() {
   let numberOfYearsInputValue = "15";
 
   const calcTotalInvested = (originalInvest, timeInvest) => {
-    if(isOnceChecked) {
-      return +originalInvest * +timeInvest
+    if (isOnceChecked) {
+      return +originalInvest * +timeInvest;
     }
-    if(!isAnnually) {
-      return (+originalInvest * (+timeInvest * +numberOfYearsInputValue)) + +originalInvest
+    if (!isAnnually) {
+      return (
+        +originalInvest * (+timeInvest * +numberOfYearsInputValue) +
+        +originalInvest
+      );
     }
-    return (+originalInvest * +numberOfYearsInputValue) + +originalInvest;
-  }
+    return +originalInvest * +numberOfYearsInputValue + +originalInvest;
+  };
 
   investmentInput.addEventListener("input", (event) => {
     const value = event.target.value;
@@ -273,6 +275,7 @@ function initChart() {
     event.target.value = `${numberOfYearsInputValue} ${
       +numberOfYearsInputValue > 1 ? "years" : "year"
     }`;
+
     draw();
   });
 
@@ -364,20 +367,17 @@ function initChart() {
       : savingsRes.forEach((el) => (el.textContent = "$0"));
 
     interest.length > 1
-      ? interestedRes.forEach(
-          (el) => {
-            const totalInvested = calcTotalInvested(investmentInputValue, timeInvest);
-            const result = interest.at(-1) - +totalInvested;
-            el.textContent = formatter.format(result);
-          }
-        )
+      ? interestedRes.forEach((el) => {
+          const totalInvested = calcTotalInvested(
+            investmentInputValue,
+            timeInvest
+          );
+          const result = interest.at(-1) - +totalInvested;
+          el.textContent = formatter.format(result);
+        })
       : interestedRes.forEach((el) => (el.textContent = "$0"));
 
-    // TODO: do we need two more?
-    const savings = [];
-    const pv = [];
-
-    chart = new Highcharts.Chart({
+    new Highcharts.Chart({
       chart: {
         renderTo: "chart",
         type: "column",
@@ -408,7 +408,6 @@ function initChart() {
             color: "#777E90",
           },
         },
-        // allowDecimals: false,
       },
       yAxis: {
         title: {
@@ -417,7 +416,6 @@ function initChart() {
             color: "#777E90",
           },
         },
-        // endOnTick: false,
       },
       plotOptions: {
         column: {
@@ -434,21 +432,6 @@ function initChart() {
           pointPadding: 0.05,
         },
       },
-      // TODO: tooltip?
-      // tooltip: {
-      //   shared: true,
-      //   useHTML: true,
-      //   borderColor: "#42BFC7",
-      //   formatter: function () {
-      //     var s = this.x;
-      //     if (s == 1) {
-      //       s = "year";
-      //     } else {
-      //       s = "years";
-      //     }
-      //     return s;
-      //   },
-      // },
       tooltip: {
         enabled: false,
       },
@@ -458,18 +441,6 @@ function initChart() {
           data: interest,
           stack: "original",
           legendIndex: 3,
-        },
-        {
-          name: "Regular deposits",
-          data: savings,
-          stack: "original",
-          legendIndex: 2,
-        },
-        {
-          name: "Initial deposit",
-          data: pv,
-          stack: "original",
-          legendIndex: 1,
         },
       ],
     });
