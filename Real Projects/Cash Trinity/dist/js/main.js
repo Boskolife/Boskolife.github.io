@@ -143,15 +143,20 @@ function initCustomSlider() {
 function initCircleBtn() {
   var circleBtn = document.querySelector(".circle_btn");
   var mainSection = document.querySelector(".main-section");
+  var footer = document.querySelector('footer');
   if (!circleBtn && !mainSection) return;
-  checkMainSection();
-  document.addEventListener("scroll", checkMainSection);
-  window.addEventListener("resize", checkMainSection);
+  checkStickyBtn();
+  document.addEventListener("scroll", checkStickyBtn);
+  window.addEventListener("resize", checkStickyBtn);
 
-  function checkMainSection() {
+  function checkStickyBtn() {
     var mainSecHeight = mainSection.offsetHeight;
     var currentScrollPosY = window.scrollY;
     var circleBtnHeight = circleBtn.offsetHeight;
+    var footerTopPos = footer.offsetTop;
+    var footerHeight = footer.offsetHeight;
+    var currentScrollBottomPos = window.scrollY + window.innerHeight;
+    currentScrollBottomPos >= footerTopPos + footerHeight ? circleBtn.style.bottom = "".concat(footerHeight + 10, "px") : circleBtn.style.bottom = "2%";
     currentScrollPosY > mainSecHeight - circleBtnHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
   }
 }
