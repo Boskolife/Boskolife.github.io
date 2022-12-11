@@ -156,8 +156,15 @@ function initCircleBtn() {
     var footerTopPos = footer.offsetTop;
     var footerHeight = footer.offsetHeight;
     var currentScrollBottomPos = window.scrollY + window.innerHeight;
-    currentScrollBottomPos >= footerTopPos + footerHeight ? circleBtn.style.bottom = "".concat(footerHeight + 10, "px") : circleBtn.style.bottom = "2%";
     currentScrollPosY > mainSecHeight - circleBtnHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
+
+    if (window.innerWidth < 1024 && window.innerWidth > 479) {
+      console.log('footerHeight: ', footerHeight);
+      currentScrollBottomPos >= footerTopPos + footerHeight ? circleBtn.style.bottom = "".concat(footerHeight / 2, "px") : circleBtn.style.bottom = "2%";
+      return;
+    }
+
+    currentScrollBottomPos >= footerTopPos + footerHeight ? circleBtn.style.bottom = "".concat(footerHeight + 10, "px") : circleBtn.style.bottom = "2%";
   }
 }
 
@@ -352,7 +359,9 @@ function initChart() {
       chart: {
         renderTo: "chart",
         type: "column",
-        height: 400
+        height: 365,
+        backgroundColor: '#F8F9FB',
+        spacing: [20, 20, 15, 10]
       },
       colors: ["#3772FF", "#4C7DF8", "#0146F5", "#BDF0F4", "#42BFC7", "#1F1247"],
       credits: {

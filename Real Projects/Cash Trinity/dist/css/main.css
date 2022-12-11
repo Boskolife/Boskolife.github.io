@@ -1658,12 +1658,8 @@ html {
         width: 100%;
         margin: 0; } }
   .calculator #chart {
-    max-height: 365px;
     margin-bottom: 30px;
     border-radius: 24px; }
-  .calculator .highcharts-background {
-    fill: #F8F9FB;
-    padding: 10px; }
 
 footer {
   /* Только если меньше контейнера */
