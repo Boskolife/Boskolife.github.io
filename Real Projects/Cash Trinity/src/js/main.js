@@ -147,14 +147,21 @@ function initCircleBtn() {
     const footerHeight = footer.offsetHeight;
     const currentScrollBottomPos = window.scrollY + window.innerHeight;
 
+    currentScrollPosY > mainSecHeight - circleBtnHeight
+    ? circleBtn.classList.add("sticky")
+    : circleBtn.classList.remove("sticky");
+
+    if(window.innerWidth < 1024 && window.innerWidth > 479) {
+      console.log('footerHeight: ', footerHeight);
+      currentScrollBottomPos >= footerTopPos + footerHeight
+      ? (circleBtn.style.bottom = `${footerHeight / 2}px`)
+      : (circleBtn.style.bottom = `2%`);
+      return;
+    }
+
     currentScrollBottomPos >= footerTopPos + footerHeight
       ? (circleBtn.style.bottom = `${footerHeight + 10}px`)
       : (circleBtn.style.bottom = `2%`);
-    
-
-    currentScrollPosY > mainSecHeight - circleBtnHeight
-      ? circleBtn.classList.add("sticky")
-      : circleBtn.classList.remove("sticky");
   }
 }
 
