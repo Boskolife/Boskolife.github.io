@@ -18,7 +18,55 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// Swiper:
+initCurve();
+initHeader();
+initCustomSlider();
+initChart();
+initCircleBtn();
+initBurgerMenu();
+destroySlidersOnResize(".lending_slider", 9999, {
+  spaceBetween: 20,
+  sliderPerView: 1,
+  direction: "horizontal",
+  mousewheel: {
+    sensitivity: 1
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar"
+  },
+  breakpoints: {
+    768: {
+      direction: "vertical",
+      autoHeght: true
+    }
+  }
+});
+
+function initBurgerMenu() {
+  var burger = document.querySelector(".burger_menu");
+  var menuBody = document.querySelector(".nav");
+  var linkClose = document.querySelectorAll(".link-close");
+
+  if (burger) {
+    burger.addEventListener("click", function (e) {
+      document.body.classList.toggle("body_lock");
+      burger.classList.toggle("burger_active");
+      menuBody.classList.toggle("menu_active");
+    });
+  }
+
+  if (linkClose.length) {
+    for (var i = 0; i < linkClose.length; ++i) {
+      linkClose[i].addEventListener("click", function (e) {
+        document.body.classList.remove("body_lock");
+        burger.classList.remove("burger_active");
+        menuBody.classList.remove("menu_active");
+      });
+    }
+  }
+}
+
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
 
@@ -44,55 +92,8 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".lending_slider", 9999, {
-  spaceBetween: 20,
-  sliderPerView: 1,
-  direction: "horizontal",
-  mousewheel: {
-    sensitivity: 1
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar"
-  },
-  breakpoints: {
-    768: {
-      direction: "vertical",
-      autoHeght: true
-    }
-  }
-});
-var burger = document.querySelector(".burger_menu");
-var menuBody = document.querySelector(".nav");
-var linkClose = document.querySelectorAll(".link-close");
-
-if (burger) {
-  burger.addEventListener("click", function (e) {
-    document.body.classList.toggle("body_lock");
-    burger.classList.toggle("burger_active");
-    menuBody.classList.toggle("menu_active");
-  });
-}
-
-if (linkClose.length) {
-  for (var i = 0; i < linkClose.length; ++i) {
-    linkClose[i].addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock");
-      burger.classList.remove("burger_active");
-      menuBody.classList.remove("menu_active");
-    });
-  }
-}
-
-initCurve();
-initHeader();
-initCustomSlider();
-initChart();
-initCircleBtn();
-
 function initCurve() {
   var curveTextWrap = document.querySelector(".curve-text-wrap");
-  console.log("curveTextWrap: ", curveTextWrap);
   var simple_arc1 = document.getElementById("simple_arc1");
   var simple_arc2 = document.getElementById("simple_arc2");
   var simple_arc3 = document.getElementById("simple_arc3");
@@ -149,7 +150,8 @@ function initCircleBtn() {
   function checkMainSection() {
     var mainSecHeight = mainSection.offsetHeight;
     var currentScrollPosY = window.scrollY;
-    currentScrollPosY > mainSecHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
+    var circleBtnHeight = circleBtn.offsetHeight;
+    currentScrollPosY > mainSecHeight - circleBtnHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
   }
 }
 
@@ -184,24 +186,39 @@ function initHeader() {
 function initChart() {
   var chartContainer = document.querySelector("#chart");
   if (!chartContainer) return;
-  var chart;
   var onlyDigitsRgx = /^\d+$/;
   var MAX_YEARS = 50;
   var MIN_YEARS = 1;
   var investmentInput = document.querySelector("#investmentInput");
+  investmentInput.value = "500$";
   var onceRadio = document.querySelector("#onceRadio");
   var weeklyRadio = document.querySelector("#weeklyRadio");
   var monthlyRadio = document.querySelector("#monthlyRadio");
   var annuallyRadio = document.querySelector("#annuallyRadio");
   var timeInvest = 1;
-  var RATE = 13;
-  var MAX_MONTHES = 12;
+  var isOnceChecked = true;
+  var isAnnually = false;
+  var RATE = 0.13;
   var numberOfYearsInput = document.querySelector("#numberOfYearsInput");
+  numberOfYearsInput.value = "15 years";
   var investedRes = document.querySelectorAll(".investedRes");
   var interestedRes = document.querySelectorAll(".interestedRes");
   var savingsRes = document.querySelectorAll(".savingsRes");
-  var investmentInputValue = "";
-  var numberOfYearsInputValue = "";
+  var investmentInputValue = "500";
+  var numberOfYearsInputValue = "15";
+
+  var calcTotalInvested = function calcTotalInvested(originalInvest, timeInvest) {
+    if (isOnceChecked) {
+      return +originalInvest * +timeInvest;
+    }
+
+    if (!isAnnually) {
+      return +originalInvest * (+timeInvest * +numberOfYearsInputValue) + +originalInvest;
+    }
+
+    return +originalInvest * +numberOfYearsInputValue + +originalInvest;
+  };
+
   investmentInput.addEventListener("input", function (event) {
     var value = event.target.value;
 
@@ -218,7 +235,7 @@ function initChart() {
   });
   investmentInput.addEventListener("blur", function (event) {
     if (event.target.value.includes("$")) return;
-    event.target.value = "".concat(event.target.value, "$");
+    event.target.value = "".concat(event.target.value || 500, "$");
   });
   investmentInput.addEventListener("click", function () {
     investmentInput.select();
@@ -235,7 +252,7 @@ function initChart() {
     numberOfYearsInput.select();
   });
   numberOfYearsInput.addEventListener("blur", function (event) {
-    var value = event.target.value;
+    var value = event.target.value || "15";
     if (value.includes("year")) return;
 
     if (+value > MAX_YEARS) {
@@ -248,30 +265,37 @@ function initChart() {
       numberOfYearsInputValue = MIN_YEARS;
     }
 
-    numberOfYearsInputValue = event.target.value;
+    numberOfYearsInputValue = event.target.value || value;
     event.target.value = "".concat(numberOfYearsInputValue, " ").concat(+numberOfYearsInputValue > 1 ? "years" : "year");
     draw();
   });
   document.addEventListener("click", function (event) {
-    // TODO: formula
     switch (event.target) {
       case onceRadio:
         timeInvest = 1;
+        isOnceChecked = true;
+        isAnnually = false;
         draw();
         break;
 
       case weeklyRadio:
-        timeInvest = 1;
+        timeInvest = 52;
+        isOnceChecked = false;
+        isAnnually = false;
         draw();
         break;
 
       case monthlyRadio:
-        timeInvest = 1;
+        timeInvest = 12;
+        isOnceChecked = false;
+        isAnnually = false;
         draw();
         break;
 
       case annuallyRadio:
         timeInvest = 1;
+        isOnceChecked = false;
+        isAnnually = true;
         draw();
         break;
 
@@ -287,17 +311,22 @@ function initChart() {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 
   });
+
+  var calculateFormula = function calculateFormula(originalInvest, rate, numberOfTimes, numberOfYears) {
+    var onceFormula = +originalInvest * Math.pow(1 + rate / numberOfTimes, numberOfTimes * numberOfYears);
+    var res = numberOfTimes === 1 && isOnceChecked ? onceFormula : onceFormula + +originalInvest * (Math.pow(1 + rate / numberOfTimes, numberOfTimes * numberOfYears) - 1) / (rate / numberOfTimes);
+    return +res.toFixed();
+  };
+
   draw();
 
   function draw() {
-    // TODO: formula
     var interest = new Array(+numberOfYearsInputValue + 1).fill(0).map(function (_, ind) {
       if (!ind) return +investmentInputValue;
-      var res = +investmentInputValue * Math.pow(1 + RATE / 100, ind);
-      return +res.toFixed();
+      return calculateFormula(investmentInputValue, RATE, timeInvest, ind);
     });
     investmentInputValue ? investedRes.forEach(function (el) {
-      return el.textContent = formatter.format(investmentInputValue);
+      return el.textContent = formatter.format(calcTotalInvested(investmentInputValue, timeInvest));
     }) : investedRes.forEach(function (el) {
       return el.textContent = "$0";
     });
@@ -307,14 +336,13 @@ function initChart() {
       return el.textContent = "$0";
     });
     interest.length > 1 ? interestedRes.forEach(function (el) {
-      return el.textContent = formatter.format(interest.at(-1));
+      var totalInvested = calcTotalInvested(investmentInputValue, timeInvest);
+      var result = interest.at(-1) - +totalInvested;
+      el.textContent = formatter.format(result);
     }) : interestedRes.forEach(function (el) {
       return el.textContent = "$0";
-    }); // TODO: do we need two more?
-
-    var savings = [];
-    var pv = [];
-    chart = new Highcharts.Chart({
+    });
+    new Highcharts.Chart({
       chart: {
         renderTo: "chart",
         type: "column",
@@ -337,8 +365,7 @@ function initChart() {
           style: {
             color: "#777E90"
           }
-        } // allowDecimals: false,
-
+        }
       },
       yAxis: {
         title: {
@@ -346,8 +373,7 @@ function initChart() {
           style: {
             color: "#777E90"
           }
-        } // endOnTick: false,
-
+        }
       },
       plotOptions: {
         column: {
@@ -364,21 +390,6 @@ function initChart() {
           pointPadding: 0.05
         }
       },
-      // TODO: tooltip?
-      // tooltip: {
-      //   shared: true,
-      //   useHTML: true,
-      //   borderColor: "#42BFC7",
-      //   formatter: function () {
-      //     var s = this.x;
-      //     if (s == 1) {
-      //       s = "year";
-      //     } else {
-      //       s = "years";
-      //     }
-      //     return s;
-      //   },
-      // },
       tooltip: {
         enabled: false
       },
@@ -387,16 +398,6 @@ function initChart() {
         data: interest,
         stack: "original",
         legendIndex: 3
-      }, {
-        name: "Regular deposits",
-        data: savings,
-        stack: "original",
-        legendIndex: 2
-      }, {
-        name: "Initial deposit",
-        data: pv,
-        stack: "original",
-        legendIndex: 1
       }]
     });
   }
