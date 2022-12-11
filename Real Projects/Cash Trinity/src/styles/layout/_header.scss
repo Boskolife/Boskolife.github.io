@@ -51,7 +51,6 @@ header {
         }
     }
 
-
     .nav {
 
         @include media ("<desktop") {
@@ -141,6 +140,10 @@ header {
         @include media ("<desktop") {
             font-size: 28px;
         }
+    }
+
+    .active{
+        color: $blue;
     }
 
     .burger_menu {

@@ -761,6 +761,8 @@ header {
     @media (max-width: 1023px) {
       .header_content .link {
         font-size: 28px; } }
+  .header_content .active {
+    color: #3772FF; }
   .header_content .burger_menu {
     display: none; }
     @media (max-width: 1023px) {
@@ -863,7 +865,7 @@ html {
     width: 162px;
     height: 162px;
     border-radius: 50%;
-    background: #3772FF;
+    background-color: #3772FF;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -877,13 +879,16 @@ html {
     bottom: 0;
     right: 1%;
     font-weight: 500;
-    font-size: 16px; }
+    font-size: 16px;
+    transition: all .3s ease; }
     @media (max-width: 767px) {
       .main-section .circle_btn {
         bottom: -15%; } }
     @media (max-width: 479px) {
       .main-section .circle_btn {
         display: none; } }
+    .main-section .circle_btn:hover {
+      background-color: #0C43C8; }
     .main-section .circle_btn .btn_title {
       font-weight: 500;
       font-size: 16px;
@@ -893,7 +898,9 @@ html {
     position: fixed;
     right: 1%;
     bottom: 2%;
-    z-index: 5; }
+    z-index: 5;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7); }
     .main-section .sticky .btn_title {
       font-size: 14px; }
   .main-section .curve-text-wrap {
@@ -1615,6 +1622,13 @@ html {
       .calculator .all_total {
         width: 100%;
         margin: 0; } }
+  .calculator #chart {
+    max-height: 365px;
+    margin-bottom: 30px;
+    border-radius: 24px; }
+  .calculator .highcharts-background {
+    fill: #F8F9FB;
+    padding: 10px; }
 
 footer {
   /* Только если меньше контейнера */
