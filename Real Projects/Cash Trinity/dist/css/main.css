@@ -728,7 +728,7 @@ header {
       .header_content .menu_item {
         width: 100%; }
         .header_content .menu_item:not(:last-child) {
-          border-bottom: 1px solid #E6E8EC;
+          border-bottom: 1px solid rgba(230, 232, 236, 0.2);
           padding-bottom: 20px;
           margin: 0 0 20px 0; } }
     @media (max-width: 649px) {
@@ -884,7 +884,7 @@ html {
     @media (max-width: 767px) {
       .main-section .circle_btn {
         bottom: -15%;
-        right: 0; } }
+        right: 5%; } }
     @media (max-width: 479px) {
       .main-section .circle_btn {
         -webkit-transform: scale(0.8);
@@ -1050,9 +1050,9 @@ html {
       .main-section .description {
         text-align: left;
         margin: 0; } }
-    @media (max-width: 479px) {
+    @media (max-width: 349px) {
       .main-section .description {
-        max-width: 170px; } }
+        max-width: 130px; } }
 
 .lending {
   padding: 130px 30px 130px 0;
@@ -1163,6 +1163,24 @@ html {
     font-size: 14px;
     color: #777E91;
     line-height: 171.42857%; }
+  .lending .slider_btn {
+    background: #3772FF;
+    border-radius: 12px;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    display: inline-block;
+    /* Только если меньше контейнера */
+    margin-top: 45px;
+    min-width: 100%;
+    text-align: center; }
+    @media (max-width: 1350px) {
+      .lending .slider_btn {
+        margin-top: calc(30px + 15 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .lending .slider_btn {
+        font-size: 15px; } }
   .lending .slider_img {
     position: relative;
     width: 39%;
@@ -1436,7 +1454,8 @@ html {
     @media (max-width: 479px) {
       .calculator .data_block {
         width: 100%;
-        border: none; } }
+        border: none;
+        margin: 0; } }
   .calculator form {
     /* Только если меньше контейнера */
     margin-bottom: 100px; }
@@ -1698,7 +1717,7 @@ footer {
     letter-spacing: -0.03em;
     text-transform: uppercase;
     color: #23262F;
-    z-index: 3;
+    z-index: 1;
     display: -ms-flexbox;
     display: flex; }
     @media (max-width: 1023px) {

@@ -23,7 +23,7 @@ footer {
         letter-spacing: -0.03em;
         text-transform: uppercase;
         color: $black;
-        z-index: 3;
+        z-index: 1;
         display: flex;
 
         @include media ("<desktop") {
