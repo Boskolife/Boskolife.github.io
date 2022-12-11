@@ -130,18 +130,27 @@ function initCustomSlider() {
 function initCircleBtn() {
   const circleBtn = document.querySelector(".circle_btn");
   const mainSection = document.querySelector(".main-section");
+  const footer = document.querySelector('footer');
 
   if (!circleBtn && !mainSection) return;
 
-  checkMainSection();
+  checkStickyBtn();
 
-  document.addEventListener("scroll", checkMainSection);
-  window.addEventListener("resize", checkMainSection);
+  document.addEventListener("scroll", checkStickyBtn);
+  window.addEventListener("resize", checkStickyBtn);
 
-  function checkMainSection() {
+  function checkStickyBtn() {
     const mainSecHeight = mainSection.offsetHeight;
     const currentScrollPosY = window.scrollY;
     const circleBtnHeight = circleBtn.offsetHeight;
+    const footerTopPos = footer.offsetTop;
+    const footerHeight = footer.offsetHeight;
+    const currentScrollBottomPos = window.scrollY + window.innerHeight;
+
+    currentScrollBottomPos >= footerTopPos + footerHeight
+      ? (circleBtn.style.bottom = `${footerHeight + 10}px`)
+      : (circleBtn.style.bottom = `2%`);
+    
 
     currentScrollPosY > mainSecHeight - circleBtnHeight
       ? circleBtn.classList.add("sticky")
