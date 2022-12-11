@@ -398,7 +398,9 @@ function initChart() {
       chart: {
         renderTo: "chart",
         type: "column",
-        height: 400,
+        height: 365,
+        backgroundColor: '#F8F9FB',
+        spacing: [20, 20, 15, 10]
       },
       colors: [
         "#3772FF",
