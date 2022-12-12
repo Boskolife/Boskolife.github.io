@@ -257,3 +257,10 @@ $animation-speed: .3s !default;
 	font-size: $pxSize;
 	font-size: ($pxSize / 10px) + rem;
 }
+
+@mixin setBg($imgUrl) {
+    background: url($imgUrl);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

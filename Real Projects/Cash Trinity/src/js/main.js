@@ -4,6 +4,7 @@ initCustomSlider();
 initChart();
 initCircleBtn();
 initBurgerMenu();
+initParallax();
 new WOW().init();
 
 destroySlidersOnResize(".lending_slider", 9999, {
@@ -27,6 +28,13 @@ destroySlidersOnResize(".lending_slider", 9999, {
     },
   },
 });
+
+function initParallax() {
+  const mainSection = document.querySelector('.main-section');
+  if(mainSection) {
+    new Parallax(mainSection);
+  }
+}
 
 function initBurgerMenu() {
   const burger = document.querySelector(".burger_menu");

@@ -52,6 +52,7 @@ html {
 // ---------- Main
 
 .main-section {
+    @include setBg('../images/main/main_img.jpg');
     padding-top: 120px;
     @include adaptiv-vaule("padding-bottom", 100, 95, 1);
     min-height: 100vh;
@@ -59,9 +60,39 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border-radius: 0 0 32px 32px;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%);
+
+    @include media ("<tablet") {
+        @include setBg('../images/main/phone_bg.png');
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0 0 32px 32px;
+        z-index: 2;
+        box-shadow: 0 0 0 32px #F8F9FB;
+    }
+
+    .cont {
+        position: relative;
+        z-index: 2;
+    }
 
     .circle_btn {
         width: 162px;
