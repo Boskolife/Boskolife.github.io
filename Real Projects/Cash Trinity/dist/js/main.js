@@ -144,7 +144,7 @@ function initCustomSlider() {
 function initCircleBtn() {
   var circleBtn = document.querySelector(".circle_btn");
   var mainSection = document.querySelector(".main-section");
-  var footer = document.querySelector('footer');
+  var footer = document.querySelector("footer");
   if (!circleBtn && !mainSection) return;
   checkStickyBtn();
   document.addEventListener("scroll", checkStickyBtn);
@@ -153,11 +153,11 @@ function initCircleBtn() {
   function checkStickyBtn() {
     var mainSecHeight = mainSection.offsetHeight;
     var currentScrollPosY = window.scrollY;
-    var circleBtnHeight = circleBtn.offsetHeight;
+    var mainSectionBottomPadding = getComputedStyle(mainSection).paddingBottom.replace(/px/g, "");
     var footerTopPos = footer.offsetTop;
     var footerHeight = footer.offsetHeight;
     var currentScrollBottomPos = window.scrollY + window.innerHeight;
-    currentScrollPosY > mainSecHeight - circleBtnHeight ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
+    currentScrollPosY > mainSecHeight - +mainSectionBottomPadding ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
 
     if (window.innerWidth > 480 && window.innerWidth < 1024) {
       currentScrollBottomPos >= footerTopPos + footerHeight - 10 ? circleBtn.style.bottom = "".concat(footerHeight / 2, "px") : circleBtn.style.bottom = "2%";
@@ -377,7 +377,7 @@ function initChart() {
         renderTo: "chart",
         type: "column",
         height: 365,
-        backgroundColor: '#F8F9FB',
+        backgroundColor: "#F8F9FB",
         spacing: [20, 20, 15, 10]
       },
       colors: ["#3772FF", "#4C7DF8", "#0146F5", "#BDF0F4", "#42BFC7", "#1F1247"],
@@ -436,29 +436,29 @@ function initChart() {
 } //Setting Active States on Sticky Navigations while Scrolling
 
 
-var sections = $('section'),
-    nav = $('nav'),
+var sections = $("section"),
+    nav = $("nav"),
     nav_height = nav.outerHeight();
-$(window).on('scroll', function () {
+$(window).on("scroll", function () {
   var cur_pos = $(this).scrollTop();
   sections.each(function () {
     var top = $(this).offset().top - nav_height,
         bottom = top + $(this).outerHeight();
 
     if (cur_pos >= top && cur_pos <= bottom) {
-      nav.find('a').removeClass('active');
-      sections.removeClass('active');
-      $(this).addClass('active');
-      nav.find('a[href="index.html#' + $(this).attr('id') + '"]').addClass('active');
-      $(this).addClass('active');
-      nav.find('a[href="calculator.html#' + $(this).attr('id') + '"]').addClass('active');
+      nav.find("a").removeClass("active");
+      sections.removeClass("active");
+      $(this).addClass("active");
+      nav.find('a[href="index.html#' + $(this).attr("id") + '"]').addClass("active");
+      $(this).addClass("active");
+      nav.find('a[href="calculator.html#' + $(this).attr("id") + '"]').addClass("active");
     }
   });
 });
-nav.find('a').on('click', function () {
+nav.find("a").on("click", function () {
   var $el = $(this),
-      id = $el.attr('href');
-  $('html, body').animate({
+      id = $el.attr("href");
+  $("html, body").animate({
     scrollTop: $(id).offset().top - nav_height
   }, 500);
   return false;
