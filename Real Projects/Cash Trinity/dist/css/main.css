@@ -844,6 +844,10 @@ html {
     background-color: #ffffff; }
 
 .main-section {
+  background: url("../images/main/main_img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 120px;
   /* Только если меньше контейнера */
   padding-bottom: 100px;
@@ -855,12 +859,38 @@ html {
   flex-direction: column;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  border-radius: 0 0 32px 32px;
-  overflow: hidden;
-  background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%); }
+  overflow: hidden; }
   @media (max-width: 1350px) {
     .main-section {
       padding-bottom: calc(95px + 5 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 767px) {
+    .main-section {
+      background: url("../images/main/phone_bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; } }
+  .main-section::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%); }
+  .main-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 32px 32px;
+    z-index: 2;
+    box-shadow: 0 0 0 32px #F8F9FB; }
+  .main-section .cont {
+    position: relative;
+    z-index: 2; }
   .main-section .circle_btn {
     width: 162px;
     height: 162px;

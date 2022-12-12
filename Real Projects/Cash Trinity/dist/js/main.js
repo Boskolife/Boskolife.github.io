@@ -24,6 +24,7 @@ initCustomSlider();
 initChart();
 initCircleBtn();
 initBurgerMenu();
+initParallax();
 new WOW().init();
 destroySlidersOnResize(".lending_slider", 9999, {
   spaceBetween: 20,
@@ -44,6 +45,14 @@ destroySlidersOnResize(".lending_slider", 9999, {
     }
   }
 });
+
+function initParallax() {
+  var mainSection = document.querySelector('.main-section');
+
+  if (mainSection) {
+    new Parallax(mainSection);
+  }
+}
 
 function initBurgerMenu() {
   var burger = document.querySelector(".burger_menu");
