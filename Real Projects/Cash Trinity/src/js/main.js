@@ -152,17 +152,33 @@ function initCircleBtn() {
     ? circleBtn.classList.add("sticky")
     : circleBtn.classList.remove("sticky");
 
-    if(window.innerWidth < 1024 && window.innerWidth > 479) {
-      console.log('footerHeight: ', footerHeight);
-      currentScrollBottomPos >= footerTopPos + footerHeight
-      ? (circleBtn.style.bottom = `${footerHeight / 2}px`)
-      : (circleBtn.style.bottom = `2%`);
+    if (window.innerWidth > 480 && window.innerWidth < 1024) {
+      currentScrollBottomPos >= footerTopPos + footerHeight - 10
+        ? (circleBtn.style.bottom = `${footerHeight / 2}px`)
+        : (circleBtn.style.bottom = `2%`);
+
+      if (!circleBtn.classList.contains("sticky")) {
+        circleBtn.style.bottom = `-15%`;
+      }
+
+      if (window.innerWidth >= 768 && !circleBtn.classList.contains("sticky")) {
+        circleBtn.style.bottom = `0`;
+      }
+
       return;
     }
 
-    currentScrollBottomPos >= footerTopPos + footerHeight
+    currentScrollBottomPos >= footerTopPos + footerHeight - 10
       ? (circleBtn.style.bottom = `${footerHeight + 10}px`)
       : (circleBtn.style.bottom = `2%`);
+
+    if (window.innerWidth <= 480 && !circleBtn.classList.contains("sticky")) {
+      circleBtn.style.bottom = `-15%`;
+    }
+
+    if (window.innerWidth >= 1024 && !circleBtn.classList.contains("sticky")) {
+      circleBtn.style.bottom = `0`;
+    }
   }
 }
 
