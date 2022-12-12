@@ -903,8 +903,8 @@ html {
     right: 1%;
     bottom: 2%;
     z-index: 5;
-    -webkit-transform: scale(0.7);
-    transform: scale(0.7); }
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9); }
     @media (max-width: 479px) {
       .main-section .sticky {
         position: fixed;
@@ -1164,7 +1164,7 @@ html {
     color: #777E91;
     line-height: 171.42857%; }
   .lending .slider_btn {
-    background: #3772FF;
+    background-color: #3772FF;
     border-radius: 12px;
     padding: 20px 0;
     font-weight: 600;
@@ -1174,13 +1174,16 @@ html {
     /* Только если меньше контейнера */
     margin-top: 45px;
     min-width: 100%;
-    text-align: center; }
+    text-align: center;
+    transition: all .3s ease; }
     @media (max-width: 1350px) {
       .lending .slider_btn {
         margin-top: calc(30px + 15 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 479px) {
       .lending .slider_btn {
         font-size: 15px; } }
+    .lending .slider_btn:hover {
+      background-color: #0C43C8; }
   .lending .slider_img {
     position: relative;
     width: 39%;
@@ -1349,7 +1352,8 @@ html {
       font-size: 12px;
       text-transform: uppercase;
       margin-bottom: 10px;
-      color: #777E91; }
+      color: #777E91;
+      cursor: default; }
     .form .user_data .input_data {
       margin-bottom: 25px;
       border-radius: 12px;
