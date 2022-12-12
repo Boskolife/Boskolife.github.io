@@ -24,6 +24,8 @@ initCustomSlider();
 initChart();
 initCircleBtn();
 initBurgerMenu();
+/* new WOW().init();  */
+
 destroySlidersOnResize(".lending_slider", 9999, {
   spaceBetween: 20,
   sliderPerView: 1,
