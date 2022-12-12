@@ -254,11 +254,10 @@ function initChart() {
     }
     if (!isAnnually) {
       return (
-        +originalInvest * (+timeInvest * +numberOfYearsInputValue) +
-        +originalInvest
+        +originalInvest * (+timeInvest * +numberOfYearsInputValue)
       );
     }
-    return +originalInvest * +numberOfYearsInputValue + +originalInvest;
+    return +originalInvest * +numberOfYearsInputValue;
   };
 
   investmentInput.addEventListener("input", (event) => {
