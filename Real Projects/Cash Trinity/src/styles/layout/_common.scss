@@ -129,6 +129,10 @@ html {
             height: auto;
         }
 
+        &.hidden {
+            transform: translate(300px, 0);
+        }
+
         .btn_arrow {
 
             @include media ("<phone") {

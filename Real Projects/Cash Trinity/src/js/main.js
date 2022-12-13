@@ -131,7 +131,7 @@ function initCustomSlider() {
 function initCircleBtn() {
   const circleBtn = document.querySelector(".circle_btn");
   const mainSection = document.querySelector(".main-section");
-  const footer = document.querySelector("footer");
+  const formSection = document.querySelector('.form');
 
   if (!circleBtn && !mainSection) return;
 
@@ -146,40 +146,21 @@ function initCircleBtn() {
     const mainSectionBottomPadding = getComputedStyle(
       mainSection
     ).paddingBottom.replace(/px/g, "");
-    const footerTopPos = footer.offsetTop;
-    const footerHeight = footer.offsetHeight;
     const currentScrollBottomPos = window.scrollY + window.innerHeight;
+    const formSectionTopPos = formSection.offsetTop;
+    const formSectionHeight = formSection.offsetHeight;
+
 
     currentScrollPosY > mainSecHeight - +mainSectionBottomPadding
       ? circleBtn.classList.add("sticky")
       : circleBtn.classList.remove("sticky");
 
-    if (window.innerWidth > 480 && window.innerWidth < 1024) {
-      currentScrollBottomPos >= footerTopPos + footerHeight - 10
-        ? (circleBtn.style.bottom = `${footerHeight / 2}px`)
-        : (circleBtn.style.bottom = `2%`);
-
-      if (!circleBtn.classList.contains("sticky")) {
-        circleBtn.style.bottom = `-15%`;
-      }
-
-      if (window.innerWidth >= 768 && !circleBtn.classList.contains("sticky")) {
-        circleBtn.style.bottom = `0`;
-      }
-
-      return;
-    }
-
-    currentScrollBottomPos >= footerTopPos + footerHeight - 10
-      ? (circleBtn.style.bottom = `${footerHeight + 10}px`)
-      : (circleBtn.style.bottom = `2%`);
-
-    if (window.innerWidth <= 480 && !circleBtn.classList.contains("sticky")) {
-      circleBtn.style.bottom = `-15%`;
-    }
-
-    if (window.innerWidth >= 1024 && !circleBtn.classList.contains("sticky")) {
-      circleBtn.style.bottom = `0`;
+    console.log('currentScrollBottomPos: ', currentScrollBottomPos);
+    console.log('formSectionTopPos + formSectionHeight : ', formSectionTopPos);
+    if(currentScrollBottomPos >= formSectionTopPos) {
+      circleBtn.classList.add('hidden')
+    } else {
+      circleBtn.classList.remove('hidden')
     }
   }
 }
