@@ -924,6 +924,9 @@ html {
         font-weight: 600;
         z-index: 5;
         height: auto; } }
+    .main-section .sticky.hidden {
+      -webkit-transform: translate(300px, 0);
+      transform: translate(300px, 0); }
     @media (max-width: 479px) {
       .main-section .sticky .btn_arrow {
         display: none; } }

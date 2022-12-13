@@ -144,7 +144,7 @@ function initCustomSlider() {
 function initCircleBtn() {
   var circleBtn = document.querySelector(".circle_btn");
   var mainSection = document.querySelector(".main-section");
-  var footer = document.querySelector("footer");
+  var formSection = document.querySelector('.form');
   if (!circleBtn && !mainSection) return;
   checkStickyBtn();
   document.addEventListener("scroll", checkStickyBtn);
@@ -154,33 +154,17 @@ function initCircleBtn() {
     var mainSecHeight = mainSection.offsetHeight;
     var currentScrollPosY = window.scrollY;
     var mainSectionBottomPadding = getComputedStyle(mainSection).paddingBottom.replace(/px/g, "");
-    var footerTopPos = footer.offsetTop;
-    var footerHeight = footer.offsetHeight;
     var currentScrollBottomPos = window.scrollY + window.innerHeight;
+    var formSectionTopPos = formSection.offsetTop;
+    var formSectionHeight = formSection.offsetHeight;
     currentScrollPosY > mainSecHeight - +mainSectionBottomPadding ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
+    console.log('currentScrollBottomPos: ', currentScrollBottomPos);
+    console.log('formSectionTopPos + formSectionHeight : ', formSectionTopPos);
 
-    if (window.innerWidth > 480 && window.innerWidth < 1024) {
-      currentScrollBottomPos >= footerTopPos + footerHeight - 10 ? circleBtn.style.bottom = "".concat(footerHeight / 2, "px") : circleBtn.style.bottom = "2%";
-
-      if (!circleBtn.classList.contains("sticky")) {
-        circleBtn.style.bottom = "-15%";
-      }
-
-      if (window.innerWidth >= 768 && !circleBtn.classList.contains("sticky")) {
-        circleBtn.style.bottom = "0";
-      }
-
-      return;
-    }
-
-    currentScrollBottomPos >= footerTopPos + footerHeight - 10 ? circleBtn.style.bottom = "".concat(footerHeight + 10, "px") : circleBtn.style.bottom = "2%";
-
-    if (window.innerWidth <= 480 && !circleBtn.classList.contains("sticky")) {
-      circleBtn.style.bottom = "-15%";
-    }
-
-    if (window.innerWidth >= 1024 && !circleBtn.classList.contains("sticky")) {
-      circleBtn.style.bottom = "0";
+    if (currentScrollBottomPos >= formSectionTopPos) {
+      circleBtn.classList.add('hidden');
+    } else {
+      circleBtn.classList.remove('hidden');
     }
   }
 }
