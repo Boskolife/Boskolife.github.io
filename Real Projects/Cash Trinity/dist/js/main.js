@@ -30,7 +30,8 @@ destroySlidersOnResize(".lending_slider", 9999, {
   sliderPerView: 1,
   direction: "horizontal",
   mousewheel: {
-    sensitivity: 1
+    sensitivity: 1,
+    releaseOnEdges: true
   },
   autoHeight: true,
   pagination: {

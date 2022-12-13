@@ -12,6 +12,7 @@ destroySlidersOnResize(".lending_slider", 9999, {
   direction: "horizontal",
   mousewheel: {
     sensitivity: 1,
+    releaseOnEdges:true,
   },
   autoHeight: true,
 
