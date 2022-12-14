@@ -1203,7 +1203,8 @@ html {
     /* Только если меньше контейнера */
     margin-top: 45px;
     text-align: center;
-    transition: all .3s ease; }
+    transition: all .3s ease;
+    width: 100%; }
     @media (max-width: 1350px) {
       .lending .slider_btn {
         margin-top: calc(30px + 15 * ((100vw - calc(375px)) / 975)); } }
@@ -1231,9 +1232,13 @@ html {
         .lending .slider_btn .phone_img {
           margin-bottom: 5px; } }
     .lending .slider_btn .tip_btn {
-      position: absolute;
-      top: -40px;
-      left: -160px; }
+      display: none; }
+      @media (max-width: 479px) {
+        .lending .slider_btn .tip_btn {
+          position: absolute;
+          top: -40px;
+          left: -160px;
+          display: block; } }
     .lending .slider_btn .tip_arrow {
       margin-top: -25px; }
     .lending .slider_btn:hover {
