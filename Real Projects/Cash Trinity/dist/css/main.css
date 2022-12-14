@@ -1121,6 +1121,32 @@ html {
     .lending .lending_slider .swiper-pagination-progressbar-fill {
       background-color: #3772FF;
       border-radius: 400px; }
+  .lending .swiper-button-next,
+  .lending .swiper-button-prev {
+    display: none; }
+    @media (max-width: 479px) {
+      .lending .swiper-button-next,
+      .lending .swiper-button-prev {
+        display: block;
+        top: 145px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: #3772FF;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+    .lending .swiper-button-next::after, .lending .swiper-button-next::before,
+    .lending .swiper-button-prev::after,
+    .lending .swiper-button-prev::before {
+      display: none; }
+  .lending .swiper-button-next {
+    right: 0; }
+  .lending .swiper-button-prev {
+    left: 0; }
   .lending .swiper-slide {
     display: -ms-flexbox;
     display: flex;
@@ -1176,7 +1202,6 @@ html {
     display: inline-block;
     /* Только если меньше контейнера */
     margin-top: 45px;
-    min-width: 100%;
     text-align: center;
     transition: all .3s ease; }
     @media (max-width: 1350px) {
@@ -1184,9 +1209,47 @@ html {
         margin-top: calc(30px + 15 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 479px) {
       .lending .slider_btn {
-        font-size: 15px; } }
+        font-size: 14px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 86px;
+        height: 86px;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 290px;
+        right: 30px;
+        z-index: 1;
+        text-transform: uppercase; }
+        .lending .slider_btn .phone_img {
+          margin-bottom: 5px; } }
+    .lending .slider_btn .tip_btn {
+      position: absolute;
+      top: -40px;
+      left: -160px; }
+    .lending .slider_btn .tip_arrow {
+      margin-top: -25px; }
     .lending .slider_btn:hover {
       background-color: #0C43C8; }
+    .lending .slider_btn .phone_text,
+    .lending .slider_btn .phone_img {
+      display: none; }
+      @media (max-width: 479px) {
+        .lending .slider_btn .phone_text,
+        .lending .slider_btn .phone_img {
+          display: block; } }
+    .lending .slider_btn .phone_text {
+      font-weight: 400; }
+    @media (max-width: 479px) {
+      .lending .slider_btn .desktop_text {
+        display: none; } }
   .lending .slider_img {
     position: relative;
     width: 39%;
@@ -1201,11 +1264,8 @@ html {
         margin: 0 0 20px 0; } }
     @media (max-width: 479px) {
       .lending .slider_img {
-        width: 350px;
+        width: 315px;
         height: 300px; } }
-    @media (max-width: 374px) {
-      .lending .slider_img {
-        width: 100%; } }
 
 .second_slider {
   background-color: #ffffff; }

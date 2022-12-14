@@ -350,6 +350,36 @@ html {
         }
     }
 
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+            top: 145px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: $blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+
+    .swiper-button-next {
+        right: 0;
+    }
+
+    .swiper-button-prev {
+        left: 0;
+    }
+
     .swiper-slide {
         display: flex;
         align-items: center;
@@ -406,16 +436,62 @@ html {
         color: $white;
         display: inline-block;
         @include adaptiv-vaule("margin-top", 45, 30, 1);
-        min-width: 100%;
         text-align: center;
         transition: all .3s ease;
 
         @include media ("<phone") {
-            font-size: 15px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 86px;
+            height: 86px;
+            border-radius: 50%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 290px;
+            right: 30px;
+            z-index: 1;
+            text-transform: uppercase;
+
+            .phone_img {
+                margin-bottom: 5px;
+            }
+        }
+
+        .tip_btn {
+            position: absolute;
+            top: -40px;
+            left: -160px;
+        }
+
+        .tip_arrow{
+            margin-top: -25px;
         }
 
         &:hover {
             background-color: #0C43C8;
+        }
+
+        .phone_text,
+        .phone_img {
+            display: none;
+
+            @include media ("<phone") {
+                display: block;
+            }
+        }
+
+        .phone_text{
+            font-weight: 400;
+        }
+
+        .desktop_text {
+            @include media ("<phone") {
+                display: none;
+            }
         }
     }
 
@@ -434,12 +510,8 @@ html {
         }
 
         @include media ("<phone") {
-            width: 350px;
+            width: 315px;
             height: 300px;
-        }
-
-        @include media ("<375px") {
-            width: 100%;
         }
     }
 }

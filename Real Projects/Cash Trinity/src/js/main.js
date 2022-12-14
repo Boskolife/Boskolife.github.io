@@ -15,10 +15,16 @@ destroySlidersOnResize(".lending_slider", 9999, {
     releaseOnEdges:true,
   },
   autoHeight: true,
+  speed:1000,
 
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 
   breakpoints: {
@@ -27,6 +33,7 @@ destroySlidersOnResize(".lending_slider", 9999, {
       autoHeght: true,
     },
   },
+  
 });
 
 function initBurgerMenu() {
