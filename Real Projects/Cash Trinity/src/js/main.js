@@ -163,8 +163,6 @@ function initCircleBtn() {
       ? circleBtn.classList.add("sticky")
       : circleBtn.classList.remove("sticky");
 
-    console.log('currentScrollBottomPos: ', currentScrollBottomPos);
-    console.log('formSectionTopPos + formSectionHeight : ', formSectionTopPos);
     if(currentScrollBottomPos >= formSectionTopPos) {
       circleBtn.classList.add('hidden')
     } else {
@@ -197,6 +195,8 @@ function initHeader() {
     });
 
     const currentScrollPosY = window.scrollY;
+
+    if(currentScrollPosY < 0) return;
 
     const isHeaderOverlaySection = sectionsPositions.find(
       (pos) =>
