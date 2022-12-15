@@ -138,10 +138,11 @@ function initCustomSlider() {
 
 function initCircleBtn() {
   const circleBtn = document.querySelector(".circle_btn");
-  const mainSection = document.querySelector(".main-section");
-  const formSection = document.querySelector('.form');
+  const firstSection = document.querySelectorAll("section")[0];
+  const formSection = document.querySelector(".form");
+  const footer = document.querySelector("footer");
 
-  if (!circleBtn && !mainSection) return;
+  if (!circleBtn && !firstSection) return;
 
   checkStickyBtn();
 
@@ -149,24 +150,34 @@ function initCircleBtn() {
   window.addEventListener("resize", checkStickyBtn);
 
   function checkStickyBtn() {
-    const mainSecHeight = mainSection.offsetHeight;
+    const firstSecHeight = firstSection.offsetHeight;
     const currentScrollPosY = window.scrollY;
-    const mainSectionBottomPadding = getComputedStyle(
-      mainSection
+    const firstSectionBottomPadding = getComputedStyle(
+      firstSection
     ).paddingBottom.replace(/px/g, "");
     const currentScrollBottomPos = window.scrollY + window.innerHeight;
-    const formSectionTopPos = formSection.offsetTop;
-    const formSectionHeight = formSection.offsetHeight;
 
-
-    currentScrollPosY > mainSecHeight - +mainSectionBottomPadding
+    currentScrollPosY > firstSecHeight - +firstSectionBottomPadding
       ? circleBtn.classList.add("sticky")
       : circleBtn.classList.remove("sticky");
 
-    if(currentScrollBottomPos >= formSectionTopPos) {
-      circleBtn.classList.add('hidden')
-    } else {
-      circleBtn.classList.remove('hidden')
+    if (formSection) {
+      const formSectionTopPos = formSection.offsetTop;
+
+      currentScrollBottomPos >= formSectionTopPos
+        ? circleBtn.classList.add("hidden")
+        : circleBtn.classList.remove("hidden");
+      return;
+    }
+
+    if (footer) {
+      const footerTopPos = footer.offsetTop;
+      const footerTopPadding = getComputedStyle(
+        firstSection
+      ).paddingTop.replace(/px/g, "");
+      currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2
+        ? circleBtn.classList.add("hidden")
+        : circleBtn.classList.remove("hidden");
     }
   }
 }
