@@ -799,7 +799,7 @@ html {
     }
 
     form {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     .input_title {
@@ -936,11 +936,7 @@ html {
         padding: 20px;
         background-color: #F8F9FB;
         border-radius: 16px;
-        margin-bottom: 10px;
-
-        @include media ("<phone") {
-            margin-bottom: 20px;
-        }
+        margin-bottom: 20px;
 
         .input_title {
             color: $black;

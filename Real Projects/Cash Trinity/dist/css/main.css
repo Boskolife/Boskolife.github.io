@@ -1542,7 +1542,7 @@ html {
         border: none;
         margin: 0; } }
   .calculator form {
-    margin-bottom: 25px; }
+    margin-bottom: 15px; }
   .calculator .input_title {
     font-weight: 700;
     font-size: 12px;
@@ -1650,10 +1650,7 @@ html {
     padding: 20px;
     background-color: #F8F9FB;
     border-radius: 16px;
-    margin-bottom: 10px; }
-    @media (max-width: 479px) {
-      .calculator .total_savings {
-        margin-bottom: 20px; } }
+    margin-bottom: 20px; }
     .calculator .total_savings .input_title {
       color: #23262F;
       font-size: 16px;
