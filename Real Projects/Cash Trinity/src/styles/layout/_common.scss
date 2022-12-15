@@ -48,8 +48,170 @@ html {
     }
 }
 
+.circle_btn {
+    width: 162px;
+    height: 162px;
+    border-radius: 50%;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all .3s ease;
 
-// ---------- Main
+    @include media ("<tablet") {
+        bottom: -15%;
+        right: 5%;
+    }
+
+    @include media ("<phone") {
+        transform: scale(0.8);
+        right: -20px;
+    }
+
+    &:hover {
+        background-color: #0C43C8;
+    }
+
+    .btn_title {
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $white;
+        margin: 20px 0 10px 0;
+    }
+}
+
+.calc_btn {
+
+    @include media ("<phone") {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2%;
+        display: block;
+        min-width: 300px;
+        background-color: $blue;
+        box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        color: $white;
+        font-size: 15px;
+        font-weight: 600;
+        z-index: 5;
+        height: auto;
+
+        .btn_arrow {
+
+            @include media ("<phone") {
+                display: none;
+            }
+        }
+    
+        .btn_title {
+            font-size: 14px;
+        }
+    
+        .curve-text-wrap {
+            @include media ("<phone") {
+                display: none;
+            }
+        }
+    }
+
+    &.hidden {
+        transform: translate(300px, 0);
+    }
+}
+
+.sticky {
+    position: fixed;
+    right: 1%;
+    bottom: 2%;
+    z-index: 5;
+    transform: scale(0.9);
+
+    @include media ("<phone") {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2%;
+        display: block;
+        min-width: 300px;
+        background-color: $blue;
+        box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        color: $white;
+        font-size: 15px;
+        font-weight: 600;
+        z-index: 5;
+        height: auto;
+    }
+
+    &.hidden {
+        transform: translate(300px, 0);
+    }
+
+    .btn_arrow {
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .btn_title {
+        font-size: 14px;
+    }
+
+    .curve-text-wrap {
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+}
+
+.curve-text-wrap {
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        font-weight: 400;
+        border-radius: 50%;
+        width: 162px;
+        height: 162px;
+        font-size: 11px;
+        animation: anim_circle_rotate 10s linear infinite;
+    }
+}
+
+.curve-text {
+    position: absolute;
+    width: 162px;
+    height: 162px;
+    left: 0;
+    top: 0;
+
+    &:nth-child(2) {
+        transform: rotate(120deg);
+    }
+
+    &:nth-child(3) {
+        transform: rotate(240deg);
+    }
+}
+
+// ---------- #Main
 
 .main-section {
     padding-top: 120px;
@@ -62,126 +224,6 @@ html {
     border-radius: 0 0 32px 32px;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(45, 47, 52, 0) 0%, #2D2F34 100%);
-
-    .circle_btn {
-        width: 162px;
-        height: 162px;
-        border-radius: 50%;
-        background-color: $blue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        color: $white;
-        position: absolute;
-        bottom: 0;
-        right: 1%;
-        font-weight: 500;
-        font-size: 16px;
-        transition: all .3s ease;
-
-        @include media ("<tablet") {
-            bottom: -15%;
-            right: 5%;
-        }
-
-        @include media ("<phone") {
-            transform: scale(0.8);
-            right: -20px;
-        }
-
-        &:hover {
-            background-color: #0C43C8;
-        }
-
-        .btn_title {
-            font-weight: 500;
-            font-size: 16px;
-            text-transform: uppercase;
-            color: $white;
-            margin: 20px 0 10px 0;
-        }
-    }
-
-    .sticky {
-        position: fixed;
-        right: 1%;
-        bottom: 2%;
-        z-index: 5;
-        transform: scale(0.9);
-
-        @include media ("<phone") {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 2%;
-            display: block;
-            min-width: 300px;
-            background-color: $blue;
-            box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            color: $white;
-            font-size: 15px;
-            font-weight: 600;
-            z-index: 5;
-            height: auto;
-        }
-
-        &.hidden {
-            transform: translate(300px, 0);
-        }
-
-        .btn_arrow {
-
-            @include media ("<phone") {
-                display: none;
-            }
-        }
-
-        .btn_title {
-            font-size: 14px;
-        }
-
-        .curve-text-wrap {
-            @include media ("<phone") {
-                display: none;
-            }
-        }
-    }
-
-    .curve-text-wrap {
-        opacity: 0;
-
-        &.active {
-            opacity: 1;
-            position: absolute;
-            right: 0;
-            font-weight: 400;
-            border-radius: 50%;
-            width: 162px;
-            height: 162px;
-            font-size: 11px;
-            animation: anim_circle_rotate 10s linear infinite;
-        }
-    }
-
-    .curve-text {
-        position: absolute;
-        width: 162px;
-        height: 162px;
-        left: 0;
-        top: 0;
-
-        &:nth-child(2) {
-            transform: rotate(120deg);
-        }
-
-        &:nth-child(3) {
-            transform: rotate(240deg);
-        }
-    }
 
     @keyframes anim_circle_rotate {
         0% {
@@ -279,7 +321,7 @@ html {
     }
 }
 
-// ---------- Lending
+// ---------- #Lending
 
 .lending {
     padding: 130px 30px 130px 0;
@@ -526,7 +568,7 @@ html {
     background-color: $white;
 }
 
-// ---------- Form
+// ---------- #Form
 
 
 .form {
@@ -565,7 +607,7 @@ html {
         text-transform: uppercase;
     }
 
-    
+
     .time_invest {
         margin: 20px 0 30px 0;
         display: flex;
@@ -742,12 +784,13 @@ html {
 }
 
 
-// ---------- Calculator
+// ---------- #Calculator
 
 .calculator {
     @include adaptiv-vaule("padding-top", 150, 100, 1);
     @include adaptiv-vaule("padding-bottom", 60, 40, 1);
     background-color: #F8F9FB;
+    position: relative;
 
     .calculator_title {
         @include adaptiv-vaule(" font-size", 40, 28, 1);

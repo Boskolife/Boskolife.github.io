@@ -13,6 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="./js/highcharts.js" defer></script>
     <script src="./js/main.js" defer></script>
+    <script src="./js/circletype.min.js"></script>
+    <script src="./js/wow.js"></script>
 </head>
 
 <body>
@@ -20,14 +22,26 @@
         //= templates/header.html
         <main id="main">
             <section id="calc" class="calculator">
+                <a href="index.html#form_tab"
+                    class="circle_btn calc_btn wow animate__animated animate__fadeIn">
+                    <div class="curve-text-wrap">
+                        <span id="simple_arc1">GET PAID 13% ANNUALLY</span>
+                        <span id="simple_arc2">GET PAID 13% ANNUALLY</span>
+                        <span id="simple_arc3">GET PAID 13% ANNUALLY</span>
+                    </div>
+                    <span class="btn_title">INVEST NOW</span>
+                    <img class="btn_arrow" src="./images/main/arrow.svg" alt="image not found">
+                </a>
                 <div class="cont">
                     <div class="calculator_content">
                         <h2 class="calculator_title">Compound Interest calculator</h2>
+
                         <div class="calculator_body">
                             <div class="data_block">
                                 <form action="#">
                                     <p class="input_title">Investment:</p>
-                                    <input id="investmentInput" class="summ_area" maxlength="4" type="text">
+                                    <input id="investmentInput" class="summ_area" maxlength="4"
+                                        type="text">
                                     <p class="input_title ">Would you like to invest</p>
                                     <div id="time_in" class="time_invest">
                                         <div class="check_wrap">
@@ -53,7 +67,8 @@
                                     </div>
                                     <p class="input_title numb">Number of years (min 1 - max 50)</p>
                                     <div class="years">
-                                        <input id="numberOfYearsInput" class="summ_area" type="text">
+                                        <input id="numberOfYearsInput" class="summ_area"
+                                            type="text">
                                         <div class="rate">
                                             <p class="input_title">Annual interest rate</p>
                                             <span class="percent">13%</span>
