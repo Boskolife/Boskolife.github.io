@@ -463,7 +463,8 @@ html {
         }
 
         .tip_btn {
-            display:none;
+            display: none;
+
             @include media ("<phone") {
                 position: absolute;
                 top: -40px;
@@ -472,7 +473,7 @@ html {
             }
         }
 
-        .tip_arrow{
+        .tip_arrow {
             margin-top: -25px;
         }
 
@@ -489,7 +490,7 @@ html {
             }
         }
 
-        .phone_text{
+        .phone_text {
             font-weight: 400;
         }
 
@@ -564,6 +565,7 @@ html {
         text-transform: uppercase;
     }
 
+    
     .time_invest {
         margin: 20px 0 30px 0;
         display: flex;
@@ -947,6 +949,22 @@ html {
             color: $blue;
         }
     }
+
+    .numb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 69%;
+
+        @include media ("<tablet") {
+            width: 63%;
+        }
+
+        @include media ("<phone_max") {
+            width: 100%;
+        }
+    }
+
 
     .info_block {
         width: 42%;
