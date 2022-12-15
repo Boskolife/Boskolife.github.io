@@ -1661,20 +1661,6 @@ html {
       @media (max-width: 1350px) {
         .calculator .total_savings .total_blue {
           font-size: calc(28px + 4 * ((100vw - calc(375px)) / 975)); } }
-  .calculator .numb {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 69%; }
-    @media (max-width: 767px) {
-      .calculator .numb {
-        width: 63%; } }
-    @media (max-width: 649px) {
-      .calculator .numb {
-        width: 100%; } }
   .calculator .info_block {
     width: 42%;
     display: -ms-flexbox;

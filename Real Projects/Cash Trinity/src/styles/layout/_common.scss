@@ -950,22 +950,6 @@ html {
         }
     }
 
-    .numb {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 69%;
-
-        @include media ("<tablet") {
-            width: 63%;
-        }
-
-        @include media ("<phone_max") {
-            width: 100%;
-        }
-    }
-
-
     .info_block {
         width: 42%;
         display: flex;
