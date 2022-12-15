@@ -897,40 +897,6 @@ html {
     color: #ffffff;
     margin: 20px 0 10px 0; }
 
-@media (max-width: 479px) {
-  .calc_btn {
-    position: fixed;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    bottom: 2%;
-    display: block;
-    min-width: 300px;
-    background-color: #3772FF;
-    box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.2);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 600;
-    z-index: 5;
-    height: auto; } }
-  @media (max-width: 479px) and (max-width: 479px) {
-    .calc_btn .btn_arrow {
-      display: none; } }
-
-@media (max-width: 479px) {
-    .calc_btn .btn_title {
-      font-size: 14px; } }
-  @media (max-width: 479px) and (max-width: 479px) {
-    .calc_btn .curve-text-wrap {
-      display: none; } }
-
-.calc_btn.hidden {
-  -webkit-transform: translate(300px, 0);
-  transform: translate(300px, 0); }
-
 .sticky {
   position: fixed;
   right: 1%;
@@ -1576,11 +1542,7 @@ html {
         border: none;
         margin: 0; } }
   .calculator form {
-    /* Только если меньше контейнера */
-    margin-bottom: 100px; }
-    @media (max-width: 1350px) {
-      .calculator form {
-        margin-bottom: calc(30px + 70 * ((100vw - calc(375px)) / 975)); } }
+    margin-bottom: 25px; }
   .calculator .input_title {
     font-weight: 700;
     font-size: 12px;
@@ -1687,7 +1649,11 @@ html {
     text-align: center;
     padding: 20px;
     background-color: #F8F9FB;
-    border-radius: 16px; }
+    border-radius: 16px;
+    margin-bottom: 10px; }
+    @media (max-width: 479px) {
+      .calculator .total_savings {
+        margin-bottom: 20px; } }
     .calculator .total_savings .input_title {
       color: #23262F;
       font-size: 16px;
@@ -1700,6 +1666,22 @@ html {
       @media (max-width: 1350px) {
         .calculator .total_savings .total_blue {
           font-size: calc(28px + 4 * ((100vw - calc(375px)) / 975)); } }
+  .calculator .calc_btn_invest {
+    display: inline-block;
+    width: 100%;
+    background-color: #3772FF;
+    padding: 20px 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    color: #ffffff;
+    text-align: center;
+    transition: all .3s ease; }
+    @media (max-width: 479px) {
+      .calculator .calc_btn_invest {
+        font-size: 15px; } }
+    .calculator .calc_btn_invest:hover {
+      background-color: #0C43C8; }
   .calculator .info_block {
     width: 42%;
     display: -ms-flexbox;
