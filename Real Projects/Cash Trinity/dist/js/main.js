@@ -164,8 +164,6 @@ function initCircleBtn() {
     var formSectionTopPos = formSection.offsetTop;
     var formSectionHeight = formSection.offsetHeight;
     currentScrollPosY > mainSecHeight - +mainSectionBottomPadding ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
-    console.log('currentScrollBottomPos: ', currentScrollBottomPos);
-    console.log('formSectionTopPos + formSectionHeight : ', formSectionTopPos);
 
     if (currentScrollBottomPos >= formSectionTopPos) {
       circleBtn.classList.add('hidden');
@@ -196,6 +194,7 @@ function initHeader() {
       };
     });
     var currentScrollPosY = window.scrollY;
+    if (currentScrollPosY < 0) return;
     var isHeaderOverlaySection = sectionsPositions.find(function (pos) {
       return currentScrollPosY >= pos.start && currentScrollPosY <= pos.end - header.offsetHeight;
     });
