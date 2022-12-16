@@ -227,7 +227,7 @@ header {
         }
 
         svg {
-            transition: all .7s ease fill 0s ease;
+            transition: all .7s ease , fill .0s ease;
             position: relative;
             z-index: -1;
             width: 100%;
@@ -307,7 +307,6 @@ header {
                 border-bottom: 1px solid #EDEDED;
             }
         }
-
 
         .link {
             transition: all 0.3s ease;

@@ -1028,7 +1028,7 @@ header {
       .header_content .arrow {
         width: 50%; } }
     .header_content .arrow svg {
-      transition: all .7s ease fill 0s ease;
+      transition: all .7s ease , fill .0s ease;
       position: relative;
       z-index: -1;
       width: 100%;
