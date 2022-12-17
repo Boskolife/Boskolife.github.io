@@ -1085,7 +1085,8 @@ header {
     .header_content .menu-item .link {
       transition: all 0.3s ease;
       font-size: 14px;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      cursor: pointer; }
       @media (max-width: 767px) {
         .header_content .menu-item .link {
           font-size: 20px; } }

@@ -312,6 +312,7 @@ header {
             transition: all 0.3s ease;
             font-size: 14px;
             text-transform: capitalize;
+            cursor:pointer;
 
             @include media ("<tablet") {
                 font-size: 20px;
