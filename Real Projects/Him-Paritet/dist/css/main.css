@@ -1604,7 +1604,7 @@ main {
     .category .card:hover {
       -webkit-transform: translateY(-10px);
       transform: translateY(-10px); }
-    .category .card .link_description {
+    .category .card .card_link {
       position: absolute;
       top: 0;
       left: 0;
