@@ -189,10 +189,16 @@ var ItcTabs = /*#__PURE__*/function () {
             closeBurgerMenu();
           }
 
+          var origin = window.location.origin;
           var path = window.location.pathname;
 
           if (path.includes("our_production")) {
             _this.show(target);
+          }
+
+          if (origin === "https://boskolife.github.io") {
+            window.location.href = "".concat(origin, "/Real%20Projects/Him-Paritet/dist/our_production.html#").concat(index);
+            return;
           }
 
           window.location.href = "/dist/our_production.html#".concat(index);

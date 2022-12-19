@@ -156,9 +156,14 @@ class ItcTabs {
         if (isNavLinkFromHeader) {
           closeBurgerMenu();
         }
+        const origin = window.location.origin;
         const path = window.location.pathname;
         if (path.includes("our_production")) {
           this.show(target);
+        }
+        if (origin === "https://boskolife.github.io") {
+          window.location.href = `${origin}/Real%20Projects/Him-Paritet/dist/our_production.html#${index}`;
+          return;
         }
         window.location.href = `/dist/our_production.html#${index}`;
       }
