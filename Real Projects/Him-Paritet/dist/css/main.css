@@ -2611,7 +2611,7 @@ main {
         text-align: center;
         color: #FFFFFF;
         padding: 10px;
-        z-index: 7;
+        z-index: 4;
         transition: all .3s ease; }
         .our_production .category_btn img {
           margin-right: 5px; } }
