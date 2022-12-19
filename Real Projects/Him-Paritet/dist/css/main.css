@@ -1604,7 +1604,7 @@ main {
     .category .card:hover {
       -webkit-transform: translateY(-10px);
       transform: translateY(-10px); }
-  .category .card_link {
+  .category .link_description {
     position: absolute;
     top: 0;
     left: 0;
@@ -2923,7 +2923,7 @@ main {
     @media (max-width: 767px) {
       .our_production .card {
         background: #FFFFFF; } }
-    .our_production .card .card_link {
+    .our_production .card .link_description {
       position: absolute;
       top: 0;
       left: 0;
@@ -3130,7 +3130,7 @@ main {
   @media (max-width: 767px) {
     .similar .card {
       background: #FFFFFF; } }
-  .similar .card .card_link {
+  .similar .card .link_description {
     position: absolute;
     top: 0;
     left: 0;
