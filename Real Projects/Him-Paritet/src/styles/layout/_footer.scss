@@ -164,6 +164,39 @@ footer {
     padding: 15px 0;
     border-top: 1px solid rgba(151, 151, 151, 0.2);
     text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media ("<phone_max") {
+        flex-direction: column;
+    }
+
+    .footer_link{
+        display: flex;
+        align-items: center;
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+
+        &:hover{
+
+            svg{
+                fill: $green;
+            }
+        }
+
+        @include media ("<phone_max") {
+            margin-bottom: 15px;
+        }
+
+        svg{
+            fill: $blue;
+            margin-left: 5px;
+            transition: all .3s ease;
+        }
+    }
 
     .copyright {
         color: #DAD9D9;

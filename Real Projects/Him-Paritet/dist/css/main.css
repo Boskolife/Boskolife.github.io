@@ -3319,7 +3319,35 @@ footer {
 .footer_bot {
   padding: 15px 0;
   border-top: 1px solid rgba(151, 151, 151, 0.2);
-  text-align: center; }
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 649px) {
+    .footer_bot {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+  .footer_bot .footer_link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase; }
+    .footer_bot .footer_link:hover svg {
+      fill: #0CC689; }
+    @media (max-width: 649px) {
+      .footer_bot .footer_link {
+        margin-bottom: 15px; } }
+    .footer_bot .footer_link svg {
+      fill: #4079EE;
+      margin-left: 5px;
+      transition: all .3s ease; }
   .footer_bot .copyright {
     color: #DAD9D9;
     /* Только если меньше контейнера */
