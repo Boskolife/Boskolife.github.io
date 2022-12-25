@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Trinity</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="website icon" type="png" href="./images/icon_tab.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:regular,italic,500,600,700,"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:regular,700" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./js/highcharts.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/circletype.min.js"></script>
+    <script src="./js/wow.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header.html
+        <main id="main">
+            <section class="policy">
+                <div class="cont">
+                    <div class="cookie_policy_content">
+                        <span class="policy_tip">Legal</span>
+                        <h2 class="policy_title">User agreement</h2>
+                        <div class="block">
+                            <p class="policy_text">
+                                <span>Applicable from 2021/10/01</span>
+                            <p class="policy_text uppertext"> GENERAL TERMS AND CONDITIONS OF
+                                i-PLATFORM USER AGREEMENT </p>
+                            </p>
+                        </div>
+                        <div class="block">
+                            <h3 class="policy_subtitle">1. Definitions</h3>
+                            <p class="policy_text">
+                                <span class="bold">Agreement</span> – an agreement of a user of the
+                                www.Cash Trinity.com
+                                i-Platform concluded between the User and Cash Trinity. The
+                                Agreement on the i-Platform and agreements concluded on the
+                                i-Platform may be referred to as the “Agreement of a user of the
+                                portal concluded between the User and Cash Trinity”.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Assignee</span> – a User who has purchased a
+                                Claim from the Assignor under
+                                the Assignment Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Assignment Agreement</span> – an assignment
+                                agreement concluded between the
+                                Creditor as the Assignor and the User as the Assignee, and pursuant
+                                to which the Creditor (the Assignor) transfers a Claim arising from
+                                the Loan Agreement to the User (the Assignee).
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Assignor</span> – a Creditor (Loan Originator),
+                                who pursuant to the
+                                Assignment Agreement, assigns the Claim to another User (the
+                                Assignee).
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Auto Invest</span> – a tool for automated
+                                purchases of Claims on the
+                                i-Platform, functioning according to the User’s selected settings
+                                and used by the User to purchase Claims on his/her own behalf in
+                                accordance with the selected settings.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Borrower</span> – a natural person or legal
+                                entity, wherewith the Loan
+                                Originator has concluded a Loan Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Borrower’s Payments</span> – payments executed by
+                                the Borrower for the Loan
+                                repayment, Interest, contractual penalty, late payment interest,
+                                and/or other ancillary claims arising from the Loan Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Business Day</span> – an officially determined
+                                business day of the Republic
+                                of Croatia, on which banks in Croatia are operating, except for
+                                Saturdays, Sundays and public holidays.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Claim</span> – a Creditor’s claim or a part
+                                thereof towards the Borrower,
+                                arising from the Loan Agreement. The Claim can consist of the Loan
+                                principal, Interest, and other ancillary claims in full or partial
+                                amount, complying with the rights of the Assignor to establish
+                                exceptions. The Claim is assigned without the contractual penalty
+                                and other ancillary claims not specified in the Assignment
+                                Agreement. Detailed amount and composition of the Claim is
+                                established in the Assignment Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Claim Amount</span> – a Loan or a part of it, to
+                                the extent whereof the
+                                Assignor transfers a Claim to the Assignee, and which forms the
+                                Claim Price.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Claim Application</span> – a User’s application
+                                filled in on the i-Platform
+                                for purchase of a single or multiple Claims selected by the User.
+                                Claim Price – the price for a Claim transfer agreed upon between the
+                                Assignor and User and established in the Assignment Agreement,
+                                consisting of the Claim Amount.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Collateral</span> – a Loan Originator’s pledge
+                                rights on real estate,
+                                movable property, or aggregation of property, a third party
+                                guarantee, title to a vehicle or any other legally permissible means
+                                of securing the fulfillment of the Borrower’s obligations arising
+                                from the Loan Agreement if expressly indicated among other
+                                information about the Claim on the i-Platform (if any). The Claim
+                                can be established without Collateral. For the purposes of the
+                                Agreement, the contractual penalty, late payment interest and other
+                                ancillary claims arising from the Loan Agreement, shall not be
+                                considered as a Collateral.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Creditor</span> – Loan Originator who owns a
+                                Claim towards the Borrower.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Interest</span> – Remuneration for the use of the
+                                Loan expressed as
+                                interest per annum. Interest is a part of the Claim and is being
+                                paid by the Borrower according to the Loan Agreement. The term
+                                “Interest” also refers to the late interest fee that will be
+                                calculated and paid for each day of delay of repayment of the Loan
+                                by the Borrower.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Loan</span> – A principal amount of the credit
+                                that has been issued to the
+                                Borrower pursuant to the Loan Agreement and is due, or a part
+                                thereof which pursuant to the Assignment Agreement shall be repaid
+                                by the Borrower to the Loan Originator, and which Cash Trinity
+                                transfers to the Assignee after it is received from the Loan
+                                Originator.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Loan Agreement</span> -A credit agreement (loan
+                                agreement, lease or other
+                                type of contract) that is concluded between the Loan Originator and
+                                the Borrower.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Loan Originator</span> – a lending company which
+                                is the Creditor, who, in
+                                compliance with the co-operation agreement concluded between the
+                                Creditor and Cash Trinity, has authorized Cash Trinity to transfer
+                                the Loan Originator’s Claims towards the Borrower, by using the
+                                i-Platform, and on behalf of the Creditor, to take other steps
+                                prescribed in the Agreement and in the Assignment Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Minimum Claim Amount</span> – the minimum amount
+                                of a single Claim as
+                                established by Cash Trinity and indicated on the i-Platform for
+                                which a User can purchase a single Claim. The amount of the Claim
+                                forms the Claim Price.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Cash Trinity</span> – CASH TRINITY d.o.o., a
+                                limited liability company
+                                registered and existing under the laws of the Republic of Croatia,
+                                company registration No. 05159121, who maintains and administers the
+                                i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Cash Trinity Account/-s</span> – Cash Trinity
+                                bank account/-s opened
+                                pursuant to the present Terms and Conditions, the User transfers
+                                funds to add them to the User’s Virtual Account and which is held
+                                separate from other property of Cash Trinity.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Parties</span> – the User and Cash Trinity.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> i-Platform</span> – CASH TRINITY d.o.o. web site
+                                and a set of related
+                                services, that are provided within the domain’s www.Cash Trinity.com
+                                technological framework, and which enable Users to use that
+                                information technology services in all possible ways to perform
+                                activities allowed by the regulations of the i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Price List</span> – the effective price list of
+                                Cash Trinity services
+                                published in the i-Platform, which is an integral part of the
+                                Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Privacy Policy</span> – the privacy policy of
+                                Cash Trinity available on the
+                                i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Registration Application</span> – an application
+                                prepared by the User on
+                                the i-Platform in compliance with Section 2 of the Terms and
+                                Conditions for the registration on the i-Platform and for the use of
+                                the offered services in compliance with the Terms and Conditions.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Service Fee</span> – a fee indicated on the Price
+                                List paid by the User to
+                                Cash Trinity for processing Claims in compliance with the provisions
+                                of the Agreement and/or the Assignment Agreement or any fee
+                                indicated on the Price List for other services provided by Cash
+                                Trinity on i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Summary</span> – a summary automatically created
+                                on the i-Platform
+                                regarding the User’s selected Claims and the User’s indicated sums,
+                                for which the User wishes to purchase Claims.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Terms and Conditions </span>– the present terms
+                                and conditions of Cash
+                                Trinity i-Platform user agreement, applicable to all User’s
+                                agreements and transactions entered into by the User via the
+                                i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> Investor or User</span> – a person registered on
+                                the i-Platform as its user
+                                in capacity of an investor as prescribed by this Agreement.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">User’s Bank Account</span> – an account opened in
+                                the name of the Investor
+                                in a credit institution, payment institution or electronic money
+                                institution, subject to the provisions of Law On the Prevention of
+                                Money Laundering and Terrorism Financing of the Republic of Croatia
+                                or the requirements arising from the European Union laws concerning
+                                the prevention of money laundering and terrorism financing.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">User’s ID Number</span> – a personalized number
+                                of each User of the
+                                i-Platform, used by Cash Trinity to identify the User. The User’s
+                                i-Platform-ID Number is also used when User transfers funds to add
+                                them to the User’s Virtual Account.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold"> User’s Profile</span> – the User’s personal site
+                                on the i-Platform, which
+                                is automatically created after the Investor registers on the
+                                i-Platform and is constantly available to the Investor after
+                                entering the Investor’s e-mail address and password or using the two
+                                factor authentication, if enabled by the User, on the i-Platform.
+                            </p>
+                            <p class="policy_text">
+                                <span class="bold">Virtual Account</span> – a separate account
+                                provided for each Investor by
+                                Cash Trinity for recording settlements and transactions arising from
+                                the Terms and Conditions, Assignment Agreement and Loan Agreement.
+                            </p>
+                        </div>
+                        <div class="block">
+                            <h3 class="policy_subtitle">2. Registration on the i-Platform and
+                                creation of User’s Profile</h3>
+                            <div class="policy_text">
+                                <p>
+                                    2.1. Without prejudice to other provisions of the
+                                    Agreement, all Users must be registered and have concluded the
+                                    Agreement to use the services offered on the i-Platform.
+                                </p>
+                                <p>
+                                    2.2. When submitting the Registration Application and confirming
+                                    these Terms and Conditions, as well as when using the i-Platform
+                                    and
+                                    the services offered on the i-Platform, the User each time
+                                    represents and warrants to Cash Trinity that it meets the
+                                    following
+                                    requirements:
+                                </p>
+                                <p>2.2.1. the User is a natural person or legal entity;</p>
+                                <p>
+                                    2.2.2. if the User is a natural person, the User is at least 18
+                                    years old;
+                                </p>
+                                <p>
+                                    2.2.3. the User has a User’s Bank Account, and the User is
+                                    authorized to use the funds contained therein (if any) without
+                                    any
+                                    limitation;
+                                </p>
+                                <p>
+                                    2.2.4. the User is not subject to any insolvency, bankruptcy,
+                                    liquidation or likewise administration proceedings in any
+                                    jurisdiction;
+                                </p>
+                                <p>
+                                    2.2.5. the User is not declared having limited legal capacity
+                                    due to
+                                    disorders of mental nature;
+                                </p>
+                                <p>
+                                    2.3. The User acknowledges that at the time of submitting the
+                                    Registration Application and at the time of conclusion of the
+                                    Agreement the User has full legal capacity to act and is not
+                                    under
+                                    the influence of alcohol, drugs, psychoactive, toxic or other
+                                    intoxicating substances.
+                                </p>
+                                <p>
+                                    2.4. The User shall register on the i-Platform, by filling in a
+                                    Registration Application, performing identification procedures
+                                    in
+                                    line with Section 3 of these Terms and Conditions, and
+                                    confirming
+                                    the present Terms and Conditions. After the User registration, a
+                                    User’s Profile and a Virtual Account is automatically created on
+                                    the
+                                    i-Platform. Upon registration of the User on the i-Platform,
+                                    Cash
+                                    Trinity assigns a unique User’s i-Platform-ID number.
+                                </p>
+                                <p>
+                                    2.5. For the User to access and use the User’s Profile, Cash
+                                    Trinity
+                                    authenticates the User by the User’s email address and password
+                                    or
+                                    by using the two-factor authentication, if that is enabled by
+                                    the
+                                    User. The User shall be entitled to change the e-mail address
+                                    and
+                                    password used for User’s authentication in compliance with
+                                    procedures established on the i-Platform.
+                                </p>
+                                <p>
+                                    2.6. If the User is a legal entity then Cash Trinity is entitled
+                                    to
+                                    perform identification of the representative of the User, by
+                                    applying the same procedures as in the case of a User who is a
+                                    natural person (an individual).
+                                </p>
+                                <p>
+                                    2.7. To conclude the Agreement, to use the services offered on
+                                    the
+                                    i-Platform, and to purchase Claims, the User must take the steps
+                                    prescribed in Section 3 of the Terms and Conditions to enable
+                                    Cash
+                                    Trinity to identify the User.
+                                </p>
+                                <p>
+                                    2.8. Cash Trinity may refuse the registration of a new User on
+                                    the
+                                    i-Platform without giving a reason for refusal.
+                                </p>
+                                <p>
+                                    2.9. The User’s Profile is private, and only the owner of the
+                                    User’s
+                                    Profile (the User) is authorized to enter into and use it.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3 class="policy_subtitle">3. User due diligence, identification and
+                                confirmation of transactions</h3>
+                            <div class="policy_text">
+                                <p> 3.1. In order to fulfil the legal obligations under the
+                                    applicable laws and regulations, before the User may use the
+                                    services on the i-Platform and during the cooperation with the
+                                    User under the Agreement, Cash Trinity performs the due
+                                    diligence of the User, which includes, but is not limited to,
+                                    identification of the User, asserting the beneficial owner,
+                                    obtaining information on the source of funds, obtaining
+                                    information on the purpose and nature of the business
+                                    relationship.</p>
+                                <p>3.2. The identification of the User is conducted according to the
+                                    rules of the internal control system of Cash Trinity in one of
+                                    the following ways:</p>
+                                <p> 3.2.1. remotely, where the User submits identification document.
+                                    In such case Cash Trinity identifies the User, by using the
+                                    information received from the User;</p>
+                                <p> 3.2.2. in person, before the conclusion of the Agreement, the
+                                    User fills in the User data form and produces or submits
+                                    identification and other documents requested by Cash Trinity.
+                                </p>
+                                <p> 3.3. In order to properly perform the due diligence of the User,
+                                    Cash Trinity may, at its sole discretion, at any time, request
+                                    that the User submits additional documents or information on the
+                                    User’s identity, origin of funds, beneficial owners, and any
+                                    other information about the User that Cash Trinity finds
+                                    necessary for the due diligence of the User. Cash Trinity is
+                                    entitled to unilaterally determine any additional requirements
+                                    for the User identification, as well as introduce changes in the
+                                    User identification process.</p>
+                                <p> 3.4. If the Agreement is concluded in person, the Agreement
+                                    between Cash Trinity and the User shall be deemed entered into
+                                    and it shall become effective at the time when both Parties have
+                                    signed it. If the Agreement is concluded remotely, the Agreement
+                                    between Cash Trinity and the User shall be deemed entered into
+                                    and it shall become effective at the time, when Cash Trinity has
+                                    performed identification of the User and the User has confirmed
+                                    the present Terms and Conditions on the i-Platform. The
+                                    activation of User’s Profile on the i-Platform confirms the
+                                    conclusion of the Agreement. The User’s Profile shall be deemed
+                                    activated as from the moment the equivalent amount of electronic
+                                    money has been debited in the Virtual Account of the User. The
+                                    User may become acquainted with the concluded Agreement and all
+                                    Assignment Agreements on the User’s Profile.</p>
+                                <p> 3.5. A Registration Application filed in compliance with
+                                    procedures established in the Terms and Conditions and
+                                    transferring funds to the Cash Trinity Account to add them to
+                                    Investor’s Virtual Account confirms that the User wishes to use
+                                    the i-Platform and the services offered therein pursuant to the
+                                    Agreement provisions.</p>
+                                <p>3.6. When registering and logging into (entering) the User’s
+                                    Profile on the i-Platform, the User must enter the User’s email
+                                    address and password or use the two-factor authentication if
+                                    that is enabled by the User.</p>
+                                <p> 3.7. The User’s activities performed on the i-Platform after
+                                    entering the User’s email address and password or the two factor
+                                    authentication inputs shall be regarded as the User’s signature
+                                    or acceptance. All payments, payment orders, instructions,
+                                    applications, agreements, as well as other documents confirmed
+                                    or submitted by the User on the i-Platform after entering the
+                                    User’s email address and password or the two factor
+                                    authentication inputs as prescribed on the i-Platform shall be
+                                    binding upon the User, Cash Trinity and the Loan Originator, if
+                                    the Loan Originator is a party of the agreement.</p>
+                                <p> 3.8. The User’s password is deemed confidential information that
+                                    the User and Cash Trinity undertake not to disclose and shall
+                                    undertake to prevent that third parties can find it out. The
+                                    User must keep the User’s password in a secure manner, as well
+                                    as regularly, however not less frequently than once every 6
+                                    (six) months or at other frequency required by Cash Trinity,
+                                    change/update the password. Cash Trinity may impose rules on how
+                                    passwords may be created, like the minimum amount of symbols,
+                                    that it must contain at least 1 (one) capital and 1 (one) lower
+                                    case letter, and/or any other rules at it shall find reasonably
+                                    necessary.</p>
+                                <p> 3.9. If the User’s password has become known or may have become
+                                    known to a third party, the User must immediately inform Cash
+                                    Trinity about it in writing or over the telephone, at which time
+                                    Cash Trinity shall block access to the User’s Profile as soon as
+                                    possible, until, on the grounds of the User’s application, the
+                                    User is given a new User’s password and the User has given an
+                                    instruction to Cash Trinity to unblock the User’s Profile.</p>
+                                <p> 3.10. Access to the User’s Profile is temporarily blocked, if
+                                    the User’s password is entered incorrectly 5 (five) times in a
+                                    row.</p>
+                                <p> 3.11. Cash Trinity is entitled to, however is not obliged to,
+                                    block access to the User’s Profile if Cash Trinity suspects that
+                                    the User’s Profile has been accessed without due authorization,
+                                    including, if Cash Trinity suspects that the User’s password has
+                                    become known or may have become known to a third party, if Cash
+                                    Trinity has suspicions of the execution of illegal transactions,
+                                    as well as in other cases at the discretion of Cash Trinity, in
+                                    order to ensure safety of services, inviolability,
+                                    confidentiality of the User and/or other Cash Trinity clients or
+                                    to prevent losses that might be inflicted upon Cash Trinity or
+                                    the clients.</p>
+                                <p>3.12. Cash Trinity shall be entitled not to approve a transaction
+                                    and/or not to execute any application or instruction given by
+                                    the User and not to provide Services to the User, if:</p>
+                                <p>3.12.1 the User fails to comply with the Terms and Conditions;
+                                </p>
+                                <p>3.12.2 Cash Trinity has suspicions about the identity of the
+                                    User, and Cash Trinity has not been able to contact the User to
+                                    confirm the content of the transaction;</p>
+                                <p>3.12.3 the User’s instruction is unclear or distorted due to
+                                    interruption in communication;</p>
+                                <p>3.12.4 in other cases stipulated in Clause 3.11. of the Terms and
+                                    Conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
+
+</html>

@@ -17,6 +17,7 @@ header {
         a {
             color: $white;
         }
+
     }
 }
 
@@ -27,16 +28,11 @@ header {
 
     .logo {
         font-weight: 700;
-        font-size: 33px;
         letter-spacing: -0.03em;
         text-transform: uppercase;
         z-index: 3;
         display: flex;
-
-
-        @include media ("<tablet") {
-            font-size: 25px;
-        }
+        @include adaptiv-vaule("font-size", 33, 22, 1);
 
         span {
             color: $blue;
@@ -52,6 +48,8 @@ header {
     }
 
     .nav {
+        display: flex;
+        align-items: center;
 
         @include media ("<desktop") {
             position: absolute;
@@ -59,8 +57,7 @@ header {
             right: -100%;
             width: 50%;
             height: 100vh;
-            display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
             background: linear-gradient(180deg, #131A24 0%, #4A5A6D 100%);
             transition: all 0.5s ease-out;
@@ -81,6 +78,8 @@ header {
             text-align: center;
             @include adaptiv-vaule("padding-right", 30, 0, 1);
             @include adaptiv-vaule("padding-left", 30, 0, 1);
+            flex: 1 1 auto;
+            margin-top: 150px;
         }
 
         @include media ("<phone_max") {
@@ -90,11 +89,12 @@ header {
     }
 
     .menu_item {
-        @include adaptiv-vaule("margin-left", 30, 5, 1);
+        @include adaptiv-vaule("margin-right", 30, 5, 1);
         position: relative;
 
         @include media ("<desktop") {
             width: 100%;
+            margin-right: 0;
 
             &:not(:last-child) {
                 border-bottom: 1px solid rgba(230, 232, 236, 0.2);
@@ -139,10 +139,11 @@ header {
 
         @include media ("<desktop") {
             font-size: 28px;
+            color: $white;
         }
     }
 
-    .active{
+    .active {
         color: $blue;
     }
 

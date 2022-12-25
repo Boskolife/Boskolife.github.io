@@ -4,17 +4,19 @@ footer {
     background-color: $white;
 }
 
-.footer_top{
-    @include adaptiv-vaule("margin-bottom", 50 , 35, 1);
+.footer_top {
+    @include adaptiv-vaule("margin-bottom", 50, 35, 1);
 }
 
 .footer_content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     @include media ("<desktop") {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .logo {
@@ -25,9 +27,13 @@ footer {
         color: $black;
         z-index: 1;
         display: flex;
+        width: 25%;
 
         @include media ("<desktop") {
             margin-bottom: 30px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
         }
 
         @include media ("<tablet") {
@@ -47,38 +53,74 @@ footer {
         }
     }
 
-    .nav_menu{
+    .contact_us,
+    .nav,
+    .legal {
+        width: 23%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .legal,
+    .nav {
+        @include media ("<desktop") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .nav_menu {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
 
         @include media ("<desktop") {
-            flex-direction: column
+            align-items: center;
         }
     }
 
-    .menu_item{
-        @include adaptiv-vaule("margin-left", 40, 5, 1);
-
-        @include media ("<desktop") {
-            &:not(:last-child){
-                margin: 0 0 30px 0;
-            }
-        }
-    }
-
-    .link{
+    .menu_title {
+        font-weight: 600;
         font-size: 14px;
-        font-weight: 700;
-        color: $gray;
-        font-family: 'DM Sans';
+        color: $blue;
+        text-transform: uppercase;
+        margin-bottom: 20px;
 
-        &:hover{
+        @include media ("<tablet") {
+            margin-bottom: 10px;
+        }
+    }
+
+    .menu_item {
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+        }
+    }
+
+    .link {
+        font-size: 14px;
+        font-weight: 500;
+        color: $gray;
+
+        &:hover {
             color: $black;
+        }
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+
+        .link {
+            &:not(:last-child) {
+                @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+            }
         }
     }
 }
 
-.footer_bottom{
+.footer_bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,17 +131,23 @@ footer {
         flex-direction: column-reverse;
     }
 
-    .terms{
+    .terms {
         font-size: 12px;
         color: $gray;
     }
 
-    .author{
-        font-size: 18px;
-        color: $gray;
+    .author {
 
         @include media ("<phone_max") {
             margin-bottom: 15px;
+        }
+
+        a {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: $gray;
+
+
         }
 
     }
