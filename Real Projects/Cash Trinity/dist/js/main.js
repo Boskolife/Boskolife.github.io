@@ -27,7 +27,6 @@ initBurgerMenu();
 new WOW().init();
 initPopUpApp();
 initPopUpLogin();
-
 destroySlidersOnResize(".lending_slider", 9999, {
   spaceBetween: 20,
   sliderPerView: 1,
@@ -155,7 +154,7 @@ function initCircleBtn() {
   var firstSection = document.querySelectorAll("section")[0];
   var formSection = document.querySelector(".form");
   var footer = document.querySelector("footer");
-  if (!circleBtn && !firstSection) return;
+  if (!circleBtn || !firstSection) return;
   checkStickyBtn();
   document.addEventListener("scroll", checkStickyBtn);
   window.addEventListener("resize", checkStickyBtn);
@@ -469,13 +468,13 @@ function initPopUpLogin() {
 
   if (openPopUp) {
     openPopUp.addEventListener("click", function (e) {
-      document.body.classList.toggle("body_lock_popup");
+      document.body.classList.toggle("body_lock");
     });
   }
 
   if (closePopUp) {
     closePopUp.addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock_popup");
+      document.body.classList.remove("body_lock");
     });
   }
 
@@ -490,7 +489,7 @@ function initPopUpLogin() {
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
-        document.body.classList.remove("body_lock_popup");
+        document.body.classList.remove("body_lock_app");
         popUp.classList.remove("active_popup");
       });
     }
@@ -502,31 +501,32 @@ function initPopUpApp() {
   var closePopUp_app = document.getElementById("close_popup_app");
   var popUp_app = document.getElementById("popup_app");
   var linkClose = document.querySelectorAll(".link-close");
+  /*   if (!openPopUp_app) return; */
 
   if (openPopUp_app) {
     openPopUp_app.addEventListener("click", function (e) {
-      document.body.classList.toggle("body_lock_popup");
+      document.body.classList.toggle("body_lock");
     });
   }
 
   if (closePopUp_app) {
     closePopUp_app.addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock_popup");
+      document.body.classList.remove("body_lock");
     });
   }
 
-  openPopUp_app.addEventListener("click", function (e) {
+  openPopUp_app === null || openPopUp_app === void 0 ? void 0 : openPopUp_app.addEventListener("click", function (e) {
     e.preventDefault();
     popUp_app.classList.add("active_popup_app");
   });
-  closePopUp_app.addEventListener("click", function () {
+  closePopUp_app === null || closePopUp_app === void 0 ? void 0 : closePopUp_app.addEventListener("click", function () {
     popUp_app.classList.remove("active_popup_app");
   });
 
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
-        document.body.classList.remove("body_lock_popup");
+        document.body.classList.remove("body_lock");
         popUp_app.classList.remove("active_popup_app");
       });
     }

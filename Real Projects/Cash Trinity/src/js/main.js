@@ -144,7 +144,7 @@ function initCircleBtn() {
   const formSection = document.querySelector(".form");
   const footer = document.querySelector("footer");
 
-  if (!circleBtn && !firstSection) return;
+  if (!circleBtn || !firstSection) return;
 
   checkStickyBtn();
 
@@ -559,19 +559,20 @@ function initPopUpLogin() {
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
-        document.body.classList.remove("body_lock");
+        document.body.classList.remove("body_lock_app");
         popUp.classList.remove("active_popup");
       });
     }
   }
 }
 
-
 function initPopUpApp() {
   const openPopUp_app = document.getElementById("open_popup_app");
   const closePopUp_app = document.getElementById("close_popup_app");
   const popUp_app = document.getElementById("popup_app");
   const linkClose = document.querySelectorAll(".link-close");
+
+/*   if (!openPopUp_app) return; */
   
   if (openPopUp_app) {
     openPopUp_app.addEventListener("click", function (e) {
@@ -584,12 +585,13 @@ function initPopUpApp() {
       document.body.classList.remove("body_lock");
     });
   }
-  openPopUp_app.addEventListener("click", function (e) {
+
+  openPopUp_app?.addEventListener("click", function (e) {
     e.preventDefault();
     popUp_app.classList.add("active_popup_app");
   });
   
-  closePopUp_app.addEventListener("click", () => {
+  closePopUp_app?.addEventListener("click", () => {
     popUp_app.classList.remove("active_popup_app");
   });
 
