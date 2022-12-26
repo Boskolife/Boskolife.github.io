@@ -27,6 +27,7 @@ initBurgerMenu();
 new WOW().init();
 initPopUpApp();
 initPopUpLogin();
+
 destroySlidersOnResize(".lending_slider", 9999, {
   spaceBetween: 20,
   sliderPerView: 1,
@@ -468,13 +469,13 @@ function initPopUpLogin() {
 
   if (openPopUp) {
     openPopUp.addEventListener("click", function (e) {
-      document.body.classList.toggle("body_lock");
+      document.body.classList.toggle("body_lock_popup");
     });
   }
 
   if (closePopUp) {
     closePopUp.addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock");
+      document.body.classList.remove("body_lock_popup");
     });
   }
 
@@ -489,7 +490,7 @@ function initPopUpLogin() {
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
-        document.body.classList.remove("body_lock");
+        document.body.classList.remove("body_lock_popup");
         popUp.classList.remove("active_popup");
       });
     }
@@ -504,13 +505,13 @@ function initPopUpApp() {
 
   if (openPopUp_app) {
     openPopUp_app.addEventListener("click", function (e) {
-      document.body.classList.toggle("body_lock");
+      document.body.classList.toggle("body_lock_popup");
     });
   }
 
   if (closePopUp_app) {
     closePopUp_app.addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock");
+      document.body.classList.remove("body_lock_popup");
     });
   }
 
@@ -525,7 +526,7 @@ function initPopUpApp() {
   if (linkClose.length) {
     for (var i = 0; i < linkClose.length; ++i) {
       linkClose[i].addEventListener("click", function (e) {
-        document.body.classList.remove("body_lock");
+        document.body.classList.remove("body_lock_popup");
         popUp_app.classList.remove("active_popup_app");
       });
     }

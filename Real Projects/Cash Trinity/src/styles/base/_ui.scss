@@ -112,6 +112,7 @@ padding: 0 15px;
     @include adaptiv-vaule("font-size", 28, 20, 1);
     color: $black;
     margin-bottom: 10px;
+    max-width: 585px;
 }
 
 .popup_text {
@@ -133,6 +134,7 @@ padding: 0 15px;
     background-color: $blue;
     transition: all .3s ease;
     border-radius: 12px;
+    text-transform: uppercase;
 
     &:hover {
         background-color: #0C43C8;

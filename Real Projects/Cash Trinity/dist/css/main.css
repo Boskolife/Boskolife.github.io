@@ -674,7 +674,8 @@ input[type='submit'] {
   /* Только если меньше контейнера */
   font-size: 28px;
   color: #23262F;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  max-width: 585px; }
   @media (max-width: 1350px) {
     .popup_title {
       font-size: calc(20px + 8 * ((100vw - calc(375px)) / 975)); } }
@@ -704,7 +705,8 @@ input[type='submit'] {
   min-width: 250px;
   background-color: #3772FF;
   transition: all .3s ease;
-  border-radius: 12px; }
+  border-radius: 12px;
+  text-transform: uppercase; }
   @media (max-width: 1350px) {
     .popup_btn_content {
       padding-top: calc(10px + 10 * ((100vw - calc(375px)) / 975)); } }
@@ -828,6 +830,12 @@ header {
       color: #ffffff; }
 
 .menu_wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.menu_body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1025,6 +1033,9 @@ html {
   html ::-webkit-scrollbar-thumb {
     background: #3772FF;
     border-radius: 4px; }
+
+.body_lock_popup {
+  overflow: hidden; }
 
 .body_lock {
   overflow: hidden; }
@@ -1556,7 +1567,8 @@ html {
   /* Только если меньше контейнера */
   padding-top: 130px;
   /* Только если меньше контейнера */
-  padding-bottom: 130px; }
+  padding-bottom: 130px;
+  background-color: #ffffff; }
   @media (max-width: 1350px) {
     .trinity_app {
       padding-top: calc(80px + 50 * ((100vw - calc(375px)) / 975)); } }
@@ -2165,7 +2177,8 @@ html {
     font-weight: 700;
     font-size: 12px;
     color: #3772FF;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    text-transform: uppercase; }
   .policy .policy_title {
     font-weight: 500;
     letter-spacing: -0.02em;
