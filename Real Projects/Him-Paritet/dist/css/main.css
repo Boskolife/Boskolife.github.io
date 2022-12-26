@@ -799,11 +799,31 @@ header {
   border: 1px solid #E6E8EC;
   border-radius: 62px;
   padding: 9px 15px;
+  /* Только если меньше контейнера */
+  padding-top: 9px;
+  /* Только если меньше контейнера */
+  padding-bottom: 9px;
+  /* Только если меньше контейнера */
+  padding-right: 15px;
+  /* Только если меньше контейнера */
+  padding-left: 15px;
   outline: none;
   background: transparent;
   /* Только если меньше контейнера */
   width: 312px;
   z-index: 1; }
+  @media (max-width: 1350px) {
+    .search input {
+      padding-top: calc(5px + 4 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .search input {
+      padding-bottom: calc(5px + 4 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .search input {
+      padding-right: calc(5px + 10 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .search input {
+      padding-left: calc(5px + 10 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1350px) {
     .search input {
       width: calc(20px + 292 * ((100vw - calc(375px)) / 975)); } }

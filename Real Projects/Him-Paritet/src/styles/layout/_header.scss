@@ -21,6 +21,10 @@ header {
         border: 1px solid #E6E8EC;
         border-radius: 62px;
         padding: 9px 15px;
+        @include adaptiv-vaule("padding-top", 9, 5, 1);
+    @include adaptiv-vaule("padding-bottom", 9, 5, 1);
+    @include adaptiv-vaule("padding-right", 15, 5, 1);
+    @include adaptiv-vaule("padding-left", 15, 5, 1);
         outline: none;
         background: transparent;
         @include adaptiv-vaule("width", 312, 20, 1);

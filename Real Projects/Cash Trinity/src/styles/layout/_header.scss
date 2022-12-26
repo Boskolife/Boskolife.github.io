@@ -21,6 +21,11 @@ header {
     }
 }
 
+.menu_wrap{
+    display:flex;
+    align-items:center;
+}
+
 .header_content {
     display: flex;
     justify-content: space-between;
