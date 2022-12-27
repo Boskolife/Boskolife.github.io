@@ -501,7 +501,7 @@ function initPopUpApp() {
   var closePopUp_app = document.getElementById("close_popup_app");
   var popUp_app = document.getElementById("popup_app");
   var linkClose = document.querySelectorAll(".link-close");
-  /*   if (!openPopUp_app) return; */
+  if (!openPopUp_app) return;
 
   if (openPopUp_app) {
     openPopUp_app.addEventListener("click", function (e) {

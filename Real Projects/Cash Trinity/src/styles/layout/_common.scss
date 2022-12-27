@@ -238,7 +238,6 @@ html {
     .main_title {
         width: 65%;
         font-weight: 500;
-        font-size: 88px;
         @include adaptiv-vaule("font-size", 88, 36, 1);
         letter-spacing: -0.04em;
         color: $white;
@@ -1380,5 +1379,28 @@ html {
 
     .policy_sublist {
         padding-left: 15px;
+    }
+}
+
+.accept{
+    @include adaptiv-vaule("padding-top", 180, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 40, 1);
+    background-color:#F8F9FB;
+    text-align: center;
+
+    .accept_title{
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 88, 42, 1);
+        letter-spacing: -0.04em;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 60 , 40, 1);
+    }
+
+    .accept_description{
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 28, 22, 1);
+        line-height: 25 / 20 * 100%;
+        letter-spacing: 1px;
+        color: $black;
     }
 }

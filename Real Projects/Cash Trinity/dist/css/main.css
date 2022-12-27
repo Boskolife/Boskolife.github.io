@@ -1211,7 +1211,6 @@ html {
   .main-section .main_title {
     width: 65%;
     font-weight: 500;
-    font-size: 88px;
     /* Только если меньше контейнера */
     font-size: 88px;
     letter-spacing: -0.04em;
@@ -2253,6 +2252,44 @@ html {
       background-color: #66666C; }
   .policy .policy_sublist {
     padding-left: 15px; }
+
+.accept {
+  /* Только если меньше контейнера */
+  padding-top: 180px;
+  /* Только если меньше контейнера */
+  padding-bottom: 140px;
+  background-color: #F8F9FB;
+  text-align: center; }
+  @media (max-width: 1350px) {
+    .accept {
+      padding-top: calc(100px + 80 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .accept {
+      padding-bottom: calc(40px + 100 * ((100vw - calc(375px)) / 975)); } }
+  .accept .accept_title {
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 88px;
+    letter-spacing: -0.04em;
+    color: #23262F;
+    /* Только если меньше контейнера */
+    margin-bottom: 60px; }
+    @media (max-width: 1350px) {
+      .accept .accept_title {
+        font-size: calc(42px + 46 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .accept .accept_title {
+        margin-bottom: calc(40px + 20 * ((100vw - calc(375px)) / 975)); } }
+  .accept .accept_description {
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 28px;
+    line-height: 125%;
+    letter-spacing: 1px;
+    color: #23262F; }
+    @media (max-width: 1350px) {
+      .accept .accept_description {
+        font-size: calc(22px + 6 * ((100vw - calc(375px)) / 975)); } }
 
 footer {
   /* Только если меньше контейнера */
