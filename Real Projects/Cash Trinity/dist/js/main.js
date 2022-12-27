@@ -578,11 +578,15 @@ Confettiful.prototype._renderConfetti = function () {
     confettiEl.style.backgroundColor = confettiBackground;
     confettiEl.removeTimeout = setTimeout(function () {
       confettiEl.parentNode.removeChild(confettiEl);
-    }, 3000);
+    }, 5000);
 
     _this.containerEl.appendChild(confettiEl);
-  }, 25);
+  }, 3);
 };
 
 window.confettiful = new Confettiful(document.querySelector('.accept'));
+
+setTimeout(function () {
+  clearInterval(window.confettiful.confettiInterval);
+}, 3500);
 //# sourceMappingURL=main.js.map

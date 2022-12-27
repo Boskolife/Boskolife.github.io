@@ -606,7 +606,6 @@ function initPopUpApp() {
 }
 
 
-
 const Confettiful = function(el) {
   this.el = el;
   this.containerEl = null;
@@ -650,13 +649,17 @@ Confettiful.prototype._renderConfetti = function() {
     
     confettiEl.removeTimeout = setTimeout(function() {
       confettiEl.parentNode.removeChild(confettiEl);
-    }, 3000);
+    }, 5000);
     
     this.containerEl.appendChild(confettiEl);
-  }, 25);
+  }, 3);
 };
 
 window.confettiful = new Confettiful(document.querySelector('.accept'));
+
+setTimeout(() => {
+  clearInterval(window.confettiful.confettiInterval);
+}, 3500);
 
 
 
