@@ -585,7 +585,6 @@ Confettiful.prototype._renderConfetti = function () {
 };
 
 window.confettiful = new Confettiful(document.querySelector('.accept'));
-
 setTimeout(function () {
   clearInterval(window.confettiful.confettiInterval);
 }, 3500);
