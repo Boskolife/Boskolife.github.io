@@ -387,6 +387,7 @@ form {
         position: absolute;
         top: 7%;
         left: 13%;
+        z-index: -1;
     }
 
     .service_title {
@@ -401,7 +402,7 @@ form {
             content: '';
             bottom: 0;
             left: 2.5%;
-            width: 170%;
+            width: 150%;
             height: 3px;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
@@ -552,7 +553,7 @@ form {
             content: '';
             bottom: 0;
             left: 0;
-            width: 170%;
+            width: 150%;
             height: 3px;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);

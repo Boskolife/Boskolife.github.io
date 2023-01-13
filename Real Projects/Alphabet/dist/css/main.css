@@ -1041,7 +1041,8 @@ form {
   .service .gear {
     position: absolute;
     top: 7%;
-    left: 13%; }
+    left: 13%;
+    z-index: -1; }
   .service .service_title {
     /* Только если меньше контейнера */
     font-size: 90px;
@@ -1057,7 +1058,7 @@ form {
       content: '';
       bottom: 0;
       left: 2.5%;
-      width: 170%;
+      width: 150%;
       height: 3px;
       background: #eb4545;
       background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
@@ -1204,7 +1205,7 @@ form {
       content: '';
       bottom: 0;
       left: 0;
-      width: 170%;
+      width: 150%;
       height: 3px;
       background: #eb4545;
       background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
