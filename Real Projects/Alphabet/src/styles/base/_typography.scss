@@ -1,0 +1,63 @@
+// Typography
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+	font-family: 'Bebas Neue Cyrillic';
+	font-weight: bold;
+	margin: 0;
+	color: $white_2;
+}
+
+h1, .h1 {
+	@include adaptiv-vaule("font-size", 120, 55, 1);
+	line-height: 112 / 120 * 100%;
+	color: #FFFFFF;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+h2, .h2 {
+	font-weight: 400;
+	@include adaptiv-vaule("font-size", 40, 25, 1);
+	line-height: 48 / 40 * 100%;
+}
+
+h3, .h3 {
+	font-size: $h3-font-size;
+}
+
+h4, .h4 {
+	font-size: $h4-font-size;
+}
+
+h5, .h5 {
+	font-size: $h5-font-size;
+}
+
+h6, .h6 {
+	font-size: $h6-font-size;
+}
+
+p,a{
+	font-family: 'SF Pro Display';
+}
+
+p {
+	margin: 0;
+	color: $gray;
+}
+
+a {
+	color: $base-link-color;
+	text-decoration: none;
+	transition: color .3s ease;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}

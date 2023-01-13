@@ -1,0 +1,97 @@
+header {
+    @include adaptiv-vaule("padding-top", 20, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+    position: relative;
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .links,
+    .socials {
+        display: flex;
+        align-items: center;
+    }
+
+    .socials {
+        @include media ("<570px") {
+            display: none;
+        }
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $red;
+        border-radius: 50%;
+        transition: all .3s ease;
+
+        @include media ("<phone") {
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover {
+            box-shadow:
+                0 0 .1rem #fff,
+                0 0 .2rem #fff,
+                0 0 .3rem $red,
+                0 0 .8rem $red,
+                0 0 1rem $red,
+                inset 0 0 1rem $red;
+            transform: scale(1.1)
+        }
+    }
+
+    .logo {
+        @include adaptiv-vaule("margin-right", 40, 20, 1);
+
+        @include media ("<phone") {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .link_img {
+        fill: $red;
+    }
+
+    .phone {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            .link {
+                box-shadow:
+                    0 0 .1rem #fff,
+                    0 0 .2rem #fff,
+                    0 0 .3rem $red,
+                    0 0 .8rem $red,
+                    0 0 1rem $red,
+                    inset 0 0 1rem $red;
+                transform: scale(1.1)
+            }
+        }
+
+        .phone_link {
+            display: flex;
+            align-items: center;
+            min-width: max-content;
+        }
+
+        .phone_text {
+            font-family: 'SFProDisplay';
+            font-style: normal;
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            text-transform: capitalize;
+            color: $white_2;
+        }
+    }
+}
