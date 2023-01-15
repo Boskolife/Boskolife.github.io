@@ -58,4 +58,5 @@ destroySlidersOnResize(".service_swiper", 9999, {
     }
   }
 });
+new WOW().init();
 //# sourceMappingURL=main.js.map

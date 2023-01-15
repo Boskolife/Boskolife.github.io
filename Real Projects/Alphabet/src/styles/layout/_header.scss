@@ -75,18 +75,28 @@ header {
                     0 0 .8rem $red,
                     0 0 1rem $red,
                     inset 0 0 1rem $red;
-                transform: scale(1.1)
+                transform: scale(1.1);
+            }
+
+            .link_img {
+                animation: phone_rotation 3s infinite linear;
             }
         }
 
-        .phone_link {
-            display: flex;
-            align-items: center;
-            min-width: max-content;
+        @keyframes phone_rotation {
+
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(360deg);
+            }
+
         }
 
         .phone_text {
-            font-family: 'SFProDisplay';
+            font-family: 'SF Pro Display';
             font-style: normal;
             font-weight: 600;
             @include adaptiv-vaule("font-size", 18, 16, 1);

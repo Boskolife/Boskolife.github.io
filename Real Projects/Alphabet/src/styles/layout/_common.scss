@@ -1,9 +1,23 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: $black;
+}
+
+@keyframes show_line {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.animate__fadeIn {
+    --animate-duration: 5s;
 }
 
 .cont {
@@ -26,6 +40,20 @@ body {
     object-fit: cover;
 }
 
+.cont {
+    position: relative;
+}
+
+.main_arrow {
+    position: fixed;
+    bottom: 10%;
+    left: 7%;
+    z-index: 2;
+
+    @include media ("<desktop") {
+        display: none;
+    }
+}
 
 .main_section {
     background: url(../images/main/main_bg.png) center no-repeat;
@@ -87,10 +115,11 @@ body {
             content: '';
             bottom: 0;
             left: 30%;
-            width: 470px;
+            width: 75%;
             height: 3px;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
+            animation: show_line 3s ease-out;
 
             @include media ("<desktop") {
                 left: 0;
@@ -104,16 +133,6 @@ body {
         font-size: 20px;
         line-height: 26 / 20 * 100%;
         max-width: 530px;
-    }
-
-    .main_arrow {
-        position: absolute;
-        bottom: 80px;
-        left: 0;
-
-        @include media ("<desktop") {
-            display: none;
-        }
     }
 }
 
@@ -133,17 +152,18 @@ form {
     @include media ("<desktop") {
         width: 100%;
     }
+
     .form_description {
         font-size: 14px;
         line-height: 17 / 14 * 100%;
         font-weight: 500;
         margin-bottom: 25px;
-    
+
         span {
             color: $red;
         }
     }
-    
+
     label {
         font-family: 'SF Pro Display';
         font-weight: 700;
@@ -153,7 +173,7 @@ form {
         margin-bottom: 10px;
         color: $gray;
     }
-    
+
     .info {
         display: flex;
         justify-content: flex-start;
@@ -161,64 +181,67 @@ form {
         margin-bottom: 40px;
         text-align: start;
     }
-    
+
     .personal_info {
         padding: 15px;
         background: #FCFCFD;
         border: 2px solid $gray;
         border-radius: 12px;
         color: $white_2;
-    
+
         &:focus {
             border: 2px solid $red;
         }
-    
+
         &:not(:last-child) {
             margin-bottom: 20px;
         }
-    
+
         &::placeholder {
             font-size: 14px;
             color: #8a8a8a;
             font-weight: 500;
         }
     }
-    
+
     .status {
         display: flex;
         flex-wrap: wrap;
         margin-top: 15px;
         margin-bottom: 10px;
-    
+
         .status_check {
             margin-right: 25px;
         }
-    
+
         label {
             text-transform: none;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24 / 16 * 100%;
         }
-    
+
         .check {
             margin-right: 10px;
             opacity: 0;
             z-index: -1;
             position: absolute;
-    
+
             &:checked+label {
                 color: #FFFFFF;
-    
+
                 &::before {
                     background: url(../images/main/tick.svg) 4px 4px no-repeat;
                     background-color: #FCFCFD;
                 }
             }
         }
-    
+
         .check+label {
             display: inline-flex;
             align-items: center;
-    
+
             &::before {
                 content: '';
                 top: -5px;
@@ -233,7 +256,7 @@ form {
             }
         }
     }
-    
+
     .submit {
         color: #FCFCFD;
         padding: 15px;
@@ -244,17 +267,17 @@ form {
         outline: none;
         transition: all .3s ease;
         margin-bottom: 10px;
-    
+
         &:hover {
             background-color: #c53636;
         }
     }
-    
+
     .agree {
         color: #7C7C7C;
         font-weight: 500;
         font-size: 12px;
-        line-height: 24 / 12 * 100%;
+        line-height: 14 / 12 * 100%;
     }
 }
 
@@ -290,7 +313,10 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include adaptiv-vaule("margin-bottom", 90, 40, 1);
+
+    &:not(:last-child) {
+        @include adaptiv-vaule("margin-bottom", 90, 40, 1);
+    }
 
     &:nth-child(even) {
         flex-direction: row-reverse;
@@ -302,7 +328,8 @@ form {
         .card_description {
 
             &::after {
-                background: linear-gradient(270deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
+                animation: show_line 3s ease-out;
+                transform: rotate(180deg);
             }
         }
     }
@@ -349,6 +376,7 @@ form {
         left: 0;
         width: 100%;
         height: 3px;
+        animation: show_line 3s ease-out;
         background: rgb(235, 69, 69);
         background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
     }
@@ -402,8 +430,9 @@ form {
             content: '';
             bottom: 0;
             left: 2.5%;
-            width: 150%;
+            width: 100%;
             height: 3px;
+            animation: show_line 3s ease-out;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
 
@@ -472,6 +501,7 @@ form {
         @include adaptiv-vaule("font-size", 52, 30, 1);
         line-height: 62 / 52 * 100%;
         color: #FDFAF8;
+        font-weight: 400;
     }
 
     .swiper-button-prev,
@@ -555,6 +585,7 @@ form {
             left: 0;
             width: 150%;
             height: 3px;
+            animation: show_line 3s ease-out;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
 
@@ -620,7 +651,7 @@ form {
         max-width: max-content;
         margin: 0 auto;
         @include adaptiv-vaule("margin-bottom", 80, 35, 1);
-        padding: 0 15px;
+        margin: 0 15px;
         text-align: center;
 
         &::after {
@@ -630,6 +661,7 @@ form {
             left: 0;
             width: 110%;
             height: 3px;
+            animation: show_line 3s ease-out;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
 
@@ -639,7 +671,7 @@ form {
         }
     }
 
-    .start_body {
+    .start_body_wrap {
         background: rgba(23, 23, 21, 0.55);
         backdrop-filter: blur(3px);
         @include adaptiv-vaule("padding-top", 90, 40, 1);
@@ -647,11 +679,15 @@ form {
         @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
 
-    .cont {
+    .start_body {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+
+    .line {
+        position: relative;
     }
 
     .item {
@@ -659,7 +695,10 @@ form {
 
         @include media ("<desktop") {
             width: 48%;
-            margin-bottom: 25px;
+
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
         }
 
         @include media ("<phone") {
@@ -761,6 +800,7 @@ form {
             left: 0;
             width: 110%;
             height: 3px;
+            animation: show_line 3s ease-out;
             background: rgb(235, 69, 69);
             background: linear-gradient(90deg, rgba(235, 69, 69, 1) 0%, rgba(255, 0, 0, 0) 100%);
 

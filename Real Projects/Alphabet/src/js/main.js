@@ -1,3 +1,4 @@
+
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -29,7 +30,9 @@ destroySlidersOnResize(".service_swiper", 9999, {
     slidesPerView: 1,
     slidesPerGroup:1,
     speed:850,
-  
+
+   
+
     pagination: {
       el: ".swiper-pagination",
     },
@@ -57,3 +60,4 @@ destroySlidersOnResize(".service_swiper", 9999, {
     },
 });
   
+new WOW().init();
