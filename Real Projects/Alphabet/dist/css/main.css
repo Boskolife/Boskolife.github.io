@@ -727,6 +727,9 @@ body {
     .main_arrow {
       display: none; } }
 
+.hidden {
+  display: none; }
+
 .main_section {
   background: url(../images/main/main_bg.png) center no-repeat;
   position: relative;
@@ -1310,10 +1313,9 @@ form {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
-    margin: 0 auto;
+    margin: 0 auto 15px;
     /* Только если меньше контейнера */
     margin-bottom: 80px;
-    margin: 0 15px;
     text-align: center; }
     @media (max-width: 1310px) {
       .start .start_title {

@@ -61,3 +61,29 @@ destroySlidersOnResize(".service_swiper", 9999, {
 });
   
 new WOW().init();
+
+main_arrow();
+
+function main_arrow() {
+  const circleBtn = document.querySelector(".main_arrow");
+  const footer = document.querySelector("footer");
+
+  checkStickyBtn();
+
+  document.addEventListener("scroll", checkStickyBtn);
+  window.addEventListener("resize", checkStickyBtn);
+
+  function checkStickyBtn() {
+    const currentScrollBottomPos = window.scrollY + window.innerHeight;
+
+    if (footer) {
+      const footerTopPos = footer.offsetTop;
+      const footerTopPadding = getComputedStyle(
+        footer
+      ).paddingTop.replace(/px/g, "");
+      currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2
+        ? circleBtn.classList.add("hidden")
+        : circleBtn.classList.remove("hidden");
+    }
+  }
+}
