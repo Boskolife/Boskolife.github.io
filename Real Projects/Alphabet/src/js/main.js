@@ -38,5 +38,22 @@ destroySlidersOnResize(".service_swiper", 9999, {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
+    effect: 'creative',
+
+    creativeEffect: {
+      prev: {
+        translate: [-400, 150, 0],
+        rotate: [0, 0, -90],
+        opacity: 0,
+        origin: 'bottom center'
+      }, 
+      next: {
+        translate: [400, 150, 0],
+        rotate: [0, 0, 90],
+        opacity: 0,
+        origin: 'bottom center'
+      },
+    },
 });
   
