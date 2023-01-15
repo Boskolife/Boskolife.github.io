@@ -697,6 +697,24 @@ body {
 .animate__fadeIn {
   --animate-duration: 5s; }
 
+.show {
+  position: relative; }
+  .show::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #eb4545;
+    background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%);
+    -webkit-animation: show_line 3s ease-out;
+    animation: show_line 3s ease-out; }
+    @media (max-width: 1023px) {
+      .show::after {
+        left: 0;
+        width: 100%; } }
+
 .cont {
   max-width: 1310px;
   width: 100%;
@@ -778,27 +796,14 @@ body {
       .main_section .text_content {
         width: 100%; } }
   .main_section .main_title {
-    position: relative;
     margin-bottom: 10px; }
+    .main_section .main_title::after {
+      left: 30%;
+      width: 75%; }
     @media (max-width: 1023px) {
       .main_section .main_title {
         padding-bottom: 10px;
         margin-bottom: 25px; } }
-    .main_section .main_title::after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 30%;
-      width: 75%;
-      height: 3px;
-      background: #eb4545;
-      background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%);
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out; }
-      @media (max-width: 1023px) {
-        .main_section .main_title::after {
-          left: 0;
-          width: 100%; } }
   .main_section .main_description {
     font-weight: 500;
     font-size: 20px;
@@ -997,9 +1002,8 @@ form {
       .card:nth-child(even) {
         -ms-flex-direction: column;
         flex-direction: column; } }
-    .card:nth-child(even) .card_description::after {
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out;
+    .card:nth-child(even) .card_description::after,
+    .card:nth-child(even) .card_text::after {
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg); }
   @media (max-width: 909px) {
@@ -1034,22 +1038,10 @@ form {
   /* Только если меньше контейнера */
   font-size: 18px;
   line-height: 127.77778%;
-  position: relative;
   max-width: 450px; }
   @media (max-width: 1310px) {
     .card_description {
       font-size: calc(15px + 3 * ((100vw - calc(320px)) / 990)); } }
-  .card_description::after {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    -webkit-animation: show_line 3s ease-out;
-    animation: show_line 3s ease-out;
-    background: #eb4545;
-    background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
 
 .card_img {
   width: 48%;
@@ -1098,20 +1090,6 @@ form {
     @media (max-width: 1310px) {
       .service .service_title {
         font-size: calc(55px + 35 * ((100vw - calc(320px)) / 990)); } }
-    .service .service_title::after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 2.5%;
-      width: 100%;
-      height: 3px;
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out;
-      background: #eb4545;
-      background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
-      @media (max-width: 767px) {
-        .service .service_title::after {
-          width: 100%; } }
   .service .service_description {
     max-width: 430px;
     margin: 0 auto;
@@ -1127,6 +1105,9 @@ form {
     @media (max-width: 1310px) {
       .service .service_description {
         margin-bottom: calc(50px + 30 * ((100vw - calc(320px)) / 990)); } }
+  .service .swiper-slide-body {
+    max-width: 715px;
+    margin: 0 auto; }
   .service .swiper-slide {
     text-align: center;
     position: relative;
@@ -1248,20 +1229,6 @@ form {
     @media (max-width: 1310px) {
       .advantage .advantage_title {
         margin-bottom: calc(60px + 30 * ((100vw - calc(320px)) / 990)); } }
-    .advantage .advantage_title::after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 0;
-      width: 150%;
-      height: 3px;
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out;
-      background: #eb4545;
-      background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
-      @media (max-width: 767px) {
-        .advantage .advantage_title::after {
-          width: 100%; } }
 
 .start {
   /* Только если меньше контейнера */
@@ -1323,20 +1290,6 @@ form {
     @media (max-width: 1310px) {
       .start .start_title {
         margin-bottom: calc(35px + 45 * ((100vw - calc(320px)) / 990)); } }
-    .start .start_title::after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 0;
-      width: 110%;
-      height: 3px;
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out;
-      background: #eb4545;
-      background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
-      @media (max-width: 767px) {
-        .start .start_title::after {
-          width: 100%; } }
   .start .start_body_wrap {
     background: rgba(23, 23, 21, 0.55);
     -webkit-backdrop-filter: blur(3px);
@@ -1460,20 +1413,6 @@ form {
     @media (max-width: 1310px) {
       .contact_us .contact_us_title {
         font-size: calc(50px + 40 * ((100vw - calc(320px)) / 990)); } }
-    .contact_us .contact_us_title::after {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: 0;
-      width: 110%;
-      height: 3px;
-      -webkit-animation: show_line 3s ease-out;
-      animation: show_line 3s ease-out;
-      background: #eb4545;
-      background: linear-gradient(90deg, #eb4545 0%, rgba(255, 0, 0, 0) 100%); }
-      @media (max-width: 767px) {
-        .contact_us .contact_us_title::after {
-          width: 100%; } }
   .contact_us form {
     width: 55%;
     margin: 0 auto;
