@@ -749,7 +749,8 @@ body {
   display: none; }
 
 .main_section {
-  background: url(../images/main/main_bg.png) center no-repeat;
+  height: calc(100vh - 112px);
+  background: url(../images/main/main_bg.jpg) center no-repeat;
   position: relative;
   /* Только если меньше контейнера */
   padding-top: 45px;

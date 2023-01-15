@@ -81,7 +81,8 @@ body {
 }
 
 .main_section {
-    background: url(../images/main/main_bg.png) center no-repeat;
+    height: calc(100vh - 112px);
+    background: url(../images/main/main_bg.jpg) center no-repeat;
     position: relative;
     @include adaptiv-vaule("padding-top", 45, 20, 1);
     @include adaptiv-vaule("padding-bottom", 75, 35, 1);
