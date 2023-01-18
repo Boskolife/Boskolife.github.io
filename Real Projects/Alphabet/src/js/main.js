@@ -71,21 +71,6 @@ destroySlidersOnResize(".card_swiper", 909, {
       perSlideOffset:10,
       perSlideRotate:0,
     },
-   
-
-    /* creativeEffect: {
-      prev: {
-        translate: [0, -400, -100],
-        opacity: 0.5,
-        origin:'center center'
-      }, 
-      limitProgress:2,
-      next: {
-        translate: [0, 400, -100],
-        opacity: 0.5,
-        origin:'center center'
-      },
-    }, */
 });
   
 new WOW().init();
