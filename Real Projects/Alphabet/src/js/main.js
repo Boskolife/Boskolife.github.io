@@ -31,8 +31,6 @@ destroySlidersOnResize(".service_swiper", 9999, {
     slidesPerGroup:1,
     speed:850,
 
-   
-
     pagination: {
       el: ".swiper-pagination",
     },
@@ -58,6 +56,36 @@ destroySlidersOnResize(".service_swiper", 9999, {
         origin: 'bottom center'
       },
     },
+});
+
+
+destroySlidersOnResize(".card_swiper", 909, {
+    slidesPerView: 1,
+    speed:850,
+    direction: 'vertical',
+    touchReleaseOnEdges:true,
+    effect: 'cards',
+
+    cardsEffect: {
+      rotate:false,
+      perSlideOffset:10,
+      perSlideRotate:0,
+    },
+   
+
+    /* creativeEffect: {
+      prev: {
+        translate: [0, -400, -100],
+        opacity: 0.5,
+        origin:'center center'
+      }, 
+      limitProgress:2,
+      next: {
+        translate: [0, 400, -100],
+        opacity: 0.5,
+        origin:'center center'
+      },
+    }, */
 });
   
 new WOW().init();

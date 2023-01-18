@@ -20,7 +20,7 @@ body {
     --animate-duration: 5s;
 }
 
-.show{
+.show {
     position: relative;
 
     &::after {
@@ -81,7 +81,6 @@ body {
 }
 
 .main_section {
-    height: calc(100vh - 112px);
     background: url(../images/main/main_bg.jpg) center no-repeat;
     position: relative;
     @include adaptiv-vaule("padding-top", 45, 20, 1);
@@ -132,7 +131,7 @@ body {
 
         &::after {
             left: 30%;
-            width: 75%;     
+            width: 75%;
         }
 
         @include media ("<desktop") {
@@ -296,8 +295,6 @@ form {
 }
 
 
-
-
 .second_section {
     @include adaptiv-vaule("padding-top", 120, 30, 1);
     @include adaptiv-vaule("padding-bottom", 120, 30, 1);
@@ -323,6 +320,37 @@ form {
     }
 }
 
+.card_box{
+    @include media ("<tablet_max") {
+        display: none;
+    }
+}
+
+.card_swiper{
+    display: none;
+
+    @include media ("<tablet_max") {
+        display: block;
+    }
+}
+
+.swiper {
+    height: 600px;
+    padding-top: 50px;
+
+    @include media ("<tablet_max") {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include media ("<tablet") {
+        width: 100%;
+    }
+}
+
+
+
+
 .card {
     display: flex;
     align-items: center;
@@ -339,9 +367,7 @@ form {
             flex-direction: column;
         }
 
-        .card_description,
-        .card_text {
-
+        .card_description {
             &::after {
                 transform: rotate(180deg);
             }
@@ -349,7 +375,22 @@ form {
     }
 
     @include media ("<tablet_max") {
-        flex-direction: column;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            background: linear-gradient(360deg, #131311 -7.03%, rgba(19, 19, 17, 0) 136.07%)
+        }
     }
 }
 
@@ -357,12 +398,13 @@ form {
     width: 48%;
 
     @include media ("<tablet_max") {
-        width: 60%;
-        margin-bottom: 25px;
-    }
-
-    @include media ("<tablet") {
-        width: 100%;
+        position: absolute;
+        z-index: 2;
+        padding: 30px;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 60px);
+        margin: 0;
     }
 }
 
@@ -391,17 +433,8 @@ form {
     height: 520px;
 
     @include media ("<tablet_max") {
-        width: 60%;
-        text-align: center;
-        height: 350px;
-    }
-
-    @include media ("<tablet") {
         width: 100%;
-    }
-
-    @include media ("<phone") {
-        height: 250px;
+        height: 100%;
     }
 }
 
@@ -469,7 +502,8 @@ form {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
