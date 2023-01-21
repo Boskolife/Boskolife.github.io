@@ -678,6 +678,17 @@ header {
 
 html {
   scroll-behavior: smooth; }
+  html ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 4px; }
+    @media (max-width: 767px) {
+      html ::-webkit-scrollbar {
+        width: 5px; } }
+  html ::-webkit-scrollbar-track {
+    background-color: #CFCFCF; }
+  html ::-webkit-scrollbar-thumb {
+    background: #EB4545;
+    border-radius: 4px; }
 
 body {
   background-color: #131311; }
@@ -735,15 +746,6 @@ body {
 
 .cont {
   position: relative; }
-
-.main_arrow {
-  position: fixed;
-  bottom: 10%;
-  left: 7%;
-  z-index: 2; }
-  @media (max-width: 1023px) {
-    .main_arrow {
-      display: none; } }
 
 .hidden {
   display: none; }
@@ -1390,7 +1392,8 @@ form {
   padding-top: 120px;
   /* Только если меньше контейнера */
   padding-bottom: 120px;
-  position: relative; }
+  position: relative;
+  margin-top: 80px; }
   @media (max-width: 1310px) {
     .contact_us {
       padding-top: calc(50px + 70 * ((100vw - calc(320px)) / 990)); } }
@@ -1422,6 +1425,16 @@ form {
     top: 0;
     left: 0;
     background: linear-gradient(180deg, #131311 0%, rgba(19, 19, 17, 0) 100%); }
+  .contact_us .red_line {
+    position: absolute;
+    top: -42.5px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: #eb4545;
+    -webkit-animation: show_line 3s ease-out;
+    animation: show_line 3s ease-out;
+    z-index: 3; }
   .contact_us::after {
     bottom: 0;
     left: 0;
