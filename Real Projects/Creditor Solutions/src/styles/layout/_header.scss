@@ -1,0 +1,153 @@
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid $gray_3;
+    background-color: transparent;
+
+    @include media ("<phone") {
+        padding: 20px 0 25px 0;
+    }
+
+    .header_content,
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        @include adaptiv-vaule("width", 206, 130, 1);
+    }
+
+    .nav {
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .menu-item {
+        color: $gray_4;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: all .3s ease;
+        position: relative;
+        @include adaptiv-vaule("margin-left", 20, 1, 1);
+        @include adaptiv-vaule("font-size", 16, 5, 1);
+
+        &:hover {
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: -5px;
+                background-color: $blue;
+                animation: menu_border .5s linear;
+            }
+        }
+
+        @keyframes menu_border {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    }
+
+    .phone {
+        display: flex;
+        align-items: center;
+        @include adaptiv-vaule("margin-left", 20, 1, 1);
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        &:hover {
+            .phone_img {
+                transform: rotateY(-180deg);
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .phone_img {
+        margin-right: 13px;
+        transition: all .3s ease;
+    }
+
+    .phone_number {
+        color: $black;
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 18, 5, 1);
+    }
+
+    .burger_menu {
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+            width: 24px;
+            height: 18px;
+            position: relative;
+
+            &::after,
+            &::before,
+            span {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: $gray_4;
+                transition: all .3s linear;
+            }
+
+            &::after {
+                left: 0;
+                bottom: 0;
+            }
+
+            &::before {
+                top: 0;
+                left: 0;
+            }
+
+            span {
+                top: 8.5px;
+                left: 0;
+                transition: all .3s linear;
+            }
+        }
+    }
+
+   /*  .menu_active {
+        display: block;
+    } */
+
+    .burger_active {
+        &::before {
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+            transition: all .3s linear;
+        }
+
+        &::after {
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+            transition: all .3s linear;
+        }
+
+        span{
+            width: 0;
+            transition: all .3s linear;
+        }
+    }
+}
