@@ -3,6 +3,16 @@ body {
     font-family: 'Arimo';
 }
 
+@keyframes bottom_border {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 .body_lock {
     overflow: hidden;
 }
@@ -231,6 +241,7 @@ body {
     }
 
     .white_btn {
+        font-weight: 700;
         @include media ("<phone") {
             max-width: 100%;
             min-width: 100%;
@@ -689,6 +700,10 @@ body {
         &::placeholder{
             color: $gray_2;
             font-size: 14px;
+        }
+
+        &:focus{
+            border: 1px solid $blue;
         }
     }
 

@@ -130,14 +130,24 @@ footer {
         width: 45%;
         margin-bottom: 20px;
         transition: all .3s ease;
+        position: relative;
 
         @include media ("<desktop") {
             width: 100%;
         }
 
-        &:hover{
-            font-weight: 700;
-            transition: all .3s ease;
+        &:hover {
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: -5px;
+                background-color: $blue;
+                animation: bottom_border .5s linear;
+            }
         }
     }
 
@@ -166,10 +176,20 @@ footer {
         color: $gray_4;
         line-height: 200%;
         transition: all .3s ease;
+        position: relative;
 
-        &:hover{
-            font-weight: 700;
-            transition: all .3s ease;
+        &:hover {
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: -5px;
+                background-color: $blue;
+                animation: bottom_border .5s linear;
+            }
         }
     }
 }
