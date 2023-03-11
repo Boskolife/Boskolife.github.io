@@ -1346,8 +1346,7 @@ body {
   .faq .tab_content {
     padding: 0;
     opacity: 0;
-    height: 0;
-    visibility: hidden;
+    max-height: 0;
     font-weight: 500;
     /* Только если меньше контейнера */
     font-size: 16px;
@@ -1358,11 +1357,10 @@ body {
       .faq .tab_content {
         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
   .faq .show {
-    height: 100%;
+    max-height: 100%;
     transition: all .3s ease;
     padding: 0 0 20px 0;
-    opacity: 1;
-    visibility: visible; }
+    opacity: 1; }
   @media (max-width: 479px) {
     .faq .blue_btn {
       min-width: 100%; } }

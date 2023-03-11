@@ -13,29 +13,15 @@ burger.addEventListener('click', () =>{
 
 //Tabs
 
-let tabs = document.querySelectorAll('.tab_title'),
-	tabsContent = document.querySelectorAll('.tab_content'),
-	tabsParent = document.querySelector('.tab_wrapper');
-
-	function hideTabContent() {
-        
-        tabsContent.forEach(item => {
-            item.classList.add('hide');
-            item.classList.remove('show');
-        });
-
-        tabs.forEach(item => {
-            item.classList.remove('tab_active');
-        });
-	}
+const tabs = document.querySelectorAll('.tab_title'),
+	  tabsContent = document.querySelectorAll('.tab_content'),
+	  tabsParent = document.querySelector('.tab_wrapper');
 
 	function showTabContent(i = 0) {
-        tabsContent[i].classList.add('show');
-        tabsContent[i].classList.remove('hide');
-        tabs[i].classList.add('tab_active');
+        tabsContent[i].classList.toggle('show');
+        tabs[i].classList.toggle('tab_active');
     }
     
-    hideTabContent();
     showTabContent();
 
 	tabsParent.addEventListener('click', function(event) {
@@ -43,7 +29,6 @@ let tabs = document.querySelectorAll('.tab_title'),
 		if(target && target.classList.contains('tab_title')) {
             tabs.forEach((item, i) => {
                 if (target == item) {
-                    hideTabContent();
                     showTabContent(i);
                 }
             });

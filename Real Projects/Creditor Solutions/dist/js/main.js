@@ -15,24 +15,12 @@ var tabs = document.querySelectorAll('.tab_title'),
     tabsContent = document.querySelectorAll('.tab_content'),
     tabsParent = document.querySelector('.tab_wrapper');
 
-function hideTabContent() {
-  tabsContent.forEach(function (item) {
-    item.classList.add('hide');
-    item.classList.remove('show');
-  });
-  tabs.forEach(function (item) {
-    item.classList.remove('tab_active');
-  });
-}
-
 function showTabContent() {
   var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  tabsContent[i].classList.add('show');
-  tabsContent[i].classList.remove('hide');
-  tabs[i].classList.add('tab_active');
+  tabsContent[i].classList.toggle('show');
+  tabs[i].classList.toggle('tab_active');
 }
 
-hideTabContent();
 showTabContent();
 tabsParent.addEventListener('click', function (event) {
   var target = event.target;
@@ -40,7 +28,6 @@ tabsParent.addEventListener('click', function (event) {
   if (target && target.classList.contains('tab_title')) {
     tabs.forEach(function (item, i) {
       if (target == item) {
-        hideTabContent();
         showTabContent(i);
       }
     });
