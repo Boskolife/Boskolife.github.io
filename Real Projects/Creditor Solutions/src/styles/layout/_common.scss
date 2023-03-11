@@ -91,7 +91,7 @@ body {
 }
 
 .main_content {
-    @include adaptiv-vaule("padding-top", 175, 60, 1);
+    @include adaptiv-vaule("padding-top", 175, 120, 1);
     @include adaptiv-vaule("padding-bottom", 100, 80, 1);
     position: relative;
 

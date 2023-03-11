@@ -1,4 +1,4 @@
-footer { 
+footer {
     overflow: hidden;
 }
 
@@ -31,9 +31,20 @@ footer {
         @include media ("<desktop") {
             padding: 0;
             margin-bottom: 35px;
+            padding-bottom: 35px;
             align-items: center;
             width: 100%;
             text-align: center;
+
+            &::before{
+                position: absolute;
+                content: '';
+                bottom:0;
+                left: -10%;
+                width: 110%;
+                height: 1px;
+                background-color: $gray;
+            }
         }
 
         &::after {
@@ -53,6 +64,10 @@ footer {
 
     .logo {
         margin-bottom: 35px;
+
+        @include media ("<tablet") {
+            margin-bottom: 30px;
+        }
     }
 
     .footer_links {
@@ -104,6 +119,17 @@ footer {
             width: 100%;
             padding: 0;
             margin-bottom: 35px;
+            padding-bottom: 35px;
+
+            &::before{
+                position: absolute;
+                content: '';
+                bottom:0;
+                left: -10%;
+                width: 110%;
+                height: 1px;
+                background-color: $gray;
+            }
         }
 
         &::after {
@@ -128,12 +154,19 @@ footer {
         color: $gray_4;
         line-height: 200%;
         width: 45%;
-        margin-bottom: 20px;
         transition: all .3s ease;
         position: relative;
 
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
         @include media ("<desktop") {
             width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
         }
 
         &:hover {
@@ -166,10 +199,11 @@ footer {
             text-align: center;
             padding: 0;
             width: 100%;
+            row-gap: 15px;
         }
     }
 
-    .policy_item{
+    .policy_item {
         text-transform: uppercase;
         font-weight: 500;
         @include adaptiv-vaule("font-size", 16, 14, 1);
@@ -202,7 +236,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
+
         @include media ("<desktop") {
             flex-direction: column;
             text-align: center;
@@ -214,7 +248,7 @@ footer {
         color: $gray_2;
         line-height: 143%;
 
-        &:first-child{
+        &:first-child {
             margin-bottom: 12px;
         }
     }
