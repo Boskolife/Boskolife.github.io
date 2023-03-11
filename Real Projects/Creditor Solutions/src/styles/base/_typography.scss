@@ -15,26 +15,40 @@ h6,
 .h {
     font-family: $headings-font-family;
     font-weight: 700;
+    margin: 0;
 }
 
 h1,
 .h1 {
-    font-size: $h1-font-size;
+    @include adaptiv-vaule("font-size", 90, 56, 1);
+    letter-spacing: -0.03em;
+    line-height: 104%;
+    text-transform: uppercase;
+    color: $black;
 }
 
 h2,
 .h2 {
-    font-size: $h2-font-size;
+    @include adaptiv-vaule("font-size", 40, 28, 1);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 130%;
 }
 
 h3,
 .h3 {
-    font-size: $h3-font-size;
+    @include adaptiv-vaule("font-size", 26, 20, 1);
+    font-weight: 600;
+    letter-spacing: -0.03em;
 }
 
 h4,
 .h4 {
-    font-size: $h4-font-size;
+    @include adaptiv-vaule("font-size", 22, 18, 1);
+    font-weight: 500;
+    line-height: 124%;
+    letter-spacing: -0.03em;
+    
 }
 
 h5,
@@ -47,8 +61,8 @@ h6,
     font-size: $h6-font-size;
 }
 
-p {
-    margin: 0 0 1em;
+p{
+    margin: 0;
 }
 
 ul {

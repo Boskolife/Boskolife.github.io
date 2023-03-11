@@ -1,0 +1,201 @@
+footer { 
+    overflow: hidden;
+}
+
+.footer_content {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    @include adaptiv-vaule("padding-top", 80, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 35, 1);
+    overflow: hidden;
+}
+
+.footer_top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include media ("<desktop") {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 31%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        padding-right: 20px;
+
+        @include media ("<desktop") {
+            padding: 0;
+            margin-bottom: 35px;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 200%;
+            background-color: $gray;
+            top: -30%;
+            right: 0;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+        }
+    }
+
+    .logo {
+        margin-bottom: 35px;
+    }
+
+    .footer_links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include media ("<desktop") {
+            align-items: center;
+        }
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .link_img {
+        margin-right: 13px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .link_title {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        color: $black;
+    }
+
+    .list_links {
+        width: 42%;
+        @include adaptiv-vaule("padding-right", 70, -70, 1);
+        @include adaptiv-vaule("padding-left", 70, -70, 1);
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        position: relative;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 35px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 200%;
+            background-color: $gray;
+            top: -30%;
+            right: 0;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+        }
+    }
+
+    .list_item {
+        text-transform: uppercase;
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        color: $gray_4;
+        line-height: 200%;
+        width: 45%;
+        margin-bottom: 20px;
+        transition: all .3s ease;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+        &:hover{
+            font-weight: 700;
+            transition: all .3s ease;
+        }
+    }
+
+    .policy {
+        width: 25%;
+        @include adaptiv-vaule("padding-right", 70, -70, 1);
+        @include adaptiv-vaule("padding-left", 70, -70, 1);
+        padding-top: 40px;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        row-gap: 20px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            width: 100%;
+        }
+    }
+
+    .policy_item{
+        text-transform: uppercase;
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        color: $gray_4;
+        line-height: 200%;
+        transition: all .3s ease;
+
+        &:hover{
+            font-weight: 700;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.footer_bottom {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        @include media ("<desktop") {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .note {
+        font-size: 14px;
+        color: $gray_2;
+        line-height: 143%;
+
+        &:first-child{
+            margin-bottom: 12px;
+        }
+    }
+}

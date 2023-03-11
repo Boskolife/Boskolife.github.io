@@ -1,7 +1,10 @@
 header {
     padding: 20px 0;
     border-bottom: 1px solid $gray_3;
-    background-color: transparent;
+    background-color: $white;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
 
     @include media ("<phone") {
         padding: 20px 0 25px 0;
@@ -15,11 +18,11 @@ header {
     }
 
     .logo {
-        @include adaptiv-vaule("width", 206, 130, 1);
+        @include adaptiv-vaule("width", 206, 150, 1);
     }
 
     .nav {
-
+        display: none;
         @include media ("<desktop") {
             display: none;
         }
