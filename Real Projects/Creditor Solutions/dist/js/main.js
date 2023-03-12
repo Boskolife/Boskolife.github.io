@@ -10,8 +10,6 @@ function findHref() {
   var url = window.location.href;
 
   for (var i = 0; i < element.length; i++) {
-    console.log(element);
-
     if (url === element[i].href) {
       element[i].classList.add('item_active');
     }
