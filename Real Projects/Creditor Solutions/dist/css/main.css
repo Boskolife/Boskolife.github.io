@@ -616,28 +616,16 @@ header {
     @media (max-width: 1350px) {
       header .logo {
         width: calc(150px + 56 * ((100vw - calc(375px)) / 975)); } }
-  header .nav {
-    display: none; }
-    @media (max-width: 1023px) {
-      header .nav {
-        display: none; } }
+  @media (max-width: 1023px) {
+    header .nav {
+      display: none; } }
   header .menu-item {
-    color: #3D3E45;
-    font-weight: 500;
-    font-size: 16px;
-    text-transform: uppercase;
-    transition: all .3s ease;
     position: relative;
     /* Только если меньше контейнера */
-    margin-left: 20px;
-    /* Только если меньше контейнера */
-    font-size: 16px; }
+    margin-left: 20px; }
     @media (max-width: 1350px) {
       header .menu-item {
         margin-left: calc(1px + 19 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1350px) {
-      header .menu-item {
-        font-size: calc(5px + 11 * ((100vw - calc(375px)) / 975)); } }
     header .menu-item:hover:after {
       content: '';
       position: absolute;
@@ -648,6 +636,19 @@ header {
       background-color: #031C77;
       -webkit-animation: bottom_border .5s linear;
       animation: bottom_border .5s linear; }
+  header .menu_link {
+    /* Только если меньше контейнера */
+    font-size: 16px;
+    transition: all .3s ease;
+    color: #3D3E45;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase; }
+    @media (max-width: 1350px) {
+      header .menu_link {
+        font-size: calc(5px + 11 * ((100vw - calc(375px)) / 975)); } }
+  header .item_active {
+    color: #031C77; }
   header .phone {
     display: -ms-flexbox;
     display: flex;

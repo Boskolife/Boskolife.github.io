@@ -24,22 +24,15 @@ header {
     }
 
     .nav {
-        display: none;
         @include media ("<desktop") {
             display: none;
         }
     }
 
     .menu-item {
-        color: $gray_4;
-        font-weight: 500;
-        font-size: 16px;
-        text-transform: uppercase;
-        transition: all .3s ease;
         position: relative;
         @include adaptiv-vaule("margin-left", 20, 1, 1);
-        @include adaptiv-vaule("font-size", 16, 5, 1);
-
+        
         &:hover {
 
             &:after {
@@ -53,6 +46,19 @@ header {
                 animation: bottom_border .5s linear;
             }
         }
+    }
+
+    .menu_link{
+        @include adaptiv-vaule("font-size", 16, 5, 1);
+        transition: all .3s ease;
+        color: $gray_4;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .item_active{
+        color: $blue;
     }
 
     .phone {
