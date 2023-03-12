@@ -559,7 +559,7 @@ main {
         position: relative;
         cursor: pointer;
 
-        @include media ("<phone") {
+        @include media ("<desktop") {
             padding-right: 75px;
         }
 
@@ -591,7 +591,8 @@ main {
     .tab_content {
         padding: 0;
         opacity: 0;
-        max-height: 0;
+        visibility:hidden;
+        height: 0;
         font-weight: 500;
         @include adaptiv-vaule("font-size", 16, 14, 1);
         line-height: 150%;
@@ -601,10 +602,11 @@ main {
     }
 
     .show {
-        max-height: 100%;
+        height: 100%;
         transition: all .3s ease;
         padding: 0 0 20px 0;
         opacity: 1;
+        visibility: visible;
     }
 
     .blue_btn {
@@ -770,6 +772,10 @@ main {
         height: 350px;
         position: relative;
         overflow: hidden;
+    }
+
+    .tab_wrapper{
+        margin-bottom: 0;
     }
 
     .tab_list {
