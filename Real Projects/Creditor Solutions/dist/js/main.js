@@ -45,8 +45,7 @@ function initTabs() {
 
 function initNavBtn() {
   var flyBtn = document.querySelector('#flyBtn');
-  var flyBtn_2 = document.querySelector('#flyBtn_2');
-  if (!flyBtn && !flyBtn_2) return;
+  if (!flyBtn) return;
   var navBtn = document.querySelector('.nav_btn'),
       navTable = document.querySelector('.nav_table'),
       navLink = document.querySelectorAll('.nav_table_link');
@@ -61,15 +60,23 @@ function initNavBtn() {
     });
   });
   ScrollTrigger.create({
-    trigger: "#flyBtn_2",
-    start: "top top",
-    endTrigger: "#otherID",
-    end: "bottom 50%+=100px",
-    onToggle: function onToggle(self) {
-      return console.log("toggled, isActive:", self.isActive);
+    trigger: ".nav_table",
+    start: "-90px top",
+    endTrigger: "#footer",
+    toggleClass: "fixed",
+    end: "top 80%+=100px"
+  });
+  ScrollTrigger.create({
+    trigger: "#flyBtn",
+    start: "top bottom",
+    endTrigger: "#footer",
+    toggleClass: "active",
+    end: "top bottom",
+    onLeave: function onLeave(self) {
+      self.trigger.classList.add('hide');
     },
-    onUpdate: function onUpdate(self) {
-      console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+    onEnterBack: function onEnterBack(self) {
+      self.trigger.classList.remove('hide');
     }
   });
 }

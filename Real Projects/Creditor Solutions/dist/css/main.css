@@ -1707,6 +1707,10 @@ html {
     flex-direction: column;
     -ms-flex-align: start;
     align-items: flex-start; }
+    .privacy_policy .nav_table.fixed {
+      position: fixed;
+      top: 120px;
+      right: 18px; }
     @media (max-width: 1023px) {
       .privacy_policy .nav_table {
         position: fixed;
@@ -1759,16 +1763,23 @@ html {
     .privacy_policy .nav_table_link:hover {
       color: #031C77; }
   .privacy_policy .nav_btn {
-    position: fixed;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    bottom: 1%;
     z-index: 3;
-    display: none; }
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: auto; }
     @media (max-width: 1023px) {
       .privacy_policy .nav_btn {
-        display: block; } }
+        display: block; }
+        .privacy_policy .nav_btn.hide {
+          display: none; }
+        .privacy_policy .nav_btn.active {
+          position: fixed;
+          top: auto;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+          bottom: 1%; } }
     @media (max-width: 479px) {
       .privacy_policy .nav_btn {
         padding: 9px; } }
