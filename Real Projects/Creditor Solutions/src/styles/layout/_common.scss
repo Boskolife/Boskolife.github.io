@@ -7,21 +7,6 @@ html {
     scroll-behavior: smooth;
 }
 
-html,
-body {
-    height: 100%;
-}
-
-#wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1 1 auto;
-}
-
 @keyframes bottom_border {
     0% {
         width: 0;
@@ -61,7 +46,7 @@ main {
 }
 
 .gray_text {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .blue_btn {
@@ -331,6 +316,7 @@ main {
             @include adaptiv-vaule("font-size", 16, 14, 1);
             line-height: 175%;
             color: $gray_2;
+            max-width: 383px;
             letter-spacing: -0.01em;
         }
     }
@@ -484,6 +470,10 @@ main {
         max-width: 300px;
     }
 
+    .blue_text{
+        font-weight: 700;
+    }
+
     .text_wrap {
         flex: 1 1 auto;
     }
@@ -522,9 +512,9 @@ main {
 
     .fee {
         text-align: start;
-
+        color: $gray_4;
         @include adaptiv-vaule("font-size", 16, 14, 1);
-        font-weight: 700;
+        font-weight: 600;
         line-height: 150%;
     }
 
@@ -753,7 +743,6 @@ main {
 
     .faq_main_wrap {
         @include adaptiv-vaule("margin-bottom", 100, 60, 1);
-        height: calc(100vh - 87px);
     }
 
     .faq_page_title {
@@ -909,8 +898,7 @@ main {
         &::before {
             content: '';
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 8px;
             left: 0;
             width: 10px;
             height: 10px;
@@ -958,17 +946,18 @@ main {
 
     .nav_table_title {
         @include adaptiv-vaule("font-size", 26, 18, 1);
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: -0.03em;
         margin-bottom: 25px;
     }
 
     .nav_table_link {
-        @include adaptiv-vaule("font-size", 20, 16, 1);
+        @include adaptiv-vaule("font-size", 18, 16, 1);
         font-weight: 500;
         letter-spacing: -0.01em;
-        color: $black;
+        color: $gray_4;
         text-decoration: underline;
+        line-height: 178%;
 
         &:not(:last-child){
             margin-bottom: 15px;
@@ -1004,5 +993,9 @@ main {
         letter-spacing: -0.01em;
         color: $black;
         font-weight: 500;
+    }
+
+    .item_title{
+        font-weight: 600;
     }
 }

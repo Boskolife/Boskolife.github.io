@@ -29,7 +29,6 @@ function initTabs() {
     tabs[i].classList.toggle('tab_active');
   }
 
-  showTabContent();
   tabsParent.addEventListener('click', function (event) {
     var target = event.target;
 
@@ -41,6 +40,7 @@ function initTabs() {
       });
     }
   });
+  !window.location.href.includes('faq') && showTabContent();
 }
 
 function initNavBtn() {
@@ -59,6 +59,18 @@ function initNavBtn() {
       navTable.classList.remove('show_table');
       document.body.classList.remove("body_lock");
     });
+  });
+  ScrollTrigger.create({
+    trigger: "#flyBtn_2",
+    start: "top top",
+    endTrigger: "#otherID",
+    end: "bottom 50%+=100px",
+    onToggle: function onToggle(self) {
+      return console.log("toggled, isActive:", self.isActive);
+    },
+    onUpdate: function onUpdate(self) {
+      console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+    }
   });
 }
 //# sourceMappingURL=main.js.map

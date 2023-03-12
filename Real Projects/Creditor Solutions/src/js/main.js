@@ -28,10 +28,8 @@ function initTabs() {
         tabsContent[i].classList.toggle('show');
         tabs[i].classList.toggle('tab_active');
     }
-    
-    showTabContent();
 
-    tabsParent.addEventListener('click', function(event) {
+    tabsParent.addEventListener('click', (event) => {
         const target = event.target;
         if(target && target.classList.contains('tab_title')) {
             tabs.forEach((item, i) => {
@@ -41,6 +39,8 @@ function initTabs() {
             });
         }
     });
+
+    !window.location.href.includes('faq') && showTabContent();
 }
 
 
@@ -65,5 +65,16 @@ function initNavBtn() {
             document.body.classList.remove("body_lock");
         })
     });
+
+    ScrollTrigger.create({
+        trigger: "#flyBtn_2",
+        start: "top top",
+        endTrigger: "#otherID",
+        end: "bottom 50%+=100px",
+        onToggle: self => console.log("toggled, isActive:", self.isActive),
+        onUpdate: self => {
+          console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+        }
+      });
 }
 

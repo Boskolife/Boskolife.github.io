@@ -5,6 +5,8 @@ header {
     position: fixed;
     z-index: 3;
     width: 100%;
+    top: 0;
+    left: 0;
 
     @include media ("<phone") {
         padding: 10px 0 15px 0;
