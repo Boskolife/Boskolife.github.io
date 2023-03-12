@@ -916,7 +916,7 @@ html {
         &.fixed {
             position: fixed;
             top: 120px;
-            right: 18px;
+            right: 20px;
         }
         
 
@@ -972,6 +972,12 @@ html {
         &:hover{
             color: $blue;
         }
+    }
+    .anchor {
+        display: block;
+        position: relative;
+        top: -90px;
+        visibility: hidden;
     }
 
     .nav_btn {

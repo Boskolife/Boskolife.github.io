@@ -1711,7 +1711,7 @@ html {
     .privacy_policy .nav_table.fixed {
       position: fixed;
       top: 120px;
-      right: 18px; }
+      right: 20px; }
     @media (max-width: 1023px) {
       .privacy_policy .nav_table {
         position: fixed;
@@ -1763,6 +1763,11 @@ html {
       margin-bottom: 15px; }
     .privacy_policy .nav_table_link:hover {
       color: #031C77; }
+  .privacy_policy .anchor {
+    display: block;
+    position: relative;
+    top: -90px;
+    visibility: hidden; }
   .privacy_policy .nav_btn {
     z-index: 3;
     display: none;
