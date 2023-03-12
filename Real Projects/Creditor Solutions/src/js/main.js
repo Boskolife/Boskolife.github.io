@@ -1,6 +1,17 @@
 initTabs();
 initBurger();
 initNavBtn();
+findHref();
+
+function findHref() {
+    let element = document.getElementById('menu').getElementsByTagName('a');
+    let url = window.location.href;
+    for (let i = 0; i < element.length; i++) {
+        if(url === element[i].href) {
+            element[i].classList.add('item_active')
+        }
+    };
+}
 
 function initBurger() {
     const burger = document.querySelector(".burger_menu");
@@ -42,7 +53,6 @@ function initTabs() {
 
     !window.location.href.includes('faq') && showTabContent();
 }
-
 
 function initNavBtn() {
     const flyBtn = document.querySelector('#flyBtn');
@@ -88,4 +98,8 @@ function initNavBtn() {
         }
     });
 }
+
+
+
+
 
