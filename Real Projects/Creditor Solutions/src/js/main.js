@@ -13,26 +13,44 @@ burger.addEventListener('click', () =>{
 
 //Tabs
 
-const tabs = document.querySelectorAll('.tab_title'),
-	  tabsContent = document.querySelectorAll('.tab_content'),
-	  tabsParent = document.querySelector('.tab_wrapper');
+// const tabs = document.querySelectorAll('.tab_title'),
+// 	  tabsContent = document.querySelectorAll('.tab_content'),
+// 	  tabsParent = document.querySelector('.tab_wrapper');
 
-	function showTabContent(i = 0) {
-        tabsContent[i].classList.toggle('show');
-        tabs[i].classList.toggle('tab_active');
-    }
+// 	function showTabContent(i = 0) {
+//         tabsContent[i].classList.toggle('show');
+//         tabs[i].classList.toggle('tab_active');
+//     }
     
-    showTabContent();
+//     showTabContent();
 
-	tabsParent.addEventListener('click', function(event) {
-		const target = event.target;
-		if(target && target.classList.contains('tab_title')) {
-            tabs.forEach((item, i) => {
-                if (target == item) {
-                    showTabContent(i);
-                }
-            });
-		}
-    });
+// 	tabsParent.addEventListener('click', function(event) {
+// 		const target = event.target;
+// 		if(target && target.classList.contains('tab_title')) {
+//             tabs.forEach((item, i) => {
+//                 if (target == item) {
+//                     showTabContent(i);
+//                 }
+//             });
+// 		}
+//     });
     
 
+//NavBtn
+
+const navBtn = document.querySelector('.nav_btn'),
+      navTable = document.querySelector('.nav_table'),
+      navLink = document.querySelectorAll('.nav_table_link');
+
+    
+    navBtn.addEventListener('click', () => {
+        navTable.classList.toggle('show_table');
+        document.body.classList.toggle("body_lock");
+    })
+
+    navLink.forEach(item => {
+        item.addEventListener('click', () => {
+            navTable.classList.remove('show_table');
+            document.body.classList.remove("body_lock");
+        })
+    })

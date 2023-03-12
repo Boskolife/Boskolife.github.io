@@ -3,6 +3,25 @@ body {
     font-family: 'Arimo';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
 @keyframes bottom_border {
     0% {
         width: 0;
@@ -23,7 +42,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .container {
@@ -95,7 +114,7 @@ body {
     @include adaptiv-vaule("padding-bottom", 100, 80, 1);
     position: relative;
 
-    &::before{
+    &::before {
         content: '';
         position: absolute;
         height: 150%;
@@ -104,7 +123,8 @@ body {
         right: 10%;
         background-color: $gray_3;
     }
-    &::after{
+
+    &::after {
         content: '';
         position: absolute;
         height: 150%;
@@ -120,18 +140,18 @@ body {
         justify-content: space-between;
         position: relative;
         z-index: 2;
-    
+
         @include media ("<desktop") {
             flex-direction: column;
             align-items: center;
         }
     }
-    
+
     .main_title {
         max-width: 960px;
         margin-right: 30px;
         @include adaptiv-vaule(" margin-right", 30, 0, 1);
-    
+
         @include media ("<desktop") {
             margin: 0 0 35px 0;
             text-align: center;
@@ -197,6 +217,7 @@ body {
 
     .about_us_title {
         max-width: 530px;
+        color: $white;
 
         @include media ("<desktop") {
             margin-bottom: 30px;
@@ -231,6 +252,7 @@ body {
 
     .item_title {
         margin-bottom: 10px;
+        color: $white;
     }
 
     .item_descr {
@@ -242,6 +264,12 @@ body {
 
     .white_btn {
         font-weight: 700;
+        margin-top: -60px;
+
+        @include media ("<desktop") {
+            margin: 0;
+        }
+
         @include media ("<phone") {
             max-width: 100%;
             min-width: 100%;
@@ -255,9 +283,9 @@ body {
 
     .propos_content {
         display: grid;
-        grid-template: 1fr 1fr / repeat(auto-fit, minmax(330px, 29%));
+        grid-template: 1fr 1fr / repeat(auto-fit, minmax(330px, 30%));
         justify-content: center;
-        @include adaptiv-vaule("column-gap", 85, 0, 1);
+        @include adaptiv-vaule("column-gap", 65, 0, 1);
         @include adaptiv-vaule("row-gap", 70, 25, 1);
 
         @include media ("<tablet") {
@@ -330,7 +358,7 @@ body {
 
         @include media ("<desktop") {
             width: 85%;
-            margin: 0 0 30px 0;
+            margin: 0 0 60px 0;
         }
 
         @include media ("<tablet") {
@@ -343,6 +371,7 @@ body {
         @include adaptiv-vaule("font-size", 34, 28, 1);
         line-height: 120%;
         letter-spacing: -0.03em;
+        color: $white;
         text-transform: capitalize;
         @include adaptiv-vaule("margin-bottom", 15, 25, 1);
     }
@@ -370,8 +399,9 @@ body {
     }
 
     .white_btn {
-        @include media ("<desktop") {
-            display: none;
+
+        @include media ("<phone") {
+            min-width: 100%;
         }
     }
 
@@ -566,6 +596,7 @@ body {
         @include adaptiv-vaule("font-size", 16, 14, 1);
         line-height: 150%;
         letter-spacing: -0.01em;
+        color: $gray_2;
         transition: all .3s ease;
     }
 
@@ -665,11 +696,11 @@ body {
         }
     }
 
-    form{
+    form {
         width: 35%;
         display: flex;
         flex-direction: column;
-        align-items:flex-start;
+        align-items: flex-start;
 
         @include media ("<tablet") {
             width: 80%;
@@ -680,7 +711,7 @@ body {
         }
     }
 
-    .data_name{
+    .data_name {
         font-weight: 600;
         font-size: 12px;
         text-transform: capitalize;
@@ -688,57 +719,284 @@ body {
         margin-bottom: 12px;
     }
 
-    .data{
+    .data {
         border: 1px solid #DADDE5;
         border-radius: 8px;
         padding: 12px 16px;
         width: 100%;
         margin-bottom: 25px;
 
-        &::placeholder{
+        &::placeholder {
             color: $gray_2;
             font-size: 14px;
         }
 
-        &:focus{
+        &:focus {
             border: 1px solid $blue;
         }
     }
 
-    .data_text{
+    .data_text {
         height: 140px;
     }
 
-    .blue_btn{
+    .blue_btn {
         min-width: 100%;
     }
 }
 
-.faq_page{
+.faq_page {
     @include adaptiv-vaule("padding-top", 240, 110, 1);
     @include adaptiv-vaule("padding-bottom", 140, 80, 1);
 
-    .faq_main_wrap{
+    .faq_main_wrap {
         @include adaptiv-vaule("margin-bottom", 100, 60, 1);
         height: calc(100vh - 87px);
     }
 
-    .faq_page_title{
+    .faq_page_title {
         color: $black;
         text-transform: uppercase;
         max-width: 900px;
         font-weight: 700;
-        @include adaptiv-vaule("font-size", 90, 56, 1);   
+        @include adaptiv-vaule("font-size", 90, 48, 1);
         letter-spacing: -0.03em;
-        line-height: 98%; 
+        line-height: 98%;
         @include adaptiv-vaule("margin-bottom", 100, 60, 1);
     }
 
-    .faq_page_img{
+    .faq_page_img {
         width: 100%;
         height: 350px;
-        @include adaptiv-vaule("height", 350, 150, 1);
         position: relative;
         overflow: hidden;
+    }
+
+    .tab_list {
+        padding-left: 10px;
+    }
+
+    .tab_list_item {
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $blue;
+        }
+    }
+
+    .link {
+        text-decoration: underline;
+        color: $gray_2;
+    }
+}
+
+.privacy_policy {
+    @include adaptiv-vaule("padding-top", 240, 110, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 80, 1);
+
+    .privacy_policy_head {
+        @include adaptiv-vaule("margin-bottom", 100, 60, 1);
+    }
+
+    .privacy_policy_title {
+        @include adaptiv-vaule("margin-bottom", 100, 60, 1);
+        @include adaptiv-vaule("font-size", 90, 48, 1);
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        line-height: 98%;
+    }
+
+    .privacy_policy_img {
+        position: relative;
+        width: 100%;
+        height: 350px;
+    }
+
+    .privacy_policy_content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .content_body {
+        width: 72%;
+        margin-right: 30px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .item_body {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    .body_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 26, 18, 1);
+        line-height: 140%;
+        letter-spacing: -0.03em;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid $gray_3;
+    }
+
+    .item_title {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 160%;
+        letter-spacing: -0.01em;
+        margin-bottom: 10px;
+    }
+
+    .sub_item_title {
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 156%;
+    }
+
+    .item_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+    }
+
+    .black {
+        color: $black;
+        font-weight: 500;
+
+    }
+
+    .item_list {
+        padding-left: 10px;
+    }
+
+    .list_item {
+        padding-left: 20px;
+        position: relative;
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $blue;
+        }
+    }
+
+    .nav_table {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+
+        @include media ("<desktop") {
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            background-color:$white;
+            border-radius:8px;
+            padding: 20px 10px;
+            align-items: center;
+            text-align: center;
+            width: 50%;
+            box-shadow: 2px 2px 30px rgba(0,0,0,0.5);
+            overflow: auto;
+            z-index: 3;
+            max-height: 80%;
+        }
+
+        @include media ("<tablet") {
+            width: 90%;
+            padding: 15px 5px;
+        }
+    }
+
+    .show_table{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav_table_title {
+        @include adaptiv-vaule("font-size", 26, 18, 1);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        margin-bottom: 25px;
+    }
+
+    .nav_table_link {
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: $black;
+        text-decoration: underline;
+
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+
+        &:hover{
+            color: $blue;
+        }
+    }
+
+    .nav_btn{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1%;
+        z-index: 3;
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+        }
+        
+        @include media ("<phone") {
+            padding: 9px;
+        }
+    }
+}
+
+.terms {
+
+    .body_title {
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        letter-spacing: -0.01em;
+        color: $black;
+        font-weight: 500;
     }
 }
