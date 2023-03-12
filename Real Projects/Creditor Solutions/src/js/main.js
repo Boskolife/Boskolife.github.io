@@ -46,9 +46,8 @@ function initTabs() {
 
 function initNavBtn() {
     const flyBtn = document.querySelector('#flyBtn');
-    const flyBtn_2 = document.querySelector('#flyBtn_2');
 
-    if (!flyBtn && !flyBtn_2) return;
+    if (!flyBtn) return;
 
     const navBtn = document.querySelector('.nav_btn'),
           navTable = document.querySelector('.nav_table'),
@@ -67,14 +66,26 @@ function initNavBtn() {
     });
 
     ScrollTrigger.create({
-        trigger: "#flyBtn_2",
-        start: "top top",
-        endTrigger: "#otherID",
-        end: "bottom 50%+=100px",
-        onToggle: self => console.log("toggled, isActive:", self.isActive),
-        onUpdate: self => {
-          console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+        trigger: ".nav_table",
+        start: "-90px top",
+        endTrigger: "#footer",
+        toggleClass: "fixed",
+        end: "top 80%+=100px",
+    });
+
+
+    ScrollTrigger.create({
+        trigger: "#flyBtn",
+        start: "top bottom",
+        endTrigger: "#footer",
+        toggleClass: "active",
+        end: "top bottom",
+        onLeave: (self) => {
+            self.trigger.classList.add('hide')
+        },
+        onEnterBack: (self) => {
+            self.trigger.classList.remove('hide')
         }
-      });
+    });
 }
 

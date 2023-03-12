@@ -10,6 +10,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -28,7 +30,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="privacy_policy_content" id="flyBtn">
+                    <div class="privacy_policy_content">
                         <div class="content_body">
                             <h3 class="body_title">​Your privacy is important to us, and we are
                                 committed to protecting it. This privacy policy explains how
@@ -197,7 +199,7 @@
                                 policy</a>
                             <a href="#item_11" class="nav_table_link">Contacting us</a>
                         </div>
-                        <a href="#" onclick="event.preventDefault()" class="blue_btn nav_btn">Table of contents</a>
+                        <a href="#" onclick="event.preventDefault()" id="flyBtn" class="blue_btn nav_btn">Table of contents</a>
                     </div>
                 </div>
             </section>

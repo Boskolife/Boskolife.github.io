@@ -912,6 +912,12 @@ html {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
+        &.fixed {
+            position: fixed;
+            top: 120px;
+            right: 18px;
+        }
         
 
         @include media ("<desktop") {
@@ -968,16 +974,26 @@ html {
         }
     }
 
-    .nav_btn{
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 1%;
+    .nav_btn {
         z-index: 3;
         display: none;
-
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        
         @include media ("<desktop") {
             display: block;
+            &.hide {
+                display: none;
+            }
+
+            &.active {
+                position: fixed;
+                top: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 1%;
+            }
         }
         
         @include media ("<phone") {
