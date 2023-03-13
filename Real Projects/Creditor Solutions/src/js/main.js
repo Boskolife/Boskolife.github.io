@@ -8,7 +8,7 @@ function findHref() {
     let url = window.location.href;
     for (let i = 0; i < element.length; i++) {
         if(url === element[i].href) {
-            element[i].classList.add('item_active')
+            element[i].classList.add('item_active');
         }
     };
 }
