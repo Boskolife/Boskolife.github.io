@@ -433,6 +433,13 @@ html {
         flex-direction: column;
         align-items: center;
         min-height: 100%;
+        transition: all .3s linear;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 1px 1px 15px $black;
+            transition: all .3s linear;
+        }
     }
 
     .card_img {
@@ -1341,7 +1348,6 @@ html {
 
 .work {
     @include adaptiv-vaule("padding-top", 130, 80, 1);
-    @include adaptiv-vaule("padding-bottom", 65, 40, 1);
     background-color: #F9F9F9;
 
     .work_content {
@@ -1395,9 +1401,8 @@ html {
 }
 
 .accreditations {
-    @include adaptiv-vaule("padding-top", 65, 40, 1);
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
     @include adaptiv-vaule("padding-bottom", 130, 80, 1);
-    background-color: #F9F9F9;
 
     .accreditations_title {
         font-weight: 600;
@@ -1415,15 +1420,376 @@ html {
         }
     }
 
-    .accreditations_items{
+    .accreditations_items {
         display: grid;
-        grid-template: 1fr / repeat(auto-fit , minmax(350px , 1fr));
+        grid-template: 1fr / repeat(auto-fit, minmax(350px, 1fr));
         gap: 30px;
 
         @include media ("<tablet") {
-            place-items:center;
-            grid-template: repeat(2, 48%) / repeat(auto-fit , minmax(30% , 1fr) );
+            place-items: center;
+            grid-template: repeat(2, 48%) / repeat(auto-fit, minmax(30%, 1fr));
         }
     }
 
+}
+
+.faq_grey {
+    background-color: #F9F9F9;
+}
+
+.small_claims {
+    @include adaptiv-vaule("padding-top", 160, 95, 1);
+    padding-bottom: 85px;
+    position: relative;
+
+    .small_claims_img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+
+    .small_claims_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .small_claims_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 90, 46, 1);
+        width: 49%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+    }
+
+    .small_claims_card {
+        background-color: $white;
+        border-radius: 14px;
+        @include adaptiv-vaule("padding-top", 40, 35, 1);
+        @include adaptiv-vaule("padding-bottom", 40, 35, 1);
+        @include adaptiv-vaule("padding-right", 30, 24, 1);
+        @include adaptiv-vaule("padding-left", 30, 24, 1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100%;
+        transition: all .3s linear;
+        width: 32.5%;
+
+        @include media ("<desktop") {
+            max-width: 430px;
+            width: 100%;
+        }
+    }
+
+    .card_img {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 10px;
+
+        @include media ("<tablet") {
+            width: 42px;
+            height: 42px;
+        }
+    }
+
+    .pack {
+        color: $gray_2;
+    }
+
+    .card_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        line-height: 144%;
+        letter-spacing: -0.01em;
+        color: $gray_4;
+        @include adaptiv-vaule("margin-bottom", 30, 25, 1);
+        border-top: 1px solid $gray;
+        width: 100%;
+        padding-top: 25px;
+    }
+
+    .blue_text {
+        font-weight: 700;
+    }
+
+    .text_wrap {
+        flex: 1 1 auto;
+    }
+
+    .package_list {
+        text-align: start;
+        margin-bottom: 25px;
+    }
+
+    .list_item {
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        font-weight: 500;
+        line-height: 125%;
+        color: $gray_2;
+        padding-left: 30px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        &::before {
+            content: url(../images/cards/check.svg);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+        }
+    }
+
+    .fee_wrap {
+        @include adaptiv-vaule("margin-bottom", 25, 50, 1);
+        text-align: start;
+        width: 100%;
+    }
+
+    .fee {
+        text-align: start;
+        color: $gray_4;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        font-weight: 600;
+        line-height: 150%;
+    }
+
+    .blue_btn,
+    .white_btn {
+        min-width: 100%;
+    }
+
+    .blue_btn {
+        margin-bottom: 15px;
+    }
+}
+
+.way {
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+
+    .way_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .way_text {
+        margin-right: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 42%;
+
+        @include media ("<tablet") {
+            width: 80%;
+            margin: 0 0 30px 0;
+            text-align: center;
+            align-items: center;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            text-align: start;
+            align-items: flex-start;
+        }
+    }
+
+    .way_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 40, 28, 1);
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        color: $blue;
+        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+    }
+
+    .way_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 160%;
+        letter-spacing: -0.01em;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 70, 30, 1);
+    }
+
+    .way_img {
+        @include adaptiv-vaule("margin-bottom", 70, 30, 1);
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .blue_btn {
+        min-width: 360px;
+
+        @include media ("<desktop") {
+            min-width: 100%;
+        }
+
+        @include media ("<tablet") {
+            min-width: 270px;
+        }
+    }
+
+    .way_items {
+        width: 47%;
+
+        @include media ("<tablet") {
+            width: 80%;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .item {
+
+        @include media ("<tablet") {
+            padding-top: 30px;
+            border-top: 1px solid $gray_3;
+        }
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 30, 25, 1);
+        }
+    }
+
+    .item_img {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 15px;
+
+        @include media ("<phone") {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    .item_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 26, 20, 1);
+        line-height: 140%;
+        letter-spacing: -0.031em;
+        text-transform: capitalize;
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    .item_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+    }
+}
+
+.process {
+    background-color: $blue;
+    @include adaptiv-vaule("padding-top", 100, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 95, 80, 1);
+    text-align: center;
+
+    .process_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 34, 28, 1);
+        line-height: 120%;
+        letter-spacing: -0.03em;
+        color: $white;
+        max-width: 700px;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+    }
+}
+
+
+.steps {
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+    text-align: center;
+
+    .step_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 68, 42, 1);
+        line-height: 106%;
+        color: #031C77;
+        max-width: 800px;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 65, 50, 1);
+    }
+
+    .step_items {
+        @include adaptiv-vaule("margin-bottom", 60, 40, 1);
+        /* display: grid;
+        grid-template: 1fr / repeat(auto-fit , minmax(300px ,1fr));
+        place-items: center;
+        gap: 50px */
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .title_wrap{
+        @include adaptiv-vaule("margin-bottom", 30, 20, 1);
+    }
+
+    .item_step{
+        position: relative;
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+    }
+
+    .number_step {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+
+        @include media ("<phone") {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    .item_step_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 26, 20, 1);
+        line-height: 140%;
+        letter-spacing: -0.031em;
+        color: $black;
+    }
+
+    .step_img{
+        width: 100%;
+        @include adaptiv-vaule("height", 480, 335, 1);
+    }
 }
