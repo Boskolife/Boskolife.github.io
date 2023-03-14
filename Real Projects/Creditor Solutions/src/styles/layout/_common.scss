@@ -360,6 +360,10 @@ html {
         color: $white;
         text-transform: capitalize;
         @include adaptiv-vaule("margin-bottom", 15, 25, 1);
+
+        @include media ("<phone") {
+            max-width: 280px;
+        }
     }
 
     .note {
@@ -376,7 +380,7 @@ html {
         @include adaptiv-vaule("font-size", 16, 14, 1);
         line-height: 175%;
         color: $gray;
-        margin-bottom: 40px;
+        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
         max-width: 545px;
 
         @include media ("<desktop") {
@@ -435,11 +439,14 @@ html {
         min-height: 100%;
         transition: all .3s linear;
 
-        &:hover {
-            transform: scale(1.1);
-            box-shadow: 1px 1px 15px $black;
-            transition: all .3s linear;
+        @include media (">tablet") {
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 1px 1px 15px $black;
+                transition: all .3s linear;
+            }
         }
+
     }
 
     .card_img {
@@ -461,6 +468,7 @@ html {
         @include adaptiv-vaule("padding-bottom", 20, 15, 1);
         @include adaptiv-vaule("margin-bottom", 25, 20, 1);
         border-bottom: 1px solid $gray;
+        width: 100%;
     }
 
     .pack {
@@ -1437,7 +1445,7 @@ html {
     background-color: #F9F9F9;
 }
 
-.small_claims {
+.enforce {
     @include adaptiv-vaule("padding-top", 160, 95, 1);
     padding-bottom: 85px;
     position: relative;
@@ -1589,6 +1597,7 @@ html {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: 100%;
 
         @include media ("<tablet") {
             flex-direction: column;
@@ -1601,6 +1610,7 @@ html {
         flex-direction: column;
         align-items: flex-start;
         width: 42%;
+        min-height: 100%;
 
         @include media ("<tablet") {
             width: 80%;
@@ -1632,10 +1642,15 @@ html {
         letter-spacing: -0.01em;
         color: $black;
         @include adaptiv-vaule("margin-bottom", 70, 30, 1);
+
+        @include media ("<tablet") {
+            margin-bottom: 0
+        }
     }
 
     .way_img {
         @include adaptiv-vaule("margin-bottom", 70, 30, 1);
+        flex: 1 1 auto;
 
         @include media ("<tablet") {
             display: none;
@@ -1650,7 +1665,7 @@ html {
         }
 
         @include media ("<tablet") {
-            min-width: 270px;
+            display: none;
         }
     }
 
@@ -1659,6 +1674,7 @@ html {
 
         @include media ("<tablet") {
             width: 80%;
+            margin-bottom: 40px;
         }
 
         @include media ("<phone") {
@@ -1705,6 +1721,18 @@ html {
         line-height: 175%;
         letter-spacing: -0.01em;
         color: $gray_2;
+    }
+
+    .way_hidden {
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+
+        @include media ("<phone") {
+            min-width: 100%;
+        }
     }
 }
 
@@ -1755,11 +1783,11 @@ html {
         gap: 50px;
     }
 
-    .title_wrap{
+    .title_wrap {
         @include adaptiv-vaule("margin-bottom", 30, 20, 1);
     }
 
-    .item_step{
+    .item_step {
         position: relative;
 
         @include media ("<phone") {
@@ -1788,8 +1816,89 @@ html {
         color: $black;
     }
 
-    .step_img{
-        width: 100%;
-        @include adaptiv-vaule("height", 480, 335, 1);
+    // .step_img {
+    //     width: 100%;
+    //     @include adaptiv-vaule("height", 480, 335, 1);
+    // }
+}
+
+
+.enterprise_enforcement {
+
+    .way_content {
+        @include media ("<desktop") {
+            flex-direction: column
+        }
+    }
+
+    .way_text {
+
+        @include media ("<desktop") {
+            width: 80%;
+            margin: 0 0 30px 0;
+            text-align: center;
+            align-items: center;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            text-align: start;
+            align-items: flex-start;
+        }
+    }
+
+    .way_items {
+
+        @include media ("<desktop") {
+            width: 80%;
+            margin-bottom: 40px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .way_descr {
+        @include adaptiv-vaule("margin-bottom", 135, 30, 1);
+
+        @include media ("<desktop") {
+            margin-bottom: 0;
+        }
+    }
+
+    .way_img {
+        @include adaptiv-vaule("margin-bottom", 135, 30, 1);
+        min-width: 338px;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .item {
+        @include media ("<desktop") {
+            padding-top: 30px;
+            border-top: 1px solid $gray_3;
+        }
+    }
+
+    .blue_btn {
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .way_hidden {
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+            min-width: 270px;
+        }
+
+        @include media ("<phone") {
+            min-width: 100%;
+        }
     }
 }

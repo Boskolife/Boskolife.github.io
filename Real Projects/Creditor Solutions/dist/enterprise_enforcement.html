@@ -15,32 +15,59 @@
 
 <body>
     <div id="wrapper">
-        //= templates/header.html
+        <header id="header">
+            <div class="container">
+                <div class="header_content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./images/logo.svg" alt="image not found">
+                        </a>
+                    </div>
+                    <nav class="nav">
+                        <ul class="nav-menu" id="menu">
+                            <li class="menu-item"> <a class="menu_link" href="about_us.html">About Us</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="#">DOCUMENT CENTER</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="#">CREDITOR center</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="#">Enforce Judgment</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="faq.html">FAQ</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="contact_us.html">CONTACT US</a></li>
+                        </ul>
+                    </nav>
+                    <a class="phone" href="tel:6469606200">
+                        <img class="phone_img" src="./images/phone.svg" alt="image not found">
+                        <span class="phone_number">(646) 960-6200</span>
+                    </a>
+                    <div class="burger_menu">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
         <main id="main">
-            <section class="small_claims enforce">
+            <section class="enterprise_enforcement enforce">
                 <div class="container">
-                    <img class="small_claims_img" src="./images/small_claims/claims_bg.jpg"
+                    <img class="small_claims_img" src="./images/enterprise_enforcement/enterprise_img.jpg"
                         alt="image not found">
                         <div class="small_claims_text ">
-                            <h1 class="small_claims_title">SMALL CLAIMS JUDGMENT ENFORCEMENT PACKAGE</h1>
+                            <h1 class="small_claims_title">ENTERPRISE JUDGMENT ENFORCEMENT PACKAGE</h1>
                             <div class="small_claims_card">
-                                <img class="card_img" src="./images/cards/card_img_1.svg"
+                                <img class="card_img" src="./images/cards/card_img_3.svg"
                                     alt="image not found">
-                                <p class="card_descr">Enforce a single judgment award <br> between <span
-                                        class="blue_text">$1,000</span> and <span
-                                        class="blue_text">$5,000</span></p>
+                                <p class="card_descr">Enforce multiple judgments with one streamlined submission</p>
                                 <div class="text_wrap">
                                     <ul class="package_list">
                                         <li class="list_item">No up-front or out-of-pocket fees</li>
-                                        <li class="list_item">Judgment validation</li>
-                                        <li class="list_item">Debtor background & asset investigation
+                                        <li class="list_item">Assigned investigations expert</li>
+                                        <li class="list_item">Individualized recovery plan for satisfaction
                                         </li>
-                                        <li class="list_item">Debtor asset monitoring for up to one year
-                                            from discovery</li>
+                                        <li class="list_item">Attorney oversight for all enforcement actions</li>
                                     </ul>
                                     <div class="fee_wrap">
-                                        <p class="fee"><span class="blue_text">45%</span> fee from any
-                                            recovered amount</p>
+                                        <p class="fee"><span class="blue_text">39%</span> fee from
+                                            recovered amount up to <span
+                                                class="blue_text">$35,000</span></p>
+                                        <p class="fee"><span class="blue_text">33%</span> fee from
+                                            any additional amounts recovered (per claim).</p>
                                     </div>
                                 </div>
                                 <a href="#" class="blue_btn">Enforce Judgment</a>
@@ -48,7 +75,7 @@
                         </div>
                 </div>
             </section>
-            <section class="way enforce_way">
+            <section class="way enforce_way enterprise_enforcement">
                 <div class="container">
                     <div class="way_content">
                         <div class="way_text">
@@ -67,6 +94,11 @@
                                 <img class="item_img" src="./images/small_claims/item_2.svg" alt= "image not found" >
                                 <h3 class="item_title">Custom Recovery Plan</h3>
                                 <p class="item_descr">Our enforcement model combines analytic technology with investigative expertise to create an individualized route for recovery.</p>
+                            </div>
+                            <div class="item">
+                                <img class="item_img" src="./images/small_claims/item_4.svg" alt= "image not found" >
+                                <h3 class="item_title">Attorney oversight</h3>
+                                <p class="item_descr">We are aligned with a network of experienced and trusted attorneys in the enforcement industry to oversee every aspect of the recovery process, composing creative solutions and exhausting every available avenue of enforcement.</p>
                             </div>
                             <div class="item">
                                 <img class="item_img" src="./images/small_claims/item_3.svg" alt= "image not found" >
@@ -153,7 +185,61 @@
                 </div>
             </section>
         </main>
-        //= templates/footer.html
+        <footer id="footer">
+            <div class="footer_content">
+                <div class="container">
+                    <div class="footer_top">
+                        <div class="footer_logo">
+                            <a href="index.html" class="logo">
+                                <img src="./images/logo.svg" alt="image not found">
+                            </a>
+                            <div class="footer_links">
+                                <a class="link" href="tel:6468141614">
+                                    <img class="link_img" src="./images/contact_us/call.svg"
+                                        alt="image not found">
+                                    <span class="link_title">(646) 814-1614</span>
+                                </a>
+                                <a class="link" href="mailto:info@creditorsolutions.com">
+                                    <img class="link_img" src="./images/contact_us/mail_img.svg" alt= "image not found" >
+                                    <span class="link_title">info@creditorsolutions.com</span>
+                                </a>
+                                <a class="link" target="_blank"
+                                    href="https://goo.gl/maps/tqFu69GsqK4NzDq26">
+                                    <img class="link_img" src="./images/contact_us/location.svg"
+                                        alt="image not found">
+                                    <span class="link_title">1441 Broadway, 5th Fl, New York, NY
+                                        10018</span>
+                                </a>
+                                <div class="link">
+                                    <img class="link_img" src="./images/contact_us/time.svg"
+                                        alt="image not found">
+                                    <span class="link_title">Monday – Friday, 9am to 6pm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_links">
+                            <a href="about_us.html" class="list_item">About Us</a>
+                            <a href="#" class="list_item">DOCUMENT CENTER</a>
+                            <a href="#" class="list_item">CREDITOR center</a>
+                            <a href="#" class="list_item">Enforce Judgment</a>
+                            <a href="faq.html" class="list_item">FAQ</a>
+                            <a href="contact_us.html" class="list_item">CONTACT US</a>
+                        </div>
+                        <div class="policy">
+                            <a href="privacy_policy.html" class="policy_item">PRIVACY POLICY</a>
+                            <a href="terms_conditions.html" class="policy_item">TERMS & CONDITIONS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <p class="note">This communication is from a debt collector. <br> This is an attempt to
+                        collect a debt and any information obtained will be used for that purpose.</p>
+                    <p class="note">© 2023 CreditorSolutions</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
