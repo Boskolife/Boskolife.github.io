@@ -1,0 +1,22 @@
+.main-section {
+    .puzzle {
+        position: absolute;
+        width: 700px;
+        fill: #f1f2f5;
+
+        &-top-right {
+            top: -190px;
+            right: -340px;
+        }
+
+        &-bottom-right {
+            top: 460px;
+            right: -427px;
+        }
+
+        &-bottom-left {
+            top: 105px;
+            left: -367px;
+        }
+    }
+}

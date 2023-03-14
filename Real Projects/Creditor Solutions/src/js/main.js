@@ -2,6 +2,7 @@ initTabs();
 initBurger();
 initNavBtn();
 findHref();
+initPuzzleAnimation();
 
 function findHref() {
     let element = document.getElementById('menu').getElementsByTagName('a');
@@ -99,7 +100,72 @@ function initNavBtn() {
     });
 }
 
+function initPuzzleAnimation() {
+  const header = document.querySelector("header");
+  const headerHeight = header.clientHeight;
+  const ww = window.innerWidth;
+  const wh = window.innerHeight;
+
+  initMainSection();
+
+  function initMainSection() {
+    const mainSection = document.querySelector('.main-section')
+    const puzzleTopRight = document.querySelector(".puzzle-top-right");
+    const puzzleBottomRight = document.querySelector(".puzzle-bottom-right");
+    const puzzleBottomLeft = document.querySelector(".puzzle-bottom-left")
+    const posXtopRight = ww / 2 - puzzleTopRight.clientWidth / 2;
+    const ramainderInSvg = 125;
 
 
+    gsap.from(puzzleTopRight, {
+        x: 250,
+    });
+    gsap.fromTo(
+      puzzleTopRight,
+      { x: 0 },
+      {
+        x: -posXtopRight - ramainderInSvg,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: `top top`,
+          end: `50%-=${headerHeight}`,
+          scrub: 1,
+        },
+      }
+    );
+
+    gsap.to(puzzleBottomRight, {
+        x: -posXtopRight - ramainderInSvg,
+        duration: 0,
+    });
+    gsap.to(puzzleBottomRight, {
+      y: -270,
+      scrollTrigger: {
+        trigger: mainSection,
+        start: `top top`,
+        end: `50%-=${headerHeight}`,
+        scrub: 1,
+        markers: true
+      },
+    });
+
+    gsap.from(puzzleBottomLeft, {
+        x: -250,
+    });
+    gsap.fromTo(
+      puzzleBottomLeft,
+      { x: 0 },
+      {
+        x: posXtopRight + ramainderInSvg,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: `top top`,
+          end: `50%-=${headerHeight}`,
+          scrub: 1,
+        },
+      }
+    );
+  }
+}
 
 
