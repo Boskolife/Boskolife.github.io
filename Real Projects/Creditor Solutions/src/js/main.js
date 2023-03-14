@@ -145,7 +145,6 @@ function initPuzzleAnimation() {
         start: `top top`,
         end: `50%-=${headerHeight}`,
         scrub: 1,
-        markers: true
       },
     });
 
