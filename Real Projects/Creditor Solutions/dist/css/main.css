@@ -2661,10 +2661,6 @@ html {
   .steps .step_items {
     /* Только если меньше контейнера */
     margin-bottom: 60px;
-    /* display: grid;
-        grid-template: 1fr / repeat(auto-fit , minmax(300px ,1fr));
-        place-items: center;
-        gap: 50px */
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -2683,6 +2679,18 @@ html {
     @media (max-width: 1350px) {
       .steps .title_wrap {
         margin-bottom: calc(20px + 10 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 767px) {
+      .steps .title_wrap {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+    @media (max-width: 479px) {
+      .steps .title_wrap {
+        -ms-flex-pack: start;
+        justify-content: start; } }
   .steps .item_step {
     position: relative; }
     @media (max-width: 479px) {
@@ -2693,6 +2701,9 @@ html {
     height: 64px;
     border-radius: 50%;
     margin-bottom: 15px; }
+    @media (max-width: 767px) {
+      .steps .number_step {
+        margin: 0 15px 0 0; } }
     @media (max-width: 479px) {
       .steps .number_step {
         width: 48px;
@@ -2776,6 +2787,115 @@ html {
   @media (max-width: 479px) {
     .enterprise_enforcement .way_hidden {
       min-width: 100%; } }
+
+.individual .small_claims_title {
+  color: #1D1D20; }
+
+.individual .individual_card {
+  background-color: #031C77; }
+
+.individual .card_descr {
+  color: #ffffff; }
+
+.individual .opacity {
+  opacity: 0.8; }
+
+.individual .list_item {
+  color: #ffffff; }
+  .individual .list_item::before {
+    content: url(../images/individual/induvid_check.svg); }
+
+.individual .fee {
+  color: #ffffff; }
+
+.individual_img {
+  position: relative;
+  width: 100%;
+  /* Только если меньше контейнера */
+  height: 350px; }
+  @media (max-width: 1350px) {
+    .individual_img {
+      height: calc(280px + 70 * ((100vw - calc(375px)) / 975)); } }
+
+.individual_way {
+  background-color: #F2F4F8; }
+  .individual_way .way_content {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center; }
+  .individual_way .individual_way_text {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 35px; }
+    .individual_way .individual_way_text .way_descr {
+      max-width: 600px; }
+  .individual_way .way_title {
+    font-weight: 600;
+    /* Только если меньше контейнера */
+    font-size: 34px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    color: #031C77; }
+    @media (max-width: 1350px) {
+      .individual_way .way_title {
+        font-size: calc(28px + 6 * ((100vw - calc(375px)) / 975)); } }
+  .individual_way .individual_way_items {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    @media (max-width: 1023px) {
+      .individual_way .individual_way_items {
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 30px; } }
+    .individual_way .individual_way_items .item {
+      width: 30%;
+      text-align: center; }
+      @media (max-width: 1023px) {
+        .individual_way .individual_way_items .item {
+          width: 46%; } }
+      @media (max-width: 767px) {
+        .individual_way .individual_way_items .item {
+          width: 80%; } }
+      @media (max-width: 479px) {
+        .individual_way .individual_way_items .item {
+          width: 100%; } }
+    .individual_way .individual_way_items .item_title {
+      color: #031C77; }
+
+.individual_steps .individual_steps_wrap {
+  /* Только если меньше контейнера */
+  margin-bottom: 65px; }
+  @media (max-width: 1350px) {
+    .individual_steps .individual_steps_wrap {
+      margin-bottom: calc(30px + 35 * ((100vw - calc(375px)) / 975)); } }
+
+.individual_steps .individual_descr {
+  font-weight: 500;
+  font-size: 20px;
+  /* Только если меньше контейнера */
+  font-size: 20px;
+  line-height: 160%;
+  max-width: 470px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  letter-spacing: -0.01em;
+  color: #3D3E45; }
+  @media (max-width: 1350px) {
+    .individual_steps .individual_descr {
+      font-size: calc(16px + 4 * ((100vw - calc(375px)) / 975)); } }
+
+@media (max-width: 479px) {
+  .individual_steps .item_step {
+    padding-top: 20px;
+    border-top: 1px solid #ECECEC; } }
 
 footer {
   overflow: hidden; }
