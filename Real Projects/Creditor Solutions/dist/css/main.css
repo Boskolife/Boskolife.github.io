@@ -816,6 +816,9 @@ html {
   @media (max-width: 1350px) {
     .main_content {
       padding-bottom: calc(80px + 20 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 767px) {
+    .main_content::before, .main_content::after {
+      display: none; } }
   .main_content::before {
     content: '';
     position: absolute;
@@ -861,26 +864,15 @@ html {
         text-align: center; } }
 
 .main_img {
-  height: 470px;
   /* Только если меньше контейнера */
   height: 470px;
-  width: 100%;
-  position: relative; }
+  width: 100%; }
   @media (max-width: 1350px) {
     .main_img {
-      height: calc(270px + 200 * ((100vw - calc(375px)) / 975)); } }
-  @media (max-width: 479px) {
-    .main_img {
-      display: none; } }
-
-.main_phone_img {
-  display: none; }
-  @media (max-width: 479px) {
-    .main_phone_img {
-      display: block;
-      height: 270px;
-      width: 100%;
-      position: relative; } }
+      height: calc(280px + 190 * ((100vw - calc(375px)) / 975)); } }
+  .main_img img {
+    width: 100%;
+    height: 100%; }
 
 .about_us {
   background-color: #031C77;
@@ -1415,14 +1407,16 @@ html {
   .contact_us .contact_us_content {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly; }
     @media (max-width: 767px) {
       .contact_us .contact_us_content {
         -ms-flex-direction: column;
-        flex-direction: column; } }
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center; } }
   .contact_us .contatc_us_text {
     width: 40%;
     margin-right: 30px; }
@@ -1456,7 +1450,7 @@ html {
     margin-bottom: 55px; }
     @media (max-width: 767px) {
       .contact_us .links {
-        margin: 0; } }
+        margin-bottom: 30px; } }
   .contact_us .link {
     display: -ms-flexbox;
     display: flex;
@@ -1569,9 +1563,12 @@ html {
         margin-bottom: calc(60px + 40 * ((100vw - calc(375px)) / 975)); } }
   .faq_page .faq_page_img {
     width: 100%;
+    /* Только если меньше контейнера */
     height: 350px;
-    position: relative;
-    overflow: hidden; }
+    position: relative; }
+    @media (max-width: 1350px) {
+      .faq_page .faq_page_img {
+        height: calc(270px + 80 * ((100vw - calc(375px)) / 975)); } }
   .faq_page .tab_wrapper {
     margin-bottom: 0; }
   .faq_page .tab_list {
@@ -1628,7 +1625,11 @@ html {
   .privacy_policy .privacy_policy_img {
     position: relative;
     width: 100%;
+    /* Только если меньше контейнера */
     height: 350px; }
+    @media (max-width: 1350px) {
+      .privacy_policy .privacy_policy_img {
+        height: calc(280px + 70 * ((100vw - calc(375px)) / 975)); } }
   .privacy_policy .privacy_policy_content {
     display: -ms-flexbox;
     display: flex;
@@ -1821,9 +1822,6 @@ html {
 .about_us_page .main_text {
   -ms-flex-align: center;
   align-items: center; }
-
-.about_us_page .main_img {
-  display: block; }
 
 .our_purpose .top_text {
   background-color: #031C77;
@@ -2022,6 +2020,20 @@ html {
     @media (max-width: 1350px) {
       .our_purpose .bot_text .bot_text_img {
         margin-bottom: calc(30px + 30 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .our_purpose .bot_text .bot_text_img {
+        display: none; } }
+  .our_purpose .bot_text .bot_text_img_phone {
+    display: none;
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 30px; }
+    .our_purpose .bot_text .bot_text_img_phone img {
+      width: 100%;
+      height: 100%; }
+    @media (max-width: 479px) {
+      .our_purpose .bot_text .bot_text_img_phone {
+        display: block; } }
   .our_purpose .bot_text .bot_text_notate {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -2788,25 +2800,41 @@ html {
     .enterprise_enforcement .way_hidden {
       min-width: 100%; } }
 
-.individual .small_claims_title {
-  color: #1D1D20; }
-
-.individual .individual_card {
-  background-color: #031C77; }
-
-.individual .card_descr {
-  color: #ffffff; }
-
-.individual .opacity {
-  opacity: 0.8; }
-
-.individual .list_item {
-  color: #ffffff; }
-  .individual .list_item::before {
-    content: url(../images/individual/induvid_check.svg); }
-
-.individual .fee {
-  color: #ffffff; }
+.individual {
+  position: relative; }
+  @media (max-width: 767px) {
+    .individual::before, .individual::after {
+      display: none; } }
+  .individual::before {
+    content: '';
+    position: absolute;
+    height: 150%;
+    width: 1px;
+    top: -50%;
+    right: 10%;
+    background-color: #ECECEC; }
+  .individual::after {
+    content: '';
+    position: absolute;
+    height: 150%;
+    width: 1px;
+    top: -50%;
+    right: 41%;
+    background-color: #ECECEC; }
+  .individual .small_claims_title {
+    color: #1D1D20; }
+  .individual .individual_card {
+    background-color: #031C77; }
+  .individual .card_descr {
+    color: #ffffff; }
+  .individual .opacity {
+    opacity: 0.8; }
+  .individual .list_item {
+    color: #ffffff; }
+    .individual .list_item::before {
+      content: url(../images/individual/induvid_check.svg); }
+  .individual .fee {
+    color: #ffffff; }
 
 .individual_img {
   position: relative;
@@ -2896,6 +2924,14 @@ html {
   .individual_steps .item_step {
     padding-top: 20px;
     border-top: 1px solid #ECECEC; } }
+
+.contact_us_page .mail_img {
+  margin-bottom: 10px; }
+
+.contact_us_page .contact_us_note {
+  font-size: 12px;
+  line-height: 133%;
+  color: #66666C; }
 
 footer {
   overflow: hidden; }
