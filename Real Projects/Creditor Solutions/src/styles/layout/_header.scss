@@ -7,9 +7,42 @@ header {
     width: 100%;
     top: 0;
     left: 0;
+    overflow: hidden;
 
     @include media ("<phone") {
         padding: 10px 0 15px 0;
+    }
+
+    .header_content {
+        position: relative;
+
+        @include media ("<tablet") {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 200%;
+            width: 1px;
+            top: -50%;
+            right: 10%;
+            background-color: $gray_3;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 200%;
+            width: 1px;
+            top: -50%;
+            right: 41%;
+            background-color: $gray_3;
+        }
     }
 
     .header_content,
@@ -31,8 +64,9 @@ header {
 
     .menu-item {
         position: relative;
+        z-index: 2;
         @include adaptiv-vaule("margin-left", 20, 1, 1);
-        
+
         &:hover {
 
             &:after {
@@ -48,7 +82,7 @@ header {
         }
     }
 
-    .menu_link{
+    .menu_link {
         @include adaptiv-vaule("font-size", 16, 5, 1);
         transition: all .3s ease;
         color: $gray_4;
@@ -57,7 +91,7 @@ header {
         text-transform: uppercase;
     }
 
-    .item_active{
+    .item_active {
         color: $blue;
     }
 
@@ -127,7 +161,7 @@ header {
         }
     }
 
-   /*  .menu_active {
+    /*  .menu_active {
         display: block;
     } */
 
@@ -146,7 +180,7 @@ header {
             transition: all .3s linear;
         }
 
-        span{
+        span {
             width: 0;
             transition: all .3s linear;
         }
