@@ -11,6 +11,7 @@ const styles = require('./gulp/tasks/sass2css');
 const imgMin = require('./gulp/tasks/imgmin');
 const fonts = require('./gulp/tasks/fonts');
 const files = require('./gulp/tasks/files');
+const {injectScripts, moveFormFiles} = require('./gulp/tasks/form');
 const clean = require('./gulp/tasks/clean');
 
 function setMode(isProduction = false) {
@@ -20,7 +21,7 @@ function setMode(isProduction = false) {
     }
 }
 
-const dev = gulp.parallel(html, styles, jquery, script, imgMin, fonts, files);
+const dev = gulp.parallel(injectScripts, moveFormFiles, html, styles, jquery, script, imgMin, fonts, files);
 
 const build = gulp.series(clean, dev)
 
