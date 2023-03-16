@@ -1801,6 +1801,12 @@ html {
         margin: 0 auto;
         @include adaptiv-vaule("margin-bottom", 40, 30, 1);
     }
+
+    .white_btn{
+        @include media ("<phone") {
+            min-width: 100%;
+        }
+    }
 }
 
 
@@ -1872,6 +1878,20 @@ html {
         line-height: 140%;
         letter-spacing: -0.031em;
         color: $black;
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+    }
+
+    .item_link{
+        text-decoration: underline;
+    }
+
+    .blue_btn{
+        @include media ("<phone") {
+            min-width: 100%;
+        }
     }
 }
 

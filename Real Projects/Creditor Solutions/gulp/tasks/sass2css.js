@@ -10,7 +10,7 @@ const rename = require("gulp-rename");
 
 
 module.exports = function styles() {
-    return gulp.src('src/styles/*.scss')
+    return gulp.src('src/styles/*.{scss,css}')
     .pipe(plumber())
     // .pipe(gulpStylelint({
     //   failAfterError: false,

@@ -2704,6 +2704,9 @@ html {
     @media (max-width: 1350px) {
       .process .process_title {
         margin-bottom: calc(30px + 10 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 479px) {
+    .process .white_btn {
+      min-width: 100%; } }
 
 .steps {
   /* Только если меньше контейнера */
@@ -2793,6 +2796,14 @@ html {
     @media (max-width: 1350px) {
       .steps .item_step_title {
         font-size: calc(20px + 6 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .steps .item_step_title {
+        text-align: start; } }
+  .steps .item_link {
+    text-decoration: underline; }
+  @media (max-width: 479px) {
+    .steps .blue_btn {
+      min-width: 100%; } }
 
 @media (max-width: 1023px) {
   .enterprise_enforcement .way_content {
