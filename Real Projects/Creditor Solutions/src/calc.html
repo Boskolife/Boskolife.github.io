@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creditor Solutions</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="website icon" type="png" href="./images/icon_tab.png">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:regular,500,600,700"
+        rel="stylesheet" />
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header.html
+        <main id="main">
+            <section class="calc">
+                <div class="container">
+                    <div class="calc_content">
+                        <div class="calc_icon_top">
+                            <img src="./images/calc/icon_calculatorTop.svg" alt= "image not found" >
+                        </div>
+                        <div class="calc_icon_bottom">
+                            <img src="./images/calc/icon_calculatorBottom.svg" alt= "image not found" >
+                        </div>
+                        <div class="line_top">
+                            <img src="./images/calc/line_2.svg" alt="image not found">
+                        </div>
+                        <div class="line_bottom">
+                            <img src="./images/calc/line_1.svg" alt="image not found">
+                        </div>
+                        <h1 class="calc_title">Judgment <span class="blue_text">Calculator</span>
+                        </h1>
+                        <p class="calc_descr">Most judgments awarded in New York State before April
+                            30, 2022 accrue interest at 9% per year, or 0.75 per month. On the other
+                            hand, judgments awarded after April 30, 2022 accrue interest at 2% per
+                            year, or 0.167 percent per month. This calculator will help you estimate
+                            the total value and amount of interest earned on a court-awarded
+                            judgment in the state of New York. To start, enter the amount of the
+                            original judgment award.</p>
+                        <div class="calc_wrap">
+                            <h2 class="calc_subtitle">Judgment amount</h2>
+                            <p class="tip">Type the total amount of judgment</p>
+                            <form class="calc_form">
+                                <input id="summ" class="summ" placeholder="$ 0.00" type="text">
+                                <button class="blue_btn" type="submit">next
+                                    <svg class="btn_arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.9697 1.53033C7.6768 1.23744 7.6768 0.762558 7.9697 0.469668C8.2626 0.176777 8.7374 0.176777 9.0303 0.469668L13.0303 4.4697C13.3232 4.7626 13.3232 5.2374 13.0303 5.5303L9.0303 9.5303C8.7374 9.8232 8.2626 9.8232 7.9697 9.5303C7.6768 9.2374 7.6768 8.7626 7.9697 8.4697L10.6893 5.75H1C0.58579 5.75 0.25 5.4142 0.25 5C0.25 4.5858 0.58579 4.25 1 4.25H10.6893L7.9697 1.53033Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </button>
+                            </form>
+                        </div>
+                        <div class="calc_steps">
+                            <div class="step_wrap active_wrap">
+                                <span class="step_one step">1</span>
+                            </div>
+                            <div class="line"></div>
+                            <div class="step_wrap">
+                                <span class="step_two step">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

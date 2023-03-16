@@ -600,30 +600,28 @@ header {
   /*  .menu_active {
         display: block;
     } */ }
+  @media (max-width: 767px) {
+    header::before, header::after {
+      display: none; } }
+  header::before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 1px;
+    top: -50%;
+    right: 10%;
+    background-color: #ECECEC; }
+  header::after {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 1px;
+    top: -50%;
+    right: 41%;
+    background-color: #ECECEC; }
   @media (max-width: 479px) {
     header {
       padding: 10px 0 15px 0; } }
-  header .header_content {
-    position: relative; }
-    @media (max-width: 767px) {
-      header .header_content::before, header .header_content::after {
-        display: none; } }
-    header .header_content::before {
-      content: '';
-      position: absolute;
-      height: 200%;
-      width: 1px;
-      top: -50%;
-      right: 10%;
-      background-color: #ECECEC; }
-    header .header_content::after {
-      content: '';
-      position: absolute;
-      height: 200%;
-      width: 1px;
-      top: -50%;
-      right: 41%;
-      background-color: #ECECEC; }
   header .header_content,
   header .nav-menu {
     display: -ms-flexbox;
@@ -634,13 +632,39 @@ header {
     justify-content: space-between; }
   header .logo {
     /* Только если меньше контейнера */
-    width: 206px; }
+    width: 206px;
+    position: relative;
+    z-index: 4; }
     @media (max-width: 1350px) {
       header .logo {
         width: calc(150px + 56 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1023px) {
     header .nav {
-      display: none; } }
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100%;
+      width: 50%;
+      transition: all .3s linear;
+      z-index: 3;
+      background-color: #ffffff;
+      padding: 90px 0 30px 0; } }
+  @media (max-width: 767px) {
+    header .nav {
+      width: 100%; } }
+  @media (max-width: 1023px) {
+    header .nav-menu {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100%;
+      overflow: auto; } }
+  header .menu_active {
+    right: 0;
+    transition: all .3s linear; }
   header .menu-item {
     position: relative;
     z-index: 2;
@@ -649,6 +673,9 @@ header {
     @media (max-width: 1350px) {
       header .menu-item {
         margin-left: calc(1px + 19 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1023px) {
+      header .menu-item {
+        margin: 0 0 30px 0; } }
     header .menu-item:hover:after {
       content: '';
       position: absolute;
@@ -670,6 +697,9 @@ header {
     @media (max-width: 1350px) {
       header .menu_link {
         font-size: calc(5px + 11 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1023px) {
+      header .menu_link {
+        font-size: 20px; } }
   header .item_active {
     color: #031C77; }
   header .phone {
@@ -707,7 +737,8 @@ header {
         display: block;
         width: 24px;
         height: 18px;
-        position: relative; }
+        position: relative;
+        z-index: 4; }
         header .burger_menu::after, header .burger_menu::before,
         header .burger_menu span {
           content: '';
@@ -832,30 +863,26 @@ html {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100vh; }
-  .main-section .container {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    position: relative; }
-    @media (max-width: 767px) {
-      .main-section .container::before, .main-section .container::after {
-        display: none; } }
-    .main-section .container::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 1px;
-      top: 0;
-      right: 10.9%;
-      background-color: #ECECEC; }
-    .main-section .container::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 1px;
-      top: 0;
-      right: 41.2%;
-      background-color: #ECECEC; }
+  position: relative; }
+  @media (max-width: 767px) {
+    .main-section::before, .main-section::after {
+      display: none; } }
+  .main-section::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    right: 10%;
+    background-color: #ECECEC; }
+  .main-section::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    right: 41%;
+    background-color: #ECECEC; }
 
 .main_content {
   /* Только если меньше контейнера */
@@ -909,7 +936,9 @@ html {
 .main_img {
   /* Только если меньше контейнера */
   height: 350px;
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  z-index: 2; }
   @media (max-width: 1350px) {
     .main_img {
       height: calc(280px + 70 * ((100vw - calc(375px)) / 975)); } }
@@ -1261,7 +1290,7 @@ html {
       .cards .card:hover {
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
-        box-shadow: 1px 1px 15px #1D1D20;
+        box-shadow: 1px 1px 10px #031C77;
         transition: all .3s linear; } }
   .cards .card_img {
     width: 62px;
@@ -1645,18 +1674,6 @@ html {
     text-decoration: underline;
     color: #66666C; }
 
-.faq_content {
-  /* Только если меньше контейнера */
-  padding-top: 100px;
-  /* Только если меньше контейнера */
-  padding-bottom: 140px; }
-  @media (max-width: 1350px) {
-    .faq_content {
-      padding-top: calc(50px + 50 * ((100vw - calc(375px)) / 975)); } }
-  @media (max-width: 1350px) {
-    .faq_content {
-      padding-bottom: calc(70px + 70 * ((100vw - calc(375px)) / 975)); } }
-
 .privacy_policy {
   /* Только если меньше контейнера */
   padding-top: 240px;
@@ -1882,9 +1899,19 @@ html {
 .terms .item_title {
   font-weight: 600; }
 
-.about_us_page .main_text {
-  -ms-flex-align: center;
-  align-items: center; }
+.about_us_page {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  position: relative; }
+  .about_us_page .container {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
+  .about_us_page .main_text {
+    -ms-flex-align: center;
+    align-items: center; }
 
 .our_purpose .top_text {
   background-color: #031C77;
@@ -2680,13 +2707,30 @@ html {
   padding-top: 100px;
   /* Только если меньше контейнера */
   padding-bottom: 95px;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  overflow: hidden; }
   @media (max-width: 1350px) {
     .process {
       padding-top: calc(80px + 20 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1350px) {
     .process {
       padding-bottom: calc(80px + 15 * ((100vw - calc(375px)) / 975)); } }
+  .process .process_icon_top,
+  .process .process_icon_bottom {
+    width: 500px;
+    height: 320px;
+    position: absolute;
+    z-index: 1; }
+  .process .process_icon_top {
+    top: -10%;
+    left: -18%; }
+  .process .process_icon_bottom {
+    right: -20%;
+    bottom: -25%; }
+  .process .container {
+    position: relative;
+    z-index: 2; }
   .process .process_title {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -3006,6 +3050,241 @@ html {
   font-size: 12px;
   line-height: 133%;
   color: #66666C; }
+
+.calc {
+  background-color: #F4F6FE;
+  /* Только если меньше контейнера */
+  padding-top: 160px;
+  /* Только если меньше контейнера */
+  padding-bottom: 85px;
+  /* Только если меньше контейнера */
+  padding-right: 170px;
+  /* Только если меньше контейнера */
+  padding-left: 170px; }
+  @media (max-width: 1350px) {
+    .calc {
+      padding-top: calc(90px + 70 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .calc {
+      padding-bottom: calc(15px + 70 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .calc {
+      padding-right: calc(15px + 155 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 1350px) {
+    .calc {
+      padding-left: calc(15px + 155 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_content {
+    background-color: #ffffff;
+    /* Только если меньше контейнера */
+    padding-top: 65px;
+    /* Только если меньше контейнера */
+    padding-bottom: 50px;
+    /* Только если меньше контейнера */
+    padding-right: 120px;
+    /* Только если меньше контейнера */
+    padding-left: 120px;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2; }
+    @media (max-width: 1350px) {
+      .calc .calc_content {
+        padding-top: calc(30px + 35 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_content {
+        padding-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_content {
+        padding-right: calc(25px + 95 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_content {
+        padding-left: calc(25px + 95 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_icon_top,
+  .calc .calc_icon_bottom {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: -1; }
+    @media (max-width: 767px) {
+      .calc .calc_icon_top,
+      .calc .calc_icon_bottom {
+        display: none; } }
+    .calc .calc_icon_top img,
+    .calc .calc_icon_bottom img {
+      width: 100%;
+      height: 100%; }
+  .calc .calc_icon_top {
+    top: -5%;
+    left: -14%; }
+  .calc .calc_icon_bottom {
+    bottom: -8%;
+    right: -9%; }
+  .calc .line_top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1; }
+  .calc .line_bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1; }
+  .calc .calc_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 64px;
+    line-height: 86.48649%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #1D1D20;
+    /* Только если меньше контейнера */
+    margin-bottom: 25px; }
+    @media (max-width: 1350px) {
+      .calc .calc_title {
+        font-size: calc(36px + 28 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_title {
+        margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_descr {
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 16px;
+    line-height: 175%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #3D3E45;
+    /* Только если меньше контейнера */
+    margin-bottom: 30px; }
+    @media (max-width: 1350px) {
+      .calc .calc_descr {
+        font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_descr {
+        margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_subtitle {
+    font-weight: 600;
+    font-size: 26px;
+    /* Только если меньше контейнера */
+    font-size: 26px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: #031C77;
+    /* Только если меньше контейнера */
+    margin-bottom: 10px; }
+    @media (max-width: 1350px) {
+      .calc .calc_subtitle {
+        font-size: calc(20px + 6 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .calc_subtitle {
+        margin-bottom: calc(5px + 5 * ((100vw - calc(375px)) / 975)); } }
+  .calc .tip {
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: -0.01em;
+    color: #66666C;
+    margin-bottom: 30px; }
+    @media (max-width: 1350px) {
+      .calc .tip {
+        font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    @media (max-width: 767px) {
+      .calc .calc_form {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 300px; } }
+  .calc .summ {
+    border: none;
+    background-color: #EAEEFC;
+    padding: 10px 16px;
+    margin-right: 16px;
+    border-radius: 8px; }
+    @media (max-width: 767px) {
+      .calc .summ {
+        margin: 0 0 12px 0;
+        width: 100%; } }
+  .calc .blue_btn {
+    min-width: 200px;
+    display: -ms-flexbox;
+    display: flex;
+    height: 56px;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    @media (max-width: 767px) {
+      .calc .blue_btn {
+        min-width: 100%; } }
+    .calc .blue_btn:hover .btn_arrow {
+      transition: all .3s ease; }
+      .calc .blue_btn:hover .btn_arrow path {
+        fill: #031C77; }
+  .calc .btn_arrow {
+    margin-left: 15px;
+    transition: all .3s ease; }
+  .calc .calc_wrap {
+    /* Только если меньше контейнера */
+    margin-bottom: 90px; }
+    @media (max-width: 1350px) {
+      .calc .calc_wrap {
+        margin-bottom: calc(180px + -90 * ((100vw - calc(375px)) / 975)); } }
+  .calc .calc_steps {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .calc .active_wrap {
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px dashed #031C77;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .calc .active_wrap .step {
+      background-color: #031C77; }
+  .calc .line {
+    width: 100%;
+    /* Только если меньше контейнера */
+    width: 130px;
+    border: 1px dashed #031C77; }
+    @media (max-width: 1350px) {
+      .calc .line {
+        width: calc(80px + 50 * ((100vw - calc(375px)) / 975)); } }
+  .calc .step {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #EAEEFC;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 2; }
 
 footer {
   overflow: hidden; }

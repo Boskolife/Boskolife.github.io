@@ -94,41 +94,38 @@ html {
     }
 }
 
-.main-section{
+.main-section {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    // height: 100vh;
+    position: relative;
 
-    .container{
-        flex: 1 1 auto;
-        position: relative;
+    @include media ("<tablet") {
 
-        @include media ("<tablet") {
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 1px;
-            top: 0;
-            right: 10.9%;
-            background-color: $gray_3;
-        }
-    
+        &::before,
         &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 1px;
-            top: 0;
-            right: 41.2%;
-            background-color: $gray_3;
+            display: none;
         }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        top: 0;
+        right: 10%;
+        background-color: $gray_3;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        top: 0;
+        right: 41%;
+        background-color: $gray_3;
     }
 }
 
@@ -163,7 +160,7 @@ html {
         }
     }
 
-    .btn_wrap{
+    .btn_wrap {
         display: flex;
         align-items: flex-end;
         height: 100%;
@@ -173,6 +170,8 @@ html {
 .main_img {
     @include adaptiv-vaule("height", 350, 280, 1);
     width: 100%;
+    position: relative;
+    z-index: 2;
 
     img {
         width: 100%;
@@ -458,7 +457,7 @@ html {
         @include media (">tablet") {
             &:hover {
                 transform: scale(1.05);
-                box-shadow: 1px 1px 15px $black;
+                box-shadow: 1px 1px 10px $blue;
                 transition: all .3s linear;
             }
         }
@@ -777,7 +776,7 @@ html {
     display: flex;
     flex-direction: column;
 
-    .container{
+    .container {
         flex: 1 1 auto;
         @include adaptiv-vaule("padding-top", 240, 110, 1);
         @include adaptiv-vaule("padding-bottom", 50, 25, 1);
@@ -798,7 +797,7 @@ html {
         width: 100%;
         @include adaptiv-vaule("height", 350, 280, 1);
 
-        img{
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -834,11 +833,6 @@ html {
         text-decoration: underline;
         color: $gray_2;
     }
-}
-
-.faq_content{
-    @include adaptiv-vaule("padding-top", 100, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 140, 70, 1);
 }
 
 .privacy_policy {
@@ -1072,6 +1066,14 @@ html {
 }
 
 .about_us_page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+
+    .container {
+        flex: 1 1 auto;
+    }
 
     .main_text {
         align-items: center;
@@ -1790,6 +1792,31 @@ html {
     @include adaptiv-vaule("padding-top", 100, 80, 1);
     @include adaptiv-vaule("padding-bottom", 95, 80, 1);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    .process_icon_top,
+    .process_icon_bottom{
+        width: 500px;
+        height: 320px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .process_icon_top{
+        top: -10%;
+        left: -18%;
+    }
+
+    .process_icon_bottom{
+        right: -20%;
+        bottom:-25%;
+    }
+
+    .container{
+        position: relative;
+        z-index: 2;
+    }
 
     .process_title {
         font-weight: 600;
@@ -1802,7 +1829,7 @@ html {
         @include adaptiv-vaule("margin-bottom", 40, 30, 1);
     }
 
-    .white_btn{
+    .white_btn {
         @include media ("<phone") {
             min-width: 100%;
         }
@@ -1884,11 +1911,11 @@ html {
         }
     }
 
-    .item_link{
+    .item_link {
         text-decoration: underline;
     }
 
-    .blue_btn{
+    .blue_btn {
         @include media ("<phone") {
             min-width: 100%;
         }
@@ -2131,7 +2158,7 @@ html {
 
 .contact_us_page {
 
-    .mail_img{
+    .mail_img {
         margin-bottom: 10px;
     }
 
@@ -2139,5 +2166,204 @@ html {
         font-size: 12px;
         line-height: 133%;
         color: $gray_2;
+    }
+}
+
+.calc {
+    background-color: #F4F6FE;
+    @include adaptiv-vaule("padding-top", 160, 90, 1);
+    @include adaptiv-vaule("padding-bottom", 85, 15, 1);
+    @include adaptiv-vaule("padding-right", 170, 15, 1);
+    @include adaptiv-vaule("padding-left", 170, 15, 1);
+
+    .calc_content {
+        background-color: $white;
+        @include adaptiv-vaule("padding-top", 65, 30, 1);
+        @include adaptiv-vaule("padding-bottom", 50, 25, 1);
+        @include adaptiv-vaule("padding-right", 120, 25, 1);
+        @include adaptiv-vaule("padding-left", 120, 25, 1);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .calc_icon_top,
+    .calc_icon_bottom {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: -1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .calc_icon_top {
+        top: -5%;
+        left: -14%;
+    }
+
+    .calc_icon_bottom {
+        bottom: -8%;
+        right: -9%;
+    }
+
+    .line_top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    .line_bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .calc_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 64, 36, 1);
+        line-height: 64 / 74 * 100%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+    }
+
+    .calc_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: $gray_4;
+        @include adaptiv-vaule("margin-bottom", 30, 25, 1);
+    }
+
+    .calc_subtitle {
+        font-weight: 600;
+        font-size: 26px;
+        @include adaptiv-vaule("font-size", 26, 20, 1);
+        line-height: 140%;
+        letter-spacing: -0.03em;
+        color: $blue;
+        @include adaptiv-vaule("margin-bottom", 10, 5, 1);
+    }
+
+    .tip {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+        margin-bottom: 30px;
+    }
+
+    .calc_form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            width: 300px;
+        }
+    }
+
+    .summ {
+        border: none;
+        background-color: #EAEEFC;
+        padding: 10px 16px;
+        margin-right: 16px;
+        border-radius: 8px;
+
+        @include media ("<tablet") {
+            margin: 0 0 12px 0;
+            width: 100%;
+        }
+    }
+
+    .blue_btn {
+        min-width: 200px;
+        display: flex;
+        height: 56px;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<tablet") {
+            min-width: 100%;
+        }
+
+        &:hover {
+            .btn_arrow {
+                transition: all .3s ease;
+
+                path {
+                    fill: $blue;
+                }
+            }
+        }
+    }
+
+    .btn_arrow {
+        margin-left: 15px;
+        transition: all .3s ease;
+    }
+
+    .calc_wrap {
+        @include adaptiv-vaule("margin-bottom", 90, 180, 1);
+    }
+
+    .calc_steps {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active_wrap {
+        width: 48px;
+        height: 48px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px dashed $blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .step {
+            background-color: $blue;
+        }
+    }
+
+    .line {
+        width: 100%;
+        @include adaptiv-vaule("width", 130, 80, 1);
+        border: 1px dashed $blue;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 20px;
+        background-color: #EAEEFC;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        z-index: 2;
     }
 }
