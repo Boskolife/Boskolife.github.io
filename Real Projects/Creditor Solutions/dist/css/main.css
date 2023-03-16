@@ -622,6 +622,9 @@ header {
   @media (max-width: 479px) {
     header {
       padding: 10px 0 15px 0; } }
+  header .header_content {
+    position: relative;
+    z-index: 2; }
   header .header_content,
   header .nav-menu {
     display: -ms-flexbox;

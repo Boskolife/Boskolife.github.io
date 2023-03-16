@@ -41,6 +41,11 @@ header {
         padding: 10px 0 15px 0;
     }
 
+    .header_content{
+        position: relative;
+        z-index: 2;
+    }
+
     .header_content,
     .nav-menu {
         display: flex;
