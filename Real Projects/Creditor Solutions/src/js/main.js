@@ -1,8 +1,17 @@
+const winTriggersMethods = ['resize', 'load'];
+
 initTabs();
 initBurger();
 initNavBtn();
 findHref();
 initPuzzleAnimation();
+winTriggersMethods.forEach((method) => {
+    window.addEventListener(method, () => {
+        // worst case to refresh animation?
+        ScrollTrigger.killAll();
+        initPuzzleAnimation()
+    })
+})
 
 function findHref() {
     let element = document.getElementById('menu').getElementsByTagName('a');
@@ -113,8 +122,7 @@ function initPuzzleAnimation() {
     const puzzleTopRight = document.querySelector(".puzzle-top-right");
     const puzzleBottomRight = document.querySelector(".puzzle-bottom-right");
     const puzzleBottomLeft = document.querySelector(".puzzle-bottom-left")
-    const posXtopRight = ww / 2 - puzzleTopRight.clientWidth / 2;
-    const ramainderInSvg = 125;
+    const getPosXtopRight = () => window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
 
 
     gsap.from(puzzleTopRight, {
@@ -124,27 +132,29 @@ function initPuzzleAnimation() {
       puzzleTopRight,
       { x: 0 },
       {
-        x: -posXtopRight - ramainderInSvg,
+        x: () => -getPosXtopRight(),
         scrollTrigger: {
           trigger: mainSection,
           start: `top top`,
           end: `50%-=${headerHeight}`,
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       }
     );
 
     gsap.to(puzzleBottomRight, {
-        x: -posXtopRight - ramainderInSvg,
+        x: () => -getPosXtopRight(),
         duration: 0,
     });
     gsap.to(puzzleBottomRight, {
       y: -270,
       scrollTrigger: {
         trigger: mainSection,
-        start: `top top`,
+        start: `top+=${headerHeight} top`,
         end: `50%-=${headerHeight}`,
         scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -155,12 +165,13 @@ function initPuzzleAnimation() {
       puzzleBottomLeft,
       { x: 0 },
       {
-        x: posXtopRight + ramainderInSvg,
+        x: () => getPosXtopRight(),
         scrollTrigger: {
           trigger: mainSection,
           start: `top top`,
           end: `50%-=${headerHeight}`,
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       }
     );
