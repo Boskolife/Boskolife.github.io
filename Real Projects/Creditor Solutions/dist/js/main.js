@@ -21,13 +21,16 @@ function findHref() {
 function initBurger() {
   var burger = document.querySelector(".burger_menu");
   var menuBody = document.querySelector(".nav");
-  var phone = document.querySelector(".phone");
   burger.addEventListener('click', function () {
     menuBody.classList.toggle('menu_active');
-    phone.classList.toggle('menu_active');
     burger.classList.toggle("burger_active");
     document.body.classList.toggle("body_lock");
-  });
+  }); // document.addEventListener('click', function(event) {
+  //     if (!menuBody.contains(event.target)) {
+  //         menuBody.classList.remove("menu_active");
+  //         burger.classList.remove("burger_active");
+  //     }
+  // });
 }
 
 function initTabs() {
