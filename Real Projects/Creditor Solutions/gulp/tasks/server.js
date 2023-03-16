@@ -4,6 +4,7 @@ const html = require('./html');
 const styles = require('./sass2css')
 const jquery = require('./jquery')
 const files = require('./files')
+const { injectScripts, moveFormFiles } = require('./form')
 const script = require('./script')
 const imageMinify = require('./imgmin')
 const fonts = require('./fonts')
@@ -30,6 +31,7 @@ module.exports = function localServer(cb) {
 
     gulp.watch('src/images/**/*.{gif,png,jpg,svg,webp}', gulp.series(imageMinify, readyReload))
     // gulp.watch('src/img/sprite/*.svg', gulp.series(svgSprite, readyReload))
+    gulp.watch('src/form/*', gulp.series(injectScripts, moveFormFiles, readyReload))
     gulp.watch('src/**/*.html', gulp.series(html, cb => gulp.src('dist/').pipe(server.stream()).on('end', cb)))
     gulp.watch('src/styles/**/*.scss', gulp.series(styles, cb => gulp.src('dist/css').pipe(server.stream()).on('end', cb)))
     gulp.watch('src/js/*.js', gulp.series(script, readyReload))
