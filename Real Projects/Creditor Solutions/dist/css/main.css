@@ -1221,9 +1221,11 @@ html {
     @media (max-width: 1023px) {
       .award .award_descr {
         max-width: 100%; } }
-  @media (max-width: 479px) {
-    .award .white_btn {
-      min-width: 100%; } }
+  .award .white_btn {
+    display: none; }
+    @media (max-width: 479px) {
+      .award .white_btn {
+        min-width: 100%; } }
   .award .award_img {
     width: 40%; }
     @media (max-width: 1023px) {

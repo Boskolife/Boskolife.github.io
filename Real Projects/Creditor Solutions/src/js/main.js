@@ -7,24 +7,23 @@ getYear();
 getDay();
 hideText();
 
-
 function findHref() {
-    let element = document.getElementById('menu').getElementsByTagName('a');
+    let element = document.getElementById("menu").getElementsByTagName("a");
     let url = window.location.href;
     for (let i = 0; i < element.length; i++) {
-        if(url === element[i].href) {
-            element[i].classList.add('item_active');
+        if (url === element[i].href) {
+            element[i].classList.add("item_active");
         }
-    };
+    }
 }
 
 function initBurger() {
     const burger = document.querySelector(".burger_menu");
     const menuBody = document.querySelector(".nav");
-    
-    document.addEventListener('click', function(event) {
+
+    document.addEventListener("click", function (event) {
         if (burger.contains(event.target)) {
-            menuBody.classList.toggle('menu_active');
+            menuBody.classList.toggle("menu_active");
             burger.classList.toggle("burger_active");
             document.body.classList.toggle("body_lock");
             return;
@@ -38,22 +37,22 @@ function initBurger() {
 }
 
 function initTabs() {
-    const faqTabs = document.querySelector('#faqTabs');
+    const faqTabs = document.querySelector("#faqTabs");
 
     if (!faqTabs) return;
 
-    const tabs = document.querySelectorAll('.tab_title'),
-    tabsContent = document.querySelectorAll('.tab_content'),
-    tabsParent = document.querySelector('.tab_wrapper');
+    const tabs = document.querySelectorAll(".tab_title"),
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelector(".tab_wrapper");
 
     function showTabContent(i = 0) {
-        tabsContent[i].classList.toggle('show');
-        tabs[i].classList.toggle('tab_active');
+        tabsContent[i].classList.toggle("show");
+        tabs[i].classList.toggle("tab_active");
     }
 
-    tabsParent.addEventListener('click', (event) => {
+    tabsParent.addEventListener("click", (event) => {
         const target = event.target;
-        if(target && target.classList.contains('tab_title')) {
+        if (target && target.classList.contains("tab_title")) {
             tabs.forEach((item, i) => {
                 if (target == item) {
                     showTabContent(i);
@@ -62,29 +61,29 @@ function initTabs() {
         }
     });
 
-    !window.location.href.includes('faq') && showTabContent();
+    !window.location.href.includes("faq") && showTabContent();
 }
 
 function initNavBtn() {
-    const flyBtn = document.querySelector('#flyBtn');
+    const flyBtn = document.querySelector("#flyBtn");
 
     if (!flyBtn) return;
 
-    const navBtn = document.querySelector('.nav_btn'),
-          navTable = document.querySelector('.nav_table'),
-          navLink = document.querySelectorAll('.nav_table_link'),
-          footer = document.querySelector('#footer');
-  
-    navBtn.addEventListener('click', () => {
-        navTable.classList.toggle('show_table');
+    const navBtn = document.querySelector(".nav_btn"),
+        navTable = document.querySelector(".nav_table"),
+        navLink = document.querySelectorAll(".nav_table_link"),
+        footer = document.querySelector("#footer");
+
+    navBtn.addEventListener("click", () => {
+        navTable.classList.toggle("show_table");
         document.body.classList.toggle("body_lock");
     });
 
-    navLink.forEach(item => {
-        item.addEventListener('click', () => {
-            navTable.classList.remove('show_table');
+    navLink.forEach((item) => {
+        item.addEventListener("click", () => {
+            navTable.classList.remove("show_table");
             document.body.classList.remove("body_lock");
-        })
+        });
     });
 
     ScrollTrigger.create({
@@ -94,14 +93,13 @@ function initNavBtn() {
         toggleClass: "fixed",
         end: "top 80%+=100px",
         onLeave: (self) => {
-            self.trigger.classList.add('fixBottom')
-            self.trigger.style.bottom = `${footer.clientHeight + 50}px`
+            self.trigger.classList.add("fixBottom");
+            self.trigger.style.bottom = `${footer.clientHeight + 50}px`;
         },
         onEnterBack: (self) => {
-            self.trigger.classList.remove('fixBottom')
+            self.trigger.classList.remove("fixBottom");
         },
     });
-
 
     ScrollTrigger.create({
         trigger: "#flyBtn",
@@ -110,34 +108,34 @@ function initNavBtn() {
         toggleClass: "active",
         end: "top bottom",
         onLeave: (self) => {
-            self.trigger.classList.add('hide')
+            self.trigger.classList.add("hide");
         },
         onEnterBack: (self) => {
-            self.trigger.classList.remove('hide')
-        }
+            self.trigger.classList.remove("hide");
+        },
     });
 }
 
 function hideText() {
-    const spoiler = document.querySelector('.spoiler');
-    const button = document.querySelector('.spoiler-button');
+    const spoiler = document.querySelector(".spoiler");
+    const button = document.querySelector(".spoiler-button");
 
-    button.textContent = 'Show more';
-    
-    function replaceText () {
-        if (button.textContent === 'Show more') {
-            button.textContent = 'Show less';
-            document.querySelector('.dots').style.display = 'none';
-            button.style.display = 'block';
+    button.textContent = "Show more";
+
+    function replaceText() {
+        if (button.textContent === "Show more") {
+            button.textContent = "Show less";
+            document.querySelector(".dots").style.display = "none";
+            button.style.display = "block";
         } else {
-            button.textContent = 'Show more';
-            document.querySelector('.dots').style.display = 'inline';
-            button.style.display = 'inline';
+            button.textContent = "Show more";
+            document.querySelector(".dots").style.display = "inline";
+            button.style.display = "inline";
         }
     }
 
-    button.addEventListener('click', function() {
-        spoiler.classList.toggle('show');
+    button.addEventListener("click", function () {
+        spoiler.classList.toggle("show");
         replaceText();
     });
 }
@@ -146,98 +144,106 @@ function getDay() {
     const monthSelect = document.getElementById("month-select");
     const yearSelect = document.getElementById("year-select");
     const daySelect = document.getElementById("day-select");
-  
+
     const daysInMonth = (month, year) => {
-      return new Date(year, month + 1, 0).getDate();
+        return new Date(year, month + 1, 0).getDate();
     };
-  
+
     const populateDays = () => {
-      const month = parseInt(monthSelect.value, 10);
-      const year = parseInt(yearSelect.value, 10);
-      const days = daysInMonth(month, year);
-  
-      daySelect.innerHTML = "";
-  
-      for (let day = 1; day <= days; day++) {
-        const option = document.createElement("option");
-        option.value = day;
-        option.text = day;
-        daySelect.appendChild(option);
-      }
-  
-      daySelect.querySelector('option:first-child').selected = true;
+        const month = parseInt(monthSelect.value, 10);
+        const year = parseInt(yearSelect.value, 10);
+        const days = daysInMonth(month, year);
+
+        daySelect.innerHTML = "";
+
+        for (let day = 1; day <= days; day++) {
+            const option = document.createElement("option");
+            option.value = day;
+            option.text = day;
+            daySelect.appendChild(option);
+        }
+
+        daySelect.querySelector("option:first-child").selected = true;
     };
-  
+
     populateDays();
-  
+
     monthSelect.addEventListener("change", populateDays);
     yearSelect.addEventListener("change", populateDays);
-  }
-  
-  function getMonth() {
+}
+
+function getMonth() {
     const select = document.getElementById("month-select");
     const months = [
-      "January", "February", "March", "April", "May", "June", "July", 
-      "August", "September", "October", "November", "December"
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
     ];
-    
+
     months.forEach((month, i) => {
-      const option = document.createElement("option");
-      option.value = i;
-      option.text = month;
-      select.appendChild(option);
+        const option = document.createElement("option");
+        option.value = i;
+        option.text = month;
+        select.appendChild(option);
     });
-    
+
     select.options[0].selected = true;
-  }
-  
-  function getYear() {
+}
+
+function getYear() {
     const select = document.getElementById("year-select");
     const currentYear = new Date().getFullYear();
     const endYear = currentYear + 2;
     const startYear = 2000;
-    
+
     for (let year = startYear; year <= endYear; year++) {
-      const option = document.createElement("option");
-      option.value = year;
-      option.text = year;
-      select.appendChild(option);
+        const option = document.createElement("option");
+        option.value = year;
+        option.text = year;
+        select.appendChild(option);
     }
-    
+
     select.querySelector(`option[value='2000']`).selected = true;
 }
-  
 
 function calcPages() {
-    const firstBtn = document.getElementById('second_next');
-    const secondBtn = document.getElementById('third_next');
-    const startOverBtn = document.getElementById('start_over');
-    const firstStep = document.getElementById('first_step');
-    const secondStep = document.getElementById('second_step');
-    const thirdStep = document.getElementById('third_step');
-    const stepOne = document.getElementById('step_one');
-    const stepTwo = document.getElementById('step_two');
+    const firstBtn = document.getElementById("second_next");
+    const secondBtn = document.getElementById("third_next");
+    const startOverBtn = document.getElementById("start_over");
+    const firstStep = document.getElementById("first_step");
+    const secondStep = document.getElementById("second_step");
+    const thirdStep = document.getElementById("third_step");
+    const stepOne = document.getElementById("step_one");
+    const stepTwo = document.getElementById("step_two");
 
-    firstBtn.addEventListener('click', (e) =>{
+    firstBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        firstStep.classList.remove('step_show')
-        secondStep.classList.add('step_show');
-        stepOne.classList.remove('active_wrap');
-        stepTwo.classList.add('active_wrap');
-    })
+        firstStep.classList.remove("step_show");
+        secondStep.classList.add("step_show");
+        stepOne.classList.remove("active_wrap");
+        stepTwo.classList.add("active_wrap");
+    });
 
-    secondBtn.addEventListener('click', (e) =>{
+    secondBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        secondStep.classList.remove('step_show')
-        thirdStep.classList.add('step_show');
-    })
+        secondStep.classList.remove("step_show");
+        thirdStep.classList.add("step_show");
+    });
 
-    startOverBtn.addEventListener('click', (e) =>{
+    startOverBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        thirdStep.classList.remove('step_show')
-        firstStep.classList.add('step_show');
-    })
+        thirdStep.classList.remove("step_show");
+        firstStep.classList.add("step_show");
+    });
 }
- 
-calcPages();
 
+calcPages();

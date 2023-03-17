@@ -404,6 +404,7 @@ html {
     }
 
     .white_btn {
+        display: none;
 
         @include media ("<phone") {
             min-width: 100%;
