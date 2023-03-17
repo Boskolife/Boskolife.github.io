@@ -315,14 +315,16 @@ function nyJudgmentInterest(judgmentAmount, judgmentDate) {
     const afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
     const april30Date = new Date('2022-04-30'); // date when interest rate changes
     const today = new Date();
+    const judgDate = new Date(judgmentDate)
   
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
-      (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 +
-      (today.getMonth() - new Date(judgmentDate).getMonth());
+      (today.getFullYear() - judgDate.getFullYear()) * 12 +
+      (today.getMonth() - judgDate.getMonth());
   
     // Determine the interest rate based on the judgment date
-    const rate = judgmentDate < april30Date ? beforeApril30Rate : afterApril30Rate;
+    const rate = judgDate < april30Date ? beforeApril30Rate : afterApril30Rate;
+
     const interestRatePerMonth = judgmentAmount / 100 * rate;
     // Calculate the total interest earned
     const interest = interestRatePerMonth * months;
