@@ -2,9 +2,7 @@ initTabs();
 initBurger();
 initNavBtn();
 findHref();
-getMonth();
-getYear();
-getDay();
+renderDateSelects()
 hideText();
 calcPages();
 
@@ -121,6 +119,8 @@ function hideText() {
     const spoiler = document.querySelector(".spoiler");
     const button = document.querySelector(".spoiler-button");
 
+    if(!spoiler || !button) return;
+
     button.textContent = "Show more";
 
     function replaceText() {
@@ -141,87 +141,98 @@ function hideText() {
     });
 }
 
-function getDay() {
-  const monthSelect = document.getElementById("month-select");
-  const yearSelect = document.getElementById("year-select");
-  const daySelect = document.getElementById("day-select");
+function renderDateSelects() {
+    getMonth();
+    getYear();
+    getDay();
 
-  const daysInMonth = (month, year) => {
-    return new Date(year, month + 1, 0).getDate();
-  };
-
-  const populateDays = () => {
-    const month = parseInt(monthSelect.value, 10);
-    const year = parseInt(yearSelect.value, 10);
-    const days = daysInMonth(month, year);
-    const seletedValue = daySelect.value;
-
-    daySelect.innerHTML = "";
-
-    for (let day = 1; day <= days; day++) {
-      const option = document.createElement("option");
-      option.value = day;
-      option.text = day;
-      daySelect.appendChild(option);
+    function getDay() {
+      const monthSelect = document.getElementById("month-select");
+      const yearSelect = document.getElementById("year-select");
+      const daySelect = document.getElementById("day-select");
+      if(!monthSelect || !yearSelect || !daySelect) return;
+    
+      const daysInMonth = (month, year) => {
+        return new Date(year, month + 1, 0).getDate();
+      };
+    
+      const populateDays = () => {
+        const month = parseInt(monthSelect.value, 10);
+        const year = parseInt(yearSelect.value, 10);
+        const days = daysInMonth(month, year);
+        const seletedValue = daySelect.value;
+    
+        daySelect.innerHTML = "";
+    
+        for (let day = 1; day <= days; day++) {
+          const option = document.createElement("option");
+          option.value = day;
+          option.text = day;
+          daySelect?.appendChild(option);
+        }
+    
+        seletedValue
+          ? (daySelect.querySelector(
+              `option:nth-child(${seletedValue})`
+            ).selected = true)
+          : (daySelect.querySelector("option:first-child").selected = true);
+      };
+    
+      populateDays();
+    
+      monthSelect.addEventListener("change", populateDays);
+      yearSelect.addEventListener("change", populateDays);
     }
-
-    seletedValue
-      ? (daySelect.querySelector(
-          `option:nth-child(${seletedValue})`
-        ).selected = true)
-      : (daySelect.querySelector("option:first-child").selected = true);
-  };
-
-  populateDays();
-
-  monthSelect.addEventListener("change", populateDays);
-  yearSelect.addEventListener("change", populateDays);
-}
-
-function getMonth() {
-  const select = document.getElementById("month-select");
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  months.forEach((month, i) => {
-    const option = document.createElement("option");
-    option.value = i;
-    option.text = month;
-    select.appendChild(option);
-  });
-
-  select.options[0].selected = true;
-}
-
-function getYear() {
-  const select = document.getElementById("year-select");
-  const currentYear = new Date().getFullYear();
-  const endYear = currentYear + 2;
-  const startYear = 2000;
-
-  for (let year = startYear; year <= endYear; year++) {
-    const option = document.createElement("option");
-    option.value = year;
-    option.text = year;
-    select.appendChild(option);
-  }
-
-  select.querySelector(`option[value='2000']`).selected = true;
+    
+    function getMonth() {
+      const select = document.getElementById("month-select");
+      if(!select) return;
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+    
+      months.forEach((month, i) => {
+        const option = document.createElement("option");
+        option.value = i;
+        option.text = month;
+        select?.appendChild(option);
+      });
+    
+      select ? select.options[0].selected = true : null;
+    }
+    
+    function getYear() {
+      const select = document.getElementById("year-select");
+      if(!select) return;
+      const currentYear = new Date().getFullYear();
+      const endYear = currentYear + 2;
+      const startYear = 2000;
+    
+      for (let year = startYear; year <= endYear; year++) {
+        const option = document.createElement("option");
+        option.value = year;
+        option.text = year;
+        select?.appendChild(option);
+      }
+    
+      select.querySelector(`option[value='2000']`).selected = true;
+    }
 }
 
 function calcPages() {
+    const calsParent = document.querySelector('.calc_steps');
+    if(!calsParent) return;
     const firstBtn = document.getElementById('second_next');
     const secondBtn = document.getElementById('third_next');
     const startOverBtn = document.getElementById('start_over');
