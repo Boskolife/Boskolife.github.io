@@ -94,7 +94,7 @@ function initNavBtn() {
         end: "top 80%+=100px",
         onLeave: (self) => {
             self.trigger.classList.add("fixBottom");
-            self.trigger.style.bottom = `${footer.clientHeight + 50}px`;
+            // self.trigger.style.bottom = `${footer.clientHeight + 50}px`;
         },
         onEnterBack: (self) => {
             self.trigger.classList.remove("fixBottom");
@@ -246,6 +246,7 @@ function calcPages() {
         secondStep.classList.add("step_show");
         stepOne.classList.remove("active_wrap");
         stepTwo.classList.add("active_wrap");
+
     });
 
     secondBtn.addEventListener("click", (e) => {
@@ -263,6 +264,7 @@ function calcPages() {
         e.preventDefault();
         thirdStep.classList.remove('step_show')
         firstStep.classList.add('step_show');
+        amountInput.value = '';
     })
 
     amountInput.addEventListener('input', (e) => {
