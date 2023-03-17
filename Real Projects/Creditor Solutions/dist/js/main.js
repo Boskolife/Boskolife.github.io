@@ -159,7 +159,7 @@ function getDay() {
       daySelect.appendChild(option);
     }
 
-    daySelect.querySelector('option:first-child').selected = true;
+    daySelect.querySelector("option:first-child").selected = true;
   };
 
   populateDays();
@@ -204,6 +204,24 @@ function calcPages() {
   var thirdStep = document.getElementById('third_step');
   var stepOne = document.getElementById('step_one');
   var stepTwo = document.getElementById('step_two');
+  var amountInput = document.querySelector('#summ');
+  var monthSelect = document.getElementById("month-select");
+  var yearSelect = document.getElementById("year-select");
+  var daySelect = document.getElementById("day-select");
+  var awardEl = document.querySelector('#award');
+  var interestRateEl = document.querySelector('#interestRate');
+  var totalEl = document.querySelector('#total');
+  var monthValue = monthSelect.value;
+  var yearValue = yearSelect.value;
+  var dayValue = daySelect.value;
+
+  var getInputDate = function getInputDate() {
+    return "".concat(yearValue, "-").concat(+monthValue + 1, "-").concat(dayValue);
+  };
+
+  var fullYear = getInputDate();
+  var amountValue = '';
+  var result;
   firstBtn.addEventListener('click', function (e) {
     e.preventDefault();
     firstStep.classList.remove('step_show');
@@ -215,12 +233,50 @@ function calcPages() {
     e.preventDefault();
     secondStep.classList.remove('step_show');
     thirdStep.classList.add('step_show');
+    fullYear = getInputDate();
+    result = calculateInterest(+amountValue, fullYear);
+    awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
+    interestRateEl.textContent = "$".concat(result.totalInterestAccrued);
+    totalEl.textContent = "$".concat(result.totalAmount);
   });
   startOverBtn.addEventListener('click', function (e) {
     e.preventDefault();
     thirdStep.classList.remove('step_show');
     firstStep.classList.add('step_show');
   });
+  amountInput.addEventListener('input', function (e) {
+    var value = e.target.value.replace(/[a-zA-Z]/g, '');
+    e.target.value = value;
+    amountValue = value;
+  });
+  monthSelect.addEventListener('change', function (e) {
+    monthValue = e.target.value;
+  });
+  yearSelect.addEventListener('change', function (e) {
+    yearValue = e.target.value;
+  });
+  daySelect.addEventListener('change', function (e) {
+    dayValue = e.target.value;
+  });
+}
+
+function calculateInterest(originalAmount, judgmentDate) {
+  var beforeApril30 = new Date("2022-04-30T00:00:00.000Z") > new Date(judgmentDate);
+  var interestRate = beforeApril30 ? 0.09 : 0.02;
+  var monthlyInterestRate = interestRate / 12;
+  var today = new Date();
+  var diffInMonths = (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 + (today.getMonth() - new Date(judgmentDate).getMonth());
+  var totalInterest = originalAmount * interestRate;
+  var monthlyInterest = originalAmount * monthlyInterestRate;
+  var totalInterestAccrued = beforeApril30 ? totalInterest : monthlyInterest * diffInMonths;
+  var totalAmount = originalAmount + totalInterestAccrued;
+  return {
+    totalAmount: totalAmount.toFixed(2),
+    totalInterestAccrued: totalInterestAccrued.toFixed(2),
+    beforeApril30: beforeApril30,
+    interestRate: (interestRate * 100).toFixed(2),
+    judgmentDate: new Date(judgmentDate).toLocaleDateString()
+  };
 }
 
 calcPages();
