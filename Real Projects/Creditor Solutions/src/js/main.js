@@ -2,6 +2,11 @@ initTabs();
 initBurger();
 initNavBtn();
 findHref();
+getMonth();
+getYear();
+getDay();
+hideText();
+
 
 function findHref() {
     let element = document.getElementById('menu').getElementsByTagName('a');
@@ -17,18 +22,19 @@ function initBurger() {
     const burger = document.querySelector(".burger_menu");
     const menuBody = document.querySelector(".nav");
     
-    burger.addEventListener('click', () =>{
-        menuBody.classList.toggle('menu_active');
-        burger.classList.toggle("burger_active");
-        document.body.classList.toggle("body_lock");
+    document.addEventListener('click', function(event) {
+        if (burger.contains(event.target)) {
+            menuBody.classList.toggle('menu_active');
+            burger.classList.toggle("burger_active");
+            document.body.classList.toggle("body_lock");
+            return;
+        }
+        if (!menuBody.contains(event.target)) {
+            menuBody.classList.remove("menu_active");
+            burger.classList.remove("burger_active");
+            document.body.classList.remove("body_lock");
+        }
     });
-
-    // document.addEventListener('click', function(event) {
-    //     if (!menuBody.contains(event.target)) {
-    //         menuBody.classList.remove("menu_active");
-    //         burger.classList.remove("burger_active");
-    //     }
-    // });
 }
 
 function initTabs() {
@@ -66,7 +72,8 @@ function initNavBtn() {
 
     const navBtn = document.querySelector('.nav_btn'),
           navTable = document.querySelector('.nav_table'),
-          navLink = document.querySelectorAll('.nav_table_link');
+          navLink = document.querySelectorAll('.nav_table_link'),
+          footer = document.querySelector('#footer');
   
     navBtn.addEventListener('click', () => {
         navTable.classList.toggle('show_table');
@@ -86,6 +93,13 @@ function initNavBtn() {
         endTrigger: "#footer",
         toggleClass: "fixed",
         end: "top 80%+=100px",
+        onLeave: (self) => {
+            self.trigger.classList.add('fixBottom')
+            self.trigger.style.bottom = `${footer.clientHeight + 50}px`
+        },
+        onEnterBack: (self) => {
+            self.trigger.classList.remove('fixBottom')
+        },
     });
 
 
@@ -104,7 +118,126 @@ function initNavBtn() {
     });
 }
 
+function hideText() {
+    const spoiler = document.querySelector('.spoiler');
+    const button = document.querySelector('.spoiler-button');
 
+    button.textContent = 'Show more';
+    
+    function replaceText () {
+        if (button.textContent === 'Show more') {
+            button.textContent = 'Show less';
+            document.querySelector('.dots').style.display = 'none';
+            button.style.display = 'block';
+        } else {
+            button.textContent = 'Show more';
+            document.querySelector('.dots').style.display = 'inline';
+            button.style.display = 'inline';
+        }
+    }
 
+    button.addEventListener('click', function() {
+        spoiler.classList.toggle('show');
+        replaceText();
+    });
+}
 
+function getDay() {
+    const monthSelect = document.getElementById("month-select");
+    const yearSelect = document.getElementById("year-select");
+    const daySelect = document.getElementById("day-select");
+  
+    const daysInMonth = (month, year) => {
+      return new Date(year, month + 1, 0).getDate();
+    };
+  
+    const populateDays = () => {
+      const month = parseInt(monthSelect.value, 10);
+      const year = parseInt(yearSelect.value, 10);
+      const days = daysInMonth(month, year);
+  
+      daySelect.innerHTML = "";
+  
+      for (let day = 1; day <= days; day++) {
+        const option = document.createElement("option");
+        option.value = day;
+        option.text = day;
+        daySelect.appendChild(option);
+      }
+  
+      daySelect.querySelector('option:first-child').selected = true;
+    };
+  
+    populateDays();
+  
+    monthSelect.addEventListener("change", populateDays);
+    yearSelect.addEventListener("change", populateDays);
+  }
+  
+  function getMonth() {
+    const select = document.getElementById("month-select");
+    const months = [
+      "January", "February", "March", "April", "May", "June", "July", 
+      "August", "September", "October", "November", "December"
+    ];
+    
+    months.forEach((month, i) => {
+      const option = document.createElement("option");
+      option.value = i;
+      option.text = month;
+      select.appendChild(option);
+    });
+    
+    select.options[0].selected = true;
+  }
+  
+  function getYear() {
+    const select = document.getElementById("year-select");
+    const currentYear = new Date().getFullYear();
+    const endYear = currentYear + 2;
+    const startYear = 2000;
+    
+    for (let year = startYear; year <= endYear; year++) {
+      const option = document.createElement("option");
+      option.value = year;
+      option.text = year;
+      select.appendChild(option);
+    }
+    
+    select.querySelector(`option[value='2000']`).selected = true;
+}
+  
+
+function calcPages() {
+    const firstBtn = document.getElementById('second_next');
+    const secondBtn = document.getElementById('third_next');
+    const startOverBtn = document.getElementById('start_over');
+    const firstStep = document.getElementById('first_step');
+    const secondStep = document.getElementById('second_step');
+    const thirdStep = document.getElementById('third_step');
+    const stepOne = document.getElementById('step_one');
+    const stepTwo = document.getElementById('step_two');
+
+    firstBtn.addEventListener('click', (e) =>{
+        e.preventDefault();
+        firstStep.classList.remove('step_show')
+        secondStep.classList.add('step_show');
+        stepOne.classList.remove('active_wrap');
+        stepTwo.classList.add('active_wrap');
+    })
+
+    secondBtn.addEventListener('click', (e) =>{
+        e.preventDefault();
+        secondStep.classList.remove('step_show')
+        thirdStep.classList.add('step_show');
+    })
+
+    startOverBtn.addEventListener('click', (e) =>{
+        e.preventDefault();
+        thirdStep.classList.remove('step_show')
+        firstStep.classList.add('step_show');
+    })
+}
+ 
+calcPages();
 

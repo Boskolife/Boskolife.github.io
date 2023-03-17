@@ -26,7 +26,7 @@
                             <li class="menu-item"> <a class="menu_link" href="about_us.html">About Us</a></li>
                             <li class="menu-item"> <a class="menu_link" href="#">DOCUMENT CENTER</a></li>
                             <li class="menu-item"> <a class="menu_link" href="#">CREDITOR center</a></li>
-                            <li class="menu-item"> <a class="menu_link" href="#">Enforce Judgment</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="form.html">Enforce Judgment</a></li>
                             <li class="menu-item"> <a class="menu_link" href="faq.html">FAQ</a></li>
                             <li class="menu-item"> <a class="menu_link" href="contact_us.html">CONTACT US</a></li>
                         </ul>
@@ -43,8 +43,8 @@
         </header>
         <main id="main">
             <section class="calc">
-                <div class="container">
-                    <div class="calc_content">
+                <div class="container calc_steps">
+                    <div class="calc_content first_step step_show" id="first_step">
                         <div class="calc_icon_top">
                             <img src="./images/calc/icon_calculatorTop.svg" alt= "image not found" >
                         </div>
@@ -59,19 +59,16 @@
                         </div>
                         <h1 class="calc_title">Judgment <span class="blue_text">Calculator</span>
                         </h1>
-                        <p class="calc_descr">Most judgments awarded in New York State before April
-                            30, 2022 accrue interest at 9% per year, or 0.75 per month. On the other
-                            hand, judgments awarded after April 30, 2022 accrue interest at 2% per
-                            year, or 0.167 percent per month. This calculator will help you estimate
-                            the total value and amount of interest earned on a court-awarded
-                            judgment in the state of New York. To start, enter the amount of the
-                            original judgment award.</p>
+                        <p class="calc_descr">Most judgments awarded in New York State before April 30, 2022 accrue interest at 9% per year, or 0.75 per month. On the other hand, judgments awarded after<span class="dots">...</span>
+                            <span class="spoiler">April 30, 2022 accrue interest at 2% per year, or 0.167 percent per month. This calculator will help you estimate the total value and amount of interest earned on a court-awarded judgment in the state of New York. To start, enter the amount of the original judgment award.</span>
+                            <span class="spoiler-button"></span>
+                         </p>
                         <div class="calc_wrap">
                             <h2 class="calc_subtitle">Judgment amount</h2>
                             <p class="tip">Type the total amount of judgment</p>
                             <form class="calc_form">
                                 <input id="summ" class="summ" placeholder="$ 0.00" type="text">
-                                <button class="blue_btn" type="submit">next
+                                <a href="#" id="second_next" class="blue_btn">next
                                     <svg class="btn_arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -79,7 +76,7 @@
                                             fill="white" />
                                     </svg>
 
-                                </button>
+                                </a>
                             </form>
                         </div>
                         <div class="calc_steps">
@@ -90,6 +87,82 @@
                             <div class="step_wrap">
                                 <span class="step_two step">2</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="calc_content second_step" id="second_step">
+                        <div class="calc_icon_top">
+                            <img src="./images/calc/icon_calculatorTop.svg" alt= "image not found" >
+                        </div>
+                        <div class="calc_icon_bottom">
+                            <img src="./images/calc/icon_calculatorBottom.svg" alt= "image not found" >
+                        </div>
+                        <div class="line_top">
+                            <img src="./images/calc/line_2.svg" alt="image not found">
+                        </div>
+                        <div class="line_bottom">
+                            <img src="./images/calc/line_1.svg" alt="image not found">
+                        </div>
+                        <h1 class="calc_title">Judgment <span class="blue_text">Calculator</span>
+                        </h1>
+                        <p class="calc_descr">Most judgments awarded in New York State before April 30, 2022 accrue interest at 9% per year, or 0.75 per month. On the other hand, judgments awarded after<span class="dots">...</span>
+                            <span class="spoiler">April 30, 2022 accrue interest at 2% per year, or 0.167 percent per month. This calculator will help you estimate the total value and amount of interest earned on a court-awarded judgment in the state of New York. To start, enter the amount of the original judgment award.</span>
+                            <span class="spoiler-button"></span>
+                         </p>
+                        <div class="calc_wrap">
+                            <h2 class="calc_subtitle">Judgment amount</h2>
+                            <p class="tip">Type the total amount of judgment</p>
+                            <form class="calc_form">
+                                <select id="day-select"></select>
+                                <select id="month-select"></select>
+                                <select id="year-select"></select>
+                                <a href="#" id="third_next" class="blue_btn" type="submit">ready</a>
+                            </form>
+                        </div>
+                        <div class="calc_steps">
+                            <div id="step_one" class="step_wrap active_wrap">
+                                <span class="step_one step">1</span>
+                            </div>
+                            <div class="line"></div>
+                            <div id="step_two" class="step_wrap">
+                                <span class="step_two step">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc_content third_step" id="third_step">
+                        <div class="calc_icon_top">
+                            <img src="./images/calc/icon_calculatorTop.svg" alt= "image not found" >
+                        </div>
+                        <div class="calc_icon_bottom">
+                            <img src="./images/calc/icon_calculatorBottom.svg" alt= "image not found" >
+                        </div>
+                        <div class="line_top">
+                            <img src="./images/calc/line_2.svg" alt="image not found">
+                        </div>
+                        <div class="line_bottom">
+                            <img src="./images/calc/line_1.svg" alt="image not found">
+                        </div>
+                        <h1 class="calc_title">Judgment <span class="blue_text">Calculator</span>
+                        </h1>
+                        <div class="calc_wrap">
+                            <div class="result">
+                                <div class="result_item">
+                                    <h2 class="result_title">Initial amount awarded</h2>
+                                    <p id="award" class="amount">$300.00</p>
+                                </div>
+                                <div class="result_item">
+                                    <h2 class="result_title">Interest accrued to date</h2>
+                                    <p id="date" class="amount">$146.00</p>
+                                </div>
+                                <div class="result_item total_amount">
+                                    <h2 class="result_title">Total owed</h2>
+                                    <p id="total" class="amount">$300.00</p>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <a href="form.html" class="blue_btn">Enforce Judgment</a>
+                                <a id="start_over" href="#" class="start_btn">start over</a>
+                            </div>
+                            <p class="notice">*Any amounts obtained using this calculator are based on your input and are only intended as an estimate. Other contributing factors may impact the value of your judgment. For more information on the exact value of your judgment, or to start the collection process <a class="notice_link" href="contact_us.html">contact us</a>.</p>
                         </div>
                     </div>
                 </div>

@@ -960,6 +960,11 @@ html {
             right: 20px;
         }
 
+        &.fixBottom {
+            position: fixed;
+            top: auto;
+            right: 20px;
+        }
 
         @include media ("<desktop") {
             position: fixed;
@@ -1794,26 +1799,26 @@ html {
     text-align: center;
     position: relative;
     overflow: hidden;
-    
+
     .process_icon_top,
-    .process_icon_bottom{
+    .process_icon_bottom {
         width: 500px;
         height: 320px;
         position: absolute;
         z-index: 1;
     }
 
-    .process_icon_top{
+    .process_icon_top {
         top: -10%;
         left: -18%;
     }
 
-    .process_icon_bottom{
+    .process_icon_bottom {
         right: -20%;
-        bottom:-25%;
+        bottom: -25%;
     }
 
-    .container{
+    .container {
         position: relative;
         z-index: 2;
     }
@@ -2169,6 +2174,8 @@ html {
     }
 }
 
+
+
 .calc {
     background-color: #F4F6FE;
     @include adaptiv-vaule("padding-top", 160, 90, 1);
@@ -2189,6 +2196,11 @@ html {
         position: relative;
         overflow: hidden;
         z-index: 2;
+        display: none;
+    }
+
+    .step_show{
+        display: block;
     }
 
     .calc_icon_top,
@@ -2210,7 +2222,7 @@ html {
 
     .calc_icon_top {
         top: -5%;
-        left: -14%;
+        left: -15%;
     }
 
     .calc_icon_bottom {
@@ -2249,7 +2261,12 @@ html {
         text-align: center;
         letter-spacing: -0.01em;
         color: $gray_4;
+        max-width: 770px;
         @include adaptiv-vaule("margin-bottom", 30, 25, 1);
+
+        @include media ("<tablet") {
+            text-align: start;
+        }
     }
 
     .calc_subtitle {
@@ -2278,7 +2295,9 @@ html {
 
         @include media ("<tablet") {
             flex-direction: column;
-            width: 300px;
+            max-width: 300px;
+            width: 100%;
+            margin: 0 auto;
         }
     }
 
@@ -2366,4 +2385,197 @@ html {
         position: relative;
         z-index: 2;
     }
+
+    .spoiler {
+        display: none;
+    }
+
+    .show {
+        display: inline;
+    }
+
+    .spoiler-button {
+        padding: 0;
+        margin: 0;
+        border: none;
+        cursor: pointer;
+        color: $blue;
+        text-decoration: underline;
+    }
+
+    #day-select,
+    #month-select,
+    #year-select {
+        @include adaptiv-vaule("width", 230, 0, 1);
+        border: 1px solid $gray;
+        border-radius: 5px;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 171%;
+        color: $gray_2;
+        appearance: none;
+        background: #ffffff url(../images/calc/selector_arrow.svg) no-repeat 93% 50%;
+
+        @include media ("<desktop") {
+            width: 40%;
+        }
+
+        @include media ("<tablet") {
+            width: 100%
+        }
+    }
+
+
+    .second_step {
+        @include adaptiv-vaule("padding-right", 80, 25, 1);
+        @include adaptiv-vaule("padding-left", 80, 25, 1);
+        
+
+        .blue_btn {
+            @include adaptiv-vaule("width", 200, 0, 1);
+
+            @include media ("<desktop") {
+                width: 40%;
+            }
+        }
+
+        .calc_form,
+        .calc_wrap {
+            width: 100%;
+        }
+
+        .calc_form {
+            gap: 15px;
+            justify-content: space-between;
+
+            @include media ("<desktop") {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .third_step {
+
+        .calc_wrap{
+            margin: 0;
+        }
+
+        .result {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            column-gap: 40px;
+            @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+
+            @include media ("<950px") {
+                flex-direction: column;
+                row-gap: 25px;
+            }
+        }
+
+        .result_item {
+            width: 45%;
+
+            @include media ("<950px") {
+                width: 100%;
+            }
+        }
+
+        .result_title {
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 26, 20, 1);
+            line-height: 140%;
+            letter-spacing: -0.03em;
+            color: $blue;
+            margin-bottom: 5px;
+            
+        }
+
+        .amount {
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 36, 28, 1);
+            line-height: 120%;
+            letter-spacing: -0.03em;
+            color: $black;
+        }
+
+        .total_amount{
+            width: 170px;
+        }
+
+        #total {
+            border: 1px solid $gray;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .btn_wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            @include adaptiv-vaule("margin-bottom", 55, 30, 1);
+
+            @include media ("<tablet") {
+                flex-direction: column;
+            }
+        }
+
+        .blue_btn,
+        .start_btn {
+            min-width: 240px;
+
+            @include media ("<phone") {
+                min-width: 100%;
+            }
+        }
+
+        .start_btn {
+            background-color: #EAEEFC;
+            border-radius: 8px;
+            padding: 18px;
+            font-size: 16px;
+            line-height: 125%;
+            text-transform: uppercase;
+            color: $blue;
+            font-weight: 600;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: $blue;
+                color: $white;
+                transition: all .3s ease;
+            }
+        }
+
+        .notice {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+            color: $gray_4;
+            max-width: 675px;
+            margin: 0 auto;
+
+            @include media ("<phone") {
+                text-align: start;
+            }
+        }
+
+        .notice_link {
+            text-decoration: underline;
+        }
+    }
+
+
+    // .show_step{
+    //     display: block;
+    // }
+
+    // .hide_step{
+    //     display: none;
+    // }
 }

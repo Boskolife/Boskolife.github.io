@@ -1814,6 +1814,10 @@ html {
       position: fixed;
       top: 120px;
       right: 20px; }
+    .privacy_policy .nav_table.fixBottom {
+      position: fixed;
+      top: auto;
+      right: 20px; }
     @media (max-width: 1023px) {
       .privacy_policy .nav_table {
         position: fixed;
@@ -3095,7 +3099,8 @@ html {
     align-items: center;
     position: relative;
     overflow: hidden;
-    z-index: 2; }
+    z-index: 2;
+    display: none; }
     @media (max-width: 1350px) {
       .calc .calc_content {
         padding-top: calc(30px + 35 * ((100vw - calc(375px)) / 975)); } }
@@ -3108,6 +3113,8 @@ html {
     @media (max-width: 1350px) {
       .calc .calc_content {
         padding-left: calc(25px + 95 * ((100vw - calc(375px)) / 975)); } }
+  .calc .step_show {
+    display: block; }
   .calc .calc_icon_top,
   .calc .calc_icon_bottom {
     position: absolute;
@@ -3124,7 +3131,7 @@ html {
       height: 100%; }
   .calc .calc_icon_top {
     top: -5%;
-    left: -14%; }
+    left: -15%; }
   .calc .calc_icon_bottom {
     bottom: -8%;
     right: -9%; }
@@ -3162,6 +3169,7 @@ html {
     text-align: center;
     letter-spacing: -0.01em;
     color: #3D3E45;
+    max-width: 770px;
     /* Только если меньше контейнера */
     margin-bottom: 30px; }
     @media (max-width: 1350px) {
@@ -3170,6 +3178,9 @@ html {
     @media (max-width: 1350px) {
       .calc .calc_descr {
         margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 767px) {
+      .calc .calc_descr {
+        text-align: start; } }
   .calc .calc_subtitle {
     font-weight: 600;
     font-size: 26px;
@@ -3208,7 +3219,9 @@ html {
       .calc .calc_form {
         -ms-flex-direction: column;
         flex-direction: column;
-        width: 300px; } }
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto; } }
   .calc .summ {
     border: none;
     background-color: #EAEEFC;
@@ -3288,6 +3301,188 @@ html {
     height: 40px;
     position: relative;
     z-index: 2; }
+  .calc .spoiler {
+    display: none; }
+  .calc .show {
+    display: inline; }
+  .calc .spoiler-button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    color: #031C77;
+    text-decoration: underline; }
+  .calc #day-select,
+  .calc #month-select,
+  .calc #year-select {
+    /* Только если меньше контейнера */
+    width: 230px;
+    border: 1px solid #D1D4DE;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 171%;
+    color: #66666C;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #ffffff url(../images/calc/selector_arrow.svg) no-repeat 93% 50%; }
+    @media (max-width: 1350px) {
+      .calc #day-select,
+      .calc #month-select,
+      .calc #year-select {
+        width: calc(0px + 230 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1023px) {
+      .calc #day-select,
+      .calc #month-select,
+      .calc #year-select {
+        width: 40%; } }
+    @media (max-width: 767px) {
+      .calc #day-select,
+      .calc #month-select,
+      .calc #year-select {
+        width: 100%; } }
+  .calc .second_step {
+    /* Только если меньше контейнера */
+    padding-right: 80px;
+    /* Только если меньше контейнера */
+    padding-left: 80px; }
+    @media (max-width: 1350px) {
+      .calc .second_step {
+        padding-right: calc(25px + 55 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .calc .second_step {
+        padding-left: calc(25px + 55 * ((100vw - calc(375px)) / 975)); } }
+    .calc .second_step .blue_btn {
+      /* Только если меньше контейнера */
+      width: 200px; }
+      @media (max-width: 1350px) {
+        .calc .second_step .blue_btn {
+          width: calc(0px + 200 * ((100vw - calc(375px)) / 975)); } }
+      @media (max-width: 1023px) {
+        .calc .second_step .blue_btn {
+          width: 40%; } }
+    .calc .second_step .calc_form,
+    .calc .second_step .calc_wrap {
+      width: 100%; }
+    .calc .second_step .calc_form {
+      gap: 15px;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      @media (max-width: 1023px) {
+        .calc .second_step .calc_form {
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-align: center;
+          align-items: center; } }
+  .calc .third_step .calc_wrap {
+    margin: 0; }
+  .calc .third_step .result {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    /* Только если меньше контейнера */
+    margin-bottom: 40px; }
+    @media (max-width: 1350px) {
+      .calc .third_step .result {
+        margin-bottom: calc(30px + 10 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 949px) {
+      .calc .third_step .result {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        row-gap: 25px; } }
+  .calc .third_step .result_item {
+    width: 45%; }
+    @media (max-width: 949px) {
+      .calc .third_step .result_item {
+        width: 100%; } }
+  .calc .third_step .result_title {
+    font-weight: 600;
+    /* Только если меньше контейнера */
+    font-size: 26px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: #031C77;
+    margin-bottom: 5px; }
+    @media (max-width: 1350px) {
+      .calc .third_step .result_title {
+        font-size: calc(20px + 6 * ((100vw - calc(375px)) / 975)); } }
+  .calc .third_step .amount {
+    font-weight: 600;
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    color: #1D1D20; }
+    @media (max-width: 1350px) {
+      .calc .third_step .amount {
+        font-size: calc(28px + 8 * ((100vw - calc(375px)) / 975)); } }
+  .calc .third_step .total_amount {
+    width: 170px; }
+  .calc .third_step #total {
+    border: 1px solid #D1D4DE;
+    border-radius: 10px;
+    padding: 5px; }
+  .calc .third_step .btn_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 15px;
+    /* Только если меньше контейнера */
+    margin-bottom: 55px; }
+    @media (max-width: 1350px) {
+      .calc .third_step .btn_wrap {
+        margin-bottom: calc(30px + 25 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 767px) {
+      .calc .third_step .btn_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .calc .third_step .blue_btn,
+  .calc .third_step .start_btn {
+    min-width: 240px; }
+    @media (max-width: 479px) {
+      .calc .third_step .blue_btn,
+      .calc .third_step .start_btn {
+        min-width: 100%; } }
+  .calc .third_step .start_btn {
+    background-color: #EAEEFC;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 16px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #031C77;
+    font-weight: 600;
+    transition: all .3s ease; }
+    .calc .third_step .start_btn:hover {
+      background-color: #031C77;
+      color: #ffffff;
+      transition: all .3s ease; }
+  .calc .third_step .notice {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #3D3E45;
+    max-width: 675px;
+    margin: 0 auto; }
+    @media (max-width: 479px) {
+      .calc .third_step .notice {
+        text-align: start; } }
+  .calc .third_step .notice_link {
+    text-decoration: underline; }
 
 footer {
   overflow: hidden; }
