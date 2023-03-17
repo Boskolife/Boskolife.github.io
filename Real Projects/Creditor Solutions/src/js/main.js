@@ -6,6 +6,7 @@ getMonth();
 getYear();
 getDay();
 hideText();
+calcPages();
 
 function findHref() {
     let element = document.getElementById("menu").getElementsByTagName("a");
@@ -235,7 +236,7 @@ function calcPages() {
     let monthValue = monthSelect.value;
     let yearValue = yearSelect.value;
     let dayValue = daySelect.value;
-    const getInputDate = () => `${yearValue}-${+monthValue + 1}-${dayValue}`;
+    const getInputDate = () => new Date(yearValue, monthValue, dayValue);
     let fullYear = getInputDate();
     let amountValue = '';
     let result;
@@ -254,10 +255,10 @@ function calcPages() {
         secondStep.classList.remove('step_show')
         thirdStep.classList.add('step_show');
         fullYear = getInputDate();
-        result = calculateInterest(+amountValue, fullYear);
+        result = nyJudgmentInterest(+amountValue, fullYear);
         awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
-        interestRateEl.textContent = `$${result.totalInterestAccrued}`;
-        totalEl.textContent =`$${result.totalAmount}`
+        interestRateEl.textContent = `$${result.interest}`;
+        totalEl.textContent =`$${result.totalValue}`
     })
 
     startOverBtn.addEventListener("click", (e) => {
@@ -283,30 +284,24 @@ function calcPages() {
     })
 }
 
-function calculateInterest(originalAmount, judgmentDate) {
-  const beforeApril30 =
-    new Date("2022-04-30T00:00:00.000Z") > new Date(judgmentDate);
-  const interestRate = beforeApril30 ? 0.09 : 0.02;
-  const monthlyInterestRate = interestRate / 12;
-  const today = new Date();
-  const diffInMonths =
-    (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 +
-    (today.getMonth() - new Date(judgmentDate).getMonth());
+function nyJudgmentInterest(judgmentAmount, judgmentDate) {
+    const beforeApril30Rate = 0.0075; // 0.75% interest rate before April 30, 2022
+    const afterApril30Rate = 0.02; // 2% interest rate after April 30, 2022
+    const april30Date = new Date('2022-04-30'); // date when interest rate changes
+  
+    // Calculate the number of months between the judgment date and April 30, 2022
+    const months = (april30Date.getFullYear() - judgmentDate.getFullYear()) * 12 + (april30Date.getMonth() - judgmentDate.getMonth());
+  
+    // Determine the interest rate based on the judgment date
+    const rate = judgmentDate < april30Date ? beforeApril30Rate : afterApril30Rate;
+  
+    // Calculate the total interest earned
+    const interest = judgmentAmount * rate * months;
+  
+    // Calculate the total value of the judgment including interest
+    const totalValue = judgmentAmount + interest;
 
-  const totalInterest = originalAmount * interestRate;
-  const monthlyInterest = originalAmount * monthlyInterestRate;
-  const totalInterestAccrued = beforeApril30
-    ? totalInterest
-    : monthlyInterest * diffInMonths;
-  const totalAmount = originalAmount + totalInterestAccrued;
-
-  return {
-    totalAmount: totalAmount.toFixed(2),
-    totalInterestAccrued: totalInterestAccrued.toFixed(2),
-    beforeApril30: beforeApril30,
-    interestRate: (interestRate * 100).toFixed(2),
-    judgmentDate: new Date(judgmentDate).toLocaleDateString(),
-  };
+    return { interest, totalValue };
 }
 
-calcPages();
+// console.log(nyJudgmentInterest(100, new Date(2022, 0, 1)))
