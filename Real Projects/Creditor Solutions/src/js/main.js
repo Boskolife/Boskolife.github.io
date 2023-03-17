@@ -154,6 +154,7 @@ function getDay() {
     const month = parseInt(monthSelect.value, 10);
     const year = parseInt(yearSelect.value, 10);
     const days = daysInMonth(month, year);
+    const seletedValue = daySelect.value;
 
     daySelect.innerHTML = "";
 
@@ -164,7 +165,11 @@ function getDay() {
       daySelect.appendChild(option);
     }
 
-    daySelect.querySelector("option:first-child").selected = true;
+    seletedValue
+      ? (daySelect.querySelector(
+          `option:nth-child(${seletedValue})`
+        ).selected = true)
+      : (daySelect.querySelector("option:first-child").selected = true);
   };
 
   populateDays();
@@ -232,6 +237,7 @@ function calcPages() {
     const awardEl = document.querySelector('#award');
     const interestRateEl = document.querySelector('#interestRate');
     const totalEl = document.querySelector('#total');
+    const AMOUNT_REGEX = /^\d+\.?\d?(\d+)?$/;
 
     let monthValue = monthSelect.value;
     let yearValue = yearSelect.value;
@@ -269,9 +275,18 @@ function calcPages() {
     })
 
     amountInput.addEventListener('input', (e) => {
-        const value = e.target.value.replace(/[a-zA-Z]/g, '')
-        e.target.value = value;
-        amountValue = value;
+        const targetValue = e.target.value.replace(/\$/g, '').trim();
+        if(!targetValue) {
+            e.target.value = '';
+            amountValue = '';
+            return;
+        }
+        if(!AMOUNT_REGEX.test(targetValue)) {
+            e.target.value = `$ ${amountValue}`;
+            return;
+        }
+        e.target.value = `$ ${targetValue}`;
+        amountValue = targetValue;
     })
     monthSelect.addEventListener('change', (e) => {
         monthValue = e.target.value;
