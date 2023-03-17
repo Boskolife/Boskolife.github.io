@@ -10,22 +10,24 @@ getDay();
 hideText();
 
 function findHref() {
-  var element = document.getElementById("menu").getElementsByTagName("a");
+  var element = document.getElementById('menu').getElementsByTagName('a');
   var url = window.location.href;
 
   for (var i = 0; i < element.length; i++) {
     if (url === element[i].href) {
-      element[i].classList.add("item_active");
+      element[i].classList.add('item_active');
     }
   }
+
+  ;
 }
 
 function initBurger() {
   var burger = document.querySelector(".burger_menu");
   var menuBody = document.querySelector(".nav");
-  document.addEventListener("click", function (event) {
+  document.addEventListener('click', function (event) {
     if (burger.contains(event.target)) {
-      menuBody.classList.toggle("menu_active");
+      menuBody.classList.toggle('menu_active');
       burger.classList.toggle("burger_active");
       document.body.classList.toggle("body_lock");
       return;
@@ -40,22 +42,22 @@ function initBurger() {
 }
 
 function initTabs() {
-  var faqTabs = document.querySelector("#faqTabs");
+  var faqTabs = document.querySelector('#faqTabs');
   if (!faqTabs) return;
-  var tabs = document.querySelectorAll(".tab_title"),
-      tabsContent = document.querySelectorAll(".tab_content"),
-      tabsParent = document.querySelector(".tab_wrapper");
+  var tabs = document.querySelectorAll('.tab_title'),
+      tabsContent = document.querySelectorAll('.tab_content'),
+      tabsParent = document.querySelector('.tab_wrapper');
 
   function showTabContent() {
     var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    tabsContent[i].classList.toggle("show");
-    tabs[i].classList.toggle("tab_active");
+    tabsContent[i].classList.toggle('show');
+    tabs[i].classList.toggle('tab_active');
   }
 
-  tabsParent.addEventListener("click", function (event) {
+  tabsParent.addEventListener('click', function (event) {
     var target = event.target;
 
-    if (target && target.classList.contains("tab_title")) {
+    if (target && target.classList.contains('tab_title')) {
       tabs.forEach(function (item, i) {
         if (target == item) {
           showTabContent(i);
@@ -63,23 +65,23 @@ function initTabs() {
       });
     }
   });
-  !window.location.href.includes("faq") && showTabContent();
+  !window.location.href.includes('faq') && showTabContent();
 }
 
 function initNavBtn() {
-  var flyBtn = document.querySelector("#flyBtn");
+  var flyBtn = document.querySelector('#flyBtn');
   if (!flyBtn) return;
-  var navBtn = document.querySelector(".nav_btn"),
-      navTable = document.querySelector(".nav_table"),
-      navLink = document.querySelectorAll(".nav_table_link"),
-      footer = document.querySelector("#footer");
-  navBtn.addEventListener("click", function () {
-    navTable.classList.toggle("show_table");
+  var navBtn = document.querySelector('.nav_btn'),
+      navTable = document.querySelector('.nav_table'),
+      navLink = document.querySelectorAll('.nav_table_link'),
+      footer = document.querySelector('#footer');
+  navBtn.addEventListener('click', function () {
+    navTable.classList.toggle('show_table');
     document.body.classList.toggle("body_lock");
   });
   navLink.forEach(function (item) {
-    item.addEventListener("click", function () {
-      navTable.classList.remove("show_table");
+    item.addEventListener('click', function () {
+      navTable.classList.remove('show_table');
       document.body.classList.remove("body_lock");
     });
   });
@@ -90,11 +92,11 @@ function initNavBtn() {
     toggleClass: "fixed",
     end: "top 80%+=100px",
     onLeave: function onLeave(self) {
-      self.trigger.classList.add("fixBottom");
+      self.trigger.classList.add('fixBottom');
       self.trigger.style.bottom = "".concat(footer.clientHeight + 50, "px");
     },
     onEnterBack: function onEnterBack(self) {
-      self.trigger.classList.remove("fixBottom");
+      self.trigger.classList.remove('fixBottom');
     }
   });
   ScrollTrigger.create({
@@ -104,33 +106,33 @@ function initNavBtn() {
     toggleClass: "active",
     end: "top bottom",
     onLeave: function onLeave(self) {
-      self.trigger.classList.add("hide");
+      self.trigger.classList.add('hide');
     },
     onEnterBack: function onEnterBack(self) {
-      self.trigger.classList.remove("hide");
+      self.trigger.classList.remove('hide');
     }
   });
 }
 
 function hideText() {
-  var spoiler = document.querySelector(".spoiler");
-  var button = document.querySelector(".spoiler-button");
-  button.textContent = "Show more";
+  var spoiler = document.querySelector('.spoiler');
+  var button = document.querySelector('.spoiler-button');
+  button.textContent = 'Show more';
 
   function replaceText() {
-    if (button.textContent === "Show more") {
-      button.textContent = "Show less";
-      document.querySelector(".dots").style.display = "none";
-      button.style.display = "block";
+    if (button.textContent === 'Show more') {
+      button.textContent = 'Show less';
+      document.querySelector('.dots').style.display = 'none';
+      button.style.display = 'block';
     } else {
-      button.textContent = "Show more";
-      document.querySelector(".dots").style.display = "inline";
-      button.style.display = "inline";
+      button.textContent = 'Show more';
+      document.querySelector('.dots').style.display = 'inline';
+      button.style.display = 'inline';
     }
   }
 
-  button.addEventListener("click", function () {
-    spoiler.classList.toggle("show");
+  button.addEventListener('click', function () {
+    spoiler.classList.toggle('show');
     replaceText();
   });
 }
@@ -194,31 +196,87 @@ function getYear() {
 }
 
 function calcPages() {
-  var firstBtn = document.getElementById("second_next");
-  var secondBtn = document.getElementById("third_next");
-  var startOverBtn = document.getElementById("start_over");
-  var firstStep = document.getElementById("first_step");
-  var secondStep = document.getElementById("second_step");
-  var thirdStep = document.getElementById("third_step");
-  var stepOne = document.getElementById("step_one");
-  var stepTwo = document.getElementById("step_two");
-  firstBtn.addEventListener("click", function (e) {
+  var firstBtn = document.getElementById('second_next');
+  var secondBtn = document.getElementById('third_next');
+  var startOverBtn = document.getElementById('start_over');
+  var firstStep = document.getElementById('first_step');
+  var secondStep = document.getElementById('second_step');
+  var thirdStep = document.getElementById('third_step');
+  var stepOne = document.getElementById('step_one');
+  var stepTwo = document.getElementById('step_two');
+  var amountInput = document.querySelector('#summ');
+  var monthSelect = document.getElementById("month-select");
+  var yearSelect = document.getElementById("year-select");
+  var daySelect = document.getElementById("day-select");
+  var awardEl = document.querySelector('#award');
+  var interestRateEl = document.querySelector('#interestRate');
+  var totalEl = document.querySelector('#total');
+  var monthValue = monthSelect.value;
+  var yearValue = yearSelect.value;
+  var dayValue = daySelect.value;
+
+  var getInputDate = function getInputDate() {
+    return "".concat(yearValue, "-").concat(+monthValue + 1, "-").concat(dayValue);
+  };
+
+  var fullYear = getInputDate();
+  var amountValue = '';
+  var result;
+  firstBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    firstStep.classList.remove("step_show");
-    secondStep.classList.add("step_show");
-    stepOne.classList.remove("active_wrap");
-    stepTwo.classList.add("active_wrap");
+    firstStep.classList.remove('step_show');
+    secondStep.classList.add('step_show');
+    stepOne.classList.remove('active_wrap');
+    stepTwo.classList.add('active_wrap');
   });
-  secondBtn.addEventListener("click", function (e) {
+  secondBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    secondStep.classList.remove("step_show");
-    thirdStep.classList.add("step_show");
+    secondStep.classList.remove('step_show');
+    thirdStep.classList.add('step_show');
+    fullYear = getInputDate();
+    result = calculateInterest(+amountValue, fullYear);
+    awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
+    interestRateEl.textContent = "$".concat(result.totalInterestAccrued);
+    totalEl.textContent = "$".concat(result.totalAmount);
   });
-  startOverBtn.addEventListener("click", function (e) {
+  startOverBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    thirdStep.classList.remove("step_show");
-    firstStep.classList.add("step_show");
+    thirdStep.classList.remove('step_show');
+    firstStep.classList.add('step_show');
   });
+  amountInput.addEventListener('input', function (e) {
+    var value = e.target.value.replace(/[a-zA-Z]/g, '');
+    e.target.value = value;
+    amountValue = value;
+  });
+  monthSelect.addEventListener('change', function (e) {
+    monthValue = e.target.value;
+  });
+  yearSelect.addEventListener('change', function (e) {
+    yearValue = e.target.value;
+  });
+  daySelect.addEventListener('change', function (e) {
+    dayValue = e.target.value;
+  });
+}
+
+function calculateInterest(originalAmount, judgmentDate) {
+  var beforeApril30 = new Date("2022-04-30T00:00:00.000Z") > new Date(judgmentDate);
+  var interestRate = beforeApril30 ? 0.09 : 0.02;
+  var monthlyInterestRate = interestRate / 12;
+  var today = new Date();
+  var diffInMonths = (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 + (today.getMonth() - new Date(judgmentDate).getMonth());
+  var totalInterest = originalAmount * interestRate;
+  var monthlyInterest = originalAmount * monthlyInterestRate;
+  var totalInterestAccrued = beforeApril30 ? totalInterest : monthlyInterest * diffInMonths;
+  var totalAmount = originalAmount + totalInterestAccrued;
+  return {
+    totalAmount: totalAmount.toFixed(2),
+    totalInterestAccrued: totalInterestAccrued.toFixed(2),
+    beforeApril30: beforeApril30,
+    interestRate: (interestRate * 100).toFixed(2),
+    judgmentDate: new Date(judgmentDate).toLocaleDateString()
+  };
 }
 
 calcPages();

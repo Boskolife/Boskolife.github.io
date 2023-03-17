@@ -141,89 +141,104 @@ function hideText() {
 }
 
 function getDay() {
-    const monthSelect = document.getElementById("month-select");
-    const yearSelect = document.getElementById("year-select");
-    const daySelect = document.getElementById("day-select");
+  const monthSelect = document.getElementById("month-select");
+  const yearSelect = document.getElementById("year-select");
+  const daySelect = document.getElementById("day-select");
 
-    const daysInMonth = (month, year) => {
-        return new Date(year, month + 1, 0).getDate();
-    };
+  const daysInMonth = (month, year) => {
+    return new Date(year, month + 1, 0).getDate();
+  };
 
-    const populateDays = () => {
-        const month = parseInt(monthSelect.value, 10);
-        const year = parseInt(yearSelect.value, 10);
-        const days = daysInMonth(month, year);
+  const populateDays = () => {
+    const month = parseInt(monthSelect.value, 10);
+    const year = parseInt(yearSelect.value, 10);
+    const days = daysInMonth(month, year);
 
-        daySelect.innerHTML = "";
+    daySelect.innerHTML = "";
 
-        for (let day = 1; day <= days; day++) {
-            const option = document.createElement("option");
-            option.value = day;
-            option.text = day;
-            daySelect.appendChild(option);
-        }
+    for (let day = 1; day <= days; day++) {
+      const option = document.createElement("option");
+      option.value = day;
+      option.text = day;
+      daySelect.appendChild(option);
+    }
 
-        daySelect.querySelector("option:first-child").selected = true;
-    };
+    daySelect.querySelector("option:first-child").selected = true;
+  };
 
-    populateDays();
+  populateDays();
 
-    monthSelect.addEventListener("change", populateDays);
-    yearSelect.addEventListener("change", populateDays);
+  monthSelect.addEventListener("change", populateDays);
+  yearSelect.addEventListener("change", populateDays);
 }
 
 function getMonth() {
-    const select = document.getElementById("month-select");
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-    ];
+  const select = document.getElementById("month-select");
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-    months.forEach((month, i) => {
-        const option = document.createElement("option");
-        option.value = i;
-        option.text = month;
-        select.appendChild(option);
-    });
+  months.forEach((month, i) => {
+    const option = document.createElement("option");
+    option.value = i;
+    option.text = month;
+    select.appendChild(option);
+  });
 
-    select.options[0].selected = true;
+  select.options[0].selected = true;
 }
 
 function getYear() {
-    const select = document.getElementById("year-select");
-    const currentYear = new Date().getFullYear();
-    const endYear = currentYear + 2;
-    const startYear = 2000;
+  const select = document.getElementById("year-select");
+  const currentYear = new Date().getFullYear();
+  const endYear = currentYear + 2;
+  const startYear = 2000;
 
-    for (let year = startYear; year <= endYear; year++) {
-        const option = document.createElement("option");
-        option.value = year;
-        option.text = year;
-        select.appendChild(option);
-    }
+  for (let year = startYear; year <= endYear; year++) {
+    const option = document.createElement("option");
+    option.value = year;
+    option.text = year;
+    select.appendChild(option);
+  }
 
-    select.querySelector(`option[value='2000']`).selected = true;
+  select.querySelector(`option[value='2000']`).selected = true;
 }
 
 function calcPages() {
-    const firstBtn = document.getElementById("second_next");
-    const secondBtn = document.getElementById("third_next");
-    const startOverBtn = document.getElementById("start_over");
-    const firstStep = document.getElementById("first_step");
-    const secondStep = document.getElementById("second_step");
-    const thirdStep = document.getElementById("third_step");
-    const stepOne = document.getElementById("step_one");
-    const stepTwo = document.getElementById("step_two");
+    const firstBtn = document.getElementById('second_next');
+    const secondBtn = document.getElementById('third_next');
+    const startOverBtn = document.getElementById('start_over');
+    const firstStep = document.getElementById('first_step');
+    const secondStep = document.getElementById('second_step');
+    const thirdStep = document.getElementById('third_step');
+    const stepOne = document.getElementById('step_one');
+    const stepTwo = document.getElementById('step_two');
+    const amountInput = document.querySelector('#summ');
+    const monthSelect = document.getElementById("month-select");
+    const yearSelect = document.getElementById("year-select");
+    const daySelect = document.getElementById("day-select");
+    const awardEl = document.querySelector('#award');
+    const interestRateEl = document.querySelector('#interestRate');
+    const totalEl = document.querySelector('#total');
+
+    let monthValue = monthSelect.value;
+    let yearValue = yearSelect.value;
+    let dayValue = daySelect.value;
+    const getInputDate = () => `${yearValue}-${+monthValue + 1}-${dayValue}`;
+    let fullYear = getInputDate();
+    let amountValue = '';
+    let result;
 
     firstBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -235,15 +250,61 @@ function calcPages() {
 
     secondBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        secondStep.classList.remove("step_show");
-        thirdStep.classList.add("step_show");
-    });
+        secondStep.classList.remove('step_show')
+        thirdStep.classList.add('step_show');
+        fullYear = getInputDate();
+        result = calculateInterest(+amountValue, fullYear);
+        awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
+        interestRateEl.textContent = `$${result.totalInterestAccrued}`;
+        totalEl.textContent =`$${result.totalAmount}`
+    })
 
     startOverBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        thirdStep.classList.remove("step_show");
-        firstStep.classList.add("step_show");
-    });
+        thirdStep.classList.remove('step_show')
+        firstStep.classList.add('step_show');
+    })
+
+    amountInput.addEventListener('input', (e) => {
+        const value = e.target.value.replace(/[a-zA-Z]/g, '')
+        e.target.value = value;
+        amountValue = value;
+    })
+    monthSelect.addEventListener('change', (e) => {
+        monthValue = e.target.value;
+    })
+    yearSelect.addEventListener('change', (e) => {
+        yearValue = e.target.value;
+    })
+    daySelect.addEventListener('change', (e) => {
+        dayValue = e.target.value;
+    })
+}
+
+function calculateInterest(originalAmount, judgmentDate) {
+  const beforeApril30 =
+    new Date("2022-04-30T00:00:00.000Z") > new Date(judgmentDate);
+  const interestRate = beforeApril30 ? 0.09 : 0.02;
+  const monthlyInterestRate = interestRate / 12;
+  const today = new Date();
+  const diffInMonths =
+    (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 +
+    (today.getMonth() - new Date(judgmentDate).getMonth());
+
+  const totalInterest = originalAmount * interestRate;
+  const monthlyInterest = originalAmount * monthlyInterestRate;
+  const totalInterestAccrued = beforeApril30
+    ? totalInterest
+    : monthlyInterest * diffInMonths;
+  const totalAmount = originalAmount + totalInterestAccrued;
+
+  return {
+    totalAmount: totalAmount.toFixed(2),
+    totalInterestAccrued: totalInterestAccrued.toFixed(2),
+    beforeApril30: beforeApril30,
+    interestRate: (interestRate * 100).toFixed(2),
+    judgmentDate: new Date(judgmentDate).toLocaleDateString(),
+  };
 }
 
 calcPages();
