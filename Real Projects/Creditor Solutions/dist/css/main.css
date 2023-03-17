@@ -1812,15 +1812,6 @@ html {
     flex-direction: column;
     -ms-flex-align: start;
     align-items: flex-start; }
-    @media (min-width: 1025px) {
-      .privacy_policy .nav_table.fixed {
-        position: fixed;
-        top: 120px;
-        right: 20px; } }
-    .privacy_policy .nav_table.fixBottom {
-      position: fixed;
-      top: auto;
-      right: 20px; }
     @media (max-width: 1023px) {
       .privacy_policy .nav_table {
         position: fixed;

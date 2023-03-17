@@ -71,7 +71,7 @@ function initNavBtn() {
   var navBtn = document.querySelector(".nav_btn"),
       navTable = document.querySelector(".nav_table"),
       navLink = document.querySelectorAll(".nav_table_link"),
-      footer = document.querySelector("#footer");
+      header = document.querySelector('#header');
   navBtn.addEventListener("click", function () {
     navTable.classList.toggle("show_table");
     document.body.classList.toggle("body_lock");
@@ -82,19 +82,20 @@ function initNavBtn() {
       document.body.classList.remove("body_lock");
     });
   });
-  ScrollTrigger.create({
+  var fixedNav = ScrollTrigger.create({
     trigger: ".nav_table",
     start: "-90px top",
     endTrigger: "#footer",
-    toggleClass: "fixed",
-    end: "top 80%+=100px",
-    onLeave: function onLeave(self) {
-      self.trigger.classList.add("fixBottom"); // self.trigger.style.bottom = `${footer.clientHeight + 50}px`;
-    },
-    onEnterBack: function onEnterBack(self) {
-      self.trigger.classList.remove("fixBottom");
-    }
+    end: "top top+=".concat(navTable.clientHeight + header.clientHeight + 25),
+    pin: true
   });
+
+  var toggleFixedNav = function toggleFixedNav() {
+    return window.outerWidth < 1024 ? fixedNav.disable() : fixedNav.enable();
+  };
+
+  window.addEventListener('resize', toggleFixedNav);
+  window.addEventListener('load', toggleFixedNav);
   ScrollTrigger.create({
     trigger: "#flyBtn",
     start: "top bottom",
