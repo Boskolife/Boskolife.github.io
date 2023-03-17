@@ -242,18 +242,31 @@ function calcPages() {
     let monthValue = monthSelect.value;
     let yearValue = yearSelect.value;
     let dayValue = daySelect.value;
-    const getInputDate = () => new Date(yearValue, monthValue, dayValue);
+    const getInputDate = () => `${yearValue}-${+monthValue + 1}-${dayValue}`;
     let fullYear = getInputDate();
     let amountValue = '';
     let result;
 
+    const resetCalculator = () => {
+        yearSelect.querySelector(`option[value='2000']`).selected = true;
+        yearValue = yearSelect.value;
+        monthSelect.options[0].selected = true;
+        monthValue = monthSelect.value;
+        daySelect.querySelector("option:first-child").selected = true;
+        dayValue = daySelect.value;
+        amountInput.value = '';
+        amountValue = '';
+        thirdStep.classList.remove('step_show')
+        firstStep.classList.add('step_show');
+    }
+
     firstBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        if(!amountValue) return;
         firstStep.classList.remove("step_show");
         secondStep.classList.add("step_show");
         stepOne.classList.remove("active_wrap");
         stepTwo.classList.add("active_wrap");
-
     });
 
     secondBtn.addEventListener("click", (e) => {
@@ -263,15 +276,13 @@ function calcPages() {
         fullYear = getInputDate();
         result = nyJudgmentInterest(+amountValue, fullYear);
         awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
-        interestRateEl.textContent = `$${result.interest}`;
-        totalEl.textContent =`$${result.totalValue}`
+        interestRateEl.textContent = `$${result.interest.toFixed(2)}`;
+        totalEl.textContent =`$${result.totalValue.toFixed(2)}`
     })
 
     startOverBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        thirdStep.classList.remove('step_show')
-        firstStep.classList.add('step_show');
-        amountInput.value = '';
+        resetCalculator();
     })
 
     amountInput.addEventListener('input', (e) => {
@@ -300,23 +311,24 @@ function calcPages() {
 }
 
 function nyJudgmentInterest(judgmentAmount, judgmentDate) {
-    const beforeApril30Rate = 0.0075; // 0.75% interest rate before April 30, 2022
-    const afterApril30Rate = 0.02; // 2% interest rate after April 30, 2022
+    const beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
+    const afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
     const april30Date = new Date('2022-04-30'); // date when interest rate changes
+    const today = new Date();
   
     // Calculate the number of months between the judgment date and April 30, 2022
-    const months = (april30Date.getFullYear() - judgmentDate.getFullYear()) * 12 + (april30Date.getMonth() - judgmentDate.getMonth());
+    const months =
+      (today.getFullYear() - new Date(judgmentDate).getFullYear()) * 12 +
+      (today.getMonth() - new Date(judgmentDate).getMonth());
   
     // Determine the interest rate based on the judgment date
     const rate = judgmentDate < april30Date ? beforeApril30Rate : afterApril30Rate;
-  
+    const interestRatePerMonth = judgmentAmount / 100 * rate;
     // Calculate the total interest earned
-    const interest = judgmentAmount * rate * months;
+    const interest = interestRatePerMonth * months;
   
     // Calculate the total value of the judgment including interest
     const totalValue = judgmentAmount + interest;
 
     return { interest, totalValue };
 }
-
-// console.log(nyJudgmentInterest(100, new Date(2022, 0, 1)))
