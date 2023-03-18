@@ -249,7 +249,14 @@ function calcPages() {
 
   firstBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    if (!amountValue) return;
+
+    if (!amountValue) {
+      amountInput.parentNode.classList.add('error');
+      return;
+    }
+
+    ;
+    amountInput.parentNode.classList.remove('error');
     firstStep.classList.remove("step_show");
     secondStep.classList.add("step_show");
     stepOne.classList.remove("active_wrap");
@@ -283,6 +290,7 @@ function calcPages() {
       return;
     }
 
+    amountInput.parentNode.classList.remove('error');
     e.target.value = "$ ".concat(targetValue);
     amountValue = targetValue;
   });

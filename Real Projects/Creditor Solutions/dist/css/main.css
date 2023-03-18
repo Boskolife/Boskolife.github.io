@@ -3223,6 +3223,17 @@ html {
         max-width: 300px;
         width: 100%;
         margin: 0 auto; } }
+  .calc .sum-field-wrap {
+    position: relative; }
+    .calc .sum-field-wrap.error .error_text {
+      display: block; }
+    .calc .sum-field-wrap .error_text {
+      position: absolute;
+      color: #d86464;
+      font-weight: 600;
+      font-size: 12px;
+      top: calc(100% + 2px);
+      display: none; }
   .calc .summ {
     border: none;
     background-color: #EAEEFC;
