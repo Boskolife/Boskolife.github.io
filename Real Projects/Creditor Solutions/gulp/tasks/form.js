@@ -10,6 +10,6 @@ module.exports = {
     },
     moveFormFiles: () => {
         return gulp.src('src/form/**/*')
-        .pipe(gulp.dest('dist/form'));
+        .pipe(gulp.dest('dist/src/form'));
     }
 }
