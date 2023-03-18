@@ -2294,6 +2294,25 @@ html {
         }
     }
 
+    .sum-field-wrap {
+        position: relative;
+
+        &.error {
+            .error_text {
+                display: block;
+            }
+        }
+
+        .error_text {
+            position: absolute;
+            color: rgb(216, 100, 100);
+            font-weight: 600;
+            font-size: 12px;
+            top: calc(100% + 2px);
+            display: none;
+        }
+    }
+
     .summ {
         border: none;
         background-color: #EAEEFC;
