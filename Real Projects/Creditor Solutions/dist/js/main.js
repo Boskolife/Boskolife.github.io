@@ -344,12 +344,13 @@ function initPuzzleAnimation() {
   var ww = window.innerWidth;
   var wh = window.innerHeight;
   initMainSection();
+  initProposSection();
 
   function initMainSection() {
     var mainSection = document.querySelector('.main-section');
-    var puzzleTopRight = document.querySelector(".puzzle-top-right");
-    var puzzleBottomRight = document.querySelector(".puzzle-bottom-right");
-    var puzzleBottomLeft = document.querySelector(".puzzle-bottom-left");
+    var puzzleTopRight = mainSection.querySelector(".puzzle-top-right");
+    var puzzleBottomRight = mainSection.querySelector(".puzzle-bottom-right");
+    var puzzleBottomLeft = mainSection.querySelector(".puzzle-bottom-left");
 
     var getPosXtopRight = function getPosXtopRight() {
       return window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
@@ -403,6 +404,133 @@ function initPuzzleAnimation() {
         end: "50%-=".concat(headerHeight),
         scrub: 1,
         invalidateOnRefresh: true
+      }
+    });
+  }
+
+  function initProposSection() {
+    var section = document.querySelector('.propos');
+    var puzzlesContainer = document.querySelector('.puzzles-container');
+    var leftSide = document.querySelector('.left-side');
+    var rightSide = document.querySelector('.right-side');
+    var puzzleTopLeft = section.querySelector(".puzzle-top-left");
+    var puzzleTopRight = section.querySelector(".puzzle-top-right");
+    var puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
+    var puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
+
+    var getPosXLeft = function getPosXLeft() {
+      return window.innerWidth / 2 - puzzleTopLeft.clientWidth / 2;
+    };
+
+    var getPosYLeft = function getPosYLeft() {
+      return section.clientHeight / 2;
+    };
+
+    var getPosXRight = function getPosXRight() {
+      return leftSide.clientWidth - puzzleTopLeft.clientWidth;
+    };
+
+    gsap.fromTo(puzzleTopLeft, {
+      x: 0
+    }, {
+      x: function x() {
+        return getPosXLeft();
+      },
+      y: function y() {
+        return getPosYLeft();
+      },
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true //   markers: true,
+
+      }
+    });
+    gsap.fromTo(puzzleBottomLeft, {
+      x: 0,
+      rotation: 0
+    }, {
+      x: function x() {
+        return getPosXLeft();
+      },
+      rotation: 0,
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+    gsap.fromTo(puzzleTopRight, {
+      x: 0
+    }, {
+      x: function x() {
+        return -getPosXLeft();
+      },
+      // rotation: -20,
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true //   markers: true,
+
+      }
+    });
+    gsap.to(puzzleBottomRight, {
+      x: function x() {
+        return -getPosXLeft();
+      },
+      duration: 0
+    });
+    gsap.fromTo(puzzleBottomRight, {
+      y: 0
+    }, {
+      y: function y() {
+        return -getPosYLeft();
+      },
+      // rotation: -20,
+      scrollTrigger: {
+        trigger: section,
+        start: "top+=200 bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true //   markers: true,
+
+      }
+    });
+    gsap.fromTo(puzzlesContainer, {
+      rotation: 15,
+      y: 0
+    }, {
+      rotation: -35,
+      y: -150,
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "bottom",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+    gsap.fromTo(rightSide, {
+      x: 0
+    }, {
+      x: function x() {
+        return -375;
+      },
+      scrollTrigger: {
+        trigger: section,
+        start: "50%+=".concat(headerHeight, " bottom"),
+        end: "bottom",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
       }
     });
   }
