@@ -776,12 +776,33 @@ header {
     width: 0;
     transition: all .3s linear; }
 
+.main-section {
+  position: relative;
+  overflow: hidden; }
+  .main-section .puzzle {
+    position: absolute;
+    width: 589px;
+    fill: #f1f2f5; }
+    .main-section .puzzle-top-right {
+      top: -310px;
+      right: -304px; }
+    .main-section .puzzle-bottom-right {
+      top: 495px;
+      right: -250px; }
+    .main-section .puzzle-bottom-left {
+      top: 175px;
+      left: -304px; }
+
 body {
   background-color: #ffffff;
   font-family: 'Arimo'; }
 
 html {
   scroll-behavior: smooth; }
+
+#wrapper {
+  position: relative;
+  overflow: hidden; }
 
 @-webkit-keyframes bottom_border {
   0% {

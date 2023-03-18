@@ -7,6 +7,14 @@ findHref();
 renderDateSelects();
 hideText();
 calcPages();
+initPuzzleAnimation();
+winTriggersMethods.forEach(function (method) {
+  window.addEventListener(method, function () {
+    // worst case to refresh animation?
+    ScrollTrigger.killAll();
+    initPuzzleAnimation();
+  });
+});
 
 function findHref() {
   var element = document.getElementById("menu").getElementsByTagName("a");
@@ -327,5 +335,75 @@ function nyJudgmentInterest(judgmentAmount, judgmentDate) {
     interest: interest,
     totalValue: totalValue
   };
+}
+
+function initPuzzleAnimation() {
+  var header = document.querySelector("header");
+  var headerHeight = header.clientHeight;
+  var ww = window.innerWidth;
+  var wh = window.innerHeight;
+  initMainSection();
+
+  function initMainSection() {
+    var mainSection = document.querySelector('.main-section');
+    var puzzleTopRight = document.querySelector(".puzzle-top-right");
+    var puzzleBottomRight = document.querySelector(".puzzle-bottom-right");
+    var puzzleBottomLeft = document.querySelector(".puzzle-bottom-left");
+
+    var getPosXtopRight = function getPosXtopRight() {
+      return window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
+    };
+
+    gsap.from(puzzleTopRight, {
+      x: 250
+    });
+    gsap.fromTo(puzzleTopRight, {
+      x: 0
+    }, {
+      x: function x() {
+        return -getPosXtopRight();
+      },
+      scrollTrigger: {
+        trigger: mainSection,
+        start: "top top",
+        end: "50%-=".concat(headerHeight),
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+    gsap.to(puzzleBottomRight, {
+      x: function x() {
+        return -getPosXtopRight();
+      },
+      duration: 0
+    });
+    gsap.to(puzzleBottomRight, {
+      y: -270,
+      scrollTrigger: {
+        trigger: mainSection,
+        start: "top+=".concat(headerHeight, " top"),
+        end: "50%-=".concat(headerHeight),
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+    gsap.from(puzzleBottomLeft, {
+      x: -250
+    });
+    gsap.fromTo(puzzleBottomLeft, {
+      x: 0
+    }, {
+      x: function x() {
+        return getPosXtopRight();
+      },
+      scrollTrigger: {
+        trigger: mainSection,
+        start: "top top",
+        end: "50%-=".concat(headerHeight),
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+  }
 }
 //# sourceMappingURL=main.js.map
