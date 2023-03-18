@@ -1,5 +1,6 @@
 "use strict";
 
+var winTriggersMethods = ['resize', 'load'];
 initTabs();
 initBurger();
 initNavBtn();
