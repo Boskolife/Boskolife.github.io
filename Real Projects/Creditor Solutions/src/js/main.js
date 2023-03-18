@@ -373,9 +373,13 @@ function initPuzzleAnimation() {
       const getPosXtopRight = () => window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
   
   
-      gsap.from(puzzleTopRight, {
+      gsap.fromTo(
+        puzzleTopRight,
+        {
           x: 250,
-      });
+        },
+        { x: 0 }
+      );
       gsap.fromTo(
         puzzleTopRight,
         { x: 0 },
@@ -406,9 +410,13 @@ function initPuzzleAnimation() {
         },
       });
   
-      gsap.from(puzzleBottomLeft, {
+      gsap.fromTo(
+        puzzleBottomLeft,
+        {
           x: -250,
-      });
+        },
+        { x: 0 }
+      );
       gsap.fromTo(
         puzzleBottomLeft,
         { x: 0 },
