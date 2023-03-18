@@ -2252,6 +2252,19 @@ html {
         @include adaptiv-vaule("margin-bottom", 25, 15, 1);
     }
 
+    .show_tablet{
+        display: block;
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+    .hide_tablet{
+        display: none;
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
     .calc_descr {
         font-weight: 500;
         @include adaptiv-vaule("font-size", 16, 14, 1);

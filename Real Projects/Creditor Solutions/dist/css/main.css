@@ -3229,6 +3229,16 @@ html {
     @media (max-width: 1350px) {
       .calc .calc_title {
         margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
+  .calc .show_tablet {
+    display: block; }
+    @media (max-width: 767px) {
+      .calc .show_tablet {
+        display: none; } }
+  .calc .hide_tablet {
+    display: none; }
+    @media (max-width: 767px) {
+      .calc .hide_tablet {
+        display: block; } }
   .calc .calc_descr {
     font-weight: 500;
     /* Только если меньше контейнера */
