@@ -1,3 +1,4 @@
+const winTriggersMethods = ['resize', 'load'];
 initTabs();
 initBurger();
 initNavBtn();
