@@ -5,6 +5,14 @@ findHref();
 renderDateSelects()
 hideText();
 calcPages();
+initPuzzleAnimation();
+winTriggersMethods.forEach((method) => {
+    window.addEventListener(method, () => {
+        // worst case to refresh animation?
+        ScrollTrigger.killAll();
+        initPuzzleAnimation()
+    })
+})
 
 function findHref() {
     let element = document.getElementById("menu").getElementsByTagName("a");
@@ -346,3 +354,72 @@ function nyJudgmentInterest(judgmentAmount, judgmentDate) {
 
     return { interest, totalValue };
 }
+
+function initPuzzleAnimation() {
+    const header = document.querySelector("header");
+    const headerHeight = header.clientHeight;
+    const ww = window.innerWidth;
+    const wh = window.innerHeight;
+  
+    initMainSection();
+  
+    function initMainSection() {
+      const mainSection = document.querySelector('.main-section')
+      const puzzleTopRight = document.querySelector(".puzzle-top-right");
+      const puzzleBottomRight = document.querySelector(".puzzle-bottom-right");
+      const puzzleBottomLeft = document.querySelector(".puzzle-bottom-left")
+      const getPosXtopRight = () => window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
+  
+  
+      gsap.from(puzzleTopRight, {
+          x: 250,
+      });
+      gsap.fromTo(
+        puzzleTopRight,
+        { x: 0 },
+        {
+          x: () => -getPosXtopRight(),
+          scrollTrigger: {
+            trigger: mainSection,
+            start: `top top`,
+            end: `50%-=${headerHeight}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+  
+      gsap.to(puzzleBottomRight, {
+          x: () => -getPosXtopRight(),
+          duration: 0,
+      });
+      gsap.to(puzzleBottomRight, {
+        y: -270,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: `top+=${headerHeight} top`,
+          end: `50%-=${headerHeight}`,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+  
+      gsap.from(puzzleBottomLeft, {
+          x: -250,
+      });
+      gsap.fromTo(
+        puzzleBottomLeft,
+        { x: 0 },
+        {
+          x: () => getPosXtopRight(),
+          scrollTrigger: {
+            trigger: mainSection,
+            start: `top top`,
+            end: `50%-=${headerHeight}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+    }
+  }
