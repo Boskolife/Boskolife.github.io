@@ -605,17 +605,17 @@ header {
   header::before {
     content: '';
     position: absolute;
-    height: 200%;
+    height: 100%;
     width: 1px;
-    top: -50%;
+    bottom: 0;
     right: 10%;
     background-color: #ECECEC; }
   header::after {
     content: '';
     position: absolute;
-    height: 200%;
+    height: 100%;
     width: 1px;
-    top: -50%;
+    bottom: 0;
     right: 41%;
     background-color: #ECECEC; }
   @media (max-width: 479px) {
