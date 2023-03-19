@@ -3607,12 +3607,14 @@ html {
     @media (max-width: 1350px) {
       .calc .third_step .amount {
         font-size: calc(28px + 8 * ((100vw - calc(375px)) / 975)); } }
-  .calc .third_step .total_amount {
-    width: 170px; }
-  .calc .third_step #total {
+  .calc .third_step .amount_res {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 10px;
     border: 1px solid #D1D4DE;
     border-radius: 10px;
-    padding: 5px; }
+    margin: 0 auto; }
   .calc .third_step .btn_wrap {
     display: -ms-flexbox;
     display: flex;
