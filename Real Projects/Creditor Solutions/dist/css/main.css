@@ -596,7 +596,6 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  overflow: hidden;
   /*  .menu_active {
         display: block;
     } */ }
@@ -2125,6 +2124,12 @@ html {
     @media (max-width: 1350px) {
       .our_purpose .middle_descr .top_descr {
         margin-bottom: calc(15px + 5 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1023px) {
+      .our_purpose .middle_descr .top_descr {
+        text-align: center; } }
+    @media (max-width: 767px) {
+      .our_purpose .middle_descr .top_descr {
+        text-align: start; } }
   .our_purpose .middle_descr .bot_descr {
     font-weight: 500;
     font-size: 16px;
@@ -2136,6 +2141,12 @@ html {
     @media (max-width: 1350px) {
       .our_purpose .middle_descr .bot_descr {
         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1023px) {
+      .our_purpose .middle_descr .bot_descr {
+        text-align: center; } }
+    @media (max-width: 767px) {
+      .our_purpose .middle_descr .bot_descr {
+        text-align: start; } }
 
 .our_purpose .bot_text {
   /* Только если меньше контейнера */
