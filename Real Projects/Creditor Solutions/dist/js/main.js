@@ -325,7 +325,6 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var judgmentDate = date.split('-').map(function (num) {
     return +num < 10 ? "0".concat(num) : num;
   }).join('-');
-  console.log('judgmentDate: ', judgmentDate);
   var beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
 
   var afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
