@@ -463,7 +463,6 @@ html {
         @include media (">tablet") {
             &:hover {
                 transform: scale(1.05);
-                box-shadow: 1px 1px 10px $blue;
                 transition: all .3s linear;
             }
         }
@@ -776,14 +775,12 @@ html {
 
 .faq_page {
     padding: 0;
-    height: 100vh;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
 
     .container {
-        flex: 1 1 auto;
         @include adaptiv-vaule("padding-top", 240, 110, 1);
         @include adaptiv-vaule("padding-bottom", 50, 25, 1);
     }
@@ -1913,6 +1910,43 @@ html {
         text-decoration: underline;
     }
 
+    .step_img_wrap{
+        max-height: 500px;
+        position: relative;
+        overflow: hidden;
+        padding-top: 30px;
+
+        &:hover{
+
+            .step_img{
+                transform: scale(1.1);
+                transition: all .3s linear;
+            }
+
+            &::after{
+                background-color: #D5DDEC;
+                transition: all .3s linear;
+            }
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background-color: #F2F4F8;
+            z-index: -1;
+            border-radius: 14px;
+            transition: all .3s linear;
+        }
+    }
+
+    .step_img{
+        transition: all .3s linear;
+    }
+
     .blue_btn {
         @include media ("<phone") {
             min-width: 100%;
@@ -2197,6 +2231,14 @@ html {
         display: none;
     }
 
+    .first_step{
+        .blue_btn{
+            @include media ("<tablet") {
+                margin-top: 30px;
+            }
+        }
+    }
+
     .step_show {
         display: block;
     }
@@ -2250,6 +2292,10 @@ html {
         text-transform: uppercase;
         color: $black;
         @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+
+        @include media ("<phone") {
+            text-align: start;
+        }
     }
 
     .show_tablet{
@@ -2273,6 +2319,7 @@ html {
         letter-spacing: -0.01em;
         color: $gray_4;
         max-width: 770px;
+        margin: 0 auto;
         @include adaptiv-vaule("margin-bottom", 30, 25, 1);
 
         @include media ("<tablet") {
@@ -2340,6 +2387,7 @@ html {
         height: 56px;
         line-height: 56px;
         font-size: 26px;
+        color: $blue;
         @include adaptiv-vaule("width", 280, 200, 1);
 
         &::placeholder {
@@ -2498,6 +2546,10 @@ html {
     }
 
     .third_step {
+
+        .calc_title{
+            text-align: center;
+        }
 
         .calc_wrap {
             margin: 0;

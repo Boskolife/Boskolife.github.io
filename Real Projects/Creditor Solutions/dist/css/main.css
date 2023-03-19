@@ -705,34 +705,6 @@ header {
         font-size: 20px; } }
   header .item_active {
     color: #031C77; }
-  header .phone {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    /* Только если меньше контейнера */
-    margin-left: 20px; }
-    @media (max-width: 1350px) {
-      header .phone {
-        margin-left: calc(1px + 19 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1023px) {
-      header .phone {
-        display: none; } }
-    header .phone:hover .phone_img {
-      -webkit-transform: rotateY(-180deg);
-      transform: rotateY(-180deg);
-      transition: all .3s ease; }
-  header .phone_img {
-    margin-right: 13px;
-    transition: all .3s ease; }
-  header .phone_number {
-    color: #1D1D20;
-    font-weight: 700;
-    /* Только если меньше контейнера */
-    font-size: 18px; }
-    @media (max-width: 1350px) {
-      header .phone_number {
-        font-size: calc(5px + 13 * ((100vw - calc(375px)) / 975)); } }
   header .burger_menu {
     display: none; }
     @media (max-width: 1023px) {
@@ -1362,7 +1334,6 @@ html {
       .cards .card:hover {
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
-        box-shadow: 1px 1px 10px #031C77;
         transition: all .3s linear; } }
   .cards .card_img {
     width: 62px;
@@ -1675,7 +1646,6 @@ html {
 
 .faq_page {
   padding: 0;
-  height: 100vh;
   position: relative;
   z-index: 2;
   display: -ms-flexbox;
@@ -1683,8 +1653,6 @@ html {
   -ms-flex-direction: column;
   flex-direction: column; }
   .faq_page .container {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
     /* Только если меньше контейнера */
     padding-top: 240px;
     /* Только если меньше контейнера */
@@ -2916,6 +2884,31 @@ html {
         text-align: start; } }
   .steps .item_link {
     text-decoration: underline; }
+  .steps .step_img_wrap {
+    max-height: 500px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px; }
+    .steps .step_img_wrap:hover .step_img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      transition: all .3s linear; }
+    .steps .step_img_wrap:hover::after {
+      background-color: #D5DDEC;
+      transition: all .3s linear; }
+    .steps .step_img_wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      background-color: #F2F4F8;
+      z-index: -1;
+      border-radius: 14px;
+      transition: all .3s linear; }
+  .steps .step_img {
+    transition: all .3s linear; }
   @media (max-width: 479px) {
     .steps .blue_btn {
       min-width: 100%; } }
@@ -3181,6 +3174,9 @@ html {
     @media (max-width: 1350px) {
       .calc .calc_content {
         padding-left: calc(25px + 95 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 767px) {
+    .calc .first_step .blue_btn {
+      margin-top: 30px; } }
   .calc .step_show {
     display: block; }
   .calc .calc_icon_top,
@@ -3229,6 +3225,9 @@ html {
     @media (max-width: 1350px) {
       .calc .calc_title {
         margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .calc .calc_title {
+        text-align: start; } }
   .calc .show_tablet {
     display: block; }
     @media (max-width: 767px) {
@@ -3248,6 +3247,7 @@ html {
     letter-spacing: -0.01em;
     color: #3D3E45;
     max-width: 770px;
+    margin: 0 auto;
     /* Только если меньше контейнера */
     margin-bottom: 30px; }
     @media (max-width: 1350px) {
@@ -3320,6 +3320,7 @@ html {
     height: 56px;
     line-height: 56px;
     font-size: 26px;
+    color: #031C77;
     /* Только если меньше контейнера */
     width: 280px; }
     @media (max-width: 1350px) {
@@ -3502,6 +3503,8 @@ html {
           flex-direction: column;
           -ms-flex-align: center;
           align-items: center; } }
+  .calc .third_step .calc_title {
+    text-align: center; }
   .calc .third_step .calc_wrap {
     margin: 0; }
   .calc .third_step .result {
@@ -3703,10 +3706,17 @@ footer {
     align-items: center; }
     .footer_top .link:not(:last-child) {
       margin-bottom: 15px; }
+  .footer_top .interactive:hover .link_img {
+    -webkit-transform: rotateY(180deg) scale(1.01);
+    transform: rotateY(180deg) scale(1.01);
+    transition: all .3s ease; }
+  .footer_top .interactive:hover .link_title {
+    text-decoration: underline; }
   .footer_top .link_img {
     margin-right: 13px;
     width: 24px;
-    height: 24px; }
+    height: 24px;
+    transition: all .3s ease; }
   .footer_top .link_title {
     font-weight: 500;
     /* Только если меньше контейнера */

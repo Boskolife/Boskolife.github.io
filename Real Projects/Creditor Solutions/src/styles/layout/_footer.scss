@@ -89,10 +89,24 @@ footer {
         }
     }
 
+    .interactive{
+        &:hover{
+            .link_img{
+                transform: rotateY(180deg) scale(1.01);
+                transition: all .3s ease;
+            }
+
+            .link_title{
+                text-decoration: underline;
+            }
+        }
+    }
+
     .link_img {
         margin-right: 13px;
         width: 24px;
         height: 24px;
+        transition: all .3s ease;
     }
 
     .link_title {
