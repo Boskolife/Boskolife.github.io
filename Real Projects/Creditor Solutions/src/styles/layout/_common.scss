@@ -1167,6 +1167,14 @@ html {
             @include adaptiv-vaule("padding-bottom", 20, 15, 1);
             @include adaptiv-vaule("margin-bottom", 20, 15, 1);
             border-bottom: 1px solid $gray_3;
+
+            @include media ("<desktop") {
+                text-align: center;
+            }
+
+            @include media ("<tablet") {
+                text-align: start;
+            }
         }
 
         .bot_descr {
@@ -1176,6 +1184,14 @@ html {
             line-height: 175%;
             letter-spacing: -0.01em;
             color: $gray_2;
+
+            @include media ("<desktop") {
+                text-align: center;
+            }
+
+            @include media ("<tablet") {
+                text-align: start;
+            }
         }
     }
 
