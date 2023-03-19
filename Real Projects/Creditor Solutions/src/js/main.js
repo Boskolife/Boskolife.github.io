@@ -450,27 +450,26 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
           puzzleTopLeft,
-          { x: 0 },
+          { x: -getPosXLeft(), y: -getPosYLeft() },
           {
-            x: () => getPosXLeft(),
-            y: () => getPosYLeft(),
+            x: 0,
+            y: 0,
             scrollTrigger: {
               trigger: section,
               start: `top bottom`,
               end: `top`,
               scrub: 1,
               invalidateOnRefresh: true,
-            //   markers: true,
+              //   markers: true,
             },
           }
         );
 
         gsap.fromTo(
             puzzleBottomLeft,
-            { x: 0, rotation: 0 },
+            { x: -500},
             {
-              x: () => getPosXLeft(),
-              rotation: 0,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top bottom`,
@@ -484,10 +483,9 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
             puzzleTopRight,
-            { x: 0 },
+            { x: () => getPosXLeft() },
             {
-              x: () => -getPosXLeft(),
-              // rotation: -20,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top bottom`,
@@ -499,16 +497,11 @@ function initPuzzleAnimation() {
             }
         );
 
-        gsap.to(puzzleBottomRight, {
-            x: () => -getPosXLeft(),
-            duration: 0,
-        });
         gsap.fromTo(
             puzzleBottomRight,
-            { y: 0 },
+            { y: getPosYLeft() },
             {
-              y: () => -getPosYLeft(),
-              // rotation: -20,
+              y: () => 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top+=200 bottom`,
@@ -536,11 +529,13 @@ function initPuzzleAnimation() {
               },
             }
         );
+
+        gsap.to(rightSide, {x: 375})
         gsap.fromTo(
             rightSide,
-            { x: 0 },
+            { x: 375 },
             {
-              x: () => -375,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `50%+=${headerHeight} bottom`,
@@ -634,6 +629,6 @@ function initPuzzleAnimation() {
             // markers: true,
           },
         }
-    );
+      );
     }
 }
