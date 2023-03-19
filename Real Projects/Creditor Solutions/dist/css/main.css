@@ -3124,7 +3124,9 @@ html {
   /* Только если меньше контейнера */
   padding-right: 170px;
   /* Только если меньше контейнера */
-  padding-left: 170px; }
+  padding-left: 170px;
+  height: 100vh;
+  overflow: auto; }
   @media (max-width: 1350px) {
     .calc {
       padding-top: calc(90px + 70 * ((100vw - calc(375px)) / 975)); } }
