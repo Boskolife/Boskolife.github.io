@@ -558,13 +558,6 @@ function initPuzzleAnimation() {
       const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
       const puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
 
-      const { width, height } = puzzlesContainer.getBoundingClientRect();
-      const scale = {
-        x: puzzlesContainer.offsetWidth / width,
-        y: puzzlesContainer.offsetHeight / height,
-      };
-      console.log('scale: ', scale);
-
       gsap.fromTo(
         puzzlesContainer,
         { rotation: 20 },
@@ -614,10 +607,10 @@ function initPuzzleAnimation() {
         }
       );
 
-      gsap.to(rightSide, { x: 400, duration: 0 });
+      gsap.to(rightSide, { x: 300, duration: 0 });
       gsap.fromTo(
         rightSide,
-        { x: 400 },
+        { x: 300 },
         {
           x: 0,
           scrollTrigger: {
