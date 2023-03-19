@@ -12,8 +12,14 @@ initPuzzleAnimation();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
-    ScrollTrigger.killAll();
-    initPuzzleAnimation();
+    try {
+      var _ScrollTrigger;
+
+      (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
+      initPuzzleAnimation();
+    } catch (e) {
+      console.log('e: ', e);
+    }
   });
 });
 
@@ -121,27 +127,28 @@ function initNavBtn() {
 }
 
 function hideText() {
-  var spoiler = document.querySelector(".spoiler");
-  var button = document.querySelector(".spoiler-button");
-  if (!spoiler || !button) return;
-  button.textContent = "Show more";
+  var buttons = document.querySelectorAll(".spoiler-button");
+  if (!buttons.length) return;
+  buttons.forEach(function (btn) {
+    btn.textContent = "Show more";
+    btn.addEventListener("click", function () {
+      var spoiler = btn.previousElementSibling;
+      spoiler.classList.toggle("show");
+      replaceText(btn);
+    });
+  });
 
-  function replaceText() {
-    if (button.textContent === "Show more") {
-      button.textContent = "Show less";
+  function replaceText(btn) {
+    if (btn.textContent === "Show more") {
+      btn.textContent = "Show less";
       document.querySelector(".dots").style.display = "none";
-      button.style.display = "block";
+      btn.style.display = "block";
     } else {
-      button.textContent = "Show more";
+      btn.textContent = "Show more";
       document.querySelector(".dots").style.display = "inline";
-      button.style.display = "inline";
+      btn.style.display = "inline";
     }
   }
-
-  button.addEventListener("click", function () {
-    spoiler.classList.toggle("show");
-    replaceText();
-  });
 }
 
 function renderDateSelects() {
@@ -339,10 +346,9 @@ function nyJudgmentInterest(judgmentAmount, judgmentDate) {
 }
 
 function initPuzzleAnimation() {
+  if (!document.querySelector('.puzzle')) return;
   var header = document.querySelector("header");
   var headerHeight = header.clientHeight;
-  var ww = window.innerWidth;
-  var wh = window.innerHeight;
   initMainSection();
   initProposSection();
   initFaqSection();

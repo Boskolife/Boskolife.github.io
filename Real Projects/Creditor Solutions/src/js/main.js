@@ -7,12 +7,17 @@ renderDateSelects()
 hideText();
 calcPages();
 initPuzzleAnimation();
+
 winTriggersMethods.forEach((method) => {
-    window.addEventListener(method, () => {
-        // worst case to refresh animation?
-        ScrollTrigger.killAll();
+  window.addEventListener(method, () => {
+      // worst case to refresh animation?
+      try {
+        ScrollTrigger?.killAll();
         initPuzzleAnimation()
-    })
+      } catch(e) {
+        console.log('e: ', e);
+      }
+  })
 })
 
 function findHref() {
@@ -121,29 +126,29 @@ function initNavBtn() {
 }
 
 function hideText() {
-    const spoiler = document.querySelector(".spoiler");
-    const button = document.querySelector(".spoiler-button");
+    const buttons = document.querySelectorAll(".spoiler-button");
+    if(!buttons.length) return;
 
-    if(!spoiler || !button) return;
+    buttons.forEach((btn) => {
+      btn.textContent = "Show more";
+      btn.addEventListener("click", function () {
+        const spoiler = btn.previousElementSibling;
+        spoiler.classList.toggle("show");
+        replaceText(btn);
+      });
+    })
 
-    button.textContent = "Show more";
-
-    function replaceText() {
-        if (button.textContent === "Show more") {
-            button.textContent = "Show less";
+    function replaceText(btn) {
+        if (btn.textContent === "Show more") {
+            btn.textContent = "Show less";
             document.querySelector(".dots").style.display = "none";
-            button.style.display = "block";
+            btn.style.display = "block";
         } else {
-            button.textContent = "Show more";
+            btn.textContent = "Show more";
             document.querySelector(".dots").style.display = "inline";
-            button.style.display = "inline";
+            btn.style.display = "inline";
         }
     }
-
-    button.addEventListener("click", function () {
-        spoiler.classList.toggle("show");
-        replaceText();
-    });
 }
 
 function renderDateSelects() {
@@ -357,10 +362,10 @@ function nyJudgmentInterest(judgmentAmount, judgmentDate) {
 }
 
 function initPuzzleAnimation() {
+    if(!document.querySelector('.puzzle')) return;
     const header = document.querySelector("header");
     const headerHeight = header.clientHeight;
-    const ww = window.innerWidth;
-    const wh = window.innerHeight;
+
   
     initMainSection();
     initProposSection();
