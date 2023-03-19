@@ -364,6 +364,7 @@ function initPuzzleAnimation() {
   
     initMainSection();
     initProposSection();
+    initFaqSection();
 
     function initMainSection() {
       const mainSection = document.querySelector('.main-section')
@@ -435,9 +436,9 @@ function initPuzzleAnimation() {
 
     function initProposSection() {
         const section = document.querySelector('.propos');
-        const puzzlesContainer = document.querySelector('.puzzles-container');
-        const leftSide = document.querySelector('.left-side');
-        const rightSide = document.querySelector('.right-side');
+        const puzzlesContainer = section.querySelector('.puzzles-container');
+        const leftSide = section.querySelector('.left-side');
+        const rightSide = section.querySelector('.right-side');
         const puzzleTopLeft = section.querySelector(".puzzle-top-left");
         const puzzleTopRight = section.querySelector(".puzzle-top-right");
         const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
@@ -550,5 +551,89 @@ function initPuzzleAnimation() {
               },
             }
         );
+    }
+
+    function initFaqSection() {
+      const section = document.querySelector('.faq');
+      const puzzlesContainer = section.querySelector('.puzzles-container');
+      const leftSide = section.querySelector('.left-side');
+      const rightSide = section.querySelector('.right-side');
+      const puzzleTopLeft = section.querySelector(".puzzle-top-left");
+      const puzzleTopRight = section.querySelector(".puzzle-top-right");
+      const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
+      const puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
+
+      const { width, height } = puzzlesContainer.getBoundingClientRect();
+      const scale = {
+        x: puzzlesContainer.offsetWidth / width,
+        y: puzzlesContainer.offsetHeight / height,
+      };
+      console.log('scale: ', scale);
+
+      gsap.fromTo(
+        puzzlesContainer,
+        { rotation: 20 },
+        {
+          rotation: 10,
+          scrollTrigger: {
+            trigger: section,
+            start: `top+=200 bottom`,
+            end: `top`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      )
+
+
+      gsap.fromTo(
+        puzzleBottomRight,
+        { y: 500 },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `top+=200 bottom`,
+            end: `top`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        puzzleBottomLeft,
+        { y: 650 },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `center+=200 bottom`,
+            end: `bottom-=100`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      );
+
+      gsap.to(rightSide, { x: 400, duration: 0 });
+      gsap.fromTo(
+        rightSide,
+        { x: 400 },
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `75%+=${headerHeight} bottom`,
+            end: `bottom+=${headerHeight}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+    );
     }
 }
