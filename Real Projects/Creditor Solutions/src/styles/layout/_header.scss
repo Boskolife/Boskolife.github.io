@@ -128,39 +128,10 @@ header {
         @include media ("<desktop") {
             font-size: 20px;
         }
-
     }
 
     .item_active {
         color: $blue;
-    }
-
-    .phone {
-        display: flex;
-        align-items: center;
-        @include adaptiv-vaule("margin-left", 20, 1, 1);
-
-        @include media ("<desktop") {
-            display: none;
-        }
-
-        &:hover {
-            .phone_img {
-                transform: rotateY(-180deg);
-                transition: all .3s ease;
-            }
-        }
-    }
-
-    .phone_img {
-        margin-right: 13px;
-        transition: all .3s ease;
-    }
-
-    .phone_number {
-        color: $black;
-        font-weight: 700;
-        @include adaptiv-vaule("font-size", 18, 5, 1);
     }
 
     .burger_menu {
