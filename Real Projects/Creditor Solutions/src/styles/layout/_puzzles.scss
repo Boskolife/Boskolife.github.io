@@ -1,3 +1,9 @@
+// DO NOT CHANGE ANYTHING IN THIS FILE
+
+.puzzles-container {
+    z-index: -1;
+}
+
 .main-section {
     position: relative;
     overflow: hidden;
@@ -40,16 +46,16 @@
     .left-side {
         position: absolute;
         top: 0;
-        width: 50%;
+        width: 100%;
         left: 0;
         bottom: 0;
     }
 
     .right-side {
         position: absolute;
-        top: 0;
-        width: 50%;
-        left: 50%;
+        top: 16px;
+        width: 100%;
+        left: 493px;
         bottom: 0;
     }
 
@@ -59,25 +65,84 @@
         fill: #f1f2f5;
 
         &-top-left {
-            top: -470px;
-            left: -450px;
+            top: 0;
+            left: 128px;
         }
 
         &-top-right {
             top: -70px;
-            right: -402px;
+            left: 99px;
             transform: scale(0.84);
         }
 
         &-bottom-right {
-            top: 845px;
-            right: -353px;
+            top: 390px;
+            left: 50px;
             transform: scale(0.84) rotate(90deg);
         }
 
         &-bottom-left {
-            top: 340px;
-            left: -498px;
+            top: 359px;
+            left: 80px;
+            transform: scale(0.84);
+        }
+    }
+}
+
+.faq {
+    position: relative;
+    overflow: hidden;
+
+    .puzzles-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        transform: scale(1.5) translateX(13%);
+    }
+
+    .left-side {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .right-side {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 466px;
+        bottom: 0;
+    }
+
+    .puzzle {
+        position: absolute;
+        width: 589px;
+        fill: #f1f2f5;
+
+        &-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        &-top-right {
+            top: -58px;
+            left: 0;
+            transform: scale(0.84);
+        }
+
+        &-bottom-right {
+            top: 404px;
+            left: -49px;
+            transform: scale(0.84) rotate(90deg);
+        }
+
+        &-bottom-left {
+            top: 358px;
+            left: -47px;
             transform: scale(0.84);
         }
     }

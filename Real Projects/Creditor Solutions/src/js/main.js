@@ -364,6 +364,7 @@ function initPuzzleAnimation() {
   
     initMainSection();
     initProposSection();
+    initFaqSection();
 
     function initMainSection() {
       const mainSection = document.querySelector('.main-section')
@@ -435,9 +436,9 @@ function initPuzzleAnimation() {
 
     function initProposSection() {
         const section = document.querySelector('.propos');
-        const puzzlesContainer = document.querySelector('.puzzles-container');
-        const leftSide = document.querySelector('.left-side');
-        const rightSide = document.querySelector('.right-side');
+        const puzzlesContainer = section.querySelector('.puzzles-container');
+        const leftSide = section.querySelector('.left-side');
+        const rightSide = section.querySelector('.right-side');
         const puzzleTopLeft = section.querySelector(".puzzle-top-left");
         const puzzleTopRight = section.querySelector(".puzzle-top-right");
         const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
@@ -449,27 +450,26 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
           puzzleTopLeft,
-          { x: 0 },
+          { x: -getPosXLeft(), y: -getPosYLeft() },
           {
-            x: () => getPosXLeft(),
-            y: () => getPosYLeft(),
+            x: 0,
+            y: 0,
             scrollTrigger: {
               trigger: section,
               start: `top bottom`,
               end: `top`,
               scrub: 1,
               invalidateOnRefresh: true,
-            //   markers: true,
+              //   markers: true,
             },
           }
         );
 
         gsap.fromTo(
             puzzleBottomLeft,
-            { x: 0, rotation: 0 },
+            { x: -500},
             {
-              x: () => getPosXLeft(),
-              rotation: 0,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top bottom`,
@@ -483,10 +483,9 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
             puzzleTopRight,
-            { x: 0 },
+            { x: () => getPosXLeft() },
             {
-              x: () => -getPosXLeft(),
-              // rotation: -20,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top bottom`,
@@ -498,16 +497,11 @@ function initPuzzleAnimation() {
             }
         );
 
-        gsap.to(puzzleBottomRight, {
-            x: () => -getPosXLeft(),
-            duration: 0,
-        });
         gsap.fromTo(
             puzzleBottomRight,
-            { y: 0 },
+            { y: getPosYLeft() },
             {
-              y: () => -getPosYLeft(),
-              // rotation: -20,
+              y: () => 0,
               scrollTrigger: {
                 trigger: section,
                 start: `top+=200 bottom`,
@@ -535,11 +529,13 @@ function initPuzzleAnimation() {
               },
             }
         );
+
+        gsap.to(rightSide, {x: 375})
         gsap.fromTo(
             rightSide,
-            { x: 0 },
+            { x: 375 },
             {
-              x: () => -375,
+              x: 0,
               scrollTrigger: {
                 trigger: section,
                 start: `50%+=${headerHeight} bottom`,
@@ -550,5 +546,82 @@ function initPuzzleAnimation() {
               },
             }
         );
+    }
+
+    function initFaqSection() {
+      const section = document.querySelector('.faq');
+      const puzzlesContainer = section.querySelector('.puzzles-container');
+      const leftSide = section.querySelector('.left-side');
+      const rightSide = section.querySelector('.right-side');
+      const puzzleTopLeft = section.querySelector(".puzzle-top-left");
+      const puzzleTopRight = section.querySelector(".puzzle-top-right");
+      const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
+      const puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
+
+      gsap.fromTo(
+        puzzlesContainer,
+        { rotation: 20 },
+        {
+          rotation: 10,
+          scrollTrigger: {
+            trigger: section,
+            start: `top+=200 bottom`,
+            end: `top`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      )
+
+
+      gsap.fromTo(
+        puzzleBottomRight,
+        { y: 500 },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `top+=200 bottom`,
+            end: `top`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        puzzleBottomLeft,
+        { y: 650 },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `center+=200 bottom`,
+            end: `bottom-=100`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      );
+
+      gsap.to(rightSide, { x: 300, duration: 0 });
+      gsap.fromTo(
+        rightSide,
+        { x: 300 },
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: section,
+            start: `75%+=${headerHeight} bottom`,
+            end: `bottom+=${headerHeight}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            // markers: true,
+          },
+        }
+      );
     }
 }
