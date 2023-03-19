@@ -748,6 +748,9 @@ header {
     width: 0;
     transition: all .3s linear; }
 
+.puzzles-container {
+  z-index: -1; }
+
 .main-section {
   position: relative;
   overflow: hidden; }
@@ -779,35 +782,81 @@ header {
   .propos .left-side {
     position: absolute;
     top: 0;
-    width: 50%;
+    width: 100%;
     left: 0;
     bottom: 0; }
   .propos .right-side {
     position: absolute;
-    top: 0;
-    width: 50%;
-    left: 50%;
+    top: 16px;
+    width: 100%;
+    left: 493px;
     bottom: 0; }
   .propos .puzzle {
     position: absolute;
     width: 589px;
     fill: #f1f2f5; }
     .propos .puzzle-top-left {
-      top: -470px;
-      left: -450px; }
+      top: 0;
+      left: 128px; }
     .propos .puzzle-top-right {
       top: -70px;
-      right: -402px;
+      left: 99px;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
     .propos .puzzle-bottom-right {
-      top: 845px;
-      right: -353px;
+      top: 390px;
+      left: 50px;
       -webkit-transform: scale(0.84) rotate(90deg);
       transform: scale(0.84) rotate(90deg); }
     .propos .puzzle-bottom-left {
-      top: 340px;
-      left: -498px;
+      top: 359px;
+      left: 80px;
+      -webkit-transform: scale(0.84);
+      transform: scale(0.84); }
+
+.faq {
+  position: relative;
+  overflow: hidden; }
+  .faq .puzzles-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    -webkit-transform: scale(1.5) translateX(13%);
+    transform: scale(1.5) translateX(13%); }
+  .faq .left-side {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    bottom: 0; }
+  .faq .right-side {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 466px;
+    bottom: 0; }
+  .faq .puzzle {
+    position: absolute;
+    width: 589px;
+    fill: #f1f2f5; }
+    .faq .puzzle-top-left {
+      top: 0;
+      left: 0; }
+    .faq .puzzle-top-right {
+      top: -58px;
+      left: 0;
+      -webkit-transform: scale(0.84);
+      transform: scale(0.84); }
+    .faq .puzzle-bottom-right {
+      top: 404px;
+      left: -49px;
+      -webkit-transform: scale(0.84) rotate(90deg);
+      transform: scale(0.84) rotate(90deg); }
+    .faq .puzzle-bottom-left {
+      top: 358px;
+      left: -47px;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
 
@@ -3124,7 +3173,9 @@ html {
   /* Только если меньше контейнера */
   padding-right: 170px;
   /* Только если меньше контейнера */
-  padding-left: 170px; }
+  padding-left: 170px;
+  height: 100vh;
+  overflow: auto; }
   @media (max-width: 1350px) {
     .calc {
       padding-top: calc(90px + 70 * ((100vw - calc(375px)) / 975)); } }

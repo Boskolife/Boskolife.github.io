@@ -345,6 +345,7 @@ function initPuzzleAnimation() {
   var wh = window.innerHeight;
   initMainSection();
   initProposSection();
+  initFaqSection();
 
   function initMainSection() {
     var mainSection = document.querySelector('.main-section');
@@ -414,9 +415,9 @@ function initPuzzleAnimation() {
 
   function initProposSection() {
     var section = document.querySelector('.propos');
-    var puzzlesContainer = document.querySelector('.puzzles-container');
-    var leftSide = document.querySelector('.left-side');
-    var rightSide = document.querySelector('.right-side');
+    var puzzlesContainer = section.querySelector('.puzzles-container');
+    var leftSide = section.querySelector('.left-side');
+    var rightSide = section.querySelector('.right-side');
     var puzzleTopLeft = section.querySelector(".puzzle-top-left");
     var puzzleTopRight = section.querySelector(".puzzle-top-right");
     var puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
@@ -435,14 +436,11 @@ function initPuzzleAnimation() {
     };
 
     gsap.fromTo(puzzleTopLeft, {
-      x: 0
+      x: -getPosXLeft(),
+      y: -getPosYLeft()
     }, {
-      x: function x() {
-        return getPosXLeft();
-      },
-      y: function y() {
-        return getPosYLeft();
-      },
+      x: 0,
+      y: 0,
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
@@ -453,13 +451,9 @@ function initPuzzleAnimation() {
       }
     });
     gsap.fromTo(puzzleBottomLeft, {
-      x: 0,
-      rotation: 0
+      x: -500
     }, {
-      x: function x() {
-        return getPosXLeft();
-      },
-      rotation: 0,
+      x: 0,
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
@@ -470,12 +464,11 @@ function initPuzzleAnimation() {
       }
     });
     gsap.fromTo(puzzleTopRight, {
-      x: 0
-    }, {
       x: function x() {
-        return -getPosXLeft();
-      },
-      // rotation: -20,
+        return getPosXLeft();
+      }
+    }, {
+      x: 0,
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
@@ -485,19 +478,12 @@ function initPuzzleAnimation() {
 
       }
     });
-    gsap.to(puzzleBottomRight, {
-      x: function x() {
-        return -getPosXLeft();
-      },
-      duration: 0
-    });
     gsap.fromTo(puzzleBottomRight, {
-      y: 0
+      y: getPosYLeft()
     }, {
       y: function y() {
-        return -getPosYLeft();
+        return 0;
       },
-      // rotation: -20,
       scrollTrigger: {
         trigger: section,
         start: "top+=200 bottom",
@@ -522,16 +508,84 @@ function initPuzzleAnimation() {
 
       }
     });
+    gsap.to(rightSide, {
+      x: 375
+    });
     gsap.fromTo(rightSide, {
-      x: 0
+      x: 375
     }, {
-      x: function x() {
-        return -375;
-      },
+      x: 0,
       scrollTrigger: {
         trigger: section,
         start: "50%+=".concat(headerHeight, " bottom"),
         end: "bottom",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+  }
+
+  function initFaqSection() {
+    var section = document.querySelector('.faq');
+    var puzzlesContainer = section.querySelector('.puzzles-container');
+    var leftSide = section.querySelector('.left-side');
+    var rightSide = section.querySelector('.right-side');
+    var puzzleTopLeft = section.querySelector(".puzzle-top-left");
+    var puzzleTopRight = section.querySelector(".puzzle-top-right");
+    var puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
+    var puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
+    gsap.fromTo(puzzlesContainer, {
+      rotation: 20
+    }, {
+      rotation: 10,
+      scrollTrigger: {
+        trigger: section,
+        start: "top+=200 bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+    gsap.fromTo(puzzleBottomRight, {
+      y: 500
+    }, {
+      y: 0,
+      scrollTrigger: {
+        trigger: section,
+        start: "top+=200 bottom",
+        end: "top",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+    gsap.fromTo(puzzleBottomLeft, {
+      y: 650
+    }, {
+      y: 0,
+      scrollTrigger: {
+        trigger: section,
+        start: "center+=200 bottom",
+        end: "bottom-=100",
+        scrub: 1,
+        invalidateOnRefresh: true // markers: true,
+
+      }
+    });
+    gsap.to(rightSide, {
+      x: 300,
+      duration: 0
+    });
+    gsap.fromTo(rightSide, {
+      x: 300
+    }, {
+      x: 0,
+      scrollTrigger: {
+        trigger: section,
+        start: "75%+=".concat(headerHeight, " bottom"),
+        end: "bottom+=".concat(headerHeight),
         scrub: 1,
         invalidateOnRefresh: true // markers: true,
 

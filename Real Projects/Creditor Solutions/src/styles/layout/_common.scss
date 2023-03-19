@@ -2209,7 +2209,9 @@ html {
     @include adaptiv-vaule("padding-bottom", 85, 15, 1);
     @include adaptiv-vaule("padding-right", 170, 15, 1);
     @include adaptiv-vaule("padding-left", 170, 15, 1);
-
+    height:100vh;
+    overflow:auto;
+    
     @include media ("<phone") {
         padding-left: 0;
         padding-right: 0;
