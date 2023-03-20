@@ -12,13 +12,13 @@ calcPages();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
-    try {
+    var puzzlesAnimation = document.querySelector('.puzzles-container');
+
+    if (puzzlesAnimation) {
       var _ScrollTrigger;
 
       (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
       initPuzzleAnimation();
-    } catch (e) {
-      console.log('e: ', e);
     }
   });
 });

@@ -13,11 +13,10 @@ calcPages();
 winTriggersMethods.forEach((method) => {
   window.addEventListener(method, () => {
       // worst case to refresh animation?
-      try {
+      const puzzlesAnimation = document.querySelector('.puzzles-container');
+      if(puzzlesAnimation) {
         ScrollTrigger?.killAll();
-        initPuzzleAnimation()
-      } catch(e) {
-        console.log('e: ', e);
+        initPuzzleAnimation();
       }
   })
 })
