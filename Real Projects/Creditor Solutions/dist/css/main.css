@@ -750,6 +750,13 @@ header {
 .puzzles-container {
   z-index: -1; }
 
+.puzzles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
 .main-section {
   position: relative;
   overflow: hidden; }
@@ -757,25 +764,45 @@ header {
     position: absolute;
     width: 589px;
     fill: #f1f2f5; }
+    @media (max-width: 479px) {
+      .main-section .puzzle {
+        width: 300px;
+        opacity: 0; } }
+    .main-section .puzzle-top-left {
+      display: none; }
+      @media (max-width: 479px) {
+        .main-section .puzzle-top-left {
+          display: block;
+          top: 22px;
+          left: -79px;
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2); } }
     .main-section .puzzle-top-right {
       top: -310px;
       right: -304px; }
+      @media (max-width: 479px) {
+        .main-section .puzzle-top-right {
+          top: 0;
+          left: 213px; } }
     .main-section .puzzle-bottom-right {
       top: 495px;
       right: -250px; }
+      @media (max-width: 479px) {
+        .main-section .puzzle-bottom-right {
+          top: 283px;
+          left: 183px; } }
     .main-section .puzzle-bottom-left {
       top: 175px;
       left: -315px; }
+      @media (max-width: 479px) {
+        .main-section .puzzle-bottom-left {
+          top: 252px;
+          left: -106px; } }
 
 .propos {
   position: relative;
   overflow: hidden; }
   .propos .puzzles-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
     -webkit-transform: scale(1.5) translateX(5%);
     transform: scale(1.5) translateX(5%); }
   .propos .left-side {
@@ -817,11 +844,6 @@ header {
   position: relative;
   overflow: hidden; }
   .faq .puzzles-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
     -webkit-transform: scale(1.5) translateX(13%);
     transform: scale(1.5) translateX(13%); }
   .faq .left-side {

@@ -1,6 +1,7 @@
 "use strict";
 
 var winTriggersMethods = ['resize', 'load'];
+var MOBILE_SIZE = 480;
 initTabs();
 initBurger();
 initNavBtn();
@@ -8,7 +9,6 @@ findHref();
 renderDateSelects();
 hideText();
 calcPages();
-initPuzzleAnimation();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
@@ -358,6 +358,7 @@ function initPuzzleAnimation() {
 
   function initMainSection() {
     var mainSection = document.querySelector('.main-section');
+    var puzzleTopLeft = mainSection.querySelector(".puzzle-top-left");
     var puzzleTopRight = mainSection.querySelector(".puzzle-top-right");
     var puzzleBottomRight = mainSection.querySelector(".puzzle-bottom-right");
     var puzzleBottomLeft = mainSection.querySelector(".puzzle-bottom-left");
@@ -366,60 +367,151 @@ function initPuzzleAnimation() {
       return window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
     };
 
-    gsap.fromTo(puzzleTopRight, {
-      x: 250
-    }, {
-      x: 0
-    });
-    gsap.fromTo(puzzleTopRight, {
-      x: 0
-    }, {
-      x: function x() {
-        return -getPosXtopRight();
-      },
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top top",
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
-    gsap.to(puzzleBottomRight, {
-      x: function x() {
-        return -getPosXtopRight();
-      },
-      duration: 0
-    });
-    gsap.to(puzzleBottomRight, {
-      y: -270,
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top+=".concat(headerHeight, " top"),
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
-    gsap.fromTo(puzzleBottomLeft, {
-      x: -250
-    }, {
-      x: 0
-    });
-    gsap.fromTo(puzzleBottomLeft, {
-      x: 0
-    }, {
-      x: function x() {
-        return getPosXtopRight();
-      },
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top top",
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
+    if (window.innerWidth >= MOBILE_SIZE) {
+      desktopAnimation();
+    } else {
+      mobileAnimation();
+    }
+
+    function mobileAnimation() {
+      gsap.fromTo(puzzleTopRight, {
+        x: 250,
+        opacity: 0
+      }, {
+        x: 150,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleTopRight, {
+        x: 150
+      }, {
+        x: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+      gsap.fromTo(puzzleTopLeft, {
+        x: -250,
+        y: -80,
+        opacity: 0
+      }, {
+        x: 0,
+        y: -80,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleTopLeft, {
+        y: -80
+      }, {
+        y: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -250,
+        opacity: 0
+      }, {
+        x: -125,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -125
+      }, {
+        x: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+      gsap.fromTo(puzzleBottomRight, {
+        x: 250,
+        y: 150,
+        opacity: 0
+      }, {
+        x: 0,
+        y: 150,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleBottomRight, {
+        y: 150
+      }, {
+        y: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+    }
+
+    function desktopAnimation() {
+      gsap.fromTo(puzzleTopRight, {
+        x: 250
+      }, {
+        x: 0
+      });
+      gsap.fromTo(puzzleTopRight, {
+        x: 0
+      }, {
+        x: function x() {
+          return -getPosXtopRight();
+        },
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+      gsap.to(puzzleBottomRight, {
+        x: function x() {
+          return -getPosXtopRight();
+        },
+        duration: 0
+      });
+      gsap.to(puzzleBottomRight, {
+        y: -270,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top+=".concat(headerHeight, " top"),
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -250
+      }, {
+        x: 0
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: 0
+      }, {
+        x: function x() {
+          return getPosXtopRight();
+        },
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+    }
   }
 
   function initProposSection() {
