@@ -2,6 +2,7 @@
 
 var winTriggersMethods = ['resize', 'load'];
 var MOBILE_SIZE = 480;
+var prevWidth = window.innerWidth;
 initTabs();
 initBurger();
 initNavBtn();
@@ -13,12 +14,19 @@ winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
     var puzzlesAnimation = document.querySelector('.puzzles-container');
+    if (!puzzlesAnimation) return;
 
-    if (puzzlesAnimation) {
+    if (method === 'load') {
+      initPuzzleAnimation();
+    }
+
+    if (method === 'resize' && prevWidth !== window.innerWidth) {
       var _ScrollTrigger;
 
       (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
+      prevWidth = window.innerWidth;
       initPuzzleAnimation();
+      return;
     }
   });
 });
@@ -389,8 +397,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
       gsap.fromTo(puzzleTopLeft, {
@@ -410,8 +417,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
       gsap.fromTo(puzzleBottomLeft, {
@@ -429,8 +435,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
       gsap.fromTo(puzzleBottomRight, {
@@ -450,8 +455,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
     }
@@ -472,8 +476,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
       gsap.to(puzzleBottomRight, {
@@ -488,8 +491,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top+=".concat(headerHeight, " top"),
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
       gsap.fromTo(puzzleBottomLeft, {
@@ -507,8 +509,7 @@ function initPuzzleAnimation() {
           trigger: mainSection,
           start: "top top",
           end: "50%-=".concat(headerHeight),
-          scrub: 1,
-          invalidateOnRefresh: true
+          scrub: 1
         }
       });
     }
@@ -546,8 +547,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -559,8 +559,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -574,8 +573,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -589,8 +587,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -604,8 +601,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "bottom",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -620,8 +616,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "50%+=".concat(headerHeight, " bottom"),
         end: "bottom",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -644,8 +639,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -657,8 +651,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -670,8 +663,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "center+=200 bottom",
         end: "bottom-=100",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -687,8 +679,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "75%+=".concat(headerHeight, " bottom"),
         end: "bottom+=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });

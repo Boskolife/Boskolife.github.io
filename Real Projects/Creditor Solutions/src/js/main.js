@@ -1,6 +1,7 @@
 const winTriggersMethods = ['resize', 'load'];
 
 const MOBILE_SIZE = 480;
+let prevWidth = window.innerWidth;
 
 initTabs();
 initBurger();
@@ -14,9 +15,15 @@ winTriggersMethods.forEach((method) => {
   window.addEventListener(method, () => {
       // worst case to refresh animation?
       const puzzlesAnimation = document.querySelector('.puzzles-container');
-      if(puzzlesAnimation) {
-        ScrollTrigger?.killAll();
+      if(!puzzlesAnimation) return;
+      if(method === 'load') {
         initPuzzleAnimation();
+      }
+      if(method === 'resize' && prevWidth !== window.innerWidth) {
+        ScrollTrigger?.killAll();
+        prevWidth = window.innerWidth;
+        initPuzzleAnimation();
+        return;
       }
   })
 })
@@ -406,7 +413,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -434,7 +440,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -461,7 +466,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -489,7 +493,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -513,7 +516,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -529,7 +531,6 @@ function initPuzzleAnimation() {
             start: `top+=${headerHeight} top`,
             end: `50%-=${headerHeight}`,
             scrub: 1,
-            invalidateOnRefresh: true,
           },
         });
     
@@ -550,7 +551,6 @@ function initPuzzleAnimation() {
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
-              invalidateOnRefresh: true,
             },
           }
         );
@@ -582,7 +582,6 @@ function initPuzzleAnimation() {
               start: `top bottom`,
               end: `top`,
               scrub: 1,
-              invalidateOnRefresh: true,
               //   markers: true,
             },
           }
@@ -598,7 +597,6 @@ function initPuzzleAnimation() {
                 start: `top bottom`,
                 end: `top`,
                 scrub: 1,
-                invalidateOnRefresh: true,
                 // markers: true,
               },
             }
@@ -614,7 +612,6 @@ function initPuzzleAnimation() {
                 start: `top bottom`,
                 end: `top`,
                 scrub: 1,
-                invalidateOnRefresh: true,
               //   markers: true,
               },
             }
@@ -630,7 +627,6 @@ function initPuzzleAnimation() {
                 start: `top+=200 bottom`,
                 end: `top`,
                 scrub: 1,
-                invalidateOnRefresh: true,
               //   markers: true,
               },
             }
@@ -647,7 +643,6 @@ function initPuzzleAnimation() {
                 start: `top bottom`,
                 end: `bottom`,
                 scrub: 1,
-                invalidateOnRefresh: true,
                 // markers: true,
               },
             }
@@ -664,7 +659,6 @@ function initPuzzleAnimation() {
                 start: `50%+=${headerHeight} bottom`,
                 end: `bottom`,
                 scrub: 1,
-                invalidateOnRefresh: true,
                 // markers: true,
               },
             }
@@ -691,7 +685,6 @@ function initPuzzleAnimation() {
             start: `top+=200 bottom`,
             end: `top`,
             scrub: 1,
-            invalidateOnRefresh: true,
             // markers: true,
           },
         }
@@ -708,7 +701,6 @@ function initPuzzleAnimation() {
             start: `top+=200 bottom`,
             end: `top`,
             scrub: 1,
-            invalidateOnRefresh: true,
             // markers: true,
           },
         }
@@ -724,7 +716,6 @@ function initPuzzleAnimation() {
             start: `center+=200 bottom`,
             end: `bottom-=100`,
             scrub: 1,
-            invalidateOnRefresh: true,
             // markers: true,
           },
         }
@@ -741,7 +732,6 @@ function initPuzzleAnimation() {
             start: `75%+=${headerHeight} bottom`,
             end: `bottom+=${headerHeight}`,
             scrub: 1,
-            invalidateOnRefresh: true,
             // markers: true,
           },
         }
