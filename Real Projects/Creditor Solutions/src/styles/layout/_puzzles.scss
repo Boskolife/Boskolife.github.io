@@ -4,28 +4,68 @@
     z-index: -1;
 }
 
+.puzzles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .main-section {
     position: relative;
     overflow: hidden;
+
 
     .puzzle {
         position: absolute;
         width: 589px;
         fill: #f1f2f5;
 
+        @include media('<phone') {
+            width: 300px;
+            opacity: 0;
+        }
+
+        &-top-left {
+            display: none;
+
+            @include media('<phone') {
+                display: block;
+                top: 22px;
+                left: -79px;
+                transform: scale(1.2);
+            }
+        }
+
         &-top-right {
             top: -310px;
             right: -304px;
+
+            @include media('<phone') {
+                top: 0;
+                left: 213px;
+            }
         }
 
         &-bottom-right {
             top: 495px;
             right: -250px;
+
+            @include media('<phone') {
+                top: 283px;
+                left: 183px;
+            }
         }
 
         &-bottom-left {
             top: 175px;
             left: -315px;
+
+            @include media('<phone') {
+                top: 252px;
+                left: -106px;
+            }
         }
     }
 }
@@ -35,11 +75,6 @@
     overflow: hidden;
 
     .puzzles-container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
         transform: scale(1.5) translateX(5%);
     }
 
@@ -94,11 +129,6 @@
     overflow: hidden;
 
     .puzzles-container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
         transform: scale(1.5) translateX(13%);
     }
 
