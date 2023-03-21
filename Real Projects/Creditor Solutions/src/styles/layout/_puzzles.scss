@@ -51,6 +51,7 @@
         &-bottom-right {
             top: 495px;
             right: -250px;
+            transform: rotate(90deg);
 
             @include media('<phone') {
                 top: 283px;

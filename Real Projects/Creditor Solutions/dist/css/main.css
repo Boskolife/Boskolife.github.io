@@ -786,7 +786,9 @@ header {
           left: 213px; } }
     .puzzle-animation-first .puzzle-bottom-right {
       top: 495px;
-      right: -250px; }
+      right: -250px;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
       @media (max-width: 479px) {
         .puzzle-animation-first .puzzle-bottom-right {
           top: 283px;
