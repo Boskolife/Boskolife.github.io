@@ -799,87 +799,146 @@ header {
           top: 252px;
           left: -106px; } }
 
-.propos {
+.puzzle-animation-second {
   position: relative;
   overflow: hidden; }
-  .propos .puzzles-container {
+  .puzzle-animation-second .puzzles-container {
     -webkit-transform: scale(1.5) translateX(5%);
     transform: scale(1.5) translateX(5%); }
-  .propos .left-side {
+    @media (max-width: 1023px) {
+      .puzzle-animation-second .puzzles-container {
+        top: 25%;
+        left: -50%;
+        -webkit-transform: scale(1.5) translateX(0%);
+        transform: scale(1.5) translateX(0%); } }
+    @media (max-width: 767px) {
+      .puzzle-animation-second .puzzles-container {
+        left: -75%; } }
+    @media (max-width: 479px) {
+      .puzzle-animation-second .puzzles-container {
+        top: 5%;
+        left: 0;
+        -webkit-transform: scale(1.5) translateX(15%);
+        transform: scale(1.5) translateX(15%); } }
+  .puzzle-animation-second .left-side {
     position: absolute;
     top: 0;
     width: 100%;
     left: 0;
     bottom: 0; }
-  .propos .right-side {
+  .puzzle-animation-second .right-side {
     position: absolute;
     top: 16px;
     width: 100%;
     left: 493px;
     bottom: 0; }
-  .propos .puzzle {
+    @media (max-width: 479px) {
+      .puzzle-animation-second .right-side {
+        left: -40px;
+        top: 27px; } }
+  .puzzle-animation-second .puzzle {
     position: absolute;
     width: 589px;
     fill: #f1f2f5; }
-    .propos .puzzle-top-left {
+    @media (max-width: 479px) {
+      .puzzle-animation-second .puzzle {
+        width: 450px; } }
+    .puzzle-animation-second .puzzle-top-left {
       top: 0;
       left: 128px; }
-    .propos .puzzle-top-right {
+      @media (max-width: 479px) {
+        .puzzle-animation-second .puzzle-top-left {
+          left: -295px; } }
+    .puzzle-animation-second .puzzle-top-right {
       top: -70px;
       left: 99px;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
-    .propos .puzzle-bottom-right {
+    .puzzle-animation-second .puzzle-bottom-right {
       top: 390px;
       left: 50px;
       -webkit-transform: scale(0.84) rotate(90deg);
       transform: scale(0.84) rotate(90deg); }
-    .propos .puzzle-bottom-left {
+      @media (max-width: 479px) {
+        .puzzle-animation-second .puzzle-bottom-right {
+          top: 285px;
+          left: 63px; } }
+    .puzzle-animation-second .puzzle-bottom-left {
       top: 359px;
       left: 80px;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
+      @media (max-width: 479px) {
+        .puzzle-animation-second .puzzle-bottom-left {
+          top: 275px;
+          left: -330px; } }
 
-.faq {
+.puzzle-animation-third {
   position: relative;
   overflow: hidden; }
-  .faq .puzzles-container {
+  .puzzle-animation-third .puzzles-container {
     -webkit-transform: scale(1.5) translateX(13%);
     transform: scale(1.5) translateX(13%); }
-  .faq .left-side {
+    @media (max-width: 1023px) {
+      .puzzle-animation-third .puzzles-container {
+        -webkit-transform: scale(1.5) translateX(0%);
+        transform: scale(1.5) translateX(0%); } }
+    @media (max-width: 479px) {
+      .puzzle-animation-third .puzzles-container {
+        -webkit-transform: scale(1.5) translateX(13%);
+        transform: scale(1.5) translateX(13%); } }
+  .puzzle-animation-third .left-side {
     position: absolute;
     top: 0;
     width: 100%;
     left: 0;
     bottom: 0; }
-  .faq .right-side {
+    @media (max-width: 479px) {
+      .puzzle-animation-third .left-side {
+        left: -243px; } }
+  .puzzle-animation-third .right-side {
     position: absolute;
     top: 0;
     width: 100%;
     left: 466px;
     bottom: 0; }
-  .faq .puzzle {
+    @media (max-width: 479px) {
+      .puzzle-animation-third .right-side {
+        top: 17px;
+        left: 113px; } }
+  .puzzle-animation-third .puzzle {
     position: absolute;
     width: 589px;
     fill: #f1f2f5; }
-    .faq .puzzle-top-left {
+    @media (max-width: 479px) {
+      .puzzle-animation-third .puzzle {
+        width: 450px; } }
+    .puzzle-animation-third .puzzle-top-left {
       top: 0;
       left: 0; }
-    .faq .puzzle-top-right {
+    .puzzle-animation-third .puzzle-top-right {
       top: -58px;
       left: 0;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
-    .faq .puzzle-bottom-right {
+    .puzzle-animation-third .puzzle-bottom-right {
       top: 404px;
       left: -49px;
       -webkit-transform: scale(0.84) rotate(90deg);
       transform: scale(0.84) rotate(90deg); }
-    .faq .puzzle-bottom-left {
+      @media (max-width: 479px) {
+        .puzzle-animation-third .puzzle-bottom-right {
+          top: 298px;
+          left: -37px; } }
+    .puzzle-animation-third .puzzle-bottom-left {
       top: 358px;
       left: -47px;
       -webkit-transform: scale(0.84);
       transform: scale(0.84); }
+      @media (max-width: 479px) {
+        .puzzle-animation-third .puzzle-bottom-left {
+          top: 274px;
+          left: -37px; } }
 
 body {
   background-color: #ffffff;

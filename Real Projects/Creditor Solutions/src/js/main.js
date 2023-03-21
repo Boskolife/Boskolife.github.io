@@ -374,24 +374,24 @@ function initPuzzleAnimation() {
     if(!document.querySelector('.puzzle')) return;
     const header = document.querySelector("header");
     const headerHeight = header.clientHeight;
-
+    const isMobile = window.innerWidth < MOBILE_SIZE;
   
-    initMainSection();
-    initProposSection();
-    initFaqSection();
+    initFirstAnimSection();
+    initSecondAnimSection();
+    initThirdAnimSection();
 
-    function initMainSection() {
-      const mainSection = document.querySelector('.main-section')
-      const puzzleTopLeft = mainSection.querySelector(".puzzle-top-left");
-      const puzzleTopRight = mainSection.querySelector(".puzzle-top-right");
-      const puzzleBottomRight = mainSection.querySelector(".puzzle-bottom-right");
-      const puzzleBottomLeft = mainSection.querySelector(".puzzle-bottom-left");
+    function initFirstAnimSection() {
+      const animationFirstSection = document.querySelector('.puzzle-animation-first')
+      const puzzleTopLeft = animationFirstSection.querySelector(".puzzle-top-left");
+      const puzzleTopRight = animationFirstSection.querySelector(".puzzle-top-right");
+      const puzzleBottomRight = animationFirstSection.querySelector(".puzzle-bottom-right");
+      const puzzleBottomLeft = animationFirstSection.querySelector(".puzzle-bottom-left");
       const getPosXtopRight = () => window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
 
-      if(window.innerWidth >= MOBILE_SIZE) {
-        desktopAnimation()
-      } else {
+      if(isMobile) {
         mobileAnimation()
+      } else {
+        desktopAnimation()
       }
 
       function mobileAnimation() {
@@ -409,7 +409,7 @@ function initPuzzleAnimation() {
           {
             x: 0,
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -436,7 +436,7 @@ function initPuzzleAnimation() {
           {
             y: 0,
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -462,7 +462,7 @@ function initPuzzleAnimation() {
           {
             x: 0,
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -489,7 +489,7 @@ function initPuzzleAnimation() {
           {
             y: 0,
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -512,7 +512,7 @@ function initPuzzleAnimation() {
           {
             x: () => -getPosXtopRight(),
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -527,7 +527,7 @@ function initPuzzleAnimation() {
         gsap.to(puzzleBottomRight, {
           y: -270,
           scrollTrigger: {
-            trigger: mainSection,
+            trigger: animationFirstSection,
             start: `top+=${headerHeight} top`,
             end: `50%-=${headerHeight}`,
             scrub: 1,
@@ -547,7 +547,7 @@ function initPuzzleAnimation() {
           {
             x: () => getPosXtopRight(),
             scrollTrigger: {
-              trigger: mainSection,
+              trigger: animationFirstSection,
               start: `top top`,
               end: `50%-=${headerHeight}`,
               scrub: 1,
@@ -557,8 +557,8 @@ function initPuzzleAnimation() {
       }
     }
 
-    function initProposSection() {
-        const section = document.querySelector('.propos');
+    function initSecondAnimSection() {
+        const section = document.querySelector('.puzzle-animation-second');
         const puzzlesContainer = section.querySelector('.puzzles-container');
         const leftSide = section.querySelector('.left-side');
         const rightSide = section.querySelector('.right-side');
@@ -573,7 +573,7 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
           puzzleTopLeft,
-          { x: -getPosXLeft(), y: -getPosYLeft() },
+          { x: isMobile ? -150 : -getPosXLeft(), y: isMobile ? 0 : -getPosYLeft() },
           {
             x: 0,
             y: 0,
@@ -589,7 +589,7 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
             puzzleBottomLeft,
-            { x: -500},
+            { x: isMobile ? -150 :-500 },
             {
               x: 0,
               scrollTrigger: {
@@ -634,24 +634,25 @@ function initPuzzleAnimation() {
 
         gsap.fromTo(
             puzzlesContainer,
-            { rotation: 15, y: 0 },
+            { rotation: 5, y: 0, x: 0 },
             {
-              rotation: -35,
-              y: -150,
+              rotation: isMobile ? -35 : -35,
+              y: isMobile ? 400 : -150,
+              x: isMobile ? 275 : 0,
               scrollTrigger: {
                 trigger: section,
-                start: `top bottom`,
-                end: `bottom`,
+                start: isMobile ? `center-=75 bottom` : `top bottom`,
+                end: isMobile ? 'bottom+=100' : `bottom`,
                 scrub: 1,
                 // markers: true,
               },
             }
         );
 
-        gsap.to(rightSide, {x: 375})
+        gsap.to(rightSide, {x: isMobile ? 125 : 375})
         gsap.fromTo(
             rightSide,
-            { x: 375 },
+            { x: isMobile ? 125 : 375 },
             {
               x: 0,
               scrollTrigger: {
@@ -665,8 +666,8 @@ function initPuzzleAnimation() {
         );
     }
 
-    function initFaqSection() {
-      const section = document.querySelector('.faq');
+    function initThirdAnimSection() {
+      const section = document.querySelector('.puzzle-animation-third');
       const puzzlesContainer = section.querySelector('.puzzles-container');
       const leftSide = section.querySelector('.left-side');
       const rightSide = section.querySelector('.right-side');
@@ -675,11 +676,28 @@ function initPuzzleAnimation() {
       const puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
       const puzzleBottomLeft = section.querySelector(".puzzle-bottom-left");
 
+      if (isMobile) {
+        gsap.fromTo(
+          leftSide,
+          { x: -90 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: section,
+              start: `bottom bottom`,
+              end: `bottom-=100`,
+              scrub: 1,
+              // markers: true,
+            },
+          }
+        );
+      }
+
       gsap.fromTo(
         puzzlesContainer,
-        { rotation: 20 },
+        { rotation: isMobile ? 13 : 20 },
         {
-          rotation: 10,
+          rotation: isMobile ? 5 : 10,
           scrollTrigger: {
             trigger: section,
             start: `top+=200 bottom`,
@@ -693,13 +711,13 @@ function initPuzzleAnimation() {
 
       gsap.fromTo(
         puzzleBottomRight,
-        { y: 500 },
+        { y: isMobile ? 250 : 500 },
         {
           y: 0,
           scrollTrigger: {
             trigger: section,
-            start: `top+=200 bottom`,
-            end: `top`,
+            start: isMobile ? `center bottom` : `top+=200 bottom`,
+            end: isMobile ? 'bottom-=125' : `top`,
             scrub: 1,
             // markers: true,
           },
@@ -708,23 +726,23 @@ function initPuzzleAnimation() {
 
       gsap.fromTo(
         puzzleBottomLeft,
-        { y: 650 },
+        { y: isMobile ? 75 : 650 },
         {
           y: 0,
           scrollTrigger: {
             trigger: section,
-            start: `center+=200 bottom`,
-            end: `bottom-=100`,
+            start: isMobile ? 'top bottom' : `center+=200 bottom`,
+            end: isMobile ? 'center' : `bottom-=100`,
             scrub: 1,
             // markers: true,
           },
         }
       );
 
-      gsap.to(rightSide, { x: 300, duration: 0 });
+      gsap.to(rightSide, { x: isMobile ? 100 : 300, duration: 0 });
       gsap.fromTo(
         rightSide,
-        { x: 300 },
+        { x: isMobile ? 100 : 300 },
         {
           x: 0,
           scrollTrigger: {

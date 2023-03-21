@@ -76,6 +76,22 @@
 
     .puzzles-container {
         transform: scale(1.5) translateX(5%);
+
+        @include media('<desktop') {
+            top: 25%;
+            left: -50%;
+            transform: scale(1.5) translateX(0%);
+        }
+
+        @include media('<tablet') {
+            left: -75%;
+        }
+
+        @include media('<phone') {
+            top: 5%;
+            left: 0;
+            transform: scale(1.5) translateX(15%);
+        }
     }
 
     .left-side {
@@ -92,6 +108,11 @@
         width: 100%;
         left: 493px;
         bottom: 0;
+
+        @include media('<phone') {
+            left: -40px;
+            top: 27px;
+        }
     }
 
     .puzzle {
@@ -99,9 +120,17 @@
         width: 589px;
         fill: #f1f2f5;
 
+        @include media('<phone') {
+            width: 450px;
+        }
+
         &-top-left {
             top: 0;
             left: 128px;
+
+            @include media('<phone') {
+                left: -295px;
+            }
         }
 
         &-top-right {
@@ -114,12 +143,22 @@
             top: 390px;
             left: 50px;
             transform: scale(0.84) rotate(90deg);
+
+            @include media('<phone') {
+                top: 285px;
+                left: 63px;
+            }
         }
 
         &-bottom-left {
             top: 359px;
             left: 80px;
             transform: scale(0.84);
+
+            @include media('<phone') {
+                top: 275px;
+                left: -330px;
+            }
         }
     }
 }
@@ -130,6 +169,14 @@
 
     .puzzles-container {
         transform: scale(1.5) translateX(13%);
+
+        @include media('<desktop') {
+            transform: scale(1.5) translateX(0%);
+        }
+
+        @include media('<phone') {
+            transform: scale(1.5) translateX(13%);
+        }
     }
 
     .left-side {
@@ -138,6 +185,10 @@
         width: 100%;
         left: 0;
         bottom: 0;
+
+        @include media('<phone') {
+            left: -243px;
+        }
     }
 
     .right-side {
@@ -146,12 +197,21 @@
         width: 100%;
         left: 466px;
         bottom: 0;
+
+        @include media('<phone') {
+            top: 17px;
+            left: 113px;
+        }
     }
 
     .puzzle {
         position: absolute;
         width: 589px;
         fill: #f1f2f5;
+
+        @include media('<phone') {
+            width: 450px;
+        }
 
         &-top-left {
             top: 0;
@@ -168,12 +228,22 @@
             top: 404px;
             left: -49px;
             transform: scale(0.84) rotate(90deg);
+
+            @include media('<phone') {
+                top: 298px;
+                left: -37px;
+            }
         }
 
         &-bottom-left {
             top: 358px;
             left: -47px;
             transform: scale(0.84);
+
+            @include media('<phone') {
+                top: 274px;
+                left: -37px;
+            }
         }
     }
 }
