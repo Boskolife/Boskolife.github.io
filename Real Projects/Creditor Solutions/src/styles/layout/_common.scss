@@ -1926,26 +1926,26 @@ html {
         text-decoration: underline;
     }
 
-    .step_img_wrap{
+    .step_img_wrap {
         max-height: 500px;
         position: relative;
         overflow: hidden;
         padding-top: 30px;
 
-        &:hover{
+        &:hover {
 
-            .step_img{
+            .step_img {
                 transform: scale(1.1);
                 transition: all .3s linear;
             }
 
-            &::after{
+            &::after {
                 background-color: #D5DDEC;
                 transition: all .3s linear;
             }
         }
 
-        &::after{
+        &::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1959,7 +1959,7 @@ html {
         }
     }
 
-    .step_img{
+    .step_img {
         transition: all .3s linear;
     }
 
@@ -2180,6 +2180,24 @@ html {
 
 .individual_steps {
 
+    .step_title {
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.03em;
+        color: $blue;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            font-size: 42px;
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+    }
+
     .individual_steps_wrap {
         @include adaptiv-vaule("margin-bottom", 65, 30, 1);
     }
@@ -2194,6 +2212,10 @@ html {
         margin-bottom: 30px;
         letter-spacing: -0.01em;
         color: $gray_4;
+
+        @include media ("<phone") {
+            text-align: start;
+        }
     }
 
     .item_step {
@@ -2225,8 +2247,8 @@ html {
     @include adaptiv-vaule("padding-bottom", 85, 15, 1);
     @include adaptiv-vaule("padding-right", 170, 15, 1);
     @include adaptiv-vaule("padding-left", 170, 15, 1);
-    height:100vh;
-    overflow:auto;
+    height: 100vh;
+    overflow: auto;
 
     @include media ("<phone") {
         padding-left: 0;
@@ -2249,8 +2271,8 @@ html {
         display: none;
     }
 
-    .first_step{
-        .blue_btn{
+    .first_step {
+        .blue_btn {
             @include media ("<tablet") {
                 margin-top: 30px;
             }
@@ -2316,14 +2338,17 @@ html {
         }
     }
 
-    .show_tablet{
+    .show_tablet {
         display: block;
+
         @include media ("<tablet") {
             display: none;
         }
     }
-    .hide_tablet{
+
+    .hide_tablet {
         display: none;
+
         @include media ("<tablet") {
             display: block;
         }
@@ -2472,6 +2497,11 @@ html {
         .step {
             background-color: $blue;
         }
+
+        @include media ("<phone") {
+            width: 36px;
+            height: 36px;
+        }
     }
 
     .line {
@@ -2492,6 +2522,12 @@ html {
         height: 40px;
         position: relative;
         z-index: 2;
+
+        @include media ("<phone") {
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+        }
     }
 
     .spoiler {
@@ -2538,7 +2574,6 @@ html {
         @include adaptiv-vaule("padding-right", 80, 25, 1);
         @include adaptiv-vaule("padding-left", 80, 25, 1);
 
-
         .blue_btn {
             @include adaptiv-vaule("width", 200, 0, 1);
 
@@ -2550,6 +2585,10 @@ html {
         .calc_form,
         .calc_wrap {
             width: 100%;
+        }
+
+        .calc_wrap{
+            @include adaptiv-vaule("margin-bottom", 90, 60, 1);
         }
 
         .calc_form {
@@ -2565,7 +2604,7 @@ html {
 
     .third_step {
 
-        .calc_title{
+        .calc_title {
             text-align: center;
         }
 
@@ -2612,10 +2651,10 @@ html {
             line-height: 120%;
             letter-spacing: -0.03em;
             color: $black;
-            
+
         }
 
-        .amount_res{
+        .amount_res {
             width: max-content;
             padding: 10px;
             border: 1px solid $gray;
@@ -2638,6 +2677,8 @@ html {
         .blue_btn,
         .start_btn {
             min-width: 240px;
+            border: none;
+
 
             @include media ("<phone") {
                 min-width: 100%;
