@@ -757,45 +757,45 @@ header {
   right: 0;
   bottom: 0; }
 
-.main-section {
+.puzzle-animation-first {
   position: relative;
   overflow: hidden; }
-  .main-section .puzzle {
+  .puzzle-animation-first .puzzle {
     position: absolute;
     width: 589px;
     fill: #f1f2f5; }
     @media (max-width: 479px) {
-      .main-section .puzzle {
+      .puzzle-animation-first .puzzle {
         width: 300px;
         opacity: 0; } }
-    .main-section .puzzle-top-left {
+    .puzzle-animation-first .puzzle-top-left {
       display: none; }
       @media (max-width: 479px) {
-        .main-section .puzzle-top-left {
+        .puzzle-animation-first .puzzle-top-left {
           display: block;
           top: 22px;
           left: -79px;
           -webkit-transform: scale(1.2);
           transform: scale(1.2); } }
-    .main-section .puzzle-top-right {
+    .puzzle-animation-first .puzzle-top-right {
       top: -310px;
       right: -304px; }
       @media (max-width: 479px) {
-        .main-section .puzzle-top-right {
+        .puzzle-animation-first .puzzle-top-right {
           top: 0;
           left: 213px; } }
-    .main-section .puzzle-bottom-right {
+    .puzzle-animation-first .puzzle-bottom-right {
       top: 495px;
       right: -250px; }
       @media (max-width: 479px) {
-        .main-section .puzzle-bottom-right {
+        .puzzle-animation-first .puzzle-bottom-right {
           top: 283px;
           left: 183px; } }
-    .main-section .puzzle-bottom-left {
+    .puzzle-animation-first .puzzle-bottom-left {
       top: 175px;
       left: -315px; }
       @media (max-width: 479px) {
-        .main-section .puzzle-bottom-left {
+        .puzzle-animation-first .puzzle-bottom-left {
           top: 252px;
           left: -106px; } }
 
