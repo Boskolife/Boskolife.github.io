@@ -1,6 +1,8 @@
 "use strict";
 
 var winTriggersMethods = ['resize', 'load'];
+var MOBILE_SIZE = 480;
+var prevWidth = window.innerWidth;
 initTabs();
 initBurger();
 initNavBtn();
@@ -8,17 +10,23 @@ findHref();
 renderDateSelects();
 hideText();
 calcPages();
-initPuzzleAnimation();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
-    try {
+    var puzzlesAnimation = document.querySelector('.puzzles-container');
+    if (!puzzlesAnimation) return;
+
+    if (method === 'load') {
+      initPuzzleAnimation();
+    }
+
+    if (method === 'resize' && prevWidth !== window.innerWidth) {
       var _ScrollTrigger;
 
       (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
+      prevWidth = window.innerWidth;
       initPuzzleAnimation();
-    } catch (e) {
-      console.log('e: ', e);
+      return;
     }
   });
 });
@@ -358,6 +366,7 @@ function initPuzzleAnimation() {
 
   function initMainSection() {
     var mainSection = document.querySelector('.main-section');
+    var puzzleTopLeft = mainSection.querySelector(".puzzle-top-left");
     var puzzleTopRight = mainSection.querySelector(".puzzle-top-right");
     var puzzleBottomRight = mainSection.querySelector(".puzzle-bottom-right");
     var puzzleBottomLeft = mainSection.querySelector(".puzzle-bottom-left");
@@ -366,60 +375,144 @@ function initPuzzleAnimation() {
       return window.innerWidth / 2 - puzzleTopRight.clientWidth / 2;
     };
 
-    gsap.fromTo(puzzleTopRight, {
-      x: 250
-    }, {
-      x: 0
-    });
-    gsap.fromTo(puzzleTopRight, {
-      x: 0
-    }, {
-      x: function x() {
-        return -getPosXtopRight();
-      },
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top top",
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
-    gsap.to(puzzleBottomRight, {
-      x: function x() {
-        return -getPosXtopRight();
-      },
-      duration: 0
-    });
-    gsap.to(puzzleBottomRight, {
-      y: -270,
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top+=".concat(headerHeight, " top"),
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
-    gsap.fromTo(puzzleBottomLeft, {
-      x: -250
-    }, {
-      x: 0
-    });
-    gsap.fromTo(puzzleBottomLeft, {
-      x: 0
-    }, {
-      x: function x() {
-        return getPosXtopRight();
-      },
-      scrollTrigger: {
-        trigger: mainSection,
-        start: "top top",
-        end: "50%-=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
+    if (window.innerWidth >= MOBILE_SIZE) {
+      desktopAnimation();
+    } else {
+      mobileAnimation();
+    }
+
+    function mobileAnimation() {
+      gsap.fromTo(puzzleTopRight, {
+        x: 250,
+        opacity: 0
+      }, {
+        x: 150,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleTopRight, {
+        x: 150
+      }, {
+        x: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+      gsap.fromTo(puzzleTopLeft, {
+        x: -250,
+        y: -80,
+        opacity: 0
+      }, {
+        x: 0,
+        y: -80,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleTopLeft, {
+        y: -80
+      }, {
+        y: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -250,
+        opacity: 0
+      }, {
+        x: -125,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -125
+      }, {
+        x: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+      gsap.fromTo(puzzleBottomRight, {
+        x: 250,
+        y: 150,
+        opacity: 0
+      }, {
+        x: 0,
+        y: 150,
+        opacity: 1
+      });
+      gsap.fromTo(puzzleBottomRight, {
+        y: 150
+      }, {
+        y: 0,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+    }
+
+    function desktopAnimation() {
+      gsap.fromTo(puzzleTopRight, {
+        x: 250
+      }, {
+        x: 0
+      });
+      gsap.fromTo(puzzleTopRight, {
+        x: 0
+      }, {
+        x: function x() {
+          return -getPosXtopRight();
+        },
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+      gsap.to(puzzleBottomRight, {
+        x: function x() {
+          return -getPosXtopRight();
+        },
+        duration: 0
+      });
+      gsap.to(puzzleBottomRight, {
+        y: -270,
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top+=".concat(headerHeight, " top"),
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: -250
+      }, {
+        x: 0
+      });
+      gsap.fromTo(puzzleBottomLeft, {
+        x: 0
+      }, {
+        x: function x() {
+          return getPosXtopRight();
+        },
+        scrollTrigger: {
+          trigger: mainSection,
+          start: "top top",
+          end: "50%-=".concat(headerHeight),
+          scrub: 1
+        }
+      });
+    }
   }
 
   function initProposSection() {
@@ -454,8 +547,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -467,8 +559,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -482,8 +573,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -497,8 +587,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true //   markers: true,
+        scrub: 1 //   markers: true,
 
       }
     });
@@ -512,8 +601,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top bottom",
         end: "bottom",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -528,8 +616,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "50%+=".concat(headerHeight, " bottom"),
         end: "bottom",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -552,8 +639,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -565,8 +651,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "top+=200 bottom",
         end: "top",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -578,8 +663,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "center+=200 bottom",
         end: "bottom-=100",
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
@@ -595,8 +679,7 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "75%+=".concat(headerHeight, " bottom"),
         end: "bottom+=".concat(headerHeight),
-        scrub: 1,
-        invalidateOnRefresh: true // markers: true,
+        scrub: 1 // markers: true,
 
       }
     });
