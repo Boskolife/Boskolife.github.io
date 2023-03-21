@@ -3162,6 +3162,21 @@ html {
     .individual_way .individual_way_items .item_title {
       color: #031C77; }
 
+.individual_steps .step_title {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #031C77;
+  margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    .individual_steps .step_title {
+      font-size: 42px; } }
+  @media (max-width: 479px) {
+    .individual_steps .step_title {
+      text-align: start; } }
+
 .individual_steps .individual_steps_wrap {
   /* Только если меньше контейнера */
   margin-bottom: 65px; }
@@ -3183,6 +3198,9 @@ html {
   @media (max-width: 1350px) {
     .individual_steps .individual_descr {
       font-size: calc(16px + 4 * ((100vw - calc(375px)) / 975)); } }
+  @media (max-width: 479px) {
+    .individual_steps .individual_descr {
+      text-align: start; } }
 
 @media (max-width: 479px) {
   .individual_steps .item_step {
@@ -3490,6 +3508,10 @@ html {
     justify-content: center; }
     .calc .active_wrap .step {
       background-color: #031C77; }
+    @media (max-width: 479px) {
+      .calc .active_wrap {
+        width: 36px;
+        height: 36px; } }
   .calc .line {
     width: 100%;
     /* Только если меньше контейнера */
@@ -3513,6 +3535,11 @@ html {
     height: 40px;
     position: relative;
     z-index: 2; }
+    @media (max-width: 479px) {
+      .calc .step {
+        width: 28px;
+        height: 28px;
+        font-size: 14px; } }
   .calc .spoiler {
     display: none; }
   .calc .show {
@@ -3577,6 +3604,12 @@ html {
     .calc .second_step .calc_form,
     .calc .second_step .calc_wrap {
       width: 100%; }
+    .calc .second_step .calc_wrap {
+      /* Только если меньше контейнера */
+      margin-bottom: 90px; }
+      @media (max-width: 1350px) {
+        .calc .second_step .calc_wrap {
+          margin-bottom: calc(60px + 30 * ((100vw - calc(375px)) / 975)); } }
     .calc .second_step .calc_form {
       gap: 15px;
       -ms-flex-pack: justify;
@@ -3667,7 +3700,8 @@ html {
         flex-direction: column; } }
   .calc .third_step .blue_btn,
   .calc .third_step .start_btn {
-    min-width: 240px; }
+    min-width: 240px;
+    border: none; }
     @media (max-width: 479px) {
       .calc .third_step .blue_btn,
       .calc .third_step .start_btn {
