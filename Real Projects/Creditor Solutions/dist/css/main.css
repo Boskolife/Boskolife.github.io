@@ -804,7 +804,11 @@ header {
   overflow: hidden; }
   .puzzle-animation-second .puzzles-container {
     -webkit-transform: scale(1.5) translateX(5%);
-    transform: scale(1.5) translateX(5%); }
+    transform: scale(1.5) translateX(5%);
+    left: 0; }
+    @media (min-width: 1700px) {
+      .puzzle-animation-second .puzzles-container {
+        left: 20%; } }
     @media (max-width: 1023px) {
       .puzzle-animation-second .puzzles-container {
         top: 25%;
@@ -879,6 +883,10 @@ header {
   .puzzle-animation-third .puzzles-container {
     -webkit-transform: scale(1.5) translateX(13%);
     transform: scale(1.5) translateX(13%); }
+    @media (min-width: 1700px) {
+      .puzzle-animation-third .puzzles-container {
+        -webkit-transform: scale(1.5) translateX(30%);
+        transform: scale(1.5) translateX(30%); } }
     @media (max-width: 1023px) {
       .puzzle-animation-third .puzzles-container {
         -webkit-transform: scale(1.5) translateX(0%);

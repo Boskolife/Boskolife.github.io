@@ -76,6 +76,12 @@
 
     .puzzles-container {
         transform: scale(1.5) translateX(5%);
+        left: 0;
+
+        @include media('>=xl-widescreen') {
+            left: 20%;
+        }
+
 
         @include media('<desktop') {
             top: 25%;
@@ -169,6 +175,10 @@
 
     .puzzles-container {
         transform: scale(1.5) translateX(13%);
+
+        @include media('>=xl-widescreen') {
+            transform: scale(1.5) translateX(30%);
+        }
 
         @include media('<desktop') {
             transform: scale(1.5) translateX(0%);
