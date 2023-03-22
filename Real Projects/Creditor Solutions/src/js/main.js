@@ -381,7 +381,10 @@ function initPuzzleAnimation() {
     initThirdAnimSection();
 
     function initFirstAnimSection() {
-      const animationFirstSection = document.querySelector('.puzzle-animation-first')
+      const animationFirstSection = document.querySelector('.puzzle-animation-first');
+      if (!animationFirstSection) {
+        return
+      };
       const puzzleTopLeft = animationFirstSection.querySelector(".puzzle-top-left");
       const puzzleTopRight = animationFirstSection.querySelector(".puzzle-top-right");
       const puzzleBottomRight = animationFirstSection.querySelector(".puzzle-bottom-right");
@@ -559,6 +562,9 @@ function initPuzzleAnimation() {
 
     function initSecondAnimSection() {
         const section = document.querySelector('.puzzle-animation-second');
+        if (!section) {
+          return
+        };
         const puzzlesContainer = section.querySelector('.puzzles-container');
         const leftSide = section.querySelector('.left-side');
         const rightSide = section.querySelector('.right-side');
@@ -569,6 +575,8 @@ function initPuzzleAnimation() {
         const getPosXLeft = () => window.innerWidth / 2 - puzzleTopLeft.clientWidth / 2;
         const getPosYLeft = () => section.clientHeight / 2;
         const getPosXRight = () => (leftSide.clientWidth - puzzleTopLeft.clientWidth);
+
+  
 
 
         gsap.fromTo(
@@ -668,6 +676,9 @@ function initPuzzleAnimation() {
 
     function initThirdAnimSection() {
       const section = document.querySelector('.puzzle-animation-third');
+      if (!section) {
+        return
+      };
       const puzzlesContainer = section.querySelector('.puzzles-container');
       const leftSide = section.querySelector('.left-side');
       const rightSide = section.querySelector('.right-side');

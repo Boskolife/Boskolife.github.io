@@ -367,6 +367,12 @@ function initPuzzleAnimation() {
 
   function initFirstAnimSection() {
     var animationFirstSection = document.querySelector('.puzzle-animation-first');
+
+    if (!animationFirstSection) {
+      return;
+    }
+
+    ;
     var puzzleTopLeft = animationFirstSection.querySelector(".puzzle-top-left");
     var puzzleTopRight = animationFirstSection.querySelector(".puzzle-top-right");
     var puzzleBottomRight = animationFirstSection.querySelector(".puzzle-bottom-right");
@@ -518,6 +524,12 @@ function initPuzzleAnimation() {
 
   function initSecondAnimSection() {
     var section = document.querySelector('.puzzle-animation-second');
+
+    if (!section) {
+      return;
+    }
+
+    ;
     var puzzlesContainer = section.querySelector('.puzzles-container');
     var leftSide = section.querySelector('.left-side');
     var rightSide = section.querySelector('.right-side');
@@ -627,6 +639,12 @@ function initPuzzleAnimation() {
 
   function initThirdAnimSection() {
     var section = document.querySelector('.puzzle-animation-third');
+
+    if (!section) {
+      return;
+    }
+
+    ;
     var puzzlesContainer = section.querySelector('.puzzles-container');
     var leftSide = section.querySelector('.left-side');
     var rightSide = section.querySelector('.right-side');
