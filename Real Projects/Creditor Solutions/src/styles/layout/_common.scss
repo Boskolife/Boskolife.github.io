@@ -1116,7 +1116,7 @@ html {
     }
 }
 
-.wa_are{
+.wa_are {
     @include adaptiv-vaule("padding-top", 130, 80, 1);
     @include adaptiv-vaule("padding-bottom", 130, 80, 1);
 
@@ -1199,7 +1199,7 @@ html {
     }
 }
 
-.our_team{
+.our_team {
     .bot_text {
         @include adaptiv-vaule("padding-top", 130, 80, 1);
         @include adaptiv-vaule("padding-bottom", 130, 80, 1);
@@ -2592,7 +2592,7 @@ html {
             width: 100%;
         }
 
-        .calc_wrap{
+        .calc_wrap {
             @include adaptiv-vaule("margin-bottom", 90, 60, 1);
         }
 
@@ -2684,7 +2684,6 @@ html {
             min-width: 240px;
             border: none;
 
-
             @include media ("<phone") {
                 min-width: 100%;
             }
@@ -2726,13 +2725,129 @@ html {
             text-decoration: underline;
         }
     }
+}
 
 
-    // .show_step{
-    //     display: block;
-    // }
+.logIn {
+    @include adaptiv-vaule("padding-top", 260, 90, 1);
+    @include adaptiv-vaule("padding-bottom", 35, 50, 1);
+    height: 100vh;
+    position: relative;
 
-    // .hide_step{
-    //     display: none;
-    // }
+    @include media ("<tablet") {
+        height: 100%;
+    }
+
+    .container{
+        height: 100%;
+    }
+
+    .login_content {
+        display: grid;
+        place-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            height: max-content;
+        }
+
+      
+    }
+
+    .login_text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        background-color: $white;
+        padding: 20px;
+        border-radius: 8px;
+        min-width: 400px;
+
+        @include media ("<phone") {
+            min-width: 100%;
+        }
+    }
+
+    .login_title {
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 153%;
+        letter-spacing: -0.01em;
+        color: $blue;
+        text-transform: capitalize;
+        @include adaptiv-vaule("margin-bottom", 50, 35, 1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0 auto;
+        flex: 1 1 auto;
+
+        @include media ("<desktop") {
+            flex: 0 1 auto;
+        }
+    }
+
+    label {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 100%;
+        text-transform: capitalize;
+        color: $gray_2;
+        margin-bottom: 15px;
+    }
+
+    .login_data {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 14px;
+        border: 1px solid #DADDE5;
+        border-radius: 8px;
+        margin-bottom: 25px;
+
+        &:focus{
+            border: 1px solid $blue;
+        }
+
+        &::placeholder {
+            font-size: 14px;
+            line-height: 171%;
+            color: $gray_2;
+        }
+    }
+
+    .blue_btn {
+        width: 100%;
+
+        @include media ("<desktop") {
+            margin-bottom: 25px;
+        }
+    }
+
+    .notice {
+        font-size: 14px;
+        line-height: 20px;
+        color: $gray_2;
+    }
+
+    .login_img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
 }

@@ -6,17 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creditor Solutions</title>
     <link rel="stylesheet" href="./css/main.css">
-    <!-- inject:css -->
-    <link rel="stylesheet" href="./src/form/css/main.940e2ac6.css"/>
-    <!-- endinject -->
     <link rel="website icon" type="png" href="./images/icon_tab.png">
-    <link href="https://fonts.googleapis.com/css?family=Arimo:regular,500,600,700" rel="stylesheet" />
-    <!-- <script src="./js/main.js" defer></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Arimo:regular,500,600,700"
+        rel="stylesheet" />
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
     <div id="wrapper">
-        <div id="root"></div>
+        <header id="header">
+            <div class="container">
+                <div class="header_content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./images/logo.svg" alt="image not found">
+                        </a>
+                    </div>
+                    <nav class="nav">
+                        <ul class="nav-menu" id="menu">
+                            <li class="menu-item"> <a class="menu_link" href="about_us.html">About Us</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="#">DOCUMENT CENTER</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="creditor_center.html">CREDITOR center</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="form.html">Enforce Judgment</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="calc.html">Judgment Calculator</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="faq.html">FAQ</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="contact_us.html">CONTACT US</a></li>
+                        </ul>
+                    </nav>
+                    <div class="burger_menu">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="logIn">
+                <div class="login_img">
+                    <img class="ibg" src="./images/creditor_center/creditor_img.png" alt="image not found">
+                </div>
+                <div class="container">
+                    <div class="login_content">
+                        <div class="login_text">
+                            <h1 class="login_title">Log In</h1>
+                            <form>
+                                <label for="login">Login*</label>
+                                <input id="login" required placeholder="Enter your login" type="text"
+                                    class="login_data">
+                                <label for="pass">Password*</label>
+                                <input id="pass"  required type="password"
+                                    placeholder="Enter your password" class="login_data">
+                                <button type="submit" class="blue_btn">log in</button>
+                            </form>
+                            <div class="notice">This page leads to www.example.com</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
         <footer id="footer">
             <div class="footer_content">
                 <div class="container">
@@ -73,9 +119,6 @@
             </div>
         </footer>
     </div>
-    <!-- inject:js -->
-    <script src="./src/form/js/main.af25a60e.js"></script>
-    <!-- endinject -->
 </body>
 
 </html>
