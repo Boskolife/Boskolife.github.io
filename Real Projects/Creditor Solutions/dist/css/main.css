@@ -1137,6 +1137,9 @@ html {
   @media (max-width: 479px) {
     .main_img {
       display: none; } }
+  .main_img img {
+    width: 100%;
+    height: 100%; }
 
 .main_img_phone {
   display: none; }
