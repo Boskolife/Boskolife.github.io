@@ -1146,6 +1146,9 @@ html {
   @media (max-width: 479px) {
     .main_img_phone {
       display: block; } }
+  .main_img_phone img {
+    width: 100%;
+    height: 100%; }
 
 .about_us {
   background-color: #031C77;
@@ -1922,11 +1925,19 @@ html {
     @media (max-width: 479px) {
       .privacy_policy .privacy_policy_img {
         display: none; } }
+    .privacy_policy .privacy_policy_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
   .privacy_policy .privacy_policy_img_phone {
     display: none; }
     @media (max-width: 479px) {
       .privacy_policy .privacy_policy_img_phone {
         display: block; } }
+    .privacy_policy .privacy_policy_img_phone img {
+      width: 100%;
+      height: 100%; }
   .privacy_policy .privacy_policy_content {
     display: -ms-flexbox;
     display: flex;
