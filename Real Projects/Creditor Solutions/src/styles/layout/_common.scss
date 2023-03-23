@@ -2734,8 +2734,10 @@ html {
     height: 100vh;
     position: relative;
 
-    .container{
+    .container {
         height: 100%;
+        display: grid;
+        place-items: center;
     }
 
     .login_content {
@@ -2809,7 +2811,7 @@ html {
         margin-bottom: 25px;
         @include adaptiv-vaule("margin-bottom", 25, 15, 1);
 
-        &:focus{
+        &:focus {
             border: 1px solid $blue;
         }
 
@@ -2834,7 +2836,7 @@ html {
         color: $gray_2;
     }
 
-    .login_img{
+    .login_img {
         position: absolute;
         top: 0;
         right: 0;
