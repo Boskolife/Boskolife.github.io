@@ -3814,9 +3814,6 @@ html {
   @media (max-width: 1350px) {
     .logIn {
       padding-bottom: calc(50px + -15 * ((100vw - calc(375px)) / 975)); } }
-  @media (max-width: 767px) {
-    .logIn {
-      height: 100%; } }
   .logIn .container {
     height: 100%; }
   .logIn .login_content {
@@ -3829,9 +3826,7 @@ html {
     @media (max-width: 1023px) {
       .logIn .login_content {
         width: 100%;
-        height: -webkit-max-content;
-        height: -moz-max-content;
-        height: max-content; } }
+        height: 100%; } }
   .logIn .login_text {
     text-align: center;
     display: -ms-flexbox;
@@ -3859,7 +3854,7 @@ html {
     margin-bottom: 50px; }
     @media (max-width: 1350px) {
       .logIn .login_title {
-        margin-bottom: calc(35px + 15 * ((100vw - calc(375px)) / 975)); } }
+        margin-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 975)); } }
   .logIn form {
     display: -ms-flexbox;
     display: flex;
@@ -3888,7 +3883,12 @@ html {
     font-size: 14px;
     border: 1px solid #DADDE5;
     border-radius: 8px;
+    margin-bottom: 25px;
+    /* Только если меньше контейнера */
     margin-bottom: 25px; }
+    @media (max-width: 1350px) {
+      .logIn .login_data {
+        margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
     .logIn .login_data:focus {
       border: 1px solid #031C77; }
     .logIn .login_data::-webkit-input-placeholder {

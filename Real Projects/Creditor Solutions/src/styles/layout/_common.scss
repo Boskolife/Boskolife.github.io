@@ -2734,10 +2734,6 @@ html {
     height: 100vh;
     position: relative;
 
-    @include media ("<tablet") {
-        height: 100%;
-    }
-
     .container{
         height: 100%;
     }
@@ -2751,10 +2747,8 @@ html {
 
         @include media ("<desktop") {
             width: 100%;
-            height: max-content;
+            height: 100%;
         }
-
-      
     }
 
     .login_text {
@@ -2780,7 +2774,7 @@ html {
         letter-spacing: -0.01em;
         color: $blue;
         text-transform: capitalize;
-        @include adaptiv-vaule("margin-bottom", 50, 35, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
 
     form {
@@ -2812,6 +2806,7 @@ html {
         border: 1px solid #DADDE5;
         border-radius: 8px;
         margin-bottom: 25px;
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
 
         &:focus{
             border: 1px solid $blue;
