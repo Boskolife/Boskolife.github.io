@@ -7,7 +7,7 @@ initTabs();
 initBurger();
 initNavBtn();
 findHref();
-renderDateSelects()
+renderDateSelects();
 hideText();
 calcPages();
 
@@ -130,6 +130,7 @@ function initNavBtn() {
         onEnterBack: (self) => {
             self.trigger.classList.remove("hide");
         },
+        // markers: true
     });
 }
 

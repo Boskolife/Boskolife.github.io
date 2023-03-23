@@ -14,7 +14,7 @@
 
 <body>
     <div id="wrapper">
-        <header id="header">
+        <header class="no_line" id="header">
             <div class="container">
                 <div class="header_content">
                     <div class="logo">
@@ -24,6 +24,7 @@
                     </div>
                     <nav class="nav">
                         <ul class="nav-menu" id="menu">
+                            <li class="menu-item main_page_hide"> <a class="menu_link" href="index.html">Main Page</a></li>
                             <li class="menu-item"> <a class="menu_link" href="about_us.html">About Us</a></li>
                             <li class="menu-item"> <a class="menu_link" href="#">DOCUMENT CENTER</a></li>
                             <li class="menu-item"> <a class="menu_link" href="creditor_center.html">CREDITOR center</a></li>
@@ -81,7 +82,7 @@
                             <p class="tip">Type the total amount of judgment</p>
                             <form class="calc_form">
                                 <div class="sum-field-wrap">
-                                    <input id="summ" class="summ" placeholder="$ 0.00" type="text">
+                                    <input id="summ" class="summ" placeholder="$ 0.00" type="text" inputmode="numeric">
                                     <p class="error_text">Please fill in required field before
                                         proceeding</p>
                                 </div>

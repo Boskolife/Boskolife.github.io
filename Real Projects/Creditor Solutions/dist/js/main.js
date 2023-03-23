@@ -130,7 +130,8 @@ function initNavBtn() {
     },
     onEnterBack: function onEnterBack(self) {
       self.trigger.classList.remove("hide");
-    }
+    } // markers: true
+
   });
 }
 

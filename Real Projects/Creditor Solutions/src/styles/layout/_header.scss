@@ -8,39 +8,39 @@ header {
     top: 0;
     left: 0;
 
-        @include media ("<tablet") {
+    @include media ("<tablet") {
 
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 1px;
-            bottom: 0;
-            right: 10%;
-            background-color: $gray_3;
-        }
-
+        &::before,
         &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 1px;
-            bottom: 0;
-            right: 41%;
-            background-color: $gray_3;
+            display: none;
         }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        bottom: 0;
+        right: 10%;
+        background-color: $gray_3;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        bottom: 0;
+        right: 41%;
+        background-color: $gray_3;
+    }
 
     @include media ("<phone") {
         padding: 10px 0 15px 0;
     }
 
-    .header_content{
+    .header_content {
         position: relative;
         z-index: 2;
     }
@@ -69,7 +69,7 @@ header {
             transition: all .3s linear;
             z-index: 3;
             background-color: $white;
-            padding:90px 0 30px 0;
+            padding: 90px 0 30px 0;
         }
 
         @include media ("<tablet") {
@@ -77,7 +77,7 @@ header {
         }
     }
 
-    .nav-menu{
+    .nav-menu {
         @include media ("<desktop") {
             flex-direction: column;
             align-items: center;
@@ -87,9 +87,17 @@ header {
         }
     }
 
-    .menu_active{
+    .menu_active {
         right: 0;
         transition: all .3s linear;
+    }
+
+    .main_page_hide{
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+        }
     }
 
     .menu-item {
@@ -195,5 +203,13 @@ header {
             width: 0;
             transition: all .3s linear;
         }
+    }
+}
+
+.no_line {
+
+    &::before,
+    &::after {
+        display: none;
     }
 }
