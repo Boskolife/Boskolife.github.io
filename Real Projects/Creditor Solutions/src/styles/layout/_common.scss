@@ -1114,10 +1114,13 @@ html {
             text-align: start;
         }
     }
+}
+
+.wa_are{
+    @include adaptiv-vaule("padding-top", 130, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
 
     .middle_text_content {
-        @include adaptiv-vaule("padding-top", 130, 80, 1);
-        @include adaptiv-vaule("padding-bottom", 130, 80, 1);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1194,7 +1197,9 @@ html {
             }
         }
     }
+}
 
+.our_team{
     .bot_text {
         @include adaptiv-vaule("padding-top", 130, 80, 1);
         @include adaptiv-vaule("padding-bottom", 130, 80, 1);
