@@ -3826,7 +3826,9 @@ html {
     @media (max-width: 1023px) {
       .logIn .login_content {
         width: 100%;
-        height: 100%; } }
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content; } }
   .logIn .login_text {
     text-align: center;
     display: -ms-flexbox;
@@ -3842,7 +3844,8 @@ html {
     min-width: 400px; }
     @media (max-width: 479px) {
       .logIn .login_text {
-        min-width: 100%; } }
+        min-width: 100%;
+        padding: 30px 10px; } }
   .logIn .login_title {
     font-weight: 600;
     font-size: 34px;
