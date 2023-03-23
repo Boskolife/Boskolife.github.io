@@ -204,6 +204,7 @@ html {
     background-color: $blue;
     @include adaptiv-vaule("padding-top", 130, 80, 1);
     @include adaptiv-vaule("padding-bottom", 130, 70, 1);
+
 }
 
 .about_us_content {
@@ -1111,6 +1112,10 @@ html {
 
     .main_text {
         align-items: center;
+    }
+
+    .main_img{
+        @include adaptiv-vaule("height", 470, 280, 1);
     }
 }
 

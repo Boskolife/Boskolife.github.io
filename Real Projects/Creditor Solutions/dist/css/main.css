@@ -2125,6 +2125,12 @@ html {
   .about_us_page .main_text {
     -ms-flex-align: center;
     align-items: center; }
+  .about_us_page .main_img {
+    /* Только если меньше контейнера */
+    height: 470px; }
+    @media (max-width: 1350px) {
+      .about_us_page .main_img {
+        height: calc(280px + 190 * ((100vw - calc(375px)) / 975)); } }
 
 .our_purpose .top_text {
   background-color: #031C77;
