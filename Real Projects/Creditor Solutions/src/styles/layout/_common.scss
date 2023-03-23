@@ -810,10 +810,22 @@ html {
         width: 100%;
         @include adaptiv-vaule("height", 350, 280, 1);
 
+        @include media ("<phone") {
+            display: none;
+        }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    .faq_page_img_phone{
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
         }
     }
 
@@ -868,6 +880,18 @@ html {
         position: relative;
         width: 100%;
         @include adaptiv-vaule("height", 350, 280, 1);
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .privacy_policy_img_phone{
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+        }
     }
 
     .privacy_policy_content {
