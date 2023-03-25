@@ -247,6 +247,7 @@ function calcPages() {
   var interestRateEl = document.querySelector('#interestRate');
   var totalEl = document.querySelector('#total');
   var AMOUNT_REGEX = /^\d+\.?\d?(\d+)?$/;
+  var currentDate = document.getElementById("daySelect");
   var monthValue = monthSelect.value;
   var yearValue = yearSelect.value;
   var dayValue = daySelect.value;
@@ -272,6 +273,13 @@ function calcPages() {
     firstStep.classList.add('step_show');
   };
 
+  stepOne.addEventListener('click', function (e) {
+    e.preventDefault();
+    secondStep.classList.remove('step_show');
+    firstStep.classList.add("step_show");
+    stepTwo.classList.remove("active_wrap");
+    stepOne.classList.add("active_wrap");
+  });
   firstBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -293,6 +301,7 @@ function calcPages() {
     thirdStep.classList.add('step_show');
     fullYear = getInputDate();
     result = nyJudgmentInterest(+amountValue, fullYear);
+    currentDate.textContent = result.formateDate;
     awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
     interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
     totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
@@ -341,7 +350,13 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var april30Date = new Date('2022-04-30'); // date when interest rate changes
 
   var today = new Date();
-  var judgDate = new Date(judgmentDate); // Calculate the number of months between the judgment date and April 30, 2022
+  var judgDate = new Date(judgmentDate);
+  var localDate = judgDate.toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).replace(/,/, '').split(' ');
+  var formateDate = "".concat(localDate[1], " ").concat(localDate[0], " ").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
@@ -353,7 +368,8 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var totalValue = judgmentAmount + interest;
   return {
     interest: interest,
-    totalValue: totalValue
+    totalValue: totalValue,
+    formateDate: formateDate
   };
 }
 

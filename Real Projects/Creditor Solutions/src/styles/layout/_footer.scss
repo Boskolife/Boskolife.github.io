@@ -83,9 +83,12 @@ footer {
     .link {
         display: flex;
         align-items: center;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 32px;
+        color: $black;
 
         &:not(:last-child) {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
     }
 
@@ -172,15 +175,11 @@ footer {
         position: relative;
 
         &:not(:last-child) {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         @include media ("<desktop") {
             width: max-content;
-
-            &:not(:last-child) {
-                margin-bottom: 15px;
-            }
         }
 
         &:hover {
@@ -203,9 +202,8 @@ footer {
         @include adaptiv-vaule("padding-right", 70, -70, 1);
         @include adaptiv-vaule("padding-left", 70, -70, 1);
         padding-top: 40px;
-        display: grid;
-        grid-template: 1fr 1fr / 1fr;
-        row-gap: 20px;
+        display: flex;
+        flex-direction: column;
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -224,6 +222,11 @@ footer {
         line-height: 200%;
         transition: all .3s ease;
         position: relative;
+
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
 
         @include media ("<desktop") {
             width: max-content;
@@ -252,7 +255,8 @@ footer {
     .container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -260,31 +264,39 @@ footer {
         }
     }
 
-    .note {
-        font-size: 14px;
-        color: $gray_2;
-        line-height: 143%;
-        margin-bottom: 12px;
-    }
-
-    .note_one{
-        margin-bottom: 0;
-
-        @include media ("<desktop") {
-            margin-bottom: 15px;
-        }
-    }
-
     .note_wrap {
         display: flex;
         align-items: center;
         flex-direction: column;
-        &:hover {
-            svg {
-                fill: $blue;
-                transition: all .3s ease;
-            }
+        margin-bottom: 15px;
+    }
 
+    .note {
+        color: $gray_2;
+        font-size: 12px;
+        line-height: 14px;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    .creator_wrap {
+        padding-top: 20px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 110%;
+            height: 1px;
+            background-color: $gray;
         }
     }
 
@@ -296,6 +308,13 @@ footer {
         line-height: 24px;
         text-transform: uppercase;
         color: $gray_2;
+        
+        &:hover {
+            svg {
+                fill: $blue;
+                transition: all .3s ease;
+            }
+        }
 
         svg {
             margin-left: 5px;

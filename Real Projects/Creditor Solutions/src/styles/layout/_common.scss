@@ -16,16 +16,6 @@ html {
     padding-top: 100px;
 }
 
-@keyframes bottom_border {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
 .body_lock {
     overflow: hidden;
 }
@@ -107,35 +97,6 @@ html {
     display: flex;
     flex-direction: column;
     // height: 100vh;
-    position: relative;
-
-    @include media ("<tablet") {
-
-        &::before,
-        &::after {
-            display: none;
-        }
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 1px;
-        top: 0;
-        right: 10%;
-        background-color: $gray_3;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 1px;
-        top: 0;
-        right: 41%;
-        background-color: $gray_3;
-    }
 }
 
 .main_content {
@@ -186,9 +147,9 @@ html {
         display: none;
     }
 
-    img{
-        width:100%;
-        height:100%;
+    img {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -199,7 +160,7 @@ html {
         display: block;
     }
 
-    img{
+    img {
         width: 100%;
         height: 100%;
     }
@@ -479,14 +440,15 @@ html {
         align-items: center;
         min-height: 100%;
         transition: all .3s linear;
+        ;
 
         @include media (">tablet") {
             &:hover {
                 transform: scale(1.05);
                 transition: all .3s linear;
+                box-shadow: 2px 2px 20px $blue;
             }
         }
-
     }
 
     .card_img {
@@ -718,10 +680,24 @@ html {
         }
     }
 
+    .interactive {
+        &:hover {
+            .link_img {
+                transform: rotateY(180deg) scale(1.4);
+                transition: all .3s ease;
+            }
+
+            .link_title {
+                text-decoration: underline;
+            }
+        }
+    }
+
     .link_img {
         margin-right: 13px;
         width: 24px;
         height: 24px;
+        transition: all .3s ease;
     }
 
     .link_title {
@@ -896,7 +872,7 @@ html {
             display: none;
         }
 
-        img{
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -910,7 +886,7 @@ html {
             display: block;
         }
 
-        img{
+        img {
             width: 100%;
             height: 100%;
         }
@@ -1130,7 +1106,7 @@ html {
         align-items: center;
     }
 
-    .main_img{
+    .main_img {
         @include adaptiv-vaule("height", 470, 280, 1);
     }
 }
@@ -1138,7 +1114,7 @@ html {
 .our_purpose {
 
     .top_text {
-        background-color: $blue;
+        background-color: #F2F4F8;
         @include adaptiv-vaule("padding-top", 100, 80, 1);
         @include adaptiv-vaule("padding-bottom", 100, 80, 1);
         text-align: center;
@@ -1154,7 +1130,7 @@ html {
         letter-spacing: 0.12em;
         text-transform: uppercase;
         @include adaptiv-vaule("margin-bottom", 20, 10, 1);
-        color: $gray;
+        color: $gray_4;
     }
 
     .top_title {
@@ -1164,7 +1140,7 @@ html {
         line-height: 120%;
         text-align: center;
         letter-spacing: -0.03em;
-        color: $white;
+        color: $blue;
         max-width: 730px;
         margin: 0 auto;
 
@@ -1260,8 +1236,7 @@ html {
 
 .our_team {
     .bot_text {
-        @include adaptiv-vaule("padding-top", 130, 80, 1);
-        @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+        @include adaptiv-vaule("padding-bottom", 100, 80, 1);
         background-color: #F9F9F9;
 
         .bot_text_content {
@@ -1502,14 +1477,14 @@ html {
 }
 
 .work {
-    @include adaptiv-vaule("padding-top", 130, 80, 1);
     background-color: #F9F9F9;
+    @include adaptiv-vaule("padding-bottom", 100, 80, 1);
 
     .work_content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @include adaptiv-vaule("margin-bottom", 75, 30, 1);
+        @include adaptiv-vaule("padding-top", 50, 25, 1);
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -1552,6 +1527,7 @@ html {
         position: relative;
         width: 100%;
         @include adaptiv-vaule("height", 320, 200, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
 }
 
@@ -1660,6 +1636,8 @@ html {
             width: 42px;
             height: 42px;
         }
+
+
     }
 
     .pack {
@@ -1780,7 +1758,7 @@ html {
         line-height: 120%;
         letter-spacing: -0.03em;
         color: $blue;
-        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
     }
 
     .way_descr {
@@ -2118,12 +2096,6 @@ html {
         }
     }
 
-    .blue_btn {
-        @include media ("<desktop") {
-            display: none;
-        }
-    }
-
     .way_hidden {
         display: none;
 
@@ -2216,19 +2188,7 @@ html {
         max-width: 800px;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 35px;
 
-        .way_descr {
-            max-width: 600px;
-        }
-    }
-
-    .way_title {
-        font-weight: 600;
-        @include adaptiv-vaule("font-size", 34, 28, 1);
-        line-height: 120%;
-        letter-spacing: -0.03em;
-        color: $blue;
     }
 
     .individual_way_items {
@@ -2266,24 +2226,6 @@ html {
 }
 
 .individual_steps {
-
-    .step_title {
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 120%;
-        text-align: center;
-        letter-spacing: -0.03em;
-        color: $blue;
-        margin-bottom: 20px;
-
-        @include media ("<tablet") {
-            font-size: 42px;
-        }
-
-        @include media ("<phone") {
-            text-align: start;
-        }
-    }
 
     .individual_steps_wrap {
         @include adaptiv-vaule("margin-bottom", 65, 30, 1);
@@ -2480,6 +2422,7 @@ html {
 
     .calc_subtitle {
         font-weight: 600;
+        text-transform: capitalize;
         font-size: 26px;
         @include adaptiv-vaule("font-size", 26, 20, 1);
         line-height: 140%;
@@ -2612,6 +2555,10 @@ html {
         }
     }
 
+    #step_one{
+        cursor: pointer;
+    }
+
     .line {
         width: 100%;
         @include adaptiv-vaule("width", 130, 80, 1);
@@ -2727,7 +2674,7 @@ html {
             flex-wrap: wrap;
             row-gap: 20px;
             column-gap: 40px;
-            @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+            margin-bottom: 15px;
 
             @include media ("<950px") {
                 flex-direction: column;
@@ -2759,15 +2706,22 @@ html {
             line-height: 120%;
             letter-spacing: -0.03em;
             color: $black;
-
         }
 
-        .amount_res {
-            width: max-content;
-            padding: 10px;
-            border: 1px solid $gray;
-            border-radius: 10px;
-            margin: 0 auto;
+        .current_date{
+            margin-bottom: 30px;
+        }
+
+        .judg_date {
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            line-height: 28px;
+            letter-spacing: -0.01em;
+            color: $blue;
+        }
+
+        #daySelect{
+            color: $gray_4;
         }
 
         .btn_wrap {
