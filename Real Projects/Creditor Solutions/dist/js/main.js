@@ -246,6 +246,7 @@ function calcPages() {
   var awardEl = document.querySelector('#award');
   var interestRateEl = document.querySelector('#interestRate');
   var totalEl = document.querySelector('#total');
+  var initialDateEl = document.querySelector('.initial_date');
   var AMOUNT_REGEX = /^\d+\.?\d?(\d+)?$/;
   var monthValue = monthSelect.value;
   var yearValue = yearSelect.value;
@@ -296,6 +297,7 @@ function calcPages() {
     awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
     interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
     totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
+    initialDateEl.textContent = result.judgDate;
   });
   startOverBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -341,7 +343,8 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var april30Date = new Date('2022-04-30'); // date when interest rate changes
 
   var today = new Date();
-  var judgDate = new Date(judgmentDate); // Calculate the number of months between the judgment date and April 30, 2022
+  var judgDate = new Date(judgmentDate);
+  var formattedDate = formatDate(judgDate); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
@@ -353,8 +356,19 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var totalValue = judgmentAmount + interest;
   return {
     interest: interest,
-    totalValue: totalValue
+    totalValue: totalValue,
+    judgDate: formattedDate
   };
+}
+
+function formatDate(date) {
+  var options = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  };
+  var formattedDate = date.toLocaleDateString('en-US', options).replace(/,/, '').split(' ');
+  return "".concat(formattedDate[1], " ").concat(formattedDate[0], " ").concat(formattedDate[2]);
 }
 
 function initPuzzleAnimation() {

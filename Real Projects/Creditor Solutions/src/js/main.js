@@ -267,6 +267,7 @@ function calcPages() {
     const awardEl = document.querySelector('#award');
     const interestRateEl = document.querySelector('#interestRate');
     const totalEl = document.querySelector('#total');
+    const initialDateEl = document.querySelector('.initial_date');
     const AMOUNT_REGEX = /^\d+\.?\d?(\d+)?$/;
 
     let monthValue = monthSelect.value;
@@ -311,7 +312,8 @@ function calcPages() {
         result = nyJudgmentInterest(+amountValue, fullYear);
         awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
         interestRateEl.textContent = `$${result.interest.toFixed(2)}`;
-        totalEl.textContent =`$${result.totalValue.toFixed(2)}`
+        totalEl.textContent =`$${result.totalValue.toFixed(2)}`;
+        initialDateEl.textContent = result.judgDate;
     })
 
     startOverBtn.addEventListener("click", (e) => {
@@ -351,7 +353,8 @@ function nyJudgmentInterest(judgmentAmount, date) {
     const afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
     const april30Date = new Date('2022-04-30'); // date when interest rate changes
     const today = new Date();
-    const judgDate = new Date(judgmentDate)
+    const judgDate = new Date(judgmentDate);
+    const formattedDate = formatDate(judgDate)
   
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
@@ -368,7 +371,13 @@ function nyJudgmentInterest(judgmentAmount, date) {
     // Calculate the total value of the judgment including interest
     const totalValue = judgmentAmount + interest;
 
-    return { interest, totalValue };
+    return { interest, totalValue, judgDate : formattedDate};
+}
+
+function formatDate(date) {
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options).replace(/,/, '').split(' ');
+  return `${formattedDate[1]} ${formattedDate[0]} ${formattedDate[2]}`;
 }
 
 function initPuzzleAnimation() {
