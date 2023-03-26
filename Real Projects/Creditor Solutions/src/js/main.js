@@ -1,3 +1,4 @@
+
 const winTriggersMethods = ['resize', 'load'];
 
 const MOBILE_SIZE = 480;
@@ -260,6 +261,7 @@ function calcPages() {
     const thirdStep = document.getElementById('third_step');
     const stepOne = document.getElementById('step_one');
     const stepTwo = document.getElementById('step_two');
+    const stepThree = document.getElementById('step_three');
     const amountInput = document.querySelector('#summ');
     const monthSelect = document.getElementById("month-select");
     const yearSelect = document.getElementById("year-select");
@@ -289,6 +291,7 @@ function calcPages() {
         amountValue = '';
         thirdStep.classList.remove('step_show')
         firstStep.classList.add('step_show');
+        stepOne.classList.add("active_wrap");
     }
 
     stepOne.addEventListener('click', (e) => {
@@ -297,7 +300,21 @@ function calcPages() {
       firstStep.classList.add("step_show");
       stepTwo.classList.remove("active_wrap");
       stepOne.classList.add("active_wrap");
-    })
+    });
+
+    stepTwo.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(!amountValue)  {
+        amountInput.parentNode.classList.add('error')
+        return
+      };
+      firstStep.classList.remove("step_show");
+      secondStep.classList.add('step_show');
+      thirdStep.classList.remove('step_show');
+      stepOne.classList.remove("active_wrap");
+      stepTwo.classList.add("active_wrap");
+      stepThree.classList.remove("active_wrap");
+    });
 
     firstBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -316,6 +333,8 @@ function calcPages() {
         e.preventDefault();
         secondStep.classList.remove('step_show')
         thirdStep.classList.add('step_show');
+        stepTwo.classList.remove("active_wrap");
+        stepThree.classList.add("active_wrap");
         fullYear = getInputDate();
         result = nyJudgmentInterest(+amountValue, fullYear);
         currentDate.textContent = result.formateDate;

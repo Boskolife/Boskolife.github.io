@@ -239,6 +239,7 @@ function calcPages() {
   var thirdStep = document.getElementById('third_step');
   var stepOne = document.getElementById('step_one');
   var stepTwo = document.getElementById('step_two');
+  var stepThree = document.getElementById('step_three');
   var amountInput = document.querySelector('#summ');
   var monthSelect = document.getElementById("month-select");
   var yearSelect = document.getElementById("year-select");
@@ -271,6 +272,7 @@ function calcPages() {
     amountValue = '';
     thirdStep.classList.remove('step_show');
     firstStep.classList.add('step_show');
+    stepOne.classList.add("active_wrap");
   };
 
   stepOne.addEventListener('click', function (e) {
@@ -279,6 +281,22 @@ function calcPages() {
     firstStep.classList.add("step_show");
     stepTwo.classList.remove("active_wrap");
     stepOne.classList.add("active_wrap");
+  });
+  stepTwo.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (!amountValue) {
+      amountInput.parentNode.classList.add('error');
+      return;
+    }
+
+    ;
+    firstStep.classList.remove("step_show");
+    secondStep.classList.add('step_show');
+    thirdStep.classList.remove('step_show');
+    stepOne.classList.remove("active_wrap");
+    stepTwo.classList.add("active_wrap");
+    stepThree.classList.remove("active_wrap");
   });
   firstBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -299,6 +317,8 @@ function calcPages() {
     e.preventDefault();
     secondStep.classList.remove('step_show');
     thirdStep.classList.add('step_show');
+    stepTwo.classList.remove("active_wrap");
+    stepThree.classList.add("active_wrap");
     fullYear = getInputDate();
     result = nyJudgmentInterest(+amountValue, fullYear);
     currentDate.textContent = result.formateDate;
