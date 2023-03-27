@@ -281,6 +281,8 @@ function calcPages() {
     firstStep.classList.add("step_show");
     stepTwo.classList.remove("active_wrap");
     stepOne.classList.add("active_wrap");
+    thirdStep.classList.remove('step_show');
+    stepThree.classList.remove("active_wrap");
   });
   stepTwo.addEventListener('click', function (e) {
     e.preventDefault();
@@ -297,6 +299,21 @@ function calcPages() {
     stepOne.classList.remove("active_wrap");
     stepTwo.classList.add("active_wrap");
     stepThree.classList.remove("active_wrap");
+    fullYear = getInputDate();
+    result = nyJudgmentInterest(+amountValue, fullYear);
+    currentDate.textContent = result.formateDate;
+    awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
+    interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
+    totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
+  });
+  stepThree.addEventListener('click', function (e) {
+    e.preventDefault();
+    thirdStep.classList.add('step_show');
+    firstStep.classList.remove("step_show");
+    secondStep.classList.remove('step_show');
+    stepThree.classList.add("active_wrap");
+    stepOne.classList.remove("active_wrap");
+    stepTwo.classList.remove("active_wrap");
   });
   firstBtn.addEventListener("click", function (e) {
     e.preventDefault();

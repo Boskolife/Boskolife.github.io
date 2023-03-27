@@ -3717,7 +3717,9 @@ html {
       .calc .active_wrap {
         width: 36px;
         height: 36px; } }
-  .calc #step_one {
+  .calc #step_one,
+  .calc #step_two,
+  .calc #step_three {
     cursor: pointer; }
   .calc .line {
     width: 100%;
