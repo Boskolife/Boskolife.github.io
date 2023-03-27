@@ -4201,17 +4201,13 @@ footer {
       text-decoration: underline; }
     footer .footer_top .link_img {
       margin-right: 13px;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       transition: all .3s ease; }
     footer .footer_top .link_title {
       font-weight: 500;
-      /* Только если меньше контейнера */
-      font-size: 16px;
+      font-size: 14px;
       color: #1D1D20; }
-      @media (max-width: 1350px) {
-        footer .footer_top .link_title {
-          font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
     footer .footer_top .list_links {
       width: 42%;
       /* Только если меньше контейнера */
@@ -4383,7 +4379,20 @@ footer {
       text-align: start; }
       @media (max-width: 1023px) {
         footer .footer_bottom .note {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
+          text-align: center; }
+          footer .footer_bottom .note br {
+            display: none; } }
+    footer .footer_bottom .last_note {
+      /* Только если меньше контейнера */
+      width: 350px;
+      text-align: end; }
+      @media (max-width: 1350px) {
+        footer .footer_bottom .last_note {
+          width: calc(1px + 349 * ((100vw - calc(375px)) / 975)); } }
+      @media (max-width: 1023px) {
+        footer .footer_bottom .last_note {
+          width: 100%;
           text-align: center; } }
     footer .footer_bottom .creator {
       display: -ms-flexbox;
@@ -4399,12 +4408,9 @@ footer {
         footer .footer_bottom .creator {
           -ms-flex-order: 3;
           order: 3; } }
-      footer .footer_bottom .creator:hover svg {
-        fill: #031C77;
-        transition: all .3s ease; }
       footer .footer_bottom .creator svg {
         margin-left: 5px;
-        fill: #3D3E45;
+        fill: #031C77;
         transition: all .3s ease; }
 
 /*# sourceMappingURL=main.css.map */

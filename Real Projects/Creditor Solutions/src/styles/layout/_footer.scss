@@ -98,14 +98,14 @@ footer {
     
         .link_img {
             margin-right: 13px;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             transition: all .3s ease;
         }
     
         .link_title {
             font-weight: 500;
-            @include adaptiv-vaule("font-size", 16, 14, 1);
+            font-size: 14px;
             color: $black;
         }
     
@@ -272,8 +272,22 @@ footer {
             text-align: start;
             
             @include media ("<desktop") {
-               margin-bottom: 5px;
+               margin-bottom: 10px;
                text-align: center;
+
+                br{
+                    display: none
+                }
+            }
+        }
+
+        .last_note{
+            @include adaptiv-vaule("width", 350, 1, 1);
+            text-align: end;
+
+            @include media ("<desktop") {
+                width: 100%;
+                text-align: center;
             }
         }
     
@@ -285,22 +299,14 @@ footer {
             line-height: 24px;
             text-transform: uppercase;
             color: $gray_2;
-
             
             @include media ("<desktop") {
                 order: 3;
             }
-            
-            &:hover {
-                svg {
-                    fill: $blue;
-                    transition: all .3s ease;
-                }
-            }
     
             svg {
                 margin-left: 5px;
-                fill: $gray_4;
+                fill: $blue;
                 transition: all .3s ease;
             }
         }
