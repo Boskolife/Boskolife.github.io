@@ -7,9 +7,21 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 #wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
+}
+
+main {
+    flex: 1 1 auto;
 }
 
 #root {
@@ -2953,7 +2965,7 @@ html {
 
 
 .logIn {
-    @include adaptiv-vaule("padding-top", 260, 90, 1);
+    @include adaptiv-vaule("padding-top", 150, 90, 1);
     @include adaptiv-vaule("padding-bottom", 35, 50, 1);
     height: 100vh;
     position: relative;
@@ -2970,7 +2982,6 @@ html {
     .login_content {
         display: grid;
         place-items: center;
-        flex-direction: column;
         height: 100%;
         width: 50%;
 
@@ -2985,7 +2996,6 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%;
         background-color: $white;
         padding: 20px;
         border-radius: 8px;
@@ -3013,11 +3023,6 @@ html {
         align-items: flex-start;
         width: 100%;
         margin: 0 auto;
-        flex: 1 1 auto;
-
-        @include media ("<desktop") {
-            flex: 0 1 auto;
-        }
     }
 
     label {
@@ -3061,6 +3066,7 @@ html {
         font-size: 14px;
         line-height: 20px;
         color: $gray_2;
+        margin-top: 15px;
     }
 
     .login_img {

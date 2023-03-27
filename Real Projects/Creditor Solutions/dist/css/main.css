@@ -974,9 +974,22 @@ body {
 html {
   scroll-behavior: smooth; }
 
+html,
+body {
+  height: 100%; }
+
 #wrapper {
+  min-height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   overflow: hidden; }
+
+main {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; }
 
 #root {
   padding-top: 100px; }
@@ -3970,14 +3983,14 @@ html {
 
 .logIn {
   /* Только если меньше контейнера */
-  padding-top: 260px;
+  padding-top: 150px;
   /* Только если меньше контейнера */
   padding-bottom: 35px;
   height: 100vh;
   position: relative; }
   @media (max-width: 1350px) {
     .logIn {
-      padding-top: calc(90px + 170 * ((100vw - calc(375px)) / 975)); } }
+      padding-top: calc(90px + 60 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1350px) {
     .logIn {
       padding-bottom: calc(50px + -15 * ((100vw - calc(375px)) / 975)); } }
@@ -3990,8 +4003,6 @@ html {
   .logIn .login_content {
     display: grid;
     place-items: center;
-    -ms-flex-direction: column;
-    flex-direction: column;
     height: 100%;
     width: 50%; }
     @media (max-width: 1023px) {
@@ -4008,7 +4019,6 @@ html {
     flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
-    height: 100%;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
@@ -4037,13 +4047,7 @@ html {
     -ms-flex-align: start;
     align-items: flex-start;
     width: 100%;
-    margin: 0 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto; }
-    @media (max-width: 1023px) {
-      .logIn form {
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto; } }
+    margin: 0 auto; }
   .logIn label {
     font-weight: 600;
     font-size: 12px;
@@ -4093,7 +4097,8 @@ html {
   .logIn .notice {
     font-size: 14px;
     line-height: 20px;
-    color: #66666C; }
+    color: #66666C;
+    margin-top: 15px; }
   .logIn .login_img {
     position: absolute;
     top: 0;

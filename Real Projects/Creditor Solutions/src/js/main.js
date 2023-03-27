@@ -327,6 +327,10 @@ function calcPages() {
 
     stepThree.addEventListener('click', (e) => {
       e.preventDefault();
+      if(!amountValue)  {
+        amountInput.parentNode.classList.add('error')
+        return
+      };
       thirdStep.classList.add('step_show');
       firstStep.classList.remove("step_show");
       secondStep.classList.remove('step_show');
