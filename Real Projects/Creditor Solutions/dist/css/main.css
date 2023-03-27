@@ -1597,7 +1597,7 @@ main {
   .cards .tooltiptext {
     position: absolute;
     top: -150%;
-    left: 50%;
+    right: -50px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
@@ -1612,7 +1612,7 @@ main {
       content: " ";
       position: absolute;
       top: 100%;
-      left: 50%;
+      right: 7px;
       margin-left: -5px;
       border-width: 5px;
       border-style: solid;
