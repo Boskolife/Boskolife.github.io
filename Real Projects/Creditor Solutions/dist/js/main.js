@@ -395,10 +395,10 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var judgDate = new Date(judgmentDate);
   var localDate = judgDate.toLocaleDateString("en-US", {
     day: "numeric",
-    month: "long",
+    month: "numeric",
     year: "numeric"
-  }).replace(/,/, "").split(" ");
-  var formateDate = "".concat(localDate[1], " ").concat(localDate[0], " ").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
+  }).replace(/\//g, ".").split(".");
+  var formateDate = "".concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], ".").concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], ".").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
@@ -780,78 +780,28 @@ function initPuzzleAnimation() {
 }
 
 function jsonAnimation() {
-  // if (!loadAnimation){
-  //   return
-  // };
-  var animation = bodymovin.loadAnimation({
-    container: document.getElementById("icon_1"),
-    path: "files/icon_1.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation2 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_2"),
-    path: "files/icon_2.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation3 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_3"),
-    path: "files/icon_3.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation4 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_4"),
-    path: "files/icon_4.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation5 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_5"),
-    path: "files/icon_5.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation6 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_6"),
-    path: "files/icon_6.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation7 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_7"),
-    path: "files/icon_7.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation8 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_8"),
-    path: "files/icon_8.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation9 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_9"),
-    path: "files/icon_9.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
-  var animation10 = bodymovin.loadAnimation({
-    container: document.getElementById("icon_10"),
-    path: "files/icon_10.json",
-    render: "svg",
-    loop: true,
-    autoplay: true
-  });
+  try {
+    new Array(10).fill("icon").map(function (element, i) {
+      return "".concat(element, "_").concat(i + 1);
+    }).forEach(function (element, i) {
+      var icon = document.getElementById(element);
+      var iconBody = icon.closest('.propos_item');
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: "files/".concat(element, ".json"),
+        render: "svg",
+        loop: true,
+        autoplay: false
+      });
+      iconBody.addEventListener('mouseover', function () {
+        anim.play();
+      });
+      iconBody.addEventListener('mouseout', function () {
+        anim.pause();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
 }
 //# sourceMappingURL=main.js.map

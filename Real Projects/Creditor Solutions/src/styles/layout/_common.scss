@@ -447,26 +447,27 @@ main {
         position: relative;
         z-index: 2;
 
-        &::after{
+        &::after {
             content: '';
             position: absolute;
             top: -3px;
             left: -3px;
             background-color: rgba(3, 28, 119, 0.3);
             width: calc(100% + 2px);
-            height:0%;
+            height: 0%;
             border-radius: 14px;
             z-index: -2;
             transition: all 1s linear;
         }
-        &::before{
+
+        &::before {
             content: '';
             position: absolute;
             top: -2px;
             left: -2px;
-            background-color:$white;
+            background-color: $white;
             width: 100%;
-            height:100%;
+            height: 100%;
             border-radius: 14px;
             z-index: -1;
             transition: all 1s linear;
@@ -478,8 +479,8 @@ main {
                 transform: scale(1.05);
                 transition: all .3s linear;
 
-                &::after{
-                    height:calc(100% + 2px);
+                &::after {
+                    height: calc(100% + 2px);
                     transition: all 1s linear;
                 }
             }
@@ -1191,7 +1192,7 @@ main {
     overflow: hidden;
 
     .img_purp_left,
-    .img_purp_right{
+    .img_purp_right {
         position: absolute;
 
         @include media ("<tablet") {
@@ -1199,12 +1200,12 @@ main {
         }
     }
 
-    .img_purp_left{
+    .img_purp_left {
         top: -40px;
         left: -235px;
     }
 
-    .img_purp_right{
+    .img_purp_right {
         bottom: -40px;
         right: -235px;
     }
@@ -1781,7 +1782,7 @@ main {
     .tooltiptext {
         position: absolute;
         top: -150%;
-        left: 50%;
+        right: -50px;
         transform: translateX(-50%);
         z-index: 1;
         padding: 5px 10px;
@@ -1796,7 +1797,7 @@ main {
             content: " ";
             position: absolute;
             top: 100%;
-            left: 50%;
+            right: 7px;
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
@@ -2385,7 +2386,7 @@ main {
             }
         }
 
-        .item_img{
+        .item_img {
             margin: 0 auto;
         }
 

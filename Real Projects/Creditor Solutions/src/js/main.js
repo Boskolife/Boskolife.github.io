@@ -412,12 +412,12 @@ function nyJudgmentInterest(judgmentAmount, date) {
     const localDate = judgDate
         .toLocaleDateString("en-US", {
             day: "numeric",
-            month: "long",
+            month: "numeric",
             year: "numeric",
         })
-        .replace(/,/, "")
-        .split(" ");
-    let formateDate = `${localDate[1]} ${localDate[0]} ${localDate[2]}`;
+        .replace(/\//g, ".")
+        .split(".");
+    let formateDate = `${localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]}.${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}.${localDate[2]}`;
 
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
@@ -845,88 +845,24 @@ function initPuzzleAnimation() {
 }
 
 function jsonAnimation() {
-
-    // if (!loadAnimation){
-    //   return
-    // };
-
-    let animation = bodymovin.loadAnimation({
-        container: document.getElementById("icon_1"),
-        path: "files/icon_1.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation2 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_2"),
-        path: "files/icon_2.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation3 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_3"),
-        path: "files/icon_3.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation4 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_4"),
-        path: "files/icon_4.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation5 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_5"),
-        path: "files/icon_5.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation6 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_6"),
-        path: "files/icon_6.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation7 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_7"),
-        path: "files/icon_7.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation8 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_8"),
-        path: "files/icon_8.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation9 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_9"),
-        path: "files/icon_9.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
-
-    let animation10 = bodymovin.loadAnimation({
-        container: document.getElementById("icon_10"),
-        path: "files/icon_10.json",
-        render: "svg",
-        loop: true,
-        autoplay: true,
-    });
+    try {
+        new Array(10)
+            .fill("icon")
+            .map((element, i) => `${element}_${i + 1}`)
+            .forEach((element, i) => {
+                const icon = document.getElementById(element);
+                const iconBody = icon.closest('.propos_item');
+                const anim = bodymovin.loadAnimation({
+                    container: icon,
+                    path: `files/${element}.json`,
+                    render: "svg",
+                    loop: true,
+                    autoplay: false,
+                });
+            iconBody.addEventListener('mouseover', () => {anim.play()});
+            iconBody.addEventListener('mouseout', () => {anim.pause()});
+            });
+    } catch (e) {
+        console.log(e);
+    }
 }

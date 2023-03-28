@@ -8,17 +8,17 @@ footer {
         @include adaptiv-vaule("padding-bottom", 30, 20, 1);
         overflow: hidden;
     }
-    
+
     .footer_top {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-    
+
         @include media ("<desktop") {
             flex-direction: column;
             align-items: center;
         }
-    
+
         .footer_logo {
             width: 31%;
             display: flex;
@@ -26,7 +26,7 @@ footer {
             align-items: flex-start;
             position: relative;
             padding-right: 20px;
-    
+
             @include media ("<desktop") {
                 padding: 0;
                 margin-bottom: 35px;
@@ -34,7 +34,7 @@ footer {
                 align-items: center;
                 width: 100%;
                 text-align: center;
-    
+
                 &::before {
                     position: absolute;
                     content: '';
@@ -50,7 +50,7 @@ footer {
                 margin-bottom: 15px;
                 padding-bottom: 15px;
             }
-    
+
             &::after {
                 position: absolute;
                 content: '';
@@ -59,27 +59,27 @@ footer {
                 background-color: $gray;
                 top: -40%;
                 right: 0;
-    
+
                 @include media ("<desktop") {
                     display: none;
                 }
             }
         }
-    
+
         .logo {
             margin-bottom: 15px;
         }
-    
+
         .footer_links {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-    
+
             @include media ("<desktop") {
                 align-items: center;
             }
         }
-    
+
         .link {
             display: flex;
             align-items: center;
@@ -87,33 +87,33 @@ footer {
             line-height: 32px;
             color: $black;
         }
-    
+
         .interactive {
             &:hover {
                 .link_img {
                     transform: rotateY(180deg) scale(1.4);
                     transition: all .3s ease;
                 }
-    
+
                 .link_title {
                     text-decoration: underline;
                 }
             }
         }
-    
+
         .link_img {
             margin-right: 13px;
             width: 20px;
             height: 20px;
             transition: all .3s ease;
         }
-    
+
         .link_title {
             font-weight: 500;
             font-size: 14px;
             color: $black;
         }
-    
+
         .list_links {
             width: 42%;
             @include adaptiv-vaule("padding-right", 70, -70, 1);
@@ -124,16 +124,15 @@ footer {
             align-items: flex-start;
             flex-wrap: wrap;
             position: relative;
-    
+
             @include media ("<desktop") {
-                flex-direction: column;
                 align-items: center;
                 text-align: center;
-                width: 100%;
                 padding: 0;
                 margin-bottom: 35px;
                 padding-bottom: 35px;
-    
+                width: 50%;
+
                 &::before {
                     position: absolute;
                     content: '';
@@ -148,8 +147,10 @@ footer {
             @include media ("<tablet") {
                 margin-bottom: 15px;
                 padding-bottom: 15px;
+                width: 100%;
+                text-align: start;
             }
-    
+
             &::after {
                 position: absolute;
                 content: '';
@@ -158,13 +159,13 @@ footer {
                 background-color: $gray;
                 top: -40%;
                 right: 0;
-    
+
                 @include media ("<desktop") {
                     display: none;
                 }
             }
         }
-    
+
         .list_item {
             text-transform: uppercase;
             font-weight: 500;
@@ -174,17 +175,13 @@ footer {
             width: 45%;
             transition: all .3s ease;
             position: relative;
-    
+
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
-    
-            @include media ("<desktop") {
-                width: max-content;
-            }
-    
+
             &:hover {
-    
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -197,24 +194,31 @@ footer {
                 }
             }
         }
-    
+
         .policy {
-            width: 25%;
             @include adaptiv-vaule("padding-right", 70, -70, 1);
             @include adaptiv-vaule("padding-left", 70, -70, 1);
             padding-top: 35px;
             display: flex;
             flex-direction: column;
-    
+
             @include media ("<desktop") {
-                flex-direction: column;
-                place-items: center;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
                 padding: 0;
-                width: 100%;
                 row-gap: 0;
+                column-gap: 40px;
+                width: 50%;
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                text-align: start;
             }
         }
-    
+
         .policy_item {
             text-transform: uppercase;
             font-weight: 500;
@@ -223,17 +227,17 @@ footer {
             line-height: 200%;
             transition: all .3s ease;
             position: relative;
-    
+
             &:not(:last-child) {
                 margin-bottom: 5px;
+
+                @include media ("<desktop") {
+                    margin-bottom: 0;
+                }
             }
-    
-            @include media ("<desktop") {
-                width: max-content;
-            }
-    
+
             &:hover {
-    
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -247,23 +251,23 @@ footer {
             }
         }
     }
-    
+
     .footer_bottom {
         @include adaptiv-vaule("padding-top", 15, 10, 1);
         @include adaptiv-vaule("padding-bottom", 15, 10, 1);
-    
+
         .container {
             display: flex;
             align-items: center;
             flex-direction: column;
             text-align: center;
-    
+
             @include media ("<desktop") {
                 flex-direction: column;
                 text-align: center;
             }
         }
-    
+
         .note_wrap {
             display: flex;
             align-items: center;
@@ -274,24 +278,24 @@ footer {
                 flex-direction: column;
             }
         }
-    
+
         .note {
             color: $gray_2;
             font-size: 12px;
             line-height: 14px;
             text-align: start;
-            
-            @include media ("<desktop") {
-               margin-bottom: 10px;
-               text-align: center;
 
-                br{
+            @include media ("<desktop") {
+                margin-bottom: 10px;
+                text-align: center;
+
+                br {
                     display: none
                 }
             }
         }
 
-        .last_note{
+        .last_note {
             @include adaptiv-vaule("width", 350, 1, 1);
             text-align: end;
 
@@ -300,20 +304,24 @@ footer {
                 text-align: center;
             }
         }
-    
+
         .creator {
             display: flex;
             align-items: center;
+            justify-content: center;
             font-weight: 600;
             font-size: 18px;
             line-height: 24px;
             text-transform: uppercase;
             color: $gray_2;
-            
+
             @include media ("<desktop") {
                 order: 3;
+                border-top: 1px solid $gray;
+                width: 100%;
+                padding-top: 15px;
             }
-    
+
             svg {
                 margin-left: 5px;
                 fill: $blue;
@@ -322,4 +330,3 @@ footer {
         }
     }
 }
-

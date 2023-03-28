@@ -2828,7 +2828,7 @@ main {
   .enforce .tooltiptext {
     position: absolute;
     top: -150%;
-    left: 50%;
+    right: -50px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 1;
@@ -2843,7 +2843,7 @@ main {
       content: " ";
       position: absolute;
       top: 100%;
-      left: 50%;
+      right: 7px;
       margin-left: -5px;
       border-width: 5px;
       border-style: solid;
@@ -4232,15 +4232,13 @@ footer {
           padding-left: calc(-70px + 140 * ((100vw - calc(375px)) / 975)); } }
       @media (max-width: 1023px) {
         footer .footer_top .list_links {
-          -ms-flex-direction: column;
-          flex-direction: column;
           -ms-flex-align: center;
           align-items: center;
           text-align: center;
-          width: 100%;
           padding: 0;
           margin-bottom: 35px;
-          padding-bottom: 35px; }
+          padding-bottom: 35px;
+          width: 50%; }
           footer .footer_top .list_links::before {
             position: absolute;
             content: '';
@@ -4252,7 +4250,9 @@ footer {
       @media (max-width: 767px) {
         footer .footer_top .list_links {
           margin-bottom: 15px;
-          padding-bottom: 15px; } }
+          padding-bottom: 15px;
+          width: 100%;
+          text-align: start; } }
       footer .footer_top .list_links::after {
         position: absolute;
         content: '';
@@ -4275,11 +4275,6 @@ footer {
       position: relative; }
       footer .footer_top .list_item:not(:last-child) {
         margin-bottom: 5px; }
-      @media (max-width: 1023px) {
-        footer .footer_top .list_item {
-          width: -webkit-max-content;
-          width: -moz-max-content;
-          width: max-content; } }
       footer .footer_top .list_item:hover:after {
         content: '';
         position: absolute;
@@ -4291,7 +4286,6 @@ footer {
         -webkit-animation: bottom_border .5s linear;
         animation: bottom_border .5s linear; }
     footer .footer_top .policy {
-      width: 25%;
       /* Только если меньше контейнера */
       padding-right: 70px;
       /* Только если меньше контейнера */
@@ -4309,12 +4303,24 @@ footer {
           padding-left: calc(-70px + 140 * ((100vw - calc(375px)) / 975)); } }
       @media (max-width: 1023px) {
         footer .footer_top .policy {
-          -ms-flex-direction: column;
-          flex-direction: column;
-          place-items: center;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
           padding: 0;
+          row-gap: 0;
+          -webkit-column-gap: 40px;
+          -moz-column-gap: 40px;
+          column-gap: 40px;
+          width: 50%; } }
+      @media (max-width: 767px) {
+        footer .footer_top .policy {
           width: 100%;
-          row-gap: 0; } }
+          text-align: start; } }
     footer .footer_top .policy_item {
       text-transform: uppercase;
       font-weight: 500;
@@ -4325,11 +4331,9 @@ footer {
       position: relative; }
       footer .footer_top .policy_item:not(:last-child) {
         margin-bottom: 5px; }
-      @media (max-width: 1023px) {
-        footer .footer_top .policy_item {
-          width: -webkit-max-content;
-          width: -moz-max-content;
-          width: max-content; } }
+        @media (max-width: 1023px) {
+          footer .footer_top .policy_item:not(:last-child) {
+            margin-bottom: 0; } }
       footer .footer_top .policy_item:hover:after {
         content: '';
         position: absolute;
@@ -4403,6 +4407,8 @@ footer {
       display: flex;
       -ms-flex-align: center;
       align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
       font-weight: 600;
       font-size: 18px;
       line-height: 24px;
@@ -4411,7 +4417,10 @@ footer {
       @media (max-width: 1023px) {
         footer .footer_bottom .creator {
           -ms-flex-order: 3;
-          order: 3; } }
+          order: 3;
+          border-top: 1px solid #D1D4DE;
+          width: 100%;
+          padding-top: 15px; } }
       footer .footer_bottom .creator svg {
         margin-left: 5px;
         fill: #031C77;
