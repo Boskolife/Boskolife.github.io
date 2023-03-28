@@ -2485,7 +2485,7 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        border-radius: 12px;
     }
 
 
@@ -2852,10 +2852,10 @@ main {
         }
 
         .result_item {
-            width: 46%;
+            width: 29%;
 
-            @include media ("<950px") {
-                width: 100%;
+            @include media ("<desktop") {
+                width: 48%;
             }
         }
 

@@ -1,6 +1,6 @@
 "use strict";
 
-var winTriggersMethods = ['resize', 'load'];
+var winTriggersMethods = ["resize", "load"];
 var MOBILE_SIZE = 480;
 var prevWidth = window.innerWidth;
 initTabs();
@@ -10,17 +10,18 @@ findHref();
 renderDateSelects();
 hideText();
 calcPages();
+jsonAnimation();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
-    var puzzlesAnimation = document.querySelector('.puzzles-container');
+    var puzzlesAnimation = document.querySelector(".puzzles-container");
     if (!puzzlesAnimation) return;
 
-    if (method === 'load') {
+    if (method === "load") {
       initPuzzleAnimation();
     }
 
-    if (method === 'resize' && prevWidth !== window.innerWidth) {
+    if (method === "resize" && prevWidth !== window.innerWidth) {
       var _ScrollTrigger;
 
       (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
@@ -94,7 +95,7 @@ function initNavBtn() {
   var navBtn = document.querySelector(".nav_btn"),
       navTable = document.querySelector(".nav_table"),
       navLink = document.querySelectorAll(".nav_table_link"),
-      header = document.querySelector('#header');
+      header = document.querySelector("#header");
   navBtn.addEventListener("click", function () {
     navTable.classList.toggle("show_table");
     document.body.classList.toggle("body_lock");
@@ -117,8 +118,8 @@ function initNavBtn() {
     return window.outerWidth < 1024 ? fixedNav.disable() : fixedNav.enable();
   };
 
-  window.addEventListener('resize', toggleFixedNav);
-  window.addEventListener('load', toggleFixedNav);
+  window.addEventListener("resize", toggleFixedNav);
+  window.addEventListener("load", toggleFixedNav);
   ScrollTrigger.create({
     trigger: "#flyBtn",
     start: "top bottom",
@@ -229,24 +230,24 @@ function renderDateSelects() {
 }
 
 function calcPages() {
-  var calsParent = document.querySelector('.calc_steps');
+  var calsParent = document.querySelector(".calc_steps");
   if (!calsParent) return;
-  var firstBtn = document.getElementById('second_next');
-  var secondBtn = document.getElementById('third_next');
-  var startOverBtn = document.getElementById('start_over');
-  var firstStep = document.getElementById('first_step');
-  var secondStep = document.getElementById('second_step');
-  var thirdStep = document.getElementById('third_step');
-  var stepOne = document.getElementById('step_one');
-  var stepTwo = document.getElementById('step_two');
-  var stepThree = document.getElementById('step_three');
-  var amountInput = document.querySelector('#summ');
+  var firstBtn = document.getElementById("second_next");
+  var secondBtn = document.getElementById("third_next");
+  var startOverBtn = document.getElementById("start_over");
+  var firstStep = document.getElementById("first_step");
+  var secondStep = document.getElementById("second_step");
+  var thirdStep = document.getElementById("third_step");
+  var stepOne = document.getElementById("step_one");
+  var stepTwo = document.getElementById("step_two");
+  var stepThree = document.getElementById("step_three");
+  var amountInput = document.querySelector("#summ");
   var monthSelect = document.getElementById("month-select");
   var yearSelect = document.getElementById("year-select");
   var daySelect = document.getElementById("day-select");
-  var awardEl = document.querySelector('#award');
-  var interestRateEl = document.querySelector('#interestRate');
-  var totalEl = document.querySelector('#total');
+  var awardEl = document.querySelector("#award");
+  var interestRateEl = document.querySelector("#interestRate");
+  var totalEl = document.querySelector("#total");
   var AMOUNT_REGEX = /^\d+\.?\d?(\d+)?$/;
   var currentDate = document.getElementById("daySelect");
   var monthValue = monthSelect.value;
@@ -258,7 +259,7 @@ function calcPages() {
   };
 
   var fullYear = getInputDate();
-  var amountValue = '';
+  var amountValue = "";
   var result;
 
   var resetCalculator = function resetCalculator() {
@@ -268,34 +269,33 @@ function calcPages() {
     monthValue = monthSelect.value;
     daySelect.querySelector("option:first-child").selected = true;
     dayValue = daySelect.value;
-    amountInput.value = '';
-    amountValue = '';
-    thirdStep.classList.remove('step_show');
-    firstStep.classList.add('step_show');
+    amountInput.value = "";
+    amountValue = "";
+    thirdStep.classList.remove("step_show");
+    firstStep.classList.add("step_show");
     stepOne.classList.add("active_wrap");
   };
 
-  stepOne.addEventListener('click', function (e) {
+  stepOne.addEventListener("click", function (e) {
     e.preventDefault();
-    secondStep.classList.remove('step_show');
+    secondStep.classList.remove("step_show");
     firstStep.classList.add("step_show");
     stepTwo.classList.remove("active_wrap");
     stepOne.classList.add("active_wrap");
-    thirdStep.classList.remove('step_show');
+    thirdStep.classList.remove("step_show");
     stepThree.classList.remove("active_wrap");
   });
-  stepTwo.addEventListener('click', function (e) {
+  stepTwo.addEventListener("click", function (e) {
     e.preventDefault();
 
     if (!amountValue) {
-      amountInput.parentNode.classList.add('error');
+      amountInput.parentNode.classList.add("error");
       return;
     }
 
-    ;
     firstStep.classList.remove("step_show");
-    secondStep.classList.add('step_show');
-    thirdStep.classList.remove('step_show');
+    secondStep.classList.add("step_show");
+    thirdStep.classList.remove("step_show");
     stepOne.classList.remove("active_wrap");
     stepTwo.classList.add("active_wrap");
     stepThree.classList.remove("active_wrap");
@@ -306,18 +306,17 @@ function calcPages() {
     interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
     totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
   });
-  stepThree.addEventListener('click', function (e) {
+  stepThree.addEventListener("click", function (e) {
     e.preventDefault();
 
     if (!amountValue) {
-      amountInput.parentNode.classList.add('error');
+      amountInput.parentNode.classList.add("error");
       return;
     }
 
-    ;
-    thirdStep.classList.add('step_show');
+    thirdStep.classList.add("step_show");
     firstStep.classList.remove("step_show");
-    secondStep.classList.remove('step_show');
+    secondStep.classList.remove("step_show");
     stepThree.classList.add("active_wrap");
     stepOne.classList.remove("active_wrap");
     stepTwo.classList.remove("active_wrap");
@@ -326,12 +325,11 @@ function calcPages() {
     e.preventDefault();
 
     if (!amountValue) {
-      amountInput.parentNode.classList.add('error');
+      amountInput.parentNode.classList.add("error");
       return;
     }
 
-    ;
-    amountInput.parentNode.classList.remove('error');
+    amountInput.parentNode.classList.remove("error");
     firstStep.classList.remove("step_show");
     secondStep.classList.add("step_show");
     stepOne.classList.remove("active_wrap");
@@ -339,8 +337,8 @@ function calcPages() {
   });
   secondBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    secondStep.classList.remove('step_show');
-    thirdStep.classList.add('step_show');
+    secondStep.classList.remove("step_show");
+    thirdStep.classList.add("step_show");
     stepTwo.classList.remove("active_wrap");
     stepThree.classList.add("active_wrap");
     fullYear = getInputDate();
@@ -354,12 +352,12 @@ function calcPages() {
     e.preventDefault();
     resetCalculator();
   });
-  amountInput.addEventListener('input', function (e) {
-    var targetValue = e.target.value.replace(/\$/g, '').trim();
+  amountInput.addEventListener("input", function (e) {
+    var targetValue = e.target.value.replace(/\$/g, "").trim();
 
     if (!targetValue) {
-      e.target.value = '';
-      amountValue = '';
+      e.target.value = "";
+      amountValue = "";
       return;
     }
 
@@ -368,38 +366,38 @@ function calcPages() {
       return;
     }
 
-    amountInput.parentNode.classList.remove('error');
+    amountInput.parentNode.classList.remove("error");
     e.target.value = "$ ".concat(targetValue);
     amountValue = targetValue;
   });
-  monthSelect.addEventListener('change', function (e) {
+  monthSelect.addEventListener("change", function (e) {
     monthValue = e.target.value;
   });
-  yearSelect.addEventListener('change', function (e) {
+  yearSelect.addEventListener("change", function (e) {
     yearValue = e.target.value;
   });
-  daySelect.addEventListener('change', function (e) {
+  daySelect.addEventListener("change", function (e) {
     dayValue = e.target.value;
   });
 }
 
 function nyJudgmentInterest(judgmentAmount, date) {
-  var judgmentDate = date.split('-').map(function (num) {
+  var judgmentDate = date.split("-").map(function (num) {
     return +num < 10 ? "0".concat(num) : num;
-  }).join('-');
+  }).join("-");
   var beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
 
   var afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
 
-  var april30Date = new Date('2022-04-30'); // date when interest rate changes
+  var april30Date = new Date("2022-04-30"); // date when interest rate changes
 
   var today = new Date();
   var judgDate = new Date(judgmentDate);
-  var localDate = judgDate.toLocaleDateString('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  }).replace(/,/, '').split(' ');
+  var localDate = judgDate.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).replace(/,/, "").split(" ");
   var formateDate = "".concat(localDate[1], " ").concat(localDate[0], " ").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
@@ -418,7 +416,7 @@ function nyJudgmentInterest(judgmentAmount, date) {
 }
 
 function initPuzzleAnimation() {
-  if (!document.querySelector('.puzzle')) return;
+  if (!document.querySelector(".puzzle")) return;
   var header = document.querySelector("header");
   var headerHeight = header.clientHeight;
   var isMobile = window.innerWidth < MOBILE_SIZE;
@@ -427,13 +425,12 @@ function initPuzzleAnimation() {
   initThirdAnimSection();
 
   function initFirstAnimSection() {
-    var animationFirstSection = document.querySelector('.puzzle-animation-first');
+    var animationFirstSection = document.querySelector(".puzzle-animation-first");
 
     if (!animationFirstSection) {
       return;
     }
 
-    ;
     var puzzleTopLeft = animationFirstSection.querySelector(".puzzle-top-left");
     var puzzleTopRight = animationFirstSection.querySelector(".puzzle-top-right");
     var puzzleBottomRight = animationFirstSection.querySelector(".puzzle-bottom-right");
@@ -584,16 +581,15 @@ function initPuzzleAnimation() {
   }
 
   function initSecondAnimSection() {
-    var section = document.querySelector('.puzzle-animation-second');
+    var section = document.querySelector(".puzzle-animation-second");
 
     if (!section) {
       return;
     }
 
-    ;
-    var puzzlesContainer = section.querySelector('.puzzles-container');
-    var leftSide = section.querySelector('.left-side');
-    var rightSide = section.querySelector('.right-side');
+    var puzzlesContainer = section.querySelector(".puzzles-container");
+    var leftSide = section.querySelector(".left-side");
+    var rightSide = section.querySelector(".right-side");
     var puzzleTopLeft = section.querySelector(".puzzle-top-left");
     var puzzleTopRight = section.querySelector(".puzzle-top-right");
     var puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
@@ -676,7 +672,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: isMobile ? "center-=75 bottom" : "top bottom",
-        end: isMobile ? 'bottom+=100' : "bottom",
+        end: isMobile ? "bottom+=100" : "bottom",
         scrub: 1 // markers: true,
 
       }
@@ -699,16 +695,15 @@ function initPuzzleAnimation() {
   }
 
   function initThirdAnimSection() {
-    var section = document.querySelector('.puzzle-animation-third');
+    var section = document.querySelector(".puzzle-animation-third");
 
     if (!section) {
       return;
     }
 
-    ;
-    var puzzlesContainer = section.querySelector('.puzzles-container');
-    var leftSide = section.querySelector('.left-side');
-    var rightSide = section.querySelector('.right-side');
+    var puzzlesContainer = section.querySelector(".puzzles-container");
+    var leftSide = section.querySelector(".left-side");
+    var rightSide = section.querySelector(".right-side");
     var puzzleTopLeft = section.querySelector(".puzzle-top-left");
     var puzzleTopRight = section.querySelector(".puzzle-top-right");
     var puzzleBottomRight = section.querySelector(".puzzle-bottom-right");
@@ -748,7 +743,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: isMobile ? "center bottom" : "top+=200 bottom",
-        end: isMobile ? 'bottom-=125' : "top",
+        end: isMobile ? "bottom-=125" : "top",
         scrub: 1 // markers: true,
 
       }
@@ -759,8 +754,8 @@ function initPuzzleAnimation() {
       y: 0,
       scrollTrigger: {
         trigger: section,
-        start: isMobile ? 'top bottom' : "center+=200 bottom",
-        end: isMobile ? 'center' : "bottom-=100",
+        start: isMobile ? "top bottom" : "center+=200 bottom",
+        end: isMobile ? "center" : "bottom-=100",
         scrub: 1 // markers: true,
 
       }
@@ -784,74 +779,79 @@ function initPuzzleAnimation() {
   }
 }
 
-var animation = bodymovin.loadAnimation({
-  container: document.getElementById('icon_1'),
-  path: 'files/icon_1.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation2 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_2'),
-  path: 'files/icon_2.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation3 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_3'),
-  path: 'files/icon_3.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation4 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_4'),
-  path: 'files/icon_4.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation5 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_5'),
-  path: 'files/icon_5.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation6 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_6'),
-  path: 'files/icon_6.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation7 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_7'),
-  path: 'files/icon_7.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation8 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_8'),
-  path: 'files/icon_8.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation9 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_9'),
-  path: 'files/icon_9.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
-var animation10 = bodymovin.loadAnimation({
-  container: document.getElementById('icon_10'),
-  path: 'files/icon_10.json',
-  render: 'svg',
-  loop: true,
-  autoplay: true
-});
+function jsonAnimation() {
+  // if (!loadAnimation){
+  //   return
+  // };
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById("icon_1"),
+    path: "files/icon_1.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation2 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_2"),
+    path: "files/icon_2.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation3 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_3"),
+    path: "files/icon_3.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation4 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_4"),
+    path: "files/icon_4.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation5 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_5"),
+    path: "files/icon_5.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation6 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_6"),
+    path: "files/icon_6.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation7 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_7"),
+    path: "files/icon_7.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation8 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_8"),
+    path: "files/icon_8.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation9 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_9"),
+    path: "files/icon_9.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  var animation10 = bodymovin.loadAnimation({
+    container: document.getElementById("icon_10"),
+    path: "files/icon_10.json",
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+}
 //# sourceMappingURL=main.js.map

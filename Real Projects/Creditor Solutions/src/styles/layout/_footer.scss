@@ -45,6 +45,11 @@ footer {
                     background-color: $gray;
                 }
             }
+
+            @include media ("<phone") {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
     
             &::after {
                 position: absolute;
@@ -139,6 +144,11 @@ footer {
                     background-color: $gray;
                 }
             }
+
+            @include media ("<tablet") {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
     
             &::after {
                 position: absolute;
@@ -201,7 +211,7 @@ footer {
                 place-items: center;
                 padding: 0;
                 width: 100%;
-                row-gap: 15px;
+                row-gap: 0;
             }
         }
     
