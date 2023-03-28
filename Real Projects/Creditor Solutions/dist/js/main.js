@@ -783,4 +783,75 @@ function initPuzzleAnimation() {
     });
   }
 }
+
+var animation = bodymovin.loadAnimation({
+  container: document.getElementById('icon_1'),
+  path: 'files/icon_1.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation2 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_2'),
+  path: 'files/icon_2.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation3 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_3'),
+  path: 'files/icon_3.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation4 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_4'),
+  path: 'files/icon_4.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation5 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_5'),
+  path: 'files/icon_5.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation6 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_6'),
+  path: 'files/icon_6.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation7 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_7'),
+  path: 'files/icon_7.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation8 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_8'),
+  path: 'files/icon_8.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation9 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_9'),
+  path: 'files/icon_9.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
+var animation10 = bodymovin.loadAnimation({
+  container: document.getElementById('icon_10'),
+  path: 'files/icon_10.json',
+  render: 'svg',
+  loop: true,
+  autoplay: true
+});
 //# sourceMappingURL=main.js.map

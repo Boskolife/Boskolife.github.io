@@ -307,14 +307,9 @@ main {
         }
 
         .item_img {
-            width: 54px;
-            height: 54px;
-            @include adaptiv-vaule("margin-bottom", 25, 15, 1);
-
-            @include media ("<tablet") {
-                width: 36px;
-                height: 36px;
-            }
+            width: 75px;
+            height: 75px;
+            margin-left: -10px;
         }
 
         .item_title {
@@ -2003,14 +1998,9 @@ main {
     }
 
     .item_img {
-        width: 54px;
-        height: 54px;
-        margin-bottom: 15px;
-
-        @include media ("<phone") {
-            width: 35px;
-            height: 35px;
-        }
+        width: 75px;
+        height: 75px;
+        margin-left: -10px;
     }
 
     .item_title {
@@ -2393,6 +2383,10 @@ main {
             @include media ("<phone") {
                 width: 100%;
             }
+        }
+
+        .item_img{
+            margin: 0 auto;
         }
 
         .item_title {

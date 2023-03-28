@@ -1292,17 +1292,9 @@ main {
       height: 1px;
       background-color: #ECECEC; }
     .propos .propos_item .item_img {
-      width: 54px;
-      height: 54px;
-      /* Только если меньше контейнера */
-      margin-bottom: 25px; }
-      @media (max-width: 1350px) {
-        .propos .propos_item .item_img {
-          margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
-      @media (max-width: 767px) {
-        .propos .propos_item .item_img {
-          width: 36px;
-          height: 36px; } }
+      width: 75px;
+      height: 75px;
+      margin-left: -10px; }
     .propos .propos_item .item_title {
       margin-bottom: 10px; }
     .propos .propos_item .item_descr {
@@ -3056,13 +3048,9 @@ main {
       .way .item:not(:last-child) {
         margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 975)); } }
   .way .item_img {
-    width: 54px;
-    height: 54px;
-    margin-bottom: 15px; }
-    @media (max-width: 479px) {
-      .way .item_img {
-        width: 35px;
-        height: 35px; } }
+    width: 75px;
+    height: 75px;
+    margin-left: -10px; }
   .way .item_title {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -3410,6 +3398,8 @@ main {
       @media (max-width: 479px) {
         .individual_way .individual_way_items .item {
           width: 100%; } }
+    .individual_way .individual_way_items .item_img {
+      margin: 0 auto; }
     .individual_way .individual_way_items .item_title {
       color: #031C77; }
 
