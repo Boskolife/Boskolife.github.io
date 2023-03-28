@@ -1,0 +1,205 @@
+footer {
+    position: relative;
+    @include adaptiv-vaule("padding-top", 50, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+
+    .footer_content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer_top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 25px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .logo,
+    .menu,
+    .social_links {
+        @include media ("<tablet") {
+            margin-bottom: 40px;
+        }
+    }
+
+    .menu_title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22 / 18 * 100%;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 20px;
+    }
+
+    .menu-item {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .menu_link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17 / 14 * 100%;
+        color: $white;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: $white;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            &::after {
+                transition: all .3s ease;
+                width: 100%;
+            }
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+    }
+
+    .social_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $white;
+        border-radius: 50%;
+        transition: all .3s ease;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &:hover {
+            border: 1px solid $pink;
+            transition: all .3s ease;
+            transform: scale(1.2);
+
+            svg {
+                transition: all .3s ease;
+                fill: $pink;
+            }
+        }
+
+        svg {
+            fill: $white;
+            transition: all .3s ease;
+        }
+    }
+
+    .our_contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17 / 14 * 100%;
+        color: $white;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: $white;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            &::after {
+                transition: all .3s ease;
+                width: 100%;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .footer_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid $white;
+        padding-top: 25px;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .docs_wrap{
+        @include media ("<tablet") {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .docs {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17 / 14 * 100%;
+        color: $white;
+        margin-left: 50px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: $white;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            &::after {
+                transition: all .3s ease;
+                width: 100%;
+            }
+        }
+
+        @include media ("<tablet") {
+            margin: 0;
+        }
+    }
+
+    .notice {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17 / 14 * 100%;
+        color: $white;
+    }
+}
