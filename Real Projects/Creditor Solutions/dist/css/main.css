@@ -3104,6 +3104,10 @@ main {
     height: 320px;
     position: absolute;
     z-index: 1; }
+    @media (max-width: 767px) {
+      .process .process_icon_top,
+      .process .process_icon_bottom {
+        display: none; } }
   .process .process_icon_top {
     top: -10%;
     left: -18%; }

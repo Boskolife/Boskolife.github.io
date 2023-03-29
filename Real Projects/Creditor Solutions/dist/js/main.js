@@ -11,6 +11,7 @@ renderDateSelects();
 hideText();
 calcPages();
 jsonAnimation();
+jsonCardAnimation();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
@@ -783,9 +784,9 @@ function jsonAnimation() {
   try {
     new Array(10).fill("icon").map(function (element, i) {
       return "".concat(element, "_").concat(i + 1);
-    }).forEach(function (element, i) {
+    }).forEach(function (element) {
       var icon = document.getElementById(element);
-      var iconBody = icon.closest('.propos_item');
+      var iconBody = icon.closest('.propos_item, .item');
       var anim = bodymovin.loadAnimation({
         container: icon,
         path: "files/".concat(element, ".json"),
@@ -797,7 +798,33 @@ function jsonAnimation() {
         anim.play();
       });
       iconBody.addEventListener('mouseout', function () {
-        anim.pause();
+        anim.stop();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function jsonCardAnimation() {
+  try {
+    new Array(3).fill("card").map(function (element, i) {
+      return "".concat(element, "_").concat(i + 1);
+    }).forEach(function (element) {
+      var icon = document.getElementById(element);
+      var iconBody = icon.closest('.card');
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: "files/".concat(element, ".json"),
+        render: "svg",
+        loop: true,
+        autoplay: false
+      });
+      iconBody.addEventListener('mouseover', function () {
+        anim.play();
+      });
+      iconBody.addEventListener('mouseout', function () {
+        anim.stop();
       });
     });
   } catch (e) {

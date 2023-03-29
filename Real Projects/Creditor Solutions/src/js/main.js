@@ -11,6 +11,7 @@ renderDateSelects();
 hideText();
 calcPages();
 jsonAnimation();
+jsonCardAnimation();
 
 winTriggersMethods.forEach((method) => {
     window.addEventListener(method, () => {
@@ -849,9 +850,9 @@ function jsonAnimation() {
         new Array(10)
             .fill("icon")
             .map((element, i) => `${element}_${i + 1}`)
-            .forEach((element, i) => {
+            .forEach((element) => {
                 const icon = document.getElementById(element);
-                const iconBody = icon.closest('.propos_item');
+                const iconBody = icon.closest('.propos_item, .item');
                 const anim = bodymovin.loadAnimation({
                     container: icon,
                     path: `files/${element}.json`,
@@ -860,9 +861,33 @@ function jsonAnimation() {
                     autoplay: false,
                 });
             iconBody.addEventListener('mouseover', () => {anim.play()});
-            iconBody.addEventListener('mouseout', () => {anim.pause()});
+            iconBody.addEventListener('mouseout', () => {anim.stop()});
             });
     } catch (e) {
         console.log(e);
     }
 }
+
+function jsonCardAnimation() {
+    try {
+        new Array(3)
+            .fill("card")
+            .map((element, i) => `${element}_${i + 1}`)
+            .forEach((element) => {
+                const icon = document.getElementById(element);
+                const iconBody = icon.closest('.card');
+                const anim = bodymovin.loadAnimation({
+                    container: icon,
+                    path: `files/${element}.json`,
+                    render: "svg",
+                    loop: true,
+                    autoplay: false,
+                });
+            iconBody.addEventListener('mouseover', () => {anim.play()});
+            iconBody.addEventListener('mouseout', () => {anim.stop()});
+            });
+    } catch (e) {
+        console.log(e);
+    }
+}
+

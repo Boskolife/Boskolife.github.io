@@ -2050,6 +2050,10 @@ main {
         height: 320px;
         position: absolute;
         z-index: 1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .process_icon_top {
