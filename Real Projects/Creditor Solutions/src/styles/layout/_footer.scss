@@ -39,7 +39,7 @@ footer {
                     position: absolute;
                     content: '';
                     bottom: 0;
-                    left: -10%;
+                    left: -5%;
                     width: 110%;
                     height: 1px;
                     background-color: $gray;
@@ -120,7 +120,7 @@ footer {
             @include adaptiv-vaule("padding-left", 70, -70, 1);
             padding-top: 35px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: flex-start;
             flex-wrap: wrap;
             position: relative;
@@ -128,16 +128,17 @@ footer {
             @include media ("<desktop") {
                 align-items: center;
                 text-align: center;
+                justify-content: space-between;
                 padding: 0;
                 margin-bottom: 35px;
                 padding-bottom: 35px;
-                width: 50%;
+                width: 100%;
 
                 &::before {
                     position: absolute;
                     content: '';
                     bottom: 0;
-                    left: -10%;
+                    left: -5%;
                     width: 110%;
                     height: 1px;
                     background-color: $gray;
@@ -206,16 +207,16 @@ footer {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: space-around;
                 padding: 0;
                 row-gap: 0;
                 column-gap: 40px;
-                width: 50%;
+                width: 100%;
             }
 
             @include media ("<tablet") {
-                width: 100%;
                 text-align: start;
+                justify-content: space-between;
             }
         }
 
@@ -227,6 +228,14 @@ footer {
             line-height: 200%;
             transition: all .3s ease;
             position: relative;
+
+            @include media ("<desktop") {
+                width: 42%;
+            }
+
+            @include media ("<phone") {
+                width: 45%;
+            }
 
             &:not(:last-child) {
                 margin-bottom: 5px;
@@ -317,9 +326,19 @@ footer {
 
             @include media ("<desktop") {
                 order: 3;
-                border-top: 1px solid $gray;
                 width: 100%;
                 padding-top: 15px;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: -5%;
+                    width: 110%;
+                    height: 1px;
+                    background-color: $gray;
+                }
             }
 
             svg {

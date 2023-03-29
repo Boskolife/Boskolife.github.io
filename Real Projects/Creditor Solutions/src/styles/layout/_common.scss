@@ -306,10 +306,8 @@ main {
             background-color: $gray_3;
         }
 
-        #icon_5{
+        #icon_5 {
             width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
         }
 
         .item_img {
@@ -1754,6 +1752,24 @@ main {
         top: 0;
         left: 0;
         object-fit: cover;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .small_claims_img_phone {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+
+        @include media ("<phone") {
+            display: block;
+        }
     }
 
     .small_claims_text {

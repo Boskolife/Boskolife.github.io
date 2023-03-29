@@ -65,14 +65,14 @@ function initTabs() {
     if (!faqTabs) return;
 
     const tabs = document.querySelectorAll(".tab_title"),
-        //   tabsWrap = document.querySelectorAll(".tab"),
-        tabsContent = document.querySelectorAll(".tab_content"),
-        tabsParent = document.querySelector(".tab_wrapper");
+          tabsWrap = document.querySelectorAll(".tab"),
+          tabsContent = document.querySelectorAll(".tab_content"),
+          tabsParent = document.querySelector(".tab_wrapper");
 
     function showTabContent(i = 0) {
         tabsContent[i].classList.toggle("show");
         tabs[i].classList.toggle("tab_active");
-        // tabsWrap[i].classList.toggle("active_tabsWrap");
+        window.location.href.includes("faq") && tabsWrap[i].classList.toggle("active_tabsWrap");
     }
 
     tabsParent.addEventListener("click", (event) => {
@@ -856,7 +856,7 @@ function jsonAnimation() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                const iconBody = icon.closest('.anim_item');
+                const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
                     path: `files/${element}.json`,
@@ -864,7 +864,7 @@ function jsonAnimation() {
                     loop: false,
                     autoplay: false,
                 });
-
+                
                 iconBody.addEventListener("mouseover", () => {
                     anim.play();
                 });
@@ -885,8 +885,8 @@ function jsonCardAnimation() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const card = document.getElementById(element);
-                if(!card){
-                    return
+                if (!card) {
+                    return;
                 }
                 const cardBody = card.parentNode;
                 const anim = bodymovin.loadAnimation({
@@ -913,8 +913,8 @@ function jsonCardAnimation() {
 function jsonAwardHover() {
     try {
         const award = document.getElementById("award_anim_electr");
-        if(!award){
-            return
+        if (!award) {
+            return;
         }
         const anim = bodymovin.loadAnimation({
             container: award,
