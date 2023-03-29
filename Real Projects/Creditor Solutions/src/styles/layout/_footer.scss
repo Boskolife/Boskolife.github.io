@@ -149,6 +149,9 @@ footer {
                 margin-bottom: 15px;
                 padding-bottom: 15px;
                 width: 100%;
+            }
+
+            @include media ("<phone") {
                 text-align: start;
             }
 
@@ -207,16 +210,16 @@ footer {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
+                justify-content: space-between;
+                text-align: center;
                 padding: 0;
                 row-gap: 0;
                 column-gap: 40px;
                 width: 100%;
             }
 
-            @include media ("<tablet") {
+            @include media ("<phone") {
                 text-align: start;
-                justify-content: space-between;
             }
         }
 
@@ -230,11 +233,7 @@ footer {
             position: relative;
 
             @include media ("<desktop") {
-                width: 42%;
-            }
-
-            @include media ("<phone") {
-                width: 45%;
+                width: 44%;
             }
 
             &:not(:last-child) {

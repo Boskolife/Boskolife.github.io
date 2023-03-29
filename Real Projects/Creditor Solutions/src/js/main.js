@@ -12,6 +12,10 @@ hideText();
 calcPages();
 jsonAnimation();
 jsonCardAnimation();
+jsonAwardHover();
+jsonAnimationSmallClaims();
+jsonAnimationIndividual();
+jsonAnimationEnforce();
 
 winTriggersMethods.forEach((method) => {
     window.addEventListener(method, () => {
@@ -94,15 +98,17 @@ function initNavBtn() {
 
     if (!flyBtn) return;
 
-    const navBtn = document.querySelector(".nav_btn"),
+    const navBtn = document.querySelectorAll(".nav_btn"),
         navTable = document.querySelector(".nav_table"),
         navLink = document.querySelectorAll(".nav_table_link"),
         header = document.querySelector("#header");
 
-    navBtn.addEventListener("click", () => {
-        navTable.classList.toggle("show_table");
-        document.body.classList.toggle("body_lock");
-    });
+    navBtn.forEach((item) => {
+        item.addEventListener("click", () => {
+            navTable.classList.toggle("show_table");
+            document.body.classList.toggle("body_lock");
+        });
+    })
 
     navLink.forEach((item) => {
         item.addEventListener("click", () => {
@@ -851,11 +857,14 @@ function initPuzzleAnimation() {
 
 function jsonAnimation() {
     try {
-        new Array(10)
+        new Array(6)
             .fill("icon")
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
+                if(!icon) {
+                    return
+                };
                 const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
@@ -869,7 +878,7 @@ function jsonAnimation() {
                     anim.play();
                 });
 
-                iconBody.addEventListener("mouseout", () => {
+                iconBody.addEventListener("mouseleave", () => {
                     anim.stop();
                 });
             });
@@ -901,7 +910,7 @@ function jsonCardAnimation() {
                     anim.play();
                 });
 
-                cardBody.addEventListener("mouseout", () => {
+                cardBody.addEventListener("mouseleave", () => {
                     anim.stop();
                 });
             });
@@ -924,11 +933,10 @@ function jsonAwardHover() {
             autoplay: false,
         });
 
-        award.addEventListener("mouseover", () => {
+        award.addEventListener("mousemove", () => {
             anim.play();
         });
-
-        award.addEventListener("mouseout", () => {
+        award.addEventListener("mouseleave", () => {
             anim.stop();
         });
     } catch (e) {
@@ -936,4 +944,98 @@ function jsonAwardHover() {
     }
 }
 
-jsonAwardHover();
+function jsonAnimationSmallClaims() {
+    try {
+        new Array(3)
+            .fill("sc_icon")
+            .map((element, i) => `${element}_${i + 1}`)
+            .forEach((element) => {
+                const icon = document.getElementById(element);
+                if(!icon) {
+                    return
+                };
+                const iconBody = icon.closest(".anim_item");
+                const anim = bodymovin.loadAnimation({
+                    container: icon,
+                    path: `files/${element}.json`,
+                    render: "svg",
+                    loop: false,
+                    autoplay: false,
+                });
+                
+                iconBody.addEventListener("mouseover", () => {
+                    anim.play();
+                });
+
+                iconBody.addEventListener("mouseleave", () => {
+                    anim.stop();
+                });
+            });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function jsonAnimationIndividual() {
+    try {
+        new Array(3)
+            .fill("ind_icon")
+            .map((element, i) => `${element}_${i + 1}`)
+            .forEach((element) => {
+                const icon = document.getElementById(element);
+                if(!icon) {
+                    return
+                };
+                const iconBody = icon.closest(".anim_item");
+                const anim = bodymovin.loadAnimation({
+                    container: icon,
+                    path: `files/${element}.json`,
+                    render: "svg",
+                    loop: false,
+                    autoplay: false,
+                });
+                
+                iconBody.addEventListener("mouseover", () => {
+                    anim.play();
+                });
+
+                iconBody.addEventListener("mouseleave", () => {
+                    anim.stop();
+                });
+            });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function jsonAnimationEnforce() {
+    try {
+        new Array(4)
+            .fill("enf_icon")
+            .map((element, i) => `${element}_${i + 1}`)
+            .forEach((element) => {
+                const icon = document.getElementById(element);
+                if(!icon) {
+                    return
+                };
+                const iconBody = icon.closest(".anim_item");
+                const anim = bodymovin.loadAnimation({
+                    container: icon,
+                    path: `files/${element}.json`,
+                    render: "svg",
+                    loop: false,
+                    autoplay: false,
+                });
+                
+                iconBody.addEventListener("mouseover", () => {
+                    anim.play();
+                });
+
+                iconBody.addEventListener("mouseleave", () => {
+                    anim.stop();
+                });
+            });
+    } catch (e) {
+        console.log(e);
+    }
+}

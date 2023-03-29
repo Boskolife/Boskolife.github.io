@@ -12,6 +12,10 @@ hideText();
 calcPages();
 jsonAnimation();
 jsonCardAnimation();
+jsonAwardHover();
+jsonAnimationSmallClaims();
+jsonAnimationIndividual();
+jsonAnimationEnforce();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
@@ -95,13 +99,15 @@ function initTabs() {
 function initNavBtn() {
   var flyBtn = document.querySelector("#flyBtn");
   if (!flyBtn) return;
-  var navBtn = document.querySelector(".nav_btn"),
+  var navBtn = document.querySelectorAll(".nav_btn"),
       navTable = document.querySelector(".nav_table"),
       navLink = document.querySelectorAll(".nav_table_link"),
       header = document.querySelector("#header");
-  navBtn.addEventListener("click", function () {
-    navTable.classList.toggle("show_table");
-    document.body.classList.toggle("body_lock");
+  navBtn.forEach(function (item) {
+    item.addEventListener("click", function () {
+      navTable.classList.toggle("show_table");
+      document.body.classList.toggle("body_lock");
+    });
   });
   navLink.forEach(function (item) {
     item.addEventListener("click", function () {
@@ -784,10 +790,16 @@ function initPuzzleAnimation() {
 
 function jsonAnimation() {
   try {
-    new Array(10).fill("icon").map(function (element, i) {
+    new Array(6).fill("icon").map(function (element, i) {
       return "".concat(element, "_").concat(i + 1);
     }).forEach(function (element) {
       var icon = document.getElementById(element);
+
+      if (!icon) {
+        return;
+      }
+
+      ;
       var iconBody = icon.closest(".anim_item");
       var anim = bodymovin.loadAnimation({
         container: icon,
@@ -799,7 +811,7 @@ function jsonAnimation() {
       iconBody.addEventListener("mouseover", function () {
         anim.play();
       });
-      iconBody.addEventListener("mouseout", function () {
+      iconBody.addEventListener("mouseleave", function () {
         anim.stop();
       });
     });
@@ -830,7 +842,7 @@ function jsonCardAnimation() {
       cardBody.addEventListener("mouseover", function () {
         anim.play();
       });
-      cardBody.addEventListener("mouseout", function () {
+      cardBody.addEventListener("mouseleave", function () {
         anim.stop();
       });
     });
@@ -854,10 +866,10 @@ function jsonAwardHover() {
       loop: false,
       autoplay: false
     });
-    award.addEventListener("mouseover", function () {
+    award.addEventListener("mousemove", function () {
       anim.play();
     });
-    award.addEventListener("mouseout", function () {
+    award.addEventListener("mouseleave", function () {
       anim.stop();
     });
   } catch (e) {
@@ -865,5 +877,99 @@ function jsonAwardHover() {
   }
 }
 
-jsonAwardHover();
+function jsonAnimationSmallClaims() {
+  try {
+    new Array(3).fill("sc_icon").map(function (element, i) {
+      return "".concat(element, "_").concat(i + 1);
+    }).forEach(function (element) {
+      var icon = document.getElementById(element);
+
+      if (!icon) {
+        return;
+      }
+
+      ;
+      var iconBody = icon.closest(".anim_item");
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: "files/".concat(element, ".json"),
+        render: "svg",
+        loop: false,
+        autoplay: false
+      });
+      iconBody.addEventListener("mouseover", function () {
+        anim.play();
+      });
+      iconBody.addEventListener("mouseleave", function () {
+        anim.stop();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function jsonAnimationIndividual() {
+  try {
+    new Array(3).fill("ind_icon").map(function (element, i) {
+      return "".concat(element, "_").concat(i + 1);
+    }).forEach(function (element) {
+      var icon = document.getElementById(element);
+
+      if (!icon) {
+        return;
+      }
+
+      ;
+      var iconBody = icon.closest(".anim_item");
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: "files/".concat(element, ".json"),
+        render: "svg",
+        loop: false,
+        autoplay: false
+      });
+      iconBody.addEventListener("mouseover", function () {
+        anim.play();
+      });
+      iconBody.addEventListener("mouseleave", function () {
+        anim.stop();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function jsonAnimationEnforce() {
+  try {
+    new Array(4).fill("enf_icon").map(function (element, i) {
+      return "".concat(element, "_").concat(i + 1);
+    }).forEach(function (element) {
+      var icon = document.getElementById(element);
+
+      if (!icon) {
+        return;
+      }
+
+      ;
+      var iconBody = icon.closest(".anim_item");
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: "files/".concat(element, ".json"),
+        render: "svg",
+        loop: false,
+        autoplay: false
+      });
+      iconBody.addEventListener("mouseover", function () {
+        anim.play();
+      });
+      iconBody.addEventListener("mouseleave", function () {
+        anim.stop();
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
 //# sourceMappingURL=main.js.map

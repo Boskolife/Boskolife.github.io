@@ -562,7 +562,7 @@ main {
     }
 
     .fee_wrap {
-        @include adaptiv-vaule("margin-bottom", 25, 50, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 40, 1);
         text-align: start;
         width: 100%;
     }
@@ -581,8 +581,8 @@ main {
 
     .tooltiptext {
         position: absolute;
-        top: -150%;
-        right: -50px;
+        bottom: -145%;
+        right: -40px;
         transform: translateX(-50%);
         z-index: 1;
         padding: 5px 10px;
@@ -596,8 +596,9 @@ main {
         &::after {
             content: " ";
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             right: 7px;
+            transform: rotateZ(180deg);
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
@@ -1108,16 +1109,18 @@ main {
             border-radius: 8px;
             padding: 20px;
             align-items: center;
-            text-align: center;
+            text-align: start;
             width: max-content;
             box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
             overflow: auto;
             z-index: 3;
             max-height: max-content;
+            overflow: auto;
         }
 
         @include media ("<tablet") {
             padding: 15px;
+            max-height: 450px;
         }
     }
 
@@ -1131,6 +1134,8 @@ main {
         font-weight: 600;
         letter-spacing: -0.03em;
         margin-bottom: 25px;
+        text-align: start;
+        width: 100%;
     }
 
     .nav_table_link {
@@ -1141,7 +1146,12 @@ main {
         text-decoration: underline;
         line-height: 178%;
         transition: all .3s ease;
-
+        text-align: start;
+        width: 100%;
+        
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
 
         &:hover {
             color: $blue;
@@ -1158,7 +1168,7 @@ main {
     }
 
     .nav_btn {
-        z-index: 3;
+        z-index: 2;
         display: none;
         position: absolute;
         top: 0;
@@ -1225,6 +1235,8 @@ main {
 
     .img_purp_left,
     .img_purp_right {
+        width: 495px;
+        height: 320px;
         position: absolute;
 
         @include media ("<tablet") {
@@ -1243,7 +1255,7 @@ main {
     }
 
     .top_text {
-        background-color: #F2F4F8;
+        background-color: $blue;
         @include adaptiv-vaule("padding-top", 100, 80, 1);
         @include adaptiv-vaule("padding-bottom", 100, 80, 1);
         text-align: center;
@@ -1259,7 +1271,7 @@ main {
         letter-spacing: 0.12em;
         text-transform: uppercase;
         @include adaptiv-vaule("margin-bottom", 20, 10, 1);
-        color: $gray_4;
+        color: $white;
     }
 
     .top_title {
@@ -1269,7 +1281,7 @@ main {
         line-height: 120%;
         text-align: center;
         letter-spacing: -0.03em;
-        color: $blue;
+        color: $white;
         max-width: 730px;
         margin: 0 auto;
 
@@ -1829,10 +1841,11 @@ main {
         }
     }
 
+    
     .tooltiptext {
         position: absolute;
-        top: -150%;
-        right: -50px;
+        bottom: -145%;
+        right: -40px;
         transform: translateX(-50%);
         z-index: 1;
         padding: 5px 10px;
@@ -1846,8 +1859,9 @@ main {
         &::after {
             content: " ";
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             right: 7px;
+            transform: rotateZ(180deg);
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
@@ -1966,7 +1980,7 @@ main {
         width: 42%;
         min-height: 100%;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             width: 80%;
             margin: 0 0 30px 0;
             text-align: center;
@@ -2015,10 +2029,6 @@ main {
         min-width: 360px;
 
         @include media ("<desktop") {
-            min-width: 100%;
-        }
-
-        @include media ("<tablet") {
             display: none;
         }
     }
@@ -2026,7 +2036,7 @@ main {
     .way_items {
         width: 47%;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             width: 80%;
             margin-bottom: 40px;
         }
@@ -2075,7 +2085,7 @@ main {
     .way_hidden {
         display: none;
 
-        @include media ("<tablet") {
+        @include media ("<desktop") {
             display: block;
             min-width: 345px;
         }
@@ -2612,7 +2622,7 @@ main {
         letter-spacing: -0.03em;
         text-transform: uppercase;
         color: $black;
-        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+        @include adaptiv-vaule("margin-bottom", 30, 20, 1);
 
         @include media ("<phone") {
             text-align: start;
@@ -2871,12 +2881,12 @@ main {
             }
         }
 
-        .calc_form,
         .calc_wrap {
             width: 100%;
         }
 
         .calc_form {
+            max-width: 940px;
             gap: 15px;
             justify-content: space-between;
 

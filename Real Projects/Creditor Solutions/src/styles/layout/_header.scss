@@ -24,10 +24,19 @@ header {
         justify-content: space-between;
     }
 
+    .nav-menu {
+        @include media ("<desktop") {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
     .logo {
         @include adaptiv-vaule("width", 206, 150, 1);
         position: relative;
-        z-index: 4;
+        z-index: 6;
     }
 
     .nav {
@@ -39,7 +48,7 @@ header {
             height: 100%;
             width: 50%;
             transition: all .3s linear;
-            z-index: 3;
+            z-index: 5;
             background-color: $white;
             padding: 90px 0 30px 0;
         }
@@ -95,30 +104,47 @@ header {
     }
 
     .btn_item {
-        
         border: 1px solid $blue;
         border-radius: 8px;
         background-color: #F2F3F8;
         transition: all .3s ease;
 
-        &:hover{
+        &:hover {
             background-color: $blue;
             transition: all .3s ease;
 
-            .menu_link{
+            .menu_link {
                 color: $white;
             }
-            &::after{
+
+            &::after {
                 display: none;
             }
+
+            @include media ("<desktop") {
+                background-color: transparent;
+                color: $gray_4;
+            }
+
         }
 
-        .menu_link{
+        @include media ("<desktop") {
+            border: none;
+            background-color: transparent;
+        }
+
+        .menu_link {
             display: inline-block;
             padding: 12px;
             color: $blue;
             font-weight: 600;
             transition: all .3s ease;
+
+            @include media ("<desktop") {
+                padding: 0;
+                color: $gray_4;
+                font-weight: 500;
+            }
         }
     }
 
@@ -147,7 +173,7 @@ header {
             width: 24px;
             height: 18px;
             position: relative;
-            z-index: 4;
+            z-index: 6;
 
             &::after,
             &::before,
