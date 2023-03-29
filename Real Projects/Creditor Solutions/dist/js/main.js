@@ -787,12 +787,12 @@ function jsonAnimation() {
       return "".concat(element, "_").concat(i + 1);
     }).forEach(function (element) {
       var icon = document.getElementById(element);
-      var iconBody = icon.closest('.propos_item');
+      var iconBody = icon.closest('.anim_item');
       var anim = bodymovin.loadAnimation({
         container: icon,
         path: "files/".concat(element, ".json"),
         render: "svg",
-        loop: true,
+        loop: false,
         autoplay: false
       });
       iconBody.addEventListener("mouseover", function () {
@@ -812,19 +812,24 @@ function jsonCardAnimation() {
     new Array(3).fill("card").map(function (element, i) {
       return "".concat(element, "_").concat(i + 1);
     }).forEach(function (element) {
-      var icon = document.getElementById(element);
-      var iconBody = icon.parentNode;
+      var card = document.getElementById(element);
+
+      if (!card) {
+        return;
+      }
+
+      var cardBody = card.parentNode;
       var anim = bodymovin.loadAnimation({
-        container: icon,
+        container: card,
         path: "files/".concat(element, ".json"),
         render: "svg",
-        loop: true,
+        loop: false,
         autoplay: false
       });
-      iconBody.addEventListener("mouseover", function () {
+      cardBody.addEventListener("mouseover", function () {
         anim.play();
       });
-      iconBody.addEventListener("mouseout", function () {
+      cardBody.addEventListener("mouseout", function () {
         anim.stop();
       });
     });
@@ -835,12 +840,17 @@ function jsonCardAnimation() {
 
 function jsonAwardHover() {
   try {
-    var award = document.getElementById('award_anim_electr');
+    var award = document.getElementById("award_anim_electr");
+
+    if (!award) {
+      return;
+    }
+
     var anim = bodymovin.loadAnimation({
       container: award,
       path: "files/scheme_hover_electr.json",
       render: "svg",
-      loop: true,
+      loop: false,
       autoplay: false
     });
     award.addEventListener("mouseover", function () {
@@ -848,21 +858,7 @@ function jsonAwardHover() {
     });
     award.addEventListener("mouseout", function () {
       anim.stop();
-    }); // const award = document.getElementById("award_anim_electr");
-    // const awardWrap = award.parentNode;
-    // const anim = bodymovin.loadAnimation({
-    //     container: awardHover,
-    //     path: `files/scheme_hover_electr.json`,
-    //     render: "svg",
-    //     loop: false,
-    //     autoplay: true,
-    // });
-    // awardWrap.addEventListener("mouseover", () => {
-    //     anim.play();
-    // });
-    // awardWrap.addEventListener("mouseout", () => {
-    //     anim.stop();
-    // });
+    });
   } catch (e) {
     console.log(e);
   }
