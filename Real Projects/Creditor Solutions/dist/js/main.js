@@ -67,13 +67,14 @@ function initTabs() {
   var faqTabs = document.querySelector("#faqTabs");
   if (!faqTabs) return;
   var tabs = document.querySelectorAll(".tab_title"),
-      tabsContent = document.querySelectorAll(".tab_content"),
+      //   tabsWrap = document.querySelectorAll(".tab"),
+  tabsContent = document.querySelectorAll(".tab_content"),
       tabsParent = document.querySelector(".tab_wrapper");
 
   function showTabContent() {
     var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
     tabsContent[i].classList.toggle("show");
-    tabs[i].classList.toggle("tab_active");
+    tabs[i].classList.toggle("tab_active"); // tabsWrap[i].classList.toggle("active_tabsWrap");
   }
 
   tabsParent.addEventListener("click", function (event) {

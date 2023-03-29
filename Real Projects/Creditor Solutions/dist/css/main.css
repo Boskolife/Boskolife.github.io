@@ -1923,6 +1923,23 @@ main {
     text-decoration: underline;
     color: #66666C; }
 
+.faq_page_content .tab {
+  padding: 10px 25px;
+  background: rgba(244, 246, 254, 0.3);
+  border: 1px solid #D1D4DE;
+  border-radius: 12px; }
+  .faq_page_content .tab:not(:last-child) {
+    margin-bottom: 15px; }
+
+.faq_page_content .tab_content {
+  padding: 0; }
+
+.faq_page_content .show {
+  padding-bottom: 15px; }
+
+.faq_page_content .active_tabsWrap {
+  border: 1.5px solid #031C77; }
+
 .privacy_policy {
   /* Только если меньше контейнера */
   padding-top: 240px;
