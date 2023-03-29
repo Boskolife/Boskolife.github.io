@@ -3175,11 +3175,11 @@ main {
       .process .process_icon_bottom {
         display: none; } }
   .process .process_icon_top {
-    top: -10%;
-    left: -18%; }
+    top: -40px;
+    left: -235px; }
   .process .process_icon_bottom {
-    right: -20%;
-    bottom: -25%; }
+    bottom: -40px;
+    right: -235px; }
   .process .container {
     position: relative;
     z-index: 2; }
@@ -3615,11 +3615,11 @@ main {
       width: 100%;
       height: 100%; }
   .calc .calc_icon_top {
-    top: -5%;
-    left: -22%; }
+    top: -40px;
+    left: -150px; }
   .calc .calc_icon_bottom {
-    bottom: -8%;
-    right: -9%; }
+    bottom: -40px;
+    right: -150px; }
   .calc .line_top {
     position: absolute;
     top: 0;

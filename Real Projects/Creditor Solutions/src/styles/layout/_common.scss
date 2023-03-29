@@ -1148,8 +1148,8 @@ main {
         transition: all .3s ease;
         text-align: start;
         width: 100%;
-        
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 10px;
         }
 
@@ -1841,7 +1841,7 @@ main {
         }
     }
 
-    
+
     .tooltiptext {
         position: absolute;
         bottom: -145%;
@@ -2117,13 +2117,13 @@ main {
     }
 
     .process_icon_top {
-        top: -10%;
-        left: -18%;
+        top: -40px;
+        left: -235px;
     }
 
     .process_icon_bottom {
-        right: -20%;
-        bottom: -25%;
+        bottom: -40px;
+        right: -235px;
     }
 
     .container {
@@ -2593,13 +2593,13 @@ main {
     }
 
     .calc_icon_top {
-        top: -5%;
-        left: -22%;
+        top: -40px;
+        left: -150px;
     }
 
     .calc_icon_bottom {
-        bottom: -8%;
-        right: -9%;
+        bottom: -40px;
+        right: -150px;
     }
 
     .line_top {
