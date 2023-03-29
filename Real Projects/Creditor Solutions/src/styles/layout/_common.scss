@@ -306,6 +306,12 @@ main {
             background-color: $gray_3;
         }
 
+        #icon_5{
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
         .item_img {
             width: 75px;
             height: 75px;
@@ -349,7 +355,7 @@ main {
 
         @include media ("<desktop") {
             width: 85%;
-            margin: 0 0 60px 0;
+            margin: 0;
         }
 
         @include media ("<tablet") {
@@ -2513,8 +2519,8 @@ main {
         background-color: $white;
         @include adaptiv-vaule("padding-top", 65, 30, 1);
         @include adaptiv-vaule("padding-bottom", 50, 25, 1);
-        @include adaptiv-vaule("padding-right", 80, 25, 1);
-        @include adaptiv-vaule("padding-left", 80, 25, 1);
+        @include adaptiv-vaule("padding-right", 25, 15, 1);
+        @include adaptiv-vaule("padding-left", 25, 15, 1);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2527,6 +2533,7 @@ main {
         position: relative;
         z-index: 2;
         text-align: center;
+        width: 100%;
         @include adaptiv-vaule("margin-bottom", 80, 50, 1);
     }
 
@@ -2737,12 +2744,13 @@ main {
         display: flex;
         align-items: center;
         flex-direction: column;
+        width: 100%;
     }
 
     .calc_steps {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .active_wrap {
@@ -2890,6 +2898,10 @@ main {
             @include media ("<desktop") {
                 width: 48%;
             }
+
+            @include media ("<tablet") {
+                width: 100%;
+            }
         }
 
         .result_title {
@@ -2922,10 +2934,6 @@ main {
             color: $blue;
         }
 
-        #daySelect {
-            color: $gray_4;
-        }
-
         .total_amount {
             margin-bottom: 30px;
         }
@@ -2939,6 +2947,10 @@ main {
 
             @include media ("<tablet") {
                 flex-direction: column;
+            }
+
+            @include media ("<phone") {
+                width: 100%;
             }
         }
 

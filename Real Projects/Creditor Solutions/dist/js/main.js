@@ -400,7 +400,7 @@ function nyJudgmentInterest(judgmentAmount, date) {
     month: "numeric",
     year: "numeric"
   }).replace(/\//g, ".").split(".");
-  var formateDate = "".concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], ".").concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], ".").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
+  var formateDate = "".concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], ".").concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], ".").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
@@ -787,7 +787,7 @@ function jsonAnimation() {
       return "".concat(element, "_").concat(i + 1);
     }).forEach(function (element) {
       var icon = document.getElementById(element);
-      var iconBody = icon.closest('.propos_item, .item');
+      var iconBody = icon.closest('.propos_item');
       var anim = bodymovin.loadAnimation({
         container: icon,
         path: "files/".concat(element, ".json"),
@@ -795,10 +795,10 @@ function jsonAnimation() {
         loop: true,
         autoplay: false
       });
-      iconBody.addEventListener('mouseover', function () {
+      iconBody.addEventListener("mouseover", function () {
         anim.play();
       });
-      iconBody.addEventListener('mouseout', function () {
+      iconBody.addEventListener("mouseout", function () {
         anim.stop();
       });
     });
@@ -813,7 +813,7 @@ function jsonCardAnimation() {
       return "".concat(element, "_").concat(i + 1);
     }).forEach(function (element) {
       var icon = document.getElementById(element);
-      var iconBody = icon.closest('.card');
+      var iconBody = icon.parentNode;
       var anim = bodymovin.loadAnimation({
         container: icon,
         path: "files/".concat(element, ".json"),
@@ -821,10 +821,10 @@ function jsonCardAnimation() {
         loop: true,
         autoplay: false
       });
-      iconBody.addEventListener('mouseover', function () {
+      iconBody.addEventListener("mouseover", function () {
         anim.play();
       });
-      iconBody.addEventListener('mouseout', function () {
+      iconBody.addEventListener("mouseout", function () {
         anim.stop();
       });
     });
@@ -832,4 +832,41 @@ function jsonCardAnimation() {
     console.log(e);
   }
 }
+
+function jsonAwardHover() {
+  try {
+    var award = document.getElementById('award_anim_electr');
+    var anim = bodymovin.loadAnimation({
+      container: award,
+      path: "files/scheme_hover_electr.json",
+      render: "svg",
+      loop: true,
+      autoplay: false
+    });
+    award.addEventListener("mouseover", function () {
+      anim.play();
+    });
+    award.addEventListener("mouseout", function () {
+      anim.stop();
+    }); // const award = document.getElementById("award_anim_electr");
+    // const awardWrap = award.parentNode;
+    // const anim = bodymovin.loadAnimation({
+    //     container: awardHover,
+    //     path: `files/scheme_hover_electr.json`,
+    //     render: "svg",
+    //     loop: false,
+    //     autoplay: true,
+    // });
+    // awardWrap.addEventListener("mouseover", () => {
+    //     anim.play();
+    // });
+    // awardWrap.addEventListener("mouseout", () => {
+    //     anim.stop();
+    // });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+jsonAwardHover();
 //# sourceMappingURL=main.js.map

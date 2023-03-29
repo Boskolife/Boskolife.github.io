@@ -66,8 +66,8 @@ function initTabs() {
 
     const tabs = document.querySelectorAll(".tab_title"),
         //   tabsWrap = document.querySelectorAll(".tab"),
-          tabsContent = document.querySelectorAll(".tab_content"),
-          tabsParent = document.querySelector(".tab_wrapper");
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelector(".tab_wrapper");
 
     function showTabContent(i = 0) {
         tabsContent[i].classList.toggle("show");
@@ -420,7 +420,9 @@ function nyJudgmentInterest(judgmentAmount, date) {
         })
         .replace(/\//g, ".")
         .split(".");
-    let formateDate = `${localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]}.${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}.${localDate[2]}`;
+    let formateDate = `${
+        localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]
+    }.${localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]}.${localDate[2]}`;
 
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
@@ -854,7 +856,7 @@ function jsonAnimation() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                const iconBody = icon.closest('.propos_item, .item');
+                const iconBody = icon.closest('.propos_item');
                 const anim = bodymovin.loadAnimation({
                     container: icon,
                     path: `files/${element}.json`,
@@ -862,8 +864,14 @@ function jsonAnimation() {
                     loop: true,
                     autoplay: false,
                 });
-            iconBody.addEventListener('mouseover', () => {anim.play()});
-            iconBody.addEventListener('mouseout', () => {anim.stop()});
+
+                iconBody.addEventListener("mouseover", () => {
+                    anim.play();
+                });
+
+                iconBody.addEventListener("mouseout", () => {
+                    anim.stop();
+                });
             });
     } catch (e) {
         console.log(e);
@@ -877,7 +885,7 @@ function jsonCardAnimation() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                const iconBody = icon.closest('.card');
+                const iconBody = icon.parentNode;
                 const anim = bodymovin.loadAnimation({
                     container: icon,
                     path: `files/${element}.json`,
@@ -885,11 +893,57 @@ function jsonCardAnimation() {
                     loop: true,
                     autoplay: false,
                 });
-            iconBody.addEventListener('mouseover', () => {anim.play()});
-            iconBody.addEventListener('mouseout', () => {anim.stop()});
+                iconBody.addEventListener("mouseover", () => {
+                    anim.play();
+                });
+                iconBody.addEventListener("mouseout", () => {
+                    anim.stop();
+                });
             });
     } catch (e) {
         console.log(e);
     }
 }
 
+
+function jsonAwardHover() {
+    try {
+        const award = document.getElementById('award_anim_electr');
+        const anim = bodymovin.loadAnimation({
+            container: award,
+            path: `files/scheme_hover_electr.json`,
+            render: "svg",
+            loop: true,
+            autoplay: false,
+        });
+
+        award.addEventListener("mouseover", () => {
+            anim.play();
+        });
+        award.addEventListener("mouseout", () => {
+            anim.stop();
+        });
+
+
+
+        // const award = document.getElementById("award_anim_electr");
+        // const awardWrap = award.parentNode;
+        // const anim = bodymovin.loadAnimation({
+        //     container: awardHover,
+        //     path: `files/scheme_hover_electr.json`,
+        //     render: "svg",
+        //     loop: false,
+        //     autoplay: true,
+        // });
+        // awardWrap.addEventListener("mouseover", () => {
+        //     anim.play();
+        // });
+        // awardWrap.addEventListener("mouseout", () => {
+        //     anim.stop();
+        // });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+jsonAwardHover();

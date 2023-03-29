@@ -1291,6 +1291,10 @@ main {
       width: 70%;
       height: 1px;
       background-color: #ECECEC; }
+    .propos .propos_item #icon_5 {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px; }
     .propos .propos_item .item_img {
       width: 75px;
       height: 75px;
@@ -1339,7 +1343,7 @@ main {
     @media (max-width: 1023px) {
       .award .award_text {
         width: 85%;
-        margin: 0 0 60px 0; } }
+        margin: 0; } }
     @media (max-width: 767px) {
       .award .award_text {
         width: 100%; } }
@@ -3514,9 +3518,9 @@ main {
     /* Только если меньше контейнера */
     padding-bottom: 50px;
     /* Только если меньше контейнера */
-    padding-right: 80px;
+    padding-right: 25px;
     /* Только если меньше контейнера */
-    padding-left: 80px;
+    padding-left: 25px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -3532,15 +3536,16 @@ main {
         padding-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .calc .calc_content {
-        padding-right: calc(25px + 55 * ((100vw - calc(375px)) / 975)); } }
+        padding-right: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .calc .calc_content {
-        padding-left: calc(25px + 55 * ((100vw - calc(375px)) / 975)); } }
+        padding-left: calc(15px + 10 * ((100vw - calc(375px)) / 975)); } }
   .calc .calc_step {
     display: none;
     position: relative;
     z-index: 2;
     text-align: center;
+    width: 100%;
     /* Только если меньше контейнера */
     margin-bottom: 80px; }
     @media (max-width: 1350px) {
@@ -3756,14 +3761,15 @@ main {
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 100%; }
   .calc .calc_steps {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .calc .active_wrap {
     width: 48px;
     height: 48px;
@@ -3903,6 +3909,9 @@ main {
     @media (max-width: 1023px) {
       .calc .third_step .result_item {
         width: 48%; } }
+    @media (max-width: 767px) {
+      .calc .third_step .result_item {
+        width: 100%; } }
   .calc .third_step .result_title {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -3936,8 +3945,6 @@ main {
     @media (max-width: 1350px) {
       .calc .third_step .judg_date {
         font-size: calc(16px + 2 * ((100vw - calc(375px)) / 975)); } }
-  .calc .third_step #daySelect {
-    color: #3D3E45; }
   .calc .third_step .total_amount {
     margin-bottom: 30px; }
   .calc .third_step .btn_wrap {
@@ -3957,6 +3964,9 @@ main {
       .calc .third_step .btn_wrap {
         -ms-flex-direction: column;
         flex-direction: column; } }
+    @media (max-width: 479px) {
+      .calc .third_step .btn_wrap {
+        width: 100%; } }
   .calc .third_step .blue_btn,
   .calc .third_step .start_btn {
     min-width: 240px;
