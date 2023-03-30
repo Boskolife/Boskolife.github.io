@@ -69,14 +69,15 @@ function initTabs() {
     if (!faqTabs) return;
 
     const tabs = document.querySelectorAll(".tab_title"),
-          tabsWrap = document.querySelectorAll(".tab"),
-          tabsContent = document.querySelectorAll(".tab_content"),
-          tabsParent = document.querySelector(".tab_wrapper");
+        tabsWrap = document.querySelectorAll(".tab"),
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelector(".tab_wrapper");
 
     function showTabContent(i = 0) {
         tabsContent[i].classList.toggle("show");
         tabs[i].classList.toggle("tab_active");
-        window.location.href.includes("faq") && tabsWrap[i].classList.toggle("active_tabsWrap");
+        window.location.href.includes("faq") &&
+            tabsWrap[i].classList.toggle("active_tabsWrap");
     }
 
     tabsParent.addEventListener("click", (event) => {
@@ -108,7 +109,7 @@ function initNavBtn() {
             navTable.classList.toggle("show_table");
             document.body.classList.toggle("body_lock");
         });
-    })
+    });
 
     navLink.forEach((item) => {
         item.addEventListener("click", () => {
@@ -862,9 +863,9 @@ function jsonAnimation() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                if(!icon) {
-                    return
-                };
+                if (!icon) {
+                    return;
+                }
                 const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
@@ -873,7 +874,7 @@ function jsonAnimation() {
                     loop: false,
                     autoplay: false,
                 });
-                
+
                 iconBody.addEventListener("mouseover", () => {
                     anim.play();
                 });
@@ -919,6 +920,20 @@ function jsonCardAnimation() {
     }
 }
 
+function setActiveClass() {
+    const card = document.querySelectorAll(".card"); // замените 'your-element-class' на ваш класс элементов
+    card.forEach((element) => {
+        element.addEventListener("click", () => {
+            card.forEach((el) => {
+                el.classList.remove("card_border");
+            });
+            element.classList.add("card_border");
+        });
+    });
+}
+
+setActiveClass();
+
 function jsonAwardHover() {
     try {
         const award = document.getElementById("award_anim_electr");
@@ -951,9 +966,9 @@ function jsonAnimationSmallClaims() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                if(!icon) {
-                    return
-                };
+                if (!icon) {
+                    return;
+                }
                 const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
@@ -962,7 +977,7 @@ function jsonAnimationSmallClaims() {
                     loop: false,
                     autoplay: false,
                 });
-                
+
                 iconBody.addEventListener("mouseover", () => {
                     anim.play();
                 });
@@ -983,9 +998,9 @@ function jsonAnimationIndividual() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                if(!icon) {
-                    return
-                };
+                if (!icon) {
+                    return;
+                }
                 const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
@@ -994,7 +1009,7 @@ function jsonAnimationIndividual() {
                     loop: false,
                     autoplay: false,
                 });
-                
+
                 iconBody.addEventListener("mouseover", () => {
                     anim.play();
                 });
@@ -1015,9 +1030,9 @@ function jsonAnimationEnforce() {
             .map((element, i) => `${element}_${i + 1}`)
             .forEach((element) => {
                 const icon = document.getElementById(element);
-                if(!icon) {
-                    return
-                };
+                if (!icon) {
+                    return;
+                }
                 const iconBody = icon.closest(".anim_item");
                 const anim = bodymovin.loadAnimation({
                     container: icon,
@@ -1026,7 +1041,7 @@ function jsonAnimationEnforce() {
                     loop: false,
                     autoplay: false,
                 });
-                
+
                 iconBody.addEventListener("mouseover", () => {
                     anim.play();
                 });

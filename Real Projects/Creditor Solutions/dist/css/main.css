@@ -1314,6 +1314,9 @@ main {
       background-color: #ECECEC; }
     .propos .propos_item #icon_5 {
       width: 60px; }
+      @media (max-width: 479px) {
+        .propos .propos_item #icon_5 {
+          margin-left: 0; } }
     .propos .propos_item .item_img {
       width: 75px;
       height: 75px;
@@ -1512,6 +1515,9 @@ main {
       border-radius: 14px;
       z-index: -1;
       transition: all 1s linear; }
+      @media (max-width: 479px) {
+        .cards .card::before {
+          display: none; } }
     @media (min-width: 769px) {
       .cards .card:hover {
         -webkit-transform: scale(1.05);
@@ -1520,14 +1526,13 @@ main {
         .cards .card:hover::after {
           height: calc(100% + 2px);
           transition: all 1s linear; } }
+  .cards .card_border {
+    border: 1px solid #031C77;
+    transition: all .3s ease; }
   .cards .card_img {
     width: 62px;
     height: 62px;
     margin-bottom: 10px; }
-    @media (max-width: 767px) {
-      .cards .card_img {
-        width: 42px;
-        height: 42px; } }
   .cards .card_title {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -1643,7 +1648,7 @@ main {
     line-height: 150%; }
     @media (max-width: 1350px) {
       .cards .fee {
-        font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+        font-size: calc(13px + 3 * ((100vw - calc(375px)) / 975)); } }
   .cards .blue_btn,
   .cards .white_btn {
     min-width: 100%; }
@@ -2927,6 +2932,14 @@ main {
       .enforce .small_claims_card {
         max-width: 430px;
         width: 100%; } }
+    @media (min-width: 769px) {
+      .enforce .small_claims_card:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        transition: all .3s linear; }
+        .enforce .small_claims_card:hover::after {
+          height: calc(100% + 2px);
+          transition: all 1s linear; } }
   .enforce .tooltip {
     position: relative; }
     .enforce .tooltip:hover .tooltiptext {
@@ -2959,13 +2972,15 @@ main {
       border-style: solid;
       border-color: rgba(3, 28, 119, 0.9) transparent transparent transparent; }
   .enforce .card_img {
-    width: 62px;
-    height: 62px;
+    width: 75px;
+    height: 75px;
     margin-bottom: 10px; }
-    @media (max-width: 767px) {
-      .enforce .card_img {
-        width: 42px;
-        height: 42px; } }
+  .enforce .card_white {
+    fill: #ffffff;
+    stroke: #ffffff; }
+    .enforce .card_white path {
+      fill: #ffffff;
+      stroke: #ffffff; }
   .enforce .pack {
     color: #66666C; }
   .enforce .card_descr {

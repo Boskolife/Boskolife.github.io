@@ -799,7 +799,6 @@ function jsonAnimation() {
         return;
       }
 
-      ;
       var iconBody = icon.closest(".anim_item");
       var anim = bodymovin.loadAnimation({
         container: icon,
@@ -851,6 +850,21 @@ function jsonCardAnimation() {
   }
 }
 
+function setActiveClass() {
+  var card = document.querySelectorAll(".card"); // замените 'your-element-class' на ваш класс элементов
+
+  card.forEach(function (element) {
+    element.addEventListener("click", function () {
+      card.forEach(function (el) {
+        el.classList.remove("card_border");
+      });
+      element.classList.add("card_border");
+    });
+  });
+}
+
+setActiveClass();
+
 function jsonAwardHover() {
   try {
     var award = document.getElementById("award_anim_electr");
@@ -888,7 +902,6 @@ function jsonAnimationSmallClaims() {
         return;
       }
 
-      ;
       var iconBody = icon.closest(".anim_item");
       var anim = bodymovin.loadAnimation({
         container: icon,
@@ -920,7 +933,6 @@ function jsonAnimationIndividual() {
         return;
       }
 
-      ;
       var iconBody = icon.closest(".anim_item");
       var anim = bodymovin.loadAnimation({
         container: icon,
@@ -952,7 +964,6 @@ function jsonAnimationEnforce() {
         return;
       }
 
-      ;
       var iconBody = icon.closest(".anim_item");
       var anim = bodymovin.loadAnimation({
         container: icon,

@@ -308,6 +308,10 @@ main {
 
         #icon_5 {
             width: 60px;
+
+            @include media ("<phone") {
+                margin-left: 0;
+            }
         }
 
         .item_img {
@@ -475,6 +479,10 @@ main {
             border-radius: 14px;
             z-index: -1;
             transition: all 1s linear;
+
+            @include media ("<phone") {
+                display: none;
+            }
         }
 
         @include media (">tablet") {
@@ -491,15 +499,15 @@ main {
         }
     }
 
+    .card_border{
+        border: 1px solid $blue;
+        transition: all .3s ease;
+    }
+
     .card_img {
         width: 62px;
         height: 62px;
         margin-bottom: 10px;
-
-        @include media ("<tablet") {
-            width: 42px;
-            height: 42px;
-        }
     }
 
     .card_title {
@@ -609,7 +617,7 @@ main {
     .fee {
         text-align: start;
         color: $gray_4;
-        @include adaptiv-vaule("font-size", 16, 14, 1);
+        @include adaptiv-vaule("font-size", 16, 13, 1);
         font-weight: 600;
         line-height: 150%;
     }
@@ -1880,6 +1888,19 @@ main {
             max-width: 430px;
             width: 100%;
         }
+
+        @include media (">tablet") {
+
+            &:hover {
+                transform: scale(1.05);
+                transition: all .3s linear;
+
+                &::after {
+                    height: calc(100% + 2px);
+                    transition: all 1s linear;
+                }
+            }
+        }
     }
 
     .tooltip {
@@ -1923,13 +1944,18 @@ main {
     }
 
     .card_img {
-        width: 62px;
-        height: 62px;
+        width: 75px;
+        height: 75px;
         margin-bottom: 10px;
+    }
 
-        @include media ("<tablet") {
-            width: 42px;
-            height: 42px;
+    .card_white{
+        fill: $white;
+        stroke: $white;
+
+        path{
+            fill: $white;
+            stroke: $white;
         }
     }
 
