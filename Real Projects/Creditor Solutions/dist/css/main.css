@@ -1716,13 +1716,13 @@ main {
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #66666C;
-    transition: all .3s ease; }
+    transition: all .5s ease; }
     @media (max-width: 1350px) {
       .faq .tab_content {
         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
   .faq .show {
     height: 100%;
-    transition: all .3s ease;
+    transition: all .5s ease;
     padding: 0 0 20px 0;
     opacity: 1;
     visibility: visible; }
@@ -1974,7 +1974,8 @@ main {
     border: 1px solid #D1D4DE;
     border-radius: 12px;
     max-width: 935px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    transition: all .5s ease; }
     .faq_page_content .tab:not(:last-child) {
       margin-bottom: 15px; }
   .faq_page_content .tab_content {
@@ -4427,16 +4428,17 @@ footer {
       position: relative; }
       footer .footer_top .list_item:not(:last-child) {
         margin-bottom: 5px; }
-      footer .footer_top .list_item:hover:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        left: 0;
-        bottom: -5px;
-        background-color: #031C77;
-        -webkit-animation: bottom_border .5s linear;
-        animation: bottom_border .5s linear; }
+      @media (min-width: 769px) {
+        footer .footer_top .list_item:hover:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          left: 0;
+          bottom: -5px;
+          background-color: #031C77;
+          -webkit-animation: bottom_border .5s linear;
+          animation: bottom_border .5s linear; } }
     footer .footer_top .policy {
       /* Только если меньше контейнера */
       padding-right: 70px;

@@ -692,12 +692,12 @@ main {
         line-height: 150%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        transition: all .3s ease;
+        transition: all .5s ease;
     }
 
     .show {
         height: 100%;
-        transition: all .3s ease;
+        transition: all .5s ease;
         padding: 0 0 20px 0;
         opacity: 1;
         visibility: visible;
@@ -956,6 +956,7 @@ main {
         border-radius: 12px;
         max-width: 935px;
         margin: 0 auto;
+        transition: all .5s ease;
 
         &:not(:last-child) {
             margin-bottom: 15px;
