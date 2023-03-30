@@ -1685,7 +1685,8 @@ main {
   .faq .tab_title {
     padding: 20px 0;
     position: relative;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all .4s ease; }
     @media (max-width: 1023px) {
       .faq .tab_title {
         padding-right: 75px; } }
@@ -1710,21 +1711,23 @@ main {
     opacity: 0;
     visibility: hidden;
     height: 0;
+    overflow: hidden;
     font-weight: 500;
     /* Только если меньше контейнера */
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #66666C;
-    transition: all .5s ease; }
+    transition: all .4s linear; }
     @media (max-width: 1350px) {
       .faq .tab_content {
         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
   .faq .show {
-    height: 100%;
-    transition: all .5s ease;
+    height: auto;
+    transition: all .4s linear;
     padding: 0 0 20px 0;
     opacity: 1;
+    overflow: none;
     visibility: visible; }
   .faq .blue_btn {
     text-transform: none; }
@@ -1984,12 +1987,14 @@ main {
     padding-bottom: 15px; }
   .faq_page_content .active_tabsWrap {
     border: 1.5px solid #031C77;
-    -webkit-transform: scale(1.04);
-    transform: scale(1.04);
-    background-color: #ffffff; }
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    background-color: #ffffff;
+    transition: all .5s ease; }
     .faq_page_content .active_tabsWrap .tab_title {
       font-weight: 600;
-      font-size: 24px; }
+      font-size: 24px;
+      transition: all .5s ease; }
 
 .privacy_policy {
   /* Только если меньше контейнера */

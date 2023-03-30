@@ -652,6 +652,7 @@ main {
         padding: 20px 0;
         position: relative;
         cursor: pointer;
+        transition: all .4s ease;
 
         @include media ("<desktop") {
             padding-right: 75px;
@@ -687,19 +688,21 @@ main {
         opacity: 0;
         visibility: hidden;
         height: 0;
+        overflow:hidden;
         font-weight: 500;
         @include adaptiv-vaule("font-size", 16, 14, 1);
         line-height: 150%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        transition: all .5s ease;
+        transition: all .4s linear;
     }
 
     .show {
-        height: 100%;
-        transition: all .5s ease;
+        height: auto;
+        transition: all .4s linear;
         padding: 0 0 20px 0;
         opacity: 1;
+        overflow: none;
         visibility: visible;
     }
 
@@ -973,12 +976,14 @@ main {
 
     .active_tabsWrap {
         border: 1.5px solid $blue;
-        transform: scale(1.04);
+        transform: scale(1.02);
         background-color: $white;
+        transition: all .5s ease;
 
         .tab_title {
             font-weight: 600;
             font-size: 24px;
+            transition: all .5s ease;
         }
     }
 }
