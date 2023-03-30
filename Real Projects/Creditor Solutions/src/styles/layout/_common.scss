@@ -741,6 +741,19 @@ main {
         color: $blue;
     }
 
+
+    .number_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+
+    .fax {
+        color: $gray_2;
+    }
+
     .links {
         display: flex;
         flex-direction: column;
@@ -755,10 +768,7 @@ main {
     .link {
         display: flex;
         align-items: center;
-
-        &:not(:last-child) {
-            margin-bottom: 15px;
-        }
+        margin-bottom: 15px;
     }
 
     .interactive {
@@ -897,8 +907,6 @@ main {
         }
     }
 
-
-
     .tab_wrapper {
         margin-bottom: 0;
     }
@@ -931,12 +939,15 @@ main {
 }
 
 .faq_page_content {
+    background-color: #F4F6FE;
 
     .tab {
         padding: 10px 25px;
         background: rgba(244, 246, 254, 0.3);
         border: 1px solid #D1D4DE;
         border-radius: 12px;
+        max-width: 935px;
+        margin: 0 auto;
 
         &:not(:last-child) {
             margin-bottom: 15px;
@@ -953,6 +964,13 @@ main {
 
     .active_tabsWrap {
         border: 1.5px solid $blue;
+        transform: scale(1.04);
+        background-color: $white;
+
+        .tab_title {
+            font-weight: 600;
+            font-size: 24px;
+        }
     }
 }
 
@@ -1250,8 +1268,9 @@ main {
     }
 
     .img_purp_right {
-        bottom: -40px;
+        top: 15%;
         right: -235px;
+        z-index: 1;
     }
 
     .top_text {
@@ -1290,6 +1309,118 @@ main {
             text-align: start;
         }
     }
+
+    .standarts_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: -2px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .business,
+    .methods {
+        width: 45%;
+        padding: 100px 0;
+
+        @include media ("<tablet") {
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        @include media ("<phone") {
+            padding: 35px 0;
+        }
+    }
+
+    .business {
+        position: relative;
+        padding-right: 20px;
+        padding-left: 60px;
+        background-color: $blue;
+
+        @include media ("<tablet") {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -60vw;
+            width: 60vw;
+            height: 100%;
+            z-index: 0;
+            background-color: $blue;
+
+            @include media ("<tablet") {
+                width: 150%;
+                right: -25%;
+            }
+        }
+    }
+
+    .business_title {
+        color: $white;
+        font-weight: 600;
+        line-height: 135%;
+        letter-spacing: -0.02em;
+        max-width: 400px;
+        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+        z-index: 1;
+        position: relative;
+    }
+
+    .business_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 175%;
+        color: $gray;
+        max-width: 530px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .methods_title {
+        font-weight: 600;
+        line-height: 135%;
+        letter-spacing: -0.02em;
+        color: $blue;
+        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+
+        @include media ("<phone") {
+            max-width: 250px;
+        }
+    }
+
+    .methods_item {
+        padding-left: 30px;
+        color: $black;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 20px;
+        font-weight: 500;
+        position: relative;
+
+        @include media ("<tablet") {
+            max-width: 285px;
+        }
+
+        &::before {
+            content: url(../images/cards/check.svg);
+            position: absolute;
+            left: 0;
+            top: 65%;
+            transform: translateY(-50%);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
 }
 
 .wa_are {
@@ -1307,13 +1438,13 @@ main {
     }
 
     .purp_titles {
-        width: 25%;
-        font-weight: 600;
-        font-size: 68px;
-        @include adaptiv-vaule("font-size", 68, 42, 1);
+        width: 45%;
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 90, 42, 1);
         line-height: 106%;
         color: $blue;
         margin-right: 30px;
+        text-transform: uppercase;
 
         @include media ("<desktop") {
             width: 100%;
@@ -1376,6 +1507,7 @@ main {
 }
 
 .our_team {
+    margin-top: -2px;
     .bot_text {
         @include adaptiv-vaule("padding-bottom", 100, 80, 1);
         background-color: #F9F9F9;
@@ -1436,29 +1568,29 @@ main {
 
         .bot_text_img {
             width: 100%;
-            @include adaptiv-vaule("height", 330, 200, 1);
+            
+            @include adaptiv-vaule("height", 400, 275, 1);
             position: relative;
             @include adaptiv-vaule("margin-bottom", 60, 30, 1);
 
-            @include media ("<phone") {
-                display: none;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                z-index: 1;
+                background: linear-gradient(180deg, #031C77 0%, rgba(3, 28, 119, 0) 100%);;
             }
         }
 
-        .bot_text_img_phone {
-            display: none;
-            width: 100%;
-            min-height: 200px;
-            margin-bottom: 30px;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-
-            @include media ("<phone") {
-                display: block;
-            }
+        .part_logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 0 10px;
+            transform: translate(-50%, -50%);
         }
 
         .bot_text_notate {
@@ -1482,181 +1614,46 @@ main {
     }
 }
 
-.standarts {
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -50%;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        background-color: $blue;
-
-        @include media ("<tablet") {
-            display: none;
-        }
-    }
-
-    .standarts_content {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        @include media ("<tablet") {
-            flex-direction: column;
-        }
-    }
-
-    .business,
-    .methods {
-        width: 45%;
-        @include adaptiv-vaule("padding-top", 100, 80, 1);
-        @include adaptiv-vaule("padding-bottom", 100, 80, 1);
-
-        @include media ("<tablet") {
-            width: 100%
-        }
-    }
-
-    .business {
-        position: relative;
-        padding-right: 20px;
-
-        @include media ("<tablet") {
-            padding-left: 0;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -10%;
-                width: 150%;
-                height: 100%;
-                z-index: 0;
-                background-color: $blue;
-            }
-        }
-
-
-    }
-
-    .puzzle {
-        position: absolute;
-        top: 0;
-        right: -100px;
-    }
-
-    .business_title {
-        color: $white;
-        font-weight: 600;
-        line-height: 135%;
-        letter-spacing: -0.02em;
-        max-width: 425px;
-        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
-        z-index: 1;
-        position: relative;
-    }
-
-    .business_descr {
-        font-weight: 500;
-        @include adaptiv-vaule("font-size", 16, 14, 1);
-        line-height: 175%;
-        color: $gray;
-        max-width: 530px;
-        z-index: 1;
-        position: relative;
-    }
-
-    .methods {
-        padding-left: 20px;
-
-        @include media ("<tablet") {
-            padding-left: 0;
-        }
-    }
-
-    .methods_title {
-        font-weight: 600;
-        line-height: 135%;
-        letter-spacing: -0.02em;
-        color: $blue;
-        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
-
-        @include media ("<phone") {
-            max-width: 250px;
-        }
-    }
-
-    .methods_item {
-        padding-left: 30px;
-        color: $black;
-        @include adaptiv-vaule("font-size", 16, 14, 1);
-        line-height: 20px;
-        font-weight: 500;
-        position: relative;
-
-        @include media ("<tablet") {
-            max-width: 285px;
-        }
-
-        &::before {
-            content: url(../images/cards/check.svg);
-            position: absolute;
-            left: 0;
-            top: 65%;
-            transform: translateY(-50%);
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 12px;
-        }
-    }
-}
-
-.animate__fadeIn {
+.animate__fadeInLeftBig {
 
     &:nth-child(1) {
         animation-delay: 0.5s;
     }
 
     &:nth-child(2) {
-        animation-delay: 1s;
+        animation-delay: 0.75s;
     }
 
     &:nth-child(3) {
-        animation-delay: 1.5s;
+        animation-delay: 1s;
     }
 
     &:nth-child(4) {
-        animation-delay: 2s;
+        animation-delay: 1.25s;
     }
 
     &:nth-child(5) {
-        animation-delay: 2.5s;
+        animation-delay: 1.5s;
     }
 
     &:nth-child(6) {
-        animation-delay: 3s;
+        animation-delay: 1.75s;
     }
 
     &:nth-child(7) {
-        animation-delay: 3.5s;
+        animation-delay: 2s;
     }
 
     &:nth-child(8) {
-        animation-delay: 4s;
+        animation-delay: 2.25s;
     }
 
     &:nth-child(9) {
-        animation-delay: 4.5s;
+        animation-delay: 2.5s;
     }
 
     &:nth-child(10) {
-        animation-delay: 5s;
+        animation-delay: 2.75s;
     }
 }
 
@@ -1756,6 +1753,11 @@ main {
     @include adaptiv-vaule("padding-top", 160, 95, 1);
     padding-bottom: 85px;
     position: relative;
+    background-color: #F2F4F8;
+
+    @include media ("<phone") {
+        padding-bottom: 0;
+    }
 
     .small_claims_img {
         position: absolute;
@@ -1772,15 +1774,18 @@ main {
 
     .small_claims_img_phone {
         display: none;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        object-fit: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
 
         @include media ("<phone") {
             display: block;
+            height: 280px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
         }
     }
 
@@ -1794,6 +1799,44 @@ main {
         @include media ("<desktop") {
             flex-direction: column;
         }
+
+        @include media ("<phone") {
+            margin-bottom: 85px;
+        }
+    }
+
+    .top_item,
+    .bot_item,
+    .top_line,
+    .bot_line {
+        position: absolute;
+        z-index: -1;
+        display: block;
+
+        @include media (">phone") {
+            display: none;
+        }
+    }
+
+    .top_item {
+        top: -4%;
+        right: -10px;
+    }
+
+    .bot_item {
+        bottom: -27%;
+        right: -10px;
+        z-index: -1;
+    }
+
+    .top_line {
+        top: 0;
+        left: 0;
+    }
+
+    .bot_line {
+        bottom: -18%;
+        left: -10px;
     }
 
     .small_claims_title {
@@ -1805,6 +1848,16 @@ main {
             width: 100%;
             margin-bottom: 35px;
             text-align: center;
+        }
+
+        @include media ("<phone") {
+            color: $black;
+        }
+    }
+
+    .blue_text_phone {
+        @include media ("<phone") {
+            color: $blue;
         }
     }
 
@@ -1878,8 +1931,6 @@ main {
             width: 42px;
             height: 42px;
         }
-
-
     }
 
     .pack {
@@ -2139,7 +2190,6 @@ main {
         color: $white;
         max-width: 700px;
         margin: 0 auto;
-        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
     }
 
     .white_btn {
@@ -3031,7 +3081,7 @@ main {
 
 .logIn {
     @include adaptiv-vaule("padding-top", 150, 90, 1);
-    @include adaptiv-vaule("padding-bottom", 35, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 35, 30, 1);
     height: 100vh;
     position: relative;
 
@@ -3052,7 +3102,8 @@ main {
 
         @include media ("<desktop") {
             width: 100%;
-            height: max-content;
+            height: 100%;
+            padding-top: 70px;
         }
     }
 
@@ -3068,7 +3119,8 @@ main {
 
         @include media ("<phone") {
             min-width: 100%;
-            padding: 30px 10px;
+            padding: 0;
+            height: 100%;
         }
     }
 
@@ -3088,6 +3140,10 @@ main {
         align-items: flex-start;
         width: 100%;
         margin: 0 auto;
+
+        @include media ("<phone") {
+            flex: 1 1 auto;
+        }
     }
 
     label {
@@ -3144,6 +3200,10 @@ main {
 
         @include media ("<desktop") {
             width: 100%;
+        }
+
+        @include media ("<tablet") {
+            display: none;
         }
     }
 }

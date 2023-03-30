@@ -80,6 +80,18 @@ footer {
             }
         }
 
+        .number_wrap{
+            display:flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            column-gap: 30px;
+        }
+
+        .fax{
+            color: $gray_2;
+        }
+
         .link {
             display: flex;
             align-items: center;

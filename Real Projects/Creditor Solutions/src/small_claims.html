@@ -7,7 +7,8 @@
     <title>Creditor Solutions</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="website icon" type="png" href="./images/icon_tab.png">
-    <link href="https://fonts.googleapis.com/css?family=Arimo:regular,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Arimo:regular,500,600,700"
+        rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
@@ -19,52 +20,82 @@
         //= templates/header.html
         <main id="main">
             <section class="small_claims enforce">
+                <img class="small_claims_img" src="./images/small_claims/claims_bg.jpg"
+                        alt="image not found">
                 <div class="container">
-                    <img class="small_claims_img" src="./images/small_claims/claims_bg.jpg" alt="image not found">
-                    <img class="small_claims_img_phone" src="./images/small_claims/claims_bg_mob.jpg" alt= "image not found" >
-                        <div class="small_claims_text ">
-                            <h1 class="small_claims_title">SMALL CLAIMS JUDGMENT ENFORCEMENT PACKAGE</h1>
-                            <div class="small_claims_card">
-                                <img class="card_img" src="./images/cards/card_img_1.svg"
-                                    alt="image not found">
-                                <p class="card_descr">Enforce a single judgment award <br> between <span
-                                        class="blue_text">$1,000</span> and <span
-                                        class="blue_text">$5,000</span></p>
-                                <div class="text_wrap">
-                                    <ul class="package_list">
-                                        <li class="list_item">No up-front or out-of-pocket fees</li>
-                                        <li class="list_item">Judgment validation</li>
-                                        <li class="list_item">Debtor background & asset investigation
-                                        </li>
-                                        <li class="list_item">Debtor asset monitoring for up to one year
-                                            from discovery</li>
-                                    </ul>
-                                    <div class="fee_wrap">
-                                        <p class="fee"><span class="blue_text">45%</span> fee from any
-                                            recovered amount</p>
-                                    </div>
-                                </div>
-                                <a href="form.html" class="blue_btn">Enforce Judgment</a>
-                            </div>
+                    <div class="small_claims_text ">
+                        <div class="top_item">
+                            <img src="./images/small_claims/sc_item_top.svg" alt="image not found">
                         </div>
+                        <div class="bot_item">
+                            <img src="./images/small_claims/sc_item_bot.svg" alt="image not found">
+                        </div>
+                        <div class="top_line">
+                            <img src="./images/small_claims/top_line.svg" alt="image not found">
+                        </div>
+                        <div class="bot_line">
+                            <img src="./images/small_claims/bottom_line.svg" alt="image not found">
+                        </div>
+                        <h1 class="small_claims_title">SMALL CLAIMS <span class="blue_text_phone">JUDGMENT ENFORCEMENT</span> PACKAGE
+                        </h1>
+                        <div class="small_claims_card">
+                            <img class="card_img" src="./images/cards/card_img_1.svg"
+                                alt="image not found">
+                            <p class="card_descr">Enforce a single judgment award <br> between <span
+                                    class="blue_text">$1,000</span> and <span
+                                    class="blue_text">$5,000</span></p>
+                            <div class="text_wrap">
+                                <ul class="package_list">
+                                    <li class="list_item">No up-front or out-of-pocket fees</li>
+                                    <li class="list_item">Judgment validation</li>
+                                    <li class="list_item">Debtor background & asset investigation
+                                    </li>
+                                    <li class="list_item">Debtor asset monitoring for up to one year
+                                        from discovery</li>
+                                </ul>
+                                <div class="fee_wrap">
+                                    <p class="fee"><span class="blue_text">45%</span> fee from any
+                                        recovered amount</p>
+                                </div>
+                            </div>
+                            <a href="form.html" class="blue_btn">Enforce Judgment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="small_claims_img_phone">
+                    <img src="./images/small_claims/claims_bg_mob.png"
+                        alt="image not found">
                 </div>
             </section>
             <section class="way enforce_way puzzle-animation-second">
                 <div class="puzzles-container">
                     <div class="left-side">
-                        <svg  class="puzzle puzzle-top-left" width="323" viewBox="0 0 323 271" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M276.017 181.785H270.897V270.905H191.881C190.152 251.973 179.043 235.171 162.297 226.171C145.552 217.165 125.412 217.165 108.667 226.171C91.9213 235.171 80.812 251.973 79.0827 270.905H0V49.4787C0.005208 36.3589 5.2188 23.7813 14.4947 14.5C23.7707 5.224 36.3493 0.0106667 49.468 0H270.895V89.12H276.014C284.728 89.1356 293.265 91.6148 300.634 96.2607C308.009 100.907 313.926 107.537 317.708 115.386C320.755 121.636 322.343 128.501 322.348 135.454C322.348 147.74 317.468 159.527 308.775 168.214C300.088 176.907 288.302 181.787 276.015 181.787L276.017 181.785Z" fill="#F2F3F8"/>
+                        <svg class="puzzle puzzle-top-left" width="323" viewBox="0 0 323 271"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M276.017 181.785H270.897V270.905H191.881C190.152 251.973 179.043 235.171 162.297 226.171C145.552 217.165 125.412 217.165 108.667 226.171C91.9213 235.171 80.812 251.973 79.0827 270.905H0V49.4787C0.005208 36.3589 5.2188 23.7813 14.4947 14.5C23.7707 5.224 36.3493 0.0106667 49.468 0H270.895V89.12H276.014C284.728 89.1356 293.265 91.6148 300.634 96.2607C308.009 100.907 313.926 107.537 317.708 115.386C320.755 121.636 322.343 128.501 322.348 135.454C322.348 147.74 317.468 159.527 308.775 168.214C300.088 176.907 288.302 181.787 276.015 181.787L276.017 181.785Z"
+                                fill="#F2F3F8" />
                         </svg>
-                        <svg class="puzzle puzzle-bottom-left" width="271" viewBox="0 0 271 323" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M270.898 52.2123H270.965V131.155C252.039 132.869 235.231 143.973 226.225 160.712C217.225 177.452 217.225 197.592 226.225 214.332C235.23 231.072 252.037 242.176 270.965 243.89V322.988H49.4719C36.3522 322.978 23.7692 317.759 14.4932 308.483C5.21725 299.202 0.00923958 286.619 0.00390625 273.499L0.0716146 52.1523H89.1236V47.043C88.9726 34.6575 93.7851 22.731 102.493 13.9176C111.196 5.10511 123.066 0.146973 135.452 0.146973C147.837 0.146973 159.706 5.10538 168.416 13.9176C177.119 22.7302 181.932 34.6576 181.785 47.043V52.1523H270.9L270.898 52.2123Z" fill="#F2F3F8"/>
+                        <svg class="puzzle puzzle-bottom-left" width="271" viewBox="0 0 271 323"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M270.898 52.2123H270.965V131.155C252.039 132.869 235.231 143.973 226.225 160.712C217.225 177.452 217.225 197.592 226.225 214.332C235.23 231.072 252.037 242.176 270.965 243.89V322.988H49.4719C36.3522 322.978 23.7692 317.759 14.4932 308.483C5.21725 299.202 0.00923958 286.619 0.00390625 273.499L0.0716146 52.1523H89.1236V47.043C88.9726 34.6575 93.7851 22.731 102.493 13.9176C111.196 5.10511 123.066 0.146973 135.452 0.146973C147.837 0.146973 159.706 5.10538 168.416 13.9176C177.119 22.7302 181.932 34.6576 181.785 47.043V52.1523H270.9L270.898 52.2123Z"
+                                fill="#F2F3F8" />
                         </svg>
                     </div>
                     <div class="right-side">
-                        <svg class="puzzle puzzle-top-right" width="272" viewBox="0 0 272 323" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.204427 270.972V270.904H0.136719V191.888C19.0634 190.159 35.866 179.05 44.8714 162.304C53.8714 145.564 53.8714 125.419 44.8714 108.674C35.8662 91.9282 19.0647 80.8188 0.136719 79.0948V0.00683594H221.63C234.745 0.0172519 247.327 5.23084 256.599 14.5068C265.875 23.788 271.094 36.3668 271.099 49.4855V270.966H181.99V276.085C181.99 292.653 173.152 307.96 158.802 316.241C144.458 324.522 126.781 324.522 112.438 316.241C98.0887 307.96 89.2501 292.653 89.2501 276.085V270.966L0.204427 270.972Z" fill="#F2F3F8"/>
+                        <svg class="puzzle puzzle-top-right" width="272" viewBox="0 0 272 323"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.204427 270.972V270.904H0.136719V191.888C19.0634 190.159 35.866 179.05 44.8714 162.304C53.8714 145.564 53.8714 125.419 44.8714 108.674C35.8662 91.9282 19.0647 80.8188 0.136719 79.0948V0.00683594H221.63C234.745 0.0172519 247.327 5.23084 256.599 14.5068C265.875 23.788 271.094 36.3668 271.099 49.4855V270.966H181.99V276.085C181.99 292.653 173.152 307.96 158.802 316.241C144.458 324.522 126.781 324.522 112.438 316.241C98.0887 307.96 89.2501 292.653 89.2501 276.085V270.966L0.204427 270.972Z"
+                                fill="#F2F3F8" />
                         </svg>
-                        <svg class="puzzle puzzle-bottom-right"  width="272"  transform="rotate(90 0 0)" viewBox="0 0 272 323" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.204427 270.972V270.904H0.136719V191.888C19.0634 190.159 35.866 179.05 44.8714 162.304C53.8714 145.564 53.8714 125.419 44.8714 108.674C35.8662 91.9282 19.0647 80.8188 0.136719 79.0948V0.00683594H221.63C234.745 0.0172519 247.327 5.23084 256.599 14.5068C265.875 23.788 271.094 36.3668 271.099 49.4855V270.966H181.99V276.085C181.99 292.653 173.152 307.96 158.802 316.241C144.458 324.522 126.781 324.522 112.438 316.241C98.0887 307.96 89.2501 292.653 89.2501 276.085V270.966L0.204427 270.972Z" fill="#F2F3F8"/>
+                        <svg class="puzzle puzzle-bottom-right" width="272"
+                            transform="rotate(90 0 0)" viewBox="0 0 272 323" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.204427 270.972V270.904H0.136719V191.888C19.0634 190.159 35.866 179.05 44.8714 162.304C53.8714 145.564 53.8714 125.419 44.8714 108.674C35.8662 91.9282 19.0647 80.8188 0.136719 79.0948V0.00683594H221.63C234.745 0.0172519 247.327 5.23084 256.599 14.5068C265.875 23.788 271.094 36.3668 271.099 49.4855V270.966H181.99V276.085C181.99 292.653 173.152 307.96 158.802 316.241C144.458 324.522 126.781 324.522 112.438 316.241C98.0887 307.96 89.2501 292.653 89.2501 276.085V270.966L0.204427 270.972Z"
+                                fill="#F2F3F8" />
                         </svg>
                     </div>
                 </div>
@@ -78,32 +109,42 @@
                             <div class="item anim_item">
                                 <div class="item_img" id="sc_icon_1"></div>
                                 <h3 class="item_title">No out-of-pocket fees</h3>
-                                <p class="item_descr">Entrusting us with your judgment enforcement means never getting a bill. Any accrued costs or fees are reimbursed through settlement funds we receive from the debtor and disclosed to you in a clear breakdown alongside your settlement payment. </p>
+                                <p class="item_descr">Entrusting us with your judgment enforcement
+                                    means never getting a bill. Any accrued costs or fees are
+                                    reimbursed through settlement funds we receive from the debtor
+                                    and disclosed to you in a clear breakdown alongside your
+                                    settlement payment. </p>
                             </div>
                             <div class="item anim_item">
                                 <div class="item_img" id="sc_icon_2"></div>
                                 <h3 class="item_title">Custom Recovery Plan</h3>
-                                <p class="item_descr">Our enforcement model combines analytic technology with investigative expertise to create an individualized route for recovery.</p>
+                                <p class="item_descr">Our enforcement model combines analytic
+                                    technology with investigative expertise to create an
+                                    individualized route for recovery.</p>
                             </div>
                             <div class="item anim_item">
                                 <div class="item_img" id="sc_icon_3"></div>
                                 <h3 class="item_title">Complete Debtor Background Search</h3>
-                                <p class="item_descr">Our access to the industry’s most comprehensive search tools, along with our proprietary asset location software allows us to efficiently and effectively construct a thorough profile of the correct debtor.</p>
+                                <p class="item_descr">Our access to the industry’s most
+                                    comprehensive search tools, along with our proprietary asset
+                                    location software allows us to efficiently and effectively
+                                    construct a thorough profile of the correct debtor.</p>
                             </div>
                         </div>
-                        <a href="form.html" class="blue_btn way_hidden">Enforce Judgment</a>
+                        <!-- <a href="form.html" class="blue_btn way_hidden">Enforce Judgment</a> -->
                     </div>
                 </div>
             </section>
             <section class="process">
                 <div class="process_icon_top">
-                    <img src="./images/small_claims/icon.svg" alt= "image not found" >
+                    <img src="./images/small_claims/icon.svg" alt="image not found">
                 </div>
                 <div class="process_icon_bottom">
-                    <img src="./images/small_claims/icon.svg" alt= "image not found" >
+                    <img src="./images/small_claims/icon.svg" alt="image not found">
                 </div>
                 <div class="container">
-                    <h3 class="process_title">Our online form streamlines your judgment enforcement process</h3>
+                    <h3 class="process_title">Our online form streamlines your judgment enforcement
+                        process</h3>
                 </div>
             </section>
             <section class="steps">
@@ -112,31 +153,43 @@
                     <div class="step_items">
                         <div class="item_step">
                             <div class="title_wrap">
-                                <img class="number_step" src="./images/small_claims/step_1.svg" alt= "image not found" >
-                                <h3 class="item_step_title">Gather your judgment <br> information</h3>
+                                <img class="number_step" src="./images/small_claims/step_1.svg"
+                                    alt="image not found">
+                                <h3 class="item_step_title">Gather your judgment <br> information
+                                </h3>
                             </div>
                             <div class="step_img_wrap">
-                                <img class="step_img" src="./images/small_claims/item_step_img_1.png" alt= "image not found" >
+                                <img class="step_img"
+                                    src="./images/small_claims/item_step_img_1.png"
+                                    alt="image not found">
                             </div>
                         </div>
                         <div class="item_step">
                             <div class="title_wrap">
-                                <img class="number_step" src="./images/small_claims/step_2.svg" alt= "image not found" >
+                                <img class="number_step" src="./images/small_claims/step_2.svg"
+                                    alt="image not found">
                                 <h3 class="item_step_title">Fill out our <br>
-                                   <a class="item_link" href="form.html"> online submission form</a></h3>
+                                    <a class="item_link" href="form.html"> online submission
+                                        form</a>
+                                </h3>
                             </div>
                             <div class="step_img_wrap">
-                                <img class="step_img" src="./images/small_claims/item_step_img_2.png" alt= "image not found" >
+                                <img class="step_img"
+                                    src="./images/small_claims/item_step_img_2.png"
+                                    alt="image not found">
                             </div>
                         </div>
                         <div class="item_step">
                             <div class="title_wrap">
-                                <img class="number_step" src="./images/small_claims/step_3.svg" alt= "image not found" >
+                                <img class="number_step" src="./images/small_claims/step_3.svg"
+                                    alt="image not found">
                                 <h3 class="item_step_title">Sign the client service <br>
                                     agreement & submit!</h3>
                             </div>
                             <div class="step_img_wrap">
-                                <img class="step_img" src="./images/small_claims/item_step_img_3.png" alt= "image not found" >
+                                <img class="step_img"
+                                    src="./images/small_claims/item_step_img_3.png"
+                                    alt="image not found">
                             </div>
                         </div>
                     </div>
@@ -151,7 +204,12 @@
                             <div class="tabs">
                                 <h4 class="tab_title">What services does Creditor Solutions provide?
                                 </h4>
-                                <p class="tab_content">At Creditor Solutions, we take control of the recovery process for judgment creditors. Our sole focus is on claiming funds owed to our clients from outstanding judgment awards as quickly as possible. As a result, our network of motivated analysts, investigators and attorneys are able to deliver personalized attention to every claim.</p>
+                                <p class="tab_content">At Creditor Solutions, we take control of the
+                                    recovery process for judgment creditors. Our sole focus is on
+                                    claiming funds owed to our clients from outstanding judgment
+                                    awards as quickly as possible. As a result, our network of
+                                    motivated analysts, investigators and attorneys are able to
+                                    deliver personalized attention to every claim.</p>
                             </div>
                             <div class="tabs">
                                 <h4 class="tab_title">How much experience does Creditor Solutions
