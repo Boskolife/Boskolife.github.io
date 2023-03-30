@@ -16,6 +16,7 @@ jsonAwardHover();
 jsonAnimationSmallClaims();
 jsonAnimationIndividual();
 jsonAnimationEnforce();
+setActiveClass();
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
@@ -862,8 +863,6 @@ function setActiveClass() {
     });
   });
 }
-
-setActiveClass();
 
 function jsonAwardHover() {
   try {

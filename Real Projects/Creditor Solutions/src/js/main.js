@@ -16,6 +16,7 @@ jsonAwardHover();
 jsonAnimationSmallClaims();
 jsonAnimationIndividual();
 jsonAnimationEnforce();
+setActiveClass();
 
 winTriggersMethods.forEach((method) => {
     window.addEventListener(method, () => {
@@ -931,8 +932,6 @@ function setActiveClass() {
         });
     });
 }
-
-setActiveClass();
 
 function jsonAwardHover() {
     try {
