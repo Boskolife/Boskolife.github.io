@@ -872,18 +872,12 @@ function jsonAwardHover() {
       return;
     }
 
-    var anim = bodymovin.loadAnimation({
+    bodymovin.loadAnimation({
       container: award,
       path: "files/scheme_hover_electr.json",
       render: "svg",
-      loop: false,
-      autoplay: false
-    });
-    award.addEventListener("mousemove", function () {
-      anim.play();
-    });
-    award.addEventListener("mouseleave", function () {
-      anim.stop();
+      loop: true,
+      autoplay: true
     });
   } catch (e) {
     console.log(e);

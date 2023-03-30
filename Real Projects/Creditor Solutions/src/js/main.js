@@ -939,19 +939,12 @@ function jsonAwardHover() {
         if (!award) {
             return;
         }
-        const anim = bodymovin.loadAnimation({
+        bodymovin.loadAnimation({
             container: award,
             path: `files/scheme_hover_electr.json`,
             render: "svg",
-            loop: false,
-            autoplay: false,
-        });
-
-        award.addEventListener("mousemove", () => {
-            anim.play();
-        });
-        award.addEventListener("mouseleave", () => {
-            anim.stop();
+            loop: true,
+            autoplay: true,
         });
     } catch (e) {
         console.log(e);
