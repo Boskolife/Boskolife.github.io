@@ -652,7 +652,7 @@ main {
         padding: 20px 0;
         position: relative;
         cursor: pointer;
-        transition: all .4s ease;
+        transition: all .5s ease;
 
         @include media ("<desktop") {
             padding-right: 75px;
@@ -979,7 +979,7 @@ main {
         transform: scale(1.02);
         background-color: $white;
         transition: all .5s ease;
-        margin: 30px 0;
+        margin-top: 30px;
 
         .tab_title {
             font-weight: 600;
