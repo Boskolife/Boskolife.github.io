@@ -17,6 +17,7 @@ jsonAnimationSmallClaims();
 jsonAnimationIndividual();
 jsonAnimationEnforce();
 setActiveClass();
+openFileModal();
 
 winTriggersMethods.forEach((method) => {
     window.addEventListener(method, () => {
@@ -306,6 +307,7 @@ function calcPages() {
         thirdStep.classList.remove("step_show");
         firstStep.classList.add("step_show");
         stepOne.classList.add("active_wrap");
+        stepThree.classList.remove("active_wrap");
     };
 
     stepOne.addEventListener("click", (e) => {
@@ -1046,3 +1048,72 @@ function jsonAnimationEnforce() {
         console.log(e);
     }
 }
+
+function openFileModal() {
+    const openFileBtn = document.getElementById("openFileModal");
+    if(!openFileBtn){
+        return
+    }
+    const fileModal = document.getElementById("fileModal");
+    const selectBtn = document.getElementById("selectBtn");
+    const modalContainer = document.getElementById("fileModalContainer");
+
+    openFileBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+    });
+
+    function openModal() {
+        fileModal.classList.add("file_modal_active");
+        document.body.classList.add("body_lock");
+        modalContainer.classList.add('active_container');
+    }
+
+    function closeModal() {
+        fileModal.classList.remove("file_modal_active");
+        document.body.classList.remove("body_lock");
+        modalContainer.classList.remove('active_container');
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {
+            closeModal();
+        }
+    });
+
+    fileModal.addEventListener("click", (e) => {
+        if (e.target === fileModal || e.target.getAttribute("data-close") == "" ) {
+            closeModal();
+        }
+    });
+
+    selectBtn.addEventListener('click', (e) =>{
+        e.preventDefault();
+        closeModal();
+    });
+}
+
+// function closePrint() {
+//     document.body.removeChild(this.__container__);
+// }
+
+// function setPrint() {
+//     this.contentWindow.__container__ = this;
+//     this.contentWindow.onbeforeunload = closePrint;
+//     this.contentWindow.onafterprint = closePrint;
+//     this.contentWindow.focus(); // Required for IE
+//     this.contentWindow.print();
+// }
+
+// function printPage(sURL) {
+//     const hideFrame = document.createElement("iframe");
+//     hideFrame.onload = setPrint;
+//     hideFrame.style.position = "fixed";
+//     hideFrame.style.right = "0";
+//     hideFrame.style.bottom = "0";
+//     hideFrame.style.width = "0";
+//     hideFrame.style.height = "0";
+//     hideFrame.style.border = "0";
+//     hideFrame.src = sURL;
+//     document.body.appendChild(hideFrame);
+// }

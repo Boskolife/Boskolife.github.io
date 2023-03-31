@@ -499,7 +499,7 @@ main {
         }
     }
 
-    .card_border{
+    .card_border {
         border: 1px solid $blue;
         transition: all .3s ease;
     }
@@ -688,7 +688,7 @@ main {
         opacity: 0;
         visibility: hidden;
         height: 0;
-        overflow:hidden;
+        overflow: hidden;
         font-weight: 500;
         @include adaptiv-vaule("font-size", 16, 14, 1);
         line-height: 150%;
@@ -1523,6 +1523,7 @@ main {
 
 .our_team {
     margin-top: -2px;
+
     .bot_text {
         @include adaptiv-vaule("padding-bottom", 100, 80, 1);
         background-color: #F9F9F9;
@@ -1583,12 +1584,12 @@ main {
 
         .bot_text_img {
             width: 100%;
-            
+
             @include adaptiv-vaule("height", 400, 275, 1);
             position: relative;
             @include adaptiv-vaule("margin-bottom", 60, 30, 1);
 
-            &:before{
+            &:before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -1596,11 +1597,12 @@ main {
                 width: 100%;
                 height: 50%;
                 z-index: 1;
-                background: linear-gradient(180deg, #031C77 0%, rgba(3, 28, 119, 0) 100%);;
+                background: linear-gradient(180deg, #031C77 0%, rgba(3, 28, 119, 0) 100%);
+                ;
             }
         }
 
-        .part_logo{
+        .part_logo {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1956,11 +1958,11 @@ main {
         margin-bottom: 10px;
     }
 
-    .card_white{
+    .card_white {
         fill: $white;
         stroke: $white;
 
-        path{
+        path {
             fill: $white;
             stroke: $white;
         }
@@ -3237,6 +3239,294 @@ main {
 
         @include media ("<tablet") {
             display: none;
+        }
+    }
+}
+
+.document_main {
+    @include adaptiv-vaule("padding-top", 240, 130, 1);
+
+    .document_title {
+        @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+    }
+
+    .ducoment_img {
+        @include adaptiv-vaule("height", 350, 200, 1);
+        width: 100%;
+        position: relative;
+    }
+}
+
+.document_files {
+    @include adaptiv-vaule("padding-top", 100, 35, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 35, 1);
+
+    .files_wrap {
+        &:not(:last-child) {
+            margin-bottom: 45px;
+        }
+    }
+
+    .files_title {
+        font-weight: 600;
+        font-size: 34px;
+        @include adaptiv-vaule(" font-size", 34, 26, 1);
+        line-height: 41 / 34 * 100%;
+        letter-spacing: -0.03em;
+        color: $blue;
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
+
+    .file {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #D1D4DE;
+        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+
+        @include media ("<desktop_sm") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .file_info_body {
+        display: flex;
+        align-items: flex-start;
+        @include adaptiv-vaule(" margin-right", 30, 15, 1);
+
+        @include media ("<desktop_sm") {
+            margin: 0 0 30px 0;
+        }
+    }
+
+    .file_img {
+        @include adaptiv-vaule("margin-right", 30, 15, 1);
+        width: 41px;
+        height: 51px;
+    }
+
+    .file_info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file_name {
+        font-weight: 500;
+        @include adaptiv-vaule(" font-size", 18, 16, 1);
+        line-height: 28 / 18 * 100%;
+        letter-spacing: -0.01em;
+        color: $black;
+    }
+
+    .file_size {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24 / 16 * 100%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+    }
+
+    .file_btn_wrap {
+        display: flex;
+        align-items: center;
+
+        @include media ("<phone") {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    }
+
+    .file_btn {
+        font-weight: 600;
+        @include adaptiv-vaule(" font-size", 16, 14, 1);
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        border-radius: 8px;
+        transition: all .3s ease;
+        background-color: #EAEEFC;
+        color: $blue;
+        @include adaptiv-vaule("padding-top", 15, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+        @include adaptiv-vaule("padding-right", 25, 10, 1);
+        @include adaptiv-vaule("padding-left", 25, 10, 1);
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        &:hover {
+            transition: all .3s ease;
+            background-color: $blue;
+            color: $white;
+
+            svg {
+                stroke: $white;
+                fill: $white;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 15px;
+
+            @include media ("<phone") {
+                margin: 0 0 15px 0;
+            }
+        }
+
+        svg {
+            stroke: $blue;
+            margin-right: 15px;
+        }
+    }
+
+    .download_btn {
+        background-color: $blue;
+        color: $white;
+        @include adaptiv-vaule("padding-top", 15, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+        @include adaptiv-vaule("padding-right", 15, 10, 1);
+        @include adaptiv-vaule("padding-left", 15, 10, 1);
+
+        &:hover {
+            background-color: #EAEEFC;
+            color: $blue;
+
+            svg {
+                stroke: $blue;
+            }
+        }
+
+        svg {
+            stroke: $white;
+        }
+    }
+
+    .print_btn {
+
+        svg {
+            fill: $blue;
+        }
+    }
+
+    .file_modal{
+        transform: scale(0);
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+        transition: all .3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .file_modal_active{
+        transform: scale(1);
+        visibility: visible;
+        transition: all .3s ease;
+    }
+
+    .file_modal_container {
+        background-color: rgba(3, 28, 119, 0.2);
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .active_container{
+        display: block;
+    }
+
+    .file_modal_body {
+        max-width: 485px;
+        height: auto;
+        border-radius: 12px;
+        background-color: $white;
+        text-align: center;
+        @include adaptiv-vaule("padding-top", 30, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+        @include adaptiv-vaule("padding-right", 25, 10, 1);
+        @include adaptiv-vaule("padding-left", 25, 10, 1);
+
+        @include media ("<tablet") {
+            max-width: 100%;
+            margin: 0 10px;
+        }
+    }
+
+    .file_modal_title {
+        font-weight: 600;
+        @include adaptiv-vaule(" font-size", 20, 16, 1);
+        line-height: 28 / 20 * 100%;
+        text-align: center;
+        color: #171717;
+        position: relative;
+        padding-bottom: 25px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -5%;
+            width: 110%;
+            height: 1px;
+            background-color: #D7E3E4;
+        }
+    }
+
+    .choose_file {
+        margin: 20px 0 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        @include media ("<phone") {
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+    }
+
+    .choosen_file {
+        display: inline-block;
+        background-color: rgba(3, 28, 119, 0.2);
+        border: 1px solid $blue;
+        border-radius: 8px;
+        @include adaptiv-vaule("padding-top", 18, 8, 1);
+        @include adaptiv-vaule("padding-bottom", 18, 8, 1);
+        @include adaptiv-vaule("padding-right", 30, 15, 1);
+        @include adaptiv-vaule("padding-left", 30, 15, 1);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20 / 16 * 100%;
+        text-transform: uppercase;
+        color: $blue;
+    }
+
+    .select_file_btn {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20 / 16 * 100%;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+
+        @include media ("<phone") {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }
