@@ -976,19 +976,20 @@ main {
 
     .active_tabsWrap {
         border: 1.5px solid $blue;
-        transform: scale(1.03);
         background-color: $white;
         transition: all .5s ease;
         margin-top: 30px;
 
-        @include media ("<tablet") {
-            transform: none;
+        &:not(:nth-child(4)) {
+            transform: scale(1.03);
         }
 
         .tab_title {
             font-weight: 600;
+            font-size: 24px;
             transition: all .5s ease;
         }
+
     }
 }
 
@@ -3418,7 +3419,7 @@ main {
         }
     }
 
-    .file_modal{
+    .file_modal {
         transform: scale(0);
         visibility: hidden;
         position: fixed;
@@ -3433,7 +3434,7 @@ main {
         justify-content: center;
     }
 
-    .file_modal_active{
+    .file_modal_active {
         transform: scale(1);
         visibility: visible;
         transition: all .3s ease;
@@ -3449,7 +3450,7 @@ main {
         left: 0;
     }
 
-    .active_container{
+    .active_container {
         display: block;
     }
 
@@ -3505,7 +3506,7 @@ main {
 
     .choosen_file {
         display: inline-block;
- 
+
         background-color: $white;
         border: 1px solid $blue;
         border-radius: 8px;
@@ -3520,8 +3521,8 @@ main {
         color: $blue;
     }
 
-    .load{
-       background-color: rgba(3, 28, 119, 0.2);
+    .load {
+        background-color: rgba(3, 28, 119, 0.2);
     }
 
     .select_file_btn {

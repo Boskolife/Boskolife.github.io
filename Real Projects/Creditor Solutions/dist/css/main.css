@@ -1987,17 +1987,15 @@ main {
     padding-bottom: 15px; }
   .faq_page_content .active_tabsWrap {
     border: 1.5px solid #031C77;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
     background-color: #ffffff;
     transition: all .5s ease;
     margin-top: 30px; }
-    @media (max-width: 767px) {
-      .faq_page_content .active_tabsWrap {
-        -webkit-transform: none;
-        transform: none; } }
+    .faq_page_content .active_tabsWrap:not(:nth-child(4)) {
+      -webkit-transform: scale(1.03);
+      transform: scale(1.03); }
     .faq_page_content .active_tabsWrap .tab_title {
       font-weight: 600;
+      font-size: 24px;
       transition: all .5s ease; }
 
 .privacy_policy {
