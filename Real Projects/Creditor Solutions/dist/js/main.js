@@ -281,6 +281,15 @@ function calcPages() {
     currency: 'USD'
   });
 
+  function maskCurrency(value) {
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0
+    });
+    return "".concat(formatter.format(value).slice(0, 1), " ").concat(formatter.format(value).slice(1));
+  }
+
   function calculated() {
     fullYear = getInputDate();
     result = nyJudgmentInterest(+amountValue, fullYear);
@@ -372,7 +381,7 @@ function calcPages() {
     resetCalculator();
   });
   amountInput.addEventListener("input", function (e) {
-    var targetValue = e.target.value.replace(/\$|\,/g, "").trim();
+    var targetValue = e.target.value.replace(/[^\d.-]/g, '');
 
     if (!targetValue) {
       e.target.value = "";
@@ -386,7 +395,7 @@ function calcPages() {
     }
 
     amountInput.parentNode.classList.remove("error");
-    e.target.value = "$ ".concat(targetValue);
+    e.target.value = maskCurrency(targetValue);
     amountValue = targetValue;
   });
   monthSelect.addEventListener("change", function (e) {
@@ -404,7 +413,6 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var judgmentDate = date.split("-").map(function (num) {
     return +num < 10 ? "0".concat(num) : num;
   }).join("-");
-  console.log(judgmentDate);
   var beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
 
   var afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
