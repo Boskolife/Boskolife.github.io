@@ -655,7 +655,7 @@ main {
         transition: all .5s ease;
 
         @include media ("<desktop") {
-            padding-right: 75px;
+            padding-right: 50px;
         }
 
         &::after {
@@ -976,14 +976,17 @@ main {
 
     .active_tabsWrap {
         border: 1.5px solid $blue;
-        transform: scale(1.02);
+        transform: scale(1.03);
         background-color: $white;
         transition: all .5s ease;
         margin-top: 30px;
 
+        @include media ("<tablet") {
+            transform: none;
+        }
+
         .tab_title {
             font-weight: 600;
-            font-size: 24px;
             transition: all .5s ease;
         }
     }
@@ -3418,7 +3421,7 @@ main {
     .file_modal{
         transform: scale(0);
         visibility: hidden;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -3502,7 +3505,8 @@ main {
 
     .choosen_file {
         display: inline-block;
-        background-color: rgba(3, 28, 119, 0.2);
+ 
+        background-color: $white;
         border: 1px solid $blue;
         border-radius: 8px;
         @include adaptiv-vaule("padding-top", 18, 8, 1);
@@ -3514,6 +3518,10 @@ main {
         line-height: 20 / 16 * 100%;
         text-transform: uppercase;
         color: $blue;
+    }
+
+    .load{
+       background-color: rgba(3, 28, 119, 0.2);
     }
 
     .select_file_btn {

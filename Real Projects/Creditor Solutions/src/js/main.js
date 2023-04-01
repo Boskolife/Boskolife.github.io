@@ -51,6 +51,9 @@ function initBurger() {
     const menuBody = document.querySelector(".nav");
 
     document.addEventListener("click", function (event) {
+        if(event.target.classList.contains('download_btn')) {
+            return
+        }
         if (burger.contains(event.target)) {
             menuBody.classList.toggle("menu_active");
             burger.classList.toggle("burger_active");
@@ -1050,23 +1053,60 @@ function jsonAnimationEnforce() {
 }
 
 function openFileModal() {
-    const openFileBtn = document.getElementById("openFileModal");
-    if(!openFileBtn){
+    const openFileBtn = document.querySelectorAll(".btn_modal");
+    if(!openFileBtn.length){
         return
     }
     const fileModal = document.getElementById("fileModal");
     const selectBtn = document.getElementById("selectBtn");
     const modalContainer = document.getElementById("fileModalContainer");
+    const downloadedFile = document.querySelectorAll('.choosen_file');
+    let isPrint = false;
 
-    openFileBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
+    selectBtn.setAttribute('href', downloadedFile[0].getAttribute('href'));
+
+    downloadedFile.forEach((btn) => {
+        btn.addEventListener('click', (e) =>{
+            e.preventDefault();
+            removeClass();
+            e.target.classList.add('load');
+            let hrefValue = e.target.getAttribute('href');
+            selectBtn.setAttribute('href', hrefValue);
+            if (isPrint) {
+                selectBtn.removeAttribute('download');
+            } else {
+                selectBtn.setAttribute('download');
+            }
+        })
+    });
+
+    function removeClass() {
+        downloadedFile.forEach((btn) => {
+            btn.classList.remove('load');
+        });
+    };
+
+    openFileBtn.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (e.target.classList.contains('print_btn')) {
+                isPrint = true;
+            } else {
+                isPrint = false;
+            }
+            openModal();
+        });
     });
 
     function openModal() {
         fileModal.classList.add("file_modal_active");
         document.body.classList.add("body_lock");
         modalContainer.classList.add('active_container');
+        if (isPrint) {
+            selectBtn.removeAttribute('download');
+        } else {
+            selectBtn.setAttribute('download' , '');
+        }
     }
 
     function closeModal() {
@@ -1088,7 +1128,6 @@ function openFileModal() {
     });
 
     selectBtn.addEventListener('click', (e) =>{
-        e.preventDefault();
         closeModal();
     });
 }

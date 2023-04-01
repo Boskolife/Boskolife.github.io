@@ -1689,7 +1689,7 @@ main {
     transition: all .5s ease; }
     @media (max-width: 1023px) {
       .faq .tab_title {
-        padding-right: 75px; } }
+        padding-right: 50px; } }
     .faq .tab_title::after {
       content: url(../images/tabs/arrow.svg);
       position: absolute;
@@ -1987,14 +1987,17 @@ main {
     padding-bottom: 15px; }
   .faq_page_content .active_tabsWrap {
     border: 1.5px solid #031C77;
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
     background-color: #ffffff;
     transition: all .5s ease;
     margin-top: 30px; }
+    @media (max-width: 767px) {
+      .faq_page_content .active_tabsWrap {
+        -webkit-transform: none;
+        transform: none; } }
     .faq_page_content .active_tabsWrap .tab_title {
       font-weight: 600;
-      font-size: 24px;
       transition: all .5s ease; }
 
 .privacy_policy {
@@ -4456,7 +4459,7 @@ main {
     -webkit-transform: scale(0);
     transform: scale(0);
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -4550,7 +4553,7 @@ main {
         margin-bottom: 40px; } }
   .document_files .choosen_file {
     display: inline-block;
-    background-color: rgba(3, 28, 119, 0.2);
+    background-color: #ffffff;
     border: 1px solid #031C77;
     border-radius: 8px;
     /* Только если меньше контейнера */
@@ -4578,6 +4581,8 @@ main {
     @media (max-width: 1350px) {
       .document_files .choosen_file {
         padding-left: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
+  .document_files .load {
+    background-color: rgba(3, 28, 119, 0.2); }
   .document_files .select_file_btn {
     font-weight: 600;
     font-size: 16px;
