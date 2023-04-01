@@ -51,8 +51,8 @@ function initBurger() {
     const menuBody = document.querySelector(".nav");
 
     document.addEventListener("click", function (event) {
-        if(event.target.classList.contains('btn_modal')) {
-            return
+        if (event.target.classList.contains("btn_modal")) {
+            return;
         }
         if (burger.contains(event.target)) {
             menuBody.classList.toggle("menu_active");
@@ -298,6 +298,20 @@ function calcPages() {
     let amountValue = "";
     let result;
 
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
+    function calculated() {
+        fullYear = getInputDate();
+        result = nyJudgmentInterest(+amountValue, fullYear);
+        currentDate.textContent = result.formateDate;
+        awardEl.textContent = formatter.format(Number.parseFloat(amountValue));
+        interestRateEl.textContent = formatter.format(Number.parseFloat(result.interest));
+        totalEl.textContent = formatter.format(Number.parseFloat(result.totalValue));
+    }
+
     const resetCalculator = () => {
         yearSelect.querySelector(`option[value='2000']`).selected = true;
         yearValue = yearSelect.value;
@@ -335,12 +349,7 @@ function calcPages() {
         stepOne.classList.remove("active_wrap");
         stepTwo.classList.add("active_wrap");
         stepThree.classList.remove("active_wrap");
-        fullYear = getInputDate();
-        result = nyJudgmentInterest(+amountValue, fullYear);
-        currentDate.textContent = result.formateDate;
-        awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
-        interestRateEl.textContent = `$${result.interest.toFixed(2)}`;
-        totalEl.textContent = `$${result.totalValue.toFixed(2)}`;
+        calculated();
     });
 
     stepThree.addEventListener("click", (e) => {
@@ -376,12 +385,7 @@ function calcPages() {
         thirdStep.classList.add("step_show");
         stepTwo.classList.remove("active_wrap");
         stepThree.classList.add("active_wrap");
-        fullYear = getInputDate();
-        result = nyJudgmentInterest(+amountValue, fullYear);
-        currentDate.textContent = result.formateDate;
-        awardEl.textContent = `$${Number.parseFloat(amountValue).toFixed(2)}`;
-        interestRateEl.textContent = `$${result.interest.toFixed(2)}`;
-        totalEl.textContent = `$${result.totalValue.toFixed(2)}`;
+        calculated();
     });
 
     startOverBtn.addEventListener("click", (e) => {
@@ -390,7 +394,7 @@ function calcPages() {
     });
 
     amountInput.addEventListener("input", (e) => {
-        const targetValue = e.target.value.replace(/\$/g, "").trim();
+        const targetValue = e.target.value.replace(/\$|\,/g, "").trim();
         if (!targetValue) {
             e.target.value = "";
             amountValue = "";
@@ -420,6 +424,7 @@ function nyJudgmentInterest(judgmentAmount, date) {
         .split("-")
         .map((num) => (+num < 10 ? `0${num}` : num))
         .join("-");
+        console.log(judgmentDate);
     const beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
     const afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
     const april30Date = new Date("2022-04-30"); // date when interest rate changes
@@ -430,12 +435,14 @@ function nyJudgmentInterest(judgmentAmount, date) {
             day: "numeric",
             month: "numeric",
             year: "numeric",
+            timeZone: "UTC"
         })
-        .replace(/\//g, ".")
-        .split(".");
+        .split("/");
     let formateDate = `${
-        localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]
-    }.${localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]}.${localDate[2]}`;
+        localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]
+    }/${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}/${
+        localDate[2]
+    }`;
 
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
@@ -1054,42 +1061,42 @@ function jsonAnimationEnforce() {
 
 function openFileModal() {
     const openFileBtn = document.querySelectorAll(".btn_modal");
-    if(!openFileBtn.length){
-        return
+    if (!openFileBtn.length) {
+        return;
     }
     const fileModal = document.getElementById("fileModal");
     const selectBtn = document.getElementById("selectBtn");
     const modalContainer = document.getElementById("fileModalContainer");
-    const downloadedFile = document.querySelectorAll('.choosen_file');
+    const downloadedFile = document.querySelectorAll(".choosen_file");
     let isPrint = false;
 
-    selectBtn.setAttribute('href', downloadedFile[0].getAttribute('href'));
+    selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
 
     downloadedFile.forEach((btn) => {
-        btn.addEventListener('click', (e) =>{
+        btn.addEventListener("click", (e) => {
             e.preventDefault();
             removeClass();
-            e.target.classList.add('load');
-            let hrefValue = e.target.getAttribute('href');
-            selectBtn.setAttribute('href', hrefValue);
+            e.target.classList.add("load");
+            let hrefValue = e.target.getAttribute("href");
+            selectBtn.setAttribute("href", hrefValue);
             if (isPrint) {
-                selectBtn.removeAttribute('download');
+                selectBtn.removeAttribute("download");
             } else {
-                selectBtn.setAttribute('download');
+                selectBtn.setAttribute("download");
             }
-        })
+        });
     });
 
     function removeClass() {
         downloadedFile.forEach((btn) => {
-            btn.classList.remove('load');
+            btn.classList.remove("load");
         });
-    };
+    }
 
     openFileBtn.forEach((elem) => {
         elem.addEventListener("click", (e) => {
             e.preventDefault();
-            if (e.target.classList.contains('print_btn')) {
+            if (e.target.classList.contains("print_btn")) {
                 isPrint = true;
             } else {
                 isPrint = false;
@@ -1101,34 +1108,39 @@ function openFileModal() {
     function openModal() {
         fileModal.classList.add("file_modal_active");
         document.body.classList.add("body_lock");
-        modalContainer.classList.add('active_container');
+        modalContainer.classList.add("active_container");
         if (isPrint) {
-            selectBtn.removeAttribute('download');
+            selectBtn.removeAttribute("download");
         } else {
-            selectBtn.setAttribute('download' , '');
+            selectBtn.setAttribute("download", "");
         }
     }
 
     function closeModal() {
         fileModal.classList.remove("file_modal_active");
         document.body.classList.remove("body_lock");
-        modalContainer.classList.remove('active_container');
+        modalContainer.classList.remove("active_container");
     }
 
     document.addEventListener("keydown", (e) => {
-        if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {
+        if (
+            e.code === "Escape" &&
+            fileModal.classList.contains("file_modal_active")
+        ) {
             closeModal();
         }
     });
 
     fileModal.addEventListener("click", (e) => {
-        if (e.target === fileModal || e.target.getAttribute("data-close") == "" ) {
+        if (
+            e.target === fileModal ||
+            e.target.getAttribute("data-close") == ""
+        ) {
             closeModal();
         }
     });
 
-    selectBtn.addEventListener('click', (e) =>{
+    selectBtn.addEventListener("click", (e) => {
         closeModal();
     });
 }
-

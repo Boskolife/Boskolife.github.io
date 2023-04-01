@@ -4245,10 +4245,25 @@ main {
 
 .document_main {
   /* Только если меньше контейнера */
-  padding-top: 240px; }
+  padding-top: 240px;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   @media (max-width: 1350px) {
     .document_main {
       padding-top: calc(130px + 110 * ((100vw - calc(375px)) / 975)); } }
+  .document_main .container {
+    height: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
   .document_main .document_title {
     /* Только если меньше контейнера */
     margin-bottom: 100px; }

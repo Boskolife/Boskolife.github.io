@@ -3249,7 +3249,17 @@ main {
 
 .document_main {
     @include adaptiv-vaule("padding-top", 240, 130, 1);
+    height:100vh;
+    display: flex;
+    flex-direction: column;
 
+    .container{
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+    }
     .document_title {
         @include adaptiv-vaule("margin-bottom", 100, 40, 1);
     }

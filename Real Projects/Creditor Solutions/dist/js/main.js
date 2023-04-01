@@ -54,7 +54,7 @@ function initBurger() {
   var burger = document.querySelector(".burger_menu");
   var menuBody = document.querySelector(".nav");
   document.addEventListener("click", function (event) {
-    if (event.target.classList.contains('btn_modal')) {
+    if (event.target.classList.contains("btn_modal")) {
       return;
     }
 
@@ -276,6 +276,19 @@ function calcPages() {
   var fullYear = getInputDate();
   var amountValue = "";
   var result;
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+
+  function calculated() {
+    fullYear = getInputDate();
+    result = nyJudgmentInterest(+amountValue, fullYear);
+    currentDate.textContent = result.formateDate;
+    awardEl.textContent = formatter.format(Number.parseFloat(amountValue));
+    interestRateEl.textContent = formatter.format(Number.parseFloat(result.interest));
+    totalEl.textContent = formatter.format(Number.parseFloat(result.totalValue));
+  }
 
   var resetCalculator = function resetCalculator() {
     yearSelect.querySelector("option[value='2000']").selected = true;
@@ -315,12 +328,7 @@ function calcPages() {
     stepOne.classList.remove("active_wrap");
     stepTwo.classList.add("active_wrap");
     stepThree.classList.remove("active_wrap");
-    fullYear = getInputDate();
-    result = nyJudgmentInterest(+amountValue, fullYear);
-    currentDate.textContent = result.formateDate;
-    awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
-    interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
-    totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
+    calculated();
   });
   stepThree.addEventListener("click", function (e) {
     e.preventDefault();
@@ -357,19 +365,14 @@ function calcPages() {
     thirdStep.classList.add("step_show");
     stepTwo.classList.remove("active_wrap");
     stepThree.classList.add("active_wrap");
-    fullYear = getInputDate();
-    result = nyJudgmentInterest(+amountValue, fullYear);
-    currentDate.textContent = result.formateDate;
-    awardEl.textContent = "$".concat(Number.parseFloat(amountValue).toFixed(2));
-    interestRateEl.textContent = "$".concat(result.interest.toFixed(2));
-    totalEl.textContent = "$".concat(result.totalValue.toFixed(2));
+    calculated();
   });
   startOverBtn.addEventListener("click", function (e) {
     e.preventDefault();
     resetCalculator();
   });
   amountInput.addEventListener("input", function (e) {
-    var targetValue = e.target.value.replace(/\$/g, "").trim();
+    var targetValue = e.target.value.replace(/\$|\,/g, "").trim();
 
     if (!targetValue) {
       e.target.value = "";
@@ -401,6 +404,7 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var judgmentDate = date.split("-").map(function (num) {
     return +num < 10 ? "0".concat(num) : num;
   }).join("-");
+  console.log(judgmentDate);
   var beforeApril30Rate = 0.75; // 9% year or 0.75 per month interest rate before April 30, 2022
 
   var afterApril30Rate = 0.167; // 2% year or 0.167 per month interest rate after April 30, 2022
@@ -412,9 +416,10 @@ function nyJudgmentInterest(judgmentAmount, date) {
   var localDate = judgDate.toLocaleDateString("en-US", {
     day: "numeric",
     month: "numeric",
-    year: "numeric"
-  }).replace(/\//g, ".").split(".");
-  var formateDate = "".concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], ".").concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], ".").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
+    year: "numeric",
+    timeZone: "UTC"
+  }).split("/");
+  var formateDate = "".concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], "/").concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], "/").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
@@ -993,37 +998,36 @@ function openFileModal() {
   var fileModal = document.getElementById("fileModal");
   var selectBtn = document.getElementById("selectBtn");
   var modalContainer = document.getElementById("fileModalContainer");
-  var downloadedFile = document.querySelectorAll('.choosen_file');
+  var downloadedFile = document.querySelectorAll(".choosen_file");
   var isPrint = false;
-  selectBtn.setAttribute('href', downloadedFile[0].getAttribute('href'));
+  selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
   downloadedFile.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener("click", function (e) {
       e.preventDefault();
       removeClass();
-      e.target.classList.add('load');
-      var hrefValue = e.target.getAttribute('href');
-      selectBtn.setAttribute('href', hrefValue);
+      e.target.classList.add("load");
+      var hrefValue = e.target.getAttribute("href");
+      selectBtn.setAttribute("href", hrefValue);
 
       if (isPrint) {
-        selectBtn.removeAttribute('download');
+        selectBtn.removeAttribute("download");
       } else {
-        selectBtn.setAttribute('download');
+        selectBtn.setAttribute("download");
       }
     });
   });
 
   function removeClass() {
     downloadedFile.forEach(function (btn) {
-      btn.classList.remove('load');
+      btn.classList.remove("load");
     });
   }
 
-  ;
   openFileBtn.forEach(function (elem) {
     elem.addEventListener("click", function (e) {
       e.preventDefault();
 
-      if (e.target.classList.contains('print_btn')) {
+      if (e.target.classList.contains("print_btn")) {
         isPrint = true;
       } else {
         isPrint = false;
@@ -1036,19 +1040,19 @@ function openFileModal() {
   function openModal() {
     fileModal.classList.add("file_modal_active");
     document.body.classList.add("body_lock");
-    modalContainer.classList.add('active_container');
+    modalContainer.classList.add("active_container");
 
     if (isPrint) {
-      selectBtn.removeAttribute('download');
+      selectBtn.removeAttribute("download");
     } else {
-      selectBtn.setAttribute('download', '');
+      selectBtn.setAttribute("download", "");
     }
   }
 
   function closeModal() {
     fileModal.classList.remove("file_modal_active");
     document.body.classList.remove("body_lock");
-    modalContainer.classList.remove('active_container');
+    modalContainer.classList.remove("active_container");
   }
 
   document.addEventListener("keydown", function (e) {
@@ -1061,7 +1065,7 @@ function openFileModal() {
       closeModal();
     }
   });
-  selectBtn.addEventListener('click', function (e) {
+  selectBtn.addEventListener("click", function (e) {
     closeModal();
   });
 }
