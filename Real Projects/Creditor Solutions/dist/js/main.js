@@ -54,7 +54,7 @@ function initBurger() {
   var burger = document.querySelector(".burger_menu");
   var menuBody = document.querySelector(".nav");
   document.addEventListener("click", function (event) {
-    if (event.target.classList.contains('download_btn')) {
+    if (event.target.classList.contains('btn_modal')) {
       return;
     }
 
