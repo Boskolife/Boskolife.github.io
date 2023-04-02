@@ -976,6 +976,7 @@ function openFileModal() {
   var fileModal = document.getElementById("fileModal");
   var selectBtn = document.getElementById("selectBtn");
   var modalContainer = document.getElementById("fileModalContainer");
+  var closeBtn = document.getElementById("close_button");
   var downloadedFile = document.querySelectorAll(".choosen_file");
   var isPrint = false;
   var isOpen = false;
@@ -993,7 +994,7 @@ function openFileModal() {
         selectBtn.removeAttribute("target");
 
         if (isOpen) {
-          selectBtn.setAttribute("target");
+          selectBtn.setAttribute("target", "_blanck");
         }
       } else {
         selectBtn.setAttribute("download", "");
@@ -1038,7 +1039,7 @@ function openFileModal() {
       selectBtn.removeAttribute("target");
 
       if (isOpen) {
-        selectBtn.setAttribute("target", "");
+        selectBtn.setAttribute("target", "_blanck");
       }
     } else {
       selectBtn.setAttribute("download", "");
@@ -1051,6 +1052,9 @@ function openFileModal() {
     modalContainer.classList.remove("active_container");
   }
 
+  closeBtn.addEventListener('click', function () {
+    closeModal();
+  });
   document.addEventListener("keydown", function (e) {
     if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {
       closeModal();

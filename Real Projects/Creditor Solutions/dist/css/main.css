@@ -1689,10 +1689,8 @@ main {
     padding: 20px 0;
     position: relative;
     cursor: pointer;
-    transition: all .5s ease; }
-    @media (max-width: 1023px) {
-      .faq .tab_title {
-        padding-right: 50px; } }
+    transition: all .5s ease;
+    padding-right: 30px; }
     .faq .tab_title::after {
       content: url(../images/tabs/arrow.svg);
       position: absolute;
@@ -1953,7 +1951,8 @@ main {
     border: 1px solid #D1D4DE;
     border-radius: 12px;
     margin: 0 auto;
-    transition: all .5s ease; }
+    transition: all .5s ease;
+    max-width: 800px; }
     .faq_page_content .tab:not(:last-child) {
       margin-bottom: 15px; }
   .faq_page_content .tab_body {
@@ -4062,49 +4061,77 @@ main {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 15px;
     margin-bottom: 25px;
+    max-width: 360px;
     width: 100%; }
     @media (max-width: 949px) {
       .calc .third_step .result {
         -ms-flex-direction: column;
         flex-direction: column; } }
   .calc .third_step .result_item {
-    width: 29%; }
-    @media (max-width: 1023px) {
-      .calc .third_step .result_item {
-        width: 48%; } }
-    @media (max-width: 767px) {
-      .calc .third_step .result_item {
-        width: 100%; } }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    position: relative; }
+    .calc .third_step .result_item::after {
+      content: '';
+      position: absolute;
+      bottom: 9px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      border: 1px dashed rgba(3, 28, 119, 0.2);
+      z-index: -1; }
   .calc .third_step .result_title {
+    font-weight: 500;
+    font-size: 18px;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 155.55556%;
+    letter-spacing: -0.01em;
+    color: #66666C;
+    background-color: #ffffff; }
+    @media (max-width: 1350px) {
+      .calc .third_step .result_title {
+        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 975)); } }
+  .calc .third_step .amount {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: #1D1D20;
+    background-color: #ffffff;
+    padding-bottom: 3px; }
+    @media (max-width: 479px) {
+      .calc .third_step .amount {
+        padding-bottom: 2px; } }
+  .calc .third_step .total_result_title {
     font-weight: 600;
     /* Только если меньше контейнера */
     font-size: 26px;
-    line-height: 140%;
+    line-height: 138.46154%;
     letter-spacing: -0.03em;
-    color: #031C77;
-    margin-bottom: 5px; }
+    color: #031C77; }
     @media (max-width: 1350px) {
-      .calc .third_step .result_title {
+      .calc .third_step .total_result_title {
         font-size: calc(20px + 6 * ((100vw - calc(375px)) / 975)); } }
-  .calc .third_step .amount {
+  .calc .third_step .total_amount {
     font-weight: 600;
     /* Только если меньше контейнера */
-    font-size: 36px;
-    line-height: 120%;
+    font-size: 34px;
+    line-height: 120.58824%;
     letter-spacing: -0.03em;
     color: #1D1D20; }
     @media (max-width: 1350px) {
-      .calc .third_step .amount {
-        font-size: calc(28px + 8 * ((100vw - calc(375px)) / 975)); } }
+      .calc .third_step .total_amount {
+        font-size: calc(28px + 6 * ((100vw - calc(375px)) / 975)); } }
   .calc .third_step .current_date {
     margin-bottom: 10px; }
   .calc .third_step .judg_date {
@@ -4117,7 +4144,7 @@ main {
     @media (max-width: 1350px) {
       .calc .third_step .judg_date {
         font-size: calc(16px + 2 * ((100vw - calc(375px)) / 975)); } }
-  .calc .third_step .total_amount {
+  .calc .third_step .total_result_amount {
     margin-bottom: 30px; }
   .calc .third_step .btn_wrap {
     display: -ms-flexbox;
@@ -4375,7 +4402,7 @@ main {
          font-size: calc(26px + 8 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .document_files .files_title {
-        margin-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 975)); } }
+        margin-bottom: calc(30px + 20 * ((100vw - calc(375px)) / 975)); } }
   .document_files .file {
     display: -ms-flexbox;
     display: flex;
@@ -4385,10 +4412,11 @@ main {
     justify-content: space-between;
     border-bottom: 1px solid #D1D4DE;
     /* Только если меньше контейнера */
-    padding-bottom: 30px; }
+    padding-bottom: 35px;
+    text-transform: capitalize; }
     @media (max-width: 1350px) {
       .document_files .file {
-        padding-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
+        padding-bottom: calc(25px + 10 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 899px) {
       .document_files .file {
         -ms-flex-direction: column;
@@ -4396,7 +4424,11 @@ main {
         -ms-flex-align: start;
         align-items: flex-start; } }
     .document_files .file:not(:last-child) {
-      margin-bottom: 30px; }
+      /* Только если меньше контейнера */
+      margin-bottom: 45px; }
+      @media (max-width: 1350px) {
+        .document_files .file:not(:last-child) {
+          margin-bottom: calc(50px + -5 * ((100vw - calc(375px)) / 975)); } }
   .document_files .file_info_body {
     display: -ms-flexbox;
     display: flex;
@@ -4409,7 +4441,9 @@ main {
          margin-right: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 899px) {
       .document_files .file_info_body {
-        margin: 0 0 30px 0; } }
+        margin: 0 0 15px 0;
+        -ms-flex-align: center;
+        align-items: center; } }
   .document_files .file_img {
     /* Только если меньше контейнера */
     margin-right: 30px;
@@ -4417,7 +4451,11 @@ main {
     height: 51px; }
     @media (max-width: 1350px) {
       .document_files .file_img {
-        margin-right: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
+        margin-right: calc(13px + 17 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .document_files .file_img {
+        width: 29px;
+        height: 37px; } }
   .document_files .file_info {
     display: -ms-flexbox;
     display: flex;
@@ -4429,10 +4467,11 @@ main {
      font-size: 18px;
     line-height: 155.55556%;
     letter-spacing: -0.01em;
-    color: #1D1D20; }
+    color: #1D1D20;
+    text-transform: capitalize; }
     @media (max-width: 1350px) {
       .document_files .file_name {
-         font-size: calc(16px + 2 * ((100vw - calc(375px)) / 975)); } }
+         font-size: calc(14px + 4 * ((100vw - calc(375px)) / 975)); } }
   .document_files .file_size {
     font-weight: 500;
     font-size: 16px;
@@ -4444,12 +4483,16 @@ main {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    cursor: pointer; }
+    cursor: pointer;
+    gap: 15px; }
     @media (max-width: 479px) {
       .document_files .file_btn_wrap {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        width: 100%; } }
+        width: 100%;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        gap: 5px; } }
   .document_files .file_btn {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -4474,7 +4517,7 @@ main {
     padding-left: 25px; }
     @media (max-width: 1350px) {
       .document_files .file_btn {
-         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+         font-size: calc(12px + 4 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .document_files .file_btn {
         padding-top: calc(10px + 5 * ((100vw - calc(375px)) / 975)); } }
@@ -4489,7 +4532,8 @@ main {
         padding-left: calc(10px + 15 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 479px) {
       .document_files .file_btn {
-        width: 100%; } }
+        width: 99px;
+        height: 44px; } }
     .document_files .file_btn:hover {
       transition: all .3s ease;
       background-color: #031C77;
@@ -4497,11 +4541,6 @@ main {
       .document_files .file_btn:hover svg {
         stroke: #ffffff;
         fill: #ffffff; }
-    .document_files .file_btn:not(:last-child) {
-      margin-right: 15px; }
-      @media (max-width: 479px) {
-        .document_files .file_btn:not(:last-child) {
-          margin: 0 0 15px 0; } }
     .document_files .file_btn svg {
       stroke: #031C77;
       margin-right: 15px; }
@@ -4528,6 +4567,9 @@ main {
     @media (max-width: 1350px) {
       .document_files .download_btn {
         padding-left: calc(10px + 5 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .document_files .download_btn {
+        width: 130px; } }
     .document_files .download_btn:hover {
       background-color: #EAEEFC;
       color: #031C77; }
@@ -4573,11 +4615,11 @@ main {
   .document_files .active_container {
     display: block; }
   .document_files .file_modal_body {
-    max-width: 485px;
     height: auto;
     border-radius: 12px;
     background-color: #ffffff;
     text-align: center;
+    overflow: hidden;
     /* Только если меньше контейнера */
     padding-top: 30px;
     /* Только если меньше контейнера */
@@ -4585,13 +4627,14 @@ main {
     /* Только если меньше контейнера */
     padding-right: 25px;
     /* Только если меньше контейнера */
-    padding-left: 25px; }
+    padding-left: 25px;
+    position: relative; }
     @media (max-width: 1350px) {
       .document_files .file_modal_body {
-        padding-top: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
+        padding-top: calc(40px + -10 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .document_files .file_modal_body {
-        padding-bottom: calc(10px + 10 * ((100vw - calc(375px)) / 975)); } }
+        padding-bottom: calc(25px + -5 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 1350px) {
       .document_files .file_modal_body {
         padding-right: calc(10px + 15 * ((100vw - calc(375px)) / 975)); } }
@@ -4602,6 +4645,10 @@ main {
       .document_files .file_modal_body {
         max-width: 100%;
         margin: 0 10px; } }
+  .document_files .close_button {
+    position: absolute;
+    top: 30px;
+    right: 30px; }
   .document_files .file_modal_title {
     font-weight: 600;
     /* Только если меньше контейнера */
@@ -4610,16 +4657,21 @@ main {
     text-align: center;
     color: #171717;
     position: relative;
-    padding-bottom: 25px; }
+    padding-bottom: 15px;
+    width: 60%;
+    margin: 0 auto; }
     @media (max-width: 1350px) {
       .document_files .file_modal_title {
-         font-size: calc(16px + 4 * ((100vw - calc(375px)) / 975)); } }
+         font-size: calc(18px + 2 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .document_files .file_modal_title {
+        width: 80%; } }
     .document_files .file_modal_title::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: -5%;
-      width: 110%;
+      left: -50%;
+      width: 200%;
       height: 1px;
       background-color: #D7E3E4; }
   .document_files .choose_file {
@@ -4628,44 +4680,32 @@ main {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    gap: 15px; }
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 15px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
     @media (max-width: 479px) {
       .document_files .choose_file {
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        margin-bottom: 40px; } }
+        margin-bottom: 20px; } }
   .document_files .choosen_file {
     display: inline-block;
     background-color: #ffffff;
     border: 1px solid #031C77;
     border-radius: 8px;
-    /* Только если меньше контейнера */
-    padding-top: 18px;
-    /* Только если меньше контейнера */
-    padding-bottom: 18px;
-    /* Только если меньше контейнера */
-    padding-right: 30px;
-    /* Только если меньше контейнера */
-    padding-left: 30px;
+    width: 48px;
+    height: 48px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     font-weight: 600;
     font-size: 16px;
     line-height: 125%;
     text-transform: uppercase;
     color: #031C77; }
-    @media (max-width: 1350px) {
-      .document_files .choosen_file {
-        padding-top: calc(8px + 10 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1350px) {
-      .document_files .choosen_file {
-        padding-bottom: calc(8px + 10 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1350px) {
-      .document_files .choosen_file {
-        padding-right: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1350px) {
-      .document_files .choosen_file {
-        padding-left: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
   .document_files .load {
     background-color: rgba(3, 28, 119, 0.2); }
   .document_files .select_file_btn {

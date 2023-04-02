@@ -1047,6 +1047,7 @@ function openFileModal() {
     const fileModal = document.getElementById("fileModal");
     const selectBtn = document.getElementById("selectBtn");
     const modalContainer = document.getElementById("fileModalContainer");
+    const closeBtn = document.getElementById("close_button");
     const downloadedFile = document.querySelectorAll(".choosen_file");
     let isPrint = false;
     let isOpen = false;
@@ -1065,7 +1066,7 @@ function openFileModal() {
                 selectBtn.removeAttribute("target");
 
                 if (isOpen) {
-                    selectBtn.setAttribute("target");
+                    selectBtn.setAttribute("target", "_blanck");
                 }
             } else {
                 selectBtn.setAttribute("download", "");
@@ -1107,7 +1108,7 @@ function openFileModal() {
             selectBtn.removeAttribute("target");
 
             if (isOpen) {
-                selectBtn.setAttribute("target", "");
+                selectBtn.setAttribute("target", "_blanck");
             }
         } else {
             selectBtn.setAttribute("download", "");
@@ -1119,6 +1120,10 @@ function openFileModal() {
         document.body.classList.remove("body_lock");
         modalContainer.classList.remove("active_container");
     }
+
+    closeBtn.addEventListener('click' , () => {
+        closeModal();
+    })
 
     document.addEventListener("keydown", (e) => {
         if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {

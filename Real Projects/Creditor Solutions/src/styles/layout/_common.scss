@@ -658,10 +658,7 @@ main {
         position: relative;
         cursor: pointer;
         transition: all .5s ease;
-
-        @include media ("<desktop") {
-            padding-right: 50px;
-        }
+        padding-right: 30px;
 
         &::after {
             content: url(../images/tabs/arrow.svg);
@@ -924,6 +921,7 @@ main {
         border-radius: 12px;
         margin: 0 auto;
         transition: all .5s ease;
+        max-width: 800px;
 
         &:not(:last-child) {
             margin-bottom: 15px;
@@ -938,8 +936,6 @@ main {
         @include adaptiv-vaule("padding-left", 35, 15, 1);
         background: #F4F6FE;
         border-radius: 12px;
-        // visibility: hidden;
-        // opacity: 0;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -954,12 +950,10 @@ main {
 
     .show_tab {
         transform: translate(-50%, -50%) scale(1);
-        // visibility: visible;
-        // opacity: 1;
         transition: all .3s linear;
     }
 
-    .tab_bg{
+    .tab_bg {
         transition: all .2s ease;
     }
 
@@ -995,11 +989,11 @@ main {
         .tab_list {
             padding-left: 10px;
         }
-    
+
         .tab_list_item {
             padding-left: 20px;
             position: relative;
-    
+
             &::before {
                 content: '';
                 position: absolute;
@@ -1012,7 +1006,7 @@ main {
                 background-color: $blue;
             }
         }
-    
+
         .link {
             text-decoration: underline;
             color: $gray_2;
@@ -1027,7 +1021,7 @@ main {
         width: 36px;
         height: 36px;
 
-        &:hover{
+        &:hover {
             transform: rotateZ(90deg);
             transition: all .3s linear;
         }
@@ -3044,11 +3038,10 @@ main {
         .result {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            row-gap: 20px;
-            column-gap: 40px;
+            flex-direction: column;
+            row-gap: 15px;
             margin-bottom: 25px;
+            max-width: 360px;
             width: 100%;
 
             @include media ("<950px") {
@@ -3057,31 +3050,60 @@ main {
         }
 
         .result_item {
-            width: 29%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
 
-            @include media ("<desktop") {
-                width: 48%;
-            }
-
-            @include media ("<tablet") {
+            &::after{
+                content:'';
+                position: absolute;
+                bottom:9px;
+                left: 0;
                 width: 100%;
+                height: 1px;
+                border: 1px dashed rgba(3, 28, 119, 0.2);
+                z-index: -1;
             }
         }
 
         .result_title {
-            font-weight: 600;
-            @include adaptiv-vaule("font-size", 26, 20, 1);
-            line-height: 140%;
-            letter-spacing: -0.03em;
-            color: $blue;
-            margin-bottom: 5px;
-
+            font-weight: 500;
+            font-size: 18px;
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            line-height: 28 / 18 * 100%;
+            letter-spacing: -0.01em;
+            color: $gray_2;
+            background-color: $white;
         }
 
         .amount {
             font-weight: 600;
-            @include adaptiv-vaule("font-size", 36, 28, 1);
-            line-height: 120%;
+            font-size: 20px;
+            line-height: 28 / 20 * 100%;
+            letter-spacing: -0.03em;
+            color: $black;
+            background-color: $white;
+            padding-bottom: 3px;
+
+            @include media ("<phone") {
+                padding-bottom: 2px;
+            }
+        }
+
+        .total_result_title {
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 26, 20, 1);
+            line-height: 36 / 26 * 100%;
+            letter-spacing: -0.03em;
+            color: $blue;
+        }
+
+        .total_amount {
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 34, 28, 1);
+            line-height: 41 / 34 * 100%;
             letter-spacing: -0.03em;
             color: $black;
         }
@@ -3098,7 +3120,7 @@ main {
             color: $blue;
         }
 
-        .total_amount {
+        .total_result_amount {
             margin-bottom: 30px;
         }
 
@@ -3338,7 +3360,7 @@ main {
         line-height: 41 / 34 * 100%;
         letter-spacing: -0.03em;
         color: $blue;
-        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
     }
 
     .file {
@@ -3346,7 +3368,8 @@ main {
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #D1D4DE;
-        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 35, 25, 1);
+        text-transform: capitalize;
 
         @include media ("<desktop_sm") {
             flex-direction: column;
@@ -3354,7 +3377,7 @@ main {
         }
 
         &:not(:last-child) {
-            margin-bottom: 30px;
+            @include adaptiv-vaule("margin-bottom", 45, 50, 1);
         }
     }
 
@@ -3364,14 +3387,20 @@ main {
         @include adaptiv-vaule(" margin-right", 30, 15, 1);
 
         @include media ("<desktop_sm") {
-            margin: 0 0 30px 0;
+            margin: 0 0 15px 0;
+            align-items: center
         }
     }
 
     .file_img {
-        @include adaptiv-vaule("margin-right", 30, 15, 1);
+        @include adaptiv-vaule("margin-right", 30, 13, 1);
         width: 41px;
         height: 51px;
+
+        @include media ("<phone") {
+            width: 29px;
+            height: 37px;
+        }
     }
 
     .file_info {
@@ -3381,10 +3410,11 @@ main {
 
     .file_name {
         font-weight: 500;
-        @include adaptiv-vaule(" font-size", 18, 16, 1);
+        @include adaptiv-vaule(" font-size", 18, 14, 1);
         line-height: 28 / 18 * 100%;
         letter-spacing: -0.01em;
         color: $black;
+        text-transform: capitalize;
     }
 
     .file_size {
@@ -3399,16 +3429,19 @@ main {
         display: flex;
         align-items: center;
         cursor: pointer;
+        gap: 15px;
 
         @include media ("<phone") {
             flex-wrap: wrap;
             width: 100%;
+            justify-content: space-between;
+            gap: 5px;
         }
     }
 
     .file_btn {
         font-weight: 600;
-        @include adaptiv-vaule(" font-size", 16, 14, 1);
+        @include adaptiv-vaule(" font-size", 16, 12, 1);
         line-height: 20px;
         display: flex;
         align-items: center;
@@ -3423,7 +3456,8 @@ main {
         @include adaptiv-vaule("padding-left", 25, 10, 1);
 
         @include media ("<phone") {
-            width: 100%;
+            width: 99px;
+            height: 44px;
         }
 
         &:hover {
@@ -3434,16 +3468,6 @@ main {
             svg {
                 stroke: $white;
                 fill: $white;
-            }
-
-
-        }
-
-        &:not(:last-child) {
-            margin-right: 15px;
-
-            @include media ("<phone") {
-                margin: 0 0 15px 0;
             }
         }
 
@@ -3460,6 +3484,10 @@ main {
         @include adaptiv-vaule("padding-bottom", 15, 10, 1);
         @include adaptiv-vaule("padding-right", 15, 10, 1);
         @include adaptiv-vaule("padding-left", 15, 10, 1);
+
+        @include media ("<phone") {
+            width: 130px;
+        }
 
         &:hover {
             background-color: #EAEEFC;
@@ -3528,15 +3556,16 @@ main {
     }
 
     .file_modal_body {
-        max-width: 485px;
         height: auto;
         border-radius: 12px;
         background-color: $white;
         text-align: center;
-        @include adaptiv-vaule("padding-top", 30, 15, 1);
-        @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+        overflow: hidden;
+        @include adaptiv-vaule("padding-top", 30, 40, 1);
+        @include adaptiv-vaule("padding-bottom", 20, 25, 1);
         @include adaptiv-vaule("padding-right", 25, 10, 1);
         @include adaptiv-vaule("padding-left", 25, 10, 1);
+        position: relative;
 
         @include media ("<tablet") {
             max-width: 100%;
@@ -3544,21 +3573,33 @@ main {
         }
     }
 
+    .close_button {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
     .file_modal_title {
         font-weight: 600;
-        @include adaptiv-vaule(" font-size", 20, 16, 1);
+        @include adaptiv-vaule(" font-size", 20, 18, 1);
         line-height: 28 / 20 * 100%;
         text-align: center;
         color: #171717;
         position: relative;
-        padding-bottom: 25px;
+        padding-bottom: 15px;
+        width: 60%;
+        margin: 0 auto;
+
+        @include media ("<phone") {
+            width: 80%;
+        }
 
         &::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: -5%;
-            width: 110%;
+            left: -50%;
+            width: 200%;
             height: 1px;
             background-color: #D7E3E4;
         }
@@ -3568,25 +3609,25 @@ main {
         margin: 20px 0 15px 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 15px;
+        flex-wrap: wrap;
 
         @include media ("<phone") {
-            justify-content: space-around;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
     }
 
     .choosen_file {
         display: inline-block;
-
         background-color: $white;
         border: 1px solid $blue;
         border-radius: 8px;
-        @include adaptiv-vaule("padding-top", 18, 8, 1);
-        @include adaptiv-vaule("padding-bottom", 18, 8, 1);
-        @include adaptiv-vaule("padding-right", 30, 15, 1);
-        @include adaptiv-vaule("padding-left", 30, 15, 1);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-weight: 600;
         font-size: 16px;
         line-height: 20 / 16 * 100%;
