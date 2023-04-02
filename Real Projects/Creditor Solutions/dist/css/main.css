@@ -1015,7 +1015,8 @@ main {
 #root {
   padding-top: 100px; }
 
-.body_lock {
+.body_lock,
+.faq_lock {
   overflow: hidden; }
 
 .ibg {
@@ -1682,6 +1683,8 @@ main {
         margin-bottom: calc(35px + 25 * ((100vw - calc(375px)) / 975)); } }
   .faq .tab_wrapper {
     margin-bottom: 45px; }
+  .faq .tabs {
+    border-bottom: 1px solid #D1D4DE; }
   .faq .tab_title {
     padding: 20px 0;
     position: relative;
@@ -1694,18 +1697,10 @@ main {
       content: url(../images/tabs/arrow.svg);
       position: absolute;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%) rotateZ(-90deg);
+      transform: translateY(-50%) rotateZ(-90deg);
       right: 0;
       transition: all .3s linear; }
-  .faq .tab_active::after {
-    -webkit-transform: rotateX(180deg) translateY(50%);
-    transform: rotateX(180deg) translateY(50%);
-    transition: all .3s linear; }
-  .faq .tabs {
-    position: relative; }
-    .faq .tabs:not(:first-child) {
-      border-top: 1px solid #D1D4DE; }
   .faq .tab_content {
     padding: 0;
     opacity: 0;
@@ -1949,25 +1944,6 @@ main {
         display: block; } }
   .faq_page .tab_wrapper {
     margin-bottom: 0; }
-  .faq_page .tab_list {
-    padding-left: 10px; }
-  .faq_page .tab_list_item {
-    padding-left: 20px;
-    position: relative; }
-    .faq_page .tab_list_item::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #031C77; }
-  .faq_page .link {
-    text-decoration: underline;
-    color: #66666C; }
 
 .faq_page_content {
   background-color: #F4F6FE; }
@@ -1976,27 +1952,115 @@ main {
     background: rgba(244, 246, 254, 0.3);
     border: 1px solid #D1D4DE;
     border-radius: 12px;
-    max-width: 935px;
     margin: 0 auto;
     transition: all .5s ease; }
     .faq_page_content .tab:not(:last-child) {
       margin-bottom: 15px; }
-  .faq_page_content .tab_content {
-    padding: 0; }
+  .faq_page_content .tab_body {
+    padding: 40px 35px 35px 35px;
+    /* Только если меньше контейнера */
+    padding-top: 40px;
+    /* Только если меньше контейнера */
+    padding-bottom: 35px;
+    /* Только если меньше контейнера */
+    padding-right: 35px;
+    /* Только если меньше контейнера */
+    padding-left: 35px;
+    background: #F4F6FE;
+    border-radius: 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 3;
+    max-width: 620px;
+    width: calc(100% - 20px);
+    max-height: 95%;
+    overflow: auto;
+    transition: all .3s linear; }
+    @media (max-width: 1350px) {
+      .faq_page_content .tab_body {
+        padding-top: calc(15px + 25 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .faq_page_content .tab_body {
+        padding-bottom: calc(15px + 20 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .faq_page_content .tab_body {
+        padding-right: calc(15px + 20 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .faq_page_content .tab_body {
+        padding-left: calc(15px + 20 * ((100vw - calc(375px)) / 975)); } }
+  .faq_page_content .show_tab {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: all .3s linear; }
+  .faq_page_content .tab_bg {
+    transition: all .2s ease; }
+  .faq_page_content .show_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 28, 119, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    transition: all .3s ease; }
+  .faq_page_content .title_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid #D1D4DE;
+    margin-bottom: 25px;
+    padding-bottom: 30px; }
+  .faq_page_content .tab_text {
+    font-weight: 500;
+    font-size: 18px;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 155.55556%;
+    letter-spacing: -0.01em;
+    color: #66666C; }
+    @media (max-width: 1350px) {
+      .faq_page_content .tab_text {
+        font-size: calc(14px + 4 * ((100vw - calc(375px)) / 975)); } }
+    .faq_page_content .tab_text .tab_list {
+      padding-left: 10px; }
+    .faq_page_content .tab_text .tab_list_item {
+      padding-left: 20px;
+      position: relative; }
+      .faq_page_content .tab_text .tab_list_item::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #031C77; }
+    .faq_page_content .tab_text .link {
+      text-decoration: underline;
+      color: #66666C; }
+  .faq_page_content .close_item {
+    stroke: #031C77;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all .3s linear;
+    width: 36px;
+    height: 36px; }
+    .faq_page_content .close_item:hover {
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+      transition: all .3s linear; }
   .faq_page_content .show {
     padding-bottom: 15px; }
-  .faq_page_content .active_tabsWrap {
-    border: 1.5px solid #031C77;
-    background-color: #ffffff;
-    transition: all .5s ease;
-    margin-top: 30px; }
-    .faq_page_content .active_tabsWrap:not(:nth-child(4)) {
-      -webkit-transform: scale(1.03);
-      transform: scale(1.03); }
-    .faq_page_content .active_tabsWrap .tab_title {
-      font-weight: 600;
-      font-size: 24px;
-      transition: all .5s ease; }
 
 .privacy_policy {
   /* Только если меньше контейнера */
@@ -4379,7 +4443,8 @@ main {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    cursor: pointer; }
     @media (max-width: 479px) {
       .document_files .file_btn_wrap {
         -ms-flex-wrap: wrap;
@@ -4472,6 +4537,9 @@ main {
       stroke: #ffffff; }
   .document_files .print_btn svg {
     fill: #031C77; }
+  .document_files .open_btn:hover svg {
+    stroke: #ffffff;
+    fill: none; }
   .document_files .file_modal {
     -webkit-transform: scale(0);
     transform: scale(0);

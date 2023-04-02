@@ -3,7 +3,6 @@
 var winTriggersMethods = ["resize", "load"];
 var MOBILE_SIZE = 480;
 var prevWidth = window.innerWidth;
-initTabs();
 initBurger();
 initNavBtn();
 findHref();
@@ -71,35 +70,6 @@ function initBurger() {
       document.body.classList.remove("body_lock");
     }
   });
-}
-
-function initTabs() {
-  var faqTabs = document.querySelector("#faqTabs");
-  if (!faqTabs) return;
-  var tabs = document.querySelectorAll(".tab_title"),
-      tabsWrap = document.querySelectorAll(".tab"),
-      tabsContent = document.querySelectorAll(".tab_content"),
-      tabsParent = document.querySelector(".tab_wrapper");
-
-  function showTabContent() {
-    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    tabsContent[i].classList.toggle("show");
-    tabs[i].classList.toggle("tab_active");
-    window.location.href.includes("faq") && tabsWrap[i].classList.toggle("active_tabsWrap");
-  }
-
-  tabsParent.addEventListener("click", function (event) {
-    var target = event.target;
-
-    if (target && target.classList.contains("tab_title")) {
-      tabs.forEach(function (item, i) {
-        if (target == item) {
-          showTabContent(i);
-        }
-      });
-    }
-  });
-  !window.location.href.includes("faq") && showTabContent();
 }
 
 function initNavBtn() {
@@ -276,15 +246,15 @@ function calcPages() {
   var fullYear = getInputDate();
   var amountValue = "";
   var result;
-  var formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
   });
 
   function maskCurrency(value) {
-    var formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    var formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 0
     });
     return "".concat(formatter.format(value).slice(0, 1), " ").concat(formatter.format(value).slice(1));
@@ -381,7 +351,7 @@ function calcPages() {
     resetCalculator();
   });
   amountInput.addEventListener("input", function (e) {
-    var targetValue = e.target.value.replace(/[^\d.-]/g, '');
+    var targetValue = e.target.value.replace(/[^\d.-]/g, "");
 
     if (!targetValue) {
       e.target.value = "";
@@ -1008,6 +978,7 @@ function openFileModal() {
   var modalContainer = document.getElementById("fileModalContainer");
   var downloadedFile = document.querySelectorAll(".choosen_file");
   var isPrint = false;
+  var isOpen = false;
   selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
   downloadedFile.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -1017,10 +988,15 @@ function openFileModal() {
       var hrefValue = e.target.getAttribute("href");
       selectBtn.setAttribute("href", hrefValue);
 
-      if (isPrint) {
+      if (isPrint || isOpen) {
         selectBtn.removeAttribute("download");
+        selectBtn.removeAttribute("target");
+
+        if (isOpen) {
+          selectBtn.setAttribute("target");
+        }
       } else {
-        selectBtn.setAttribute("download");
+        selectBtn.setAttribute("download", "");
       }
     });
   });
@@ -1041,6 +1017,12 @@ function openFileModal() {
         isPrint = false;
       }
 
+      if (e.target.classList.contains("open_btn")) {
+        isOpen = true;
+      } else {
+        isOpen = false;
+      }
+
       openModal();
     });
   });
@@ -1049,9 +1031,15 @@ function openFileModal() {
     fileModal.classList.add("file_modal_active");
     document.body.classList.add("body_lock");
     modalContainer.classList.add("active_container");
+    console.log(isPrint);
 
-    if (isPrint) {
+    if (isPrint || isOpen) {
       selectBtn.removeAttribute("download");
+      selectBtn.removeAttribute("target");
+
+      if (isOpen) {
+        selectBtn.setAttribute("target", "");
+      }
     } else {
       selectBtn.setAttribute("download", "");
     }
@@ -1074,7 +1062,72 @@ function openFileModal() {
     }
   });
   selectBtn.addEventListener("click", function (e) {
+    if (isPrint) {
+      e.preventDefault();
+      printPage(e.target.getAttribute("href"));
+    }
+
     closeModal();
   });
 }
+
+function closePrint() {
+  document.body.removeChild(this.__container__);
+}
+
+function setPrint() {
+  this.contentWindow.__container__ = this;
+  this.contentWindow.onbeforeunload = closePrint;
+  this.contentWindow.onafterprint = closePrint;
+  this.contentWindow.focus();
+  this.contentWindow.print();
+}
+
+function printPage(sURL) {
+  var hideFrame = document.createElement("iframe");
+  hideFrame.onload = setPrint;
+  hideFrame.style.position = "fixed";
+  hideFrame.style.right = "0";
+  hideFrame.style.bottom = "0";
+  hideFrame.style.width = "0";
+  hideFrame.style.height = "0";
+  hideFrame.style.border = "0";
+  hideFrame.src = sURL;
+  document.body.appendChild(hideFrame);
+}
+
+function openModalTab() {
+  var tabs = document.querySelectorAll(".tab_title");
+  var tabContent = document.querySelectorAll(".tab_body");
+  var closeTab = document.querySelectorAll(".close_item");
+  var tabBg = document.getElementById("tab_bg");
+
+  function showTab() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    tabContent[i].classList.add("show_tab");
+    tabBg.classList.add("show_bg");
+    document.body.classList.add("faq_lock");
+  }
+
+  function closeTabModal() {
+    tabContent.classList.remove("show_tab");
+    tabBg.classList.remove("show_bg");
+    document.body.classList.remove("faq_lock");
+  }
+
+  closeTab.forEach(function (item, i) {
+    item.addEventListener("click", function () {
+      tabContent[i].classList.remove("show_tab");
+      tabBg.classList.remove("show_bg");
+      document.body.classList.remove("faq_lock");
+    });
+  });
+  tabs.forEach(function (button, i) {
+    button.addEventListener("click", function () {
+      showTab(i);
+    });
+  });
+}
+
+openModalTab();
 //# sourceMappingURL=main.js.map

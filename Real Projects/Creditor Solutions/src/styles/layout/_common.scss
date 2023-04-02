@@ -28,7 +28,8 @@ main {
     padding-top: 100px;
 }
 
-.body_lock {
+.body_lock,
+.faq_lock {
     overflow: hidden;
 }
 
@@ -648,6 +649,10 @@ main {
         margin-bottom: 45px;
     }
 
+    .tabs {
+        border-bottom: 1px solid #D1D4DE;
+    }
+
     .tab_title {
         padding: 20px 0;
         position: relative;
@@ -662,26 +667,12 @@ main {
             content: url(../images/tabs/arrow.svg);
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotateZ(-90deg);
             right: 0;
             transition: all .3s linear;
         }
     }
 
-    .tab_active {
-        &::after {
-            transform: rotateX(180deg) translateY(50%);
-            transition: all .3s linear;
-        }
-    }
-
-    .tabs {
-        position: relative;
-
-        &:not(:first-child) {
-            border-top: 1px solid $gray;
-        }
-    }
 
     .tab_content {
         padding: 0;
@@ -921,32 +912,6 @@ main {
     .tab_wrapper {
         margin-bottom: 0;
     }
-
-    .tab_list {
-        padding-left: 10px;
-    }
-
-    .tab_list_item {
-        padding-left: 20px;
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: $blue;
-        }
-    }
-
-    .link {
-        text-decoration: underline;
-        color: $gray_2;
-    }
 }
 
 .faq_page_content {
@@ -957,7 +922,6 @@ main {
         background: rgba(244, 246, 254, 0.3);
         border: 1px solid #D1D4DE;
         border-radius: 12px;
-        max-width: 935px;
         margin: 0 auto;
         transition: all .5s ease;
 
@@ -966,30 +930,111 @@ main {
         }
     }
 
-    .tab_content {
-        padding: 0
+    .tab_body {
+        padding: 40px 35px 35px 35px;
+        @include adaptiv-vaule("padding-top", 40, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 35, 15, 1);
+        @include adaptiv-vaule("padding-right", 35, 15, 1);
+        @include adaptiv-vaule("padding-left", 35, 15, 1);
+        background: #F4F6FE;
+        border-radius: 12px;
+        // visibility: hidden;
+        // opacity: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        z-index: 3;
+        max-width: 620px;
+        width: calc(100% - 20px);
+        max-height: 95%;
+        overflow: auto;
+        transition: all .3s linear;
+    }
+
+    .show_tab {
+        transform: translate(-50%, -50%) scale(1);
+        // visibility: visible;
+        // opacity: 1;
+        transition: all .3s linear;
+    }
+
+    .tab_bg{
+        transition: all .2s ease;
+    }
+
+    .show_bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(3, 28, 119, 0.2);
+        backdrop-filter: blur(5px);
+        z-index: 3;
+        transition: all .3s ease;
+    }
+
+    .title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #D1D4DE;
+        margin-bottom: 25px;
+        padding-bottom: 30px;
+    }
+
+    .tab_text {
+        font-weight: 500;
+        font-size: 18px;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        line-height: 28 / 18 * 100%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+
+        .tab_list {
+            padding-left: 10px;
+        }
+    
+        .tab_list_item {
+            padding-left: 20px;
+            position: relative;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: $blue;
+            }
+        }
+    
+        .link {
+            text-decoration: underline;
+            color: $gray_2;
+        }
+    }
+
+    .close_item {
+        stroke: $blue;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: all .3s linear;
+        width: 36px;
+        height: 36px;
+
+        &:hover{
+            transform: rotateZ(90deg);
+            transition: all .3s linear;
+        }
     }
 
     .show {
         padding-bottom: 15px;
-    }
-
-    .active_tabsWrap {
-        border: 1.5px solid $blue;
-        background-color: $white;
-        transition: all .5s ease;
-        margin-top: 30px;
-
-        &:not(:nth-child(4)) {
-            transform: scale(1.03);
-        }
-
-        .tab_title {
-            font-weight: 600;
-            font-size: 24px;
-            transition: all .5s ease;
-        }
-
     }
 }
 
@@ -2229,7 +2274,7 @@ main {
         color: $white;
         max-width: 700px;
         margin: 0 auto;
-        margin-bottom:40px;
+        margin-bottom: 40px;
 
         @include media ("<phone") {
             margin-bottom: 0;
@@ -2964,7 +3009,6 @@ main {
         }
     }
 
-
     .second_step {
 
         .blue_btn {
@@ -3254,17 +3298,18 @@ main {
 
 .document_main {
     @include adaptiv-vaule("padding-top", 240, 130, 1);
-    height:100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 
-    .container{
+    .container {
         height: auto;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex: 1 1 auto;
     }
+
     .document_title {
         @include adaptiv-vaule("margin-bottom", 100, 40, 1);
     }
@@ -3353,6 +3398,7 @@ main {
     .file_btn_wrap {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         @include media ("<phone") {
             flex-wrap: wrap;
@@ -3389,6 +3435,8 @@ main {
                 stroke: $white;
                 fill: $white;
             }
+
+
         }
 
         &:not(:last-child) {
@@ -3432,6 +3480,16 @@ main {
         svg {
             fill: $blue;
         }
+    }
+
+    .open_btn {
+        &:hover {
+            svg {
+                stroke: $white;
+                fill: none;
+            }
+        }
+
     }
 
     .file_modal {

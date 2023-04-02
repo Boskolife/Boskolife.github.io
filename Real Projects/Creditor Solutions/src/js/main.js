@@ -3,7 +3,6 @@ const winTriggersMethods = ["resize", "load"];
 const MOBILE_SIZE = 480;
 let prevWidth = window.innerWidth;
 
-initTabs();
 initBurger();
 initNavBtn();
 findHref();
@@ -66,37 +65,6 @@ function initBurger() {
             document.body.classList.remove("body_lock");
         }
     });
-}
-
-function initTabs() {
-    const faqTabs = document.querySelector("#faqTabs");
-
-    if (!faqTabs) return;
-
-    const tabs = document.querySelectorAll(".tab_title"),
-        tabsWrap = document.querySelectorAll(".tab"),
-        tabsContent = document.querySelectorAll(".tab_content"),
-        tabsParent = document.querySelector(".tab_wrapper");
-
-    function showTabContent(i = 0) {
-        tabsContent[i].classList.toggle("show");
-        tabs[i].classList.toggle("tab_active");
-        window.location.href.includes("faq") &&
-            tabsWrap[i].classList.toggle("active_tabsWrap");
-    }
-
-    tabsParent.addEventListener("click", (event) => {
-        const target = event.target;
-        if (target && target.classList.contains("tab_title")) {
-            tabs.forEach((item, i) => {
-                if (target == item) {
-                    showTabContent(i);
-                }
-            });
-        }
-    });
-
-    !window.location.href.includes("faq") && showTabContent();
 }
 
 function initNavBtn() {
@@ -298,27 +266,33 @@ function calcPages() {
     let amountValue = "";
     let result;
 
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
     });
 
     function maskCurrency(value) {
-        const formatter = new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: 'USD',
-          minimumFractionDigits: 0
+        const formatter = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 0,
         });
-        return `${formatter.format(value).slice(0, 1)} ${formatter.format(value).slice(1)}`;
-      }
+        return `${formatter.format(value).slice(0, 1)} ${formatter
+            .format(value)
+            .slice(1)}`;
+    }
 
     function calculated() {
         fullYear = getInputDate();
         result = nyJudgmentInterest(+amountValue, fullYear);
         currentDate.textContent = result.formateDate;
         awardEl.textContent = formatter.format(Number.parseFloat(amountValue));
-        interestRateEl.textContent = formatter.format(Number.parseFloat(result.interest));
-        totalEl.textContent = formatter.format(Number.parseFloat(result.totalValue));
+        interestRateEl.textContent = formatter.format(
+            Number.parseFloat(result.interest)
+        );
+        totalEl.textContent = formatter.format(
+            Number.parseFloat(result.totalValue)
+        );
     }
 
     const resetCalculator = () => {
@@ -403,7 +377,7 @@ function calcPages() {
     });
 
     amountInput.addEventListener("input", (e) => {
-        const targetValue = e.target.value.replace(/[^\d.-]/g, '');
+        const targetValue = e.target.value.replace(/[^\d.-]/g, "");
         if (!targetValue) {
             e.target.value = "";
             amountValue = "";
@@ -443,14 +417,12 @@ function nyJudgmentInterest(judgmentAmount, date) {
             day: "numeric",
             month: "numeric",
             year: "numeric",
-            timeZone: "UTC"
+            timeZone: "UTC",
         })
         .split("/");
     let formateDate = `${
         localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]
-    }/${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}/${
-        localDate[2]
-    }`;
+    }/${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}/${localDate[2]}`;
 
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =
@@ -1077,6 +1049,7 @@ function openFileModal() {
     const modalContainer = document.getElementById("fileModalContainer");
     const downloadedFile = document.querySelectorAll(".choosen_file");
     let isPrint = false;
+    let isOpen = false;
 
     selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
 
@@ -1087,10 +1060,15 @@ function openFileModal() {
             e.target.classList.add("load");
             let hrefValue = e.target.getAttribute("href");
             selectBtn.setAttribute("href", hrefValue);
-            if (isPrint) {
+            if (isPrint || isOpen) {
                 selectBtn.removeAttribute("download");
+                selectBtn.removeAttribute("target");
+
+                if (isOpen) {
+                    selectBtn.setAttribute("target");
+                }
             } else {
-                selectBtn.setAttribute("download");
+                selectBtn.setAttribute("download", "");
             }
         });
     });
@@ -1109,6 +1087,12 @@ function openFileModal() {
             } else {
                 isPrint = false;
             }
+
+            if (e.target.classList.contains("open_btn")) {
+                isOpen = true;
+            } else {
+                isOpen = false;
+            }
             openModal();
         });
     });
@@ -1117,8 +1101,14 @@ function openFileModal() {
         fileModal.classList.add("file_modal_active");
         document.body.classList.add("body_lock");
         modalContainer.classList.add("active_container");
-        if (isPrint) {
+        console.log(isPrint);
+        if (isPrint || isOpen) {
             selectBtn.removeAttribute("download");
+            selectBtn.removeAttribute("target");
+
+            if (isOpen) {
+                selectBtn.setAttribute("target", "");
+            }
         } else {
             selectBtn.setAttribute("download", "");
         }
@@ -1131,24 +1121,82 @@ function openFileModal() {
     }
 
     document.addEventListener("keydown", (e) => {
-        if (
-            e.code === "Escape" &&
-            fileModal.classList.contains("file_modal_active")
-        ) {
+        if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {
             closeModal();
         }
     });
 
     fileModal.addEventListener("click", (e) => {
-        if (
-            e.target === fileModal ||
-            e.target.getAttribute("data-close") == ""
-        ) {
+        if (e.target === fileModal || e.target.getAttribute("data-close") == "") {
             closeModal();
         }
     });
 
     selectBtn.addEventListener("click", (e) => {
+        if (isPrint) {
+            e.preventDefault();
+            printPage(e.target.getAttribute("href"));
+        }
         closeModal();
     });
 }
+
+function closePrint() {
+    document.body.removeChild(this.__container__);
+}
+
+function setPrint() {
+    this.contentWindow.__container__ = this;
+    this.contentWindow.onbeforeunload = closePrint;
+    this.contentWindow.onafterprint = closePrint;
+    this.contentWindow.focus();
+    this.contentWindow.print();
+}
+
+function printPage(sURL) {
+    const hideFrame = document.createElement("iframe");
+    hideFrame.onload = setPrint;
+    hideFrame.style.position = "fixed";
+    hideFrame.style.right = "0";
+    hideFrame.style.bottom = "0";
+    hideFrame.style.width = "0";
+    hideFrame.style.height = "0";
+    hideFrame.style.border = "0";
+    hideFrame.src = sURL;
+    document.body.appendChild(hideFrame);
+}
+
+function openModalTab() {
+    const tabs = document.querySelectorAll(".tab_title");
+    const tabContent = document.querySelectorAll(".tab_body");
+    const closeTab = document.querySelectorAll(".close_item");
+    const tabBg = document.getElementById("tab_bg");
+
+    function showTab(i = 0) {
+        tabContent[i].classList.add("show_tab");
+        tabBg.classList.add("show_bg");
+        document.body.classList.add("faq_lock");
+    }
+
+    function closeTabModal() {
+        tabContent.classList.remove("show_tab");
+        tabBg.classList.remove("show_bg");
+        document.body.classList.remove("faq_lock");
+    }
+
+    closeTab.forEach((item, i) => {
+        item.addEventListener("click", () => {
+            tabContent[i].classList.remove("show_tab");
+            tabBg.classList.remove("show_bg");
+            document.body.classList.remove("faq_lock");
+        });
+    });
+
+    tabs.forEach((button, i) => {
+        button.addEventListener("click", () => {
+            showTab(i);
+        });
+    });
+}
+
+openModalTab();
