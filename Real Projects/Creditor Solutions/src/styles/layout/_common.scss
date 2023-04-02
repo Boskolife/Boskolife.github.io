@@ -2229,11 +2229,16 @@ main {
         color: $white;
         max-width: 700px;
         margin: 0 auto;
+        margin-bottom:40px;
+
+        @include media ("<phone") {
+            margin-bottom: 0;
+        }
     }
 
     .white_btn {
         @include media ("<phone") {
-            min-width: 100%;
+            display: none
         }
     }
 }

@@ -3255,13 +3255,17 @@ main {
     letter-spacing: -0.03em;
     color: #ffffff;
     max-width: 700px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-bottom: 40px; }
     @media (max-width: 1350px) {
       .process .process_title {
         font-size: calc(28px + 6 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .process .process_title {
+        margin-bottom: 0; } }
   @media (max-width: 479px) {
     .process .white_btn {
-      min-width: 100%; } }
+      display: none; } }
 
 .steps {
   /* Только если меньше контейнера */
