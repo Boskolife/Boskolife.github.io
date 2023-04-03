@@ -881,6 +881,15 @@ main {
         letter-spacing: -0.03em;
         line-height: 98%;
         @include adaptiv-vaule("margin-bottom", 100, 60, 1);
+
+        @include media ("<phone") {
+            height: 290px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
     }
 
     .faq_page_img {
@@ -1485,6 +1494,7 @@ main {
     @include adaptiv-vaule("padding-top", 100, 50, 1);
     @include adaptiv-vaule("padding-bottom", 100, 50, 1);
     position: relative;
+    background-color: #F9F9F9;
 
     .line_img {
         position: absolute;
@@ -3317,10 +3327,23 @@ main {
         align-items: center;
         justify-content: flex-start;
         flex: 1 1 auto;
+
+        @include media ("<phone") {
+            justify-content: center;
+        }
     }
 
     .document_title {
         @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+
+        @include media ("<phone") {
+            height: 290px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
     }
 
     .ducoment_img {

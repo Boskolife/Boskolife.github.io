@@ -1920,6 +1920,18 @@ main {
     @media (max-width: 1350px) {
       .faq_page .faq_page_title {
         margin-bottom: calc(60px + 40 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .faq_page .faq_page_title {
+        height: 290px;
+        text-align: center;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   .faq_page .faq_page_img {
     width: 100%;
     /* Только если меньше контейнера */
@@ -2524,7 +2536,8 @@ main {
   padding-top: 100px;
   /* Только если меньше контейнера */
   padding-bottom: 100px;
-  position: relative; }
+  position: relative;
+  background-color: #F9F9F9; }
   @media (max-width: 1350px) {
     .standarts {
       padding-top: calc(50px + 50 * ((100vw - calc(375px)) / 975)); } }
@@ -4367,12 +4380,28 @@ main {
     justify-content: flex-start;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto; }
+    @media (max-width: 479px) {
+      .document_main .container {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .document_main .document_title {
     /* Только если меньше контейнера */
     margin-bottom: 100px; }
     @media (max-width: 1350px) {
       .document_main .document_title {
         margin-bottom: calc(40px + 60 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 479px) {
+      .document_main .document_title {
+        height: 290px;
+        text-align: center;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   .document_main .ducoment_img {
     /* Только если меньше контейнера */
     height: 350px;
