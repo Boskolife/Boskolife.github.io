@@ -1286,22 +1286,65 @@ main {
     }
 }
 
-.about_us_page {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: relative;
+.we_are {
+    @include adaptiv-vaule("padding-top", 180, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
-    .container {
-        flex: 1 1 auto;
-    }
-
-    .main_text {
+    .we_are_content {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
     }
 
-    .main_img {
-        @include adaptiv-vaule("height", 470, 280, 1);
+    .we_are_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 90, 56, 1);
+        line-height: 88 / 90 * 100%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        color: $blue;
+        width: 43%;
+        margin-right: 25px;
+
+        @include media ("<desktop") {
+            margin: 0 0 30px 0;
+            width: 100%;
+        }
+    }
+
+    .black_text {
+        color: $black;
+    }
+
+    .we_are_descr {
+        width: 53%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .top_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 32 / 20 * 100%;
+        letter-spacing: -0.01em;
+        color: $black;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ECECEC;
+    }
+
+    .bot_descr {
+        padding-top: 20px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28 / 16 * 100%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
     }
 }
 
@@ -1329,6 +1372,16 @@ main {
         top: 15%;
         right: -235px;
         z-index: 1;
+    }
+
+    .method_img {
+        position: absolute;
+        left: -4%;
+        bottom: -12%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .top_text {
@@ -1368,90 +1421,37 @@ main {
         }
     }
 
-    .standarts_content {
+    .methods {
         display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: -2px;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include adaptiv-vaule("padding-top", 100, 50, 1);
+        @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
         @include media ("<tablet") {
             flex-direction: column;
         }
     }
 
-    .business,
-    .methods {
-        width: 45%;
-        padding: 100px 0;
+    .methods_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 68, 44, 1);
+        line-height: 72 / 68 * 100%;
+        color: $blue;
+        width: 50%;
 
         @include media ("<tablet") {
             width: 100%;
-            padding: 50px 0;
-        }
-
-        @include media ("<phone") {
-            padding: 35px 0;
+            margin-bottom: 30px;
         }
     }
 
-    .business {
-        position: relative;
-        padding-right: 20px;
-        padding-left: 60px;
-        background-color: $blue;
+    .methods_list {
+        @include adaptiv-vaule("margin-right", 50, 0, 1);
 
         @include media ("<tablet") {
-            padding-right: 0;
-            padding-left: 0;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -60vw;
-            width: 60vw;
-            height: 100%;
-            z-index: 0;
-            background-color: $blue;
-
-            @include media ("<tablet") {
-                width: 150%;
-                right: -25%;
-            }
-        }
-    }
-
-    .business_title {
-        color: $white;
-        font-weight: 600;
-        line-height: 135%;
-        letter-spacing: -0.02em;
-        max-width: 400px;
-        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
-        z-index: 1;
-        position: relative;
-    }
-
-    .business_descr {
-        font-weight: 500;
-        @include adaptiv-vaule("font-size", 16, 14, 1);
-        line-height: 175%;
-        color: $gray;
-        max-width: 530px;
-        z-index: 1;
-        position: relative;
-    }
-
-    .methods_title {
-        font-weight: 600;
-        line-height: 135%;
-        letter-spacing: -0.02em;
-        color: $blue;
-        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
-
-        @include media ("<phone") {
-            max-width: 250px;
+            margin-right: 0;
+            width: 100%;
         }
     }
 
@@ -1471,7 +1471,7 @@ main {
             content: url(../images/cards/check.svg);
             position: absolute;
             left: 0;
-            top: 65%;
+            top: 60%;
             transform: translateY(-50%);
         }
 
@@ -1481,11 +1481,99 @@ main {
     }
 }
 
-.wa_are {
-    @include adaptiv-vaule("padding-top", 130, 80, 1);
-    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+.standarts {
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+    position: relative;
 
-    .middle_text_content {
+    .line_img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .standarts_content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<desktop_sm") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .standarts_text {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 32 / 20 * 100%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+        width: 51%;
+        margin-right: 30px;
+
+        @include media ("<desktop_sm") {
+            width: 100%;
+        }
+    }
+
+    .standarts_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 68, 48, 1);
+        line-height: 72 / 68 * 100%;
+        color: $blue;
+
+        @include media ("<desktop_sm") {
+            margin-bottom: 30px
+        }
+    }
+}
+
+.tech {
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+    background-color: $blue;
+    position: relative;
+
+    .tech_img_left,
+    .tech_img_right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .tech_img_left {
+        left: -1%;
+    }
+
+    .tech_img_right {
+        right: -1%;
+    }
+
+    .tech_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 34, 26, 1);
+        line-height: 41 / 34 * 100%;
+        letter-spacing: -0.03em;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}
+
+.practices {
+    @include adaptiv-vaule("padding-top", 125, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 125, 50, 1);
+
+    .practices_content {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1495,181 +1583,76 @@ main {
         }
     }
 
-    .purp_titles {
-        width: 45%;
-        font-weight: 700;
-        @include adaptiv-vaule("font-size", 90, 42, 1);
-        line-height: 106%;
+    .practices_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 68, 48, 1);
+        line-height: 72 / 68 * 100%;
         color: $blue;
-        margin-right: 30px;
-        text-transform: uppercase;
+        width: 30%;
 
         @include media ("<desktop") {
             width: 100%;
-            text-align: center;
-            margin: 0 0 20px 0;
-        }
-
-        @include media ("<tablet") {
-            text-align: start;
+            margin-bottom: 30px;
         }
     }
 
-    .black_text {
+    .practices_descr {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32 / 20 * 100%;
+        letter-spacing: -0.01em;
         color: $black;
-    }
-
-    .middle_descr {
-        width: 70%;
+        width: 62%;
 
         @include media ("<desktop") {
             width: 100%;
-        }
-
-        .top_descr {
-            font-weight: 500;
-            @include adaptiv-vaule("font-size", 20, 16, 1);
-            line-height: 160%;
-            letter-spacing: -0.01em;
-            color: $black;
-            @include adaptiv-vaule("padding-bottom", 20, 15, 1);
-            @include adaptiv-vaule("margin-bottom", 20, 15, 1);
-            border-bottom: 1px solid $gray_3;
-
-            @include media ("<desktop") {
-                text-align: center;
-            }
-
-            @include media ("<tablet") {
-                text-align: start;
-            }
-        }
-
-        .bot_descr {
-            font-weight: 500;
-            font-size: 16px;
-            @include adaptiv-vaule("font-size", 16, 14, 1);
-            line-height: 175%;
-            letter-spacing: -0.01em;
-            color: $gray_2;
-
-            @include media ("<desktop") {
-                text-align: center;
-            }
-
-            @include media ("<tablet") {
-                text-align: start;
-            }
         }
     }
 }
 
 .our_team {
-    margin-top: -2px;
 
-    .bot_text {
-        @include adaptiv-vaule("padding-bottom", 100, 80, 1);
-        background-color: #F9F9F9;
+    .our_team_img {
+        @include adaptiv-vaule("height", 315, 200, 1);
+        position: relative;
+    }
 
-        .bot_text_content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            @include adaptiv-vaule("margin-bottom", 45, 30, 1);
+    .our_team_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-vaule("padding-top", 100, 50, 1);
+        @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
-            @include media ("<desktop") {
-                flex-direction: column;
-            }
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
         }
+    }
 
-        .purp_titles {
-            width: 25%;
-            font-weight: 600;
-            font-size: 68px;
-            @include adaptiv-vaule("font-size", 68, 42, 1);
-            line-height: 106%;
-            color: $blue;
-            margin-right: 30px;
+    .our_team_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 68, 48, 1);
+        line-height: 72 / 68 * 100%;
+        color: $blue;
 
-            @include media ("<desktop") {
-                width: 100%;
-                text-align: center;
-                margin: 0 0 20px 0;
-            }
-
-            @include media ("<tablet") {
-                text-align: start;
-            }
-        }
-
-
-        .bot_title {
-            width: 25%;
-            white-space: nowrap;
-
-            @include media ("<desktop") {
-                width: 100%;
-            }
-        }
-
-        .bot_descr {
-            width: 70%;
-            font-weight: 500;
-            @include adaptiv-vaule("font-size", 20, 18, 1);
-            line-height: 160%;
-            letter-spacing: -0.01em;
-            color: $gray_2;
-
-            @include media ("<desktop") {
-                width: 100%;
-            }
-        }
-
-        .bot_text_img {
+        @include media ("<desktop") {
             width: 100%;
-
-            @include adaptiv-vaule("height", 400, 275, 1);
-            position: relative;
-            @include adaptiv-vaule("margin-bottom", 60, 30, 1);
-
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 50%;
-                z-index: 1;
-                background: linear-gradient(180deg, #031C77 0%, rgba(3, 28, 119, 0) 100%);
-                ;
-            }
+            margin-bottom: 30px;
         }
+    }
 
-        .part_logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            padding: 0 10px;
-            transform: translate(-50%, -50%);
-        }
+    .our_team_descr {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32 / 20 * 100%;
+        letter-spacing: -0.01em;
+        color: $gray_2;
+        width: 65%;
+        margin-right: 30px;
 
-        .bot_text_notate {
-            font-weight: 600;
-            @include adaptiv-vaule("font-size", 26, 20, 1);
-            line-height: 120%;
-            letter-spacing: -0.03em;
-            color: $blue;
-            text-align: center;
-            border-top: 1px solid $gray_3;
-            @include adaptiv-vaule("padding-top", 25, 30, 1);
-
-            @include media ("<tablet") {
-                text-align: start;
-
-                br {
-                    display: none;
-                }
-            }
+        @include media ("<desktop") {
+            width: 100%;
+            margin: 0;
         }
     }
 }
@@ -3056,10 +3039,10 @@ main {
             width: 100%;
             position: relative;
 
-            &::after{
-                content:'';
+            &::after {
+                content: '';
                 position: absolute;
-                bottom:9px;
+                bottom: 9px;
                 left: 0;
                 width: 100%;
                 height: 1px;
@@ -3324,6 +3307,10 @@ main {
     display: flex;
     flex-direction: column;
 
+    @include media ("<tablet") {
+        height: 100%;
+    }
+
     .container {
         height: auto;
         display: flex;
@@ -3410,7 +3397,7 @@ main {
 
     .file_name {
         font-weight: 500;
-        @include adaptiv-vaule(" font-size", 18, 14, 1);
+        @include adaptiv-vaule(" font-size", 18, 16, 1);
         line-height: 28 / 18 * 100%;
         letter-spacing: -0.01em;
         color: $black;
@@ -3455,8 +3442,8 @@ main {
         @include adaptiv-vaule("padding-right", 25, 10, 1);
         @include adaptiv-vaule("padding-left", 25, 10, 1);
 
-        @include media ("<phone") {
-            width: 99px;
+        @include media ("<tablet") {
+            width: 28%;
             height: 44px;
         }
 
@@ -3485,8 +3472,8 @@ main {
         @include adaptiv-vaule("padding-right", 15, 10, 1);
         @include adaptiv-vaule("padding-left", 15, 10, 1);
 
-        @include media ("<phone") {
-            width: 130px;
+        @include media ("<tablet") {
+            width: 37%;
         }
 
         &:hover {
@@ -3494,6 +3481,7 @@ main {
             color: $blue;
 
             svg {
+                fill: #EAEEFC;
                 stroke: $blue;
             }
         }
