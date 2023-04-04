@@ -452,8 +452,8 @@ function nyJudgmentInterest(judgmentAmount, date) {
         })
         .split("/");
     let formateDate = `${
-        localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]
-    }/${localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]}/${localDate[2]}`;
+        localDate[0] < 10 ? `0${localDate[0]}` : localDate[0]
+    }/${localDate[1] < 10 ? `0${localDate[1]}` : localDate[1]}/${localDate[2]}`;
 
     // Calculate the number of months between the judgment date and April 30, 2022
     const months =

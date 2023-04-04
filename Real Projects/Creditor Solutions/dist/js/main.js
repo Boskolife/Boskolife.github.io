@@ -428,7 +428,7 @@ function nyJudgmentInterest(judgmentAmount, date) {
     year: "numeric",
     timeZone: "UTC"
   }).split("/");
-  var formateDate = "".concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], "/").concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], "/").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
+  var formateDate = "".concat(localDate[0] < 10 ? "0".concat(localDate[0]) : localDate[0], "/").concat(localDate[1] < 10 ? "0".concat(localDate[1]) : localDate[1], "/").concat(localDate[2]); // Calculate the number of months between the judgment date and April 30, 2022
 
   var months = (today.getFullYear() - judgDate.getFullYear()) * 12 + (today.getMonth() - judgDate.getMonth()); // Determine the interest rate based on the judgment date
 
