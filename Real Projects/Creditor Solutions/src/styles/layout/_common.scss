@@ -3317,7 +3317,7 @@ main {
     }
 
     .ducoment_img {
-        @include adaptiv-vaule("height", 350, 200, 1);
+        @include adaptiv-vaule("height", 350, 270, 1);
         width: 100%;
         position: relative;
     }

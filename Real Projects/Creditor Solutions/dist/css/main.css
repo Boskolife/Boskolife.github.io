@@ -4373,7 +4373,7 @@ main {
     position: relative; }
     @media (max-width: 1350px) {
       .document_main .ducoment_img {
-        height: calc(200px + 150 * ((100vw - calc(375px)) / 975)); } }
+        height: calc(270px + 80 * ((100vw - calc(375px)) / 975)); } }
 
 .document_files {
   /* Только если меньше контейнера */
