@@ -19,35 +19,35 @@ setActiveClass();
 openFileModal();
 initTabs();
 
-
 function initTabs() {
-    var faqTabs = document.querySelector("#faqTabs");
+    const faqTabs = document.querySelector("#faqTabs");
+
     if (!faqTabs) return;
-    var tabs = document.querySelectorAll(".tab_title"),
-        tabsWrap = document.querySelectorAll(".tab"),
+
+    const tabs = document.querySelectorAll(".tab_title"),
+        tabsWrap = document.querySelectorAll(".tabs"),
         tabsContent = document.querySelectorAll(".tab_content"),
         tabsParent = document.querySelector(".tab_wrapper");
-  
-    function showTabContent() {
-      var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      tabsContent[i].classList.toggle("show");
-      tabs[i].classList.toggle("tab_active");
-      window.location.href.includes("faq") && tabsWrap[i].classList.toggle("active_tabsWrap");
+
+    function showTabContent(i = 0) {
+        tabsContent[i].classList.toggle("show");
+        tabs[i].classList.toggle("tab_active");
+        window.location.href.includes("faq") && tabsWrap[i].classList.toggle("active_tabsWrap");
     }
-  
-    tabsParent.addEventListener("click", function (event) {
-      var target = event.target;
-  
-      if (target && target.classList.contains("tab_title")) {
-        tabs.forEach(function (item, i) {
-          if (target == item) {
-            showTabContent(i);
-          }
-        });
-      }
+
+    tabsParent.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target && target.classList.contains("tab_title")) {
+            tabs.forEach((item, i) => {
+                if (target == item) {
+                    showTabContent(i);
+                }
+            });
+        }
     });
+
     !window.location.href.includes("faq") && showTabContent();
-  }
+};
 
 winTriggersMethods.forEach((method) => {
     window.addEventListener(method, () => {
@@ -1152,18 +1152,24 @@ function openFileModal() {
         modalContainer.classList.remove("active_container");
     }
 
-    closeBtn.addEventListener('click' , () => {
+    closeBtn.addEventListener("click", () => {
         closeModal();
-    })
+    });
 
     document.addEventListener("keydown", (e) => {
-        if (e.code === "Escape" && fileModal.classList.contains("file_modal_active")) {
+        if (
+            e.code === "Escape" &&
+            fileModal.classList.contains("file_modal_active")
+        ) {
             closeModal();
         }
     });
 
     fileModal.addEventListener("click", (e) => {
-        if (e.target === fileModal || e.target.getAttribute("data-close") == "") {
+        if (
+            e.target === fileModal ||
+            e.target.getAttribute("data-close") == ""
+        ) {
             closeModal();
         }
     });
@@ -1202,37 +1208,38 @@ function printPage(sURL) {
     document.body.appendChild(hideFrame);
 }
 
-function openModalTab() {
-    const tabs = document.querySelectorAll(".tab_title");
-    const tabContent = document.querySelectorAll(".tab_body");
-    const closeTab = document.querySelectorAll(".close_item");
-    const tabBg = document.getElementById("tab_bg");
+// function openModalTab() {
+//     const tabs = document.querySelectorAll(".tab_title");
+//     if
+//     const tabContent = document.querySelectorAll(".tab_body");
+//     const closeTab = document.querySelectorAll(".close_item");
+//     const tabBg = document.getElementById("tab_bg");
 
-    function showTab(i = 0) {
-        tabContent[i].classList.add("show_tab");
-        tabBg.classList.add("show_bg");
-        document.body.classList.add("faq_lock");
-    }
+//     function showTab(i = 0) {
+//         tabContent[i].classList.add("show_tab");
+//         tabBg.classList.add("show_bg");
+//         document.body.classList.add("faq_lock");
+//     }
 
-    function closeTabModal() {
-        tabContent.classList.remove("show_tab");
-        tabBg.classList.remove("show_bg");
-        document.body.classList.remove("faq_lock");
-    }
+//     function closeTabModal() {
+//         tabContent.classList.remove("show_tab");
+//         tabBg.classList.remove("show_bg");
+//         document.body.classList.remove("faq_lock");
+//     }
 
-    closeTab.forEach((item, i) => {
-        item.addEventListener("click", () => {
-            tabContent[i].classList.remove("show_tab");
-            tabBg.classList.remove("show_bg");
-            document.body.classList.remove("faq_lock");
-        });
-    });
+//     closeTab.forEach((item, i) => {
+//         item.addEventListener("click", () => {
+//             tabContent[i].classList.remove("show_tab");
+//             tabBg.classList.remove("show_bg");
+//             document.body.classList.remove("faq_lock");
+//         });
+//     });
 
-    tabs.forEach((button, i) => {
-        button.addEventListener("click", () => {
-            showTab(i);
-        });
-    });
-}
+//     tabs.forEach((button, i) => {
+//         button.addEventListener("click", () => {
+//             showTab(i);
+//         });
+//     });
+// }
 
-openModalTab();
+// openModalTab();

@@ -664,9 +664,16 @@ main {
             content: url(../images/tabs/arrow.svg);
             position: absolute;
             top: 50%;
-            transform: translateY(-50%) rotateZ(-90deg);
+            transform: translateY(-50%);
             right: 0;
             transition: all .3s linear;
+        }
+    }
+
+    .tab_active {
+
+        &::after {
+            transform: translateY(-50%) rotate(180deg);
         }
     }
 
@@ -921,123 +928,75 @@ main {
 }
 
 .faq_page_content {
-    background-color: #F4F6FE;
+    background-color: $white;
 
-    .tab {
-        padding: 10px 25px;
-        background: rgba(244, 246, 254, 0.3);
-        border: 1px solid #D1D4DE;
-        border-radius: 12px;
+    .tabs {
+        max-width: 920px;
         margin: 0 auto;
-        transition: all .5s ease;
-        max-width: 800px;
-
-        &:not(:last-child) {
-            margin-bottom: 15px;
-        }
-    }
-
-    .tab_body {
-        padding: 40px 35px 35px 35px;
-        @include adaptiv-vaule("padding-top", 40, 15, 1);
-        @include adaptiv-vaule("padding-bottom", 35, 15, 1);
-        @include adaptiv-vaule("padding-right", 35, 15, 1);
-        @include adaptiv-vaule("padding-left", 35, 15, 1);
-        background: #F4F6FE;
+        margin-bottom: 10px;
+        padding: 15px 25px;
+        background-color: $white;     
+        border: 1px solid $gray;
         border-radius: 12px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        z-index: 3;
-        max-width: 620px;
-        width: calc(100% - 20px);
-        max-height: 95%;
-        overflow: auto;
-        transition: all .3s linear;
+        position: relative;
     }
 
-    .show_tab {
-        transform: translate(-50%, -50%) scale(1);
-        transition: all .3s linear;
+    .active_tabsWrap{
+        background: rgba(244, 246, 254, 0.3);
+        border: none;
+        z-index: 2;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            background-color: rgba(3, 28, 119, 1);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            border-radius: 14px;
+            z-index: -2;
+            animation: borderAnim .3s linear;
+        }
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-color: $white;
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+            z-index: -1;
+            transition: all 1s linear;
+        }
     }
 
-    .tab_bg {
-        transition: all .2s ease;
+    .tab_list {
+        padding-left: 10px;
     }
 
-    .show_bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(3, 28, 119, 0.2);
-        backdrop-filter: blur(5px);
-        z-index: 3;
-        transition: all .3s ease;
+    .tab_list_item {
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $blue;
+        }
     }
 
-    .title_wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #D1D4DE;
-        margin-bottom: 25px;
-        padding-bottom: 30px;
-    }
-
-    .tab_text {
-        font-weight: 500;
-        font-size: 18px;
-        @include adaptiv-vaule("font-size", 18, 14, 1);
-        line-height: 28 / 18 * 100%;
-        letter-spacing: -0.01em;
+    .link {
+        text-decoration: underline;
         color: $gray_2;
-
-        .tab_list {
-            padding-left: 10px;
-        }
-
-        .tab_list_item {
-            padding-left: 20px;
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 0;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background-color: $blue;
-            }
-        }
-
-        .link {
-            text-decoration: underline;
-            color: $gray_2;
-        }
-    }
-
-    .close_item {
-        stroke: $blue;
-        cursor: pointer;
-        margin-left: 20px;
-        transition: all .3s linear;
-        width: 36px;
-        height: 36px;
-
-        &:hover {
-            transform: rotateZ(90deg);
-            transition: all .3s linear;
-        }
-    }
-
-    .show {
-        padding-bottom: 15px;
     }
 }
 
