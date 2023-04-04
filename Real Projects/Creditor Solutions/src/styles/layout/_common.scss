@@ -935,14 +935,13 @@ main {
         margin: 0 auto;
         margin-bottom: 10px;
         padding: 15px 25px;
-        background-color: $white;     
+        background-color: $white;
         border: 1px solid $gray;
         border-radius: 12px;
         position: relative;
     }
 
-    .active_tabsWrap{
-        background: rgba(244, 246, 254, 0.3);
+    .active_tabsWrap {
         border: none;
         z-index: 2;
 
@@ -959,12 +958,12 @@ main {
             animation: borderAnim .3s linear;
         }
 
-         &::before {
+        &::before {
             content: '';
             position: absolute;
             top: -2px;
             left: -2px;
-            background-color: $white;
+            background-color: #F2F3F8;
             width: 100%;
             height: 100%;
             border-radius: 14px;
@@ -1481,7 +1480,7 @@ main {
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        width: 51%;
+        width: 60%;
         margin-right: 30px;
 
         @include media ("<desktop_sm") {
@@ -1539,13 +1538,13 @@ main {
 }
 
 .practices {
-    @include adaptiv-vaule("padding-top", 125, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 125, 50, 1);
 
     .practices_content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include adaptiv-vaule("padding-top", 125, 50, 1);
+        @include adaptiv-vaule("padding-bottom", 125, 50, 1);
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -1557,11 +1556,12 @@ main {
         @include adaptiv-vaule("font-size", 68, 48, 1);
         line-height: 72 / 68 * 100%;
         color: $blue;
-        width: 30%;
+        width: 33%;
+        margin-right: 30px;
 
         @include media ("<desktop") {
             width: 100%;
-            margin-bottom: 30px;
+            margin: 0 0 30px 0;
         }
     }
 
@@ -1577,13 +1577,24 @@ main {
             width: 100%;
         }
     }
-}
-
-.our_team {
 
     .our_team_img {
         @include adaptiv-vaule("height", 315, 200, 1);
         position: relative;
+    }
+}
+
+.our_team {
+    position: relative;
+
+    .line {
+        position: absolute;
+        bottom: -22%;
+        left: 20%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .our_team_content {
@@ -1594,7 +1605,7 @@ main {
         @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
         @include media ("<desktop") {
-            flex-direction: column-reverse;
+            flex-direction: column;
         }
     }
 
@@ -1616,8 +1627,7 @@ main {
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        width: 65%;
-        margin-right: 30px;
+        width: 60%;
 
         @include media ("<desktop") {
             width: 100%;
