@@ -1452,7 +1452,7 @@ main {
     @include adaptiv-vaule("padding-top", 100, 50, 1);
     @include adaptiv-vaule("padding-bottom", 100, 50, 1);
     position: relative;
-    background-color: #F9F9F9;
+    background-color: #F2F3F8;
 
     .line_img {
         position: absolute;
@@ -1541,7 +1541,7 @@ main {
 
     .practices_content {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         @include adaptiv-vaule("padding-top", 125, 50, 1);
         @include adaptiv-vaule("padding-bottom", 125, 50, 1);
@@ -1585,12 +1585,12 @@ main {
 }
 
 .our_team {
-    position: relative;
+
 
     .line {
         position: absolute;
         bottom: -22%;
-        left: 20%;
+        left: 18.5%;
 
         @include media ("<tablet") {
             display: none;
@@ -1599,10 +1599,11 @@ main {
 
     .our_team_content {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         @include adaptiv-vaule("padding-top", 100, 50, 1);
         @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+        position: relative;
 
         @include media ("<desktop") {
             flex-direction: column;
