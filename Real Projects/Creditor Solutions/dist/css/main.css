@@ -1980,33 +1980,38 @@ main {
     background-color: #ffffff;
     border: 1px solid #D1D4DE;
     border-radius: 12px;
-    position: relative; }
-  .faq_page_content .active_tabsWrap {
-    border: none;
+    position: relative;
     z-index: 2; }
-    .faq_page_content .active_tabsWrap::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      background-color: #031c77;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      border-radius: 14px;
-      z-index: -2;
-      -webkit-animation: borderAnim .3s linear;
-      animation: borderAnim .3s linear; }
-    .faq_page_content .active_tabsWrap::before {
+    .faq_page_content .tabs::after {
       content: '';
       position: absolute;
       top: -2px;
       left: -2px;
-      background-color: #F2F3F8;
+      background-color: #031C77;
+      width: 0;
+      height: calc(100% + 4px);
+      border-radius: 14px;
+      z-index: -2;
+      transition: all 1s linear;
+      border-radius: 12px; }
+    .faq_page_content .tabs::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffffff;
       width: 100%;
       height: 100%;
       border-radius: 14px;
       z-index: -1;
-      transition: all 1s linear; }
+      transition: all 1s linear;
+      border-radius: 12px; }
+    @media (min-width: 769px) {
+      .faq_page_content .tabs:hover::after {
+        width: calc(100% + 4px);
+        transition: all .3s linear; } }
+  .faq_page_content .active_tabsWrap {
+    border: 2px solid #031C77; }
   .faq_page_content .tab_list {
     padding-left: 10px; }
   .faq_page_content .tab_list_item {
