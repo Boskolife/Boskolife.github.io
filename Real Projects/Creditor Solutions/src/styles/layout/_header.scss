@@ -103,6 +103,81 @@ header {
         }
     }
 
+    .button_wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .btn_arrow{
+        margin-left: 7px;
+        margin-bottom: 2px;
+        transition: all .3s ease;
+    }
+
+    .dropdown {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            height: 30px;
+            width: 100%;
+            z-index: 2;
+            background-color: transparent;
+        }
+
+        &:hover {
+            .dropdown-content {
+                border: 0.5px solid rgba(245, 239, 235, 0.4);
+                padding: 5px;
+                height: max-content;
+                transition: all .3s linear;
+            }
+
+            .btn_arrow{
+                transform: rotate(180deg);
+                transition: all .3s ease;
+            }
+        }
+
+        .menu-item {
+            margin: 0;
+            padding: 10px 20px;
+            border-radius: 8px;
+
+            &:hover {
+                background-color: $white;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .dropdown-content {
+        position: absolute;
+        width: max-content;
+        height: 0;
+        overflow: hidden;
+        top: 35px;
+        left: -25px;
+        background: #F4F6FE;
+        border-radius: 12px;
+        border: 0px solid rgba(245, 239, 235, 0.4);
+        ;
+        padding: 0;
+        transition: all .3s linear;
+    }
+
     .btn_item {
         border: 1px solid $blue;
         border-radius: 8px;

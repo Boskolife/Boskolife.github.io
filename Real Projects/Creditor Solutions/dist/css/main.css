@@ -680,6 +680,63 @@ header {
       background-color: #031C77;
       -webkit-animation: bottom_border .5s linear;
       animation: bottom_border .5s linear; }
+  header .button_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  header button {
+    border: none;
+    background-color: transparent;
+    padding: 0; }
+  header .btn_arrow {
+    margin-left: 7px;
+    margin-bottom: 2px;
+    transition: all .3s ease; }
+  header .dropdown {
+    position: relative; }
+    header .dropdown:before {
+      content: '';
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      height: 30px;
+      width: 100%;
+      z-index: 2;
+      background-color: transparent; }
+    header .dropdown:hover .dropdown-content {
+      border: 0.5px solid rgba(245, 239, 235, 0.4);
+      padding: 5px;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: max-content;
+      transition: all .3s linear; }
+    header .dropdown:hover .btn_arrow {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      transition: all .3s ease; }
+    header .dropdown .menu-item {
+      margin: 0;
+      padding: 10px 20px;
+      border-radius: 8px; }
+      header .dropdown .menu-item:hover {
+        background-color: #ffffff; }
+        header .dropdown .menu-item:hover:after {
+          display: none; }
+  header .dropdown-content {
+    position: absolute;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: 0;
+    overflow: hidden;
+    top: 35px;
+    left: -25px;
+    background: #F4F6FE;
+    border-radius: 12px;
+    border: 0px solid rgba(245, 239, 235, 0.4);
+    padding: 0;
+    transition: all .3s linear; }
   header .btn_item {
     border: 1px solid #031C77;
     border-radius: 8px;
@@ -1585,6 +1642,18 @@ main {
     @media (max-width: 1350px) {
       .cards .card_descr {
         margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 975)); } }
+  .cards .underline {
+    font-weight: 700;
+    color: #1D1D20;
+    position: relative; }
+    .cards .underline::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #1D1D20; }
   .cards .blue_text {
     font-weight: 700; }
   .cards .text_wrap {
@@ -1803,8 +1872,6 @@ main {
     -webkit-column-gap: 30px;
     -moz-column-gap: 30px;
     column-gap: 30px; }
-  .contact_us .fax {
-    color: #66666C; }
   .contact_us .links {
     display: -ms-flexbox;
     display: flex;
