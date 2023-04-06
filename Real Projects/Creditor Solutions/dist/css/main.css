@@ -1786,11 +1786,20 @@ main {
   .faq .tabs {
     border-bottom: 1px solid #D1D4DE; }
   .faq .tab_title {
-    padding: 10px 0;
+    /* Только если меньше контейнера */
+    padding-top: 30px;
+    /* Только если меньше контейнера */
+    padding-bottom: 30px;
     position: relative;
     cursor: pointer;
     transition: all .5s ease;
     padding-right: 30px; }
+    @media (max-width: 1350px) {
+      .faq .tab_title {
+        padding-top: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
+    @media (max-width: 1350px) {
+      .faq .tab_title {
+        padding-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 975)); } }
     .faq .tab_title::after {
       content: url(../images/tabs/arrow.svg);
       position: absolute;
@@ -2614,7 +2623,7 @@ main {
     line-height: 160%;
     letter-spacing: -0.01em;
     color: #66666C;
-    width: 60%;
+    width: 65%;
     margin-right: 30px; }
     @media (max-width: 1350px) {
       .standarts .standarts_text {
@@ -2784,51 +2793,51 @@ main {
   line-height: 160%;
   letter-spacing: -0.01em;
   color: #66666C;
-  width: 60%; }
+  width: 62%; }
   @media (max-width: 1023px) {
     .our_team .our_team_descr {
       width: 100%;
       margin: 0; } }
 
 .animate__fadeInLeftBig:nth-child(1) {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s; }
+
+.animate__fadeInLeftBig:nth-child(2) {
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s; }
 
-.animate__fadeInLeftBig:nth-child(2) {
+.animate__fadeInLeftBig:nth-child(3) {
   -webkit-animation-delay: 0.75s;
   animation-delay: 0.75s; }
 
-.animate__fadeInLeftBig:nth-child(3) {
+.animate__fadeInLeftBig:nth-child(4) {
   -webkit-animation-delay: 1s;
   animation-delay: 1s; }
 
-.animate__fadeInLeftBig:nth-child(4) {
+.animate__fadeInLeftBig:nth-child(5) {
   -webkit-animation-delay: 1.25s;
   animation-delay: 1.25s; }
 
-.animate__fadeInLeftBig:nth-child(5) {
+.animate__fadeInLeftBig:nth-child(6) {
   -webkit-animation-delay: 1.5s;
   animation-delay: 1.5s; }
 
-.animate__fadeInLeftBig:nth-child(6) {
+.animate__fadeInLeftBig:nth-child(7) {
   -webkit-animation-delay: 1.75s;
   animation-delay: 1.75s; }
 
-.animate__fadeInLeftBig:nth-child(7) {
+.animate__fadeInLeftBig:nth-child(8) {
   -webkit-animation-delay: 2s;
   animation-delay: 2s; }
 
-.animate__fadeInLeftBig:nth-child(8) {
+.animate__fadeInLeftBig:nth-child(9) {
   -webkit-animation-delay: 2.25s;
   animation-delay: 2.25s; }
 
-.animate__fadeInLeftBig:nth-child(9) {
+.animate__fadeInLeftBig:nth-child(10) {
   -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s; }
-
-.animate__fadeInLeftBig:nth-child(10) {
-  -webkit-animation-delay: 2.75s;
-  animation-delay: 2.75s; }
 
 .work {
   background-color: #F9F9F9;

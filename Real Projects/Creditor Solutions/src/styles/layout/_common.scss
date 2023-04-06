@@ -648,6 +648,7 @@ main {
         @include adaptiv-vaule("margin-bottom", 60, 35, 1);
         color: $blue;
         text-transform: uppercase;
+     
     }
 
     .tab_wrapper {
@@ -659,7 +660,8 @@ main {
     }
 
     .tab_title {
-        padding: 10px 0;
+        @include adaptiv-vaule("padding-top", 30, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
         position: relative;
         cursor: pointer;
         transition: all .5s ease;
@@ -1527,7 +1529,7 @@ main {
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        width: 60%;
+        width: 65%;
         margin-right: 30px;
 
         @include media ("<desktop_sm") {
@@ -1675,7 +1677,7 @@ main {
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
-        width: 60%;
+        width: 62%;
 
         @include media ("<desktop") {
             width: 100%;
@@ -1687,43 +1689,43 @@ main {
 .animate__fadeInLeftBig {
 
     &:nth-child(1) {
-        animation-delay: 0.5s;
+        animation-delay: 0.25s;
     }
 
     &:nth-child(2) {
-        animation-delay: 0.75s;
+        animation-delay: 0.5s;
     }
 
     &:nth-child(3) {
-        animation-delay: 1s;
+        animation-delay: 0.75s;
     }
 
     &:nth-child(4) {
-        animation-delay: 1.25s;
+        animation-delay: 1s;
     }
 
     &:nth-child(5) {
-        animation-delay: 1.5s;
+        animation-delay: 1.25s;
     }
 
     &:nth-child(6) {
-        animation-delay: 1.75s;
+        animation-delay: 1.5s;
     }
 
     &:nth-child(7) {
-        animation-delay: 2s;
+        animation-delay: 1.75s;
     }
 
     &:nth-child(8) {
-        animation-delay: 2.25s;
+        animation-delay: 2s;
     }
 
     &:nth-child(9) {
-        animation-delay: 2.5s;
+        animation-delay: 2.25s;
     }
 
     &:nth-child(10) {
-        animation-delay: 2.75s;
+        animation-delay: 2.5s;
     }
 }
 
