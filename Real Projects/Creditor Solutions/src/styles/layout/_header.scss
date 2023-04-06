@@ -126,6 +126,12 @@ header {
         }
     }
 
+    .hidden {
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
     .dropdown {
         position: relative;
 
@@ -158,13 +164,24 @@ header {
             }
         }
 
-        .menu-item {
-            margin: 0;
+        .dropdown_item {
             padding: 10px 20px;
+            display: inline-block;
             border-radius: 8px;
 
             &:hover {
                 background-color: $white;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .menu-item {
+            margin: 0;
+
+            &:hover {
 
                 &:after {
                     display: none;
@@ -179,11 +196,10 @@ header {
         height: 0;
         overflow: hidden;
         top: 35px;
-        left: -25px;
+        left: 0;
         background: #F4F6FE;
         border-radius: 12px;
         border: 0px solid rgba(245, 239, 235, 0.4);
-        ;
         padding: 0;
         transition: all .3s linear;
     }
@@ -191,18 +207,19 @@ header {
     .btn_item {
         border: 1px solid $blue;
         border-radius: 8px;
+        padding: 12px;
         background-color: #F2F3F8;
         transition: all .3s ease;
-        @include adaptiv-vaule("margin-left", 205, -300, 1);
+        // @include adaptiv-vaule("margin-left", 205, -300, 1);
 
         @include media ("<desktop") {
             margin-left: 0;
         }
 
-
         &:hover {
             background-color: $blue;
             transition: all .3s ease;
+            color: $white;
 
             .menu_link {
                 color: $white;

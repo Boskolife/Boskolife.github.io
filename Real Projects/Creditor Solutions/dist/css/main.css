@@ -713,6 +713,9 @@ header {
     @media (max-width: 1023px) {
       header .visible {
         display: block; } }
+  @media (max-width: 1023px) {
+    header .hidden {
+      display: none; } }
   header .dropdown {
     position: relative; }
     @media (max-width: 1023px) {
@@ -738,14 +741,18 @@ header {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
       transition: all .3s ease; }
-    header .dropdown .menu-item {
-      margin: 0;
+    header .dropdown .dropdown_item {
       padding: 10px 20px;
+      display: inline-block;
       border-radius: 8px; }
-      header .dropdown .menu-item:hover {
+      header .dropdown .dropdown_item:hover {
         background-color: #ffffff; }
-        header .dropdown .menu-item:hover:after {
+        header .dropdown .dropdown_item:hover:after {
           display: none; }
+    header .dropdown .menu-item {
+      margin: 0; }
+      header .dropdown .menu-item:hover:after {
+        display: none; }
   header .dropdown-content {
     position: absolute;
     width: -webkit-max-content;
@@ -754,7 +761,7 @@ header {
     height: 0;
     overflow: hidden;
     top: 35px;
-    left: -25px;
+    left: 0;
     background: #F4F6FE;
     border-radius: 12px;
     border: 0px solid rgba(245, 239, 235, 0.4);
@@ -763,19 +770,16 @@ header {
   header .btn_item {
     border: 1px solid #031C77;
     border-radius: 8px;
+    padding: 12px;
     background-color: #F2F3F8;
-    transition: all .3s ease;
-    /* Только если меньше контейнера */
-    margin-left: 205px; }
-    @media (max-width: 1350px) {
-      header .btn_item {
-        margin-left: calc(-300px + 505 * ((100vw - calc(375px)) / 975)); } }
+    transition: all .3s ease; }
     @media (max-width: 1023px) {
       header .btn_item {
         margin-left: 0; } }
     header .btn_item:hover {
       background-color: #031C77;
-      transition: all .3s ease; }
+      transition: all .3s ease;
+      color: #ffffff; }
       header .btn_item:hover .menu_link {
         color: #ffffff; }
       header .btn_item:hover::after {
