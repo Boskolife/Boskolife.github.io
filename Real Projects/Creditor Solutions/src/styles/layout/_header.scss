@@ -103,25 +103,34 @@ header {
         }
     }
 
-    .button_wrap {
-        display: flex;
-        align-items: center;
-    }
-
     button {
         border: none;
         background-color: transparent;
         padding: 0;
     }
 
-    .btn_arrow{
-        margin-left: 7px;
-        margin-bottom: 2px;
+    .btn_arrow {
+        @include adaptiv-vaule("width", 15, 5, 1);
+        @include adaptiv-vaule("height", 8, 3, 1);
+        @include adaptiv-vaule("margin-top", 5, -3, 1);
+        @include adaptiv-vaule("margin-left", 7, 1, 1);
         transition: all .3s ease;
+    }
+
+    .visible {
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+        }
     }
 
     .dropdown {
         position: relative;
+
+        @include media ("<desktop") {
+            display: none;
+        }
 
         &:before {
             content: '';
@@ -142,7 +151,7 @@ header {
                 transition: all .3s linear;
             }
 
-            .btn_arrow{
+            .btn_arrow {
                 transform: rotate(180deg);
                 transition: all .3s ease;
             }
@@ -183,6 +192,12 @@ header {
         border-radius: 8px;
         background-color: #F2F3F8;
         transition: all .3s ease;
+        @include adaptiv-vaule("margin-left", 205, -300, 1);
+
+        @include media ("<desktop") {
+            margin-left: 0;
+        }
+
 
         &:hover {
             background-color: $blue;
