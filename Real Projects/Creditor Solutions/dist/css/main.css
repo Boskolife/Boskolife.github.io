@@ -693,7 +693,9 @@ header {
     margin-top: 5px;
     /* Только если меньше контейнера */
     margin-left: 7px;
-    transition: all .3s ease; }
+    transition: all .3s ease;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
     @media (max-width: 1350px) {
       header .btn_arrow {
         width: calc(5px + 10 * ((100vw - calc(375px)) / 975)); } }
@@ -733,8 +735,8 @@ header {
       height: max-content;
       transition: all .3s linear; }
     header .dropdown:hover .btn_arrow {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
       transition: all .3s ease; }
     header .dropdown .menu-item {
       margin: 0;
