@@ -1243,3 +1243,20 @@ function printPage(sURL) {
 // }
 
 // openModalTab();
+
+
+function footerAccord() {
+    const dropDown = document.querySelector('.dropdown_btn');
+    if(!dropDown){
+        return
+    }
+    const dropDownContent = document.querySelector('.dropdown-footer-content');
+
+    dropDown.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropDownContent.classList.toggle('dropdown-active');
+        dropDown.classList.toggle('btn_active');
+    });
+}
+
+footerAccord();

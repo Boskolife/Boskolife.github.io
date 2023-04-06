@@ -691,8 +691,6 @@ header {
     height: 8px;
     /* Только если меньше контейнера */
     margin-top: 5px;
-    /* Только если меньше контейнера */
-    margin-left: 7px;
     transition: all .3s ease;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
@@ -705,9 +703,6 @@ header {
     @media (max-width: 1350px) {
       header .btn_arrow {
         margin-top: calc(-3px + 8 * ((100vw - calc(375px)) / 975)); } }
-    @media (max-width: 1350px) {
-      header .btn_arrow {
-        margin-left: calc(1px + 6 * ((100vw - calc(375px)) / 975)); } }
   header .visible {
     display: none; }
     @media (max-width: 1023px) {
@@ -733,16 +728,14 @@ header {
     header .dropdown:hover .dropdown-content {
       border: 0.5px solid rgba(245, 239, 235, 0.4);
       padding: 5px;
-      height: -webkit-max-content;
-      height: -moz-max-content;
-      height: max-content;
+      height: auto;
       transition: all .3s linear; }
     header .dropdown:hover .btn_arrow {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
       transition: all .3s ease; }
     header .dropdown .dropdown_item {
-      padding: 10px 20px;
+      padding: 10px 15px;
       display: inline-block;
       border-radius: 8px; }
       header .dropdown .dropdown_item:hover {
@@ -1679,16 +1672,7 @@ main {
         margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 975)); } }
   .cards .underline {
     font-weight: 700;
-    color: #1D1D20;
-    position: relative; }
-    .cards .underline::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #1D1D20; }
+    color: #1D1D20; }
   .cards .blue_text {
     font-weight: 700; }
   .cards .text_wrap {
@@ -1802,7 +1786,7 @@ main {
   .faq .tabs {
     border-bottom: 1px solid #D1D4DE; }
   .faq .tab_title {
-    padding: 20px 0;
+    padding: 10px 0;
     position: relative;
     cursor: pointer;
     transition: all .5s ease;
@@ -3100,6 +3084,9 @@ main {
         .enforce .small_claims_card:hover::after {
           height: calc(100% + 2px);
           transition: all 1s linear; } }
+  .enforce .underline {
+    font-weight: 700;
+    color: #1D1D20; }
   .enforce .tooltip {
     position: relative; }
     .enforce .tooltip:hover .tooltiptext {
@@ -4961,8 +4948,8 @@ footer {
       padding-top: 35px;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
       -ms-flex-align: start;
       align-items: flex-start;
       -ms-flex-wrap: wrap;
@@ -4979,8 +4966,6 @@ footer {
           -ms-flex-align: center;
           align-items: center;
           text-align: center;
-          -ms-flex-pack: justify;
-          justify-content: space-between;
           padding: 0;
           margin-bottom: 35px;
           padding-bottom: 35px;
@@ -5015,15 +5000,19 @@ footer {
     footer .footer_top .list_item {
       text-transform: uppercase;
       font-weight: 500;
-      font-size: 14px;
+      /* Только если меньше контейнера */
+      font-size: 16px;
       color: #3D3E45;
       line-height: 200%;
       width: 45%;
       transition: all .3s ease;
       position: relative; }
+      @media (max-width: 1350px) {
+        footer .footer_top .list_item {
+          font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
       footer .footer_top .list_item:not(:last-child) {
         margin-bottom: 5px; }
-      @media (min-width: 769px) {
+      @media (min-width: 1025px) {
         footer .footer_top .list_item:hover:after {
           content: '';
           position: absolute;

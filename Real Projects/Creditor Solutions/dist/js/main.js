@@ -1160,4 +1160,22 @@ function printPage(sURL) {
 //     });
 // }
 // openModalTab();
+
+
+function footerAccord() {
+  var dropDown = document.querySelector('.dropdown_btn');
+
+  if (!dropDown) {
+    return;
+  }
+
+  var dropDownContent = document.querySelector('.dropdown-footer-content');
+  dropDown.addEventListener('click', function (e) {
+    e.preventDefault();
+    dropDownContent.classList.toggle('dropdown-active');
+    dropDown.classList.toggle('btn_active');
+  });
+}
+
+footerAccord();
 //# sourceMappingURL=main.js.map

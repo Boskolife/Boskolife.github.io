@@ -113,7 +113,6 @@ header {
         @include adaptiv-vaule("width", 15, 5, 1);
         @include adaptiv-vaule("height", 8, 3, 1);
         @include adaptiv-vaule("margin-top", 5, -3, 1);
-        @include adaptiv-vaule("margin-left", 7, 1, 1);
         transition: all .3s ease;
         transform: rotate(180deg);
     }
@@ -154,7 +153,7 @@ header {
             .dropdown-content {
                 border: 0.5px solid rgba(245, 239, 235, 0.4);
                 padding: 5px;
-                height: max-content;
+                height: auto;
                 transition: all .3s linear;
             }
 
@@ -165,7 +164,7 @@ header {
         }
 
         .dropdown_item {
-            padding: 10px 20px;
+            padding: 10px 15px;
             display: inline-block;
             border-radius: 8px;
 
@@ -210,7 +209,6 @@ header {
         padding: 12px;
         background-color: #F2F3F8;
         transition: all .3s ease;
-        // @include adaptiv-vaule("margin-left", 205, -300, 1);
 
         @include media ("<desktop") {
             margin-left: 0;

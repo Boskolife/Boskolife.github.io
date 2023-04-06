@@ -80,15 +80,15 @@ footer {
             }
         }
 
-        .number_wrap{
-            display:flex;
+        .number_wrap {
+            display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-wrap: wrap;
             column-gap: 30px;
         }
 
-        .fax{
+        .fax {
             color: $gray_2;
         }
 
@@ -132,7 +132,7 @@ footer {
             @include adaptiv-vaule("padding-left", 70, -70, 1);
             padding-top: 35px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
             position: relative;
@@ -140,7 +140,6 @@ footer {
             @include media ("<desktop") {
                 align-items: center;
                 text-align: center;
-                justify-content: space-between;
                 padding: 0;
                 margin-bottom: 35px;
                 padding-bottom: 35px;
@@ -185,7 +184,7 @@ footer {
         .list_item {
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 14px;
+            @include adaptiv-vaule("font-size", 16, 14, 1);
             color: $gray_4;
             line-height: 200%;
             width: 45%;
@@ -196,7 +195,7 @@ footer {
                 margin-bottom: 5px;
             }
 
-            @include media (">tablet") {
+            @include media (">desktop") {
                 &:hover {
 
                     &:after {
@@ -211,7 +210,7 @@ footer {
                     }
                 }
             }
-            
+
         }
 
         .policy {
