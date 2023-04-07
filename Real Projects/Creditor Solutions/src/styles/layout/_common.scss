@@ -1525,7 +1525,7 @@ main {
 
     .standarts_text {
         font-weight: 500;
-        @include adaptiv-vaule("font-size", 20, 16, 1);
+        @include adaptiv-vaule("font-size", 20, 14, 1);
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
@@ -1616,10 +1616,10 @@ main {
 
     .practices_descr {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
-        color: $black;
+        color: $gray_2;
         width: 62%;
 
         @include media ("<desktop") {
@@ -1634,7 +1634,6 @@ main {
 }
 
 .our_team {
-
 
     .line {
         position: absolute;
@@ -1673,7 +1672,7 @@ main {
 
     .our_team_descr {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
         line-height: 32 / 20 * 100%;
         letter-spacing: -0.01em;
         color: $gray_2;
@@ -3411,7 +3410,7 @@ main {
         }
 
         &:not(:last-child) {
-            @include adaptiv-vaule("margin-bottom", 45, 50, 1);
+            @include adaptiv-vaule("margin-bottom", 45, 25, 1);
         }
     }
 

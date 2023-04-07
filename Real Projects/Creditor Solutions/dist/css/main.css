@@ -629,6 +629,16 @@ header {
     @media (max-width: 1350px) {
       header .logo {
         width: calc(150px + 56 * ((100vw - calc(375px)) / 975)); } }
+  header .visible {
+    display: none; }
+    @media (max-width: 1023px) {
+      header .visible {
+        display: block; } }
+  header .hidden {
+    display: block; }
+    @media (max-width: 1023px) {
+      header .hidden {
+        display: none; } }
   @media (max-width: 1023px) {
     header .nav {
       position: fixed;
@@ -639,7 +649,13 @@ header {
       transition: all .3s linear;
       z-index: 5;
       background-color: #ffffff;
-      padding: 90px 0 30px 0; } }
+      padding: 90px 0 30px 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: center;
+      align-items: center; } }
   @media (max-width: 767px) {
     header .nav {
       width: 100%; } }
@@ -650,7 +666,9 @@ header {
       -ms-flex-align: center;
       align-items: center;
       height: 100%;
-      overflow: auto; } }
+      overflow: auto;
+      width: 100%;
+      padding-top: 100px; } }
   header .menu_active {
     right: 0;
     transition: all .3s linear; }
@@ -708,9 +726,6 @@ header {
     @media (max-width: 1023px) {
       header .visible {
         display: block; } }
-  @media (max-width: 1023px) {
-    header .hidden {
-      display: none; } }
   header .dropdown {
     position: relative; }
     @media (max-width: 1023px) {
@@ -768,7 +783,11 @@ header {
     transition: all .3s ease; }
     @media (max-width: 1023px) {
       header .btn_item {
-        margin-left: 0; } }
+        color: #3D3E45;
+        margin-left: 0;
+        width: calc(100% - 20px);
+        max-width: 450px;
+        text-align: center; } }
     header .btn_item:hover {
       background-color: #031C77;
       transition: all .3s ease;
@@ -777,14 +796,6 @@ header {
         color: #ffffff; }
       header .btn_item:hover::after {
         display: none; }
-      @media (max-width: 1023px) {
-        header .btn_item:hover {
-          background-color: transparent;
-          color: #3D3E45; } }
-    @media (max-width: 1023px) {
-      header .btn_item {
-        border: none;
-        background-color: transparent; } }
     header .btn_item .menu_link {
       display: inline-block;
       padding: 12px;
@@ -2627,7 +2638,7 @@ main {
     margin-right: 30px; }
     @media (max-width: 1350px) {
       .standarts .standarts_text {
-        font-size: calc(16px + 4 * ((100vw - calc(375px)) / 975)); } }
+        font-size: calc(14px + 6 * ((100vw - calc(375px)) / 975)); } }
     @media (max-width: 899px) {
       .standarts .standarts_text {
         width: 100%; } }
@@ -2725,11 +2736,15 @@ main {
 
 .practices .practices_descr {
   font-weight: 500;
+  /* Только если меньше контейнера */
   font-size: 20px;
   line-height: 160%;
   letter-spacing: -0.01em;
-  color: #1D1D20;
+  color: #66666C;
   width: 62%; }
+  @media (max-width: 1350px) {
+    .practices .practices_descr {
+      font-size: calc(14px + 6 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1023px) {
     .practices .practices_descr {
       width: 100%; } }
@@ -2789,11 +2804,15 @@ main {
 
 .our_team .our_team_descr {
   font-weight: 500;
+  /* Только если меньше контейнера */
   font-size: 20px;
   line-height: 160%;
   letter-spacing: -0.01em;
   color: #66666C;
   width: 62%; }
+  @media (max-width: 1350px) {
+    .our_team .our_team_descr {
+      font-size: calc(14px + 6 * ((100vw - calc(375px)) / 975)); } }
   @media (max-width: 1023px) {
     .our_team .our_team_descr {
       width: 100%;
@@ -4532,7 +4551,7 @@ main {
       margin-bottom: 45px; }
       @media (max-width: 1350px) {
         .document_files .file:not(:last-child) {
-          margin-bottom: calc(50px + -5 * ((100vw - calc(375px)) / 975)); } }
+          margin-bottom: calc(25px + 20 * ((100vw - calc(375px)) / 975)); } }
   .document_files .file_info_body {
     display: -ms-flexbox;
     display: flex;
