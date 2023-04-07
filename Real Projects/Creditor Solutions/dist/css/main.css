@@ -3784,7 +3784,8 @@ main {
   @media (max-width: 479px) {
     .calc {
       padding-left: 0;
-      padding-right: 0; } }
+      padding-right: 0;
+      height: 100%; } }
   .calc .calc_content {
     position: relative;
     background-color: #ffffff;
