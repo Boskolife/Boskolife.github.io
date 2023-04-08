@@ -1470,7 +1470,7 @@ main {
         @include adaptiv-vaule("font-size", 68, 44, 1);
         line-height: 72 / 68 * 100%;
         color: $blue;
-        width: 50%;
+        width: 30%;
 
         @include media ("<tablet") {
             width: 100%;
@@ -1479,11 +1479,19 @@ main {
     }
 
     .methods_list {
-        @include adaptiv-vaule("margin-right", 50, 0, 1);
+        display:flex;
+        align-items:center;
+        column-gap: 65px;
+        @include adaptiv-vaule("  column-gap", 65, 15, 1);
 
         @include media ("<tablet") {
             margin-right: 0;
             width: 100%;
+        }
+
+        @include media ("<phone") {
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 
@@ -1494,6 +1502,7 @@ main {
         line-height: 20px;
         font-weight: 500;
         position: relative;
+        margin-bottom: 12px;
 
         @include media ("<tablet") {
             max-width: 285px;
@@ -1505,10 +1514,6 @@ main {
             left: 0;
             top: 60%;
             transform: translateY(-50%);
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 12px;
         }
     }
 }
