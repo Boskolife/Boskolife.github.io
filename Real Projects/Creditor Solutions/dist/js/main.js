@@ -998,6 +998,17 @@ function jsonAnimationEnforce() {
   }
 }
 
+function fetchFile(payload) {
+  // TODO: Change API
+  return fetch("https://jsonplaceholder.typicode.com/todos", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  });
+}
+
 function openFileModal() {
   var openFileBtn = document.querySelectorAll(".btn_modal");
 
@@ -1005,13 +1016,106 @@ function openFileModal() {
     return;
   }
 
+  var isPrint = false;
+  var isOpen = false;
+  var isDownload = false;
+  var sectionName = '';
+  var fileName = '';
+  var judgNumber = '';
+
+  var getPayload = function getPayload() {
+    var userId = getWithExpiry('userId');
+    var prevSection = userId && userId.slice(0, 2);
+
+    if (prevSection !== sectionName || !userId) {
+      userId = "".concat(sectionName).concat(uniqueId().slice(-6)).toUpperCase();
+      setWithExpiry('userId', userId, toMilliseconds(1));
+    }
+
+    var payload = {
+      sectionName: sectionName,
+      fileName: fileName,
+      userId: userId
+    };
+
+    if (judgNumber) {
+      payload.judgNumber = judgNumber;
+    }
+
+    return payload;
+  }; // TODO: delete hrefBeforeAPI
+
+
+  var onActionFile = function onActionFile(blob, hrefBeforeAPI) {
+    var url = hrefBeforeAPI || window.URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url; // the filename you want
+
+    if (isDownload) {
+      a.download = url;
+    }
+
+    if (isOpen) {
+      a.setAttribute('target', '_blank');
+    }
+
+    if (isPrint) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        printPage(url);
+      });
+    }
+
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+  };
+
+  var allBtns = document.querySelectorAll('[data-section]');
+  allBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      sectionName = btn.dataset.section;
+      fileName = btn.dataset.filename;
+      judgNumber = '';
+
+      if (btn.classList.contains("print_btn")) {
+        isPrint = true;
+        isOpen = false;
+        isDownload = false;
+      }
+
+      if (btn.classList.contains("download_btn")) {
+        isPrint = false;
+        isOpen = false;
+        isDownload = true;
+      }
+
+      if (btn.classList.contains("open_btn")) {
+        isPrint = false;
+        isOpen = true;
+        isDownload = false;
+      }
+
+      ;
+
+      if (!btn.classList.contains('btn_modal')) {
+        var payload = getPayload();
+        fetchFile(payload).then(function (resp) {
+          return resp.blob();
+        }) //TODO: delete btn.getAttribute('href')
+        .then(function (blob) {
+          return onActionFile(blob, btn.getAttribute('href'));
+        });
+      }
+    });
+  });
   var fileModal = document.getElementById("fileModal");
   var selectBtn = document.getElementById("selectBtn");
   var modalContainer = document.getElementById("fileModalContainer");
   var closeBtn = document.getElementById("close_button");
   var downloadedFile = document.querySelectorAll(".choosen_file");
-  var isPrint = false;
-  var isOpen = false;
   selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
   downloadedFile.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -1026,11 +1130,13 @@ function openFileModal() {
         selectBtn.removeAttribute("target");
 
         if (isOpen) {
-          selectBtn.setAttribute("target", "_blanck");
+          selectBtn.setAttribute("target", "_blank");
         }
       } else {
         selectBtn.setAttribute("download", "");
       }
+
+      judgNumber = btn.textContent;
     });
   });
 
@@ -1064,7 +1170,6 @@ function openFileModal() {
     fileModal.classList.add("file_modal_active");
     document.body.classList.add("body_lock");
     modalContainer.classList.add("active_container");
-    console.log(isPrint);
 
     if (isPrint || isOpen) {
       selectBtn.removeAttribute("download");
@@ -1098,12 +1203,20 @@ function openFileModal() {
     }
   });
   selectBtn.addEventListener("click", function (e) {
-    if (isPrint) {
-      e.preventDefault();
-      printPage(e.target.getAttribute("href"));
-    }
-
-    closeModal();
+    // if (isPrint) {
+    //     e.preventDefault();
+    //     printPage(e.target.getAttribute("href"));
+    // }
+    e.preventDefault();
+    if (!judgNumber) judgNumber = '1';
+    var payload = getPayload();
+    fetchFile(payload).then(function (resp) {
+      return resp.blob();
+    }) //TODO: delete btn.getAttribute('href')
+    .then(function (blob) {
+      onActionFile(blob, selectBtn.getAttribute("href"));
+      closeModal();
+    });
   });
 }
 
@@ -1177,5 +1290,51 @@ function footerAccord() {
   });
 }
 
-footerAccord();
+footerAccord(); // HELPERS:
+
+function setWithExpiry(key, value, ttl) {
+  var now = new Date(); // `item` is an object which contains the original value
+  // as well as the time when it's supposed to expire
+
+  var item = {
+    value: value,
+    expiry: now.getTime() + ttl
+  };
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getWithExpiry(key) {
+  var itemStr = localStorage.getItem(key); // if the item doesn't exist, return null
+
+  if (!itemStr) {
+    return null;
+  }
+
+  var item = JSON.parse(itemStr);
+  var now = new Date(); // compare the expiry time of the item with the current time
+
+  if (now.getTime() > item.expiry) {
+    // If the item is expired, delete the item from storage
+    // and return null
+    localStorage.removeItem(key);
+    return null;
+  }
+
+  return item.value;
+}
+
+function uniqueId() {
+  var dateString = Date.now().toString(36);
+  var randomness = Math.random().toString(36).substr(2);
+  return dateString + randomness;
+}
+
+;
+
+function toMilliseconds() {
+  var hrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var sec = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  return (hrs * 60 * 60 + min * 60 + sec) * 1000;
+}
 //# sourceMappingURL=main.js.map
