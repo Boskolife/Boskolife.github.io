@@ -1050,7 +1050,11 @@ main {
     }
 
     .tab_title{
-        padding: 10px 0;
+        padding: 10px 25px 10px 0;
+
+        &::after{
+            right:0;
+        }
     }
 
     .link {

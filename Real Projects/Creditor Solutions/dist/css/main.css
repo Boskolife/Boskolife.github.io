@@ -2179,7 +2179,9 @@ main {
       border-radius: 50%;
       background-color: #031C77; }
   .faq_page_content .tab_title {
-    padding: 10px 0; }
+    padding: 10px 25px 10px 0; }
+    .faq_page_content .tab_title::after {
+      right: 0; }
   .faq_page_content .link {
     text-decoration: underline;
     color: #66666C; }
