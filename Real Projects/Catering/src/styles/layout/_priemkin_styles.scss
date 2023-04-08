@@ -1,0 +1,597 @@
+.introducing_chef {
+    background-color: $green;
+    position: relative;
+
+    @include media ("<tablet") {
+        padding: 40px 0 60px 0;
+    }
+
+    .line {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include media ("<phone") {
+            width: 100%;
+            height: 100%;
+            transform: rotate(180deg);
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .chef_img {
+        @include adaptiv-vaule("width", 530, 335, 1);
+        @include adaptiv-vaule("height", 670, 390, 1);
+        margin-left: -5.5%;
+        @include adaptiv-vaule("margin-right", 140, 5, 1);
+        position: relative;
+
+        @include media ("<tablet") {
+            margin: 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .chef_text {
+        color: $green;
+
+        @include media ("<tablet") {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    }
+
+    .sub_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 21, 14, 1);
+        @include adaptiv-vaule("margin-bottom", 20, 15, 1);
+        line-height: 21 / 21 * 100%;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $pink;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 80px;
+        @include adaptiv-vaule("font-size", 80, 40, 1);
+        line-height: 82 / 80 * 100%;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        max-width: 480px;
+        color: $pink;
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+    }
+
+    .description {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24 / 18 * 100%;
+        color: $pink;
+        max-width: 520px;
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+        }
+
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+    }
+}
+
+.childhood {
+    background-color: $black;
+    position: relative;
+    @include adaptiv-vaule("padding-top", 135, 230, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 60, 1);
+
+    @include media ("<tablet") {
+        padding-top: 250px;
+    }
+
+    @include media ("<phone") {
+        padding-top: 230px;
+    }
+
+    .line_left,
+    .line_right,
+    .hood_img {
+        position: absolute;
+    }
+
+    .line_left {
+        top: 0;
+        left: 8%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .line_right {
+        top: 0;
+        right: 15%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .left,
+    .right {
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .left {
+        left: 0;
+        @include adaptiv-vaule("top", 0, -20, 1);
+        @include adaptiv-vaule("width", 390, 180, 1);
+        @include adaptiv-vaule("height", 445, 240, 1);
+    }
+
+    .right {
+        right: 0;
+        @include adaptiv-vaule("top", 0, 55, 1);
+        @include adaptiv-vaule("width", 290, 115, 1);
+        @include adaptiv-vaule("height", 465, 182, 1);
+    }
+
+    .bottom_line {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
+    .childhood_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .childhood_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        line-height: 62 / 48 * 100%;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+        margin-bottom: 10px;
+    }
+
+    .childhood_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 24 / 18 * 100%;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 525px;
+        margin: 0 auto;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.talent {
+    height: 410px;
+    position: relative;
+
+    @include media ("<tablet") {
+        height: 100%;
+    }
+
+    .line {
+        position: absolute;
+        left: 0;
+    }
+
+    .bottom {
+        bottom: 0;
+        display: block;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .top {
+        top: 0;
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
+    .talent_content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .talent_text {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: start;
+        @include adaptiv-vaule("padding-left", 170, -70, 1);
+        @include adaptiv-vaule("padding-right", 30, 0, 1);
+        background-color: $green;
+        position: relative;
+
+        @include media ("<tablet") {
+            width: 100%;
+            padding: 80px 0;
+            text-align: center;
+        }
+    }
+
+    .talent_title {
+        width: 100%;
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        line-height: 62 / 42 * 100%;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+        margin-bottom: 10px;
+
+        @include media ("<tablet") {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include media ("<phone") {
+            width: calc(100% - 40px);
+        }
+    }
+
+    .talent_descr {
+        width: 100%;
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 24 / 18 * 100%;
+        color: rgba(255, 255, 255, 0.6);
+
+        @include media ("<tablet") {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include media ("<phone") {
+            width: calc(100% - 40px);
+        }
+    }
+
+    .talent_img {
+        width: 50%;
+        height: 100%;
+
+        @include media ("<tablet") {
+            width: 100%;
+            height: 335px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .talent_img_phone {
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+            width: 100%;
+            height: 335px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.gallery {
+
+    .gallery_content {
+        display: grid;
+        grid-template: minmax(200px, 1fr) / repeat(3, 1fr);
+
+        @include media ("<phone_max") {
+            grid-template: 1fr 1fr / 50% 50%;
+        }
+    }
+
+    .hide {
+        @include media ("<phone_max") {
+            display: none;
+        }
+    }
+
+    .gallery_item {
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .gallery_item_phone {
+        display: none;
+
+        @include media ("<phone_max") {
+            display: block;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.master {
+    @include adaptiv-vaule("padding-top", 80, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 80, 60, 1);
+    background-color: $black;
+    position: relative;
+
+    @include media ("<phone") {
+        padding-bottom: 0;
+    }
+
+    .line {
+        position: absolute;
+    }
+
+    .left {
+        top: 0;
+        left: 0;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .right {
+        bottom: -60px;
+        right: -20px;
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
+
+    .master_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .master_text {
+        width: 50%;
+        @include adaptiv-vaule("padding-left", 150, -40, 1);
+        @include adaptiv-vaule("margin-right", 30, 10, 1);
+        position: relative;
+        z-index: 2;
+        margin-right: 30px;
+
+        @include media ("<tablet") {
+            width: calc(100% - 40px);
+            text-align: center;
+            padding: 0;
+            margin: 0 0 60px 0;
+        }
+    }
+
+    .master_title {
+        width: 100%;
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        line-height: 62 / 42 * 100%;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+        margin-bottom: 10px;
+    }
+
+    .master_descr {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 24 / 18 * 100%;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 500px;
+        width: 100%;
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+        }
+    }
+
+    .master_img {
+        @include adaptiv-vaule("padding-right", 70, 0, 1);
+        @include adaptiv-vaule("width", 500, 200, 1);
+        @include adaptiv-vaule("height", 560, 335, 1);
+
+        @include media ("<tablet") {
+            width: 65%;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.skills {
+    height: 480px;
+
+    @include media ("<tablet") {
+        height: 100%;
+    }
+
+    .talent_text {
+        overflow: hidden;
+        align-items: flex-start;
+    }
+
+    .desk,
+    .phone {
+        top: 0;
+        left: -170px;
+    }
+
+    .desk {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .phone {
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+            left: 0;
+        }
+    }
+
+    .talent_descr {
+        max-width: 350px;
+        width: 100%;
+    }
+}
+
+.convince{
+    background-color: $black;
+    @include adaptiv-vaule("padding-top", 80, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 80, 70, 1);
+    position: relative;
+
+    @include media ("<phone") {
+        padding-bottom: 0;
+    }
+
+    .line{
+        position: absolute;
+        top: 20px;
+
+    }
+
+    .desk{
+        left: 0;
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .phone{
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+            right: 0;
+        }
+    }
+
+    .convince_content{
+        text-align: center;
+    }
+
+    .convince_text{
+        @include adaptiv-vaule("margin-bottom", 40, 60, 1);
+    }
+
+    .convince_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        line-height: 62 / 42 * 100%;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+        margin-bottom: 10px;
+    }
+
+    .convince_desrc {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 24 / 18 * 100%;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 470px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .convince_img{
+        max-width: 1300px;
+        width: 100%;
+        @include adaptiv-vaule("height", 480, 335, 1);
+        margin: 0 auto;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

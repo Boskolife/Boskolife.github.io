@@ -1,11 +1,10 @@
-initBurger()
-
+initBurger();
 
 function initBurger() {
-    const burger = document.querySelector('.burger_menu');
+    const burger = document.querySelector(".burger_menu");
 
-    burger.addEventListener('click', () => {
-        burger.classList.toggle('burger_active');
-    })
-
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("burger_active");
+        document.body.classList.toggle("body_lock");
+    });
 }
