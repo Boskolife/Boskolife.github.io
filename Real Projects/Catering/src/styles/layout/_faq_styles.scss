@@ -1,13 +1,20 @@
 .faq {
 
+    .container{
+        max-width: 100%;
+        padding: 0;
+    }
+
     .faq_text {
-        width: 42%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
         height: 100%;
         background-color: $pink;
         position: relative;
         z-index: 2;
         @include adaptiv-vaule("padding-left", 70, 10, 1);
-        @include adaptiv-vaule("padding-right", 60, 10, 1);
+        @include adaptiv-vaule("padding-right", 45, 10, 1);
 
         @include media ("<desktop") {
             width: 100%;
@@ -37,17 +44,15 @@
     }
 
     .faq_content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template: 1fr/ 40% 60%;
 
         @include media ("<desktop") {
-            flex-direction: column;
+            grid-template: 200px 100% / 100%;
         }
     }
 
     .faq_page_content {
-        width: 62%;
         background-color: $green;
         @include adaptiv-vaule("padding-top", 100, 40, 1);
         @include adaptiv-vaule("padding-bottom", 100, 40, 1);
@@ -179,7 +184,6 @@
         align-items: flex-start;
         height: 100%;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        padding: 20px 25px;
         @include adaptiv-vaule("padding-top", 20, 15, 1);
         @include adaptiv-vaule("padding-bottom", 20, 15, 1);
         @include adaptiv-vaule("padding-right", 25, 10, 1);
