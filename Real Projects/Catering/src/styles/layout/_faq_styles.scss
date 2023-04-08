@@ -1,0 +1,258 @@
+.faq {
+
+    .faq_text {
+        width: 42%;
+        height: 100%;
+        background-color: $pink;
+        position: relative;
+        z-index: 2;
+        @include adaptiv-vaule("padding-left", 70, 10, 1);
+        @include adaptiv-vaule("padding-right", 60, 10, 1);
+
+        @include media ("<desktop") {
+            width: 100%;
+            padding: 60px 15px;
+        }
+    }
+
+    .line_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .line_right {
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+    }
+
+    .faq_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 36, 1);
+        line-height: 64 / 48 * 100%;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        color: $green;
+    }
+
+    .faq_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .faq_page_content {
+        width: 62%;
+        background-color: $green;
+        @include adaptiv-vaule("padding-top", 100, 40, 1);
+        @include adaptiv-vaule("padding-bottom", 100, 40, 1);
+        @include adaptiv-vaule("padding-left", 70, 15, 1);
+        @include adaptiv-vaule("padding-right", 70, 15, 1);
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .tabs {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+        padding-bottom: 5px;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    .title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .open_status {
+        min-width: 12px;
+        min-height: 12px;
+        position: relative;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+    .vertical {
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) rotate(0deg);
+        transition: all .3s linear;
+    }
+
+    .horizontal {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .open_active {
+
+        .vertical {
+            transform: rotate(90deg);
+            transition: all .3s linear;
+        }
+    }
+
+    .line {
+        position: absolute;
+        background-color: $pink;
+    }
+
+    .tab_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 32 / 24 * 100%;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+        cursor: pointer;
+        padding-right: 30px;
+    }
+
+    .tab_content {
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25 / 18 * 100%;
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.6);
+        transition: all .4s linear;
+    }
+
+    .show {
+        height: auto;
+        transition: all .4s linear;
+        padding: 10px 0 20px 0;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+    }
+
+    .card_content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu_card {
+        display: grid;
+        grid-template: 1fr /repeat(3, 1fr);
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 100%;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            grid-template: repeat(3, 1fr) / 75%;
+            justify-content: center;
+        }
+
+        @include media ("<phone") {
+            grid-template: repeat(3, 1fr) / 100%;
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 20px 25px;
+        @include adaptiv-vaule("padding-top", 20, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 20, 15, 1);
+        @include adaptiv-vaule("padding-right", 25, 10, 1);
+        @include adaptiv-vaule("padding-left", 25, 10, 1);
+        margin-bottom: 20px;
+    }
+
+    .card_title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include adaptiv-vaule("padding-bottom", 25, 15, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .card_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 34 / 24 * 100%;
+        color: $white;
+    }
+
+    .card_price {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 32, 26, 1);
+        line-height: 45 / 32 * 100%;
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    .card_list {
+        flex: 1 1 auto;
+        height: 100%;
+    }
+
+    .list_item {
+        position: relative;
+        padding-left: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19 / 16 * 100%;
+        color: #FFFFFF;
+
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &::before {
+            content: url(../images/faq/list_check.svg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .notice {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 25 / 18 * 100%;
+        color: #F9C0AC;
+        margin-bottom: 10px;
+    }
+
+    .card_tip {
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        line-height: 22 / 16 * 100%;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}

@@ -1597,6 +1597,318 @@ body {
       -o-object-fit: cover;
       object-fit: cover; }
 
+.faq .faq_text {
+  width: 42%;
+  height: 100%;
+  background-color: #F9C0AC;
+  position: relative;
+  z-index: 2;
+  /* Только если меньше контейнера */
+  padding-left: 70px;
+  /* Только если меньше контейнера */
+  padding-right: 60px; }
+  @media (max-width: 1300px) {
+    .faq .faq_text {
+      padding-left: calc(10px + 60 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .faq_text {
+      padding-right: calc(10px + 50 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1023px) {
+    .faq .faq_text {
+      width: 100%;
+      padding: 60px 15px; } }
+
+.faq .line_left {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.faq .line_right {
+  position: absolute;
+  right: 0;
+  bottom: 100px; }
+
+.faq .faq_title {
+  font-weight: 700;
+  /* Только если меньше контейнера */
+  font-size: 48px;
+  line-height: 133.33333%;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #3F4D34; }
+  @media (max-width: 1300px) {
+    .faq .faq_title {
+      font-size: calc(36px + 12 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .faq_content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 1023px) {
+    .faq .faq_content {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+.faq .faq_page_content {
+  width: 62%;
+  background-color: #3F4D34;
+  /* Только если меньше контейнера */
+  padding-top: 100px;
+  /* Только если меньше контейнера */
+  padding-bottom: 100px;
+  /* Только если меньше контейнера */
+  padding-left: 70px;
+  /* Только если меньше контейнера */
+  padding-right: 70px; }
+  @media (max-width: 1300px) {
+    .faq .faq_page_content {
+      padding-top: calc(40px + 60 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .faq_page_content {
+      padding-bottom: calc(40px + 60 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .faq_page_content {
+      padding-left: calc(15px + 55 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .faq_page_content {
+      padding-right: calc(15px + 55 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1023px) {
+    .faq .faq_page_content {
+      width: 100%; } }
+
+.faq .tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+  padding-bottom: 5px; }
+  .faq .tabs:not(:last-child) {
+    margin-bottom: 25px; }
+
+.faq .title_wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.faq .open_status {
+  min-width: 12px;
+  min-height: 12px;
+  position: relative;
+  margin-right: 10px;
+  margin-left: 20px; }
+
+.faq .vertical {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(0deg);
+  transform: translateX(-50%) rotate(0deg);
+  transition: all .3s linear; }
+
+.faq .horizontal {
+  height: 1px;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.faq .open_active .vertical {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all .3s linear; }
+
+.faq .line {
+  position: absolute;
+  background-color: #F9C0AC; }
+
+.faq .tab_title {
+  font-weight: 700;
+  /* Только если меньше контейнера */
+  font-size: 24px;
+  line-height: 133.33333%;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+  color: #F9C0AC;
+  cursor: pointer;
+  padding-right: 30px; }
+  @media (max-width: 1300px) {
+    .faq .tab_title {
+      font-size: calc(18px + 6 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .tab_content {
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 138.88889%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all .4s linear; }
+
+.faq .show {
+  height: auto;
+  transition: all .4s linear;
+  padding: 10px 0 20px 0;
+  opacity: 1;
+  overflow: visible;
+  visibility: visible; }
+
+.faq .card_content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.faq .menu_card {
+  display: grid;
+  grid-template: 1fr/repeat(3, 1fr);
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100%;
+  gap: 20px;
+  margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    .faq .menu_card {
+      grid-template: repeat(3, 1fr)/75%;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+  @media (max-width: 479px) {
+    .faq .menu_card {
+      grid-template: repeat(3, 1fr)/100%; } }
+
+.faq .card {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px 25px;
+  /* Только если меньше контейнера */
+  padding-top: 20px;
+  /* Только если меньше контейнера */
+  padding-bottom: 20px;
+  /* Только если меньше контейнера */
+  padding-right: 25px;
+  /* Только если меньше контейнера */
+  padding-left: 25px;
+  margin-bottom: 20px; }
+  @media (max-width: 1300px) {
+    .faq .card {
+      padding-top: calc(15px + 5 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .card {
+      padding-bottom: calc(15px + 5 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .card {
+      padding-right: calc(10px + 15 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .card {
+      padding-left: calc(10px + 15 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .card_title_wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px;
+  /* Только если меньше контейнера */
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+  @media (max-width: 1300px) {
+    .faq .card_title_wrap {
+      padding-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .faq .card_title_wrap {
+      margin-bottom: calc(15px + 10 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .card_title {
+  font-weight: 600;
+  /* Только если меньше контейнера */
+  font-size: 24px;
+  line-height: 141.66667%;
+  color: #ffffff; }
+  @media (max-width: 1300px) {
+    .faq .card_title {
+      font-size: calc(18px + 6 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .card_price {
+  font-weight: 600;
+  /* Только если меньше контейнера */
+  font-size: 32px;
+  line-height: 140.625%;
+  text-transform: uppercase;
+  color: #ffffff; }
+  @media (max-width: 1300px) {
+    .faq .card_price {
+      font-size: calc(26px + 6 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .card_list {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  height: 100%; }
+
+.faq .list_item {
+  position: relative;
+  padding-left: 36px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 118.75%;
+  color: #FFFFFF; }
+  .faq .list_item:not(:last-child) {
+    margin-bottom: 15px; }
+  .faq .list_item::before {
+    content: url(../images/faq/list_check.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1); }
+
+.faq .notice {
+  font-weight: 500;
+  /* Только если меньше контейнера */
+  font-size: 18px;
+  line-height: 138.88889%;
+  color: #F9C0AC;
+  margin-bottom: 10px; }
+  @media (max-width: 1300px) {
+    .faq .notice {
+      font-size: calc(16px + 2 * ((100vw - calc(320px)) / 980)); } }
+
+.faq .card_tip {
+  /* Только если меньше контейнера */
+  font-size: 16px;
+  line-height: 137.5%;
+  color: rgba(255, 255, 255, 0.6); }
+  @media (max-width: 1300px) {
+    .faq .card_tip {
+      font-size: calc(14px + 2 * ((100vw - calc(320px)) / 980)); } }
+
 footer {
   position: relative;
   /* Только если меньше контейнера */
