@@ -80,14 +80,6 @@ footer {
             }
         }
 
-        .number_wrap {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            column-gap: 30px;
-        }
-
         .fax {
             color: $gray_2;
         }
@@ -240,7 +232,7 @@ footer {
         .policy_item {
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 16px;
             color: $gray_4;
             line-height: 200%;
             transition: all .3s ease;

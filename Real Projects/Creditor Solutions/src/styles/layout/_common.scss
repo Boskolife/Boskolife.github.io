@@ -69,17 +69,52 @@ main {
     padding: 18px;
     text-align: center;
     color: $white;
-    border: 2px solid $blue;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
     transition: all .3s ease;
+    position: relative;
 
-    &:hover {
+    &::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-color: $blue;
+        width: 0;
+        height: calc(100% + 4px);
+        border-radius: 8px;
+        z-index: -2;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
         background-color: $white;
-        border: 2px solid $blue;
-        color: $blue;
-        transition: all .3s ease;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        z-index: -1;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    @include media (">tablet") {
+
+        &:hover {
+            background-color: $white;
+            color: $blue;
+            transition: all .3s ease;
+
+            &::after {
+                width: calc(100% + 4px);
+                transition: all .3s linear;
+            }
+        }
     }
 }
 
@@ -465,7 +500,7 @@ main {
             width: calc(100% + 2px);
             height: 0%;
             border-radius: 14px;
-            z-index: -2;
+            z-index: -3;
             transition: all 1s linear;
         }
 
@@ -478,7 +513,7 @@ main {
             width: 100%;
             height: 100%;
             border-radius: 14px;
-            z-index: -1;
+            z-index: -2;
             transition: all 1s linear;
 
             @include media ("<phone") {
@@ -642,13 +677,18 @@ main {
     @include adaptiv-vaule("padding-top", 130, 80, 1);
     @include adaptiv-vaule("padding-bottom", 130, 80, 1);
 
+    .faq_content{
+        position: relative;
+        z-index: 2;
+    }
+
     .faq_title {
         font-weight: 600;
         @include adaptiv-vaule("font-size", 68, 42, 1);
         @include adaptiv-vaule("margin-bottom", 60, 35, 1);
         color: $blue;
         text-transform: uppercase;
-     
+
     }
 
     .tab_wrapper {
@@ -982,39 +1022,6 @@ main {
                 }
             }
         }
-
-        // &::after {
-        //     content: '';
-        //     position: absolute;
-        //     top: -4px;
-        //     left: -4px;
-        //     background-color: rgba(3, 28, 119, 1);
-        //     width: 0%;
-        //     height: calc(100% + 4px);
-        //     border-radius: 14px;
-        //     z-index: -2;
-        //     animation: borderAnim .3s linear;
-        // }
-
-        // &::before {
-        //     content: '';
-        //     position: absolute;
-        //     top: -2px;
-        //     left: -2px;
-        //     background-color: #F2F3F8;
-        //     width: 100%;
-        //     height: 100%;
-        //     border-radius: 14px;
-        //     z-index: -1;
-        //     transition: all .3s linear;
-        // }
-
-        // &:hover {
-
-        //     &::after {
-        //         width: calc(100% + 4px);
-        //     }
-        // }
     }
 
     .active_tabsWrap {
@@ -1040,6 +1047,10 @@ main {
             border-radius: 50%;
             background-color: $blue;
         }
+    }
+
+    .tab_title{
+        padding: 10px 0;
     }
 
     .link {
@@ -2078,7 +2089,7 @@ main {
     }
 
     .fee_wrap {
-        @include adaptiv-vaule("margin-bottom", 25, 50, 1);
+        margin-bottom: 50px;
         text-align: start;
         width: 100%;
     }
@@ -2641,6 +2652,11 @@ main {
 
 .contact_us_page {
 
+    .contact_us_content{
+        position: relative;
+        z-index: 2;
+    }
+
     .mail_img {
         margin-bottom: 10px;
     }
@@ -2673,8 +2689,6 @@ main {
     }
 }
 
-
-
 .calc {
     background-color: #F4F6FE;
     @include adaptiv-vaule("padding-top", 160, 90, 1);
@@ -2687,7 +2701,7 @@ main {
     @include media ("<phone") {
         padding-left: 0;
         padding-right: 0;
-        height:100%;
+        height: 100%;
     }
 
     .calc_content {
@@ -3239,7 +3253,6 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $white;
         padding: 20px;
         border-radius: 8px;
         min-width: 400px;
@@ -3326,11 +3339,7 @@ main {
         z-index: -1;
 
         @include media ("<desktop") {
-            width: 100%;
-        }
-
-        @include media ("<tablet") {
-            display: none;
+            display: none
         }
     }
 }
@@ -3612,6 +3621,21 @@ main {
         position: absolute;
         top: 30px;
         right: 30px;
+        cursor: pointer;
+        
+        svg{
+            stroke: $gray;
+            transition: all .3s ease;
+        }
+
+        &:hover{
+
+            svg{
+                stroke: $blue;
+                transition: all .3s ease;
+                transform: rotate(360deg);
+            }
+        }
     }
 
     .file_modal_title {
@@ -3668,6 +3692,12 @@ main {
         line-height: 20 / 16 * 100%;
         text-transform: uppercase;
         color: $blue;
+        transition: all .3s ease;
+
+        &:hover{
+            background-color: rgba(3, 28, 119, 0.1);
+            transition: all .3s ease;
+        }
     }
 
     .load {
