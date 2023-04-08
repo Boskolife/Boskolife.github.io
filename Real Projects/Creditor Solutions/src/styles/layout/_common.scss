@@ -705,14 +705,14 @@ main {
         position: relative;
         cursor: pointer;
         transition: all .5s ease;
-        padding-right: 30px;
+        padding-right: 40px;
 
         &::after {
             content: url(../images/tabs/arrow.svg);
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: 0;
+            right: 10px;
             transition: all .3s linear;
         }
     }
@@ -1450,13 +1450,14 @@ main {
 
     .methods {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         @include adaptiv-vaule("padding-top", 100, 50, 1);
         @include adaptiv-vaule("padding-bottom", 100, 50, 1);
 
         @include media ("<tablet") {
             flex-direction: column;
+            align-items: flex-start;
         }
     }
 
@@ -1526,11 +1527,12 @@ main {
 
     .standarts_content {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
 
         @include media ("<desktop_sm") {
             flex-direction: column-reverse;
+            align-items: flex-start;
         }
     }
 
@@ -1545,6 +1547,7 @@ main {
 
         @include media ("<desktop_sm") {
             width: 100%;
+            margin:0;
         }
     }
 
@@ -1601,13 +1604,14 @@ main {
 
     .practices_content {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         @include adaptiv-vaule("padding-top", 125, 50, 1);
         @include adaptiv-vaule("padding-bottom", 125, 50, 1);
 
         @include media ("<desktop") {
             flex-direction: column;
+            align-items: flex-start;
         }
     }
 
@@ -1658,7 +1662,7 @@ main {
 
     .our_team_content {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         @include adaptiv-vaule("padding-top", 100, 50, 1);
         @include adaptiv-vaule("padding-bottom", 100, 50, 1);
@@ -1666,6 +1670,7 @@ main {
 
         @include media ("<desktop") {
             flex-direction: column;
+            align-items: flex-start;
         }
     }
 

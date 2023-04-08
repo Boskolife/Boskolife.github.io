@@ -232,7 +232,7 @@ footer {
         .policy_item {
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 16px;
+            @include adaptiv-vaule("font-size", 16, 14, 1);
             color: $gray_4;
             line-height: 200%;
             transition: all .3s ease;
