@@ -1070,18 +1070,108 @@ function jsonAnimationEnforce() {
     }
 }
 
+function fetchFile(payload) {
+  // TODO: Change API
+  return fetch("https://jsonplaceholder.typicode.com/todos", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+}
+
 function openFileModal() {
     const openFileBtn = document.querySelectorAll(".btn_modal");
     if (!openFileBtn.length) {
         return;
     }
+    let isPrint = false;
+    let isOpen = false;
+    let isDownload = false;
+    let sectionName = '';
+    let fileName = '';
+    let judgNumber = '';
+
+    const getPayload = () => {
+        let userId = getWithExpiry('userId');
+        const prevSection = userId && userId.slice(0, 2);
+        if(prevSection !== sectionName || !userId) {
+            userId = `${sectionName}${uniqueId().slice(-6)}`.toUpperCase();
+            setWithExpiry('userId', userId, toMilliseconds(1));
+        }
+        const payload = {
+            sectionName,
+            fileName,
+            userId,
+        }
+        if(judgNumber) {
+            payload.judgNumber = judgNumber;
+        }
+        return payload;
+    }
+    // TODO: delete hrefBeforeAPI
+    const onActionFile = (blob, hrefBeforeAPI) => {
+        const url = hrefBeforeAPI || window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        // the filename you want
+        if(isDownload) {
+            a.download = url;
+        }
+        if(isOpen) {
+            a.setAttribute('target', '_blank');
+        }
+        if(isPrint) {
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                printPage(url);
+            })
+        }
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+    }
+
+    const allBtns = document.querySelectorAll('[data-section]');
+
+    allBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sectionName = btn.dataset.section;
+            fileName = btn.dataset.filename;
+            judgNumber = '';
+            if (btn.classList.contains("print_btn")) {
+                isPrint = true;
+                isOpen = false;
+                isDownload = false;
+            }
+            if (btn.classList.contains("download_btn")) {
+                isPrint = false;
+                isOpen = false;
+                isDownload = true;
+            }
+            if (btn.classList.contains("open_btn")) {
+                isPrint = false;
+                isOpen = true;
+                isDownload = false;
+            };
+            if(!btn.classList.contains('btn_modal')) {
+                const payload = getPayload();
+                fetchFile(payload)
+                  .then((resp) => resp.blob())
+                   //TODO: delete btn.getAttribute('href')
+                  .then((blob) => onActionFile(blob, btn.getAttribute('href')));
+            }
+        })
+    })
+
     const fileModal = document.getElementById("fileModal");
     const selectBtn = document.getElementById("selectBtn");
     const modalContainer = document.getElementById("fileModalContainer");
     const closeBtn = document.getElementById("close_button");
     const downloadedFile = document.querySelectorAll(".choosen_file");
-    let isPrint = false;
-    let isOpen = false;
 
     selectBtn.setAttribute("href", downloadedFile[0].getAttribute("href"));
 
@@ -1097,11 +1187,12 @@ function openFileModal() {
                 selectBtn.removeAttribute("target");
 
                 if (isOpen) {
-                    selectBtn.setAttribute("target", "_blanck");
+                    selectBtn.setAttribute("target", "_blank");
                 }
             } else {
                 selectBtn.setAttribute("download", "");
             }
+            judgNumber = btn.textContent;
         });
     });
 
@@ -1133,7 +1224,6 @@ function openFileModal() {
         fileModal.classList.add("file_modal_active");
         document.body.classList.add("body_lock");
         modalContainer.classList.add("active_container");
-        console.log(isPrint);
         if (isPrint || isOpen) {
             selectBtn.removeAttribute("download");
             selectBtn.removeAttribute("target");
@@ -1175,11 +1265,20 @@ function openFileModal() {
     });
 
     selectBtn.addEventListener("click", (e) => {
-        if (isPrint) {
-            e.preventDefault();
-            printPage(e.target.getAttribute("href"));
-        }
-        closeModal();
+        // if (isPrint) {
+        //     e.preventDefault();
+        //     printPage(e.target.getAttribute("href"));
+        // }
+        e.preventDefault();
+        if(!judgNumber) judgNumber = '1';
+        const payload = getPayload();
+        fetchFile(payload)
+          .then((resp) => resp.blob())
+          //TODO: delete btn.getAttribute('href')
+          .then((blob) => {
+            onActionFile(blob, selectBtn.getAttribute("href"));
+            closeModal();
+          });
     });
 }
 
@@ -1260,3 +1359,46 @@ function footerAccord() {
 }
 
 footerAccord();
+
+
+// HELPERS:
+
+function setWithExpiry(key, value, ttl) {
+	const now = new Date()
+
+	// `item` is an object which contains the original value
+	// as well as the time when it's supposed to expire
+	const item = {
+		value: value,
+		expiry: now.getTime() + ttl,
+	}
+	localStorage.setItem(key, JSON.stringify(item))
+}
+
+function getWithExpiry(key) {
+	const itemStr = localStorage.getItem(key)
+	// if the item doesn't exist, return null
+	if (!itemStr) {
+		return null
+	}
+	const item = JSON.parse(itemStr)
+	const now = new Date()
+	// compare the expiry time of the item with the current time
+	if (now.getTime() > item.expiry) {
+		// If the item is expired, delete the item from storage
+		// and return null
+		localStorage.removeItem(key)
+		return null
+	}
+	return item.value
+}
+
+function uniqueId() {
+    const dateString = Date.now().toString(36);
+    const randomness = Math.random().toString(36).substr(2);
+    return dateString + randomness;
+};
+
+function toMilliseconds(hrs = 0,min = 0,sec = 0) {
+    return (hrs*60*60+min*60+sec)*1000;
+}
