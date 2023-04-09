@@ -618,6 +618,7 @@ function initPuzzleAnimation() {
       return;
     }
 
+    var isStopCenter = section.classList.contains('stop-center');
     var puzzlesContainer = section.querySelector(".puzzles-container");
     var leftSide = section.querySelector(".left-side");
     var rightSide = section.querySelector(".right-side");
@@ -647,8 +648,8 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
-        scrub: 1 //   markers: true,
+        end: "top ".concat(isStopCenter ? 'center' : ''),
+        scrub: 1 // markers: true,
 
       }
     });
@@ -659,7 +660,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? 'center' : ''),
         scrub: 1 // markers: true,
 
       }
@@ -673,7 +674,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? 'center' : ''),
         scrub: 1 //   markers: true,
 
       }
@@ -687,27 +688,48 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top+=200 bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? 'center' : ''),
         scrub: 1 //   markers: true,
 
       }
     });
-    gsap.fromTo(puzzlesContainer, {
-      rotation: 5,
-      y: 0,
-      x: 0
-    }, {
-      rotation: isMobile ? -35 : -35,
-      y: isMobile ? 400 : -150,
-      x: isMobile ? 275 : 0,
-      scrollTrigger: {
-        trigger: section,
-        start: isMobile ? "center-=75 bottom" : "top bottom",
-        end: isMobile ? "bottom+=100" : "bottom",
-        scrub: 1 // markers: true,
 
-      }
-    });
+    if (!isStopCenter) {
+      gsap.fromTo(puzzlesContainer, {
+        rotation: 5,
+        y: 0,
+        x: 0
+      }, {
+        rotation: isMobile ? -35 : -35,
+        y: isMobile ? 400 : -150,
+        x: isMobile ? 275 : 0,
+        scrollTrigger: {
+          trigger: section,
+          start: isMobile ? "center-=75 bottom" : "top bottom",
+          end: isMobile ? "bottom+=100" : "bottom",
+          scrub: 1 // markers: true,
+
+        }
+      });
+    } else {
+      gsap.fromTo(puzzlesContainer, {
+        rotation: 5,
+        y: 0,
+        x: 0
+      }, {
+        rotation: isMobile ? -35 : -35,
+        y: isMobile ? -145 : -150,
+        x: isMobile ? 175 : 0,
+        scrollTrigger: {
+          trigger: section,
+          start: isMobile ? "center+50% bottom" : "top bottom",
+          end: isMobile ? "bottom" : "bottom",
+          scrub: 1 // markers: true,
+
+        }
+      });
+    }
+
     gsap.to(rightSide, {
       x: isMobile ? 125 : 375
     });
@@ -717,10 +739,10 @@ function initPuzzleAnimation() {
       x: 0,
       scrollTrigger: {
         trigger: section,
-        start: "50%+=".concat(headerHeight, " bottom"),
-        end: "bottom",
-        scrub: 1 // markers: true,
-
+        start: "".concat(isStopCenter ? 'top bottom' : "50%+=".concat(headerHeight, " bottom")),
+        end: "bottom ".concat(isStopCenter ? 'bottom' : ''),
+        scrub: 1,
+        markers: true
       }
     });
   }
