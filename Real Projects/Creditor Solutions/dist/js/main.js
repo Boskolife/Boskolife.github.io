@@ -1,5 +1,44 @@
 "use strict";
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Spinner = /*#__PURE__*/function () {
+  function Spinner() {
+    _classCallCheck(this, Spinner);
+
+    this.spinnerEl = "\n        <div class=\"spinner loadingio-spinner-spin-nir07jtyl1o\">\n        <div class=\"spinner-container\">\n          <div class=\"ldio-5desmbk2c7\">\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n            <div>\n                <div></div>\n            </div>\n          </div>\n        </div>\n      </div>";
+    this.init();
+    this.spinner = document.querySelector(".spinner");
+  }
+
+  _createClass(Spinner, [{
+    key: "init",
+    value: function init() {
+      if (!this.isInit) {
+        document.body.insertAdjacentHTML("beforeend", this.spinnerEl);
+        this.isInit = true;
+      }
+    }
+  }, {
+    key: "show",
+    value: function show() {
+      this.spinner.classList.add("visible");
+    }
+  }, {
+    key: "hide",
+    value: function hide() {
+      this.spinner.classList.remove("visible");
+    }
+  }]);
+
+  return Spinner;
+}();
+
+var spinner = new Spinner();
 var winTriggersMethods = ["resize", "load"];
 var MOBILE_SIZE = 480;
 var prevWidth = window.innerWidth;
@@ -48,7 +87,6 @@ function initTabs() {
   !window.location.href.includes("faq") && showTabContent();
 }
 
-;
 winTriggersMethods.forEach(function (method) {
   window.addEventListener(method, function () {
     // worst case to refresh animation?
@@ -618,6 +656,7 @@ function initPuzzleAnimation() {
       return;
     }
 
+    var isStopCenter = section.classList.contains("stop-center");
     var puzzlesContainer = section.querySelector(".puzzles-container");
     var leftSide = section.querySelector(".left-side");
     var rightSide = section.querySelector(".right-side");
@@ -647,8 +686,8 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
-        scrub: 1 //   markers: true,
+        end: "top ".concat(isStopCenter ? "center" : ""),
+        scrub: 1 // markers: true,
 
       }
     });
@@ -659,7 +698,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? "center" : ""),
         scrub: 1 // markers: true,
 
       }
@@ -673,7 +712,7 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? "center" : ""),
         scrub: 1 //   markers: true,
 
       }
@@ -687,27 +726,48 @@ function initPuzzleAnimation() {
       scrollTrigger: {
         trigger: section,
         start: "top+=200 bottom",
-        end: "top",
+        end: "top ".concat(isStopCenter ? "center" : ""),
         scrub: 1 //   markers: true,
 
       }
     });
-    gsap.fromTo(puzzlesContainer, {
-      rotation: 5,
-      y: 0,
-      x: 0
-    }, {
-      rotation: isMobile ? -35 : -35,
-      y: isMobile ? 400 : -150,
-      x: isMobile ? 275 : 0,
-      scrollTrigger: {
-        trigger: section,
-        start: isMobile ? "center-=75 bottom" : "top bottom",
-        end: isMobile ? "bottom+=100" : "bottom",
-        scrub: 1 // markers: true,
 
-      }
-    });
+    if (!isStopCenter) {
+      gsap.fromTo(puzzlesContainer, {
+        rotation: 5,
+        y: 0,
+        x: 0
+      }, {
+        rotation: isMobile ? -35 : -35,
+        y: isMobile ? 400 : -150,
+        x: isMobile ? 275 : 0,
+        scrollTrigger: {
+          trigger: section,
+          start: isMobile ? "center-=75 bottom" : "top bottom",
+          end: isMobile ? "bottom+=100" : "bottom",
+          scrub: 1 // markers: true,
+
+        }
+      });
+    } else {
+      gsap.fromTo(puzzlesContainer, {
+        rotation: 5,
+        y: 0,
+        x: 0
+      }, {
+        rotation: isMobile ? -35 : -35,
+        y: isMobile ? -145 : -150,
+        x: isMobile ? 175 : 0,
+        scrollTrigger: {
+          trigger: section,
+          start: isMobile ? "center+50% bottom" : "top bottom",
+          end: isMobile ? "bottom" : "bottom",
+          scrub: 1 // markers: true,
+
+        }
+      });
+    }
+
     gsap.to(rightSide, {
       x: isMobile ? 125 : 375
     });
@@ -717,10 +777,10 @@ function initPuzzleAnimation() {
       x: 0,
       scrollTrigger: {
         trigger: section,
-        start: "50%+=".concat(headerHeight, " bottom"),
-        end: "bottom",
-        scrub: 1 // markers: true,
-
+        start: "".concat(isStopCenter ? "top bottom" : "50%+=".concat(headerHeight, " bottom")),
+        end: "bottom ".concat(isStopCenter ? "bottom" : ""),
+        scrub: 1,
+        markers: true
       }
     });
   }
@@ -1019,17 +1079,17 @@ function openFileModal() {
   var isPrint = false;
   var isOpen = false;
   var isDownload = false;
-  var sectionName = '';
-  var fileName = '';
-  var judgNumber = '';
+  var sectionName = "";
+  var fileName = "";
+  var judgNumber = "";
 
   var getPayload = function getPayload() {
-    var userId = getWithExpiry('userId');
+    var userId = getWithExpiry("userId");
     var prevSection = userId && userId.slice(0, 2);
 
     if (prevSection !== sectionName || !userId) {
       userId = "".concat(sectionName).concat(uniqueId().slice(-6)).toUpperCase();
-      setWithExpiry('userId', userId, toMilliseconds(1));
+      setWithExpiry("userId", userId, toMilliseconds(1));
     }
 
     var payload = {
@@ -1048,8 +1108,8 @@ function openFileModal() {
 
   var onActionFile = function onActionFile(blob, hrefBeforeAPI) {
     var url = hrefBeforeAPI || window.URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.style.display = 'none';
+    var a = document.createElement("a");
+    a.style.display = "none";
     a.href = url; // the filename you want
 
     if (isDownload) {
@@ -1057,11 +1117,11 @@ function openFileModal() {
     }
 
     if (isOpen) {
-      a.setAttribute('target', '_blank');
+      a.setAttribute("target", "_blank");
     }
 
     if (isPrint) {
-      a.addEventListener('click', function (e) {
+      a.addEventListener("click", function (e) {
         e.preventDefault();
         printPage(url);
       });
@@ -1072,13 +1132,13 @@ function openFileModal() {
     window.URL.revokeObjectURL(url);
   };
 
-  var allBtns = document.querySelectorAll('[data-section]');
+  var allBtns = document.querySelectorAll("[data-section]");
   allBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener("click", function (e) {
       e.preventDefault();
       sectionName = btn.dataset.section;
       fileName = btn.dataset.filename;
-      judgNumber = '';
+      judgNumber = "";
 
       if (btn.classList.contains("print_btn")) {
         isPrint = true;
@@ -1098,15 +1158,16 @@ function openFileModal() {
         isDownload = false;
       }
 
-      ;
-
-      if (!btn.classList.contains('btn_modal')) {
+      if (!btn.classList.contains("btn_modal")) {
         var payload = getPayload();
+        spinner.show();
         fetchFile(payload).then(function (resp) {
           return resp.blob();
         }) //TODO: delete btn.getAttribute('href')
         .then(function (blob) {
-          return onActionFile(blob, btn.getAttribute('href'));
+          return onActionFile(blob, btn.getAttribute("href"));
+        }).finally(function () {
+          spinner.hide();
         });
       }
     });
@@ -1208,14 +1269,17 @@ function openFileModal() {
     //     printPage(e.target.getAttribute("href"));
     // }
     e.preventDefault();
-    if (!judgNumber) judgNumber = '1';
+    if (!judgNumber) judgNumber = "1";
     var payload = getPayload();
+    spinner.show();
     fetchFile(payload).then(function (resp) {
       return resp.blob();
     }) //TODO: delete btn.getAttribute('href')
     .then(function (blob) {
       onActionFile(blob, selectBtn.getAttribute("href"));
       closeModal();
+    }).finally(function () {
+      spinner.hide();
     });
   });
 }
@@ -1276,17 +1340,17 @@ function printPage(sURL) {
 
 
 function footerAccord() {
-  var dropDown = document.querySelector('.dropdown_btn');
+  var dropDown = document.querySelector(".dropdown_btn");
 
   if (!dropDown) {
     return;
   }
 
-  var dropDownContent = document.querySelector('.dropdown-footer-content');
-  dropDown.addEventListener('click', function (e) {
+  var dropDownContent = document.querySelector(".dropdown-footer-content");
+  dropDown.addEventListener("click", function (e) {
     e.preventDefault();
-    dropDownContent.classList.toggle('dropdown-active');
-    dropDown.classList.toggle('btn_active');
+    dropDownContent.classList.toggle("dropdown-active");
+    dropDown.classList.toggle("btn_active");
   });
 }
 
@@ -1328,8 +1392,6 @@ function uniqueId() {
   var randomness = Math.random().toString(36).substr(2);
   return dateString + randomness;
 }
-
-;
 
 function toMilliseconds() {
   var hrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
