@@ -853,7 +853,7 @@ function initPuzzleAnimation() {
           }`,
           end: `bottom ${isStopCenter ? "bottom" : ""}`,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       }
     );

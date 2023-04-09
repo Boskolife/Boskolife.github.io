@@ -779,8 +779,8 @@ function initPuzzleAnimation() {
         trigger: section,
         start: "".concat(isStopCenter ? "top bottom" : "50%+=".concat(headerHeight, " bottom")),
         end: "bottom ".concat(isStopCenter ? "bottom" : ""),
-        scrub: 1,
-        markers: true
+        scrub: 1 // markers: true,
+
       }
     });
   }
