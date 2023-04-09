@@ -2,6 +2,10 @@ body {
     font-family: 'Montserrat';
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .body_lock {
     overflow: hidden;
 }
