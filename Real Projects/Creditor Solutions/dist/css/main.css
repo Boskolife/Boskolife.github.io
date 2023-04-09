@@ -645,7 +645,7 @@ header {
           display: none; } }
     @media (min-width: 769px) {
       header .blue_item:hover {
-        background-color: #ffffff;
+        background-color: #D1D4DE;
         color: #031C77;
         transition: all .3s ease; }
         header .blue_item:hover::after {
