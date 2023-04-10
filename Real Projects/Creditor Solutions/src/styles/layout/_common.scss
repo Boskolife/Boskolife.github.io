@@ -63,7 +63,7 @@ main {
 
 .blue_btn {
     max-width: 360px;
-    width:100%;
+    width: 100%;
     display: inline-block;
     background-color: $blue;
     border-radius: 8px;
@@ -121,7 +121,7 @@ main {
 
 .white_btn {
     max-width: 360px;
-    width:100%;
+    width: 100%;
     display: inline-block;
     background-color: $white;
     border-radius: 8px;
@@ -751,15 +751,15 @@ main {
 
     .blue_btn {
         text-transform: none;
-        border:1px solid $blue;
+        border: 1px solid $blue;
 
         &::after,
-        &::before{
+        &::before {
             display: none;
         }
 
-        &:hover{
-            border:1px solid $blue;
+        &:hover {
+            border: 1px solid $blue;
         }
 
         @include media ("<phone") {
@@ -918,15 +918,15 @@ main {
 
     .blue_btn {
         min-width: 100%;
-        border:1px solid $blue;
+        border: 1px solid $blue;
 
         &::after,
-        &::before{
+        &::before {
             display: none;
         }
 
-        &:hover{
-            border:1px solid $blue;
+        &:hover {
+            border: 1px solid $blue;
         }
     }
 }
@@ -1535,6 +1535,12 @@ main {
             left: 0;
             top: 60%;
             transform: translateY(-50%);
+        }
+
+        &:last-child {
+            &::before {
+                display: none;
+            }
         }
     }
 }
