@@ -5159,7 +5159,13 @@ main {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    border: 1px solid #031C77;
+    max-width: 100%;
+    min-width: 100%; }
+    .document_files .select_file_btn:hover {
+      background-color: #ffffff;
+      border: 1px solid #031C77; }
     @media (max-width: 479px) {
       .document_files .select_file_btn {
         padding-top: 10px;

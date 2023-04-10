@@ -3828,6 +3828,14 @@ main {
         text-transform: uppercase;
         display: flex;
         justify-content: center;
+        border: 1px solid $blue;
+        max-width: 100%;
+        min-width: 100%;
+
+        &:hover{
+            background-color:$white;
+            border: 1px solid $blue;
+        }
 
         @include media ("<phone") {
             padding-top: 10px;
