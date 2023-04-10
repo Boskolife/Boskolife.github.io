@@ -60,7 +60,7 @@ header {
         @include media (">tablet") {
 
             &:hover {
-                background-color: $gray;
+                background-color: $white;
                 color: $blue;
                 transition: all .3s ease;
 

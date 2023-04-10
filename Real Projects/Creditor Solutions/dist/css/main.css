@@ -645,7 +645,7 @@ header {
           display: none; } }
     @media (min-width: 769px) {
       header .blue_item:hover {
-        background-color: #D1D4DE;
+        background-color: #ffffff;
         color: #031C77;
         transition: all .3s ease; }
         header .blue_item:hover::after {
@@ -1339,7 +1339,8 @@ main {
   opacity: 0.6; }
 
 .blue_btn {
-  min-width: 270px;
+  max-width: 360px;
+  width: 100%;
   display: inline-block;
   background-color: #031C77;
   border-radius: 8px;
@@ -1384,8 +1385,8 @@ main {
         transition: all .3s linear; } }
 
 .white_btn {
-  max-width: 270px;
-  min-width: 270px;
+  max-width: 360px;
+  width: 100%;
   display: inline-block;
   background-color: #ffffff;
   border-radius: 8px;
@@ -2797,8 +2798,8 @@ main {
   .our_purpose .methods_list {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: start;
+    align-items: flex-start;
     -webkit-column-gap: 65px;
     -moz-column-gap: 65px;
     column-gap: 65px;

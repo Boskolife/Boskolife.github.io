@@ -62,7 +62,8 @@ main {
 }
 
 .blue_btn {
-    min-width: 270px;
+    max-width: 360px;
+    width:100%;
     display: inline-block;
     background-color: $blue;
     border-radius: 8px;
@@ -119,8 +120,8 @@ main {
 }
 
 .white_btn {
-    max-width: 270px;
-    min-width: 270px;
+    max-width: 360px;
+    width:100%;
     display: inline-block;
     background-color: $white;
     border-radius: 8px;
@@ -1500,7 +1501,7 @@ main {
 
     .methods_list {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         column-gap: 65px;
         @include adaptiv-vaule("  column-gap", 65, 15, 1);
 
