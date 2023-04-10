@@ -1536,11 +1536,12 @@ main {
             top: 60%;
             transform: translateY(-50%);
         }
+    }
 
-        &:last-child {
-            &::before {
-                display: none;
-            }
+    .more {
+        
+        &::before {
+            display: none;
         }
     }
 }

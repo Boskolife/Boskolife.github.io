@@ -2842,8 +2842,8 @@ main {
       top: 60%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
-    .our_purpose .methods_item:last-child::before {
-      display: none; }
+  .our_purpose .more::before {
+    display: none; }
 
 .standarts {
   /* Только если меньше контейнера */
