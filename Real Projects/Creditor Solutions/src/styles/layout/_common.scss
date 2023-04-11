@@ -1558,7 +1558,7 @@ main {
 
     .more {
         color: $black;
-        @include adaptiv-vaule("font-size", 18, 16, 1);
+        @include adaptiv-vaule("font-size", 20, 18, 1);
         line-height: 20px;
         font-weight: 500;
 
