@@ -2859,12 +2859,12 @@ main {
   .our_purpose .more {
     color: #1D1D20;
     /* Только если меньше контейнера */
-    font-size: 20px;
+    font-size: 18px;
     line-height: 20px;
     font-weight: 500; }
     @media (max-width: 1350px) {
       .our_purpose .more {
-        font-size: calc(18px + 2 * ((100vw - calc(375px)) / 975)); } }
+        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 975)); } }
     .our_purpose .more::before {
       display: none; }
 
