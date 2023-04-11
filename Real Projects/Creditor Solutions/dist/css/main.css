@@ -2800,9 +2800,14 @@ main {
     display: flex;
     -ms-flex-align: start;
     align-items: flex-start;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-column-gap: 65px;
     -moz-column-gap: 65px;
     column-gap: 65px;
+    row-gap: 30px;
     /* Только если меньше контейнера */
       column-gap: 65px; }
     @media (max-width: 1350px) {
@@ -2820,6 +2825,14 @@ main {
         flex-direction: column;
         -ms-flex-align: start;
         align-items: flex-start; } }
+  .our_purpose .method_list_wrap {
+    width: 38%; }
+    @media (max-width: 1023px) {
+      .our_purpose .method_list_wrap {
+        width: 45%; } }
+    @media (max-width: 479px) {
+      .our_purpose .method_list_wrap {
+        width: 100%; } }
   .our_purpose .methods_item {
     padding-left: 30px;
     color: #1D1D20;
@@ -2827,11 +2840,12 @@ main {
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
-    position: relative;
-    margin-bottom: 12px; }
+    position: relative; }
     @media (max-width: 1350px) {
       .our_purpose .methods_item {
         font-size: calc(14px + 2 * ((100vw - calc(375px)) / 975)); } }
+    .our_purpose .methods_item:not(:last-child) {
+      margin-bottom: 12px; }
     @media (max-width: 767px) {
       .our_purpose .methods_item {
         max-width: 285px; } }
@@ -2842,8 +2856,17 @@ main {
       top: 60%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
-  .our_purpose .more::before {
-    display: none; }
+  .our_purpose .more {
+    color: #1D1D20;
+    /* Только если меньше контейнера */
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500; }
+    @media (max-width: 1350px) {
+      .our_purpose .more {
+        font-size: calc(18px + 2 * ((100vw - calc(375px)) / 975)); } }
+    .our_purpose .more::before {
+      display: none; }
 
 .standarts {
   /* Только если меньше контейнера */
@@ -5155,6 +5178,7 @@ main {
     font-weight: 600;
     font-size: 16px;
     line-height: 125%;
+    margin-bottom: 20px;
     text-transform: uppercase;
     display: -ms-flexbox;
     display: flex;
@@ -5170,6 +5194,12 @@ main {
       .document_files .select_file_btn {
         padding-top: 10px;
         padding-bottom: 10px; } }
+  .document_files .tip {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 125%; }
+    .document_files .tip a {
+      text-decoration: underline; }
 
 footer {
   overflow: hidden; }

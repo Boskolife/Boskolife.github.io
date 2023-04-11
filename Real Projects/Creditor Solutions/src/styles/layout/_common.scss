@@ -1502,7 +1502,10 @@ main {
     .methods_list {
         display: flex;
         align-items: flex-start;
+        justify-content:flex-end;
+        flex-wrap: wrap;
         column-gap: 65px;
+        row-gap: 30px;
         @include adaptiv-vaule("  column-gap", 65, 15, 1);
 
         @include media ("<tablet") {
@@ -1516,6 +1519,18 @@ main {
         }
     }
 
+    .method_list_wrap{
+        width: 38%;
+
+        @include media ("<desktop") {
+            width: 45%;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
     .methods_item {
         padding-left: 30px;
         color: $black;
@@ -1523,7 +1538,10 @@ main {
         line-height: 20px;
         font-weight: 500;
         position: relative;
-        margin-bottom: 12px;
+
+        &:not(:last-child){
+            margin-bottom: 12px;
+        }
 
         @include media ("<tablet") {
             max-width: 285px;
@@ -1539,6 +1557,10 @@ main {
     }
 
     .more {
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        line-height: 20px;
+        font-weight: 500;
 
         &::before {
             display: none;
@@ -3825,6 +3847,7 @@ main {
         font-weight: 600;
         font-size: 16px;
         line-height: 20 / 16 * 100%;
+        margin-bottom: 20px;
         text-transform: uppercase;
         display: flex;
         justify-content: center;
@@ -3840,6 +3863,16 @@ main {
         @include media ("<phone") {
             padding-top: 10px;
             padding-bottom: 10px;
+        }
+    }
+
+    .tip{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20 / 16 * 100%;
+
+        a{
+            text-decoration: underline;
         }
     }
 }
