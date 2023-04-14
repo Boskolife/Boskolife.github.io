@@ -12,13 +12,15 @@
         height: 100%;
         background-color: $pink;
         position: relative;
+        overflow: hidden;
         z-index: 2;
         @include adaptiv-vaule("padding-left", 70, 10, 1);
         @include adaptiv-vaule("padding-right", 45, 10, 1);
 
         @include media ("<desktop") {
             width: 100%;
-            padding: 60px 15px;
+            padding: 80px 20px;
+            text-align: center;
         }
     }
 
@@ -36,7 +38,7 @@
 
     .faq_title {
         font-weight: 700;
-        @include adaptiv-vaule("font-size", 48, 36, 1);
+        @include adaptiv-vaule("font-size", 48, 40, 1);
         line-height: 64 / 48 * 100%;
         letter-spacing: -1px;
         text-transform: uppercase;
@@ -48,7 +50,7 @@
         grid-template: 1fr/ 40% 60%;
 
         @include media ("<desktop") {
-            grid-template: 200px 100% / 100%;
+            grid-template: 1fr / 1fr;
         }
     }
 
@@ -135,7 +137,7 @@
         height: 0;
         overflow: hidden;
         font-weight: 500;
-        font-size: 18px;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
         line-height: 25 / 18 * 100%;
         display: flex;
         align-items: center;
@@ -160,21 +162,16 @@
 
     .menu_card {
         display: grid;
-        grid-template: 1fr /repeat(3, 1fr);
+        grid-template: 1fr / repeat(3 , 1fr);
         align-items: flex-start;
         justify-content: space-between;
         width: 100%;
         min-height: 100%;
         gap: 20px;
+        flex-wrap: wrap;
         margin-bottom: 20px;
-
         @include media ("<tablet") {
-            grid-template: repeat(3, 1fr) / 75%;
-            justify-content: center;
-        }
-
-        @include media ("<phone") {
-            grid-template: repeat(3, 1fr) / 100%;
+            grid-template-columns:repeat(auto-fit, minmax(250px , 1fr)) ;
         }
     }
 
@@ -184,11 +181,30 @@
         align-items: flex-start;
         height: 100%;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        @include adaptiv-vaule("padding-top", 20, 15, 1);
+        @include adaptiv-vaule("padding-top", 25, 15, 1);
         @include adaptiv-vaule("padding-bottom", 20, 15, 1);
         @include adaptiv-vaule("padding-right", 25, 10, 1);
         @include adaptiv-vaule("padding-left", 25, 10, 1);
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    .gold{
+        position: relative;
+    }
+
+    .tip{
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color:$pink;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 15px;
+        color: $green;
+        white-space: nowrap;
     }
 
     .card_title_wrap {
@@ -203,7 +219,7 @@
 
     .card_title {
         font-weight: 600;
-        @include adaptiv-vaule("font-size", 24, 18, 1);
+        font-size: 24px;
         line-height: 34 / 24 * 100%;
         color: $white;
     }

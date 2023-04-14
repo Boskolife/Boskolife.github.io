@@ -522,7 +522,7 @@
     }
 }
 
-.convince{
+.convince {
     background-color: $black;
     @include adaptiv-vaule("padding-top", 80, 70, 1);
     @include adaptiv-vaule("padding-bottom", 80, 70, 1);
@@ -532,20 +532,21 @@
         padding-bottom: 0;
     }
 
-    .line{
+    .line {
         position: absolute;
         top: 20px;
 
     }
 
-    .desk{
+    .desk {
         left: 0;
+
         @include media ("<phone") {
             display: none;
         }
     }
 
-    .phone{
+    .phone {
         display: none;
 
         @include media ("<phone") {
@@ -554,11 +555,11 @@
         }
     }
 
-    .convince_content{
+    .convince_content {
         text-align: center;
     }
 
-    .convince_text{
+    .convince_text {
         @include adaptiv-vaule("margin-bottom", 40, 60, 1);
     }
 
@@ -582,13 +583,32 @@
         margin: 0 auto;
     }
 
-    .convince_img{
+    .convince_img {
         max-width: 1300px;
         width: 100%;
         @include adaptiv-vaule("height", 480, 335, 1);
         margin: 0 auto;
 
-        img{
+        @include media ("<phone") {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .convince_img_phone {
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+            height: 335px;
+        }
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
