@@ -94,17 +94,29 @@ function initContactPopup() {
 }
 
 function findHref() {
+  var element = document.getElementById("menu").getElementsByTagName("a");
+
   if (!element) {
     return;
   }
 
-  var element = document.getElementById("menu").getElementsByTagName("a");
   var url = window.location.href;
 
   for (var i = 0; i < element.length; i++) {
     if (url === element[i].href) {
       element[i].classList.add("menu_link_active");
     }
+  }
+}
+
+function videoPlay() {
+  var video = document.getElementById('video');
+  var videoBTn = document.getElementById('play');
+
+  if (video.paused) {
+    video.play();
+    videoBTn.style = 'display:none';
+    video.setAttribute('controls', '');
   }
 }
 //# sourceMappingURL=main.js.map

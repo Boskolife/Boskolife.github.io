@@ -1,0 +1,339 @@
+.about_us {
+    @include adaptiv-vaule("padding-top", 115, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .about_us_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 58, 42, 1);
+        line-height: 75 / 58 * 100%;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
+    }
+
+    .description {
+        background-color: $gray;
+        position: relative;
+        @include adaptiv-vaule("padding-top", 65, 40, 1);
+        @include adaptiv-vaule("padding-bottom", 35, 20, 1);
+    }
+
+    .description_body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .about_us_img {
+        position: absolute;
+        top: 5%;
+        left: 7%;
+        z-index: 1;
+
+        @include media ("<phone") {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .description_img {
+        @include adaptiv-vaule("width", 544, 300, 1);
+        @include adaptiv-vaule("height", 544, 300, 1);
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            margin-bottom: 30px;
+        }
+    }
+
+    .description_text {
+        width: 40%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .description_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 36, 24, 1);
+        line-height: 47 / 36 * 100%;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+    }
+
+    .text_wrap {
+        margin-bottom: 30px;
+    }
+
+    .text {
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 23 / 18 * 100%;
+        color: $black;
+    }
+
+    .social_links {
+        display: flex;
+        align-items: center;
+    }
+
+    .link {
+        margin-right: 30px;
+        transition: all .3s ease;
+
+        &:hover {
+            transform: scale(1.3);
+            transition: all .3s ease;
+
+            rect {
+                transition: all .3s ease;
+                fill: $yellow;
+            }
+        }
+
+        rect {
+            fill: $black;
+        }
+    }
+}
+
+.about_us_video {
+    @include adaptiv-vaule("padding-top", 80, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+    background-color: $white;
+
+    .video_wrap {
+        position: relative;
+
+        @include media ("<tablet") {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center
+        }
+    }
+
+    .video_body {
+        max-width: 1010px;
+        width: 100%;
+        max-height: 565px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100%);
+        position: relative;
+    }
+
+    .play {
+        border: none;
+        background-color: transparent;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 130px;
+        height: 120px;
+        @include adaptiv-vaule("width", 130, 70, 1);
+        @include adaptiv-vaule("height", 120, 60, 1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .video_text {
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+
+        @include media ("<tablet") {
+            position: static;
+            transform: translate(0);
+            margin-bottom: 25px;
+        }
+    }
+
+    .video_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 31 / 24 * 100%;
+        color: $yellow;
+        margin-bottom: 15px;
+    }
+
+    .video_descr {
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 23 / 18 * 100%;
+        color: $white;
+
+        @include media ("<tablet") {
+            color: $black;
+        }
+    }
+}
+
+.project {
+    @include adaptiv-vaule("padding-top", 80, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 60, 1);
+
+    .item_project {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ("<desktop_sm") {
+                flex-direction: column;
+            }
+        }
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 120, 40, 1);
+        }
+
+        @include media ("<desktop_sm") {
+            flex-direction: column;
+        }
+    }
+
+    .img_item {
+        width: 40%;
+
+        @include media ("<desktop_sm") {
+            max-width: 350px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<phone") {
+            max-width: 250px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .item_text {
+        width: 48%;
+
+        @include media ("<desktop_sm") {
+            width: 100%;
+        }
+    }
+
+    .item_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 36, 24, 1);
+        line-height: 47 / 36 * 100%;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+    }
+
+    .yellow {
+        color: $yellow;
+    }
+
+    .text {
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 23 / 18 * 100%;
+        color: $black;
+    }
+}
+
+.notified {
+    background-color: $yellow;
+    @include adaptiv-vaule("padding-top", 60, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 70, 40, 1);
+
+    .notified_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .notified_text {
+        width: 38%;
+        position: relative;
+        padding-top: 30px;
+
+        @include media ("<tablet") {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 1px;
+            background-color: $black;
+        }
+    }
+
+    .notified_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 58, 36, 1);
+        line-height: 75 / 58 * 100%;
+        color: $black;
+        margin-bottom: 20px;
+    }
+
+    .notified_descr {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        line-height: 31 / 24 * 100%;
+        color: $black;
+    }
+
+    form{
+        width: 35%;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .data_title{
+        color: $black;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .data_text{
+        min-width: 220px;
+    }
+}

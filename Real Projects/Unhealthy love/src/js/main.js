@@ -104,14 +104,25 @@ function initContactPopup() {
 }
 
 function findHref() {
+    let element = document.getElementById("menu").getElementsByTagName("a");
     if (!element) {
         return;
     }
-    let element = document.getElementById("menu").getElementsByTagName("a");
     let url = window.location.href;
     for (let i = 0; i < element.length; i++) {
         if (url === element[i].href) {
             element[i].classList.add("menu_link_active");
         }
+    }
+}
+
+function videoPlay() {
+    let video = document.getElementById('video');
+    let videoBTn = document.getElementById('play');
+
+    if(video.paused) {
+        video.play();
+        videoBTn.style = 'display:none';
+        video.setAttribute('controls', '')
     }
 }
