@@ -1,0 +1,269 @@
+footer {
+    background-color: $black;
+    @include adaptiv-vaule("padding-top", 60, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 20, 1);
+
+    .footer_top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include adaptiv-vaule("padding-bottom", 35, 20, 1);
+        border-bottom: 1px solid #5B5B5B;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .footer_column_logo {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .logo_footer {
+        display: flex;
+        align-items: center;
+        position: relative;
+        @include adaptiv-vaule("margin-bottom", 65, 20, 1);
+
+        @include media ("<desktop") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .logo_link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .logo_img {
+        margin-right: 23px;
+        width: 55px;
+        height: 51px;
+    }
+
+    .logo_title {
+        font-weight: 600;
+        font-size: 18px;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 23 / 18 * 100%;
+        color: $white;
+    }
+
+    .logo_subtitle {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13 / 10 * 100%;
+        color: $white;
+    }
+
+    .footer_social_links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
+    }
+
+    .social_link {
+        width: 24px;
+        height: 24px;
+        transition: all .3s linear;
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-right", 30, 20, 1);
+        }
+
+        &:hover {
+            transform: scale(1.3);
+            transition: all .3s linear;
+
+            svg {
+                fill: $yellow;
+                transition: all .3s linear;
+            }
+        }
+
+        svg {
+            fill: $white;
+            transition: all .3s linear;
+        }
+    }
+
+    .footer_column {
+        width: 10%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    .column_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        line-height: 23 /18 * 100%;
+        color: $white;
+        margin-bottom: 15px;
+    }
+
+    .column_links {
+        @include media ("<desktop") {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .column_link {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+
+            @include media ("<desktop") {
+                margin: 0 15px 0 0;
+            }
+        }
+    }
+
+    .link {
+        font-size: 14px;
+        line-height: 17 / 14 * 100%;
+        color: $gray_3;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    .search {
+        width: 32%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    form {
+        height: 42px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
+
+        @include media ("<phone") {
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
+    .search_field {
+        border: none;
+        background-color: $white;
+        @include adaptiv-vaule("padding-left", 25, 15, 1);
+        @include adaptiv-vaule("margin-right", 25, 1, 1);
+        min-width: 180px;
+        max-width: 230px;
+        width: 100%;
+        height: 100%;
+
+        @include media ("<phone") {
+            padding: 10px;
+            max-width: 100%;
+            margin: 0 0 15px 0;
+        }
+
+        &:focus {
+            background-color: #FFF9E7;
+            border: 1px solid $yellow;
+            transition: all .3s ease-in;
+        }
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18 / 14 * 100%;
+            color: #919191;
+        }
+    }
+
+    .search_btn {
+        border: none;
+        background-color: $yellow;
+        height: 100%;
+        max-width: 130px;
+        width: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18 / 14 * 100%;
+        color: #2D2D2D;
+
+        @include media ("<phone") {
+            padding: 10px;
+            max-width: 100%;
+        }
+    }
+
+    .description_form {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18 / 14 * 100%;
+        color: $gray_3;
+    }
+
+    .footer_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .tip {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18 / 14 * 100%;
+        letter-spacing: -0.01em;
+        color: #5B5B5B;
+
+        &:first-child {
+            position: relative;
+            margin-right: 25px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -14px;
+                width: 1px;
+                height: 100%;
+                background-color: #5B5B5B;
+            }
+        }
+    }
+
+    .tip_link{
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+}

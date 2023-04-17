@@ -1,0 +1,7 @@
+.yellow_btn{
+    background-color: $yellow;
+    transition: all .3s ease;
+    &:hover{
+        background-color: #FFD964;
+    }
+}
