@@ -42,6 +42,9 @@ var spinner = new Spinner();
 var winTriggersMethods = ["resize", "load"];
 var MOBILE_SIZE = 480;
 var prevWidth = window.innerWidth;
+var EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+var CS_CONTACT_API = 'https://api.creditorsolutions.com/Judgment/contact';
+var CS_FILE_API = "https://api.creditorsolutions.com/Judgment/AddId";
 initBurger();
 initNavBtn();
 findHref();
@@ -57,6 +60,76 @@ jsonAnimationEnforce();
 setActiveClass();
 openFileModal();
 initTabs();
+contactForm();
+
+function contactForm() {
+  var form = document.querySelector("#contactForm");
+  if (!form) return;
+  var successMsg = form.querySelector(".success-text");
+  var fName = form.querySelector("#fName");
+  var fNameValue = fName.value;
+  var lName = form.querySelector("#lName");
+  var lNameValue = lName.value;
+  var email = form.querySelector("#email");
+  var emailValue = email.value;
+  var msg = form.querySelector("#msg");
+  var msgValue = msg.value;
+
+  var showError = function showError(el) {
+    el.closest(".field").querySelector(".error_text").classList.add("d-block");
+  };
+
+  var hideError = function hideError(el) {
+    el.closest(".field").querySelector(".error_text").classList.remove("d-block");
+  };
+
+  fName.addEventListener("input", function (e) {
+    fNameValue = e.target.value;
+    !fNameValue ? showError(fName) : hideError(fName);
+  });
+  lName.addEventListener("input", function (e) {
+    lNameValue = e.target.value;
+    !lNameValue ? showError(lName) : hideError(lName);
+  });
+  email.addEventListener("input", function (e) {
+    emailValue = e.target.value;
+    !emailValue ? showError(email) : hideError(email);
+  });
+  msg.addEventListener("input", function (e) {
+    msgValue = e.target.value;
+    !msgValue ? showError(msg) : hideError(msg);
+  });
+  form.addEventListener("submit", function (e) {
+    successMsg.classList.remove("d-block");
+    e.preventDefault();
+    var isValid = false;
+    !fNameValue ? showError(fName) : hideError(fName);
+    !lNameValue ? showError(lName) : hideError(lName);
+    !emailValue ? showError(email) : hideError(email);
+    !msgValue ? showError(msg) : hideError(msg);
+    !EMAIL_REGEX.test(emailValue) ? showError(email) : hideError(email);
+
+    if (!fNameValue || !lNameValue || !emailValue || !msgValue || !EMAIL_REGEX.test(emailValue)) {
+      isValid = false;
+    } else {
+      isValid = true;
+    }
+
+    if (isValid) {
+      spinner.show();
+      postData(CS_CONTACT_API, {
+        firstName: fNameValue,
+        lastName: lNameValue,
+        email: emailValue,
+        message: msgValue
+      }).then(function () {
+        successMsg.classList.remove("d-block");
+      }).finally(function () {
+        spinner.hide();
+      });
+    }
+  });
+}
 
 function initTabs() {
   var faqTabs = document.querySelector("#faqTabs");
@@ -1059,8 +1132,7 @@ function jsonAnimationEnforce() {
 }
 
 function fetchFile(payload) {
-  // TODO: Change API
-  return fetch("https://jsonplaceholder.typicode.com/todos", {
+  return fetch(CS_FILE_API, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
@@ -1107,7 +1179,7 @@ function openFileModal() {
 
 
   var onActionFile = function onActionFile(blob, hrefBeforeAPI) {
-    var url = hrefBeforeAPI || window.URL.createObjectURL(blob);
+    var url = window.URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.style.display = "none";
     a.href = url; // the filename you want
@@ -1398,5 +1470,32 @@ function toMilliseconds() {
   var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var sec = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   return (hrs * 60 * 60 + min * 60 + sec) * 1000;
+} // Example POST method implementation:
+
+
+function postData() {
+  var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+  var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  // Default options are marked with *
+  return fetch(url, {
+    method: "POST",
+    // *GET, POST, PUT, DELETE, etc.
+    mode: "cors",
+    // no-cors, *cors, same-origin
+    cache: "no-cache",
+    // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin",
+    // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json" // 'Content-Type': 'application/x-www-form-urlencoded',
+
+    },
+    redirect: "follow",
+    // manual, *follow, error
+    referrerPolicy: "no-referrer",
+    // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+
+  });
 }
 //# sourceMappingURL=main.js.map

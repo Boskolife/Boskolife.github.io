@@ -28,6 +28,10 @@ main {
     padding-top: 100px;
 }
 
+.d-block {
+    display: block !important;
+}
+
 .body_lock,
 .faq_lock {
     overflow: hidden;
@@ -888,6 +892,7 @@ main {
     }
 
     .data_name {
+        display: block;
         font-weight: 600;
         font-size: 12px;
         text-transform: capitalize;
@@ -895,12 +900,30 @@ main {
         margin-bottom: 12px;
     }
 
+    .field {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .error_text {
+        color: rgb(216, 100, 100);
+        font-weight: 600;
+        font-size: 12px;
+        display: none;
+        padding-top: 5px;
+    }
+    
+    .success-text {
+        display: none;
+        color: #11AF22;
+        margin-bottom: 10px;
+    }
+
     .data {
         border: 1px solid #DADDE5;
         border-radius: 8px;
         padding: 12px 16px;
         width: 100%;
-        margin-bottom: 25px;
 
         &::placeholder {
             color: $gray_2;

@@ -430,17 +430,30 @@
                                     alt="image not found">
                             </div>
                         </div>
-                        <form>
+                        <form id="contactForm">
                             <label class="data_name">First Name*</label>
-                            <input class="data" required type="text" placeholder="Enter first name">
-                            <label class="data_name">Last Name*</label>
-                            <input class="data" required type="text" placeholder="Enter last name">
-                            <label class="data_name">Email*</label>
-                            <input class="data" required type="email"
-                                placeholder="Enter your email">
-                            <label class="data_name">Your question*</label>
-                            <textarea class="data_text data"
-                                placeholder="Enter your question"></textarea>
+                            <div class="field">
+                                <input id="fName" class="data" type="text" placeholder="Enter first name">
+                                <p class="error_text">Please fill in required field before proceeding</p>
+                            </div>
+                            <div class="field">
+                                <label class="data_name">Last Name*</label>
+                                <input id="lName" class="data" type="text" placeholder="Enter last name">
+                                <p class="error_text">Please fill in required field before proceeding</p>
+                            </div>
+                            <div class="field">
+                                <label class="data_name">Email*</label>
+                                <input id="email" class="data" type="email"
+                                    placeholder="Enter your email">
+                                <p class="error_text">Please fill in required field before proceeding</p>
+                            </div>
+                            <div class="field">
+                                <label class="data_name">Your question*</label>
+                                <textarea id="msg" class="data_text data"
+                                    placeholder="Enter your question"></textarea>
+                                <p class="error_text">Please fill in required field before proceeding</p>
+                            </div>
+                            <p class="success-text">Your Submission Was Successful!</p>
                             <button class="blue_btn" type="submit">Send message</button>
                         </form>
                     </div>

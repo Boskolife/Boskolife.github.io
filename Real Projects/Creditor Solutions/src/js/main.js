@@ -54,6 +54,9 @@ const winTriggersMethods = ["resize", "load"];
 
 const MOBILE_SIZE = 480;
 let prevWidth = window.innerWidth;
+const EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+const CS_CONTACT_API = 'https://api.creditorsolutions.com/Judgment/contact'
+const CS_FILE_API = "https://api.creditorsolutions.com/Judgment/AddId";
 
 initBurger();
 initNavBtn();
@@ -70,6 +73,79 @@ jsonAnimationEnforce();
 setActiveClass();
 openFileModal();
 initTabs();
+contactForm();
+
+function contactForm() {
+  const form = document.querySelector("#contactForm");
+  if (!form) return;
+  const successMsg = form.querySelector(".success-text");
+  const fName = form.querySelector("#fName");
+  let fNameValue = fName.value;
+  const lName = form.querySelector("#lName");
+  let lNameValue = lName.value;
+  const email = form.querySelector("#email");
+  let emailValue = email.value;
+  const msg = form.querySelector("#msg");
+  let msgValue = msg.value;
+
+  const showError = (el) => {
+    el.closest(".field").querySelector(".error_text").classList.add("d-block");
+  };
+  const hideError = (el) => {
+    el.closest(".field")
+      .querySelector(".error_text")
+      .classList.remove("d-block");
+  };
+
+  fName.addEventListener("input", (e) => {
+    fNameValue = e.target.value;
+    !fNameValue ? showError(fName) : hideError(fName);
+  });
+  lName.addEventListener("input", (e) => {
+    lNameValue = e.target.value;
+    !lNameValue ? showError(lName) : hideError(lName);
+  });
+  email.addEventListener("input", (e) => {
+    emailValue = e.target.value;
+    !emailValue ? showError(email) : hideError(email);
+  });
+  msg.addEventListener("input", (e) => {
+    msgValue = e.target.value;
+    !msgValue ? showError(msg) : hideError(msg);
+  });
+
+  form.addEventListener("submit", (e) => {
+    successMsg.classList.remove("d-block");
+    e.preventDefault();
+    let isValid = false;
+    !fNameValue ? showError(fName) : hideError(fName);
+    !lNameValue ? showError(lName) : hideError(lName);
+    !emailValue ? showError(email) : hideError(email);
+    !msgValue ? showError(msg) : hideError(msg);
+    !EMAIL_REGEX.test(emailValue) ? showError(email) : hideError(email);
+
+    if(!fNameValue || !lNameValue || !emailValue || !msgValue ||  !EMAIL_REGEX.test(emailValue)) {
+      isValid = false;
+    } else {
+      isValid = true;
+    }
+    if (isValid) {
+      spinner.show();
+      postData(CS_CONTACT_API, {
+        firstName: fNameValue,
+        lastName: lNameValue,
+        email: emailValue,
+        message: msgValue,
+      })
+        .then(() => {
+          successMsg.classList.remove("d-block");
+        })
+        .finally(() => {
+          spinner.hide();
+        });
+    }
+  });
+}
 
 function initTabs() {
   const faqTabs = document.querySelector("#faqTabs");
@@ -1143,8 +1219,7 @@ function jsonAnimationEnforce() {
 }
 
 function fetchFile(payload) {
-  // TODO: Change API
-  return fetch("https://jsonplaceholder.typicode.com/todos", {
+  return fetch(CS_FILE_API, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
@@ -1184,7 +1259,7 @@ function openFileModal() {
   };
   // TODO: delete hrefBeforeAPI
   const onActionFile = (blob, hrefBeforeAPI) => {
-    const url = hrefBeforeAPI || window.URL.createObjectURL(blob);
+    const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
@@ -1476,4 +1551,22 @@ function uniqueId() {
 
 function toMilliseconds(hrs = 0, min = 0, sec = 0) {
   return (hrs * 60 * 60 + min * 60 + sec) * 1000;
+}
+
+// Example POST method implementation:
+function postData(url = "", data = {}) {
+  // Default options are marked with *
+  return fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
 }

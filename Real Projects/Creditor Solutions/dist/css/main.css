@@ -1310,6 +1310,9 @@ main {
 #root {
   padding-top: 100px; }
 
+.d-block {
+  display: block !important; }
+
 .body_lock,
 .faq_lock {
   overflow: hidden; }
@@ -2194,17 +2197,30 @@ main {
       .contact_us form {
         width: 100%; } }
   .contact_us .data_name {
+    display: block;
     font-weight: 600;
     font-size: 12px;
     text-transform: capitalize;
     color: #66666C;
     margin-bottom: 12px; }
+  .contact_us .field {
+    margin-bottom: 25px;
+    width: 100%; }
+  .contact_us .error_text {
+    color: #d86464;
+    font-weight: 600;
+    font-size: 12px;
+    display: none;
+    padding-top: 5px; }
+  .contact_us .success-text {
+    display: none;
+    color: #11AF22;
+    margin-bottom: 10px; }
   .contact_us .data {
     border: 1px solid #DADDE5;
     border-radius: 8px;
     padding: 12px 16px;
-    width: 100%;
-    margin-bottom: 25px; }
+    width: 100%; }
     .contact_us .data::-webkit-input-placeholder {
       color: #66666C;
       font-size: 14px; }
