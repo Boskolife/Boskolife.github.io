@@ -1242,7 +1242,7 @@ function openFileModal() {
 
   const getPayload = () => {
     let userId = getWithExpiry("userId");
-    const prevSection = userId && userId.slice(0, 2);
+    const prevSection = userId && userId.slice(0, 3);
     if (prevSection !== sectionName || !userId) {
       userId = "".concat(sectionName, ".").concat(uniqueId()).toUpperCase();
       setWithExpiry("userId", userId, toMilliseconds(1));
