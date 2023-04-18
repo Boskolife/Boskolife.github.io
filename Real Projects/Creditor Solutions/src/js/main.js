@@ -138,7 +138,7 @@ function contactForm() {
         message: msgValue,
       })
         .then(() => {
-          successMsg.classList.remove("d-block");
+          successMsg.classList.add("d-block");
         })
         .finally(() => {
           spinner.hide();

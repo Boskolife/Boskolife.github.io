@@ -123,7 +123,7 @@ function contactForm() {
         email: emailValue,
         message: msgValue
       }).then(function () {
-        successMsg.classList.remove("d-block");
+        successMsg.classList.add("d-block");
       }).finally(function () {
         spinner.hide();
       });
