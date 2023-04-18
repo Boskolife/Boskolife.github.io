@@ -1244,7 +1244,7 @@ function openFileModal() {
     let userId = getWithExpiry("userId");
     const prevSection = userId && userId.slice(0, 2);
     if (prevSection !== sectionName || !userId) {
-      userId = `${sectionName}${uniqueId().slice(-6)}`.toUpperCase();
+      userId = `${sectionName}.${uniqueId()}`.toUpperCase();
       setWithExpiry("userId", userId, toMilliseconds(1));
     }
     const payload = {
