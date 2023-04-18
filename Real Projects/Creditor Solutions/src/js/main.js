@@ -73,7 +73,7 @@ jsonAnimationEnforce();
 setActiveClass();
 openFileModal();
 initTabs();
-contactForm();
+contactForm(); 
 
 function contactForm() {
   const form = document.querySelector("#contactForm");

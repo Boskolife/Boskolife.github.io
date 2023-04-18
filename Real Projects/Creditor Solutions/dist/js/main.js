@@ -1160,7 +1160,7 @@ function openFileModal() {
     var prevSection = userId && userId.slice(0, 2);
 
     if (prevSection !== sectionName || !userId) {
-      userId = "".concat(sectionName).concat(uniqueId().slice(-6)).toUpperCase();
+      userId = "".concat(sectionName, ".").concat(uniqueId()).toUpperCase();
       setWithExpiry("userId", userId, toMilliseconds(1));
     }
 
