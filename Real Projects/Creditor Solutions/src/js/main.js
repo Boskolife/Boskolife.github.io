@@ -1258,15 +1258,12 @@ function openFileModal() {
     return payload;
   };
   // TODO: delete hrefBeforeAPI
-  const onActionFile = (blob, hrefBeforeAPI) => {
+  const onActionFile = (blob, fileName, hrefBeforeAPI) => {
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
-    // the filename you want
-    if (isDownload) {
-      a.download = url;
-    }
+    a.download = fileName;
     if (isOpen) {
       a.setAttribute("target", "_blank");
     }
@@ -1310,7 +1307,7 @@ function openFileModal() {
         fetchFile(payload)
           .then((resp) => resp.blob())
           //TODO: delete btn.getAttribute('href')
-          .then((blob) => onActionFile(blob, btn.getAttribute("href")))
+          .then((blob) => onActionFile(blob, `${fileName}.pdf`, btn.getAttribute("href")))
           .finally(() => {
             spinner.hide();
           });
@@ -1425,7 +1422,7 @@ function openFileModal() {
       .then((resp) => resp.blob())
       //TODO: delete btn.getAttribute('href')
       .then((blob) => {
-        onActionFile(blob, selectBtn.getAttribute("href"));
+        onActionFile(blob, `${fileName}.pdf`, selectBtn.getAttribute("href"));
         closeModal();
       })
       .finally(() => {
