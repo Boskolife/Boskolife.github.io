@@ -2678,7 +2678,8 @@ footer {
     margin-bottom: 15px;
     display: inline-block; }
   .notified .data_text {
-    min-width: 220px; }
+    min-width: 220px;
+    margin-bottom: 30px; }
 
 .podcast_page {
   /* Только если меньше контейнера */
