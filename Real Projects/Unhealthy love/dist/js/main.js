@@ -11,16 +11,17 @@ initBurger();
 findHref();
 initContactPopup();
 playAudio(); // initMainVideo();
-// const swiper = new Swiper(".podcast_swiper");
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
     var init = _objectSpread({}, obj);
 
     var win = window;
-    var sliderSelector = document.querySelector(selector); // if(!sliderSelector){
-    //     return
-    // }
+    var sliderSelector = document.querySelector(selector);
+
+    if (!sliderSelector) {
+      return;
+    }
 
     var swiper = new Swiper(selector, init);
 

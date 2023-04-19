@@ -605,8 +605,6 @@ input[type='submit'] {
   padding-left: 25px;
   border: 1px solid #2D2D2D;
   background-color: #ffffff;
-  /* Только если меньше контейнера */
-  margin-bottom: 30px;
   color: #2D2D2D;
   /* Только если меньше контейнера */
   font-size: 18px;
@@ -614,9 +612,6 @@ input[type='submit'] {
   @media (max-width: 1250px) {
     .data_text {
       padding-left: calc(15px + 10 * ((100vw - calc(375px)) / 875)); } }
-  @media (max-width: 1250px) {
-    .data_text {
-      margin-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 875)); } }
   @media (max-width: 1250px) {
     .data_text {
       font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
@@ -856,8 +851,10 @@ header {
     transform: translate(-50%, -50%) scale(0);
     background-color: #ffffff;
     box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
-    max-width: 725px;
-    height: calc(100% - 20px);
+    max-width: 870px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     width: calc(100% - 10px);
     /* Только если меньше контейнера */
     padding-top: 60px;
@@ -893,11 +890,6 @@ header {
     @media (max-width: 1250px) {
       header .contact_popup {
         padding-right: calc(10px + 50 * ((100vw - calc(375px)) / 875)); } }
-    @media (max-width: 767px) {
-      header .contact_popup {
-        height: -webkit-max-content;
-        height: -moz-max-content;
-        height: max-content; } }
     header .contact_popup .yellow_btn {
       border: none;
       max-width: 130px;
@@ -928,15 +920,15 @@ header {
     display: block; }
   header .popup_img_top {
     position: absolute;
-    top: -150px;
-    left: 0;
+    top: -50px;
+    left: -70px;
     z-index: -1; }
     @media (max-width: 767px) {
       header .popup_img_top {
         display: none; } }
   header .popup_img_bottom {
     position: absolute;
-    right: 0;
+    right: -60px;
     bottom: -8%;
     z-index: -1; }
     @media (max-width: 767px) {
@@ -979,15 +971,18 @@ header {
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-bottom: 15px; }
   header .input_wrap {
-    width: 48%; }
+    width: 48%;
+    text-align: start; }
   header .data_title {
     font-size: 18px;
     line-height: 127.77778%;
     color: #7A7A7A;
     /* Только если меньше контейнера */
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    display: inline-block; }
     @media (max-width: 1250px) {
       header .data_title {
         margin-bottom: calc(10px + 5 * ((100vw - calc(375px)) / 875)); } }
@@ -998,8 +993,6 @@ header {
     padding-left: 25px;
     border: 1px solid #2D2D2D;
     background-color: #ffffff;
-    /* Только если меньше контейнера */
-    margin-bottom: 20px;
     color: #2D2D2D;
     /* Только если меньше контейнера */
     font-size: 18px;
@@ -1009,10 +1002,13 @@ header {
         padding-left: calc(15px + 10 * ((100vw - calc(375px)) / 875)); } }
     @media (max-width: 1250px) {
       header .data_text {
-        margin-bottom: calc(10px + 10 * ((100vw - calc(375px)) / 875)); } }
-    @media (max-width: 1250px) {
-      header .data_text {
         font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
+    header .data_text:not(:last-child) {
+      /* Только если меньше контейнера */
+      margin-bottom: 20px; }
+      @media (max-width: 1250px) {
+        header .data_text:not(:last-child) {
+          margin-bottom: calc(10px + 10 * ((100vw - calc(375px)) / 875)); } }
     header .data_text:focus {
       background-color: #FFF9E7;
       border: 1px solid #F8C62A;
@@ -1055,6 +1051,8 @@ header {
           font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
   header .area_text {
     height: 130px; }
+  header .choose {
+    margin-bottom: 35px; }
   header .checkbox_wrap {
     /* Только если меньше контейнера */
     margin-bottom: 25px; }
@@ -1089,9 +1087,22 @@ header {
     background-color: #F8C62A;
     background-image: url(../images/header/check.svg);
     transition: all .3s ease; }
+  header .argee {
+    cursor: pointer; }
   header .link_terms {
     text-decoration: underline;
     margin-left: 5px; }
+  header .ep_label {
+    cursor: pointer;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 130%;
+    color: #353A3F; }
+    @media (max-width: 1250px) {
+      header .ep_label {
+        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
+  header .label1 {
+    margin-right: 30px; }
 
 html {
   scroll-behavior: smooth; }
@@ -2678,7 +2689,8 @@ footer {
     margin-bottom: 15px;
     display: inline-block; }
   .notified .data_text {
-    min-width: 220px; }
+    min-width: 220px;
+    margin-bottom: 30px; }
 
 .podcast_page {
   /* Только если меньше контейнера */

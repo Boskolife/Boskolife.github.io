@@ -5,7 +5,6 @@ initContactPopup();
 playAudio();
 // initMainVideo();
 
-// const swiper = new Swiper(".podcast_swiper");
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -15,9 +14,9 @@ function initSwiper() {
 
         const win = window;
         const sliderSelector = document.querySelector(selector);
-        // if(!sliderSelector){
-        //     return
-        // }
+        if(!sliderSelector){
+            return
+        }
         let swiper = new Swiper(selector, init);
 
         const toggleInit = () => {

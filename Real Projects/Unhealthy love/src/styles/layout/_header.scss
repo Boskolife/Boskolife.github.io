@@ -88,7 +88,7 @@ header {
             width: 100%;
             margin: 0 0 20px 0;
 
-            &:not(:last-child){
+            &:not(:last-child) {
                 padding-bottom: 20px;
                 border-bottom: 1px solid #DCDCDC;
             }
@@ -122,7 +122,7 @@ header {
             @include media ("<tablet_max") {
                 display: none;
             }
-    
+
         }
     }
 
@@ -190,8 +190,9 @@ header {
         transform: translate(-50%, -50%) scale(0);
         background-color: $white;
         box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
-        max-width: 725px;
-        height: calc(100% - 20px);
+        max-width: 870px;
+        height: max-content;
+        // height: calc(100% - 20px);
         width: calc(100% - 10px);
         @include adaptiv-vaule("padding-top", 60, 50, 1);
         @include adaptiv-vaule("padding-bottom", 30, 20, 1);
@@ -207,10 +208,6 @@ header {
         border-radius: 50%;
         opacity: 0;
         transition: all .3s ease-out;
-
-        @include media ("<tablet") {
-            height: max-content;
-        }
 
         .yellow_btn {
             border: none;
@@ -252,8 +249,8 @@ header {
 
     .popup_img_top {
         position: absolute;
-        top: -150px;
-        left: 0;
+        top: -50px;
+        left: -70px;
         z-index: -1;
 
         @include media ("<tablet") {
@@ -263,7 +260,7 @@ header {
 
     .popup_img_bottom {
         position: absolute;
-        right: 0;
+        right: -60px;
         bottom: -8%;
         z-index: -1;
 
@@ -277,7 +274,6 @@ header {
         top: 5%;
         right: 5%;
         cursor: pointer;
-
 
         &:hover {
             svg {
@@ -309,14 +305,16 @@ header {
         z-index: 3;
     }
 
-    .form_body{
+    .form_body {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        margin-bottom: 15px;
     }
 
-    .input_wrap{
+    .input_wrap {
         width: 48%;
+        text-align: start;
     }
 
     .data_title {
@@ -324,25 +322,29 @@ header {
         line-height: 23 / 18 * 100%;
         color: $gray_3;
         @include adaptiv-vaule("margin-bottom", 15, 10, 1);
+        display: inline-block;
     }
-    
+
     .data_text {
         width: 100%;
         padding: 15px 20px 15px 25px;
         @include adaptiv-vaule("padding-left", 25, 15, 1);
         border: 1px solid $black;
         background-color: $white;
-        @include adaptiv-vaule("margin-bottom", 20, 10, 1);
         color: $black;
         @include adaptiv-vaule("font-size", 18, 16, 1);
         line-height: 23 / 18 * 100%;
-    
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+        }
+
         &:focus {
             background-color: #FFF9E7;
             border: 1px solid $yellow;
             transition: all .3s ease-in;
         }
-    
+
         &::placeholder {
             @include adaptiv-vaule("font-size", 18, 16, 1);
             line-height: 23 / 18 * 100%;
@@ -352,6 +354,10 @@ header {
 
     .area_text {
         height: 130px;
+    }
+
+    .choose {
+        margin-bottom: 35px;
     }
 
     .checkbox_wrap {
@@ -390,9 +396,24 @@ header {
         transition: all .3s ease;
     }
 
+    .argee {
+        cursor: pointer;
+    }
+
     .link_terms {
         text-decoration: underline;
         margin-left: 5px;
+    }
+
+    .ep_label {
+        cursor: pointer;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 130%;
+        color: #353A3F;
+    }
+    
+    .label1{
+        margin-right: 30px;
     }
 
 }

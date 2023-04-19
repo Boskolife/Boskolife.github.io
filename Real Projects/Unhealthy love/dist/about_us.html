@@ -51,12 +51,6 @@
                             </svg>
                         </div>
                         <div class="popup_content">
-                            <div class="popup_img_top">
-                                <img src="./images/header/popup_img.svg" alt="image not found">
-                            </div>
-                            <div class="popup_img_bottom">
-                                <img src="./images/header/popup_img_2.svg" alt="image not found">
-                            </div>
                             <h2 class="popup_title">Contact us</h2>
                             <form>
                                 <div class="form_body">
@@ -79,21 +73,18 @@
                                         <label class="data_title" for="message">Message</label>
                                         <textarea id="message" class="data_text area_text"
                                             placeholder="Enter your message"></textarea>
-                                        <div class="checkbox_wrap">
-                                            <input type="checkbox" class="custom_checkbox" id="check"
-                                                name="argree" value="yes">
-                                            <label for="check">I agree with the<a class="link_terms"
-                                                    target="_blank" href="terms_and_conditions.html">Terms
-                                                    And
-                                                    Conditions</a></label>
-                                        </div>
+                                        <input type="checkbox" class="custom_checkbox" id="check"
+                                            name="argree" value="yes">
+                                        <label class="argee" for="check">I agree with the<a class="link_terms"
+                                                target="_blank" href="terms_and_conditions.html">Terms And
+                                                Conditions</a></label>
                                     </div>
                                 </div>
                                 <div class="choose">
-                                    <input name="person" id="radio1" type="radio">
-                                    <label for="radio1">Episode Host</label>
-                                    <input name="person" id="radio2" type="radio">
-                                    <label for="radio2">Episode Guest</label>
+                                    <input class="custom_radio" name="person" id="radio1" type="radio">
+                                    <label class="ep_label label1" for="radio1">Episode Host</label>
+                                    <input class="custom_radio" name="person" id="radio2" type="radio">
+                                    <label class="ep_label" for="radio2">Episode Guest</label>
                                 </div>
                                 <button class="yellow_btn">Send</button>
                             </form>
