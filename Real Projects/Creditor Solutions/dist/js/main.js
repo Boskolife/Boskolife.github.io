@@ -1541,7 +1541,7 @@ function getWithExpiry(key) {
 }
 
 function uniqueId() {
-  return Math.floor(Math.random() * 899999 + 100000);
+  return Math.floor(Math.random() * 8999999 + 1000000);
 }
 
 function toMilliseconds(hrs = 0, min = 0, sec = 0) {
