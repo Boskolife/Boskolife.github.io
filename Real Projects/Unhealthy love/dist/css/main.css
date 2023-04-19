@@ -716,7 +716,7 @@ header {
     -ms-flex-align: center;
     align-items: center;
     position: relative;
-    z-index: 3; }
+    z-index: 6; }
   header .logo_link {
     position: absolute;
     top: 0;
@@ -745,14 +745,14 @@ header {
   @media (max-width: 809px) {
     header .nav {
       position: fixed;
-      z-index: 2;
+      z-index: 5;
       top: 0;
       right: -100%;
       transition: all .3s linear;
       height: 100vh;
       width: 60%;
-      background-color: #FBFBFB;
-      padding: 100px 15px 50px 15px; } }
+      background-color: #ffffff;
+      padding: 85px 15px 50px 15px; } }
   @media (max-width: 767px) {
     header .nav {
       width: 100%; } }
@@ -768,8 +768,8 @@ header {
       header .nav_menu {
         -ms-flex-direction: column;
         flex-direction: column;
-        -ms-flex-pack: center;
-        justify-content: center;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
         height: 100%;
         width: 100%;
         overflow: auto; } }
@@ -781,18 +781,22 @@ header {
         margin-left: calc(0px + 70 * ((100vw - calc(375px)) / 875)); } }
     @media (max-width: 809px) {
       header .menu_item {
-        margin: 0 0 25px 0; } }
+        width: 100%;
+        margin: 0 0 20px 0; }
+        header .menu_item:not(:last-child) {
+          padding-bottom: 20px;
+          border-bottom: 1px solid #DCDCDC; } }
   header .menu_link {
     font-weight: 600;
     font-size: 14px;
     line-height: 128.57143%;
     color: #2D2D2D;
     padding-bottom: 5px; }
-    @media (max-width: 809px) {
-      header .menu_link {
-        font-size: 24px; } }
   header .menu_link_active {
     position: relative; }
+    @media (max-width: 809px) {
+      header .menu_link_active {
+        color: #F8C62A; } }
     header .menu_link_active::after {
       content: '';
       position: absolute;
@@ -801,6 +805,9 @@ header {
       width: 100%;
       height: 2px;
       background-color: #F8C62A; }
+      @media (max-width: 809px) {
+        header .menu_link_active::after {
+          display: none; } }
   header .btn_item {
     padding: 10px 30px; }
   header .header_burger {
@@ -810,7 +817,7 @@ header {
     position: relative;
     top: -2px;
     cursor: pointer;
-    z-index: 3; }
+    z-index: 6; }
     @media (max-width: 809px) {
       header .header_burger {
         display: block; } }
@@ -1636,7 +1643,7 @@ html {
       .latest_episode .icon {
         height: calc(40px + 15 * ((100vw - calc(375px)) / 875)); } }
     .latest_episode .icon:not(:first-child) {
-      margin-left: 10px; }
+      margin-left: -10px; }
       @media (max-width: 767px) {
         .latest_episode .icon:not(:first-child) {
           margin-left: -15px; } }
@@ -2572,5 +2579,369 @@ footer {
     display: inline-block; }
   .notified .data_text {
     min-width: 220px; }
+
+.podcast_page {
+  /* Только если меньше контейнера */
+  padding-top: 115px;
+  /* Только если меньше контейнера */
+  padding-bottom: 65px;
+  background-color: #ffffff; }
+  @media (max-width: 1250px) {
+    .podcast_page {
+      padding-top: calc(20px + 95 * ((100vw - calc(375px)) / 875)); } }
+  @media (max-width: 1250px) {
+    .podcast_page {
+      padding-bottom: calc(70px + -5 * ((100vw - calc(375px)) / 875)); } }
+  .podcast_page .podcast_page_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 58px;
+    line-height: 130%;
+    color: #2D2D2D;
+    /* Только если меньше контейнера */
+    margin-bottom: 40px; }
+    @media (max-width: 1250px) {
+      .podcast_page .podcast_page_title {
+        font-size: calc(36px + 22 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .podcast_page .podcast_page_title {
+        margin-bottom: calc(30px + 10 * ((100vw - calc(375px)) / 875)); } }
+  .podcast_page .podcast_page_contetn {
+    background-color: #FBFBFB; }
+  .podcast_page .podcast_swiper {
+    /* Только если меньше контейнера */
+    padding-top: 100px;
+    /* Только если меньше контейнера */
+    padding-bottom: 100px; }
+    @media (max-width: 1250px) {
+      .podcast_page .podcast_swiper {
+        padding-top: calc(50px + 50 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .podcast_page .podcast_swiper {
+        padding-bottom: calc(90px + 10 * ((100vw - calc(375px)) / 875)); } }
+  .podcast_page .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 919px) {
+      .podcast_page .item {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .podcast_page .img_item {
+    position: relative;
+    width: 37%; }
+    @media (max-width: 919px) {
+      .podcast_page .img_item {
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 40px; } }
+    @media (max-width: 767px) {
+      .podcast_page .img_item {
+        max-width: 290px; } }
+  .podcast_page .fly_title {
+    position: absolute;
+    bottom: -15%;
+    right: -15%; }
+    @media (max-width: 919px) {
+      .podcast_page .fly_title {
+        display: none; } }
+  .podcast_page .item_text {
+    width: 45%; }
+    @media (max-width: 919px) {
+      .podcast_page .item_text {
+        width: 100%; } }
+  .podcast_page .item_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 48px;
+    line-height: 130%;
+    color: #2D2D2D;
+    /* Только если меньше контейнера */
+    margin-bottom: 55px; }
+    @media (max-width: 1250px) {
+      .podcast_page .item_title {
+        font-size: calc(20px + 28 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .podcast_page .item_title {
+        margin-bottom: calc(25px + 30 * ((100vw - calc(375px)) / 875)); } }
+  .podcast_page .swiper-pagination-bullet {
+    background-color: #7A7A7A;
+    width: 16px;
+    height: 16px;
+    opacity: 1; }
+  .podcast_page .swiper-pagination-bullet-active {
+    background-color: #F8C62A; }
+
+.episodes {
+  /* Только если меньше контейнера */
+  padding-top: 65px;
+  /* Только если меньше контейнера */
+  padding-bottom: 100px; }
+  @media (max-width: 1250px) {
+    .episodes {
+      padding-top: calc(70px + -5 * ((100vw - calc(375px)) / 875)); } }
+  @media (max-width: 1250px) {
+    .episodes {
+      padding-bottom: calc(135px + -35 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .title_wrap {
+    /* Только если меньше контейнера */
+    margin-bottom: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 1250px) {
+      .episodes .title_wrap {
+        margin-bottom: calc(30px + 10 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 649px) {
+      .episodes .title_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .episodes .episodes_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 48px;
+    margin-right: 30px;
+    line-height: 130%;
+    color: #2D2D2D; }
+    @media (max-width: 1250px) {
+      .episodes .episodes_title {
+        font-size: calc(36px + 12 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 649px) {
+      .episodes .episodes_title {
+        margin: 0 0 45px 0; } }
+  .episodes .search_wrap {
+    position: relative; }
+  .episodes .search_img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 20px; }
+  .episodes .search {
+    border: 1px solid #2D2D2D;
+    padding: 15px 15px 15px 45px; }
+    .episodes .search:focus {
+      background-color: #FFF9E7;
+      border: 1px solid #F8C62A;
+      transition: all .3s ease-in; }
+    .episodes .search::-webkit-input-placeholder {
+      font-size: 18px;
+      color: #7A7A7A; }
+    .episodes .search::-moz-placeholder {
+      font-size: 18px;
+      color: #7A7A7A; }
+    .episodes .search:-ms-input-placeholder {
+      font-size: 18px;
+      color: #7A7A7A; }
+    .episodes .search::-ms-input-placeholder {
+      font-size: 18px;
+      color: #7A7A7A; }
+    .episodes .search::placeholder {
+      font-size: 18px;
+      color: #7A7A7A; }
+  .episodes .tabs {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Только если меньше контейнера */
+    margin-bottom: 55px;
+    width: 100%; }
+    @media (max-width: 1250px) {
+      .episodes .tabs {
+        margin-bottom: calc(25px + 30 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .tablinks {
+    border: none;
+    background-color: #ffffff;
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    /* Только если меньше контейнера */
+    padding-right: 35px;
+    /* Только если меньше контейнера */
+    padding-left: 35px;
+    border-bottom: 1px solid #2D2D2D;
+    transition: all .3s ease;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #2D2D2D;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    white-space: nowrap; }
+    @media (max-width: 1250px) {
+      .episodes .tablinks {
+        padding-top: calc(12px + 3 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .tablinks {
+        padding-bottom: calc(12px + 3 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .tablinks {
+        padding-right: calc(15px + 20 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .tablinks {
+        padding-left: calc(15px + 20 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .active_tab {
+    background-color: #F8C62A;
+    transition: all .3s ease; }
+    .episodes .active_tab .yellow_word {
+      color: #2D2D2D;
+      transition: all .3s ease; }
+  .episodes .tabcontent {
+    display: none; }
+  .episodes .active_content {
+    display: block; }
+  .episodes .tab_swiper {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px; }
+  .episodes .swiper-pagination-bullet {
+    background-color: #7A7A7A;
+    width: 16px;
+    height: 16px;
+    opacity: 1; }
+  .episodes .swiper-pagination-bullet-active {
+    background-color: #F8C62A; }
+  .episodes .card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    /* Только если меньше контейнера */
+    height: 380px;
+    position: relative;
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    /* Только если меньше контейнера */
+    padding-right: 20px;
+    /* Только если меньше контейнера */
+    padding-left: 20px; }
+    @media (max-width: 1250px) {
+      .episodes .card {
+        height: calc(165px + 215 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .card {
+        padding-top: calc(10px + 5 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .card {
+        padding-bottom: calc(10px + 5 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .card {
+        padding-right: calc(8px + 12 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .card {
+        padding-left: calc(8px + 12 * ((100vw - calc(375px)) / 875)); } }
+    .episodes .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 45, 45, 0.6);
+      z-index: 2; }
+  .episodes .card_img {
+    z-index: 1; }
+  .episodes .number_episode {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #ffffff;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    z-index: 3; }
+    @media (max-width: 1250px) {
+      .episodes .number_episode {
+        font-size: calc(12px + 6 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .card_text {
+    position: relative;
+    z-index: 3; }
+  .episodes .card_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 130%;
+    color: #F8C62A;
+    margin-bottom: 5px; }
+    @media (max-width: 1250px) {
+      .episodes .card_title {
+        font-size: calc(16px + 8 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .card_descr {
+    color: #ffffff;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    /* Только если меньше контейнера */
+    margin-bottom: 15px;
+    max-width: 300px;
+    width: 100%; }
+    @media (max-width: 1250px) {
+      .episodes .card_descr {
+        font-size: calc(12px + 6 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .card_descr {
+        margin-bottom: calc(5px + 10 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .info {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  .episodes .info_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    .episodes .info_wrap:first-child {
+      /* Только если меньше контейнера */
+      margin-right: 20px; }
+      @media (max-width: 1250px) {
+        .episodes .info_wrap:first-child {
+          margin-right: calc(5px + 15 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .info_img {
+    /* Только если меньше контейнера */
+    margin-right: 8px;
+    /* Только если меньше контейнера */
+    width: 22px;
+    /* Только если меньше контейнера */
+    height: 22px; }
+    @media (max-width: 1250px) {
+      .episodes .info_img {
+        margin-right: calc(3px + 5 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .info_img {
+        width: calc(10px + 12 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .info_img {
+        height: calc(10px + 12 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .info_item {
+    color: #D3D3D3;
+    /* Только если меньше контейнера */
+    font-size: 14px; }
+    @media (max-width: 1250px) {
+      .episodes .info_item {
+        font-size: calc(12px + 2 * ((100vw - calc(375px)) / 875)); } }
+
+.white_bg {
+  background-color: #FBFBFB; }
+  .white_bg .black_btn {
+    background-color: #F8C62A;
+    border: none; }
+    .white_bg .black_btn:hover {
+      background-color: #FFD964; }
 
 /*# sourceMappingURL=main.css.map */

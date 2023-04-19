@@ -671,7 +671,7 @@ html {
         border: 1px solid #FFFFFF;
 
         &:not(:first-child) {
-            margin-left: 10px;
+            margin-left: -10px;
 
             @include media ("<tablet") {
                 margin-left: -15px;

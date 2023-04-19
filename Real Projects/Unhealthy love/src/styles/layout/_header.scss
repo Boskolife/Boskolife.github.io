@@ -13,7 +13,7 @@ header {
         display: flex;
         align-items: center;
         position: relative;
-        z-index: 3;
+        z-index: 6;
     }
 
     .logo_link {
@@ -48,14 +48,14 @@ header {
     .nav {
         @include media ("<tablet_max") {
             position: fixed;
-            z-index: 2;
+            z-index: 5;
             top: 0;
             right: -100%;
             transition: all .3s linear;
             height: 100vh;
             width: 60%;
-            background-color: $gray;
-            padding: 100px 15px 50px 15px;
+            background-color: $white;
+            padding: 85px 15px 50px 15px;
         }
 
         @include media ("<tablet") {
@@ -74,7 +74,7 @@ header {
 
         @include media ("<tablet_max") {
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100%;
             width: 100%;
             overflow: auto;
@@ -85,7 +85,13 @@ header {
         @include adaptiv-vaule("margin-left", 70, 0, 1);
 
         @include media ("<tablet_max") {
-            margin: 0 0 25px 0;
+            width: 100%;
+            margin: 0 0 20px 0;
+
+            &:not(:last-child){
+                padding-bottom: 20px;
+                border-bottom: 1px solid #DCDCDC;
+            }
         }
     }
 
@@ -95,14 +101,14 @@ header {
         line-height: 18 / 14 * 100%;
         color: $black;
         padding-bottom: 5px;
-
-        @include media ("<tablet_max") {
-            font-size: 24px;
-        }
     }
 
     .menu_link_active {
         position: relative;
+
+        @include media ("<tablet_max") {
+            color: $yellow;
+        }
 
         &::after {
             content: '';
@@ -112,6 +118,11 @@ header {
             width: 100%;
             height: 2px;
             background-color: $yellow;
+
+            @include media ("<tablet_max") {
+                display: none;
+            }
+    
         }
     }
 
@@ -126,7 +137,7 @@ header {
         position: relative;
         top: -2px;
         cursor: pointer;
-        z-index: 3;
+        z-index: 6;
 
         @include media ("<tablet_max") {
             display: block;
