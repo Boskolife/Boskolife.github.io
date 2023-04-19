@@ -12,10 +12,13 @@
             <nav class="nav">
                 <ul class="nav_menu" id="menu">
                     <li class="menu_item"> <a class="menu_link" href="index.html">Main page</a></li>
-                    <li class="menu_item"> <a class="menu_link" href="about_us.html">About us</a></li>
-                    <li class="menu_item"> <a class="menu_link" href="podcast_page.html">Podcast</a></li>
+                    <li class="menu_item"> <a class="menu_link" href="about_us.html">About us</a>
+                    </li>
+                    <li class="menu_item"> <a class="menu_link" href="podcast_page.html">Podcast</a>
+                    </li>
                     <li class="menu_item"> <a class="menu_link" href="#">Blog</a></li>
-                    <li class="menu_item"> <a class="menu_link btn_item popup_btn yellow_btn" href="#">Contact
+                    <li class="menu_item"> <a class="menu_link btn_item popup_btn yellow_btn"
+                            href="#">Contact
                             Us</a></li>
                 </ul>
             </nav>
@@ -23,7 +26,7 @@
                 <span></span>
             </div>
             <div class="popup_container"></div>
-            <div class="contact_popup">
+            <div class="contact_popup popup_active">
                 <div class="close_item">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -40,21 +43,41 @@
                     </div>
                     <h2 class="popup_title">Contact us</h2>
                     <form>
-                        <label class="data_title" for="name">Enter your name</label>
-                        <input id="name" class="data_text" placeholder="Name" type="text">
-                        <label class="data_title" for="mail">Enter your email</label>
-                        <input id="mail" class="data_text" placeholder="Unhealthylove@gmail.com"
-                            type="text">
-                        <label class="data_title" for="tel">Enter your phone</label>
-                        <input id="tel" class="data_text" placeholder="+ xx - xxx- xxx - xx "
-                            type="text">
-                        <label class="data_title" for="message">Message</label>
-                        <textarea id="message" class="data_text area_text"
-                            placeholder="Enter your message"></textarea>
-                        <div class="checkbox_wrap">
-                            <input type="checkbox" class="custom_checkbox" id="check" name="argree"
-                                value="yes">
-                            <label for="check">I agree with the<a class="link_terms" target="_blank" href="terms_and_conditions.html">Terms And Conditions</a></label>
+                        <div class="form_body">
+                            <div class="input_wrap">
+                                <label class="data_title" for="name">Enter your name</label>
+                                <input id="name" class="data_text" placeholder="Name" type="text">
+                                <label class="data_title" for="tel">Enter your phone</label>
+                                <input id="tel" class="data_text" placeholder="+ xx - xxx- xxx - xx"
+                                    type="tel">
+                                <label class="data_title" for="tel">Relevant videos that showcase
+                                    your
+                                    talent</label>
+                                <input id="tel" class="data_text" placeholder="Add links"
+                                    type="text">
+                            </div>
+                            <div class="input_wrap">
+                                <label class="data_title" for="mail">Enter your email</label>
+                                <input id="mail" class="data_text"
+                                    placeholder="Unhealthylove@gmail.com" type="text">
+                                <label class="data_title" for="message">Message</label>
+                                <textarea id="message" class="data_text area_text"
+                                    placeholder="Enter your message"></textarea>
+                                <div class="checkbox_wrap">
+                                    <input type="checkbox" class="custom_checkbox" id="check"
+                                        name="argree" value="yes">
+                                    <label for="check">I agree with the<a class="link_terms"
+                                            target="_blank" href="terms_and_conditions.html">Terms
+                                            And
+                                            Conditions</a></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choose">
+                            <input name="person" id="radio1" type="radio">
+                            <label for="radio1">Episode Host</label>
+                            <input name="person" id="radio2" type="radio">
+                            <label for="radio2">Episode Guest</label>
                         </div>
                         <button class="yellow_btn">Send</button>
                     </form>

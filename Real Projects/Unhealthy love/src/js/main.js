@@ -43,7 +43,7 @@ function initSwiper() {
     destroySlidersOnResize(".post_swiper", 9999, {
         slidesPerView: 1.5,
         spaceBetween: 20,
-        grabCursor:true,
+        grabCursor: true,
         pagination: {
             el: ".swiper-pagination",
             type: "progressbar",
@@ -58,7 +58,7 @@ function initSwiper() {
 
     destroySlidersOnResize(".podcast_swiper", 9999, {
         slidesPerView: 1,
-        grabCursor:true,
+        grabCursor: true,
         pagination: {
             el: ".swiper-pagination",
             type: "bullets",
@@ -68,10 +68,10 @@ function initSwiper() {
     destroySlidersOnResize(".tab_swiper", 9999, {
         slidesPerView: 2,
         spaceBetween: 10,
-        grabCursor:true,
+        grabCursor: true,
         grid: {
             rows: 3,
-            fill: 'row',
+            fill: "row",
         },
         breakpoints: {
             1024: {
@@ -79,7 +79,7 @@ function initSwiper() {
                 spaceBetween: 30,
                 grid: {
                     rows: 3,
-                    fill: 'row',
+                    fill: "row",
                 },
             },
         },

@@ -812,8 +812,8 @@ header {
     padding: 10px 30px; }
   header .header_burger {
     display: none;
-    width: 28px;
-    height: 21px;
+    width: 24px;
+    height: 20px;
     position: relative;
     top: -2px;
     cursor: pointer;
@@ -826,37 +826,30 @@ header {
       position: absolute;
       width: 100%;
       height: 3px;
-      background: black;
-      transition: all 0.4s ease; }
+      background: #2D2D2D;
+      transition: all 0.4s ease;
+      border-radius: 7px; }
     header .header_burger span {
       position: absolute;
-      width: 100%;
+      border-radius: 7px;
+      width: 50%;
       height: 3px;
-      background: black;
-      top: 9px;
-      left: 0;
+      background: #2D2D2D;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 0;
       transition: all 0.4s ease;
       opacity: 1; }
     header .header_burger::after {
       bottom: 0; }
     header .header_burger::before {
       top: 0; }
-  header .burger_active::after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    bottom: 9px;
-    background: golden; }
-  header .burger_active::before {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 9px;
-    background: golden; }
   header .burger_active span {
-    opacity: 0;
-    visibility: hidden; }
+    width: 100%; }
   header .contact_popup {
     position: fixed;
-    z-index: 4;
+    z-index: 10;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%) scale(0);
@@ -864,16 +857,27 @@ header {
     background-color: #ffffff;
     box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
     max-width: 725px;
-    max-height: 870px;
     height: calc(100% - 20px);
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     /* Только если меньше контейнера */
     padding-top: 60px;
     /* Только если меньше контейнера */
-    padding-bottom: 60px;
+    padding-bottom: 30px;
+    /* Только если меньше контейнера */
+    padding-left: 60px;
+    /* Только если меньше контейнера */
+    padding-right: 60px;
     text-align: center;
     overflow: auto;
     visibility: hidden;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
     border-radius: 50%;
     opacity: 0;
     transition: all .3s ease-out; }
@@ -882,7 +886,18 @@ header {
         padding-top: calc(50px + 10 * ((100vw - calc(375px)) / 875)); } }
     @media (max-width: 1250px) {
       header .contact_popup {
-        padding-bottom: calc(20px + 40 * ((100vw - calc(375px)) / 875)); } }
+        padding-bottom: calc(20px + 10 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      header .contact_popup {
+        padding-left: calc(10px + 50 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      header .contact_popup {
+        padding-right: calc(10px + 50 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 767px) {
+      header .contact_popup {
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content; } }
     header .contact_popup .yellow_btn {
       border: none;
       max-width: 130px;
@@ -898,11 +913,12 @@ header {
     border-radius: 0px; }
   header .popup_content {
     position: relative;
-    z-index: 3; }
+    z-index: 3;
+    width: 100%; }
   header .popup_container {
     display: none;
     position: fixed;
-    z-index: 3;
+    z-index: 9;
     top: 0;
     left: 0;
     width: 100%;
@@ -912,14 +928,20 @@ header {
     display: block; }
   header .popup_img_top {
     position: absolute;
-    top: -8%;
+    top: -150px;
     left: 0;
     z-index: -1; }
+    @media (max-width: 767px) {
+      header .popup_img_top {
+        display: none; } }
   header .popup_img_bottom {
     position: absolute;
     right: 0;
     bottom: -8%;
     z-index: -1; }
+    @media (max-width: 767px) {
+      header .popup_img_bottom {
+        display: none; } }
   header .close_item {
     position: absolute;
     top: 5%;
@@ -937,10 +959,10 @@ header {
     line-height: 129.16667%;
     color: #2D2D2D;
     /* Только если меньше контейнера */
-    margin-bottom: 40px; }
+    margin-bottom: 25px; }
     @media (max-width: 1250px) {
       header .popup_title {
-        margin-bottom: calc(15px + 25 * ((100vw - calc(375px)) / 875)); } }
+        margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 875)); } }
   header form {
     display: -ms-flexbox;
     display: flex;
@@ -948,19 +970,97 @@ header {
     flex-direction: column;
     -ms-flex-align: start;
     align-items: flex-start;
-    max-width: 350px;
-    width: calc(100% - 20px);
-    margin: 0 auto;
+    width: 100%;
     position: relative;
     z-index: 3; }
+  header .form_body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  header .input_wrap {
+    width: 48%; }
+  header .data_title {
+    font-size: 18px;
+    line-height: 127.77778%;
+    color: #7A7A7A;
+    /* Только если меньше контейнера */
+    margin-bottom: 15px; }
+    @media (max-width: 1250px) {
+      header .data_title {
+        margin-bottom: calc(10px + 5 * ((100vw - calc(375px)) / 875)); } }
+  header .data_text {
+    width: 100%;
+    padding: 15px 20px 15px 25px;
+    /* Только если меньше контейнера */
+    padding-left: 25px;
+    border: 1px solid #2D2D2D;
+    background-color: #ffffff;
+    /* Только если меньше контейнера */
+    margin-bottom: 20px;
+    color: #2D2D2D;
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 127.77778%; }
+    @media (max-width: 1250px) {
+      header .data_text {
+        padding-left: calc(15px + 10 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      header .data_text {
+        margin-bottom: calc(10px + 10 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      header .data_text {
+        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
+    header .data_text:focus {
+      background-color: #FFF9E7;
+      border: 1px solid #F8C62A;
+      transition: all .3s ease-in; }
+    header .data_text::-webkit-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      line-height: 127.77778%;
+      color: #919191; }
+    header .data_text::-moz-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      line-height: 127.77778%;
+      color: #919191; }
+    header .data_text:-ms-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      line-height: 127.77778%;
+      color: #919191; }
+    header .data_text::-ms-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      line-height: 127.77778%;
+      color: #919191; }
+    header .data_text::placeholder {
+      /* Только если меньше контейнера */
+      font-size: 18px;
+      line-height: 127.77778%;
+      color: #919191; }
+      @media (max-width: 1250px) {
+        header .data_text::-webkit-input-placeholder {
+          font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); }
+        header .data_text::-moz-placeholder {
+          font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); }
+        header .data_text:-ms-input-placeholder {
+          font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); }
+        header .data_text::-ms-input-placeholder {
+          font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); }
+        header .data_text::placeholder {
+          font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
   header .area_text {
     height: 130px; }
   header .checkbox_wrap {
     /* Только если меньше контейнера */
-    margin-bottom: 45px; }
+    margin-bottom: 25px; }
     @media (max-width: 1250px) {
       header .checkbox_wrap {
-        margin-bottom: calc(20px + 25 * ((100vw - calc(375px)) / 875)); } }
+        margin-bottom: calc(15px + 10 * ((100vw - calc(375px)) / 875)); } }
   header .custom_checkbox {
     position: absolute;
     z-index: -1;

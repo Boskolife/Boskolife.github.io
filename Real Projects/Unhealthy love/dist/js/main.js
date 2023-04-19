@@ -70,7 +70,7 @@ function initSwiper() {
     grabCursor: true,
     grid: {
       rows: 3,
-      fill: 'row'
+      fill: "row"
     },
     breakpoints: {
       1024: {
@@ -78,7 +78,7 @@ function initSwiper() {
         spaceBetween: 30,
         grid: {
           rows: 3,
-          fill: 'row'
+          fill: "row"
         }
       }
     },
