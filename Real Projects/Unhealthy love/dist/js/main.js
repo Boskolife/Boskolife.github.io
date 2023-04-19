@@ -1,33 +1,55 @@
 "use strict";
 
-// // Swiper:
-// function destroySlidersOnResize(selector, width, obj, moreThan) {
-//     const init = {
-//       ...obj,
-//     };
-//     const win = window;
-//     const sliderSelector = document.querySelector(selector);
-//     let swiper = new Swiper(selector, init);
-//     const toggleInit = () => {
-//       const neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width
-//       if (neededWidth) {
-//         if (!sliderSelector.classList.contains("swiper-initialized")) {
-//           swiper = new Swiper(selector, init);
-//         }
-//       } else if (sliderSelector.classList.contains("swiper-initialized")) {
-//         swiper.destroy();
-//       }
-//     };
-//     ["load", "resize"].forEach((evt) =>
-//       win.addEventListener(evt, toggleInit, false)
-//     );
-// }
-// destroySlidersOnResize(".me-slider", 960, {
-//     spaceBetween: 20,
-//     pagination: {
-//       el: ".swiper-pagination",
-//     },
-// });
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// Swiper:
+function destroySlidersOnResize(selector, width, obj, moreThan) {
+  var init = _objectSpread({}, obj);
+
+  var win = window;
+  var sliderSelector = document.querySelector(selector);
+
+  if (!sliderSelector) {
+    return;
+  }
+
+  var swiper = new Swiper(selector, init);
+
+  var toggleInit = function toggleInit() {
+    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+
+    if (neededWidth) {
+      if (!sliderSelector.classList.contains("swiper-initialized")) {
+        swiper = new Swiper(selector, init);
+      }
+    } else if (sliderSelector.classList.contains("swiper-initialized")) {
+      swiper.destroy();
+    }
+  };
+
+  ["load", "resize"].forEach(function (evt) {
+    return win.addEventListener(evt, toggleInit, false);
+  });
+}
+
+destroySlidersOnResize(".post_swiper", 9999, {
+  slidesPerView: 1.5,
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    type: 'progressbar'
+  },
+  breakpoints: {
+    1024: {
+      slidesPerView: 2.3,
+      spaceBetween: 30
+    }
+  }
+});
 initBurger();
 findHref();
 initContactPopup();
@@ -119,4 +141,106 @@ function videoPlay() {
     video.setAttribute('controls', '');
   }
 }
+
+function initMainVideo() {
+  var mainVideo = document.querySelector('.main_video');
+  var soundBtn = document.querySelector('.sound_btn');
+  var srcBtn = document.querySelector('.btn_src');
+
+  function muteVideo() {
+    mainVideo.classList.add('muted');
+    mainVideo.muted = true;
+    srcBtn.src = './images/main/mute.svg';
+  }
+
+  function unmuteVideo() {
+    mainVideo.classList.remove('muted');
+    mainVideo.muted = false;
+    srcBtn.src = './images/main/unmute.svg';
+  }
+
+  soundBtn.addEventListener('click', function () {
+    var isMuted = mainVideo.classList.contains('muted');
+
+    if (isMuted) {
+      unmuteVideo();
+    } else {
+      muteVideo();
+    }
+  });
+}
+
+initMainVideo();
+
+function playAudio() {
+  var playBtn = document.querySelector(".playBtn");
+  var btnSrc = document.querySelector(".btnSrc");
+  var playProgress = document.querySelector(".progress");
+  var playProgressContainer = document.querySelector(".progress_container");
+  var audio = document.querySelector(".audio");
+  var currentTimeSong = document.querySelector(".currentTime");
+  var durationSong = document.querySelector(".duration");
+
+  function playSong() {
+    audio.classList.add("play");
+    audio.play();
+    btnSrc.src = './images/main/pause_btn.svg';
+  }
+
+  function pauseSong() {
+    audio.classList.remove("play");
+    audio.pause();
+    btnSrc.src = './images/main/play_btn.svg';
+  }
+
+  playBtn.addEventListener("click", function () {
+    var isPlayaing = audio.classList.contains("play");
+
+    if (isPlayaing) {
+      pauseSong();
+    } else {
+      playSong();
+    }
+  });
+
+  function timeduration(seconds) {
+    var m = seconds / 60 | 0,
+        s = "".concat(seconds % 60).padStart(2, 0);
+    return "".concat(m < 10 ? "0".concat(m) : m, ":").concat(s);
+  }
+
+  audio.onloadeddata = function () {
+    durationSong.innerHTML = timeduration(audio.duration.toFixed(0));
+    currentTimeSong.innerHTML = timeduration(audio.currentTime.toFixed(0));
+  };
+
+  function updateProgress(e) {
+    var _e$srcElement = e.srcElement,
+        duration = _e$srcElement.duration,
+        currentTime = _e$srcElement.currentTime;
+    var progressPercent = currentTime / duration * 100;
+    playProgress.style.width = "".concat(progressPercent, "%");
+    durationSong.innerHTML = timeduration(audio.duration.toFixed(0));
+    currentTimeSong.innerHTML = timeduration(audio.currentTime.toFixed(0));
+  }
+
+  audio.addEventListener("timeupdate", updateProgress);
+
+  function endPlay() {
+    btnSrc.src = './images/main/play_btn.svg';
+  }
+
+  audio.addEventListener("ended", endPlay);
+
+  function setProgress(e) {
+    var width = this.clientWidth;
+    var clickX = e.offsetX;
+    var duration = audio.duration;
+    audio.currentTime = clickX / width * duration;
+  }
+
+  playProgressContainer.addEventListener("click", setProgress);
+}
+
+playAudio();
 //# sourceMappingURL=main.js.map
