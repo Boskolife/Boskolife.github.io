@@ -1377,7 +1377,7 @@ function openFileModal() {
       selectBtn.removeAttribute("target");
 
       if (isOpen) {
-        selectBtn.setAttribute("target", "_blanck");
+        selectBtn.setAttribute("target", "_blank");
       }
     } else {
       selectBtn.setAttribute("download", "");
