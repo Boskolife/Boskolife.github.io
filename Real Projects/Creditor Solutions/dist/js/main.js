@@ -43,7 +43,7 @@ var winTriggersMethods = ["resize", "load"];
 var MOBILE_SIZE = 480;
 var prevWidth = window.innerWidth;
 var EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
-var CS_CONTACT_API = 'https://api.creditorsolutions.com/Judgment/contact';
+var CS_CONTACT_API = "https://api.creditorsolutions.com/Judgment/contact";
 var CS_FILE_API = "https://api.creditorsolutions.com/Judgment/AddId";
 initBurger();
 initNavBtn();
@@ -1183,7 +1183,10 @@ function openFileModal() {
     var a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
-    a.download = fileName;
+
+    if (isDownload) {
+      a.download = fileName;
+    }
 
     if (isOpen) {
       a.setAttribute("target", "_blank");
