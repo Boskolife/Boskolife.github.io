@@ -1,10 +1,23 @@
 .yellow_btn {
     background-color: $yellow;
     transition: all .3s ease;
+    font-weight: 600;
+    @include adaptiv-vaule("font-size", 18, 16, 1);
+    line-height: 23 / 18 * 100%;
+    border: none;
+    padding: 15px;
+    max-width: 170px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
 
     &:hover {
         background-color: #FFD964;
     }
+}
+
+.yellow_word{
+    color: $yellow;
 }
 
 .data_title {
@@ -20,7 +33,6 @@
     @include adaptiv-vaule("padding-left", 25, 15, 1);
     border: 1px solid $black;
     background-color: $white;
-    @include adaptiv-vaule("margin-bottom", 30, 15, 1);
     color: $black;
     @include adaptiv-vaule("font-size", 18, 16, 1);
     line-height: 23 / 18 * 100%;
@@ -56,4 +68,13 @@
         color: $black;
         background-color: $white;
     }
+}
+
+.ibg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

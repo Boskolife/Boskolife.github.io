@@ -1,0 +1,298 @@
+.podcast_page {
+    @include adaptiv-vaule("padding-top", 115, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 65, 70, 1);
+    background-color: $white;
+
+    .podcast_page_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 58, 36, 1);
+        line-height: 130%;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+    }
+
+    .podcast_page_contetn {
+        background-color: $gray;
+    }
+
+    .podcast_swiper {
+        @include adaptiv-vaule("padding-top", 100, 50, 1);
+        @include adaptiv-vaule("padding-bottom", 100, 90, 1);
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop_sm") {
+            flex-direction: column;
+        }
+    }
+
+    .img_item {
+        position: relative;
+        width: 37%;
+
+        @include media ("<desktop_sm") {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 290px;
+        }
+    }
+
+    .fly_title {
+        position: absolute;
+        bottom: -15%;
+        right: -15%;
+
+        @include media ("<desktop_sm") {
+            display: none;
+        }
+    }
+
+    .item_text {
+        width: 45%;
+
+        @include media ("<desktop_sm") {
+            width: 100%;
+        }
+    }
+
+    .item_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 20, 1);
+        line-height: 130%;
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+    }
+
+    .swiper-pagination-bullet {
+        background-color: $gray_3;
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $yellow;
+    }
+}
+
+.episodes {
+    @include adaptiv-vaule("padding-top", 65, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 135, 1);
+
+    .title_wrap {
+        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet_sm") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .episodes_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 36, 1);
+        margin-right: 30px;
+        line-height: 130%;
+        color: $black;
+
+        @include media ("<tablet_sm") {
+            margin: 0 0 45px 0;
+        }
+    }
+
+    .search_wrap {
+        position: relative;
+    }
+
+    .search_img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+    }
+
+    .search {
+        border: 1px solid $black;
+        padding: 15px 15px 15px 45px;
+
+        &:focus {
+            background-color: #FFF9E7;
+            border: 1px solid $yellow;
+            transition: all .3s ease-in;
+        }
+
+        &::placeholder {
+            font-size: 18px;
+            color: $gray_3;
+        }
+    }
+
+    .tabs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+        width: 100%;
+    }
+
+    .tablinks {
+        border: none;
+        background-color: $white;
+        @include adaptiv-vaule("padding-top", 15, 12, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 12, 1);
+        @include adaptiv-vaule("padding-right", 35, 15, 1);
+        @include adaptiv-vaule("padding-left", 35, 15, 1);
+        border-bottom: 1px solid $black;
+        transition: all .3s ease;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $black;
+        flex: 1 1 auto;
+        white-space: nowrap;
+    }
+
+    .active_tab {
+        background-color: $yellow;
+        transition: all .3s ease;
+
+        .yellow_word {
+            color: $black;
+            transition: all .3s ease;
+        }
+    }
+
+    .tabcontent {
+        display: none;
+    }
+
+    .active_content{
+        display: block;
+    }
+
+
+    .tab_swiper {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: $gray_3;
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $yellow;
+    }
+
+    .card {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        @include adaptiv-vaule("height", 380, 165, 1);
+        position: relative;
+        @include adaptiv-vaule("padding-top", 15, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+        @include adaptiv-vaule("padding-right", 20, 8, 1);
+        @include adaptiv-vaule("padding-left", 20, 8, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 45, 45, 0.6);
+            z-index: 2;
+        }
+    }
+
+    .card_img {
+        z-index: 1;
+    }
+
+    .number_episode {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: $white;
+        @include adaptiv-vaule("font-size", 18, 12, 1);
+        z-index: 3;
+    }
+
+    .card_text {
+        position: relative;
+        z-index: 3;
+    }
+
+    .card_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 24, 16, 1);
+        line-height: 130%;
+        color: $yellow;
+        margin-bottom: 5px;
+    }
+
+    .card_descr {
+        color: $white;
+        @include adaptiv-vaule("font-size", 18, 12, 1);
+        @include adaptiv-vaule("margin-bottom", 15, 5, 1);
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+    }
+
+    .info_wrap {
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+            @include adaptiv-vaule("margin-right", 20, 5, 1);
+        }
+    }
+
+    .info_img {
+        @include adaptiv-vaule("margin-right", 8, 3, 1);
+        @include adaptiv-vaule("width", 22, 10, 1);
+        @include adaptiv-vaule("height", 22, 10, 1);
+    }
+
+    .info_item {
+        color: #D3D3D3;
+        @include adaptiv-vaule("font-size", 14, 12, 1);
+    }
+}
+
+.white_bg {
+    background-color: $gray;
+
+    .black_btn {
+        background-color: $yellow;
+        border: none;
+
+        &:hover {
+            background-color: #FFD964;
+        }
+    }
+}

@@ -13,7 +13,7 @@ header {
         display: flex;
         align-items: center;
         position: relative;
-        z-index: 3;
+        z-index: 6;
     }
 
     .logo_link {
@@ -48,14 +48,14 @@ header {
     .nav {
         @include media ("<tablet_max") {
             position: fixed;
-            z-index: 2;
+            z-index: 5;
             top: 0;
             right: -100%;
             transition: all .3s linear;
             height: 100vh;
             width: 60%;
-            background-color: $gray;
-            padding: 100px 15px 50px 15px;
+            background-color: $white;
+            padding: 85px 15px 50px 15px;
         }
 
         @include media ("<tablet") {
@@ -74,7 +74,7 @@ header {
 
         @include media ("<tablet_max") {
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100%;
             width: 100%;
             overflow: auto;
@@ -85,7 +85,13 @@ header {
         @include adaptiv-vaule("margin-left", 70, 0, 1);
 
         @include media ("<tablet_max") {
-            margin: 0 0 25px 0;
+            width: 100%;
+            margin: 0 0 20px 0;
+
+            &:not(:last-child) {
+                padding-bottom: 20px;
+                border-bottom: 1px solid #DCDCDC;
+            }
         }
     }
 
@@ -95,14 +101,14 @@ header {
         line-height: 18 / 14 * 100%;
         color: $black;
         padding-bottom: 5px;
-
-        @include media ("<tablet_max") {
-            font-size: 24px;
-        }
     }
 
     .menu_link_active {
         position: relative;
+
+        @include media ("<tablet_max") {
+            color: $yellow;
+        }
 
         &::after {
             content: '';
@@ -112,6 +118,11 @@ header {
             width: 100%;
             height: 2px;
             background-color: $yellow;
+
+            @include media ("<tablet_max") {
+                display: none;
+            }
+
         }
     }
 
@@ -121,12 +132,12 @@ header {
 
     .header_burger {
         display: none;
-        width: 28px;
-        height: 21px;
+        width: 24px;
+        height: 20px;
         position: relative;
         top: -2px;
         cursor: pointer;
-        z-index: 3;
+        z-index: 6;
 
         @include media ("<tablet_max") {
             display: block;
@@ -138,17 +149,20 @@ header {
             position: absolute;
             width: 100%;
             height: 3px;
-            background: black;
+            background: $black;
             transition: all 0.4s ease;
+            border-radius: 7px;
         }
 
         span {
             position: absolute;
-            width: 100%;
+            border-radius: 7px;
+            width: 50%;
             height: 3px;
-            background: black;
-            top: 9px;
-            left: 0;
+            background: $black;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
             transition: all 0.4s ease;
             opacity: 1;
         }
@@ -163,41 +177,34 @@ header {
     }
 
     .burger_active {
-        &::after {
-            transform: rotate(-45deg);
-            bottom: 9px;
-            background: golden;
-        }
-
-        &::before {
-            transform: rotate(45deg);
-            top: 9px;
-            background: golden;
-        }
-
         span {
-            opacity: 0;
-            visibility: hidden;
+            width: 100%;
         }
     }
 
     .contact_popup {
         position: fixed;
-        z-index: 4;
+        z-index: 10;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         background-color: $white;
         box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
-        max-width: 725px;
-        max-height: 870px;
-        height: calc(100% - 20px);
-        width: calc(100% - 20px);
+        max-width: 870px;
+        height: max-content;
+        // height: calc(100% - 20px);
+        width: calc(100% - 10px);
         @include adaptiv-vaule("padding-top", 60, 50, 1);
-        @include adaptiv-vaule("padding-bottom", 60, 20, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 20, 1);
+        @include adaptiv-vaule("padding-left", 60, 10, 1);
+        @include adaptiv-vaule("padding-right", 60, 10, 1);
         text-align: center;
         overflow: auto;
         visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         border-radius: 50%;
         opacity: 0;
         transition: all .3s ease-out;
@@ -222,12 +229,13 @@ header {
     .popup_content {
         position: relative;
         z-index: 3;
+        width: 100%;
     }
 
     .popup_container {
         display: none;
         position: fixed;
-        z-index: 3;
+        z-index: 9;
         top: 0;
         left: 0;
         width: 100%;
@@ -241,16 +249,24 @@ header {
 
     .popup_img_top {
         position: absolute;
-        top: -8%;
-        left: 0;
+        top: -50px;
+        left: -70px;
         z-index: -1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .popup_img_bottom {
         position: absolute;
-        right: 0;
+        right: -60px;
         bottom: -8%;
         z-index: -1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .close_item {
@@ -258,7 +274,6 @@ header {
         top: 5%;
         right: 5%;
         cursor: pointer;
-
 
         &:hover {
             svg {
@@ -278,26 +293,75 @@ header {
         font-size: 48px;
         line-height: 62 / 48 * 100%;
         color: $black;
-        @include adaptiv-vaule("margin-bottom", 40, 15, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
     }
 
     form {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        max-width: 350px;
-        width: calc(100% - 20px);
-        margin: 0 auto;
+        width: 100%;
         position: relative;
         z-index: 3;
+    }
+
+    .form_body {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .input_wrap {
+        width: 48%;
+        text-align: start;
+    }
+
+    .data_title {
+        font-size: 18px;
+        line-height: 23 / 18 * 100%;
+        color: $gray_3;
+        @include adaptiv-vaule("margin-bottom", 15, 10, 1);
+        display: inline-block;
+    }
+
+    .data_text {
+        width: 100%;
+        padding: 15px 20px 15px 25px;
+        @include adaptiv-vaule("padding-left", 25, 15, 1);
+        border: 1px solid $black;
+        background-color: $white;
+        color: $black;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 23 / 18 * 100%;
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+        }
+
+        &:focus {
+            background-color: #FFF9E7;
+            border: 1px solid $yellow;
+            transition: all .3s ease-in;
+        }
+
+        &::placeholder {
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            line-height: 23 / 18 * 100%;
+            color: #919191;
+        }
     }
 
     .area_text {
         height: 130px;
     }
 
+    .choose {
+        margin-bottom: 35px;
+    }
+
     .checkbox_wrap {
-        @include adaptiv-vaule("margin-bottom", 45, 20, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
     }
 
 
@@ -332,9 +396,24 @@ header {
         transition: all .3s ease;
     }
 
+    .argee {
+        cursor: pointer;
+    }
+
     .link_terms {
         text-decoration: underline;
         margin-left: 5px;
+    }
+
+    .ep_label {
+        cursor: pointer;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 130%;
+        color: #353A3F;
+    }
+    
+    .label1{
+        margin-right: 30px;
     }
 
 }
