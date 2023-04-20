@@ -686,6 +686,90 @@ input[type='submit'] {
   -o-object-fit: cover;
   object-fit: cover; }
 
+.video_wrap {
+  position: relative; }
+  @media (max-width: 767px) {
+    .video_wrap {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      -ms-flex-align: center;
+      align-items: center; } }
+  .video_wrap .video_body {
+    max-width: 1010px;
+    width: 100%;
+    max-height: 565px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative; }
+  .video_wrap video {
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    position: relative; }
+  .video_wrap .play {
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 130px;
+    height: 120px;
+    /* Только если меньше контейнера */
+    width: 130px;
+    /* Только если меньше контейнера */
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    @media (max-width: 1250px) {
+      .video_wrap .play {
+        width: calc(70px + 60 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .video_wrap .play {
+        height: calc(60px + 60 * ((100vw - calc(375px)) / 875)); } }
+    .video_wrap .play img {
+      width: 100%;
+      height: 100%; }
+  .video_wrap .video_text {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%; }
+    @media (max-width: 767px) {
+      .video_wrap .video_text {
+        position: static;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        margin-bottom: 25px; } }
+  .video_wrap .video_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 129.16667%;
+    color: #F8C62A;
+    margin-bottom: 15px; }
+    @media (max-width: 1250px) {
+      .video_wrap .video_title {
+        font-size: calc(18px + 6 * ((100vw - calc(375px)) / 875)); } }
+  .video_wrap .video_descr {
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 127.77778%;
+    color: #ffffff; }
+    @media (max-width: 1250px) {
+      .video_wrap .video_descr {
+        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 767px) {
+      .video_wrap .video_descr {
+        color: #2D2D2D; } }
+
 header {
   position: fixed;
   z-index: 5;
@@ -2213,89 +2297,6 @@ footer {
   @media (max-width: 1250px) {
     .about_us_video {
       padding-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 875)); } }
-  .about_us_video .video_wrap {
-    position: relative; }
-    @media (max-width: 767px) {
-      .about_us_video .video_wrap {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-        -ms-flex-align: center;
-        align-items: center; } }
-  .about_us_video .video_body {
-    max-width: 1010px;
-    width: 100%;
-    max-height: 565px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative; }
-  .about_us_video video {
-    width: 100%;
-    height: 100%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    position: relative; }
-  .about_us_video .play {
-    border: none;
-    background-color: transparent;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 130px;
-    height: 120px;
-    /* Только если меньше контейнера */
-    width: 130px;
-    /* Только если меньше контейнера */
-    height: 120px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-    @media (max-width: 1250px) {
-      .about_us_video .play {
-        width: calc(70px + 60 * ((100vw - calc(375px)) / 875)); } }
-    @media (max-width: 1250px) {
-      .about_us_video .play {
-        height: calc(60px + 60 * ((100vw - calc(375px)) / 875)); } }
-    .about_us_video .play img {
-      width: 100%;
-      height: 100%; }
-  .about_us_video .video_text {
-    position: absolute;
-    top: 13%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%; }
-    @media (max-width: 767px) {
-      .about_us_video .video_text {
-        position: static;
-        -webkit-transform: translate(0);
-        transform: translate(0);
-        margin-bottom: 25px; } }
-  .about_us_video .video_title {
-    font-weight: 700;
-    /* Только если меньше контейнера */
-    font-size: 24px;
-    line-height: 129.16667%;
-    color: #F8C62A;
-    margin-bottom: 15px; }
-    @media (max-width: 1250px) {
-      .about_us_video .video_title {
-        font-size: calc(18px + 6 * ((100vw - calc(375px)) / 875)); } }
-  .about_us_video .video_descr {
-    /* Только если меньше контейнера */
-    font-size: 18px;
-    line-height: 127.77778%;
-    color: #ffffff; }
-    @media (max-width: 1250px) {
-      .about_us_video .video_descr {
-        font-size: calc(16px + 2 * ((100vw - calc(375px)) / 875)); } }
-    @media (max-width: 767px) {
-      .about_us_video .video_descr {
-        color: #2D2D2D; } }
 
 .project {
   /* Только если меньше контейнера */
@@ -2659,6 +2660,88 @@ footer {
     @media (max-width: 1250px) {
       .episodes .player_body_wrap {
         padding-left: calc(20px + 80 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .video_body_wrap {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto;
+    /* Только если меньше контейнера */
+    margin-top: 50px;
+    /* Только если меньше контейнера */
+    margin-bottom: 30px; }
+    @media (max-width: 1250px) {
+      .episodes .video_body_wrap {
+        margin-top: calc(25px + 25 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .video_body_wrap {
+        margin-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .video_wrap {
+    /* Только если меньше контейнера */
+    margin-bottom: 60px; }
+    @media (max-width: 1250px) {
+      .episodes .video_wrap {
+        margin-bottom: calc(25px + 35 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .more_info {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    @media (max-width: 767px) {
+      .episodes .more_info {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  @media (max-width: 767px) {
+    .episodes .guest {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 25px; } }
+  .episodes .guest_icon {
+    margin-bottom: 12px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 300px; }
+    @media (max-width: 767px) {
+      .episodes .guest_icon {
+        margin: 0 10px 0 0;
+        max-width: 150px; } }
+  .episodes .icon {
+    /* Только если меньше контейнера */
+    width: 55px;
+    /* Только если меньше контейнера */
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF; }
+    @media (max-width: 1250px) {
+      .episodes .icon {
+        width: calc(40px + 15 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .episodes .icon {
+        height: calc(40px + 15 * ((100vw - calc(375px)) / 875)); } }
+    .episodes .icon:not(:first-child) {
+      margin-left: -10px; }
+      @media (max-width: 767px) {
+        .episodes .icon:not(:first-child) {
+          margin-left: -15px; } }
+  .episodes .name {
+    /* Только если меньше контейнера */
+    font-size: 14px;
+    line-height: 128.57143%;
+    color: #7A7A7A;
+    margin-bottom: 3px; }
+    @media (max-width: 1250px) {
+      .episodes .name {
+        font-size: calc(12px + 2 * ((100vw - calc(375px)) / 875)); } }
   .episodes .tablinks {
     border: none;
     background-color: #ffffff;

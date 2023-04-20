@@ -253,45 +253,49 @@
                             </form>
                         </div>
                         <div class="tabs">
-                            <button class="tablinks active_tab"
-                                onclick="openTab(event, 'tab1')">All
+                            <button class="tablinks active_tab" onclick="openTab(event, 'tab1')">All
                             </button>
-                            <button class="tablinks"
-                                onclick="openTab(event, 'tab2')">Unhealthy
+                            <button class="tablinks" onclick="openTab(event, 'tab2')">Unhealthy
                                 Love</button>
-                            <button class="tablinks"
-                                onclick="openTab(event, 'tab3')">Unhealthy Love
+                            <button class="tablinks" onclick="openTab(event, 'tab3')">Unhealthy Love
                                 <span class="yellow_word">Sports</span></button>
-                            <button class="tablinks"
-                                onclick="openTab(event, 'tab4')">Unhealthy Love
+                            <button class="tablinks" onclick="openTab(event, 'tab4')">Unhealthy Love
                                 <span class="yellow_word">Pop Culture</span></button>
-                            <button class="tablinks"
-                                onclick="openTab(event, 'tab5')">Unhealthy Love
+                            <button class="tablinks" onclick="openTab(event, 'tab5')">Unhealthy Love
                                 <span class="yellow_word">Food & Travel</span></button>
                         </div>
                         <div class="player_body_wrap">
                             <div class="latest_episode_content">
                                 <div class="episode_player">
-                                    <div class="player_img">
+                                    <div class="player_img set_cardImg">
                                         <div class="img_text">
-                                            <span class="number_episode_player">Episode #03</span>
-                                            <h3 class="player_title">Adipiscing sagittis diam</h3>
+                                            <span class="number_episode_player set_numberEp">Episode
+                                                #03</span>
+                                            <h3 class="player_title set_cardTitle">Adipiscing
+                                                sagittis diam</h3>
                                             <span class="date">12.10.2023</span>
                                         </div>
-                                        <img class="ibg" src="./images/main/last_ep_img.png"
+                                        <img class="ibg set_cardImg"
+                                            src="./images/main/last_ep_img.png"
                                             alt="image not found">
                                     </div>
                                     <div class="player_body">
-                                            <span class="number_episode_player hidden">Episode #03</span>
-                                            <h3 class="player_title hidden">Adipiscing sagittis diam</h3>
-                                            <p class="player_descr">Adipiscing sagittis diam mauris dictum.
-                                                Ac senectus leo amet in pharetra cras felis. Fermentum</p>
+                                        <span
+                                            class="number_episode_player hidden set_numberEp">Episode
+                                            #03</span>
+                                        <h3 class="player_title hidden set_cardTitle">Adipiscing
+                                            sagittis diam</h3>
+                                        <p class="player_descr set_cardDescr">Adipiscing sagittis
+                                            diam mauris dictum.
+                                            Ac senectus leo amet in pharetra cras felis. Fermentum
+                                        </p>
                                         <div class="player_selector">
                                             <div class="audio_wrap">
                                                 <audio class="audio"
                                                     src="./files/Burned Time Machine.mp3"></audio>
                                                 <div class="playBtn">
-                                                    <img class="btnSrc" src="./images/main/play_btn.svg"
+                                                    <img class="btnSrc"
+                                                        src="./images/main/play_btn.svg"
                                                         alt="image not found">
                                                 </div>
                                                 <div class="progress_container">
@@ -322,19 +326,52 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="video_body_wrap">
+                            <div class="video_wrap">
+                                <div class="video_body">
+                                    <video id="video" src="./files/test_video.mp4">
+                                    </video>
+                                    <button class="play" onclick="videoPlay()" id="play">
+                                        <img src="./images/about_us/play_btn.svg"
+                                            alt="image not found">
+                                    </button>
+                                </div>
+                                <div class="video_text">
+                                    <h2 class="video_title set_cardTitle">Unhealthy Love</h2>
+                                    <p class="video_descr set_cardDescr">There's nothing quite like exploring new
+                                        places
+                                        and trying new foods...</p>
+                                    <span class="number_episode set_numberEp">Episode #21</span>
+                                </div>
+                            </div>
+                            <div class="more_info">
+                                <div class="guest">
+                                    <div class="guest_icon">
+                                        <img class="icon" src="./images/main/person_icon_1.svg"
+                                            alt="image not found">
+                                        <img class="icon" src="./images/main/person_icon_2.svg"
+                                            alt="image not found">
+                                    </div>
+                                    <div class="guest_name">
+                                        <p class="name">First Speaker’s Name</p>
+                                        <p class="name">Second Speaker’s Name</p>
+                                    </div>
+                                </div>
+                                <a href="podcast_page.html" class="yellow_btn">See more</a>
+                            </div>
+                        </div>
                         <div id="tab1" class="tabcontent active_content">
                             <div class="card">
-                                <img class="ibg card_img"
-                                    src="./images/podcast_page/card_img.jpg"
-                                    alt="image not found">
-                                <span class="number_episode">Episode #21</span>
+                                <img id="" class="ibg card_img get_cardImg"
+                                    src="./images/podcast_page/card_img.jpg" alt="image not found">
+                                <span class="number_episode get_numberEp">Episode #21</span>
                                 <div class="card_text">
-                                    <h3 class="card_title">Unhealthy Love</h3>
-                                    <p class="card_descr">There's nothing quite like
+                                    <h3 class="card_title get_cardTitle">Unhealthy Love</h3>
+                                    <p class="card_descr get_cardDescr">There's nothing quite like
                                         exploring new places and trying </p>
                                     <div class="info">
                                         <div class="info_wrap">
-                                            <img class="info_img"
+                                            <img class="info_img get_iconGuest"
                                                 src="./images/podcast_page/date.svg"
                                                 alt="image not found">
                                             <span class="info_item">12.10.2023</span>
@@ -343,82 +380,7 @@
                                             <img class="info_img"
                                                 src="./images/podcast_page/clock.svg"
                                                 alt="image not found">
-                                            <span class="info_item">7 min</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="ibg card_img"
-                                    src="./images/podcast_page/card_img.jpg"
-                                    alt="image not found">
-                                <span class="number_episode">Episode #21</span>
-                                <div class="card_text">
-                                    <h3 class="card_title">Unhealthy Love</h3>
-                                    <p class="card_descr">There's nothing quite like
-                                        exploring new places and trying </p>
-                                    <div class="info">
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/date.svg"
-                                                alt="image not found">
-                                            <span class="info_item">12.10.2023</span>
-                                        </div>
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/clock.svg"
-                                                alt="image not found">
-                                            <span class="info_item">7 min</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="ibg card_img"
-                                    src="./images/podcast_page/card_img.jpg"
-                                    alt="image not found">
-                                <span class="number_episode">Episode #21</span>
-                                <div class="card_text">
-                                    <h3 class="card_title">Unhealthy Love</h3>
-                                    <p class="card_descr">There's nothing quite like
-                                        exploring new places and trying </p>
-                                    <div class="info">
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/date.svg"
-                                                alt="image not found">
-                                            <span class="info_item">12.10.2023</span>
-                                        </div>
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/clock.svg"
-                                                alt="image not found">
-                                            <span class="info_item">7 min</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="ibg card_img"
-                                    src="./images/podcast_page/card_img.jpg"
-                                    alt="image not found">
-                                <span class="number_episode">Episode #21</span>
-                                <div class="card_text">
-                                    <h3 class="card_title">Unhealthy Love</h3>
-                                    <p class="card_descr">There's nothing quite like
-                                        exploring new places and trying </p>
-                                    <div class="info">
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/date.svg"
-                                                alt="image not found">
-                                            <span class="info_item">12.10.2023</span>
-                                        </div>
-                                        <div class="info_wrap">
-                                            <img class="info_img"
-                                                src="./images/podcast_page/clock.svg"
-                                                alt="image not found">
-                                            <span class="info_item">7 min</span>
+                                            <span class="info_item getDuration">7 min</span>
                                         </div>
                                     </div>
                                 </div>
