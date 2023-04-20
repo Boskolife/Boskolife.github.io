@@ -43,14 +43,21 @@ function initSwiper() {
   }
 
   destroySlidersOnResize(".post_swiper", 9999, {
-    slidesPerView: 1.5,
+    slidesPerView: 1,
     spaceBetween: 20,
     grabCursor: true,
+    // grid: {
+    //     rows: 3,
+    //     fill: "row",
+    // },
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar"
     },
     breakpoints: {
+      650: {
+        slidesPerView: 1.5
+      },
       1024: {
         slidesPerView: 2.3,
         spaceBetween: 30
@@ -363,9 +370,14 @@ function openTabPost(evt, tabName) {
 
 function openArticlePost() {
   var openArticleBtn = document.querySelector('.open_article');
+
+  if (!openArticleBtn) {
+    return;
+  }
+
   var blogTitle = document.querySelector('.blog_page_title');
   var returnBtn = document.querySelector('.returnBlog');
-  var blogPage = document.querySelector('.blog_page_content');
+  var blogPage = document.querySelector('.blog_page');
   var post = document.getElementById('post');
   var postList = document.getElementById('post_list');
 
@@ -386,7 +398,6 @@ function openArticlePost() {
   }
 
   openArticleBtn.addEventListener('click', function (e) {
-    // e.preventDefault();
     openPost();
   });
   returnBtn.addEventListener('click', function () {

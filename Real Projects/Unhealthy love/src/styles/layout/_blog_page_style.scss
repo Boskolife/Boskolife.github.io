@@ -2,6 +2,17 @@
     @include adaptiv-vaule("padding-top", 115, 20, 1);
     @include adaptiv-vaule("padding-bottom", 65, 70, 1);
 
+    .swiper-pagination-bullet {
+        background-color: $gray_3;
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $yellow;
+    }
+
     .blog_page_title {
         font-weight: 700;
         @include adaptiv-vaule("font-size", 48, 36, 1);
@@ -19,39 +30,6 @@
 
         background-color: $gray;
         overflow: hidden;
-    }
-
-    .returnBlog {
-        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
-        cursor: pointer;
-        display: none;
-
-        &:hover{
-            .return_arrow{
-                transform: scale(1.3);
-                transition: all .3s ease;
-            }
-        }
-
-        .return_arrow {
-            margin-top: 3px;
-            width: 8px;
-            height: 14px;
-            transition: all .3s ease;
-            margin-right: 10px;
-        }
-
-        .backBlog {
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 110%;
-            letter-spacing: -0.03em;
-            color: $black;
-        }
-    }
-
-    .active_return{
-        display: inline-block;
     }
 
     .blog_subtitle {
@@ -144,12 +122,6 @@
         margin-bottom: 35px;
     }
 
-    .info,
-    .info_wrap {
-        display: flex;
-        align-items: center;
-    }
-
     .info_wrap {
 
         &:first-child {
@@ -174,7 +146,41 @@
     }
 }
 
-.hide_page{
+.returnBlog {
+    cursor: pointer;
+    @include adaptiv-vaule("padding-top", 90, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 50, 30, 1);
+    display: none;
+
+    &:hover {
+        .return_arrow {
+            transform: scale(1.3);
+            transition: all .3s ease;
+        }
+    }
+
+    .return_arrow {
+        margin-top: 3px;
+        width: 8px;
+        height: 14px;
+        transition: all .3s ease;
+        margin-right: 5px;
+    }
+
+    .backBlog {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 110%;
+        letter-spacing: -0.03em;
+        color: $black;
+    }
+}
+
+.active_return {
+    display: inline-block;
+}
+
+.hide_page {
     display: none;
 }
 
@@ -199,23 +205,6 @@
         padding-bottom: 70px;
     }
 
-    .post {
-        border: 1px solid $black;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        @include adaptiv-vaule("padding-top", 30, 25, 1);
-        @include adaptiv-vaule("padding-bottom", 30, 25, 1);
-        @include adaptiv-vaule("padding-right", 25, 15, 1);
-        @include adaptiv-vaule("padding-left", 25, 15, 1);
-        position: relative;
-
-        @include media ("<tablet_sm") {
-            flex-direction: row;
-        }
-    }
-
     .open_article {
         position: absolute;
         top: 0;
@@ -223,107 +212,6 @@
         width: 100%;
         height: 100%;
         z-index: 3;
-    }
-
-    .slide_img {
-        max-width: 315px;
-        width: 100%;
-        @include adaptiv-vaule("height", 285, 145, 1);
-        position: relative;
-        margin-bottom: 25px;
-
-        @include media ("<tablet_sm") {
-            margin: 0 15px 0 0;
-            width: 48%;
-        }
-    }
-
-    .slide_text {
-        width: 100%;
-
-        @include media ("<tablet_sm") {
-            width: 48%;
-        }
-
-        .info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-
-            @include media ("<375px") {
-                flex-wrap: wrap;
-            }
-        }
-
-        .info_wrap {
-            display: flex;
-            align-items: center;
-
-            @include media ("<375px") {
-                margin-bottom: 5px;
-            }
-
-            &:first-child {
-                margin-right: 15px;
-
-                @include media ("<tablet_sm") {
-                    margin-right: 10px
-                }
-            }
-        }
-
-        .info_img {
-            @include adaptiv-vaule("height", 20, 15, 1);
-            @include adaptiv-vaule("width", 20, 15, 1);
-            margin-right: 5px;
-        }
-
-        .info_item {
-            @include adaptiv-vaule("font-size", 14, 12, 1);
-        }
-
-        .post_title {
-            @include adaptiv-vaule("font-size", 24, 16, 1);
-            margin-bottom: 12px;
-        }
-
-        .post_descr {
-            margin-bottom: 15px;
-            @include adaptiv-vaule("font-size", 18, 12, 1);
-        }
-
-        .more {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            @include adaptiv-vaule("font-size", 16, 12, 1);
-            line-height: 110%;
-            letter-spacing: -0.03em;
-            color: $yellow;
-
-            img {
-                width: 7px;
-                height: 14px;
-                margin-left: 10px;
-
-                @include media ("<tablet_sm") {
-                    width: 6px;
-                    height: 10px;
-                    margin-bottom: 2px
-                }
-            }
-        }
-    }
-
-    .title_wrap {
-        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
-        display: flex;
-        align-items: center;
-
-        @include media ("<tablet_sm") {
-            flex-direction: column;
-            align-items: flex-start;
-        }
     }
 
     .posts_title {
@@ -337,7 +225,29 @@
             margin: 0 0 45px 0;
         }
     }
+    
+    .title_wrap {
+        @include adaptiv-vaule("margin-bottom", 40, 30, 1);
+        display: flex;
+        align-items: center;
+    
+        @include media ("<tablet_sm") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
 
+    .posts_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 36, 1);
+        margin-right: 30px;
+        line-height: 130%;
+        color: $black;
+    
+        @include media ("<tablet_sm") {
+            margin: 0 0 45px 0;
+        }
+    }
 
     .search_wrap {
         position: relative;
@@ -426,6 +336,7 @@
         max-width: 940px;
         width: 100%;
         margin: 0 auto;
+        @include adaptiv-vaule("padding-bottom", 100, 50, 1);
     }
 
     .open_post_title {
@@ -476,6 +387,22 @@
         &:not(:last-child) {
             margin-bottom: 30px;
         }
+    }
+
+    .other_posts {
+        @include adaptiv-vaule("padding-top", 100, 50, 1);
+
+        .post_swiper{
+            padding-top: 50px;
+        }
+    }
+
+    .swiper_post_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 36, 1);
+        @include adaptiv-vaule("margin-bottom", 80, 70, 1);
+        line-height: 130%;
+        color: $black;
     }
 }
 

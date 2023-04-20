@@ -148,6 +148,16 @@
         width: 100%;
     }
 
+    .player_body_wrap{
+        @include adaptiv-vaule("margin-top", 50, 25, 1);
+        @include adaptiv-vaule("margin-bottom", 30, 15, 1);
+        @include adaptiv-vaule("padding-top", 90, 20, 1);
+        @include adaptiv-vaule("padding-bottom", 55, 20, 1);
+        @include adaptiv-vaule("padding-right", 100, 20, 1);
+        @include adaptiv-vaule("padding-left", 100, 20, 1);
+        border: 1px solid $black;
+    }
+
     .tablinks {
         border: none;
         background-color: $white;

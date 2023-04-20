@@ -40,14 +40,21 @@ function initSwiper() {
     }
 
     destroySlidersOnResize(".post_swiper", 9999, {
-        slidesPerView: 1.5,
+        slidesPerView: 1,
         spaceBetween: 20,
         grabCursor: true,
+        // grid: {
+        //     rows: 3,
+        //     fill: "row",
+        // },
         pagination: {
             el: ".swiper-pagination",
             type: "progressbar",
         },
         breakpoints: {
+            650: {
+                slidesPerView: 1.5,
+            },
             1024: {
                 slidesPerView: 2.3,
                 spaceBetween: 30,
@@ -96,6 +103,7 @@ function initSwiper() {
             clickable: true,
         },
     });
+    
     destroySlidersOnResize(".tab_post_swiper", 9999, {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -365,9 +373,12 @@ function openTabPost(evt, tabName) {
 
 function openArticlePost() {
     const openArticleBtn= document.querySelector('.open_article');
+    if(!openArticleBtn){
+        return
+    }
     const blogTitle= document.querySelector('.blog_page_title');
     const returnBtn= document.querySelector('.returnBlog');
-    const blogPage= document.querySelector('.blog_page_content');
+    const blogPage= document.querySelector('.blog_page');
     const post = document.getElementById('post');
     const postList = document.getElementById('post_list');
 
@@ -388,7 +399,6 @@ function openArticlePost() {
     }
 
     openArticleBtn.addEventListener('click', (e) => {
-        // e.preventDefault();
         openPost();
     });
 
