@@ -190,26 +190,18 @@
     }
 
     .active_content{
-        display: block;
+        display: grid;
+        grid-template: 1fr / repeat(3 , 1fr);
+        @include adaptiv-vaule("gap", 30, 10, 1);
+        max-height: 1200px;
+        overflow: auto;
+        @include adaptiv-vaule("padding-right", 20, 5, 1);
+
+        @include media ("<tablet") {
+            grid-template: 1fr / repeat(2 , 1fr);
+        }
     }
 
-
-    .tab_swiper {
-        height: 100%;
-        width: 100%;
-        padding-bottom: 50px;
-    }
-
-    .swiper-pagination-bullet {
-        background-color: $gray_3;
-        width: 16px;
-        height: 16px;
-        opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-        background-color: $yellow;
-    }
 
     .card {
         display: flex;

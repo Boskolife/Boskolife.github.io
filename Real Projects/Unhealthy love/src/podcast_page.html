@@ -176,19 +176,19 @@
                         </div>
                         <div class="tabs">
                             <button class="tablinks active_tab"
-                                onclick="openTabEpisode(event, 'tab1')">All
+                                onclick="openTab(event, 'tab1')">All
                             </button>
                             <button class="tablinks"
-                                onclick="openTabEpisode(event, 'tab2')">Unhealthy
+                                onclick="openTab(event, 'tab2')">Unhealthy
                                 Love</button>
                             <button class="tablinks"
-                                onclick="openTabEpisode(event, 'tab3')">Unhealthy Love
+                                onclick="openTab(event, 'tab3')">Unhealthy Love
                                 <span class="yellow_word">Sports</span></button>
                             <button class="tablinks"
-                                onclick="openTabEpisode(event, 'tab4')">Unhealthy Love
+                                onclick="openTab(event, 'tab4')">Unhealthy Love
                                 <span class="yellow_word">Pop Culture</span></button>
                             <button class="tablinks"
-                                onclick="openTabEpisode(event, 'tab5')">Unhealthy Love
+                                onclick="openTab(event, 'tab5')">Unhealthy Love
                                 <span class="yellow_word">Food & Travel</span></button>
                         </div>
                         <div class="player_body_wrap">
@@ -245,280 +245,105 @@
                             </div>
                         </div>
                         <div id="tab1" class="tabcontent active_content">
-                            <div class="swiper tab_swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
+                            <div class="card">
+                                <img class="ibg card_img"
+                                    src="./images/podcast_page/card_img.jpg"
+                                    alt="image not found">
+                                <span class="number_episode">Episode #21</span>
+                                <div class="card_text">
+                                    <h3 class="card_title">Unhealthy Love</h3>
+                                    <p class="card_descr">There's nothing quite like
+                                        exploring new places and trying </p>
+                                    <div class="info">
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/date.svg"
                                                 alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <span class="info_item">12.10.2023</span>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/clock.svg"
                                                 alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img class="ibg card_img"
-                                                src="./images/podcast_page/card_img.jpg"
-                                                alt="image not found">
-                                            <span class="number_episode">Episode #21</span>
-                                            <div class="card_text">
-                                                <h3 class="card_title">Unhealthy Love</h3>
-                                                <p class="card_descr">There's nothing quite like
-                                                    exploring new places and trying </p>
-                                                <div class="info">
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/date.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">12.10.2023</span>
-                                                    </div>
-                                                    <div class="info_wrap">
-                                                        <img class="info_img"
-                                                            src="./images/podcast_page/clock.svg"
-                                                            alt="image not found">
-                                                        <span class="info_item">7 min</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <span class="info_item">7 min</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="card">
+                                <img class="ibg card_img"
+                                    src="./images/podcast_page/card_img.jpg"
+                                    alt="image not found">
+                                <span class="number_episode">Episode #21</span>
+                                <div class="card_text">
+                                    <h3 class="card_title">Unhealthy Love</h3>
+                                    <p class="card_descr">There's nothing quite like
+                                        exploring new places and trying </p>
+                                    <div class="info">
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/date.svg"
+                                                alt="image not found">
+                                            <span class="info_item">12.10.2023</span>
+                                        </div>
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/clock.svg"
+                                                alt="image not found">
+                                            <span class="info_item">7 min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="ibg card_img"
+                                    src="./images/podcast_page/card_img.jpg"
+                                    alt="image not found">
+                                <span class="number_episode">Episode #21</span>
+                                <div class="card_text">
+                                    <h3 class="card_title">Unhealthy Love</h3>
+                                    <p class="card_descr">There's nothing quite like
+                                        exploring new places and trying </p>
+                                    <div class="info">
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/date.svg"
+                                                alt="image not found">
+                                            <span class="info_item">12.10.2023</span>
+                                        </div>
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/clock.svg"
+                                                alt="image not found">
+                                            <span class="info_item">7 min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="ibg card_img"
+                                    src="./images/podcast_page/card_img.jpg"
+                                    alt="image not found">
+                                <span class="number_episode">Episode #21</span>
+                                <div class="card_text">
+                                    <h3 class="card_title">Unhealthy Love</h3>
+                                    <p class="card_descr">There's nothing quite like
+                                        exploring new places and trying </p>
+                                    <div class="info">
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/date.svg"
+                                                alt="image not found">
+                                            <span class="info_item">12.10.2023</span>
+                                        </div>
+                                        <div class="info_wrap">
+                                            <img class="info_img"
+                                                src="./images/podcast_page/clock.svg"
+                                                alt="image not found">
+                                            <span class="info_item">7 min</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div id="tab2" class="tabcontent">

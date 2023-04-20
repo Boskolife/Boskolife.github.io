@@ -1,4 +1,9 @@
 header {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: $gray;
     @include adaptiv-vaule("padding-top", 25, 10, 1);
     @include adaptiv-vaule("padding-bottom", 25, 10, 1);
@@ -43,6 +48,10 @@ header {
         font-size: 10px;
         line-height: 13 / 10 * 100%;
         color: $black;
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .nav {
@@ -194,7 +203,6 @@ header {
         height: 660px;
         width: calc(100% - 10px);
         text-align: center;
-        // overflow: auto;
         visibility: hidden;
         display: flex;
         align-items: center;
@@ -381,6 +389,37 @@ header {
         @include adaptiv-vaule("margin-bottom", 25, 15, 1);
     }
 
+    .custom_radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .custom_radio+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+
+    .custom_radio+label::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #F4F3F3;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    .custom_radio:checked+label::before {
+        background-color: $white;
+        border: 1px solid $yellow;
+        background-image: url(../images/header/radio_bg.svg);
+        background-size: 14px 14px;
+    }
 
     .custom_checkbox {
         position: absolute;

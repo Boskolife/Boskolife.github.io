@@ -90,10 +90,19 @@
             letter-spacing: -0.03em;
             color: $yellow;
 
+            &:hover {
+                img {
+                    transform: translateX(10px);
+                    transition: all .3s linear;
+                }
+            }
+
             img {
                 width: 7px;
                 height: 14px;
+                margin-top: 2px;
                 margin-left: 10px;
+                transition: all .3s linear;
 
                 @include media ("<tablet_sm") {
                     width: 6px;

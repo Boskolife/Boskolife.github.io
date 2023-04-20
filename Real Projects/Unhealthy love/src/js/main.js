@@ -80,30 +80,30 @@ function initSwiper() {
         },
     });
 
-    destroySlidersOnResize(".tab_swiper", 9999, {
-        slidesPerView: 2,
-        spaceBetween: 10,
-        grabCursor: true,
-        grid: {
-            rows: 3,
-            fill: "row",
-        },
-        breakpoints: {
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                grid: {
-                    rows: 3,
-                    fill: "row",
-                },
-            },
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
-    
+    // destroySlidersOnResize(".tab_swiper", 9999, {
+    //     slidesPerView: 2,
+    //     spaceBetween: 10,
+    //     grabCursor: true,
+    //     grid: {
+    //         rows: 3,
+    //         fill: "row",
+    //     },
+    //     breakpoints: {
+    //         1024: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 30,
+    //             grid: {
+    //                 rows: 3,
+    //                 fill: "row",
+    //             },
+    //         },
+    //     },
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //     },
+    // });
+
     destroySlidersOnResize(".tab_post_swiper", 9999, {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -326,7 +326,7 @@ function playAudio() {
     playProgressContainer.addEventListener("click", setProgress);
 }
 
-function openTabEpisode(evt, tabName) {
+function openTab(evt, tabName) {
     // Скрыть все табы
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -344,31 +344,31 @@ function openTabEpisode(evt, tabName) {
     }
 
     // Показать нужный таб и сделать соответствующую вкладку активной
-    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).style.display = "grid";
     evt.currentTarget.className += " active_tab";
 }
 
-function openTabPost(evt, tabName) {
-    // Скрыть все табы
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+// function openTabPost(evt, tabName) {
+//     // Скрыть все табы
+//     var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
 
-    // Убрать класс "active" со всех вкладок
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(
-            " active_tab",
-            ""
-        );
-    }
+//     // Убрать класс "active" со всех вкладок
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//         tablinks[i].className = tablinks[i].className.replace(
+//             " active_tab",
+//             ""
+//         );
+//     }
 
-    // Показать нужный таб и сделать соответствующую вкладку активной
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active_tab";
-}
+//     // Показать нужный таб и сделать соответствующую вкладку активной
+//     document.getElementById(tabName).style.display = "grid";
+//     evt.currentTarget.className += " active_tab";
+// }
 
 
 function openArticlePost() {
