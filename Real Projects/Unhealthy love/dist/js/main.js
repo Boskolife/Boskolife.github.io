@@ -65,6 +65,14 @@ function initSwiper() {
       type: "bullets"
     }
   });
+  destroySlidersOnResize(".blog_swiper", 9999, {
+    slidesPerView: 1,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets"
+    }
+  });
   destroySlidersOnResize(".tab_swiper", 9999, {
     slidesPerView: 2,
     spaceBetween: 10,
@@ -74,6 +82,36 @@ function initSwiper() {
       fill: "row"
     },
     breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        grid: {
+          rows: 3,
+          fill: "row"
+        }
+      }
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+  destroySlidersOnResize(".tab_post_swiper", 9999, {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    grabCursor: true,
+    grid: {
+      rows: 3,
+      fill: "row"
+    },
+    breakpoints: {
+      650: {
+        slidesPerView: 2,
+        grid: {
+          rows: 3,
+          fill: "row"
+        }
+      },
       1024: {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -301,4 +339,60 @@ function openTabEpisode(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active_tab";
 }
+
+function openTabPost(evt, tabName) {
+  // Скрыть все табы
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  } // Убрать класс "active" со всех вкладок
+
+
+  tablinks = document.getElementsByClassName("tablinks");
+
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
+  } // Показать нужный таб и сделать соответствующую вкладку активной
+
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active_tab";
+}
+
+function openArticlePost() {
+  var openArticleBtn = document.querySelector('.open_article');
+  var blogTitle = document.querySelector('.blog_page_title');
+  var returnBtn = document.querySelector('.returnBlog');
+  var blogPage = document.querySelector('.blog_page_content');
+  var post = document.getElementById('post');
+  var postList = document.getElementById('post_list');
+
+  function openPost() {
+    post.classList.add('current_post');
+    postList.classList.add('hidden_list');
+    blogTitle.classList.add('hidden_title');
+    returnBtn.classList.add('active_return');
+    blogPage.classList.add('hide_page');
+  }
+
+  function closePost() {
+    post.classList.remove('current_post');
+    postList.classList.remove('hidden_list');
+    blogTitle.classList.remove('hidden_title');
+    returnBtn.classList.remove('active_return');
+    blogPage.classList.remove('hide_page');
+  }
+
+  openArticleBtn.addEventListener('click', function (e) {
+    // e.preventDefault();
+    openPost();
+  });
+  returnBtn.addEventListener('click', function () {
+    closePost();
+  });
+}
+
+openArticlePost();
 //# sourceMappingURL=main.js.map

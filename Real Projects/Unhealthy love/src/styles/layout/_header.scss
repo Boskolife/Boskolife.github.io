@@ -191,15 +191,10 @@ header {
         background-color: $white;
         box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
         max-width: 870px;
-        height: max-content;
-        // height: calc(100% - 20px);
+        height: 660px;
         width: calc(100% - 10px);
-        @include adaptiv-vaule("padding-top", 60, 50, 1);
-        @include adaptiv-vaule("padding-bottom", 30, 20, 1);
-        @include adaptiv-vaule("padding-left", 60, 10, 1);
-        @include adaptiv-vaule("padding-right", 60, 10, 1);
         text-align: center;
-        overflow: auto;
+        // overflow: auto;
         visibility: hidden;
         display: flex;
         align-items: center;
@@ -208,6 +203,12 @@ header {
         border-radius: 50%;
         opacity: 0;
         transition: all .3s ease-out;
+        @include adaptiv-vaule("padding-top", 60, 60, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 20, 1);
+
+        @include media ("<tablet") {
+            height: calc(100% - 20px);
+        }
 
         .yellow_btn {
             border: none;
@@ -229,7 +230,11 @@ header {
     .popup_content {
         position: relative;
         z-index: 3;
+        overflow: auto;
         width: 100%;
+        height: 100%;
+        @include adaptiv-vaule("padding-left", 60, 10, 1);
+        @include adaptiv-vaule("padding-right", 60, 10, 1);
     }
 
     .popup_container {
@@ -290,10 +295,14 @@ header {
 
     .popup_title {
         font-weight: 700;
-        font-size: 48px;
+        @include adaptiv-vaule("font-size", 36, 20, 1);
         line-height: 62 / 48 * 100%;
         color: $black;
-        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+        margin-bottom: 5px;
+    }
+
+    .popup_descr{
+        margin-bottom: 35px;
     }
 
     form {
@@ -309,12 +318,24 @@ header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        margin-bottom: 15px;
+        margin-bottom: 35px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
     }
 
     .input_wrap {
         width: 48%;
         text-align: start;
+
+        @include media ("<tablet") {
+            width: 100%;
+
+            &:first-child{
+                margin-bottom: 25px;
+            }
+        }
     }
 
     .data_title {
@@ -354,10 +375,6 @@ header {
 
     .area_text {
         height: 130px;
-    }
-
-    .choose {
-        margin-bottom: 35px;
     }
 
     .checkbox_wrap {

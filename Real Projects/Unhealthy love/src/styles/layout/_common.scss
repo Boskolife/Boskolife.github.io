@@ -496,7 +496,7 @@ html {
     }
 
     .player_img {
-        min-width: 210px;
+        max-width: 210px;
         width: 100%;
         position: relative;
         @include adaptiv-vaule("height", 210, 340, 1);
