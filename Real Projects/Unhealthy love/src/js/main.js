@@ -3,8 +3,8 @@ initBurger();
 findHref();
 initContactPopup();
 playAudio();
+openArticlePost();
 // initMainVideo();
-
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -14,8 +14,8 @@ function initSwiper() {
 
         const win = window;
         const sliderSelector = document.querySelector(selector);
-        if(!sliderSelector){
-            return
+        if (!sliderSelector) {
+            return;
         }
         let swiper = new Swiper(selector, init);
 
@@ -70,7 +70,7 @@ function initSwiper() {
             type: "bullets",
         },
     });
-    
+
     destroySlidersOnResize(".blog_swiper", 9999, {
         slidesPerView: 1,
         grabCursor: true,
@@ -327,14 +327,12 @@ function playAudio() {
 }
 
 function openTab(evt, tabName) {
-    // Скрыть все табы
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Убрать класс "active" со всех вкладок
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(
@@ -343,7 +341,6 @@ function openTab(evt, tabName) {
         );
     }
 
-    // Показать нужный таб и сделать соответствующую вкладку активной
     document.getElementById(tabName).style.display = "grid";
     evt.currentTarget.className += " active_tab";
 }
@@ -370,42 +367,109 @@ function openTab(evt, tabName) {
 //     evt.currentTarget.className += " active_tab";
 // }
 
-
 function openArticlePost() {
-    const openArticleBtn= document.querySelector('.open_article');
-    if(!openArticleBtn){
-        return
+    const openArticleBtn = document.querySelector(".open_article");
+    if (!openArticleBtn) {
+        return;
     }
-    const blogTitle= document.querySelector('.blog_page_title');
-    const returnBtn= document.querySelector('.returnBlog');
-    const blogPage= document.querySelector('.blog_page');
-    const post = document.getElementById('post');
-    const postList = document.getElementById('post_list');
+    const blogTitle = document.querySelector(".blog_page_title");
+    const returnBtn = document.querySelector(".returnBlog");
+    const blogPage = document.querySelector(".blog_page");
+    const post = document.getElementById("post");
+    const postList = document.getElementById("post_list");
 
     function openPost() {
-        post.classList.add('current_post');
-        postList.classList.add('hidden_list');
-        blogTitle.classList.add('hidden_title');
-        returnBtn.classList.add('active_return');
-        blogPage.classList.add('hide_page');
-
+        post.classList.add("current_post");
+        postList.classList.add("hidden_list");
+        blogTitle.classList.add("hidden_title");
+        returnBtn.classList.add("active_return");
+        blogPage.classList.add("hide_page");
     }
     function closePost() {
-        post.classList.remove('current_post');
-        postList.classList.remove('hidden_list');
-        blogTitle.classList.remove('hidden_title');
-        returnBtn.classList.remove('active_return');
-        blogPage.classList.remove('hide_page');
+        post.classList.remove("current_post");
+        postList.classList.remove("hidden_list");
+        blogTitle.classList.remove("hidden_title");
+        returnBtn.classList.remove("active_return");
+        blogPage.classList.remove("hide_page");
     }
 
-    openArticleBtn.addEventListener('click', (e) => {
+    openArticleBtn.addEventListener("click", (e) => {
         openPost();
     });
 
-    returnBtn.addEventListener('click', () => {
+    returnBtn.addEventListener("click", () => {
         closePost();
     });
-
 }
 
-openArticlePost();
+function getCardData() {
+    const getDataSrc = document.querySelectorAll(".getDataSrc");
+    if (!getDataSrc) {
+        return;
+    }
+
+  
+
+    getDataSrc.forEach((item) => {
+        const videoElement = item.querySelector(".getVideoCard");
+        const audioElement = item.querySelector(".getSongCard");
+        const duration = item.querySelector(".getDuration");
+
+        if(videoElement){
+            videoElement.onloadeddata = () => {
+                duration.innerHTML = timeduration(videoElement.duration);
+            };
+        }
+        if(audioElement){
+            audioElement.onloadeddata = () => {
+                duration.innerHTML = timeduration(audioElement.duration);
+            };
+        }
+
+        item.addEventListener("click", (e) => {
+            const card = e.currentTarget;
+            const imgSrc = card.querySelector(".get_cardImg").getAttribute("src");
+            const songSrc = card.querySelector(".getSongCard")?.getAttribute("src");
+            const videoSrc = card.getAttribute("src");
+            const numberEpisodeSpanElement = card.querySelector(".get_numberEp");
+            const numberEpisodeText = numberEpisodeSpanElement.textContent;
+            setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText);
+        });
+    });
+
+    function timeduration(seconds) {
+        const m = (seconds / 60) | 0;
+
+        return `${m} min`;
+    }
+}
+
+function setCardData(imgSrc, songSrc, videoSrc , numberEpisodeText) {
+    const playerBody = document.querySelector(".player_body_wrap");
+    const videoBody = document.querySelector(".video_body_wrap");
+    if (!playerBody) {
+        return;
+    }
+    const episodeText = document.querySelectorAll('.set_numberEp');
+
+    episodeText.forEach(item => {
+        item.textContent = numberEpisodeText;
+    })
+
+    if (songSrc) {
+        playerBody.classList.add('active_player_body_wrap');
+        videoBody.classList.remove('active_video_body_wrap');
+        const img = playerBody.querySelector("img.set_cardImg");
+        img.setAttribute("src", imgSrc);
+
+        const audio = playerBody.querySelector("audio.setSongCard");
+        audio.setAttribute("src", songSrc);
+    } else {
+        videoBody.classList.add('active_video_body_wrap');
+        playerBody.classList.remove('active_player_body_wrap');
+        const video = videoBody.querySelector("video.setVideoCard");
+        video.setAttribute("src", videoSrc);
+    }
+}
+
+getCardData();

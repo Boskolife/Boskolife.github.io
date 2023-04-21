@@ -10,7 +10,8 @@ initSwiper();
 initBurger();
 findHref();
 initContactPopup();
-playAudio(); // initMainVideo();
+playAudio();
+openArticlePost(); // initMainVideo();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -327,21 +328,18 @@ function playAudio() {
 }
 
 function openTab(evt, tabName) {
-  // Скрыть все табы
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
 
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
-  } // Убрать класс "active" со всех вкладок
-
+  }
 
   tablinks = document.getElementsByClassName("tablinks");
 
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
-  } // Показать нужный таб и сделать соответствующую вкладку активной
-
+  }
 
   document.getElementById(tabName).style.display = "grid";
   evt.currentTarget.className += " active_tab";
@@ -367,41 +365,112 @@ function openTab(evt, tabName) {
 
 
 function openArticlePost() {
-  var openArticleBtn = document.querySelector('.open_article');
+  var openArticleBtn = document.querySelector(".open_article");
 
   if (!openArticleBtn) {
     return;
   }
 
-  var blogTitle = document.querySelector('.blog_page_title');
-  var returnBtn = document.querySelector('.returnBlog');
-  var blogPage = document.querySelector('.blog_page');
-  var post = document.getElementById('post');
-  var postList = document.getElementById('post_list');
+  var blogTitle = document.querySelector(".blog_page_title");
+  var returnBtn = document.querySelector(".returnBlog");
+  var blogPage = document.querySelector(".blog_page");
+  var post = document.getElementById("post");
+  var postList = document.getElementById("post_list");
 
   function openPost() {
-    post.classList.add('current_post');
-    postList.classList.add('hidden_list');
-    blogTitle.classList.add('hidden_title');
-    returnBtn.classList.add('active_return');
-    blogPage.classList.add('hide_page');
+    post.classList.add("current_post");
+    postList.classList.add("hidden_list");
+    blogTitle.classList.add("hidden_title");
+    returnBtn.classList.add("active_return");
+    blogPage.classList.add("hide_page");
   }
 
   function closePost() {
-    post.classList.remove('current_post');
-    postList.classList.remove('hidden_list');
-    blogTitle.classList.remove('hidden_title');
-    returnBtn.classList.remove('active_return');
-    blogPage.classList.remove('hide_page');
+    post.classList.remove("current_post");
+    postList.classList.remove("hidden_list");
+    blogTitle.classList.remove("hidden_title");
+    returnBtn.classList.remove("active_return");
+    blogPage.classList.remove("hide_page");
   }
 
-  openArticleBtn.addEventListener('click', function (e) {
+  openArticleBtn.addEventListener("click", function (e) {
     openPost();
   });
-  returnBtn.addEventListener('click', function () {
+  returnBtn.addEventListener("click", function () {
     closePost();
   });
 }
 
-openArticlePost();
+function getCardData() {
+  var getDataSrc = document.querySelectorAll(".getDataSrc");
+
+  if (!getDataSrc) {
+    return;
+  }
+
+  getDataSrc.forEach(function (item) {
+    var videoElement = item.querySelector(".getVideoCard");
+    var audioElement = item.querySelector(".getSongCard");
+    var duration = item.querySelector(".getDuration");
+
+    if (videoElement) {
+      videoElement.onloadeddata = function () {
+        duration.innerHTML = timeduration(videoElement.duration);
+      };
+    }
+
+    if (audioElement) {
+      audioElement.onloadeddata = function () {
+        duration.innerHTML = timeduration(audioElement.duration);
+      };
+    }
+
+    item.addEventListener("click", function (e) {
+      var _card$querySelector;
+
+      var card = e.currentTarget;
+      var imgSrc = card.querySelector(".get_cardImg").getAttribute("src");
+      var songSrc = (_card$querySelector = card.querySelector(".getSongCard")) === null || _card$querySelector === void 0 ? void 0 : _card$querySelector.getAttribute("src");
+      var videoSrc = card.getAttribute("src");
+      var numberEpisodeSpanElement = card.querySelector(".get_numberEp");
+      var numberEpisodeText = numberEpisodeSpanElement.textContent;
+      setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText);
+    });
+  });
+
+  function timeduration(seconds) {
+    var m = seconds / 60 | 0;
+    return "".concat(m, " min");
+  }
+}
+
+function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText) {
+  var playerBody = document.querySelector(".player_body_wrap");
+  var videoBody = document.querySelector(".video_body_wrap");
+
+  if (!playerBody) {
+    return;
+  }
+
+  var episodeText = document.querySelectorAll('.set_numberEp');
+  episodeText.forEach(function (item) {
+    item.textContent = numberEpisodeText;
+  });
+
+  if (songSrc) {
+    playerBody.classList.add('active_player_body_wrap');
+    videoBody.classList.remove('active_video_body_wrap');
+    var img = playerBody.querySelector("img.set_cardImg");
+    img.setAttribute("src", imgSrc);
+    var audio = playerBody.querySelector("audio.setSongCard");
+    audio.setAttribute("src", songSrc);
+  } else {
+    videoBody.classList.add('active_video_body_wrap');
+    playerBody.classList.remove('active_player_body_wrap');
+    var video = videoBody.querySelector("video.setVideoCard");
+    video.setAttribute("src", videoSrc);
+  }
+}
+
+getCardData();
 //# sourceMappingURL=main.js.map

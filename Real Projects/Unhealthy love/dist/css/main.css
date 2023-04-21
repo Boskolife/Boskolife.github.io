@@ -2641,7 +2641,8 @@ footer {
     padding-right: 100px;
     /* Только если меньше контейнера */
     padding-left: 100px;
-    border: 1px solid #2D2D2D; }
+    border: 1px solid #2D2D2D;
+    display: none; }
     @media (max-width: 1250px) {
       .episodes .player_body_wrap {
         margin-top: calc(25px + 25 * ((100vw - calc(375px)) / 875)); } }
@@ -2668,13 +2669,17 @@ footer {
     /* Только если меньше контейнера */
     margin-top: 50px;
     /* Только если меньше контейнера */
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    display: none; }
     @media (max-width: 1250px) {
       .episodes .video_body_wrap {
         margin-top: calc(25px + 25 * ((100vw - calc(375px)) / 875)); } }
     @media (max-width: 1250px) {
       .episodes .video_body_wrap {
         margin-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .active_player_body_wrap,
+  .episodes .active_video_body_wrap {
+    display: block; }
   .episodes .video_wrap {
     /* Только если меньше контейнера */
     margin-bottom: 60px; }
@@ -2855,6 +2860,14 @@ footer {
     @media (max-width: 1250px) {
       .episodes .number_episode {
         font-size: calc(12px + 6 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .more_info_card_hidden {
+    display: none; }
+  .episodes .getSongCard,
+  .episodes .getVideoCard {
+    display: none; }
+  .episodes .open_cardData {
+    width: 100%;
+    height: 100%; }
   .episodes .card_text {
     position: relative;
     z-index: 3; }
