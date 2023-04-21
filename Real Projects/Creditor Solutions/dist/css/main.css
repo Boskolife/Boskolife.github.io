@@ -372,14 +372,8 @@ th {
 /* 20 - минимальное значение свойства в px */
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.ttf");
-  font-style: normal;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Bold.ttf");
+  font-family: "LinotypeBrewery";
+  src: url("../fonts/LinotypeBrewery-Bold.ttf");
   font-style: normal;
   font-weight: 700; }
 
