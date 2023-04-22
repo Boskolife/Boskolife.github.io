@@ -12,7 +12,7 @@ findHref();
 initContactPopup();
 playAudio();
 openArticlePost();
-initMainVideo();
+initMainAudio();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -205,35 +205,22 @@ function videoPlay() {
   });
 }
 
-function initMainVideo() {
-  var mainVideo = document.querySelector(".main_video");
+function initMainAudio() {
+  var mainAudio = document.querySelector(".main_audio");
 
-  if (!mainVideo) {
+  if (!mainAudio) {
     return;
   }
 
   var soundBtn = document.querySelector(".sound_btn");
   var srcBtn = document.querySelector(".btn_src");
-
-  function muteVideo() {
-    mainVideo.classList.add("muted");
-    mainVideo.muted = true;
-    srcBtn.src = "./images/main/mute.svg";
-  }
-
-  function unmuteVideo() {
-    mainVideo.classList.remove("muted");
-    mainVideo.muted = false;
-    srcBtn.src = "./images/main/unmute.svg";
-  }
-
   soundBtn.addEventListener("click", function () {
-    var isMuted = mainVideo.classList.contains("muted");
-
-    if (isMuted) {
-      unmuteVideo();
+    if (mainAudio.paused) {
+      mainAudio.play();
+      srcBtn.src = "./images/main/unmute.svg";
     } else {
-      muteVideo();
+      mainAudio.pause();
+      srcBtn.src = "./images/main/mute.svg";
     }
   });
 }

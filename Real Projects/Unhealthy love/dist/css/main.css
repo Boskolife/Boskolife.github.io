@@ -1377,6 +1377,8 @@ body {
     @media (max-width: 767px) {
       .main_section .sound_btn {
         display: none; } }
+  .main_section .main_audio_wrap {
+    display: none; }
 
 .latest_news {
   /* Только если меньше контейнера */
