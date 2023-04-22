@@ -371,12 +371,6 @@ th {
 /* 50 - максимальное значение свойства в px */
 /* 20 - минимальное значение свойства в px */
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
-@font-face {
-  font-family: "LinotypeBrewery";
-  src: url("../fonts/LinotypeBrewery-Bold.ttf");
-  font-style: normal;
-  font-weight: 700; }
-
 .clearfix:after {
   content: '';
   display: block;
