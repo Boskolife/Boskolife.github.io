@@ -82,9 +82,7 @@
     }
     
     .player_body {
-        @include media ("<tablet") {
-            width: 100%;
-        }
+        width: 100%;
     }
     
     .hidden {

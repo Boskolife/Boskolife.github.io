@@ -157,19 +157,97 @@
         @include adaptiv-vaule("padding-left", 100, 20, 1);
         border: 1px solid $black;
         display: none;
+        position: relative;
     }
 
+    .closeElement {
+        width: 14px;
+        height: 14px;
+        top: 30px;
+        right: 30px;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: $yellow;
+                transition: all .3s ease;
+            }
+        }
+
+        svg {
+            transition: all .3s ease;
+            fill: #0F1729;
+        }
+    }
+
+    .player_img {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 45, 45, 0.6);
+            z-index: 2;
+        }
+    }
+
+
+
     .video_body_wrap {
-        width: max-content;
+        width: 100%;
         margin: 0 auto;
         @include adaptiv-vaule("margin-top", 50, 25, 1);
         @include adaptiv-vaule("margin-bottom", 30, 15, 1);
         display: none;
+        position: relative;
+
+        .closeElement{
+            top: 0;
+            z-index: 3;
+        }
     }
 
+
     .active_player_body_wrap,
-    .active_video_body_wrap{
+    .active_video_body_wrap {
         display: block;
+    }
+
+    .video_text {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+
+        .top_text {
+            margin-top: 70px;
+            flex: 1 1 auto;
+
+            @include media ("<tablet") {
+                margin: 30px 0;
+            }
+        }
+
+        .bottom_text {
+            margin-bottom: 50px;
+
+            @include media ("<tablet") {
+                margin-bottom: 25px;
+
+                .number_episode{
+                    color: $black;
+                }
+            }
+        }
+
+        .set_numberEp {
+            position: static
+        }
     }
 
     .video_wrap {
@@ -286,6 +364,7 @@
         @include adaptiv-vaule("padding-bottom", 15, 10, 1);
         @include adaptiv-vaule("padding-right", 20, 8, 1);
         @include adaptiv-vaule("padding-left", 20, 8, 1);
+        cursor: pointer;
 
         &::before {
             content: '';
@@ -312,16 +391,16 @@
         z-index: 3;
     }
 
-    .more_info_card_hidden{
-        display:none;
-    }
-
-    .getSongCard,
-    .getVideoCard{
+    .more_info_card_hidden {
         display: none;
     }
 
-    .open_cardData{
+    .getSongCard,
+    .getVideoCard {
+        display: none;
+    }
+
+    .open_cardData {
         width: 100%;
         height: 100%;
     }

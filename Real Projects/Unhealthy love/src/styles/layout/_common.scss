@@ -41,6 +41,11 @@ body{
     @include adaptiv-vaule("padding-bottom", 65, 65, 1);
     position: relative;
 
+    .main_content{
+        display: flex;
+        flex-direction: column;
+    }
+
     .main_video {
         position: absolute;
         top: 0;
@@ -50,6 +55,12 @@ body{
         object-fit: cover;
         z-index: -1;
         filter: grayscale(100%);
+
+        @include media ("<tablet") {
+            position: static;
+            order: 2;
+            margin-bottom: 35px;
+        }
     }
 
     .main_text {
@@ -57,6 +68,10 @@ body{
         max-width: 670px;
         margin: 0 auto;
         margin-bottom: 50px;
+
+        @include media ("<tablet") {
+            order: 1;
+        }
     }
 
     .main_title {
@@ -65,11 +80,19 @@ body{
         line-height: 130%;
         color: $white;
         @include adaptiv-vaule("margin-bottom", 45, 10, 1);
+
+        @include media ("<tablet") {
+            color: $black
+        }
     }
 
     .main_descr {
         @include adaptiv-vaule("margin-bottom", 45, 10, 1);
         color: $white;
+
+        @include media ("<tablet") {
+            color: $black
+        }
     }
 
     .buttons {
@@ -77,6 +100,11 @@ body{
         align-items: center;
         justify-content: space-between;
         width: 100%;
+
+        @include media ("<tablet") {
+            order: 3;
+            justify-content: center;
+        }
     }
 
     .social_links {
@@ -116,6 +144,10 @@ body{
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
+
+        @include media ("<tablet") {
+            display: none
+        }
     }
 }
 
@@ -163,7 +195,7 @@ body{
         @include media ("<tablet") {
             width: 70%;
             min-height: 300px;
-            margin-bottom: 25px;
+            margin: 0 0 25px 0;
         }
 
         @include media ("<phone") {

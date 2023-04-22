@@ -4,7 +4,7 @@ findHref();
 initContactPopup();
 playAudio();
 openArticlePost();
-// initMainVideo();
+initMainVideo();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -79,30 +79,6 @@ function initSwiper() {
             type: "bullets",
         },
     });
-
-    // destroySlidersOnResize(".tab_swiper", 9999, {
-    //     slidesPerView: 2,
-    //     spaceBetween: 10,
-    //     grabCursor: true,
-    //     grid: {
-    //         rows: 3,
-    //         fill: "row",
-    //     },
-    //     breakpoints: {
-    //         1024: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 30,
-    //             grid: {
-    //                 rows: 3,
-    //                 fill: "row",
-    //             },
-    //         },
-    //     },
-    //     pagination: {
-    //         el: ".swiper-pagination",
-    //         clickable: true,
-    //     },
-    // });
 
     destroySlidersOnResize(".tab_post_swiper", 9999, {
         slidesPerView: 1,
@@ -218,16 +194,23 @@ function findHref() {
 function videoPlay() {
     let video = document.getElementById("video");
     let videoBTn = document.getElementById("play");
+    const videoText = document.querySelector(".video_text");
 
-    if (video.paused) {
-        video.play();
-        videoBTn.style = "display:none";
-        video.setAttribute("controls", "");
-    }
+    videoBTn.addEventListener("click", () => {
+        if (video.paused) {
+            video.play();
+            videoBTn.style.display = "none";
+            video.setAttribute("controls", "");
+            videoText.style.display = "none";
+        }
+    });
 }
 
 function initMainVideo() {
     const mainVideo = document.querySelector(".main_video");
+    if (!mainVideo) {
+        return;
+    }
     const soundBtn = document.querySelector(".sound_btn");
     const srcBtn = document.querySelector(".btn_src");
 
@@ -345,28 +328,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active_tab";
 }
 
-// function openTabPost(evt, tabName) {
-//     // Скрыть все табы
-//     var i, tabcontent, tablinks;
-//     tabcontent = document.getElementsByClassName("tabcontent");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-
-//     // Убрать класс "active" со всех вкладок
-//     tablinks = document.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(
-//             " active_tab",
-//             ""
-//         );
-//     }
-
-//     // Показать нужный таб и сделать соответствующую вкладку активной
-//     document.getElementById(tabName).style.display = "grid";
-//     evt.currentTarget.className += " active_tab";
-// }
-
 function openArticlePost() {
     const openArticleBtn = document.querySelector(".open_article");
     if (!openArticleBtn) {
@@ -408,19 +369,17 @@ function getCardData() {
         return;
     }
 
-  
-
     getDataSrc.forEach((item) => {
         const videoElement = item.querySelector(".getVideoCard");
         const audioElement = item.querySelector(".getSongCard");
         const duration = item.querySelector(".getDuration");
 
-        if(videoElement){
+        if (videoElement) {
             videoElement.onloadeddata = () => {
                 duration.innerHTML = timeduration(videoElement.duration);
             };
         }
-        if(audioElement){
+        if (audioElement) {
             audioElement.onloadeddata = () => {
                 duration.innerHTML = timeduration(audioElement.duration);
             };
@@ -428,12 +387,28 @@ function getCardData() {
 
         item.addEventListener("click", (e) => {
             const card = e.currentTarget;
-            const imgSrc = card.querySelector(".get_cardImg").getAttribute("src");
+            const imgSrc = card.querySelector(".get_cardImg")?.getAttribute("src");
             const songSrc = card.querySelector(".getSongCard")?.getAttribute("src");
-            const videoSrc = card.getAttribute("src");
+            const videoSrc = card.querySelector('.getVideoCard')?.getAttribute("src");
             const numberEpisodeSpanElement = card.querySelector(".get_numberEp");
             const numberEpisodeText = numberEpisodeSpanElement.textContent;
-            setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText);
+            const titleElement = card.querySelector('.get_cardTitle');
+            const titleText = titleElement.textContent;
+            const descriptionElement = card.querySelector('.get_cardDescr');
+            const descriptionText = descriptionElement.textContent;
+            const guestIconSrc = card.querySelector('.get_iconGuest')?.getAttribute("src");
+            const guestNameElement = card.querySelectorAll('.get_nameGuest');
+
+            guestNameElement.forEach(item => {
+                item.textContent;
+            })
+
+            console.log(guestNameElement)
+
+            // const guestText = guestNameElement.textContent;
+
+            setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
+                 descriptionText, guestIconSrc, guestNameElement);
         });
     });
 
@@ -444,29 +419,55 @@ function getCardData() {
     }
 }
 
-function setCardData(imgSrc, songSrc, videoSrc , numberEpisodeText) {
+function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, 
+    descriptionText, guestIconSrc ,guestNameElement) {
     const playerBody = document.querySelector(".player_body_wrap");
     const videoBody = document.querySelector(".video_body_wrap");
-    if (!playerBody) {
+    if (!playerBody || !videoBody) {
         return;
     }
-    const episodeText = document.querySelectorAll('.set_numberEp');
+    const closeElement = document.querySelectorAll(".closeElement");
+    const episodeText = document.querySelectorAll(".set_numberEp");
+    const titleTextContent = document.querySelectorAll(".set_cardTitle");
+    const descriptionTextContent = document.querySelector(".set_cardDescr");
+    const guestIcon = document.querySelectorAll('.set_iconGuest');
+    const guestName = document.querySelectorAll('.set_nameGuest');
 
-    episodeText.forEach(item => {
+    closeElement.forEach(item => {
+        item.addEventListener('click', () => {
+            playerBody.classList.remove("active_player_body_wrap");
+            videoBody.classList.remove("active_video_body_wrap");
+        })
+    });
+    
+    episodeText.forEach((item) => {
         item.textContent = numberEpisodeText;
+    });
+
+    titleTextContent.forEach((item) => {
+        item.textContent = titleText;
+    });
+    
+    guestIcon.forEach(item => {
+        item.setAttribute('src', guestIconSrc)
+    });
+
+    guestName.forEach(item => {
+        item.textContent = guestNameElement;
     })
 
+    descriptionTextContent.textContent = descriptionText;
+
     if (songSrc) {
-        playerBody.classList.add('active_player_body_wrap');
-        videoBody.classList.remove('active_video_body_wrap');
+        playerBody.classList.add("active_player_body_wrap");
+        videoBody.classList.remove("active_video_body_wrap");
         const img = playerBody.querySelector("img.set_cardImg");
         img.setAttribute("src", imgSrc);
-
         const audio = playerBody.querySelector("audio.setSongCard");
         audio.setAttribute("src", songSrc);
     } else {
-        videoBody.classList.add('active_video_body_wrap');
-        playerBody.classList.remove('active_player_body_wrap');
+        videoBody.classList.add("active_video_body_wrap");
+        playerBody.classList.remove("active_player_body_wrap");
         const video = videoBody.querySelector("video.setVideoCard");
         video.setAttribute("src", videoSrc);
     }

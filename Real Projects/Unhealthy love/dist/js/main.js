@@ -11,7 +11,8 @@ initBurger();
 findHref();
 initContactPopup();
 playAudio();
-openArticlePost(); // initMainVideo();
+openArticlePost();
+initMainVideo();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -80,30 +81,7 @@ function initSwiper() {
       el: ".swiper-pagination",
       type: "bullets"
     }
-  }); // destroySlidersOnResize(".tab_swiper", 9999, {
-  //     slidesPerView: 2,
-  //     spaceBetween: 10,
-  //     grabCursor: true,
-  //     grid: {
-  //         rows: 3,
-  //         fill: "row",
-  //     },
-  //     breakpoints: {
-  //         1024: {
-  //             slidesPerView: 3,
-  //             spaceBetween: 30,
-  //             grid: {
-  //                 rows: 3,
-  //                 fill: "row",
-  //             },
-  //         },
-  //     },
-  //     pagination: {
-  //         el: ".swiper-pagination",
-  //         clickable: true,
-  //     },
-  // });
-
+  });
   destroySlidersOnResize(".tab_post_swiper", 9999, {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -216,16 +194,24 @@ function findHref() {
 function videoPlay() {
   var video = document.getElementById("video");
   var videoBTn = document.getElementById("play");
-
-  if (video.paused) {
-    video.play();
-    videoBTn.style = "display:none";
-    video.setAttribute("controls", "");
-  }
+  var videoText = document.querySelector(".video_text");
+  videoBTn.addEventListener("click", function () {
+    if (video.paused) {
+      video.play();
+      videoBTn.style.display = "none";
+      video.setAttribute("controls", "");
+      videoText.style.display = "none";
+    }
+  });
 }
 
 function initMainVideo() {
   var mainVideo = document.querySelector(".main_video");
+
+  if (!mainVideo) {
+    return;
+  }
+
   var soundBtn = document.querySelector(".sound_btn");
   var srcBtn = document.querySelector(".btn_src");
 
@@ -343,26 +329,7 @@ function openTab(evt, tabName) {
 
   document.getElementById(tabName).style.display = "grid";
   evt.currentTarget.className += " active_tab";
-} // function openTabPost(evt, tabName) {
-//     // Скрыть все табы
-//     var i, tabcontent, tablinks;
-//     tabcontent = document.getElementsByClassName("tabcontent");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-//     // Убрать класс "active" со всех вкладок
-//     tablinks = document.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(
-//             " active_tab",
-//             ""
-//         );
-//     }
-//     // Показать нужный таб и сделать соответствующую вкладку активной
-//     document.getElementById(tabName).style.display = "grid";
-//     evt.currentTarget.className += " active_tab";
-// }
-
+}
 
 function openArticlePost() {
   var openArticleBtn = document.querySelector(".open_article");
@@ -426,15 +393,26 @@ function getCardData() {
     }
 
     item.addEventListener("click", function (e) {
-      var _card$querySelector;
+      var _card$querySelector, _card$querySelector2, _card$querySelector3, _card$querySelector4;
 
       var card = e.currentTarget;
-      var imgSrc = card.querySelector(".get_cardImg").getAttribute("src");
-      var songSrc = (_card$querySelector = card.querySelector(".getSongCard")) === null || _card$querySelector === void 0 ? void 0 : _card$querySelector.getAttribute("src");
-      var videoSrc = card.getAttribute("src");
+      var imgSrc = (_card$querySelector = card.querySelector(".get_cardImg")) === null || _card$querySelector === void 0 ? void 0 : _card$querySelector.getAttribute("src");
+      var songSrc = (_card$querySelector2 = card.querySelector(".getSongCard")) === null || _card$querySelector2 === void 0 ? void 0 : _card$querySelector2.getAttribute("src");
+      var videoSrc = (_card$querySelector3 = card.querySelector('.getVideoCard')) === null || _card$querySelector3 === void 0 ? void 0 : _card$querySelector3.getAttribute("src");
       var numberEpisodeSpanElement = card.querySelector(".get_numberEp");
       var numberEpisodeText = numberEpisodeSpanElement.textContent;
-      setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText);
+      var titleElement = card.querySelector('.get_cardTitle');
+      var titleText = titleElement.textContent;
+      var descriptionElement = card.querySelector('.get_cardDescr');
+      var descriptionText = descriptionElement.textContent;
+      var guestIconSrc = (_card$querySelector4 = card.querySelector('.get_iconGuest')) === null || _card$querySelector4 === void 0 ? void 0 : _card$querySelector4.getAttribute("src");
+      var guestNameElement = card.querySelectorAll('.get_nameGuest');
+      guestNameElement.forEach(function (item) {
+        item.textContent;
+      });
+      console.log(guestNameElement); // const guestText = guestNameElement.textContent;
+
+      setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, descriptionText, guestIconSrc, guestNameElement);
     });
   });
 
@@ -444,29 +422,50 @@ function getCardData() {
   }
 }
 
-function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText) {
+function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, descriptionText, guestIconSrc, guestNameElement) {
   var playerBody = document.querySelector(".player_body_wrap");
   var videoBody = document.querySelector(".video_body_wrap");
 
-  if (!playerBody) {
+  if (!playerBody || !videoBody) {
     return;
   }
 
-  var episodeText = document.querySelectorAll('.set_numberEp');
+  var closeElement = document.querySelectorAll(".closeElement");
+  var episodeText = document.querySelectorAll(".set_numberEp");
+  var titleTextContent = document.querySelectorAll(".set_cardTitle");
+  var descriptionTextContent = document.querySelector(".set_cardDescr");
+  var guestIcon = document.querySelectorAll('.set_iconGuest');
+  var guestName = document.querySelectorAll('.set_nameGuest');
+  closeElement.forEach(function (item) {
+    item.addEventListener('click', function () {
+      playerBody.classList.remove("active_player_body_wrap");
+      videoBody.classList.remove("active_video_body_wrap");
+    });
+  });
   episodeText.forEach(function (item) {
     item.textContent = numberEpisodeText;
   });
+  titleTextContent.forEach(function (item) {
+    item.textContent = titleText;
+  });
+  guestIcon.forEach(function (item) {
+    item.setAttribute('src', guestIconSrc);
+  });
+  guestName.forEach(function (item) {
+    item.textContent = guestNameElement;
+  });
+  descriptionTextContent.textContent = descriptionText;
 
   if (songSrc) {
-    playerBody.classList.add('active_player_body_wrap');
-    videoBody.classList.remove('active_video_body_wrap');
+    playerBody.classList.add("active_player_body_wrap");
+    videoBody.classList.remove("active_video_body_wrap");
     var img = playerBody.querySelector("img.set_cardImg");
     img.setAttribute("src", imgSrc);
     var audio = playerBody.querySelector("audio.setSongCard");
     audio.setAttribute("src", songSrc);
   } else {
-    videoBody.classList.add('active_video_body_wrap');
-    playerBody.classList.remove('active_player_body_wrap');
+    videoBody.classList.add("active_video_body_wrap");
+    playerBody.classList.remove("active_player_body_wrap");
     var video = videoBody.querySelector("video.setVideoCard");
     video.setAttribute("src", videoSrc);
   }

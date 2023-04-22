@@ -723,6 +723,7 @@ input[type='submit'] {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
     @media (max-width: 1250px) {
@@ -944,7 +945,9 @@ header {
     background-color: #ffffff;
     box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
     max-width: 870px;
-    height: 660px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     width: calc(100% - 10px);
     text-align: center;
     visibility: hidden;
@@ -1273,6 +1276,11 @@ body {
   @media (max-width: 1250px) {
     .main_section {
       padding-bottom: calc(65px + 0 * ((100vw - calc(375px)) / 875)); } }
+  .main_section .main_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
   .main_section .main_video {
     position: absolute;
     top: 0;
@@ -1284,11 +1292,21 @@ body {
     z-index: -1;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); }
+    @media (max-width: 767px) {
+      .main_section .main_video {
+        position: static;
+        -ms-flex-order: 2;
+        order: 2;
+        margin-bottom: 35px; } }
   .main_section .main_text {
     text-align: center;
     max-width: 670px;
     margin: 0 auto;
     margin-bottom: 50px; }
+    @media (max-width: 767px) {
+      .main_section .main_text {
+        -ms-flex-order: 1;
+        order: 1; } }
   .main_section .main_title {
     font-weight: 700;
     /* Только если меньше контейнера */
@@ -1303,6 +1321,9 @@ body {
     @media (max-width: 1250px) {
       .main_section .main_title {
         margin-bottom: calc(10px + 35 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 767px) {
+      .main_section .main_title {
+        color: #2D2D2D; } }
   .main_section .main_descr {
     /* Только если меньше контейнера */
     margin-bottom: 45px;
@@ -1310,6 +1331,9 @@ body {
     @media (max-width: 1250px) {
       .main_section .main_descr {
         margin-bottom: calc(10px + 35 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 767px) {
+      .main_section .main_descr {
+        color: #2D2D2D; } }
   .main_section .buttons {
     display: -ms-flexbox;
     display: flex;
@@ -1318,6 +1342,12 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%; }
+    @media (max-width: 767px) {
+      .main_section .buttons {
+        -ms-flex-order: 3;
+        order: 3;
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .main_section .social_links {
     display: -ms-flexbox;
     display: flex;
@@ -1344,6 +1374,9 @@ body {
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer; }
+    @media (max-width: 767px) {
+      .main_section .sound_btn {
+        display: none; } }
 
 .latest_news {
   /* Только если меньше контейнера */
@@ -1404,7 +1437,7 @@ body {
       .latest_news .post_img {
         width: 70%;
         min-height: 300px;
-        margin-bottom: 25px; } }
+        margin: 0 0 25px 0; } }
     @media (max-width: 479px) {
       .latest_news .post_img {
         width: 100%; } }
@@ -2642,7 +2675,8 @@ footer {
     /* Только если меньше контейнера */
     padding-left: 100px;
     border: 1px solid #2D2D2D;
-    display: none; }
+    display: none;
+    position: relative; }
     @media (max-width: 1250px) {
       .episodes .player_body_wrap {
         margin-top: calc(25px + 25 * ((100vw - calc(375px)) / 875)); } }
@@ -2661,25 +2695,74 @@ footer {
     @media (max-width: 1250px) {
       .episodes .player_body_wrap {
         padding-left: calc(20px + 80 * ((100vw - calc(375px)) / 875)); } }
+  .episodes .closeElement {
+    width: 14px;
+    height: 14px;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    cursor: pointer; }
+    .episodes .closeElement:hover svg {
+      fill: #F8C62A;
+      transition: all .3s ease; }
+    .episodes .closeElement svg {
+      transition: all .3s ease;
+      fill: #0F1729; }
+  .episodes .player_img {
+    position: relative; }
+    .episodes .player_img::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 45, 45, 0.6);
+      z-index: 2; }
   .episodes .video_body_wrap {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    width: 100%;
     margin: 0 auto;
     /* Только если меньше контейнера */
     margin-top: 50px;
     /* Только если меньше контейнера */
     margin-bottom: 30px;
-    display: none; }
+    display: none;
+    position: relative; }
     @media (max-width: 1250px) {
       .episodes .video_body_wrap {
         margin-top: calc(25px + 25 * ((100vw - calc(375px)) / 875)); } }
     @media (max-width: 1250px) {
       .episodes .video_body_wrap {
         margin-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 875)); } }
+    .episodes .video_body_wrap .closeElement {
+      top: 0;
+      z-index: 3; }
   .episodes .active_player_body_wrap,
   .episodes .active_video_body_wrap {
     display: block; }
+  .episodes .video_text {
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    top: 0; }
+    .episodes .video_text .top_text {
+      margin-top: 70px;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto; }
+      @media (max-width: 767px) {
+        .episodes .video_text .top_text {
+          margin: 30px 0; } }
+    .episodes .video_text .bottom_text {
+      margin-bottom: 50px; }
+      @media (max-width: 767px) {
+        .episodes .video_text .bottom_text {
+          margin-bottom: 25px; }
+          .episodes .video_text .bottom_text .number_episode {
+            color: #2D2D2D; } }
+    .episodes .video_text .set_numberEp {
+      position: static; }
   .episodes .video_wrap {
     /* Только если меньше контейнера */
     margin-bottom: 60px; }
@@ -2822,7 +2905,8 @@ footer {
     /* Только если меньше контейнера */
     padding-right: 20px;
     /* Только если меньше контейнера */
-    padding-left: 20px; }
+    padding-left: 20px;
+    cursor: pointer; }
     @media (max-width: 1250px) {
       .episodes .card {
         height: calc(165px + 215 * ((100vw - calc(375px)) / 875)); } }
@@ -3486,9 +3570,8 @@ footer {
     .latest_episode_content .player_descr {
       margin-bottom: 30px; } }
 
-@media (max-width: 767px) {
-  .latest_episode_content .player_body {
-    width: 100%; } }
+.latest_episode_content .player_body {
+  width: 100%; }
 
 @media (max-width: 767px) {
   .latest_episode_content .hidden {
