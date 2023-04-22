@@ -146,12 +146,15 @@ function initContactPopup() {
   }
 
   var popupContainer = document.querySelector(".popup_container");
-  var poupBtn = document.querySelector(".popup_btn");
+  var poupBtn = document.querySelectorAll(".popup_btn");
   var closeBtn = document.querySelector(".close_item");
-  poupBtn.addEventListener("click", function () {
-    popupBody.classList.add("popup_active");
-    popupContainer.classList.add("cont_active");
-    document.body.classList.add("popup_lock");
+  poupBtn.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      popupBody.classList.add("popup_active");
+      popupContainer.classList.add("cont_active");
+      document.body.classList.add("popup_lock");
+    });
   });
 
   function closePopup() {
@@ -394,7 +397,7 @@ function getCardData() {
       var descriptionText = descriptionElement.textContent;
       var guestIconSrc = (_card$querySelector4 = card.querySelector('.get_iconGuest')) === null || _card$querySelector4 === void 0 ? void 0 : _card$querySelector4.getAttribute("src");
       var guestNameElement = card.querySelectorAll('.get_nameGuest');
-      guestNameElement.forEach(function (item) {
+      guestNameElement.forEach(function (item, i) {
         item.textContent;
       });
       console.log(guestNameElement); // const guestText = guestNameElement.textContent;
@@ -438,8 +441,8 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, de
   guestIcon.forEach(function (item) {
     item.setAttribute('src', guestIconSrc);
   });
-  guestName.forEach(function (item) {
-    item.textContent = guestNameElement;
+  guestName.forEach(function (item, i) {
+    item.textContent = guestNameElement[i];
   });
   descriptionTextContent.textContent = descriptionText;
 

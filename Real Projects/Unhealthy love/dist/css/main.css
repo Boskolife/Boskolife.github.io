@@ -3379,6 +3379,11 @@ footer {
 .hidden_list {
   display: none; }
 
+.anchor {
+  visibility: hidden;
+  position: relative;
+  top: -100px; }
+
 .open_post {
   /* Только если меньше контейнера */
   padding-top: 55px;

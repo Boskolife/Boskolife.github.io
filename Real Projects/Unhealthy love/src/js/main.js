@@ -140,14 +140,18 @@ function initContactPopup() {
         return;
     }
     const popupContainer = document.querySelector(".popup_container");
-    const poupBtn = document.querySelector(".popup_btn");
+    const poupBtn = document.querySelectorAll(".popup_btn");
     const closeBtn = document.querySelector(".close_item");
 
-    poupBtn.addEventListener("click", () => {
-        popupBody.classList.add("popup_active");
-        popupContainer.classList.add("cont_active");
-        document.body.classList.add("popup_lock");
+    poupBtn.forEach(item => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            popupBody.classList.add("popup_active");
+            popupContainer.classList.add("cont_active");
+            document.body.classList.add("popup_lock");
+        });
     });
+    
 
     function closePopup() {
         popupBody.classList.remove("popup_active");
@@ -388,7 +392,7 @@ function getCardData() {
             const guestIconSrc = card.querySelector('.get_iconGuest')?.getAttribute("src");
             const guestNameElement = card.querySelectorAll('.get_nameGuest');
 
-            guestNameElement.forEach(item => {
+            guestNameElement.forEach((item, i) => {
                 item.textContent;
             })
 
@@ -441,8 +445,8 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
         item.setAttribute('src', guestIconSrc)
     });
 
-    guestName.forEach(item => {
-        item.textContent = guestNameElement;
+    guestName.forEach((item, i) => {
+        item.textContent = guestNameElement[i];
     })
 
     descriptionTextContent.textContent = descriptionText;

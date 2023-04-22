@@ -332,6 +332,12 @@
     display: none;
 }
 
+.anchor{
+    visibility: hidden;
+    position: relative;
+    top: -100px;
+}
+
 .open_post {
     @include adaptiv-vaule("padding-top", 55, 70, 1);
     @include adaptiv-vaule("padding-bottom", 100, 65, 1);
