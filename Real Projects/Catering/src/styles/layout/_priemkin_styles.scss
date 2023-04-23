@@ -106,7 +106,7 @@
     @include adaptiv-vaule("padding-top", 135, 230, 1);
     @include adaptiv-vaule("padding-bottom", 130, 60, 1);
 
-    @include media ("<tablet") {
+    @include media ("<desktop") {
         padding-top: 250px;
     }
 
@@ -150,14 +150,14 @@
     .left {
         left: 0;
         @include adaptiv-vaule("top", 0, -20, 1);
-        @include adaptiv-vaule("width", 390, 180, 1);
-        @include adaptiv-vaule("height", 445, 240, 1);
+        @include adaptiv-vaule("width", 300, 180, 1);
+        @include adaptiv-vaule("height", 440, 240, 1);
     }
 
     .right {
         right: 0;
         @include adaptiv-vaule("top", 0, 55, 1);
-        @include adaptiv-vaule("width", 290, 115, 1);
+        @include adaptiv-vaule("width", 260, 115, 1);
         @include adaptiv-vaule("height", 465, 182, 1);
     }
 

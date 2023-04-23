@@ -372,14 +372,8 @@ th {
 /* 20 - минимальное значение свойства в px */
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.ttf");
-  font-style: normal;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Bold.ttf");
+  font-family: "LinotypeBrewery";
+  src: url("../fonts/LinotypeBrewery-Bold.ttf");
   font-style: normal;
   font-weight: 700; }
 
@@ -407,7 +401,7 @@ html {
 body {
   color: #0B0A06;
   background: #ffffff;
-  font: 16px/1.2 "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font: 16px/1.2 "LinotypeBrewery";
   min-width: 320px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -433,7 +427,7 @@ h5,
 h6,
 .h6,
 .h {
-  font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "LinotypeBrewery";
   font-weight: bold;
   margin: 0;
   color: inherit; }
@@ -570,14 +564,15 @@ input[type='submit'] {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   cursor: pointer;
-  font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
+  font-family: "LinotypeBrewery"; }
 
 header {
   position: relative;
   /* Только если меньше контейнера */
   padding-top: 25px;
   /* Только если меньше контейнера */
-  padding-bottom: 45px; }
+  padding-bottom: 45px;
+  z-index: 5; }
   @media (max-width: 1330px) {
     header {
       padding-top: calc(15px + 10 * ((100vw - calc(375px)) / 955)); } }
@@ -592,6 +587,28 @@ header {
     width: 100%;
     height: 50%;
     background: linear-gradient(180deg, rgba(11, 10, 6, 0) 0%, #0B0A06 100%); }
+  header .dropdown {
+    position: relative;
+    display: inline-block; }
+    header .dropdown:hover .dropdown-content {
+      display: block; }
+    header .dropdown:hover .dropdown_arrow {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      transition: all .3s ease; }
+  header .dropdown_arrow {
+    margin: 0 0 2px 8px;
+    transition: all .3s ease; }
+  header .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding-top: 10px;
+    z-index: 1; }
+    header .dropdown-content:not(:last-child) .menu_link {
+      margin-bottom: 5px; }
   header .header_content {
     display: -ms-flexbox;
     display: flex;
@@ -626,10 +643,10 @@ header {
         display: none; } }
   header .menu-item {
     /* Только если меньше контейнера */
-    margin-left: 112px; }
+    margin-left: 60px; }
     @media (max-width: 1330px) {
       header .menu-item {
-        margin-left: calc(1px + 111 * ((100vw - calc(375px)) / 955)); } }
+        margin-left: calc(1px + 59 * ((100vw - calc(375px)) / 955)); } }
   header .menu_link {
     color: #ffffff;
     font-weight: 600;
@@ -639,8 +656,8 @@ header {
     text-transform: uppercase;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    -ms-flex-align: center;
+    align-items: center;
     position: relative; }
     header .menu_link::after {
       content: '';
@@ -726,285 +743,6 @@ html {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover; }
-
-.introducing_chef {
-  background-color: #F9C0AC;
-  position: relative; }
-  @media (max-width: 767px) {
-    .introducing_chef {
-      padding: 40px 0 60px 0; } }
-  .introducing_chef .line {
-    position: absolute;
-    top: 0;
-    right: 0; }
-    @media (max-width: 479px) {
-      .introducing_chef .line {
-        width: 100%;
-        height: 100%;
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg); } }
-  .introducing_chef .content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center; }
-    @media (max-width: 767px) {
-      .introducing_chef .content {
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse; } }
-  .introducing_chef .chef_img {
-    /* Только если меньше контейнера */
-    width: 530px;
-    /* Только если меньше контейнера */
-    height: 670px;
-    margin-left: -5.5%;
-    /* Только если меньше контейнера */
-    margin-right: 140px;
-    position: relative; }
-    @media (max-width: 1330px) {
-      .introducing_chef .chef_img {
-        width: calc(335px + 195 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .introducing_chef .chef_img {
-        height: calc(390px + 280 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .introducing_chef .chef_img {
-        margin-right: calc(5px + 135 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 767px) {
-      .introducing_chef .chef_img {
-        margin: 0; } }
-    @media (max-width: 479px) {
-      .introducing_chef .chef_img {
-        width: 100%; } }
-  .introducing_chef .chef_text {
-    color: #3F4D34; }
-    @media (max-width: 767px) {
-      .introducing_chef .chef_text {
-        text-align: center;
-        margin-bottom: 25px; } }
-  .introducing_chef .sub_title {
-    font-weight: 600;
-    /* Только если меньше контейнера */
-    font-size: 21px;
-    /* Только если меньше контейнера */
-    margin-bottom: 20px;
-    line-height: 100%;
-    letter-spacing: 2px;
-    text-transform: uppercase; }
-    @media (max-width: 1330px) {
-      .introducing_chef .sub_title {
-        font-size: calc(14px + 7 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .introducing_chef .sub_title {
-        margin-bottom: calc(15px + 5 * ((100vw - calc(375px)) / 955)); } }
-  .introducing_chef .title {
-    font-weight: 700;
-    font-size: 80px;
-    /* Только если меньше контейнера */
-    font-size: 80px;
-    line-height: 102.5%;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    max-width: 480px; }
-    @media (max-width: 1330px) {
-      .introducing_chef .title {
-        font-size: calc(40px + 40 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 767px) {
-      .introducing_chef .title {
-        margin: 0 auto;
-        margin-bottom: 10px; } }
-    @media (max-width: 479px) {
-      .introducing_chef .title {
-        max-width: 100%; } }
-  .introducing_chef .description {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 133.33333%;
-    color: #4A4A4A;
-    max-width: 520px; }
-    @media (max-width: 767px) {
-      .introducing_chef .description {
-        margin: 0 auto; } }
-    @media (max-width: 479px) {
-      .introducing_chef .description {
-        max-width: 100%; } }
-
-.description_chef {
-  /* Только если меньше контейнера */
-  padding-top: 125px;
-  /* Только если меньше контейнера */
-  padding-bottom: 150px;
-  position: relative;
-  background-color: #0B0A06;
-  overflow: hidden; }
-  @media (max-width: 1330px) {
-    .description_chef {
-      padding-top: calc(260px + -135 * ((100vw - calc(375px)) / 955)); } }
-  @media (max-width: 1330px) {
-    .description_chef {
-      padding-bottom: calc(60px + 90 * ((100vw - calc(375px)) / 955)); } }
-  .description_chef .line {
-    position: absolute;
-    left: 0;
-    bottom: 0; }
-    @media (max-width: 767px) {
-      .description_chef .line {
-        bottom: 33%; } }
-  .description_chef .content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    z-index: 2; }
-    @media (max-width: 767px) {
-      .description_chef .content {
-        -ms-flex-direction: column;
-        flex-direction: column; } }
-  .description_chef .item {
-    max-width: 380px;
-    margin-right: 40px; }
-    @media (max-width: 767px) {
-      .description_chef .item {
-        margin: 0;
-        text-align: center; }
-        .description_chef .item:not(:last-child) {
-          margin-bottom: 45px; } }
-  .description_chef .item_title {
-    color: #F9C0AC;
-    margin-bottom: 10px; }
-  .description_chef .item_descr {
-    color: rgba(255, 255, 255, 0.6); }
-  .description_chef .item_img {
-    position: absolute;
-    top: 0;
-    right: 2%;
-    z-index: 1;
-    /* Только если меньше контейнера */
-    width: 494px;
-    /* Только если меньше контейнера */
-    height: 494px; }
-    @media (max-width: 1330px) {
-      .description_chef .item_img {
-        width: calc(311px + 183 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .description_chef .item_img {
-        height: calc(311px + 183 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 767px) {
-      .description_chef .item_img {
-        top: -3%;
-        right: 50%;
-        -webkit-transform: translateX(50%);
-        transform: translateX(50%); } }
-
-.art {
-  display: grid;
-  grid-template: 1fr/repeat(3, 1fr);
-  place-items: center; }
-  @media (max-width: 767px) {
-    .art {
-      grid-template: repeat(3, minmax(335px, 335px))/1fr; } }
-  .art .art_img {
-    width: 100%;
-    height: 100%; }
-    .art .art_img img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-  .art .art_text {
-    grid-template-columns: minmax(100%, 175%);
-    background-color: #F9C0AC;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    padding: 15px 0;
-    /* Только если меньше контейнера */
-    padding-right: 40px;
-    /* Только если меньше контейнера */
-    padding-left: 40px;
-    position: relative;
-    overflow: hidden; }
-    @media (max-width: 1330px) {
-      .art .art_text {
-        padding-right: calc(20px + 20 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .art .art_text {
-        padding-left: calc(20px + 20 * ((100vw - calc(375px)) / 955)); } }
-  .art .art_title {
-    color: #3F4D34;
-    margin-bottom: 10px; }
-  .art .art_descr {
-    color: #4A4A4A; }
-  .art .line_top {
-    position: absolute;
-    top: 0;
-    left: -22px; }
-  .art .line_bot {
-    position: absolute;
-    bottom: 0;
-    right: 0; }
-
-.adventure {
-  background-color: #0B0A06;
-  padding-top: 90px;
-  /* Только если меньше контейнера */
-  padding-bottom: 90px;
-  position: relative; }
-  @media (max-width: 1330px) {
-    .adventure {
-      padding-bottom: calc(40px + 50 * ((100vw - calc(375px)) / 955)); } }
-  .adventure .line {
-    position: absolute;
-    top: 0;
-    left: -26px;
-    z-index: 1; }
-  .adventure .content {
-    position: relative;
-    z-index: 2;
-    text-align: center; }
-  .adventure .adventure_title {
-    color: #F9C0AC;
-    margin-bottom: 10px; }
-  .adventure .adventure_descr {
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 560px;
-    margin: 0 auto;
-    /* Только если меньше контейнера */
-    margin-bottom: 40px; }
-    @media (max-width: 1330px) {
-      .adventure .adventure_descr {
-        margin-bottom: calc(90px + -50 * ((100vw - calc(375px)) / 955)); } }
-  .adventure .adventure_images {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 40px; }
-    @media (max-width: 767px) {
-      .adventure .adventure_images {
-        -ms-flex-direction: column;
-        flex-direction: column;
-        gap: 20px; } }
-  .adventure .name {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 158.33333%;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 12px; }
 
 .introducing_chef {
   background-color: #3F4D34;
@@ -1124,7 +862,7 @@ html {
   @media (max-width: 1330px) {
     .childhood {
       padding-bottom: calc(60px + 70 * ((100vw - calc(375px)) / 955)); } }
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     .childhood {
       padding-top: 250px; } }
   @media (max-width: 479px) {
@@ -1155,24 +893,24 @@ html {
     /* Только если меньше контейнера */
     top: 0px;
     /* Только если меньше контейнера */
-    width: 390px;
+    width: 300px;
     /* Только если меньше контейнера */
-    height: 445px; }
+    height: 440px; }
     @media (max-width: 1330px) {
       .childhood .left {
         top: calc(-20px + 20 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .childhood .left {
-        width: calc(180px + 210 * ((100vw - calc(375px)) / 955)); } }
+        width: calc(180px + 120 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .childhood .left {
-        height: calc(240px + 205 * ((100vw - calc(375px)) / 955)); } }
+        height: calc(240px + 200 * ((100vw - calc(375px)) / 955)); } }
   .childhood .right {
     right: 0;
     /* Только если меньше контейнера */
     top: 0px;
     /* Только если меньше контейнера */
-    width: 290px;
+    width: 260px;
     /* Только если меньше контейнера */
     height: 465px; }
     @media (max-width: 1330px) {
@@ -1180,7 +918,7 @@ html {
         top: calc(55px + -55 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .childhood .right {
-        width: calc(115px + 175 * ((100vw - calc(375px)) / 955)); } }
+        width: calc(115px + 145 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .childhood .right {
         height: calc(182px + 283 * ((100vw - calc(375px)) / 955)); } }
@@ -2328,6 +2066,287 @@ html {
     .menu_body .black .menu_positions_title::before {
       background-color: #0B0A06; }
 
+.max_tvorogov {
+  background-color: #F9C0AC;
+  position: relative; }
+  @media (max-width: 767px) {
+    .max_tvorogov {
+      padding: 40px 0 60px 0; } }
+  .max_tvorogov .line {
+    position: absolute;
+    top: 0;
+    right: 0; }
+    @media (max-width: 479px) {
+      .max_tvorogov .line {
+        width: 100%;
+        height: 100%;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); } }
+  .max_tvorogov .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .max_tvorogov .content {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+  .max_tvorogov .chef_img {
+    /* Только если меньше контейнера */
+    width: 530px;
+    /* Только если меньше контейнера */
+    height: 670px;
+    margin-left: -6.5%;
+    /* Только если меньше контейнера */
+    margin-right: 140px;
+    position: relative; }
+    @media (max-width: 1330px) {
+      .max_tvorogov .chef_img {
+        width: calc(335px + 195 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .max_tvorogov .chef_img {
+        height: calc(390px + 280 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .max_tvorogov .chef_img {
+        margin-right: calc(5px + 135 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .max_tvorogov .chef_img {
+        margin: 0; } }
+    @media (max-width: 479px) {
+      .max_tvorogov .chef_img {
+        width: 100%; } }
+  .max_tvorogov .chef_text {
+    color: #3F4D34; }
+    @media (max-width: 767px) {
+      .max_tvorogov .chef_text {
+        text-align: center;
+        margin-bottom: 25px; } }
+  .max_tvorogov .sub_title {
+    font-weight: 600;
+    /* Только если меньше контейнера */
+    font-size: 21px;
+    /* Только если меньше контейнера */
+    margin-bottom: 20px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3F4D34; }
+    @media (max-width: 1330px) {
+      .max_tvorogov .sub_title {
+        font-size: calc(14px + 7 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .max_tvorogov .sub_title {
+        margin-bottom: calc(15px + 5 * ((100vw - calc(375px)) / 955)); } }
+  .max_tvorogov .title {
+    font-weight: 700;
+    font-size: 80px;
+    /* Только если меньше контейнера */
+    font-size: 80px;
+    line-height: 102.5%;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    max-width: 480px;
+    color: #3F4D34; }
+    @media (max-width: 1330px) {
+      .max_tvorogov .title {
+        font-size: calc(40px + 40 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .max_tvorogov .title {
+        margin: 0 auto;
+        margin-bottom: 10px; } }
+    @media (max-width: 479px) {
+      .max_tvorogov .title {
+        max-width: 100%; } }
+  .max_tvorogov .description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133.33333%;
+    color: #4A4A4A;
+    max-width: 520px; }
+    @media (max-width: 767px) {
+      .max_tvorogov .description {
+        margin: 0 auto; } }
+    @media (max-width: 479px) {
+      .max_tvorogov .description {
+        max-width: 100%; } }
+
+.description_chef {
+  /* Только если меньше контейнера */
+  padding-top: 125px;
+  /* Только если меньше контейнера */
+  padding-bottom: 150px;
+  position: relative;
+  background-color: #0B0A06;
+  overflow: hidden; }
+  @media (max-width: 1330px) {
+    .description_chef {
+      padding-top: calc(260px + -135 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .description_chef {
+      padding-bottom: calc(60px + 90 * ((100vw - calc(375px)) / 955)); } }
+  .description_chef .line {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    @media (max-width: 767px) {
+      .description_chef .line {
+        bottom: 33%; } }
+  .description_chef .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 2; }
+    @media (max-width: 767px) {
+      .description_chef .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .description_chef .item {
+    max-width: 380px;
+    margin-right: 40px; }
+    @media (max-width: 767px) {
+      .description_chef .item {
+        margin: 0;
+        text-align: center; }
+        .description_chef .item:not(:last-child) {
+          margin-bottom: 45px; } }
+  .description_chef .item_title {
+    color: #F9C0AC;
+    margin-bottom: 10px; }
+  .description_chef .item_descr {
+    color: rgba(255, 255, 255, 0.6); }
+  .description_chef .item_img {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    z-index: 1;
+    /* Только если меньше контейнера */
+    width: 494px;
+    /* Только если меньше контейнера */
+    height: 494px; }
+    @media (max-width: 1330px) {
+      .description_chef .item_img {
+        width: calc(311px + 183 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .description_chef .item_img {
+        height: calc(311px + 183 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .description_chef .item_img {
+        top: -3%;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%); } }
+
+.art {
+  display: grid;
+  grid-template: 1fr/repeat(3, 1fr);
+  place-items: center; }
+  @media (max-width: 767px) {
+    .art {
+      grid-template: repeat(3, minmax(335px, 335px))/1fr; } }
+  .art .art_img {
+    width: 100%;
+    height: 100%; }
+    .art .art_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .art .art_text {
+    grid-template-columns: minmax(100%, 175%);
+    background-color: #F9C0AC;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 15px 0;
+    /* Только если меньше контейнера */
+    padding-right: 40px;
+    /* Только если меньше контейнера */
+    padding-left: 40px;
+    position: relative;
+    overflow: hidden; }
+    @media (max-width: 1330px) {
+      .art .art_text {
+        padding-right: calc(20px + 20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .art .art_text {
+        padding-left: calc(20px + 20 * ((100vw - calc(375px)) / 955)); } }
+  .art .art_title {
+    color: #3F4D34;
+    margin-bottom: 10px; }
+  .art .art_descr {
+    color: #4A4A4A; }
+  .art .line_top {
+    position: absolute;
+    top: 0;
+    left: -22px; }
+  .art .line_bot {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+
+.adventure {
+  background-color: #0B0A06;
+  padding-top: 90px;
+  /* Только если меньше контейнера */
+  padding-bottom: 90px;
+  position: relative; }
+  @media (max-width: 1330px) {
+    .adventure {
+      padding-bottom: calc(40px + 50 * ((100vw - calc(375px)) / 955)); } }
+  .adventure .line {
+    position: absolute;
+    bottom: 0;
+    left: -26px;
+    z-index: 1; }
+  .adventure .content {
+    position: relative;
+    z-index: 2;
+    text-align: center; }
+  .adventure .adventure_title {
+    color: #F9C0AC;
+    margin-bottom: 10px; }
+  .adventure .adventure_descr {
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 560px;
+    margin: 0 auto;
+    /* Только если меньше контейнера */
+    margin-bottom: 40px; }
+    @media (max-width: 1330px) {
+      .adventure .adventure_descr {
+        margin-bottom: calc(90px + -50 * ((100vw - calc(375px)) / 955)); } }
+  .adventure .adventure_images {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px; }
+    @media (max-width: 767px) {
+      .adventure .adventure_images {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 20px; } }
+  .adventure .name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 158.33333%;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 12px; }
+
 @media (max-width: 767px) {
   .footer_menu .desctop_img {
     display: none; } }
@@ -2339,7 +2358,6 @@ html {
       display: block; } }
 
 footer {
-  position: relative;
   /* Только если меньше контейнера */
   padding-top: 50px;
   /* Только если меньше контейнера */
