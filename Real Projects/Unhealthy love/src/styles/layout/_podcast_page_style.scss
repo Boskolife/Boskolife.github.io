@@ -143,21 +143,49 @@
     .tabs {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
+        overflow: auto;
         @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+        padding-bottom: 5px;
         width: 100%;
+
+        &::-webkit-scrollbar {
+            height: 10px;
+            cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $gray_2;
+        }
     }
 
     .player_body_wrap {
         @include adaptiv-vaule("margin-top", 50, 25, 1);
         @include adaptiv-vaule("margin-bottom", 30, 15, 1);
-        @include adaptiv-vaule("padding-top", 90, 65, 1);
+        @include adaptiv-vaule("padding-top", 60, 50, 1);
         @include adaptiv-vaule("padding-bottom", 55, 20, 1);
         @include adaptiv-vaule("padding-right", 100, 20, 1);
         @include adaptiv-vaule("padding-left", 100, 20, 1);
         border: 1px solid $black;
         display: none;
         position: relative;
+
+        @include media ("<tablet_sm") {
+            padding: 15px;
+        }
+
+        @include media ("<phone") {
+            padding: 10px;
+        }
+
+        .closeElement {
+
+            svg {
+
+                @include media ("<tablet_sm") {
+                    fill: $white;
+                }
+            }
+        }
     }
 
     .closeElement {
@@ -167,6 +195,7 @@
         right: 30px;
         position: absolute;
         cursor: pointer;
+        z-index: 3;
 
         @include media ("<phone") {
             top: 25px;
@@ -211,7 +240,7 @@
         display: none;
         position: relative;
 
-        .closeElement{
+        .closeElement {
             top: 0;
             z-index: 3;
 
@@ -248,7 +277,7 @@
             @include media ("<tablet") {
                 margin-bottom: 0;
 
-                .number_episode{
+                .number_episode {
                     color: $black;
                 }
             }
@@ -332,8 +361,12 @@
         font-size: 14px;
         line-height: 18px;
         color: $black;
-        flex: 1 1 auto;
+        flex: 1 0 auto;
         white-space: nowrap;
+
+        &:first-child{
+            width: 100px;
+        }
     }
 
     .active_tab {
@@ -473,6 +506,7 @@
     .black_btn {
         background-color: $yellow;
         border: none;
+        color: $black;
 
         &:hover {
             background-color: #FFD964;

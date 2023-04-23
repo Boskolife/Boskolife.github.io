@@ -10,7 +10,7 @@ html {
     }
 
     ::-webkit-scrollbar-track {
-        background-color: $white;
+        background-color: $gray_2;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -18,7 +18,7 @@ html {
     }
 }
 
-body{
+body {
     padding-top: 75px;
 }
 
@@ -28,6 +28,26 @@ body{
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+}
+
+.sound_btn {
+    @include adaptiv-vaule("width", 88, 56, 1);
+    @include adaptiv-vaule("height", 88, 56, 1);
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sticky {
+    position: fixed;
+    right: 1%;
+    bottom: 2%;
+    z-index: 3;
+    transition: all .3s ease;
+
+    &.hidden {
+        transform: translate(300px, 0);
+    }
 }
 
 .body_lock,
@@ -41,7 +61,7 @@ body{
     @include adaptiv-vaule("padding-bottom", 65, 65, 1);
     position: relative;
 
-    .main_content{
+    .main_content {
         display: flex;
         flex-direction: column;
     }
@@ -60,6 +80,8 @@ body{
             position: static;
             order: 2;
             margin-bottom: 35px;
+            width: 106%;
+            margin-left: -3%;
         }
     }
 
@@ -98,11 +120,12 @@ body{
     .buttons {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
 
         @include media ("<tablet") {
             order: 3;
+            margin-bottom: 30px;
         }
     }
 
@@ -137,27 +160,7 @@ body{
         }
     }
 
-    .sound_btn {
-        @include adaptiv-vaule("width", 88, 56, 1);
-        @include adaptiv-vaule("height", 88, 56, 1);
-        border-radius: 50%;
-        overflow: hidden;
-        cursor: pointer;
-    }
-
-    .sticky {
-        position: fixed;
-        right: 1%;
-        bottom: 2%;
-        z-index: 3;
-        transform: scale(0.9);
-    
-        &.hidden {
-            transform: translate(300px, 0);
-        }
-    }
-
-    .main_audio_wrap{
+    .main_audio_wrap {
         display: none;
     }
 }
@@ -448,14 +451,14 @@ body{
     }
 }
 
-.main_anchor{
+.main_anchor {
     display: block;
     position: relative;
     top: -90px;
 }
 
-.notified{
-    .data_text{
+.notified {
+    .data_text {
         border: 1px solid $black;
 
         &::placeholder {

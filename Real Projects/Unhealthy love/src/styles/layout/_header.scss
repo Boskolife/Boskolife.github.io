@@ -18,7 +18,7 @@ header {
         display: flex;
         align-items: center;
         position: relative;
-        z-index: 6;
+        z-index: 4;
     }
 
     .logo_link {
@@ -57,7 +57,7 @@ header {
     .nav {
         @include media ("<tablet_max") {
             position: fixed;
-            z-index: 5;
+            z-index: 6;
             top: 0;
             right: -100%;
             transition: all .3s linear;
@@ -68,13 +68,28 @@ header {
         }
 
         @include media ("<tablet") {
-            width: 80%;
+            width: 85%;
         }
     }
 
     .nav_active {
         right: 0;
         transition: all .3s linear;
+    }
+
+    .nav_container{
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .nav_container_active{
+        display: block;
     }
 
     .nav_menu {
@@ -186,8 +201,19 @@ header {
     }
 
     .burger_active {
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 8px;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
         span {
-            width: 100%;
+            opacity: 0;
+            visibility: hidden;
         }
     }
 
@@ -309,7 +335,7 @@ header {
         margin-bottom: 5px;
     }
 
-    .popup_descr{
+    .popup_descr {
         margin-bottom: 35px;
     }
 
@@ -340,7 +366,7 @@ header {
         @include media ("<tablet") {
             width: 100%;
 
-            &:first-child{
+            &:first-child {
                 margin-bottom: 25px;
             }
         }
@@ -467,8 +493,8 @@ header {
         line-height: 130%;
         color: #353A3F;
     }
-    
-    .label1{
+
+    .label1 {
         margin-right: 30px;
     }
 

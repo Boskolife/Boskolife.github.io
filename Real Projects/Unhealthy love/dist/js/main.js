@@ -71,7 +71,7 @@ function initSwiper() {
   }
 
   destroySlidersOnResize(".post_swiper", 9999, {
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 20,
     grabCursor: true,
     // grid: {
@@ -84,10 +84,10 @@ function initSwiper() {
     },
     breakpoints: {
       650: {
-        slidesPerView: 1.5
+        slidesPerView: 2.5
       },
       1024: {
-        slidesPerView: 2.3,
+        slidesPerView: 3.3,
         spaceBetween: 30
       }
     }
@@ -99,7 +99,8 @@ function initSwiper() {
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
-      clickable: true
+      clickable: true,
+      horizontalClass: 'horizont'
     }
   });
   destroySlidersOnResize(".blog_swiper", 9999, {
@@ -152,10 +153,12 @@ function initBurger() {
   }
 
   var menuBurger = document.querySelector(".nav");
+  var menuContainer = document.querySelector(".nav_container");
   document.addEventListener("click", function (event) {
     if (btnBurger.contains(event.target)) {
       menuBurger.classList.toggle("nav_active");
       btnBurger.classList.toggle("burger_active");
+      menuContainer.classList.toggle("nav_container_active");
       document.body.classList.toggle("body_lock");
       return;
     }
@@ -164,6 +167,7 @@ function initBurger() {
       menuBurger.classList.remove("nav_active");
       btnBurger.classList.remove("burger_active");
       document.body.classList.remove("body_lock");
+      menuContainer.classList.remove("nav_container_active");
     }
   });
 }
