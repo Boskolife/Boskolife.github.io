@@ -915,8 +915,10 @@ header {
       @media (max-width: 809px) {
         header .menu_link_active::after {
           display: none; } }
-  header .btn_item {
-    padding: 10px 30px; }
+  @media (max-width: 809px) {
+    header .btn_item {
+      height: 50px;
+      max-width: 100%; } }
   header .header_burger {
     display: none;
     width: 24px;
@@ -1465,9 +1467,7 @@ body {
     align-items: center;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #2D2D2D; }
+    margin-bottom: 40px; }
     @media (max-width: 767px) {
       .latest_news .last_post {
         -ms-flex-direction: column;

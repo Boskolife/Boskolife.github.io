@@ -193,8 +193,6 @@ body {
         align-items: center;
         justify-content: flex-start;
         margin-bottom: 40px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid $black;
 
         @include media ("<tablet") {
             flex-direction: column;

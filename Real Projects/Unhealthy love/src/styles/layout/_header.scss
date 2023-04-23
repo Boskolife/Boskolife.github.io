@@ -151,7 +151,11 @@ header {
     }
 
     .btn_item {
-        padding: 10px 30px;
+
+        @include media ("<tablet_max") {
+            height: 50px;
+            max-width: 100%;
+        }
     }
 
     .header_burger {
