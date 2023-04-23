@@ -228,6 +228,7 @@ function videoPlay() {
   var video = document.getElementById("video");
   var videoBTn = document.getElementById("play");
   var videoText = document.querySelector(".video_text");
+  var closeElement = document.querySelectorAll(".closeElement");
   videoBTn.addEventListener("click", function () {
     if (video.paused) {
       video.play();
@@ -235,6 +236,11 @@ function videoPlay() {
       video.setAttribute("controls", "");
       videoText.style.display = "none";
     }
+  });
+  closeElement.forEach(function (item) {
+    item.addEventListener('click', function () {
+      video.pause();
+    });
   });
 }
 
@@ -271,6 +277,7 @@ function playAudio() {
   var playProgressContainer = document.querySelector(".progress_container");
   var currentTimeSong = document.querySelector(".currentTime");
   var durationSong = document.querySelector(".duration");
+  var closeElement = document.querySelectorAll(".closeElement");
 
   function playSong() {
     audio.classList.add("play");
@@ -285,13 +292,18 @@ function playAudio() {
   }
 
   playBtn.addEventListener("click", function () {
-    var isPlayaing = audio.classList.contains("play");
+    var isPlaying = audio.classList.contains("play");
 
-    if (isPlayaing) {
+    if (isPlaying) {
       pauseSong();
     } else {
       playSong();
     }
+  });
+  closeElement.forEach(function (item) {
+    item.addEventListener('click', function () {
+      pauseSong();
+    });
   });
 
   function timeduration(seconds) {

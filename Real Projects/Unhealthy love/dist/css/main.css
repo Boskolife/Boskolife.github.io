@@ -702,7 +702,8 @@ input[type='submit'] {
     max-height: 565px;
     height: 100%;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    margin-top: 35px; }
   .video_wrap video {
     width: 100%;
     height: 100%;
@@ -747,8 +748,7 @@ input[type='submit'] {
       .video_wrap .video_text {
         position: static;
         -webkit-transform: translate(0);
-        transform: translate(0);
-        margin-bottom: 25px; } }
+        transform: translate(0); } }
   .video_wrap .video_title {
     font-weight: 700;
     /* Только если меньше контейнера */
@@ -810,8 +810,16 @@ header {
     height: 100%; }
   header .logo_img {
     margin-right: 23px;
-    width: 55px;
-    height: 51px; }
+    /* Только если меньше контейнера */
+    width: 65px;
+    /* Только если меньше контейнера */
+    height: 65px; }
+    @media (max-width: 1250px) {
+      header .logo_img {
+        width: calc(35px + 30 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      header .logo_img {
+        height: calc(35px + 30 * ((100vw - calc(375px)) / 875)); } }
   header .logo_title {
     font-weight: 600;
     font-size: 18px;
@@ -1339,15 +1347,13 @@ body {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
     width: 100%; }
     @media (max-width: 767px) {
       .main_section .buttons {
         -ms-flex-order: 3;
-        order: 3;
-        -ms-flex-pack: distribute;
-        justify-content: space-around; } }
+        order: 3; } }
   .main_section .social_links {
     display: -ms-flexbox;
     display: flex;
@@ -1667,6 +1673,11 @@ body {
       .latest_episode .latest_episode_title {
         margin-bottom: calc(45px + 20 * ((100vw - calc(375px)) / 875)); } }
 
+.main_anchor {
+  display: block;
+  position: relative;
+  top: -90px; }
+
 .notified .data_text {
   border: 1px solid #2D2D2D; }
   .notified .data_text::-webkit-input-placeholder {
@@ -1773,8 +1784,8 @@ footer {
     height: 100%; }
   footer .logo_img {
     margin-right: 23px;
-    width: 55px;
-    height: 51px; }
+    width: 65px;
+    height: 65px; }
   footer .logo_title {
     font-weight: 600;
     font-size: 18px;
@@ -2800,6 +2811,9 @@ footer {
     .episodes .video_body_wrap .closeElement {
       top: 0;
       z-index: 3; }
+      @media (max-width: 479px) {
+        .episodes .video_body_wrap .closeElement {
+          right: 15px; } }
   .episodes .active_player_body_wrap,
   .episodes .active_video_body_wrap {
     display: block; }
@@ -2821,7 +2835,7 @@ footer {
       margin-bottom: 50px; }
       @media (max-width: 767px) {
         .episodes .video_text .bottom_text {
-          margin-bottom: 25px; }
+          margin-bottom: 0; }
           .episodes .video_text .bottom_text .number_episode {
             color: #2D2D2D; } }
     .episodes .video_text .set_numberEp {
@@ -2859,6 +2873,8 @@ footer {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     max-width: 300px; }
@@ -3659,6 +3675,10 @@ footer {
 .latest_episode_content .playBtn {
   /* Только если меньше контейнера */
   margin-right: 30px;
+  /* Только если меньше контейнера */
+  width: 70px;
+  /* Только если меньше контейнера */
+  height: 60px;
   width: 70px;
   height: 60px;
   border-radius: 50%;
@@ -3668,6 +3688,12 @@ footer {
   @media (max-width: 1250px) {
     .latest_episode_content .playBtn {
       margin-right: calc(15px + 15 * ((100vw - calc(375px)) / 875)); } }
+  @media (max-width: 1250px) {
+    .latest_episode_content .playBtn {
+      width: calc(50px + 20 * ((100vw - calc(375px)) / 875)); } }
+  @media (max-width: 1250px) {
+    .latest_episode_content .playBtn {
+      height: calc(40px + 20 * ((100vw - calc(375px)) / 875)); } }
 
 .latest_episode_content .progress_container {
   border-radius: 12px;
@@ -3689,10 +3715,18 @@ footer {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     right: -10px;
+    /* Только если меньше контейнера */
     width: 23px;
+    /* Только если меньше контейнера */
     height: 23px;
     border-radius: 50%;
     background-color: #F8C62A; }
+    @media (max-width: 1250px) {
+      .latest_episode_content .progress::after {
+        width: calc(16px + 7 * ((100vw - calc(375px)) / 875)); } }
+    @media (max-width: 1250px) {
+      .latest_episode_content .progress::after {
+        height: calc(16px + 7 * ((100vw - calc(375px)) / 875)); } }
 
 .latest_episode_content .time_wrap {
   /* Только если меньше контейнера */

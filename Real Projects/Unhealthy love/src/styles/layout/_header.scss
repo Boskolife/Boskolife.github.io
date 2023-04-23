@@ -31,8 +31,8 @@ header {
 
     .logo_img {
         margin-right: 23px;
-        width: 55px;
-        height: 51px;
+        @include adaptiv-vaule("width", 65, 35, 1);
+        @include adaptiv-vaule("height", 65, 35, 1);
     }
 
     .logo_title {

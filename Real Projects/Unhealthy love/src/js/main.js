@@ -44,7 +44,6 @@ function initCircleBtn() {
     }
   }
   
-
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
         const init = {
@@ -241,6 +240,7 @@ function videoPlay() {
     let video = document.getElementById("video");
     let videoBTn = document.getElementById("play");
     const videoText = document.querySelector(".video_text");
+    const closeElement = document.querySelectorAll(".closeElement");
 
     videoBTn.addEventListener("click", () => {
         if (video.paused) {
@@ -249,6 +249,12 @@ function videoPlay() {
             video.setAttribute("controls", "");
             videoText.style.display = "none";
         }
+    });
+
+    closeElement.forEach(item => {
+        item.addEventListener('click', () => {
+            video.pause();
+        });
     });
 }
 
@@ -282,6 +288,7 @@ function playAudio() {
     const playProgressContainer = document.querySelector(".progress_container");
     const currentTimeSong = document.querySelector(".currentTime");
     const durationSong = document.querySelector(".duration");
+    const closeElement = document.querySelectorAll(".closeElement");
 
     function playSong() {
         audio.classList.add("play");
@@ -296,13 +303,20 @@ function playAudio() {
     }
 
     playBtn.addEventListener("click", () => {
-        const isPlayaing = audio.classList.contains("play");
-        if (isPlayaing) {
+        const isPlaying = audio.classList.contains("play");
+        if (isPlaying) {
             pauseSong();
         } else {
             playSong();
         }
     });
+
+    closeElement.forEach(item => {
+        item.addEventListener('click', () => {
+            pauseSong();
+        });
+    });
+   
 
     function timeduration(seconds) {
         const m = (seconds / 60) | 0,

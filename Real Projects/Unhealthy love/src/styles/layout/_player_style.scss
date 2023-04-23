@@ -99,6 +99,8 @@
     
     .playBtn {
         @include adaptiv-vaule("margin-right", 30, 15, 1);
+        @include adaptiv-vaule("width", 70, 50, 1);
+        @include adaptiv-vaule("height", 60, 40, 1);
         width: 70px;
         height: 60px;
         border-radius: 50%;
@@ -128,8 +130,8 @@
             top: 50%;
             transform: translateY(-50%);
             right: -10px;
-            width: 23px;
-            height: 23px;
+            @include adaptiv-vaule("width", 23, 16, 1);
+            @include adaptiv-vaule("height", 23, 16, 1);
             border-radius: 50%;
             background-color: $yellow;
         }
