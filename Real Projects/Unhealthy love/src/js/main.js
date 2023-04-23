@@ -5,6 +5,7 @@ initContactPopup();
 playAudio();
 openArticlePost();
 initMainAudio();
+getCardData();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -65,9 +66,11 @@ function initSwiper() {
     destroySlidersOnResize(".podcast_swiper", 9999, {
         slidesPerView: 1,
         grabCursor: true,
+        clickable: true,
         pagination: {
             el: ".swiper-pagination",
             type: "bullets",
+            clickable: true,
         },
     });
 
@@ -77,6 +80,7 @@ function initSwiper() {
         pagination: {
             el: ".swiper-pagination",
             type: "bullets",
+            clickable: true,
         },
     });
 
@@ -84,6 +88,7 @@ function initSwiper() {
         slidesPerView: 1,
         spaceBetween: 10,
         grabCursor: true,
+        clickable: true,
         grid: {
             rows: 3,
             fill: "row",
@@ -143,7 +148,7 @@ function initContactPopup() {
     const poupBtn = document.querySelectorAll(".popup_btn");
     const closeBtn = document.querySelector(".close_item");
 
-    poupBtn.forEach(item => {
+    poupBtn.forEach((item) => {
         item.addEventListener("click", (e) => {
             e.preventDefault();
             popupBody.classList.add("popup_active");
@@ -151,7 +156,6 @@ function initContactPopup() {
             document.body.classList.add("popup_lock");
         });
     });
-    
 
     function closePopup() {
         popupBody.classList.remove("popup_active");
@@ -219,9 +223,8 @@ function initMainAudio() {
     const srcBtn = document.querySelector(".btn_src");
 
     soundBtn.addEventListener("click", () => {
-
         if (mainAudio.paused) {
-            mainAudio.play()
+            mainAudio.play();
             srcBtn.src = "./images/main/unmute.svg";
         } else {
             mainAudio.pause();
@@ -382,26 +385,26 @@ function getCardData() {
             const card = e.currentTarget;
             const imgSrc = card.querySelector(".get_cardImg")?.getAttribute("src");
             const songSrc = card.querySelector(".getSongCard")?.getAttribute("src");
-            const videoSrc = card.querySelector('.getVideoCard')?.getAttribute("src");
+            const videoSrc = card.querySelector(".getVideoCard")?.getAttribute("src");
             const numberEpisodeSpanElement = card.querySelector(".get_numberEp");
             const numberEpisodeText = numberEpisodeSpanElement.textContent;
-            const titleElement = card.querySelector('.get_cardTitle');
+            const titleElement = card.querySelector(".get_cardTitle");
             const titleText = titleElement.textContent;
-            const descriptionElement = card.querySelector('.get_cardDescr');
+            const descriptionElement = card.querySelector(".get_cardDescr");
             const descriptionText = descriptionElement.textContent;
-            const guestIconSrc = card.querySelector('.get_iconGuest')?.getAttribute("src");
-            const guestNameElement = card.querySelectorAll('.get_nameGuest');
+            const guestIconSrc = card.querySelectorAll(".get_iconGuest");
+            const guestNameElement = card.querySelectorAll(".get_nameGuest");
 
-            guestNameElement.forEach((item, i) => {
-                item.textContent;
-            })
-
-            console.log(guestNameElement)
-
-            // const guestText = guestNameElement.textContent;
-
-            setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
-                 descriptionText, guestIconSrc, guestNameElement);
+            setCardData(
+                imgSrc,
+                songSrc,
+                videoSrc,
+                numberEpisodeText,
+                titleText,
+                descriptionText,
+                guestIconSrc,
+                guestNameElement
+            );
         });
     });
 
@@ -412,8 +415,16 @@ function getCardData() {
     }
 }
 
-function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, 
-    descriptionText, guestIconSrc ,guestNameElement) {
+function setCardData(
+    imgSrc,
+    songSrc,
+    videoSrc,
+    numberEpisodeText,
+    titleText,
+    descriptionText,
+    guestIconSrc,
+    guestNameElement
+) {
     const playerBody = document.querySelector(".player_body_wrap");
     const videoBody = document.querySelector(".video_body_wrap");
     if (!playerBody || !videoBody) {
@@ -423,16 +434,20 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
     const episodeText = document.querySelectorAll(".set_numberEp");
     const titleTextContent = document.querySelectorAll(".set_cardTitle");
     const descriptionTextContent = document.querySelector(".set_cardDescr");
-    const guestIcon = document.querySelectorAll('.set_iconGuest');
-    const guestName = document.querySelectorAll('.set_nameGuest');
+    const guestIcon = songSrc
+        ? playerBody.querySelectorAll(".set_iconGuest")
+        : videoBody.querySelectorAll(".set_iconGuest");
+    const guestName = songSrc
+        ? playerBody.querySelectorAll(".set_nameGuest")
+        : videoBody.querySelectorAll(".set_nameGuest");
 
-    closeElement.forEach(item => {
-        item.addEventListener('click', () => {
+    closeElement.forEach((item) => {
+        item.addEventListener("click", () => {
             playerBody.classList.remove("active_player_body_wrap");
             videoBody.classList.remove("active_video_body_wrap");
-        })
+        });
     });
-    
+
     episodeText.forEach((item) => {
         item.textContent = numberEpisodeText;
     });
@@ -440,14 +455,14 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
     titleTextContent.forEach((item) => {
         item.textContent = titleText;
     });
-    
-    guestIcon.forEach(item => {
-        item.setAttribute('src', guestIconSrc)
+
+    guestIcon.forEach((item, i) => {
+        item.setAttribute("src", guestIconSrc[i].getAttribute("src"));
     });
 
     guestName.forEach((item, i) => {
-        item.textContent = guestNameElement[i];
-    })
+        item.textContent = guestNameElement[i].textContent;
+    });
 
     descriptionTextContent.textContent = descriptionText;
 
@@ -465,5 +480,3 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText,
         video.setAttribute("src", videoSrc);
     }
 }
-
-getCardData();

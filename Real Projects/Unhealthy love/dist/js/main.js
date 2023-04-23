@@ -13,6 +13,7 @@ initContactPopup();
 playAudio();
 openArticlePost();
 initMainAudio();
+getCardData();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -69,9 +70,11 @@ function initSwiper() {
   destroySlidersOnResize(".podcast_swiper", 9999, {
     slidesPerView: 1,
     grabCursor: true,
+    clickable: true,
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets"
+      type: "bullets",
+      clickable: true
     }
   });
   destroySlidersOnResize(".blog_swiper", 9999, {
@@ -79,13 +82,15 @@ function initSwiper() {
     grabCursor: true,
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets"
+      type: "bullets",
+      clickable: true
     }
   });
   destroySlidersOnResize(".tab_post_swiper", 9999, {
     slidesPerView: 1,
     spaceBetween: 10,
     grabCursor: true,
+    clickable: true,
     grid: {
       rows: 3,
       fill: "row"
@@ -383,25 +388,20 @@ function getCardData() {
     }
 
     item.addEventListener("click", function (e) {
-      var _card$querySelector, _card$querySelector2, _card$querySelector3, _card$querySelector4;
+      var _card$querySelector, _card$querySelector2, _card$querySelector3;
 
       var card = e.currentTarget;
       var imgSrc = (_card$querySelector = card.querySelector(".get_cardImg")) === null || _card$querySelector === void 0 ? void 0 : _card$querySelector.getAttribute("src");
       var songSrc = (_card$querySelector2 = card.querySelector(".getSongCard")) === null || _card$querySelector2 === void 0 ? void 0 : _card$querySelector2.getAttribute("src");
-      var videoSrc = (_card$querySelector3 = card.querySelector('.getVideoCard')) === null || _card$querySelector3 === void 0 ? void 0 : _card$querySelector3.getAttribute("src");
+      var videoSrc = (_card$querySelector3 = card.querySelector(".getVideoCard")) === null || _card$querySelector3 === void 0 ? void 0 : _card$querySelector3.getAttribute("src");
       var numberEpisodeSpanElement = card.querySelector(".get_numberEp");
       var numberEpisodeText = numberEpisodeSpanElement.textContent;
-      var titleElement = card.querySelector('.get_cardTitle');
+      var titleElement = card.querySelector(".get_cardTitle");
       var titleText = titleElement.textContent;
-      var descriptionElement = card.querySelector('.get_cardDescr');
+      var descriptionElement = card.querySelector(".get_cardDescr");
       var descriptionText = descriptionElement.textContent;
-      var guestIconSrc = (_card$querySelector4 = card.querySelector('.get_iconGuest')) === null || _card$querySelector4 === void 0 ? void 0 : _card$querySelector4.getAttribute("src");
-      var guestNameElement = card.querySelectorAll('.get_nameGuest');
-      guestNameElement.forEach(function (item, i) {
-        item.textContent;
-      });
-      console.log(guestNameElement); // const guestText = guestNameElement.textContent;
-
+      var guestIconSrc = card.querySelectorAll(".get_iconGuest");
+      var guestNameElement = card.querySelectorAll(".get_nameGuest");
       setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, descriptionText, guestIconSrc, guestNameElement);
     });
   });
@@ -424,10 +424,10 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, de
   var episodeText = document.querySelectorAll(".set_numberEp");
   var titleTextContent = document.querySelectorAll(".set_cardTitle");
   var descriptionTextContent = document.querySelector(".set_cardDescr");
-  var guestIcon = document.querySelectorAll('.set_iconGuest');
-  var guestName = document.querySelectorAll('.set_nameGuest');
+  var guestIcon = songSrc ? playerBody.querySelectorAll(".set_iconGuest") : videoBody.querySelectorAll(".set_iconGuest");
+  var guestName = songSrc ? playerBody.querySelectorAll(".set_nameGuest") : videoBody.querySelectorAll(".set_nameGuest");
   closeElement.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener("click", function () {
       playerBody.classList.remove("active_player_body_wrap");
       videoBody.classList.remove("active_video_body_wrap");
     });
@@ -438,11 +438,11 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, de
   titleTextContent.forEach(function (item) {
     item.textContent = titleText;
   });
-  guestIcon.forEach(function (item) {
-    item.setAttribute('src', guestIconSrc);
+  guestIcon.forEach(function (item, i) {
+    item.setAttribute("src", guestIconSrc[i].getAttribute("src"));
   });
   guestName.forEach(function (item, i) {
-    item.textContent = guestNameElement[i];
+    item.textContent = guestNameElement[i].textContent;
   });
   descriptionTextContent.textContent = descriptionText;
 
@@ -460,6 +460,4 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, de
     video.setAttribute("src", videoSrc);
   }
 }
-
-getCardData();
 //# sourceMappingURL=main.js.map
