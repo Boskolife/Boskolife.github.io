@@ -14,6 +14,31 @@ playAudio();
 openArticlePost();
 initMainAudio();
 getCardData();
+initCircleBtn();
+
+function initCircleBtn() {
+  var circleBtn = document.querySelector(".sound_btn");
+  var firstSection = document.querySelectorAll("section")[0];
+  var footer = document.querySelector("footer");
+  if (!circleBtn || !firstSection) return;
+  checkStickyBtn();
+  document.addEventListener("scroll", checkStickyBtn);
+  window.addEventListener("resize", checkStickyBtn);
+
+  function checkStickyBtn() {
+    var firstSecHeight = firstSection.offsetHeight;
+    var currentScrollPosY = window.scrollY;
+    var firstSectionBottomPadding = getComputedStyle(firstSection).paddingBottom.replace(/px/g, "");
+    var currentScrollBottomPos = window.scrollY + window.innerHeight;
+    currentScrollPosY > firstSecHeight - +firstSectionBottomPadding ? circleBtn.classList.add("sticky") : circleBtn.classList.remove("sticky");
+
+    if (footer) {
+      var footerTopPos = footer.offsetTop;
+      var footerTopPadding = getComputedStyle(firstSection).paddingTop.replace(/px/g, "");
+      currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2 ? circleBtn.classList.add("hidden") : circleBtn.classList.remove("hidden");
+    }
+  }
+}
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -225,10 +250,10 @@ function initMainAudio() {
   soundBtn.addEventListener("click", function () {
     if (mainAudio.paused) {
       mainAudio.play();
-      srcBtn.src = "./images/main/unmute.svg";
+      srcBtn.src = "./images/main/mute.svg";
     } else {
       mainAudio.pause();
-      srcBtn.src = "./images/main/mute.svg";
+      srcBtn.src = "./images/main/unmute.svg";
     }
   });
 }

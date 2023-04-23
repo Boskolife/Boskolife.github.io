@@ -46,7 +46,7 @@
     &::placeholder {
         @include adaptiv-vaule("font-size", 18, 16, 1);
         line-height: 23 / 18 * 100%;
-        color: #919191;
+        color: #909090;
     }
 }
 
@@ -158,4 +158,5 @@
         }
     }
 }
+
 

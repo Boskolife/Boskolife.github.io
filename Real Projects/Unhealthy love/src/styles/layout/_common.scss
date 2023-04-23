@@ -103,7 +103,7 @@ body{
 
         @include media ("<tablet") {
             order: 3;
-            justify-content: center;
+            justify-content: space-around;
         }
     }
 
@@ -139,14 +139,22 @@ body{
     }
 
     .sound_btn {
-        width: 88px;
-        height: 88px;
+        @include adaptiv-vaule("width", 88, 56, 1);
+        @include adaptiv-vaule("height", 88, 56, 1);
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
+    }
 
-        @include media ("<tablet") {
-            display: none
+    .sticky {
+        position: fixed;
+        right: 1%;
+        bottom: 2%;
+        z-index: 3;
+        transform: scale(0.9);
+    
+        &.hidden {
+            transform: translate(300px, 0);
         }
     }
 
@@ -157,7 +165,7 @@ body{
 
 .latest_news {
     @include adaptiv-vaule("padding-top", 165, 20, 1);
-    @include adaptiv-vaule("padding-bottom", 120, 110, 1);
+    @include adaptiv-vaule("padding-bottom", 95, 85, 1);
     position: relative;
 
     .fly_title {
@@ -182,7 +190,9 @@ body{
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 85px;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $black;
 
         @include media ("<tablet") {
             flex-direction: column;
@@ -268,7 +278,8 @@ body{
     }
 
     .post_swiper {
-        padding: 50px 0;
+        margin-top: 40px;
+        padding: 20px 0;
     }
 }
 
@@ -436,5 +447,17 @@ body{
         line-height: 130%;
         color: $black;
         @include adaptiv-vaule("margin-bottom", 65, 45, 1);
+    }
+}
+
+.notified{
+    .data_text{
+        border: 1px solid $black;
+
+        &::placeholder {
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            line-height: 23 / 18 * 100%;
+            color: #909090;
+        }
     }
 }

@@ -15,7 +15,7 @@
         max-width: 210px;
         width: 100%;
         position: relative;
-        @include adaptiv-vaule("height", 210, 340, 1);
+        @include adaptiv-vaule("height", 210, 260, 1);
         @include adaptiv-vaule("margin-right", 60, 15, 1);
     
         @include media ("<tablet") {

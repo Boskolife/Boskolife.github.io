@@ -6,6 +6,44 @@ playAudio();
 openArticlePost();
 initMainAudio();
 getCardData();
+initCircleBtn() ;
+
+function initCircleBtn() {
+    const circleBtn = document.querySelector(".sound_btn");
+    const firstSection = document.querySelectorAll("section")[0];
+    const footer = document.querySelector("footer");
+  
+    if (!circleBtn || !firstSection) return;
+  
+    checkStickyBtn();
+  
+    document.addEventListener("scroll", checkStickyBtn);
+    window.addEventListener("resize", checkStickyBtn);
+  
+    function checkStickyBtn() {
+      const firstSecHeight = firstSection.offsetHeight;
+      const currentScrollPosY = window.scrollY;
+      const firstSectionBottomPadding = getComputedStyle(
+        firstSection
+      ).paddingBottom.replace(/px/g, "");
+      const currentScrollBottomPos = window.scrollY + window.innerHeight;
+  
+      currentScrollPosY > firstSecHeight - +firstSectionBottomPadding
+        ? circleBtn.classList.add("sticky")
+        : circleBtn.classList.remove("sticky");
+  
+      if (footer) {
+        const footerTopPos = footer.offsetTop;
+        const footerTopPadding = getComputedStyle(
+          firstSection
+        ).paddingTop.replace(/px/g, "");
+        currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2
+          ? circleBtn.classList.add("hidden")
+          : circleBtn.classList.remove("hidden");
+      }
+    }
+  }
+  
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -225,10 +263,10 @@ function initMainAudio() {
     soundBtn.addEventListener("click", () => {
         if (mainAudio.paused) {
             mainAudio.play();
-            srcBtn.src = "./images/main/unmute.svg";
+            srcBtn.src = "./images/main/mute.svg";
         } else {
             mainAudio.pause();
-            srcBtn.src = "./images/main/mute.svg";
+            srcBtn.src = "./images/main/unmute.svg";
         }
     });
 }
