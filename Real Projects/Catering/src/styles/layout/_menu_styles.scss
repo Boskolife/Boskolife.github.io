@@ -62,7 +62,10 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        padding: 15px;
+        @include adaptiv-vaule("padding-top", 15, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+        @include adaptiv-vaule("padding-right", 15, 10, 1);
+        @include adaptiv-vaule("padding-left", 15, 10, 1);
         transition: all .3s linear;
 
         @include media ("<phone") {
@@ -171,15 +174,26 @@
     }
 
     .menu_items {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template: 1fr / repeat(4 , 1fr);
         gap: 20px;
 
-        @include media ("<phone") {
-            justify-content: flex-start;
+        @include media ("<desktop") {
+            grid-template: 1fr / repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
         }
+
+        @include media ("<phone") {
+            grid-template: 1fr / repeat(auto-fit, minmax(160px, 1fr));
+        }
+
+        // @include media ("<phone") {
+        //     justify-content: flex-start;
+        // }
     }
 
     .menu_item {
@@ -189,17 +203,19 @@
         align-items: center;
         border: 1px solid $pink;
         border-radius: 32px;
-        padding: 175px 15px 30px 15px;
+        // padding: 175px 10px 30px 10px;
         @include adaptiv-vaule("padding-top", 175, 60, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+        @include adaptiv-vaule("padding-right", 10, 5, 1);
+        @include adaptiv-vaule("padding-left", 10, 5, 1);
         @include adaptiv-vaule("margin-top", 140, 60, 1);
+        margin-bottom: 20px;
         position: relative;
         transition: all .3s ease-out;
-        @include adaptiv-vaule("width", 310, 160, 1);
-        @include adaptiv-vaule("height", 340, 190, 1);
 
-        @include media ("<phone") {
-            width: 47%;
-        }
+        // @include media ("<phone") {
+        //     width: 47%;
+        // }
 
         &:hover {
             border: none;
@@ -251,6 +267,12 @@
         display: inline-block;
     }
 
+    .platinum {
+        background: linear-gradient(0deg, #C1A875, #C1A875), linear-gradient(339.03deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.6) 95.95%), linear-gradient(76.82deg, #9EAEB2 11.6%, #7E8886 48.06%, #728489 91.31%);
+        background-blend-mode: color, overlay, normal;
+        box-shadow: 0px 0px 36px rgba(123, 109, 32, 0.6);
+    }
+
     .item_descr {
         display: flex;
         flex-direction: column;
@@ -279,7 +301,7 @@
         padding-left: 10px;
         position: relative;
 
-        &::before{
+        &::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -287,7 +309,7 @@
             left: 0;
             width: 3px;
             height: 3px;
-            border-radius:50%;
+            border-radius: 50%;
             background-color: $white;
 
         }

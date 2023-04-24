@@ -1835,7 +1835,14 @@ html {
     -ms-flex-pack: center;
     justify-content: center;
     position: relative;
-    padding: 15px;
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    /* Только если меньше контейнера */
+    padding-right: 15px;
+    /* Только если меньше контейнера */
+    padding-left: 15px;
     transition: all .3s linear; }
     @media (max-width: 1330px) {
       .menu_page .item {
@@ -1843,6 +1850,18 @@ html {
     @media (max-width: 1330px) {
       .menu_page .item {
         width: calc(160px + 145 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_page .item {
+        padding-top: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_page .item {
+        padding-bottom: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_page .item {
+        padding-right: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_page .item {
+        padding-left: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 479px) {
       .menu_page .item {
         width: 47%; } }
@@ -1945,19 +1964,16 @@ html {
       background-color: #F9C0AC;
       z-index: -2; }
   .menu_body .menu_items {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: 1fr/repeat(4, 1fr);
     gap: 20px; }
+    @media (max-width: 1023px) {
+      .menu_body .menu_items {
+        grid-template: 1fr/repeat(auto-fit, minmax(230px, 1fr));
+        gap: 15px; } }
     @media (max-width: 479px) {
       .menu_body .menu_items {
-        -ms-flex-pack: start;
-        justify-content: flex-start; } }
+        grid-template: 1fr/repeat(auto-fit, minmax(160px, 1fr)); } }
   .menu_body .menu_item {
     display: -ms-flexbox;
     display: flex;
@@ -1969,32 +1985,34 @@ html {
     align-items: center;
     border: 1px solid #F9C0AC;
     border-radius: 32px;
-    padding: 175px 15px 30px 15px;
     /* Только если меньше контейнера */
     padding-top: 175px;
     /* Только если меньше контейнера */
+    padding-bottom: 30px;
+    /* Только если меньше контейнера */
+    padding-right: 10px;
+    /* Только если меньше контейнера */
+    padding-left: 10px;
+    /* Только если меньше контейнера */
     margin-top: 140px;
+    margin-bottom: 20px;
     position: relative;
-    transition: all .3s ease-out;
-    /* Только если меньше контейнера */
-    width: 310px;
-    /* Только если меньше контейнера */
-    height: 340px; }
+    transition: all .3s ease-out; }
     @media (max-width: 1330px) {
       .menu_body .menu_item {
         padding-top: calc(60px + 115 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .menu_body .menu_item {
+        padding-bottom: calc(15px + 15 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_body .menu_item {
+        padding-right: calc(5px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_body .menu_item {
+        padding-left: calc(5px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .menu_body .menu_item {
         margin-top: calc(60px + 80 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .menu_body .menu_item {
-        width: calc(160px + 150 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 1330px) {
-      .menu_body .menu_item {
-        height: calc(190px + 150 * ((100vw - calc(375px)) / 955)); } }
-    @media (max-width: 479px) {
-      .menu_body .menu_item {
-        width: 47%; } }
     .menu_body .menu_item:hover {
       border: none;
       transition: all .3s ease-out; }
@@ -2075,6 +2093,10 @@ html {
     @media (max-width: 1330px) {
       .menu_body .tip {
         padding-left: calc(8px + 7 * ((100vw - calc(375px)) / 955)); } }
+  .menu_body .platinum {
+    background: linear-gradient(0deg, #C1A875, #C1A875), linear-gradient(339.03deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.6) 95.95%), linear-gradient(76.82deg, #9EAEB2 11.6%, #7E8886 48.06%, #728489 91.31%);
+    background-blend-mode: color, overlay, normal;
+    box-shadow: 0px 0px 36px rgba(123, 109, 32, 0.6); }
   .menu_body .item_descr {
     display: -ms-flexbox;
     display: flex;
