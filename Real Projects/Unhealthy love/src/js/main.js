@@ -490,12 +490,8 @@ function setCardData(
     const episodeText = document.querySelectorAll(".set_numberEp");
     const titleTextContent = document.querySelectorAll(".set_cardTitle");
     const descriptionTextContent = document.querySelector(".set_cardDescr");
-    const guestIcon = songSrc
-        ? playerBody.querySelectorAll(".set_iconGuest")
-        : videoBody.querySelectorAll(".set_iconGuest");
-    const guestName = songSrc
-        ? playerBody.querySelectorAll(".set_nameGuest")
-        : videoBody.querySelectorAll(".set_nameGuest");
+    const guestIcon = songSrc ? playerBody.querySelectorAll(".set_iconGuest") : videoBody.querySelectorAll(".set_iconGuest");
+    const guestName = songSrc ? playerBody.querySelectorAll(".set_nameGuest") : videoBody.querySelectorAll(".set_nameGuest");
 
     closeElement.forEach((item) => {
         item.addEventListener("click", () => {

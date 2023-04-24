@@ -275,7 +275,7 @@
     .tabs {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
+        overflow: auto;
         @include adaptiv-vaule("margin-bottom", 55, 25, 1);
         width: 100%;
     }
@@ -295,6 +295,10 @@
         color: $black;
         flex: 1 1 auto;
         white-space: nowrap;
+
+        &:first-child{
+            flex: 1 0 100px;
+        }
     }
 
     .active_tab {

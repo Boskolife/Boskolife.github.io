@@ -915,10 +915,22 @@ header {
       @media (max-width: 809px) {
         header .menu_link_active::after {
           display: none; } }
-  @media (max-width: 809px) {
-    header .btn_item {
-      height: 50px;
-      max-width: 100%; } }
+  header .btn_item {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 128.57143%;
+    color: #2D2D2D;
+    padding: 10px 15px; }
+    @media (max-width: 809px) {
+      header .btn_item {
+        height: 50px;
+        max-width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
   header .header_burger {
     display: none;
     width: 24px;
@@ -3430,8 +3442,7 @@ footer {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    overflow: auto;
     /* Только если меньше контейнера */
     margin-bottom: 55px;
     width: 100%; }
@@ -3470,6 +3481,9 @@ footer {
     @media (max-width: 1250px) {
       .posts .tablinks {
         padding-left: calc(15px + 20 * ((100vw - calc(375px)) / 875)); } }
+    .posts .tablinks:first-child {
+      -ms-flex: 1 0 100px;
+      flex: 1 0 100px; }
   .posts .active_tab {
     background-color: #F8C62A;
     transition: all .3s ease; }
