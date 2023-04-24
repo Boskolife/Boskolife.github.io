@@ -86,6 +86,25 @@
     @include adaptiv-vaule("padding-top", 80, 60, 1);
     @include adaptiv-vaule("padding-bottom", 90, 60, 1);
     background-color: $green;
+    position: relative;
+
+    .line_right,
+    .line_left{
+        position: absolute;
+        bottom: 0;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .line_right{
+        right: 0;
+    }
+
+    .line_left{
+        left: 0;
+    }
 
     .message_content {
         text-align: center;

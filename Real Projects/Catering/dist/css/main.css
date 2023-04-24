@@ -2486,13 +2486,26 @@ html {
   padding-top: 80px;
   /* Только если меньше контейнера */
   padding-bottom: 90px;
-  background-color: #3F4D34; }
+  background-color: #3F4D34;
+  position: relative; }
   @media (max-width: 1330px) {
     .message {
       padding-top: calc(60px + 20 * ((100vw - calc(375px)) / 955)); } }
   @media (max-width: 1330px) {
     .message {
       padding-bottom: calc(60px + 30 * ((100vw - calc(375px)) / 955)); } }
+  .message .line_right,
+  .message .line_left {
+    position: absolute;
+    bottom: 0; }
+    @media (max-width: 767px) {
+      .message .line_right,
+      .message .line_left {
+        display: none; } }
+  .message .line_right {
+    right: 0; }
+  .message .line_left {
+    left: 0; }
   .message .message_content {
     text-align: center; }
   .message .message_title {
