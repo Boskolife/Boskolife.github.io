@@ -154,16 +154,16 @@
 
     .item_img {
         position: absolute;
-        top: 0;
+        top: -30%;
         right: -3%;
         z-index: 1;
-        @include adaptiv-vaule("width", 494, 311, 1);
-        @include adaptiv-vaule("height", 494, 311, 1);
+        @include adaptiv-vaule("width", 495, 311, 1);
+        @include adaptiv-vaule("height", 495, 311, 1);
 
         @include media ("<tablet") {
-            top: -3%;
+            top: -100px;
             right: 50%;
-            transform: translateX(50%);
+            transform: translateX(50%) rotate(90deg);
         }
     }
 }

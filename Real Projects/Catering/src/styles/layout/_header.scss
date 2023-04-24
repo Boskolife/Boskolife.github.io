@@ -23,14 +23,28 @@ header {
                 display: block;
             }
 
-            .dropdown_arrow{
+            .dropdown_arrow {
                 transform: rotate(180deg);
                 transition: all .3s ease;
             }
         }
     }
 
-    .dropdown_arrow{
+    .dropbtn{
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+        }
+    }
+
+    .dropdown_arrow {
         margin: 0 0 2px 8px;
         transition: all .3s ease;
     }
@@ -39,12 +53,19 @@ header {
         display: none;
         position: absolute;
         min-width: max-content;
-        padding-top: 10px;
         z-index: 1;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(42.5px);
+        border-radius: 16px;
+        padding: 15px 20px;
+        margin-top: 20px;
+        @include adaptiv-vaule("margin-left", 60, 1, 1);
 
-        &:not(:last-child) {
-            .menu_link {
-                margin-bottom: 5px;
+        .menu_link {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             }
         }
     }

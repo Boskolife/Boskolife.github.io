@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,900"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header_contact.html
+        <main id="main">
+            <section class="contact_us">
+                <div class="container">
+                    <h1 class="contact_us_title">Contact Us</h1>
+                </div>
+                <div class="contact_us_img">
+                    <img src="./images/contact/contact_us_img.png" alt="image not found">
+                </div>
+                <div class="swiper contact_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_1.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Andrey Mamontov </h2>
+                                    <span class="role">Development Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_2.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Alexander Priemkin</h2>
+                                    <span class="role">Managing Partner </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_3.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Ivan Priemkin</h2>
+                                    <span class="role">Bar Manager </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_4.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Max Tvorogov</h2>
+                                    <span class="role">Executive Chef</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_5.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Alex Iumashev</h2>
+                                    <span class="role">Director</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_6.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Denis Portnoy</h2>
+                                    <span class="role">Managing Partner</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card_img">
+                                    <img src="./images/contact/slide_img_7.png"
+                                        alt="image not found">
+                                </div>
+                                <div class="card_text">
+                                    <h2 class="name">Alina Abramova</h2>
+                                    <span class="role">Marketing Department</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-wrap">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="message">
+                <div class="container">
+                    <div class="message_content">
+                        <h2 class="message_title">Send us a message</h2>
+                        <form>
+                            <div class="data_wrap">
+                                <label class="input_name" for="name">First name</label>
+                                <input class="data" id="name" placeholder="Vivian" type="text">
+                            </div>
+                            <div class="data_wrap">
+                                <label class="input_name" for="subname">Last name</label>
+                                <input class="data" id="subname" placeholder="Brown" type="text">
+                            </div>
+                            <div class="data_wrap">
+                                <label class="input_name" for="tel">Phone Number</label>
+                                <input class="data" id="tel" placeholder="+1-333-333-4444" type="tel">
+                            </div>
+                            <div class="data_wrap">
+                                <label class="input_name" for="mail">Phone Number</label>
+                                <input class="data" id="mail" placeholder="example.gmail.com" type="email">
+                            </div>
+                            <div class="data_wrap area">
+                                <label class="input_name" for="message">message</label>
+                                <textarea class="data" placeholder="Enter the message" name="message"></textarea>
+                            </div>
+                            <button class="form_btn">Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        //= templates/footer_contact.html
+    </div>
+</body>
+
+</html>
