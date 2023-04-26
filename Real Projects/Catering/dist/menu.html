@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Title</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,900"
-        rel="stylesheet" />
+    <link rel="website icon" href="./images/Favicon_Date.svg">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,900" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -20,9 +23,16 @@
                     <a href="index.html" class="logo">
                         <img src="./images/header/logo.svg" alt="image not found">
                     </a>
+                    <div class="nav_container"></div>
                     <nav class="nav">
+                        <div class="burger_line_top">
+                            <img src="./images/header/burger_line_top.svg" alt= "image not found" >
+                        </div>
+                        <div class="burger_line_bottom">
+                            <img src="./images/header/burger_line_bottom.svg" alt= "image not found" >
+                        </div>
                         <ul class="nav-menu">
-                            <li class="menu-item"> <a class="menu_link" href="#">Homepage</a></li>
+                            <li class="menu-item"> <a class="menu_link" href="home_page.html">Homepage</a></li>
                             <div class="dropdown">
                                 <a class="menu_link menu-item dropbtn" href="#">About Us <img class="dropdown_arrow" src="./images/header/arrow.svg" alt= "image not found" ></a>
                                 <div class="dropdown-content">
@@ -33,10 +43,8 @@
                             <li class="menu-item"> <a class="menu_link" href="menu.html">Menu</a></li>
                             <li class="menu-item"> <a class="menu_link" href="faq_page.html">How it works</a></li>
                             <li class="menu-item"> <a class="menu_link" href="contact_us_page.html">Contact</a></li>
-                            <li class="menu-item"> <a class="menu_link" href="tel:3058506056">
-                                    <img class="link_img" src="./images/header/phone.svg" alt="image not found">
-                                    (305) 850-6056</a></li>
                         </ul>
+                        <a class="login_btn" href="#">Login</a>
                     </nav>
                     <div class="burger_menu">
                         <span></span>
@@ -49,7 +57,7 @@
                 <div class="container">
                     <div class="menu_content">
                         <h1 class="menu_title">MENU</h1>
-                        <div class="menu_items">
+                        <div class="menu_items scrollMenu">
                             <div class="item">
                                 <a class="anchor" href="#main_dishes"></a>
                                 <img class="item_img ibg" src="./images/menu/menu_item_img_1.png"
@@ -803,10 +811,10 @@
                         <div class="menu">
                             <h4 class="menu_title">MENU</h4>
                             <ul class="nav-menu">
-                                <li class="menu-item"><a class="menu_link" href="#">Homepage</a></li>
+                                <li class="menu-item"><a class="menu_link" href="home_page.html">Homepage</a></li>
                                 <li class="menu-item"><a class="menu_link" href="menu.html">Menu</a></li>
-                                <li class="menu-item"><a class="menu_link" href="#">Our chef</a></li>
-                                <li class="menu-item"><a class="menu_link" href="#">Our mixologist</a></li>
+                                <li class="menu-item"><a class="menu_link" href="max_tvorogov.html">Our chef</a></li>
+                                <li class="menu-item"><a class="menu_link" href="ivan_priemkin.html">Our mixologist</a></li>
                             </ul>
                         </div>
                         <div class="social_links">
@@ -850,6 +858,7 @@
                     </div>
                     <div class="footer_bottom">
                         <span class="notice">2023 Date. All rights reserved.</span>
+                        <a class="creator" target="_blank" href="https://improvs.tech/">Created by <img src="./images/footer/improvse_logo.svg" alt= "image not found" ></a>
                         <div class="docs_wrap">
                             <a href="#" class="docs ">Privacy</a>
                             <a href="#" class="docs ">Terms</a>

@@ -1,0 +1,474 @@
+.aboutUs_video {
+    width: 100%;
+    @include adaptiv-vaule("height", 720, 150, 1);
+    position: relative;
+
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .soundBtn {
+        position: absolute;
+        @include adaptiv-vaule("right", 50, 20, 1);
+        @include adaptiv-vaule("bottom", 50, 15, 1);
+        @include adaptiv-vaule("width", 72, 42, 1);
+        @include adaptiv-vaule("height", 72, 42, 1);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
+.aboutUsText {
+    @include adaptiv-vaule("padding-top", 90, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 90, 120, 1);
+    background-color: $black;
+    overflow: hidden;
+    position: relative;
+
+    @include media ("<desktop") {
+        padding-bottom: 120px;
+    }
+
+    .aboutUs_item_left,
+    .aboutUs_item_right,
+    .line_left,
+    .line_right,
+    .line_left_phone,
+    .line_right_phone {
+        position: absolute;
+    }
+
+    .line_left,
+    .line_right {
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .line_left_phone,
+    .line_right_phone {
+        display: none;
+        position: absolute;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
+
+    .line_left_phone {
+        left: 0;
+        top: 0;
+    }
+
+    .line_right_phone {
+        right: 0;
+        top: 0;
+    }
+
+    .aboutUs_item_left {
+        left: 0;
+        bottom: 30px;
+        @include adaptiv-vaule("width", 160, 95, 1);
+        @include adaptiv-vaule("height", 210, 135, 1);
+
+        @include media ("<desktop") {
+            bottom: -50px;
+        }
+    }
+
+    .aboutUs_item_right {
+        @include adaptiv-vaule("right", -80, -150, 1);
+        bottom: 70%;
+        @include adaptiv-vaule("width", 250, 150, 1);
+        @include adaptiv-vaule("height", 250, 150, 1);
+
+        @include media ("<desktop") {
+            bottom: -10px;
+            right: -25px;
+        }
+    }
+
+    .line_left {
+        left: 0;
+        bottom: 0;
+    }
+
+    .line_right {
+        right: 0;
+        top: 0;
+    }
+
+    .aboutUs_content {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .aboutUs_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 10, 1);
+        line-height: 62px;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+    }
+
+    .aboutUs_descr {
+        color: rgba(255, 255, 255, 0.6);
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+    }
+}
+
+.meal_plans {
+    @include adaptiv-vaule("padding-top", 100, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 30, 60, 1);
+    background-color: $green;
+
+    .plans {
+        text-align: center;
+    }
+
+    .plans_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        @include adaptiv-vaule("margin-bottom", 10, 25, 1);
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+    }
+
+    .plans_descr {
+        color: rgba(255, 255, 255, 0.6);
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        max-width: 855px;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 45, 25, 1);
+    }
+
+    .plans_card {
+        display: grid;
+        grid-template: 1fr / repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1040px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include media ("<tablet") {
+            grid-template: repeat(3, 1fr) / 400px;
+            justify-content: center;
+        }
+
+        @include media ("<phone") {
+            grid-template: 1fr / 1fr;
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        @include adaptiv-vaule("padding-top", 25, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 45, 10, 1);
+        @include adaptiv-vaule("padding-right", 25, 10, 1);
+        @include adaptiv-vaule("padding-left", 25, 10, 1);
+        cursor: pointer;
+
+        @include media ("<tablet") {
+            padding: 25px;
+        }
+    }
+
+    .current_card {
+        border: 1px solid rgba(255, 255, 255, 1);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .gold {
+        position: relative;
+    }
+
+    .tip {
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $pink;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 15px;
+        color: $green;
+        white-space: nowrap;
+    }
+
+    .card_title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include adaptiv-vaule("padding-bottom", 25, 15, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .card_title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 34 / 24 * 100%;
+        color: $white;
+    }
+
+    .card_price {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 32, 26, 1);
+        line-height: 45 / 32 * 100%;
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    .card_list {
+        flex: 1 1 auto;
+        height: 100%;
+        text-align: start;
+    }
+
+    .list_item {
+        position: relative;
+        padding-left: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19 / 16 * 100%;
+        color: #FFFFFF;
+
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &::before {
+            content: url(../images/faq/list_check.svg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.choose_meal {
+    @include adaptiv-vaule("padding-top", 30, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 60, 1);
+    background-color: $green;
+    display: none;
+
+    .choose_meal_content {
+        text-align: center;
+    }
+
+    .choose_meal_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 42, 32, 1);
+        @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        color: $pink;
+    }
+
+    .choose_meal_schedule {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptiv-vaule("margin-bottom", 65, 60, 1);
+    }
+
+    .schedule_img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .select_plan {
+        display: grid;
+        grid-template: 1fr / repeat(6, 1fr);
+        justify-content: space-between;
+
+        @include media ("<widescreen") {
+            grid-template: 1fr / 1fr;
+        }
+    }
+
+    .schedule_day {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        color: #FFFFFF;
+    }
+
+    .meal_column {
+        text-align: center;
+
+        &.clicked {
+            .meal_item {
+                opacity: 0.5;
+            }
+
+            .meal_item_active {
+                opacity: 1;
+
+                .selected {
+                    display: block;
+                }
+            }
+        }
+
+        @include media ("<widescreen") {
+            margin-bottom: 35px;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+
+            @include media ("<widescreen") {
+                border-right: none;
+            }
+        }
+    }
+
+    .meal_items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<widescreen") {
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 35px;
+            row-gap: 60px;
+        }
+    }
+
+    .meal_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 170px;
+        @include adaptiv-vaule("width", 190, 0, 1);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        text-align: center;
+        padding: 40px 12px 12px 12px;
+        @include adaptiv-vaule("margin-bottom", 60, 35, 1);
+        position: relative;
+
+        @include media ("<widescreen") {
+            width: 150px;
+            margin: 0;
+        }
+    }
+
+    .platinum_meal {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #C1A875;
+        box-shadow: 0px 0px 30px rgba(123, 109, 32, 0.6);
+    }
+
+    .meal_column_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 140%;
+        color: #FFFFFF;
+        @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+        @include adaptiv-vaule("margin-bottom", 60, 35, 1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .meal_item_img {
+        width: 72px;
+        height: 72px;
+        @include adaptiv-vaule("height", 72, 52, 1);
+        @include adaptiv-vaule("width", 72, 52, 1);
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        filter: drop-shadow(4px 20px 60px #393230);
+        border-radius: 1000px;
+
+        @include media ("<desktop") {
+            top: -40%;
+        }
+
+        @include media ("<tablet") {
+            top: -30%;
+        }
+    }
+
+    .tip {
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: capitalize;
+        color: $black;
+        background-color: $pink;
+        border-radius: 100px;
+        padding: 2px 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .platinum {
+        background: linear-gradient(0deg, #C1A875, #C1A875), linear-gradient(339.03deg, rgba(255, 255, 255, 0) 52.79%, rgba(255, 255, 255, 0.6) 95.95%), linear-gradient(76.82deg, #9EAEB2 11.6%, #7E8886 48.06%, #728489 91.31%);
+        background-blend-mode: color, overlay, normal;
+        box-shadow: 0px 0px 36px rgba(123, 109, 32, 0.6);
+    }
+
+    .select_dot {
+        @include adaptiv-vaule("height", 24, 18, 1);
+        @include adaptiv-vaule("width", 24, 18, 1);
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $white;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .selected {
+        display: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+    }
+
+    .show_selected {
+        display: block;
+    }
+
+    .meal_item_title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: #FFFFFF;
+    }
+}

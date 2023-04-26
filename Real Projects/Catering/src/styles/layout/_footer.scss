@@ -186,6 +186,25 @@ footer {
         }
     }
 
+    .creator {
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 248, 219, 0.6);
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+
+        img{
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+    }
+
     .docs_wrap {
         @include media ("<tablet") {
             display: flex;

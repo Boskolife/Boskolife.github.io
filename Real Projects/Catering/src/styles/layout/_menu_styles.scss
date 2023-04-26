@@ -211,16 +211,20 @@
 
 
         &:hover {
-            border: none;
+            border: 0px solid transparent;
             transition: all .3s ease-out;
 
             .item_descr_wrap {
                 height: 100%;
-                padding: 40px 0 10px 0;
+                padding: 40px 0 20px 0;
                 @include adaptiv-vaule("padding-right", 15, 10, 1);
                 @include adaptiv-vaule("padding-left", 15, 10, 1);
                 transition: all .3s ease-out;
                 bottom: 0;
+
+                @include media ("<phone") {
+                    padding-bottom: 15px;
+                }
             }
         }
     }
