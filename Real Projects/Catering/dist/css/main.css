@@ -1627,7 +1627,8 @@ html {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  cursor: pointer; }
 
 .faq .open_status {
   min-width: 12px;
@@ -1670,7 +1671,6 @@ html {
   letter-spacing: -1px;
   text-transform: capitalize;
   color: #F9C0AC;
-  cursor: pointer;
   padding-right: 30px; }
   @media (max-width: 1330px) {
     .faq .tab_title {
@@ -2140,8 +2140,8 @@ html {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -ms-flex-align: center;
     align-items: center;
     border: 1px solid #F9C0AC;
@@ -2156,6 +2156,7 @@ html {
     padding-left: 10px;
     /* Только если меньше контейнера */
     margin-top: 140px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
     position: relative;
     transition: all .3s ease-out; }

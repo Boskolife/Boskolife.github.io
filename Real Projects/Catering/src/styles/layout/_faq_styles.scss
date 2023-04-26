@@ -81,6 +81,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        cursor:pointer;
     }
 
     .open_status {
@@ -128,7 +129,6 @@
         letter-spacing: -1px;
         text-transform: capitalize;
         color: $pink;
-        cursor: pointer;
         padding-right: 30px;
     }
 

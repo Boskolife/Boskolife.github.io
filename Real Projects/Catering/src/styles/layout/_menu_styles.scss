@@ -216,7 +216,7 @@
     .menu_item {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         border: 1px solid $pink;
         border-radius: 32px;
@@ -225,6 +225,7 @@
         @include adaptiv-vaule("padding-right", 10, 5, 1);
         @include adaptiv-vaule("padding-left", 10, 5, 1);
         @include adaptiv-vaule("margin-top", 140, 60, 1);
+        padding-bottom: 10px;
         margin-bottom: 20px;
         position: relative;
         transition: all .3s ease-out;

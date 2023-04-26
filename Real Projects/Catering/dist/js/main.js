@@ -12,6 +12,7 @@ videoSound();
 initSwiper();
 selectPlan();
 selectMeal();
+stickyMenu();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -70,7 +71,7 @@ function initBurger() {
 function initTabs() {
   var faqTabs = document.querySelector("#faqTabs");
   if (!faqTabs) return;
-  var tabs = document.querySelectorAll(".tab_title"),
+  var tabs = document.querySelectorAll(".title_wrap"),
       tabsContent = document.querySelectorAll(".tab_content"),
       tabsParent = document.querySelector(".tab_wrapper"),
       closeItem = document.querySelectorAll(".open_status");
@@ -85,7 +86,7 @@ function initTabs() {
   tabsParent.addEventListener("click", function (event) {
     var target = event.target;
 
-    if (target && target.classList.contains("tab_title")) {
+    if (target && target.classList.contains("title_wrap")) {
       tabs.forEach(function (item, i) {
         if (target == item) {
           showTabContent(i);
@@ -179,8 +180,6 @@ function selectMeal() {
     });
   });
 }
-
-stickyMenu();
 
 function stickyMenu() {
   var navLinks = gsap.utils.toArray(".menu_items .anchor");
