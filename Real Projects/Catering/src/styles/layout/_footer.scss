@@ -1,28 +1,14 @@
-.footer_menu {
-
-    .desctop_img {
-        @include media ("<tablet") {
-            display: none;
-        }
-    }
-
-    .phone_img {
-        display: none;
-
-        @include media ("<tablet") {
-            display: block;
-        }
-    }
-}
-
-.footer_max{
-    .desktop_img{
+.footer_max,
+.footer_ivan,
+.footer_menu,
+.footer_faq {
+    .desktop_img {
         @include media ("<tablet") {
             display: none
         }
     }
 
-    .phone_img{
+    .phone_img {
         display: none;
 
         @include media ("<tablet") {
@@ -31,12 +17,13 @@
     }
 }
 
+
 footer {
     @include adaptiv-vaule("padding-top", 50, 60, 1);
     @include adaptiv-vaule("padding-bottom", 20, 10, 1);
     position: relative;
 
-    &::before{
+    &::before {
         content: '';
         position: absolute;
         top: 0;
