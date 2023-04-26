@@ -272,6 +272,7 @@
     @include adaptiv-vaule("padding-bottom", 100, 60, 1);
     background-color: $green;
     display: none;
+    text-align: center;
 
     .choose_meal_content {
         text-align: center;
@@ -303,6 +304,7 @@
         display: grid;
         grid-template: 1fr / repeat(6, 1fr);
         justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
 
         @include media ("<widescreen") {
             grid-template: 1fr / 1fr;
@@ -370,8 +372,11 @@
         border-radius: 16px;
         text-align: center;
         padding: 40px 12px 12px 12px;
-        @include adaptiv-vaule("margin-bottom", 60, 35, 1);
         position: relative;
+
+        &:not(:last-child){
+            @include adaptiv-vaule("margin-bottom", 60, 35, 1);
+        }
 
         @include media ("<widescreen") {
             width: 150px;
@@ -470,5 +475,17 @@
         font-size: 16px;
         line-height: 150%;
         color: #FFFFFF;
+    }
+
+    .meal_btn {
+        background-color: $pink;
+        max-width: 220px;
+        width: 100%;
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: capitalize;
+        color: #272727;
+        padding: 15px;
     }
 }

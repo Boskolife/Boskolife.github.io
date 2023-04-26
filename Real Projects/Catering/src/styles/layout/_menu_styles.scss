@@ -55,6 +55,33 @@
         }
     }
 
+    .active_scrollMenu {
+        background-color: $black;
+        z-index: 5;
+
+        .item {
+            height: 100px;
+            background: rgba(0, 0, 0, 0.54);
+            backdrop-filter: blur(20.5px);
+
+            @include media ("<desktop") {
+                height: 60px;
+            }
+
+            &::before {
+                background: rgba(0, 0, 0, 0.54);
+                backdrop-filter: blur(20.5px);
+            }
+        }
+
+        .active {
+            &::before {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) -31.82%, rgba(0, 0, 0, 0.7) 130.99%);
+                backdrop-filter: none;
+            }
+        }
+    }
+
     .item {
         @include adaptiv-vaule("height", 180, 160, 1);
         @include adaptiv-vaule("width", 200, 160, 1);
@@ -193,10 +220,7 @@
         align-items: center;
         border: 1px solid $pink;
         border-radius: 32px;
-        // padding: 175px 10px 30px 10px;
-        // @include adaptiv-vaule("padding-top", 175, 60, 1);
-        // @include adaptiv-vaule("padding-bottom", 30, 85, 1);
-        padding-top: 20px;
+        @include adaptiv-vaule("padding-top", 120, 35, 1);
         @include adaptiv-vaule("height", 340, 200, 1);
         @include adaptiv-vaule("padding-right", 10, 5, 1);
         @include adaptiv-vaule("padding-left", 10, 5, 1);
@@ -204,11 +228,6 @@
         margin-bottom: 20px;
         position: relative;
         transition: all .3s ease-out;
-
-        // @include media ("<phone") {
-        //     width: 47%;
-        // }
-
 
         &:hover {
             border: 0px solid transparent;

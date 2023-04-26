@@ -152,7 +152,6 @@ function selectPlan() {
 function selectMeal() {
     const colsDishes = document.querySelectorAll(".meal_column");
     function highlight(col, item) {
-        col.classList.add("clicked");
         if (col.item) {
             col.item.classList.remove("meal_item_active");
         }
@@ -175,13 +174,14 @@ function selectMeal() {
 stickyMenu();
 function stickyMenu() {
     const navLinks = gsap.utils.toArray(".menu_items .anchor");
-    
-    navLinks.forEach((btn, index) => {
+    if(!navLinks) {
+        return
+    }
+    navLinks.forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        console.log(btn.hash.slice(1));
         e.preventDefault();
         gsap.to(window, {
-          duration: 1,
+          duration: 0,
           scrollTo: { y: btn.hash, offsetY: 0 }
         });
       });
