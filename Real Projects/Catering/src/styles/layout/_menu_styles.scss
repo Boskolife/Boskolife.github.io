@@ -55,6 +55,14 @@
         }
     }
 
+    .pin-spacer {
+        max-width: 100%;
+    }
+
+    .scrollMenu {
+        z-index: 6;
+    }
+
     .active_scrollMenu {
         background-color: $black;
         z-index: 5;
@@ -236,7 +244,7 @@
 
             .item_descr_wrap {
                 height: 100%;
-                padding: 40px 0 20px 0;
+                padding: 90px 0 20px 0;
                 @include adaptiv-vaule("padding-right", 15, 10, 1);
                 @include adaptiv-vaule("padding-left", 15, 10, 1);
                 transition: all .3s ease-out;
@@ -300,7 +308,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         position: absolute;
         bottom: 30px;
         left: 0;
@@ -339,21 +347,8 @@
         text-transform: capitalize;
         color: $white;
         padding-left: 10px;
-        position: relative;
         text-align: start;
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background-color: $white;
-
-        }
 
         &:not(:last-child) {
             @include adaptiv-vaule("margin-bottom", 10, 5, 1);
