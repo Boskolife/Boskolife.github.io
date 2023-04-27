@@ -70,7 +70,7 @@ function initTabs() {
 
     if (!faqTabs) return;
 
-    const tabs = document.querySelectorAll(".title_wrap"),
+    const tabs = document.querySelectorAll(".tab_title"),
         tabsContent = document.querySelectorAll(".tab_content"),
         tabsParent = document.querySelector(".tab_wrapper"),
         closeItem = document.querySelectorAll(".open_status");
@@ -83,7 +83,7 @@ function initTabs() {
 
     tabsParent.addEventListener("click", (event) => {
         const target = event.target;
-        if (target && target.classList.contains("title_wrap")) {
+        if (target && target.classList.contains("tab_title")) {
             tabs.forEach((item, i) => {
                 if (target == item) {
                     showTabContent(i);

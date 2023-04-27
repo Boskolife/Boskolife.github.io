@@ -79,13 +79,6 @@
         }
     }
 
-    .title_wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor:pointer;
-    }
-
     .open_status {
         min-width: 12px;
         min-height: 12px;
@@ -131,7 +124,10 @@
         letter-spacing: -1px;
         text-transform: capitalize;
         color: $pink;
-        padding-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
     }
 
     .tab_content {

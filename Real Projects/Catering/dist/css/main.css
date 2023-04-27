@@ -1623,15 +1623,6 @@ html {
   .faq .tabs:not(:last-child) {
     margin-bottom: 25px; }
 
-.faq .title_wrap {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  cursor: pointer; }
-
 .faq .open_status {
   min-width: 12px;
   min-height: 12px;
@@ -1673,7 +1664,13 @@ html {
   letter-spacing: -1px;
   text-transform: capitalize;
   color: #F9C0AC;
-  padding-right: 30px; }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer; }
   @media (max-width: 1330px) {
     .faq .tab_title {
       font-size: calc(18px + 6 * ((100vw - calc(375px)) / 955)); } }
