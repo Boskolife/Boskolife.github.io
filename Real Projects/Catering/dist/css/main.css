@@ -2076,7 +2076,9 @@ html {
         font-size: calc(24px + 8 * ((100vw - calc(375px)) / 955)); } }
 
 .menu_body {
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  z-index: 1; }
   .menu_body .anchor_section {
     position: relative;
     top: -130px;
