@@ -492,7 +492,7 @@
 
     .planSilver {
         display: grid;
-        grid-template: 1fr / repeat(3, 250px);
+        grid-template: 1fr / repeat(3, 215px);
         justify-content: center;
 
         @include media ("<tablet") {
@@ -518,7 +518,7 @@
 
     .planGold {
         display: grid;
-        grid-template: 1fr / repeat(5, 200px);
+        grid-template: 1fr / repeat(5, 215px);
         justify-content: center;
 
         @include media ("<desktop") {
@@ -573,6 +573,8 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        position: relative;
+        z-index: 1;
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -732,6 +734,9 @@
         border: 1px solid $white;
         padding: 15px;
         width: 100%;
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(157, 157, 155, 0.8);
 
         &:focus{
             border: 1px solid $pink;
@@ -769,6 +774,7 @@
         font-weight: 500;
         font-size: 16px;
         color: rgba(157, 157, 155, 0.8);
+        text-transform: capitalize;
     }
 
     .custom-select {
@@ -811,6 +817,8 @@
         width: 100%;
         cursor: pointer;
         text-align: start;
+        text-transform: capitalize;
+        font-family: 'Montserrat';
     }
 
     .select-items {

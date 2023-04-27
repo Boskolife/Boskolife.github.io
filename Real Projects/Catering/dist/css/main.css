@@ -1588,7 +1588,9 @@ html {
   /* Только если меньше контейнера */
   padding-left: 70px;
   /* Только если меньше контейнера */
-  padding-right: 70px; }
+  padding-right: 70px;
+  position: relative;
+  z-index: 1; }
   @media (max-width: 1330px) {
     .faq .faq_page_content {
       padding-top: calc(40px + 60 * ((100vw - calc(375px)) / 955)); } }
@@ -1968,6 +1970,7 @@ html {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
   .menu_page .active_scrollMenu {
+    display: block;
     background-color: #0B0A06;
     left: 0 !important;
     max-height: -webkit-max-content !important;
@@ -1999,6 +2002,8 @@ html {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) -31.82%, rgba(0, 0, 0, 0.7) 130.99%);
       -webkit-backdrop-filter: none;
       backdrop-filter: none; }
+  .menu_page .active_scrollMenu_hide {
+    display: none; }
   .menu_page .item {
     /* Только если меньше контейнера */
     height: 180px;
@@ -2318,9 +2323,10 @@ html {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    width: 100%; }
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    text-align: center; }
   .menu_body .component_title {
     font-weight: 700;
     /* Только если меньше контейнера */
@@ -2340,7 +2346,7 @@ html {
     line-height: 155.55556%;
     text-transform: capitalize;
     color: #ffffff;
-    text-align: start; }
+    text-align: center; }
     @media (max-width: 1330px) {
       .menu_body .component {
         font-size: calc(12px + 2 * ((100vw - calc(375px)) / 955)); } }
@@ -2364,6 +2370,10 @@ html {
       -webkit-filter: drop-shadow(4px 20px 50px #2C3724);
       filter: drop-shadow(4px 20px 50px #2C3724);
       border-radius: 1000px; }
+  .menu_body .beverage .menu_items .menu_item:hover {
+    border: 1px solid #F9C0AC; }
+  .menu_body .beverage .menu_items .menu_item .item_descr_wrap {
+    display: none; }
 
 .max_tvorogov {
   background-color: #F9C0AC;
@@ -2741,7 +2751,9 @@ html {
   .message .line_left {
     left: 0; }
   .message .message_content {
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    z-index: 1; }
   .message .message_title {
     font-weight: 700;
     /* Только если меньше контейнера */
@@ -3410,7 +3422,7 @@ html {
     display: inline-block; }
   .choose_meal .planSilver {
     display: grid;
-    grid-template: 1fr/repeat(3, 250px);
+    grid-template: 1fr/repeat(3, 215px);
     -ms-flex-pack: center;
     justify-content: center; }
     @media (max-width: 767px) {
@@ -3426,7 +3438,7 @@ html {
           border: none; } }
   .choose_meal .planGold {
     display: grid;
-    grid-template: 1fr/repeat(5, 200px);
+    grid-template: 1fr/repeat(5, 215px);
     -ms-flex-pack: center;
     justify-content: center; }
     @media (max-width: 1023px) {
@@ -3473,7 +3485,9 @@ html {
     -ms-flex-align: start;
     align-items: flex-start;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    position: relative;
+    z-index: 1; }
     @media (max-width: 1023px) {
       .application .application_content {
         -ms-flex-direction: column;
@@ -3622,7 +3636,10 @@ html {
     background-color: transparent;
     border: 1px solid #ffffff;
     padding: 15px;
-    width: 100%; }
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(157, 157, 155, 0.8); }
     .application .data:focus {
       border: 1px solid #F9C0AC; }
     .application .data::-webkit-input-placeholder {
@@ -3665,7 +3682,8 @@ html {
   .application .data_option {
     font-weight: 500;
     font-size: 16px;
-    color: rgba(157, 157, 155, 0.8); }
+    color: rgba(157, 157, 155, 0.8);
+    text-transform: capitalize; }
   .application .custom-select {
     position: relative;
     font-family: Arial; }
@@ -3696,7 +3714,9 @@ html {
     padding: 15px;
     width: 100%;
     cursor: pointer;
-    text-align: start; }
+    text-align: start;
+    text-transform: capitalize;
+    font-family: 'Montserrat'; }
   .application .select-items {
     position: absolute;
     background-color: #0B0A06;

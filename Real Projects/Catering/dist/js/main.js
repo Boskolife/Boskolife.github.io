@@ -112,11 +112,11 @@ function videoSound() {
     if (video.hasAttribute("muted")) {
       video.removeAttribute("muted");
       video.muted = false;
-      soundBtnSrc.src = './images/home_page/btnUnMute.svg';
+      soundBtnSrc.src = "./images/home_page/btnUnMute.svg";
     } else {
       video.setAttribute("muted", "");
       video.muted = true;
-      soundBtnSrc.src = './images/home_page/btnMute.svg';
+      soundBtnSrc.src = "./images/home_page/btnMute.svg";
     }
   });
 }
@@ -187,7 +187,8 @@ function selectMeal() {
 }
 
 function stickyMenu() {
-  var menuPage = document.querySelector('.menu_page');
+  var menuPage = document.querySelector(".menu_page");
+  var footer = document.querySelector("#footer");
 
   if (!menuPage) {
     return;
@@ -208,13 +209,20 @@ function stickyMenu() {
   });
   ScrollTrigger.create({
     trigger: ".scrollMenu",
-    toggleClass: 'active_scrollMenu',
+    toggleClass: "active_scrollMenu",
     start: "top top-=0",
-    //   endTrigger: ".scrollpanels-content",
-    end: "9999999",
+    endTrigger: "#footer",
+    end: "".concat(footer.clientHeight / 2, " bottom"),
     pin: true,
     pinSpacing: false,
-    scrub: 1
+    scrub: 1,
+    onLeave: function onLeave(self) {
+      self.trigger.classList.add("active_scrollMenu_hide");
+    },
+    onEnterBack: function onEnterBack(self) {
+      self.trigger.classList.remove("active_scrollMenu_hide");
+    },
+    markers: true
   });
   var panels = gsap.utils.toArray(".menu_positions");
   panels.forEach(function (panel, i) {
@@ -223,15 +231,15 @@ function stickyMenu() {
       start: "top 50%",
       onEnter: function onEnter() {
         navLinks.forEach(function (e) {
-          e.closest('.item').classList.remove("active");
+          e.closest(".item").classList.remove("active");
         });
-        navLinks[i].closest('.item').classList.add("active");
+        navLinks[i].closest(".item").classList.add("active");
       },
       onEnterBack: function onEnterBack() {
         navLinks.forEach(function (e) {
-          e.closest('.item').classList.remove("active");
+          e.closest(".item").classList.remove("active");
         });
-        navLinks[i].closest('.item').classList.add("active");
+        navLinks[i].closest(".item").classList.add("active");
       }
     });
   });

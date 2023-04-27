@@ -60,6 +60,8 @@
         @include adaptiv-vaule("padding-bottom", 100, 40, 1);
         @include adaptiv-vaule("padding-left", 70, -40, 1);
         @include adaptiv-vaule("padding-right", 70, -40, 1);
+        position: relative;
+        z-index: 1;
 
         @include media ("<desktop") {
             width: 100%;

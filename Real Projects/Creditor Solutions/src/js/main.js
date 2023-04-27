@@ -276,7 +276,7 @@ function initNavBtn() {
         start: "top bottom",
         endTrigger: "#footer",
         toggleClass: "active",
-        end: "top bottom",
+        end: "-200px bottom",
         onLeave: (self) => {
             self.trigger.classList.add("hide");
         },

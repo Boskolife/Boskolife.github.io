@@ -108,6 +108,8 @@
 
     .message_content {
         text-align: center;
+        position: relative;
+        z-index: 1;
     }
 
     .message_title {
