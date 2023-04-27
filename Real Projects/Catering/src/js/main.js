@@ -207,7 +207,7 @@ function stickyMenu() {
         onEnterBack: (self) => {
             self.trigger.classList.remove("active_scrollMenu_hide");
         },
-        markers: true,
+        // markers: true,
     });
 
     const panels = gsap.utils.toArray(".menu_positions");

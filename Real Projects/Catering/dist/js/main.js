@@ -221,8 +221,8 @@ function stickyMenu() {
     },
     onEnterBack: function onEnterBack(self) {
       self.trigger.classList.remove("active_scrollMenu_hide");
-    },
-    markers: true
+    } // markers: true,
+
   });
   var panels = gsap.utils.toArray(".menu_positions");
   panels.forEach(function (panel, i) {
