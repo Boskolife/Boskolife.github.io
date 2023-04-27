@@ -1967,13 +1967,22 @@ html {
       .menu_page .menu_items {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
-  .menu_page .pin-spacer {
-    max-width: 100%; }
-  .menu_page .scrollMenu {
-    z-index: 6; }
   .menu_page .active_scrollMenu {
     background-color: #0B0A06;
-    z-index: 5; }
+    left: 0 !important;
+    max-height: -webkit-max-content !important;
+    max-height: -moz-max-content !important;
+    max-height: max-content !important;
+    height: -webkit-max-content !important;
+    height: -moz-max-content !important;
+    height: max-content !important;
+    padding: 15px 70px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    z-index: 5 !important; }
+    @media (max-width: 1023px) {
+      .menu_page .active_scrollMenu {
+        padding: 15px 20px !important; } }
     .menu_page .active_scrollMenu .item {
       height: 100px;
       background: rgba(0, 0, 0, 0.54);
@@ -2068,6 +2077,10 @@ html {
 
 .menu_body {
   text-align: center; }
+  .menu_body .anchor_section {
+    position: relative;
+    top: -130px;
+    display: inline-block; }
   .menu_body .container {
     overflow: hidden; }
   .menu_body .menu_positions {
@@ -2151,7 +2164,7 @@ html {
     border: 1px solid #F9C0AC;
     border-radius: 32px;
     /* Только если меньше контейнера */
-    padding-top: 120px;
+    padding-top: 130px;
     /* Только если меньше контейнера */
     height: 340px;
     /* Только если меньше контейнера */
@@ -2166,7 +2179,7 @@ html {
     transition: all .3s ease-out; }
     @media (max-width: 1330px) {
       .menu_body .menu_item {
-        padding-top: calc(35px + 85 * ((100vw - calc(375px)) / 955)); } }
+        padding-top: calc(60px + 70 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .menu_body .menu_item {
         height: calc(200px + 140 * ((100vw - calc(375px)) / 955)); } }
@@ -2186,6 +2199,8 @@ html {
         height: 100%;
         padding: 90px 0 20px 0;
         /* Только если меньше контейнера */
+        padding-top: 90px;
+        /* Только если меньше контейнера */
         padding-right: 15px;
         /* Только если меньше контейнера */
         padding-left: 15px;
@@ -2193,10 +2208,13 @@ html {
         bottom: 0; }
         @media (max-width: 1330px) {
           .menu_body .menu_item:hover .item_descr_wrap {
-            padding-right: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
+            padding-top: calc(45px + 45 * ((100vw - calc(375px)) / 955)); } }
         @media (max-width: 1330px) {
           .menu_body .menu_item:hover .item_descr_wrap {
-            padding-left: calc(10px + 5 * ((100vw - calc(375px)) / 955)); } }
+            padding-right: calc(5px + 10 * ((100vw - calc(375px)) / 955)); } }
+        @media (max-width: 1330px) {
+          .menu_body .menu_item:hover .item_descr_wrap {
+            padding-left: calc(5px + 10 * ((100vw - calc(375px)) / 955)); } }
         @media (max-width: 479px) {
           .menu_body .menu_item:hover .item_descr_wrap {
             padding-bottom: 15px; } }
@@ -2312,7 +2330,7 @@ html {
     margin-bottom: 10px; }
     @media (max-width: 1330px) {
       .menu_body .component_title {
-        font-size: calc(16px + 8 * ((100vw - calc(375px)) / 955)); } }
+        font-size: calc(14px + 10 * ((100vw - calc(375px)) / 955)); } }
   .menu_body .component {
     font-weight: 500;
     /* Только если меньше контейнера */
@@ -2320,7 +2338,6 @@ html {
     line-height: 155.55556%;
     text-transform: capitalize;
     color: #ffffff;
-    padding-left: 10px;
     text-align: start; }
     @media (max-width: 1330px) {
       .menu_body .component {

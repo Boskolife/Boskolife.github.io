@@ -55,17 +55,19 @@
         }
     }
 
-    .pin-spacer {
-        max-width: 100%;
-    }
-
-    .scrollMenu {
-        z-index: 6;
-    }
-
     .active_scrollMenu {
         background-color: $black;
-        z-index: 5;
+        left: 0 !important;
+        max-height: max-content !important;
+        height: max-content !important;
+        padding: 15px 70px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        z-index: 5 !important;
+
+        @include media ("<desktop") {
+            padding: 15px 20px !important;
+        }
 
         .item {
             height: 100px;
@@ -146,9 +148,14 @@
 }
 
 
-
 .menu_body {
     text-align: center;
+    
+    .anchor_section{
+        position: relative;
+        top: -130px;
+        display: inline-block;
+    }
 
     .container {
         overflow: hidden;
@@ -228,7 +235,7 @@
         align-items: center;
         border: 1px solid $pink;
         border-radius: 32px;
-        @include adaptiv-vaule("padding-top", 120, 35, 1);
+        @include adaptiv-vaule("padding-top", 130, 60, 1);
         @include adaptiv-vaule("height", 340, 200, 1);
         @include adaptiv-vaule("padding-right", 10, 5, 1);
         @include adaptiv-vaule("padding-left", 10, 5, 1);
@@ -245,8 +252,9 @@
             .item_descr_wrap {
                 height: 100%;
                 padding: 90px 0 20px 0;
-                @include adaptiv-vaule("padding-right", 15, 10, 1);
-                @include adaptiv-vaule("padding-left", 15, 10, 1);
+                @include adaptiv-vaule("padding-top", 90, 45, 1);
+                @include adaptiv-vaule("padding-right", 15, 5, 1);
+                @include adaptiv-vaule("padding-left", 15, 5, 1);
                 transition: all .3s ease-out;
                 bottom: 0;
 
@@ -332,7 +340,7 @@
 
     .component_title {
         font-weight: 700;
-        @include adaptiv-vaule("font-size", 24, 16, 1);
+        @include adaptiv-vaule("font-size", 24, 14, 1);
         letter-spacing: -1px;
         text-transform: capitalize;
         color: $pink;
@@ -346,7 +354,6 @@
         line-height: 28 / 18 * 100%;
         text-transform: capitalize;
         color: $white;
-        padding-left: 10px;
         text-align: start;
 
 
