@@ -3000,14 +3000,14 @@ html {
   /* Только если меньше контейнера */
   padding-top: 100px;
   /* Только если меньше контейнера */
-  padding-bottom: 30px;
+  padding-bottom: 100px;
   background-color: #3F4D34; }
   @media (max-width: 1330px) {
     .meal_plans {
       padding-top: calc(60px + 40 * ((100vw - calc(375px)) / 955)); } }
   @media (max-width: 1330px) {
     .meal_plans {
-      padding-bottom: calc(60px + -30 * ((100vw - calc(375px)) / 955)); } }
+      padding-bottom: calc(60px + 40 * ((100vw - calc(375px)) / 955)); } }
   .meal_plans .plans {
     text-align: center; }
   .meal_plans .plans_title {
@@ -3519,7 +3519,7 @@ html {
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 20px; }
   .application .service_location {
-    margin-bottom: 120px; }
+    margin-bottom: 130px; }
     @media (max-width: 1023px) {
       .application .service_location {
         margin-bottom: 50px; } }
@@ -3578,7 +3578,7 @@ html {
     font-size: 28px;
     color: #FFFFFF; }
     .application .contact_title:not(:last-child) {
-      margin-bottom: 30px; }
+      margin-bottom: 20px; }
   .application form {
     width: 55%;
     display: -ms-flexbox;

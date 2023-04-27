@@ -127,7 +127,7 @@
 
 .meal_plans {
     @include adaptiv-vaule("padding-top", 100, 60, 1);
-    @include adaptiv-vaule("padding-bottom", 30, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 60, 1);
     background-color: $green;
 
     .plans {
@@ -613,7 +613,7 @@
     }
 
     .service_location {
-        margin-bottom: 120px;
+        margin-bottom: 130px;
 
         @include media ("<desktop") {
             margin-bottom: 50px;
@@ -683,7 +683,7 @@
         color: #FFFFFF;
 
         &:not(:last-child) {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
     }
 
