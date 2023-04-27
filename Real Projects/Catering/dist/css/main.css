@@ -3339,10 +3339,7 @@ html {
     top: -50%;
     left: 50%;
     -webkit-transform: translate(-50%, 50%);
-    transform: translate(-50%, 50%);
-    -webkit-filter: drop-shadow(4px 20px 60px #393230);
-    filter: drop-shadow(4px 20px 60px #393230);
-    border-radius: 1000px; }
+    transform: translate(-50%, 50%); }
     @media (max-width: 1330px) {
       .choose_meal .meal_item_img {
         height: calc(52px + 20 * ((100vw - calc(375px)) / 955)); } }
@@ -3355,6 +3352,10 @@ html {
     @media (max-width: 767px) {
       .choose_meal .meal_item_img {
         top: -30%; } }
+    .choose_meal .meal_item_img img {
+      -webkit-filter: drop-shadow(4px 20px 60px #393230);
+      filter: drop-shadow(4px 20px 60px #393230);
+      border-radius: 1000px; }
   .choose_meal .tip {
     font-weight: 500;
     font-size: 12px;

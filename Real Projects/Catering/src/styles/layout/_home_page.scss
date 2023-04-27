@@ -395,7 +395,7 @@
         @include adaptiv-vaule("padding-bottom", 20, 10, 1);
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
-        &:not(:last-child){
+        &:not(:last-child) {
             @include adaptiv-vaule("margin-bottom", 60, 35, 1);
         }
     }
@@ -411,8 +411,6 @@
         top: -50%;
         left: 50%;
         transform: translate(-50%, 50%);
-        filter: drop-shadow(4px 20px 60px #393230);
-        border-radius: 1000px;
 
         @include media ("<desktop") {
             top: -40%;
@@ -420,6 +418,11 @@
 
         @include media ("<tablet") {
             top: -30%;
+        }
+
+        img {
+            filter: drop-shadow(4px 20px 60px #393230);
+            border-radius: 1000px;
         }
     }
 
@@ -509,9 +512,9 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.4);
 
                 @include media ("<phone_max") {
-                    border:none;
+                    border: none;
                 }
-        
+
             }
         }
     }
@@ -532,9 +535,9 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.4);
 
                 @include media ("<desktop") {
-                    border:none;
+                    border: none;
                 }
-        
+
             }
         }
     }
@@ -548,7 +551,7 @@
     position: relative;
     overflow: hidden;
 
-    .line_desktop{
+    .line_desktop {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -558,7 +561,7 @@
         }
     }
 
-    .line_phone{
+    .line_phone {
         position: absolute;
         right: 0;
         top: -8%;
@@ -738,7 +741,7 @@
         font-size: 16px;
         color: rgba(157, 157, 155, 0.8);
 
-        &:focus{
+        &:focus {
             border: 1px solid $pink;
         }
 
