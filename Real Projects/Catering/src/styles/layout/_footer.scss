@@ -206,8 +206,9 @@ footer {
     }
 
     .docs_wrap {
+        display: none;
         @include media ("<tablet") {
-            display: flex;
+            // display: flex;
             align-items: center;
             justify-content: space-around;
             width: 100%;
