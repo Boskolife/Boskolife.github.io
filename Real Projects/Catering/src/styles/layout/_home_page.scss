@@ -545,6 +545,29 @@
     background-color: $black;
     @include adaptiv-vaule("padding-top", 140, 60, 1);
     @include adaptiv-vaule("padding-bottom", 140, 60, 1);
+    position: relative;
+    overflow: hidden;
+
+    .line_desktop{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .line_phone{
+        position: absolute;
+        right: 0;
+        top: -8%;
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
 
     .application_content {
         display: flex;
@@ -573,7 +596,7 @@
 
     .application_title {
         font-weight: 700;
-        @include adaptiv-vaule("font-size", 42, 32, 1);
+        @include adaptiv-vaule("font-size", 42, 37, 1);
         line-height: 148%;
         letter-spacing: -1px;
         text-transform: capitalize;
@@ -619,7 +642,7 @@
     }
 
     .location_name {
-        @include adaptiv-vaule("font-size", 20, 18, 1);
+        @include adaptiv-vaule("font-size", 20, 15, 1);
         color: #FFFFFF;
     }
 

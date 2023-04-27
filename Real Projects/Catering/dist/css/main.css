@@ -3441,13 +3441,30 @@ html {
   /* Только если меньше контейнера */
   padding-top: 140px;
   /* Только если меньше контейнера */
-  padding-bottom: 140px; }
+  padding-bottom: 140px;
+  position: relative;
+  overflow: hidden; }
   @media (max-width: 1330px) {
     .application {
       padding-top: calc(60px + 80 * ((100vw - calc(375px)) / 955)); } }
   @media (max-width: 1330px) {
     .application {
       padding-bottom: calc(60px + 80 * ((100vw - calc(375px)) / 955)); } }
+  .application .line_desktop {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    @media (max-width: 479px) {
+      .application .line_desktop {
+        display: none; } }
+  .application .line_phone {
+    position: absolute;
+    right: 0;
+    top: -8%;
+    display: none; }
+    @media (max-width: 479px) {
+      .application .line_phone {
+        display: block; } }
   .application .application_content {
     display: -ms-flexbox;
     display: flex;
@@ -3489,7 +3506,7 @@ html {
     margin-bottom: 30px; }
     @media (max-width: 1330px) {
       .application .application_title {
-        font-size: calc(32px + 10 * ((100vw - calc(375px)) / 955)); } }
+        font-size: calc(37px + 5 * ((100vw - calc(375px)) / 955)); } }
     @media (max-width: 1330px) {
       .application .application_title {
         margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 955)); } }
@@ -3528,7 +3545,7 @@ html {
     color: #FFFFFF; }
     @media (max-width: 1330px) {
       .application .location_name {
-        font-size: calc(18px + 2 * ((100vw - calc(375px)) / 955)); } }
+        font-size: calc(15px + 5 * ((100vw - calc(375px)) / 955)); } }
   .application .contact_data {
     display: -ms-flexbox;
     display: flex;
