@@ -4,7 +4,7 @@ videoSound();
 initSwiper();
 selectPlan();
 selectMeal();
-// stickyMenu();
+stickyMenu();
 selectOption();
 
 function initSwiper() {

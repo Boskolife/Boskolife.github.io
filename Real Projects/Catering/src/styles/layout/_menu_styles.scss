@@ -380,10 +380,10 @@
     .black {
         background-color: $black;
 
-        .menu_item_img {
-            filter: drop-shadow(4px 20px 60px #393230);
-            border-radius: 1000px;
-        }
+        // .menu_item_img {
+        //     filter: drop-shadow(4px 20px 60px #393230);
+        //     border-radius: 1000px;
+        // }
 
         .menu_positions_title {
             &::before {
@@ -395,10 +395,10 @@
     .green {
         background-color: $green;
 
-        .menu_item_img {
-            filter: drop-shadow(4px 20px 50px #2C3724);
-            border-radius: 1000px;
-        }
+        // .menu_item_img {
+        //     filter: drop-shadow(4px 20px 50px #2C3724);
+        //     border-radius: 1000px;
+        // }
     }
 
     .beverage {

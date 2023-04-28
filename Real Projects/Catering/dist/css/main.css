@@ -2438,18 +2438,10 @@ html {
           margin-bottom: calc(5px + 5 * ((100vw - calc(375px)) / 955)); } }
   .menu_body .black {
     background-color: #0B0A06; }
-    .menu_body .black .menu_item_img {
-      -webkit-filter: drop-shadow(4px 20px 60px #393230);
-      filter: drop-shadow(4px 20px 60px #393230);
-      border-radius: 1000px; }
     .menu_body .black .menu_positions_title::before {
       background-color: #0B0A06; }
   .menu_body .green {
     background-color: #3F4D34; }
-    .menu_body .green .menu_item_img {
-      -webkit-filter: drop-shadow(4px 20px 50px #2C3724);
-      filter: drop-shadow(4px 20px 50px #2C3724);
-      border-radius: 1000px; }
   .menu_body .beverage .menu_items .menu_item:hover {
     border: 1px solid #F9C0AC; }
   .menu_body .beverage .menu_items .menu_item .item_descr_wrap {
@@ -3435,10 +3427,6 @@ html {
     @media (max-width: 767px) {
       .choose_meal .meal_item_img {
         top: -30%; } }
-    .choose_meal .meal_item_img img {
-      -webkit-filter: drop-shadow(4px 20px 60px #393230);
-      filter: drop-shadow(4px 20px 60px #393230);
-      border-radius: 1000px; }
   .choose_meal .tip {
     font-weight: 500;
     font-size: 12px;

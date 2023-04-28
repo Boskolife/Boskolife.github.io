@@ -11,8 +11,8 @@ initTabs();
 videoSound();
 initSwiper();
 selectPlan();
-selectMeal(); // stickyMenu();
-
+selectMeal();
+stickyMenu();
 selectOption();
 
 function initSwiper() {
