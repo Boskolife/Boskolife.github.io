@@ -2133,11 +2133,12 @@ html {
       left: 0;
       z-index: 1;
       transition: all .3s ease; }
-    .menu_page .item:hover::before {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-      background-color: none;
-      transition: all .3s ease; }
+    @media (min-width: 769px) {
+      .menu_page .item:hover::before {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background-color: none;
+        transition: all .3s ease; } }
   .menu_page .anchor {
     position: absolute;
     top: 0;

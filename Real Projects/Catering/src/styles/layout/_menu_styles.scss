@@ -93,7 +93,7 @@
         }
     }
 
-    .active_scrollMenu_hide{
+    .active_scrollMenu_hide {
         display: none;
     }
 
@@ -126,12 +126,14 @@
             transition: all .3s ease;
         }
 
-        &:hover{
+        @include media (">tablet") {
+            &:hover {
 
-            &::before{
-                backdrop-filter:none;
-                background-color: none;
-                transition: all .3s ease;
+                &::before {
+                    backdrop-filter: none;
+                    background-color: none;
+                    transition: all .3s ease;
+                }
             }
         }
     }
