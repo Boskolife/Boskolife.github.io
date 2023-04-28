@@ -3490,6 +3490,12 @@ html {
     color: #272727;
     padding: 15px;
     display: inline-block; }
+  .choose_meal .meal_btn_active {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .choose_meal .planSilver {
     display: grid;
     grid-template: 1fr/repeat(3, 215px);

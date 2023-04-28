@@ -189,22 +189,22 @@ function selectMeal() {
 stickyHomeBtn();
 
 function stickyHomeBtn() {
-  // const mealBtn = document.querySelector('.meal_btn');
+  var mealBtn = document.querySelector('.meal_btn');
   ScrollTrigger.create({
-    trigger: ".choose_meal",
+    trigger: ".meal_btn",
     toggleClass: "meal_btn_active",
     start: "top top-=0",
     endTrigger: "#footer",
-    end: "".concat(footer.clientHeight / 2, " bottom"),
-    pin: true,
-    pinSpacing: false,
-    scrub: 1,
-    onLeave: function onLeave(self) {
-      self.trigger.classList.add("meal_btn_active_hide");
-    },
-    onEnterBack: function onEnterBack(self) {
-      self.trigger.classList.remove("meal_btn_active_hide");
-    },
+    end: "#footer",
+    // pin: true,
+    // pinSpacing: false,
+    // scrub: 1,
+    // onLeave: (self) => {
+    //     self.trigger.classList.add("meal_btn_active_hide");
+    // },
+    // onEnterBack: (self) => {
+    //     self.trigger.classList.remove("meal_btn_active_hide");
+    // },
     markers: true
   });
 }

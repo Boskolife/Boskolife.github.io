@@ -493,6 +493,13 @@
         display: inline-block;
     }
 
+    .meal_btn_active{
+        position:fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .planSilver {
         display: grid;
         grid-template: 1fr / repeat(3, 215px);
