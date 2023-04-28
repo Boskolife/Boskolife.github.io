@@ -6,7 +6,8 @@ html{
     scroll-behavior: smooth;
 }
 
-.body_lock {
+.body_lock,
+.popup_lock {
     overflow: hidden;
 }
 

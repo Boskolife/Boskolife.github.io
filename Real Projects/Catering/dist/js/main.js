@@ -345,4 +345,29 @@ function selectOption() {
 
   document.addEventListener("click", closeAllSelect);
 }
+
+function loginPopup() {
+  var popupLogin = document.querySelector(".login_popup");
+  var popupContainer = document.querySelector(".popup_container");
+  var closeElement = document.querySelector(".closeElement");
+  var loginBtn = document.querySelector(".login_btn");
+  var popupBtn = document.querySelector(".popup_btn");
+  loginBtn.addEventListener("click", function () {
+    popupLogin.classList.add("active_popup");
+    popupContainer.classList.add("popup_container_active");
+    document.body.classList.add("popup_lock");
+  });
+  closeElement.addEventListener("click", function () {
+    popupLogin.classList.remove("active_popup");
+    popupContainer.classList.remove("popup_container_active");
+    document.body.classList.remove("popup_lock");
+  });
+  popupBtn.addEventListener("click", function () {
+    popupLogin.classList.remove("active_popup");
+    popupContainer.classList.remove("popup_container_active");
+    document.body.classList.remove("popup_lock");
+  });
+}
+
+loginPopup();
 //# sourceMappingURL=main.js.map

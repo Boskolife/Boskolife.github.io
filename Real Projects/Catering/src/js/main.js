@@ -197,7 +197,7 @@ function stickyMenu() {
         toggleClass: "active_scrollMenu",
         start: "top top-=0",
         endTrigger: "#footer",
-        end:`${footer.clientHeight / 2} bottom`,
+        end: `${footer.clientHeight / 2} bottom`,
         pin: true,
         pinSpacing: false,
         scrub: 1,
@@ -326,3 +326,31 @@ function selectOption() {
 then close all select boxes: */
     document.addEventListener("click", closeAllSelect);
 }
+
+function loginPopup() {
+    const popupLogin = document.querySelector(".login_popup");
+    const popupContainer = document.querySelector(".popup_container");
+    const closeElement = document.querySelector(".closeElement");
+    const loginBtn = document.querySelector(".login_btn");
+    const popupBtn = document.querySelector(".popup_btn");
+
+    loginBtn.addEventListener("click", () => {
+        popupLogin.classList.add("active_popup");
+        popupContainer.classList.add("popup_container_active");
+        document.body.classList.add("popup_lock");
+    });
+
+    closeElement.addEventListener("click", () => {
+        popupLogin.classList.remove("active_popup");
+        popupContainer.classList.remove("popup_container_active");
+        document.body.classList.remove("popup_lock");
+    });
+
+    popupBtn.addEventListener("click", () => {
+        popupLogin.classList.remove("active_popup");
+        popupContainer.classList.remove("popup_container_active");
+        document.body.classList.remove("popup_lock");
+    });
+}
+
+loginPopup();
