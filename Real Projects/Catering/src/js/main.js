@@ -210,7 +210,11 @@ function stickyMenu() {
         // markers: true,
     });
 
-    ScrollTrigger.config({syncInterval: 999999999 });
+    ScrollTrigger.config({
+        syncInterval: 999999999,
+        // imitCallbacks : true ,
+        // ignoreMobileResize : true 
+    });
 
     const panels = gsap.utils.toArray(".menu_positions");
 
