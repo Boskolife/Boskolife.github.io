@@ -224,6 +224,9 @@ function stickyMenu() {
     } // markers: true,
 
   });
+  ScrollTrigger.config({
+    syncInterval: 999999999
+  });
   var panels = gsap.utils.toArray(".menu_positions");
   panels.forEach(function (panel, i) {
     ScrollTrigger.create({
