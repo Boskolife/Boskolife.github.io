@@ -273,6 +273,7 @@
     background-color: $green;
     display: none;
     text-align: center;
+    overflow: hidden;
 
     .choose_meal_content {
         text-align: center;
@@ -493,13 +494,6 @@
         display: inline-block;
     }
 
-    .meal_btn_active{
-        position:fixed;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .planSilver {
         display: grid;
         grid-template: 1fr / repeat(3, 215px);
@@ -549,6 +543,22 @@
         }
     }
 
+}
+
+
+.active_meal {
+
+    .meal_btn {
+        position: fixed;
+        z-index: 3;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .meal_hide{
+        display: none;
+    }
 }
 
 .application {
