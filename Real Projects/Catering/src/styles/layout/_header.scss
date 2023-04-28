@@ -379,6 +379,7 @@ header {
 
         .closeElement {
             position: absolute;
+            cursor: pointer;
             top: 42px;
             right: 42px;
             @include adaptiv-vaule("top", 42, 20, 1);

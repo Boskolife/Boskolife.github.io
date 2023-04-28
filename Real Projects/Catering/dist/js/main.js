@@ -11,8 +11,8 @@ initTabs();
 videoSound();
 initSwiper();
 selectPlan();
-selectMeal();
-stickyMenu();
+selectMeal(); // stickyMenu();
+
 selectOption();
 
 function initSwiper() {
@@ -112,7 +112,7 @@ function videoSound() {
     if (video.hasAttribute("muted")) {
       video.removeAttribute("muted");
       video.muted = false;
-      soundBtnSrc.src = "./images/home_page/btnUnMute.svg";
+      soundBtnSrc.src = "./images/home_page/btnUnmute.svg";
     } else {
       video.setAttribute("muted", "");
       video.muted = true;
