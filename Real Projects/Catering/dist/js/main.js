@@ -196,7 +196,7 @@ function stickyHomeBtn() {
       toggleClass: "active_meal",
       start: "-200px top",
       end: "bottom 1000px",
-      markers: true,
+      // markers: true,
       onLeave: function onLeave(self) {
         self.trigger.classList.add("meal_hide");
       },
