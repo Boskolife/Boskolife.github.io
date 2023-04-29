@@ -378,7 +378,6 @@
         @include media ("<widescreen") {
             width: 150px;
             margin: 0;
-            margin-bottom: 35px;
         }
     }
 
@@ -646,6 +645,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
     }
 
     .location_body {

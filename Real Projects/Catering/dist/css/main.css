@@ -3376,8 +3376,7 @@ html {
     @media (max-width: 1199px) {
       .choose_meal .meal_item {
         width: 150px;
-        margin: 0;
-        margin-bottom: 35px; } }
+        margin: 0; } }
   .choose_meal .platinum_meal {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #C1A875;
@@ -3626,6 +3625,10 @@ html {
     align-items: center;
     -ms-flex-pack: start;
     justify-content: flex-start; }
+    @media (max-width: 1023px) {
+      .application .location_wrap {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .application .location_body {
     display: -ms-flexbox;
     display: flex;

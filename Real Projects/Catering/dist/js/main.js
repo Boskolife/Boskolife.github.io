@@ -14,6 +14,7 @@ selectPlan();
 selectMeal();
 stickyMenu();
 selectOption();
+stickyHomeBtn();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -176,17 +177,16 @@ function selectMeal() {
     col.item.classList.add("meal_item_active");
   }
 
-  colsDishes.forEach(function (item) {
+  colsDishes.forEach(function (item, index) {
     item.addEventListener("click", function (e) {
       var mealItem = e.target.closest(".meal_item");
       if (!mealItem) return;
       if (!item.contains(mealItem)) return;
       highlight(item, mealItem);
+      colsDishes[index + 1].scrollIntoView();
     });
   });
 }
-
-stickyHomeBtn();
 
 function stickyHomeBtn() {
   var chooseMeal = document.querySelectorAll('.choose_meal');

@@ -6,6 +6,7 @@ selectPlan();
 selectMeal();
 stickyMenu();
 selectOption();
+stickyHomeBtn();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -159,24 +160,23 @@ function selectMeal() {
     function highlight(col, item) {
         col.classList.add("clicked");
         if (col.item) {
-            col.item.classList.remove("meal_item_active");
+            col.item.classList.remove("meal_item_active");   
         }
         col.item = item;
         col.item.classList.add("meal_item_active");
     }
 
-    colsDishes.forEach((item) => {
+    colsDishes.forEach((item, index) => {
         item.addEventListener("click", (e) => {
             let mealItem = e.target.closest(".meal_item");
             if (!mealItem) return;
             if (!item.contains(mealItem)) return;
             highlight(item, mealItem);
+            colsDishes[index + 1].scrollIntoView();
         });
     });
 }
 
-
-stickyHomeBtn();
 function stickyHomeBtn() {
     const chooseMeal = document.querySelectorAll('.choose_meal');
 
