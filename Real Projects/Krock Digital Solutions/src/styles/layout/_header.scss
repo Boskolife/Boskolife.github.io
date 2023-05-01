@@ -1,0 +1,156 @@
+header {
+
+    .header_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .bubble_img {
+        position: absolute;
+        left: 20%;
+        bottom: 0;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+
+    .nav_menu,
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .menu_item {
+        position: relative;
+
+        &:hover{
+            &::after{
+                width: 100%;
+                transition: all .3s ease;
+            }
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: $orange;
+            bottom: -5px;
+            left: 0;
+            transition: all .3s ease;
+        }
+        &:not(:first-child) {
+            @include adaptiv-vaule("margin-left", 30, 1, 1);
+        }
+    }
+
+    .menu_link {
+        font-weight: 300;
+        font-size: 16px;
+        color: $black;
+        white-space: nowrap;
+    }
+
+    .menu_btn {
+        @include adaptiv-vaule("margin-left", 30, 1, 1);
+        border: 1px solid $orange;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 150%;
+        color: #EB5B31;
+        padding: 8px 15px;
+        border-radius: 10px;
+        text-align: center;
+        transition: all .3s ease;
+
+        &:hover{
+            border: 1px solid $orange;
+            background-color: $orange;
+            color: $white;
+            transition: all .3s ease;
+        }
+    }
+
+    .header_burger {
+        display: none;
+        width: 29px;
+        height: 17px;
+        position: relative;
+        top: -2px;
+        cursor: pointer;
+        z-index: 3;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: $orange;
+            transition: all 0.4s ease;
+            border-radius: 5px;
+            right: 0;
+        }
+
+        &::after{
+            width: 50%;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: $orange;
+            top: 7px;
+            left: 0;
+            transition: all 0.4s ease;
+            opacity: 1;
+            border-radius: 5px;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+    }
+
+    .burger_active {
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 5px;
+            width: 100%;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
+        span {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

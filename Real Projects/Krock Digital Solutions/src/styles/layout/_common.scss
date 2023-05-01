@@ -1,0 +1,419 @@
+.main_section {
+    overflow: hidden;
+
+    .main_content {
+        position: relative;
+        text-align: center;
+        @include adaptiv-vaule("padding-top", 200, 115, 1);
+        @include adaptiv-vaule("padding-bottom", 140, 230, 1);
+    }
+
+    .planet_img {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 120px;
+        height: 80px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .crown_img_desk {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30px;
+        width: 125px;
+        height: 125px;
+        @include adaptiv-vaule("width", 125, 75, 1);
+        @include adaptiv-vaule("height", 125, 75, 1);
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .crown_img_phone {
+        display: none;
+        position: absolute;
+        left: 35%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        @include adaptiv-vaule("width", 125, 75, 1);
+        @include adaptiv-vaule("height", 125, 75, 1);
+
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
+    .rocket_img {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        @include adaptiv-vaule("right", -115, 0, 1);
+        @include adaptiv-vaule("width", 190, 120, 1);
+        @include adaptiv-vaule("height", 200, 130, 1);
+
+        @include media ("<tablet") {
+            top: 0;
+            right: 50%;
+            transform: translateX(50%) rotateY(180deg);
+        }
+    }
+
+    .target_img {
+        position: absolute;
+        @include adaptiv-vaule("bottom", 50, 200, 1);
+        right: -115px;
+        width: 480px;
+        height: 270px;
+        @include adaptiv-vaule("width", 480, 260, 1);
+        @include adaptiv-vaule("height", 270, 160, 1);
+
+        @include media ("<desktop") {
+            bottom: 130px;
+        }
+
+        @include media ("<tablet") {
+            right: -25px;
+            bottom: 20px;
+        }
+
+        @include media ("<phone") {
+            bottom: 55px;
+        }
+    }
+
+    .lightning_img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .creative_img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include adaptiv-vaule("width", 195, 85, 1);
+        @include adaptiv-vaule("height", 170, 80, 1);
+
+        @include media ("<tablet") {
+            bottom: 120px;
+        }
+    }
+
+    .bubble_img {
+        position: absolute;
+        bottom: 0;
+        left: -100px;
+
+        @include media ("<tablet") {
+            left: 20px;
+        }
+    }
+
+    .main_text {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .main_title {
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 64, 35, 1);
+        line-height: 105.5%;
+        text-transform: uppercase;
+        color: $black;
+        margin-bottom: 25px;
+    }
+
+    .main_descrition {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 24, 16, 1);
+        line-height: 150%;
+        color: $black;
+        @include adaptiv-vaule(" margin-bottom", 90, 60, 1);
+    }
+
+    .awards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 350px;
+            @include adaptiv-vaule("width", 350, 268, 1);
+            height: 55px;
+            background: #EB5B31;
+            border-radius: 50px;
+
+            @include media ("<tablet") {
+                bottom: 0;
+                transform: translate(-50%, 20%);
+            }
+        }
+    }
+
+    .awards_img {
+        position: relative;
+        z-index: 1;
+        width: 70px;
+        height: 86px;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+
+        @include media ("<tablet") {
+            width: 51px;
+            height: 63px;
+        }
+
+        &:nth-child(1) {
+            transform: rotateZ(355deg);
+            left: -8px;
+        }
+
+        &:nth-child(3) {
+            transform: rotateZ(5deg);
+        }
+
+        &:nth-child(4) {
+            transform: rotateZ(355deg);
+        }
+    }
+}
+
+.web_design {
+    overflow: hidden;
+
+    .web_design_content {
+        position: relative;
+        @include adaptiv-vaule("padding-top", 100, 80, 1);
+        @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+    }
+
+    .bubbles_img {
+        position: absolute;
+        width: 65px;
+        height: 68px;
+        top: 0;
+        right: 0;
+    }
+
+    .web_design_text {
+        text-align: end;
+        @include adaptiv-vaule("margin-bottom", 80, 60, 1);
+    }
+
+    .web_design_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 64, 22, 1);
+        line-height: 114%;
+        color: $black;
+        margin-bottom: 15px;
+    }
+
+    .orange_bg {
+        color: $white;
+        padding: 10px 15px;
+        clip-path: polygon(0 6%, 100% 0%, 98% 100%, 2% 100%);
+        background-color: $orange;
+        display: inline-block;
+    }
+
+    .web_design_description {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 34, 16, 1);
+        line-height: 114%;
+        color: $black;
+
+        @include media ("<tablet") {
+            width: 205px;
+            margin: 0 0 0 auto;
+        }
+    }
+
+    .web_design_components {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 70px;
+        }
+    }
+
+    .component {
+        width: 33%;
+        text-align: center;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+    }
+
+    .component_img {
+        height: 215px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+
+        @include media ("<tablet") {
+            height: auto;
+        }
+    }
+
+    .component_description {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: $black;
+        text-align: start;
+
+        @include media ("<tablet") {
+            text-align: center;
+        }
+    }
+}
+
+.our_offers {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+
+    .offer_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .our_offers_content {
+        @include adaptiv-vaule("padding-top", 50, 40, 1);
+        @include adaptiv-vaule("padding-bottom", 50, 40, 1);
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .offer_box {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:nth-child(even) {
+            flex-direction: column-reverse;
+
+            .offer_img {
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    .planet_box {
+        align-items: flex-start;
+    }
+
+    .offer_text {
+        @include adaptiv-vaule("margin-bottom", 60, 0, 1);
+    }
+
+    .offer_title {
+        font-weight: 700;
+        @include adaptiv-vaule(" font-size", 40, 22, 1);
+        line-height: 100%;
+        @include adaptiv-vaule("margin-bottom", 60, 20, 1);
+        color: $white;
+    }
+
+    .offer_descr {
+        font-weight: 300;
+        @include adaptiv-vaule(" font-size", 20, 16, 1);
+        line-height: 130%;
+        color: $white;
+        max-width: 450px;
+    }
+
+    .offer_img {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .palnet {
+        width: 310px;
+        height: 200px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .bubble_img{
+        position: absolute;
+        width: 43px;
+        height: 48px;
+        bottom: -30px;
+        right: -120px;
+    }
+
+    .stars {
+        position: absolute;
+        right: 50px;
+        bottom: -100px;
+    }
+
+    .fromRight {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        background-color: green;
+        z-index: 2;
+    }
+}
+
+.end{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
