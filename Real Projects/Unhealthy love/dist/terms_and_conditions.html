@@ -33,8 +33,7 @@
                             <li class="menu_item"> <a class="menu_link" href="podcast_page.html">Podcast</a>
                             </li>
                             <li class="menu_item"> <a class="menu_link" href="blog_page.html">Blog</a></li>
-                            <li class="menu_item"> <a class="btn_item popup_btn yellow_btn"
-                                    href="#">Contact
+                            <li class="menu_item"> <a class="btn_item popup_btn yellow_btn" href="#">Contact
                                     Us</a></li>
                         </ul>
                     </nav>
@@ -44,7 +43,7 @@
                 </div>
             </div>
             <div class="popup_container"></div>
-            <div class="contact_popup">
+            <div class="contact_popup popup_active">
                 <div class="close_item">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -53,43 +52,93 @@
                     </svg>
                 </div>
                 <div class="popup_content">
-                    <h2 class="popup_title"><span class="yellow_word">Join</span> Unhealthy Love:</h2>
-                    <p class="popup_descr">Starting your content creation journey is difficult, we remove the difficult. Everything is provided for you. Editing, uploading, marketing and promotion</p>
                     <form>
                         <div class="form_body">
-                            <div class="input_wrap">
-                                <label class="data_title" for="name">Enter your name</label>
-                                <input id="name" class="data_text" placeholder="Name" type="text">
-                                <label class="data_title" for="tel">Enter your phone</label>
-                                <input id="tel" class="data_text" placeholder="+ xx - xxx- xxx - xx"
-                                    type="tel">
-                                <label class="data_title" for="tel">Relevant videos that showcase
+                            <div class="step_1">
+                                <h2 class="popup_title"><span class="yellow_word">Guest Interview
+                                    </span>Request Form
+                                </h2>
+                                <p class="popup_descr">Thank you for your interest in being a guest on our
+                                    podcast!
+                                    Please fill out the following form so we can learn more about you and
                                     your
-                                    talent</label>
-                                <input class="data_text" placeholder="Add links" type="text">
-                                <div class="choose">
-                                    <input class="custom_radio" name="person" id="radio1" type="radio">
-                                    <label class="ep_label label1" for="radio1">Episode Host</label>
-                                    <input class="custom_radio" name="person" id="radio2" type="radio">
-                                    <label class="ep_label" for="radio2">Episode Guest</label>
+                                    expertise.</p>
+                                <div class="input_body">
+                                    <div class="input_wrap">
+                                        <label class="data_title" for="name">Enter your name*</label>
+                                        <input id="name" class="data_text" placeholder="Name" type="text">
+                                        <label class="data_title" for="mail">Enter your email</label>
+                                        <input id="mail" class="data_text"
+                                            placeholder="Unhealthylove@gmail.com" type="email">
+                                        <label class="data_title" for="tel">Enter your phone*</label>
+                                        <input id="tel" class="data_text" placeholder="+ xx - xxx- xxx - xx"
+                                            type="tel">
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="data_title" for="tel">Enter your website:</label>
+                                        <input id="tel" class="data_text"
+                                            placeholder="https://www.Unhealthylove.com" type="text">
+                                        <label class="data_title">Social Media Handles:*</label>
+                                        <textarea class="data_text area_text" name="handles"
+                                            placeholder="Enter your social media"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="input_wrap">
-                                <label class="data_title" for="mail">Enter your email</label>
-                                <input id="mail" class="data_text" placeholder="Unhealthylove@gmail.com"
-                                    type="email">
-                                <label class="data_title" for="message">Message</label>
-                                <textarea id="message" class="data_text area_text"
-                                    placeholder="Enter your message"></textarea>
-                                <input type="checkbox" class="custom_checkbox" id="check" name="argree"
-                                    value="yes">
-                                <label class="argee" for="check">I agree with the<a class="link_terms"
-                                        target="_blank" href="terms_and_conditions.html">Terms And
-                                        Conditions</a></label>
+                            <div class="step_2">
+                                <h2 class="step_title">Briefly describe yourself and your area of expertise:
+                                </h2>
+                                <div class="input_wrap">
+                                    <label class="data_title">What topic(s) would you like to discuss on our
+                                        podcast?*</label>
+                                    <textarea class="data_text area_text first_area" name="handles"
+                                        placeholder="Enter your topic(s)"></textarea>
+                                    <label class="data_title">Have you been a guest on a podcast before? If
+                                        so, please provide links to the episodes.</label>
+                                    <textarea class="data_text area_text" name="handles"
+                                        placeholder="Yes, https://www.Unhealthylove.com"></textarea>
+                                    <label class="data_title">Do you have any specific dates in mind for
+                                        recording the podcast? If not, please let us know your general
+                                        availability.</label>
+                                    <textarea class="data_text area_text" name="handles"
+                                        placeholder="Yes, 13 May - 20 May"></textarea>
+                                </div>
+                            </div>
+                            <div class="step_3">
+                                <h2 class="step_title">Briefly describe yourself and your area of expertise:
+                                </h2>
+                                <div class="input_wrap">
+                                    <label class="data_title">Is there anything else you'd like to share
+                                        with us about your experience or qualifications that you think would
+                                        be relevant to our podcast audience?</label>
+                                    <textarea class="data_text area_text first_area" name="handles"
+                                        placeholder="Enter your message"></textarea>
+                                </div>
+                            </div>
+                            <div class="step_4">
+                                <h2 class="step_title">Thanks for completing the form!
+                                </h2>
+                                <div class="step_img">
+                                    <img src="./images/header/checked.svg" alt= "image not found" >
+                                </div>
+                                <a href="#" class="yellow_btn step_close">Close</a>
                             </div>
                         </div>
-                        <button class="yellow_btn">Send</button>
+                        <div class="button_wrap">
+                            <a href="#" id="backButton" class="white_btn">Back</a>
+                            <a href="#" id="nextButton" class="yellow_btn">Next</a>
+                            <button id="send" class="form_btn yellow_btn">Send</button>
+                        </div>
                     </form>
+                    <div class="proggres_wrap">
+                        <div class="progress_body">
+                            <span class="proggres_title">Progress</span>
+                            <span class="proggres_value" id="progressValue">0/3</span>
+                        </div>
+                        <div class="progressBar">
+                            <progress class="progress_line" id="progressBar" value="0" max="100">
+                                <progress>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

@@ -6,44 +6,45 @@ playAudio();
 openArticlePost();
 initMainAudio();
 getCardData();
-initCircleBtn() ;
+initCircleBtn();
+updateProgressPopup();
 
 function initCircleBtn() {
     const circleBtn = document.querySelector(".sound_btn");
     const firstSection = document.querySelectorAll("section")[0];
     const footer = document.querySelector("footer");
-  
+
     if (!circleBtn || !firstSection) return;
-  
+
     checkStickyBtn();
-  
+
     document.addEventListener("scroll", checkStickyBtn);
     window.addEventListener("resize", checkStickyBtn);
-  
+
     function checkStickyBtn() {
-      const firstSecHeight = firstSection.offsetHeight;
-      const currentScrollPosY = window.scrollY;
-      const firstSectionBottomPadding = getComputedStyle(
-        firstSection
-      ).paddingBottom.replace(/px/g, "");
-      const currentScrollBottomPos = window.scrollY + window.innerHeight;
-  
-      currentScrollPosY > firstSecHeight - +firstSectionBottomPadding
-        ? circleBtn.classList.add("sticky")
-        : circleBtn.classList.remove("sticky");
-  
-      if (footer) {
-        const footerTopPos = footer.offsetTop;
-        const footerTopPadding = getComputedStyle(
-          firstSection
-        ).paddingTop.replace(/px/g, "");
-        currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2
-          ? circleBtn.classList.add("hidden")
-          : circleBtn.classList.remove("hidden");
-      }
+        const firstSecHeight = firstSection.offsetHeight;
+        const currentScrollPosY = window.scrollY;
+        const firstSectionBottomPadding = getComputedStyle(
+            firstSection
+        ).paddingBottom.replace(/px/g, "");
+        const currentScrollBottomPos = window.scrollY + window.innerHeight;
+
+        currentScrollPosY > firstSecHeight - +firstSectionBottomPadding
+            ? circleBtn.classList.add("sticky")
+            : circleBtn.classList.remove("sticky");
+
+        if (footer) {
+            const footerTopPos = footer.offsetTop;
+            const footerTopPadding = getComputedStyle(
+                firstSection
+            ).paddingTop.replace(/px/g, "");
+            currentScrollBottomPos >= footerTopPos + +footerTopPadding / 2
+                ? circleBtn.classList.add("hidden")
+                : circleBtn.classList.remove("hidden");
+        }
     }
-  }
-  
+}
+
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
         const init = {
@@ -108,7 +109,7 @@ function initSwiper() {
             el: ".swiper-pagination",
             type: "bullets",
             clickable: true,
-            horizontalClass:'horizont'
+            horizontalClass: "horizont",
         },
     });
 
@@ -188,6 +189,7 @@ function initContactPopup() {
     const popupContainer = document.querySelector(".popup_container");
     const poupBtn = document.querySelectorAll(".popup_btn");
     const closeBtn = document.querySelector(".close_item");
+    const closeStep = document.querySelector(".step_close");
 
     poupBtn.forEach((item) => {
         item.addEventListener("click", (e) => {
@@ -205,6 +207,10 @@ function initContactPopup() {
     }
 
     closeBtn.addEventListener("click", () => {
+        closePopup();
+    });
+
+    closeStep.addEventListener("click", () => {
         closePopup();
     });
 
@@ -255,8 +261,8 @@ function videoPlay() {
         }
     });
 
-    closeElement.forEach(item => {
-        item.addEventListener('click', () => {
+    closeElement.forEach((item) => {
+        item.addEventListener("click", () => {
             video.pause();
         });
     });
@@ -315,12 +321,11 @@ function playAudio() {
         }
     });
 
-    closeElement.forEach(item => {
-        item.addEventListener('click', () => {
+    closeElement.forEach((item) => {
+        item.addEventListener("click", () => {
             pauseSong();
         });
     });
-   
 
     function timeduration(seconds) {
         const m = (seconds / 60) | 0,
@@ -362,7 +367,7 @@ function playAudio() {
 }
 
 function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -439,10 +444,17 @@ function getCardData() {
 
         item.addEventListener("click", (e) => {
             const card = e.currentTarget;
-            const imgSrc = card.querySelector(".get_cardImg")?.getAttribute("src");
-            const songSrc = card.querySelector(".getSongCard")?.getAttribute("src");
-            const videoSrc = card.querySelector(".getVideoCard")?.getAttribute("src");
-            const numberEpisodeSpanElement = card.querySelector(".get_numberEp");
+            const imgSrc = card
+                .querySelector(".get_cardImg")
+                ?.getAttribute("src");
+            const songSrc = card
+                .querySelector(".getSongCard")
+                ?.getAttribute("src");
+            const videoSrc = card
+                .querySelector(".getVideoCard")
+                ?.getAttribute("src");
+            const numberEpisodeSpanElement =
+                card.querySelector(".get_numberEp");
             const numberEpisodeText = numberEpisodeSpanElement.textContent;
             const titleElement = card.querySelector(".get_cardTitle");
             const titleText = titleElement.textContent;
@@ -490,8 +502,12 @@ function setCardData(
     const episodeText = document.querySelectorAll(".set_numberEp");
     const titleTextContent = document.querySelectorAll(".set_cardTitle");
     const descriptionTextContent = document.querySelector(".set_cardDescr");
-    const guestIcon = songSrc ? playerBody.querySelectorAll(".set_iconGuest") : videoBody.querySelectorAll(".set_iconGuest");
-    const guestName = songSrc ? playerBody.querySelectorAll(".set_nameGuest") : videoBody.querySelectorAll(".set_nameGuest");
+    const guestIcon = songSrc
+        ? playerBody.querySelectorAll(".set_iconGuest")
+        : videoBody.querySelectorAll(".set_iconGuest");
+    const guestName = songSrc
+        ? playerBody.querySelectorAll(".set_nameGuest")
+        : videoBody.querySelectorAll(".set_nameGuest");
 
     closeElement.forEach((item) => {
         item.addEventListener("click", () => {
@@ -530,5 +546,97 @@ function setCardData(
         playerBody.classList.remove("active_player_body_wrap");
         const video = videoBody.querySelector("video.setVideoCard");
         video.setAttribute("src", videoSrc);
+    }
+}
+
+function updateProgressPopup() {
+    const nextBtn = document.getElementById("nextButton");
+    const backBtn = document.getElementById("backButton");
+    const sendBtn = document.getElementById("send");
+
+    let currentStep = 0;
+    let totalSteps = 3;
+
+    function updateProgress() {
+        let progressBar = document.getElementById("progressBar");
+        let progressValue = document.getElementById("progressValue");
+
+
+        let progress = (currentStep / totalSteps) * 100;
+        progressBar.value = progress;
+        progressValue.innerHTML = currentStep + "/" + totalSteps;
+    }
+
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            currentStep++;
+            updateProgress();
+            showContent();
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 0) {
+            currentStep--;
+            updateProgress();
+            showContent();
+        }
+    }
+
+    nextBtn.addEventListener("click", () => {
+        nextStep();
+    });
+
+    sendBtn.addEventListener("click", () => {
+        nextStep();
+        scrollIntoView();
+    });
+
+    backBtn.addEventListener("click", () => {
+        prevStep();
+        scrollIntoView();
+    });
+
+    function showContent() {
+        let stepOne = document.querySelector(".step_1");
+        let stepTwo = document.querySelector(".step_2");
+        let stepThree = document.querySelector(".step_3");
+        let stepFour = document.querySelector(".step_4");
+        let backButton = document.getElementById("backButton");
+        let nextButton = document.getElementById("nextButton");
+        let sendButton = document.getElementById("send");
+
+        switch (currentStep) {
+            case 0:
+                stepOne.style.display = "block";
+                stepTwo.style.display = "none";
+                stepThree.style.display = "none";
+                stepFour.style.display = "none";
+                backButton.style.display = "none";
+                break;
+            case 1:
+                stepOne.style.display = "none";
+                stepTwo.style.display = "block";
+                stepThree.style.display = "none";
+                stepFour.style.display = "none";
+                backButton.style.display = "inline";
+                break;
+            case 2:
+                stepOne.style.display = "none";
+                stepTwo.style.display = "none";
+                stepThree.style.display = "block";
+                stepFour.style.display = "none";
+                nextButton.style.display = "none";
+                sendButton.style.display = "block";
+                break;
+            case 3:
+                stepOne.style.display = "none";
+                stepTwo.style.display = "none";
+                stepThree.style.display = "none";
+                stepFour.style.display = "block";
+                backButton.style.display = "none";
+                sendButton.style.display = "none";
+                break;
+        }
     }
 }

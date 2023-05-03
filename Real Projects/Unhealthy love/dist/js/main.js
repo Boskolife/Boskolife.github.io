@@ -15,6 +15,7 @@ openArticlePost();
 initMainAudio();
 getCardData();
 initCircleBtn();
+updateProgressPopup();
 
 function initCircleBtn() {
   var circleBtn = document.querySelector(".sound_btn");
@@ -100,7 +101,7 @@ function initSwiper() {
       el: ".swiper-pagination",
       type: "bullets",
       clickable: true,
-      horizontalClass: 'horizont'
+      horizontalClass: "horizont"
     }
   });
   destroySlidersOnResize(".blog_swiper", 9999, {
@@ -182,6 +183,7 @@ function initContactPopup() {
   var popupContainer = document.querySelector(".popup_container");
   var poupBtn = document.querySelectorAll(".popup_btn");
   var closeBtn = document.querySelector(".close_item");
+  var closeStep = document.querySelector(".step_close");
   poupBtn.forEach(function (item) {
     item.addEventListener("click", function (e) {
       e.preventDefault();
@@ -198,6 +200,9 @@ function initContactPopup() {
   }
 
   closeBtn.addEventListener("click", function () {
+    closePopup();
+  });
+  closeStep.addEventListener("click", function () {
     closePopup();
   });
   popupContainer.addEventListener("click", function (e) {
@@ -242,7 +247,7 @@ function videoPlay() {
     }
   });
   closeElement.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener("click", function () {
       video.pause();
     });
   });
@@ -305,7 +310,7 @@ function playAudio() {
     }
   });
   closeElement.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener("click", function () {
       pauseSong();
     });
   });
@@ -499,6 +504,96 @@ function setCardData(imgSrc, songSrc, videoSrc, numberEpisodeText, titleText, de
     playerBody.classList.remove("active_player_body_wrap");
     var video = videoBody.querySelector("video.setVideoCard");
     video.setAttribute("src", videoSrc);
+  }
+}
+
+function updateProgressPopup() {
+  var nextBtn = document.getElementById("nextButton");
+  var backBtn = document.getElementById("backButton");
+  var sendBtn = document.getElementById("send");
+  var currentStep = 0;
+  var totalSteps = 3;
+
+  function updateProgress() {
+    var progressBar = document.getElementById("progressBar");
+    var progressValue = document.getElementById("progressValue");
+    var progress = currentStep / totalSteps * 100;
+    progressBar.value = progress;
+    progressValue.innerHTML = currentStep + "/" + totalSteps;
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateProgress();
+      showContent();
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      updateProgress();
+      showContent();
+    }
+  }
+
+  nextBtn.addEventListener("click", function () {
+    nextStep();
+  });
+  sendBtn.addEventListener("click", function () {
+    nextStep();
+    scrollIntoView();
+  });
+  backBtn.addEventListener("click", function () {
+    prevStep();
+    scrollIntoView();
+  });
+
+  function showContent() {
+    var stepOne = document.querySelector(".step_1");
+    var stepTwo = document.querySelector(".step_2");
+    var stepThree = document.querySelector(".step_3");
+    var stepFour = document.querySelector(".step_4");
+    var backButton = document.getElementById("backButton");
+    var nextButton = document.getElementById("nextButton");
+    var sendButton = document.getElementById("send");
+
+    switch (currentStep) {
+      case 0:
+        stepOne.style.display = "block";
+        stepTwo.style.display = "none";
+        stepThree.style.display = "none";
+        stepFour.style.display = "none";
+        backButton.style.display = "none";
+        break;
+
+      case 1:
+        stepOne.style.display = "none";
+        stepTwo.style.display = "block";
+        stepThree.style.display = "none";
+        stepFour.style.display = "none";
+        backButton.style.display = "inline";
+        break;
+
+      case 2:
+        stepOne.style.display = "none";
+        stepTwo.style.display = "none";
+        stepThree.style.display = "block";
+        stepFour.style.display = "none";
+        nextButton.style.display = "none";
+        sendButton.style.display = "block";
+        break;
+
+      case 3:
+        stepOne.style.display = "none";
+        stepTwo.style.display = "none";
+        stepThree.style.display = "none";
+        stepFour.style.display = "block";
+        backButton.style.display = "none";
+        sendButton.style.display = "none";
+        break;
+    }
   }
 }
 //# sourceMappingURL=main.js.map
