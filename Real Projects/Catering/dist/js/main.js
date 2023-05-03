@@ -15,6 +15,7 @@ selectMeal();
 stickyMenu();
 selectOption();
 stickyHomeBtn();
+loginPopup();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -394,6 +395,4 @@ function loginPopup() {
     document.body.classList.remove("popup_lock");
   });
 }
-
-loginPopup();
 //# sourceMappingURL=main.js.map
