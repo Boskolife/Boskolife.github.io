@@ -66,7 +66,7 @@
 
     .target_img {
         position: absolute;
-        @include adaptiv-vaule("bottom", 50, 200, 1);
+        @include adaptiv-vaule("bottom", 100, 200, 1);
         right: -115px;
         width: 480px;
         height: 270px;
@@ -299,6 +299,10 @@
     width: 100%;
     height: 100vh;
 
+    @include media ("<tablet") {
+        height: 100%;
+    }
+
     .offer_bg {
         position: absolute;
         top: 0;
@@ -320,23 +324,71 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
+        width: calc(100% - 20px);
+        margin: 0 auto;
         height: 100%;
-        margin: 0 30px;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 30px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            position: static;
+            transform: none;
+            z-index: 2;
+            gap: 50px;
+        }
     }
 
     .offer_box {
-        width: 45%;
+        max-width: 650px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative;
+
+        @include media ("<tablet") {
+            z-index: 1;
+        }
+
+        @include media ("<phone") {
+            align-items: flex-start;
+            text-align: start;
+        }
 
         &:nth-child(even) {
             flex-direction: column-reverse;
+
+            .offer_img {
+                order: 3;
+
+                @include media ("<tablet") {
+                    order: 2;
+                }
+            }
+
+            .offer_title {
+                order: 2;
+
+                @include media ("<tablet") {
+                    order: 1;
+                }
+            }
+
+            .offer_descr {
+                order: 1;
+
+                @include media ("<tablet") {
+                    order: 3;
+                }
+            }
+
+            @include media ("<tablet") {
+                flex-direction: column;
+            }
 
             .offer_img {
                 margin-bottom: 35px;
@@ -346,10 +398,26 @@
 
     .planet_box {
         align-items: flex-start;
-    }
 
-    .offer_text {
-        @include adaptiv-vaule("margin-bottom", 60, 0, 1);
+        @include media ("<tablet") {
+            align-items: center;
+            position: relative;
+
+            .offer_title {
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @include media ("<phone") {
+            align-items: flex-start;
+            text-align: start;
+
+            .offer_title {
+                max-width: 300px;
+                text-align: start;
+            }
+        }
     }
 
     .offer_title {
@@ -358,6 +426,11 @@
         line-height: 100%;
         @include adaptiv-vaule("margin-bottom", 60, 20, 1);
         color: $white;
+
+        @include media ("<tablet") {
+            order: 1;
+            margin-bottom: 40px;
+        }
     }
 
     .offer_descr {
@@ -366,10 +439,28 @@
         line-height: 130%;
         color: $white;
         max-width: 450px;
+        width: 100%;
+        @include adaptiv-vaule("margin-bottom", 60, 0, 1);
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+            order: 3;
+            text-align: center;
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
     }
 
     .offer_img {
         position: relative;
+
+        @include media ("<tablet") {
+            order: 2;
+            margin: 0 auto;
+            margin-bottom: 45px;
+        }
 
         img {
             width: 100%;
@@ -381,13 +472,21 @@
         width: 310px;
         height: 200px;
 
+        @include media ("<tablet") {
+            position: absolute;
+            width: 105px;
+            height: 75px;
+            top: -30px;
+            right: 0;
+        }
+
         img {
             width: 100%;
             height: 100%;
         }
     }
 
-    .bubble_img{
+    .bubble_img {
         position: absolute;
         width: 43px;
         height: 48px;
@@ -397,8 +496,13 @@
 
     .stars {
         position: absolute;
-        right: 50px;
-        bottom: -100px;
+        right: 225px;
+        bottom: -80px;
+
+        @include media ("<tablet") {
+            bottom: -75px;
+            right: 0;
+        }
     }
 
     .fromRight {
@@ -406,14 +510,268 @@
         width: 100%;
         height: 100%;
         left: 100%;
-        background-color: green;
+        background-color: $orange;
         z-index: 2;
+
+        @include media ("<tablet") {
+            position: static;
+        }
+    }
+
+    .at {
+        position: absolute;
+        top: -100px;
+        right: 500px;
+        z-index: 3;
+
+        @include media ("<tablet") {
+            top: 0;
+            right: -15px;
+            width: 32px;
+            height: 38px;
+        }
+    }
+
+    .heart {
+        position: absolute;
+        top: 20px;
+        right: 50%;
+        z-index: 3;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .omg {
+        position: absolute;
+        z-index: 3;
+        bottom: 10%;
+        left: 30%;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 }
 
-.end{
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+.problems {
+    @include adaptiv-vaule("padding-top", 100, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 185, 55, 1);
+    position: relative;
+
+    .bubbles_top {
+        position: absolute;
+        top: 70px;
+        right: 70px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .bubbles_bottom {
+        position: absolute;
+        bottom: 30px;
+        left: 400px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        bottom: 35px;
+        right: 70px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .problems_content {
+        text-align: center;
+    }
+
+    .problems_title {
+        font-style: normal;
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 64, 22, 1);
+        color: #151515;
+        @include adaptiv-vaule("margin-bottom", 70, 45, 1);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            @include adaptiv-vaule("top", -10, 0, 1);
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $orange;
+            @include adaptiv-vaule("width", 333, 131, 1);
+            @include adaptiv-vaule("height", 91, 28, 1);
+            clip-path: polygon(0 0, 100% 15%, 99% 100%, 1% 85%);
+            z-index: -1;
+        }
+    }
+
+    .problems_content_wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .problems_wrap {
+        display: grid;
+        grid-template: repeat(3, 1fr) / 1fr;
+
+        @include media ("<desktop") {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        @include media ("<phone") {
+            align-items: flex-start;
+        }
+    }
+
+    .wrap_1 {
+        @include media ("<tablet") {
+            order: 2;
+        }
+
+        .problems_body {
+            @include media ("<phone") {
+                &:nth-child(even) {
+                    flex-direction: row-reverse;
+
+                    .body_text {
+                        margin: 0 0 0 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .wrap_2 {
+        @include media ("<tablet") {
+            order: 3;
+        }
+
+        .problems_body {
+            @include media ("<phone") {
+
+                .body_text{
+                    margin-right: 30px;
+                }
+
+                &:nth-child(odd) {
+                    flex-direction: row-reverse;
+
+                    .body_text {
+                        margin: 0 0 0 30px;
+                    }
+                }
+
+                &:nth-child(even){
+                    .body_text {
+                        margin: 0 30px 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .problems_body {
+        text-align: start;
+        max-width: 332px;
+        width: 100%;
+
+        @include media ("<phone") {
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        br {
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+    }
+
+    .body_text {
+
+        @include media ("<phone") {
+            max-width: 260px;
+            margin-right: 30px;
+        }
+    }
+
+    .problems_subtitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+        width: max-content;
+        clip-path: polygon(0 0, 100% 5%, 98% 100%, 2% 100%);
+        padding: 5px 8px;
+        background-color: $orange;
+        margin-bottom: 15px;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .problems_descr {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 130%;
+        color: $black;
+        padding-left: 10px;
+    }
+
+    .body_img {
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
+
+    .problems_img {
+        @include media ("<desktop") {
+            margin-bottom: 35px;
+        }
+
+        @include media ("<tablet") {
+            order: 1;
+            width: 221px;
+            height: 220px;
+        }
+    }
 }

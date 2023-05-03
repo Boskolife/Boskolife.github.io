@@ -1,5 +1,4 @@
-
-initBurger()
+initBurger();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -54,19 +53,27 @@ function initBurger() {
 horizontalScroll();
 
 function horizontalScroll() {
-    
-var slides = document.querySelectorAll(".fromRight");
+    let screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (screenWidth < 768) {
+        return;
+    }
 
-var action = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#horizontal_scroll",
-    pin:true,
-    scrub:0.3,
-    start: "top top",
-    end: "+=3000"
-  }
-})
-.to(slides, {xPercent: -100, duration:2, ease: "none", stagger:3})
-.to({},{duration:1}) // an empty tween to generate a pause at the end
-  
+    let slides = document.querySelectorAll(".fromRight");
+    let action = gsap
+        .timeline({
+            scrollTrigger: {
+                trigger: "#horizontal_scroll",
+                pin: true,
+                scrub: 0.3,
+                start: "top top",
+                end: "+=3000",
+            },
+        })
+        .to(slides, {
+            xPercent: -100,
+            duration: 2,
+            ease: "none",
+            stagger: 3,
+        })
+        .to({}, { duration: 1 }); // an empty tween to generate a pause at the end
 }

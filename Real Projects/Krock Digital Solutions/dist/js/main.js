@@ -54,6 +54,12 @@ function initBurger() {
 horizontalScroll();
 
 function horizontalScroll() {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  if (screenWidth < 768) {
+    return;
+  }
+
   var slides = document.querySelectorAll(".fromRight");
   var action = gsap.timeline({
     scrollTrigger: {
