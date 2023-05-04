@@ -1,6 +1,7 @@
 $breakpoints: (
 	'xs-phone': 320px,
 	'phone': 480px,
+	'phone_max': 650px,
 	'tablet': 768px,
 	'desktop': 1024px,
 	'widescreen': 1200px
@@ -32,6 +33,7 @@ $media-expressions: (
 @import 'base/typography';
 @import 'base/ui';
 @import 'base/forms';
+@import 'base/keyframes';
 
 @import 'layout/header';
 @import 'layout/common';
