@@ -903,7 +903,13 @@ body {
         right: 0px;
 
         @include media ("<tablet") {
-            display: none;
+            bottom: 50%;
+        }
+
+        @include media ("<phone_max") {
+            bottom: 35%;
+            width: 30px;
+            height: 37px;
         }
     }
 
@@ -948,6 +954,10 @@ body {
             &:not(:last-child) {
                 margin-bottom: 50px;
             }
+        }
+
+        @include media ("<phone") {
+            justify-content: flex-start;
         }
 
         &:nth-child(even) {
@@ -1039,5 +1049,685 @@ body {
         font-size: 20px;
         line-height: 19px;
         color: $black;
+    }
+}
+
+.our_project {
+    @include adaptiv-vaule("padding-top", 75, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 35, 1);
+    position: relative;
+    overflow: hidden;
+
+    .bubbles {
+        position: absolute;
+        left: 75px;
+        bottom: 30px;
+
+        @include media ("<tablet_max") {
+            bottom: 35%;
+        }
+
+        @include media ("<tablet") {
+            bottom: 40%;
+        }
+
+        @include media ("<phone_max") {
+            left: 10px;
+        }
+    }
+
+    .our_project_bg {
+        position: absolute;
+        top: 60px;
+        right: -100px;
+
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("height", 550, 420, 1);
+            right: -20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .our_project_content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .our_project_title {
+        margin-bottom: 60px;
+        font-weight: 700;
+        font-size: 30px;
+        color: $black;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+    }
+
+    .project_swiper {
+        position: relative;
+        height: 800px;
+
+        @include media ("<tablet_max") {
+            height: auto;
+        }
+    }
+
+    .swiper-wrapper {
+        height: max-content;
+
+        @include media ("<tablet_max") {
+            margin-bottom: 25px;
+        }
+    }
+
+    .project_slide {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        padding: 0 0 20px 0;
+
+        @include media ("<tablet_max") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .slide_text {
+        width: 47%;
+        margin-right: 30px;
+        text-align: start;
+
+        @include media ("<tablet_max") {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .slide_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 40, 25, 1);
+        color: $black;
+        margin-bottom: 50px;
+    }
+
+    .slide_descr {
+        @include adaptiv-vaule("margin-bottom", 85, 35, 1);
+    }
+
+    .text_descr {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 130%;
+        color: $black;
+    }
+
+    .text_list {
+
+        @include media ("<tablet_max") {
+            text-align: start;
+
+        }
+
+        .text_descr {
+            position: relative;
+            padding-left: 15px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $black;
+            }
+        }
+    }
+
+    .slide_btn_wrap {
+        width: 238px;
+        height: 70px;
+        border-radius: 64% 9% 52% 13% / 29% 54% 30% 100%;
+        border: 1px solid $black;
+        position: relative;
+        margin-left: 15px;
+
+        @include media ("<tablet_max") {
+            margin: 0 auto;
+        }
+
+        &:hover {
+            .slide_btn {
+                top: -1px;
+                right: -1px;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .slide_btn {
+        font-weight: 700;
+        font-size: 20px;
+        color: $white;
+        background-color: $orange;
+        border: 1px solid $orange;
+        width: 239px;
+        height: 71px;
+        border-radius: 64% 9% 52% 13% / 29% 54% 30% 100%;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -7px;
+        right: 7px;
+        transition: all .3s ease;
+    }
+
+    .slide_img {
+        width: 50%;
+
+        @include media ("<phone") {
+            width: 90%;
+            height: 470px;
+            margin-bottom: 25px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .swiper-pagination {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<tablet_max") {
+            flex-direction: row;
+        }
+
+        .swiper-pagination-bullet {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background-color: $white;
+            opacity: 1;
+
+            @include media ("<tablet_max") {
+                background-color: $orange;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 21px;
+            height: 21px;
+        }
+    }
+
+    .swiper-navigation {
+        width: 50px;
+        height: 300px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include media ("<tablet_max") {
+            position: static;
+            width: 100%;
+            height: 25px;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .swiper-button-prev {
+        top: 0;
+        right: 0;
+        width: 40px;
+
+        @include media ("<tablet_max") {
+            display: none;
+        }
+
+        &::after {
+            content: url('../images/our_projects/arrow_prev.svg');
+            width: 100%;
+        }
+    }
+
+    .swiper-button-next {
+        top: 90%;
+        right: 0;
+        width: 40px;
+
+        @include media ("<tablet_max") {
+            display: none;
+        }
+
+        &::after {
+            content: url('../images/our_projects/arrow_next.svg');
+            width: 100%;
+        }
+    }
+}
+
+.must_haves {
+    @include adaptiv-vaule("padding-top", 150, 1, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 90, 1);
+    background-color: #F6F6F6;
+    @include adaptiv-vaule("margin-top", 85, 60, 1);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background-color: #F6F6F6;
+        top: -45px;
+        left: 0;
+        z-index: -1;
+        transform: skewY(-3deg);
+    }
+
+    .must_haves_content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .must_haves_bg {
+        position: absolute;
+        top: 50px;
+        left: -85px;
+        z-index: -1;
+
+        @include media ("<desktop") {
+            left: -15px;
+            height: 250px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .must_haves_img {
+        width: 45%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            text-align: center;
+
+            img {
+                height: 450px;
+            }
+        }
+    }
+
+    .must_haves_text {
+        width: 50%;
+
+        @include media ("<desktop") {
+            width: 80%;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .must_haves_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 30, 22, 1);
+        @include adaptiv-vaule("margin-bottom", 25, 60, 1);
+        line-height: 37px;
+        color: $black;
+
+        @include media ("<desktop") {
+            text-align: center;
+        }
+    }
+
+    .must_haves_descr {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 24, 16, 1);
+        @include adaptiv-vaule("margin-bottom", 55, 85, 1);
+        line-height: 130%;
+        color: $black;
+
+        @include media ("<desktop") {
+            text-align: center;
+        }
+    }
+
+    .text_desc {
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .text_phone {
+        display: none;
+
+        @include media ("<desktop") {
+            display: block
+        }
+    }
+
+    .items {
+        @include adaptiv-vaule("margin-bottom", 65, 45, 1);
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-bottom", 30, 20, 1);
+        }
+    }
+
+    .item_img {
+        min-width: 63px;
+        min-height: 62px;
+        background-color: $orange;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 50px;
+    }
+
+    .item_descr {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 24, 16, 1);
+        line-height: 130%;
+        color: $black;
+    }
+
+    .btn_wrap {
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        border: 1px solid $black;
+        width: 240px;
+        height: 70px;
+        position: relative;
+
+        @include media ("<phone") {
+            margin: 0 auto;
+        }
+
+        &:hover {
+            .claim_btn {
+                top: -1px;
+                right: -1px;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .claim_btn {
+        transition: all .3s ease;
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        background-color: $orange;
+        position: absolute;
+        top: -7px;
+        right: 7px;
+        font-weight: 700;
+        font-size: 20px;
+        width: 240px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}
+
+.show {
+    @include adaptiv-vaule("padding-top", 150, 1, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 50, 1);
+    background-color: $black;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background-color: $black;
+        top: -45px;
+        left: 0;
+        z-index: 1;
+        transform: skewY(-3deg);
+    }
+
+    .crown{
+        position: absolute;
+        top: 85%;
+        left: 50px;
+
+        @include media ("<phone_max") {
+            top: 170px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        @include media ("<phone") {
+            top: 100px;
+        }
+    }
+
+    .show_content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .orange_line {
+        display: inline-block;
+        @include adaptiv-vaule("width", 600, 200, 1);
+        @include adaptiv-vaule("height", 75, 35, 1);
+        position: relative;
+        background-color: $orange;
+        border-radius: 0px 50px 50px 0px;
+        left: -85px;
+        top: 20px;
+        @include adaptiv-vaule("margin-right", -10, -70, 1);
+        @include adaptiv-vaule("top", 20, 10, 1);
+
+        @include media ("<phone") {
+            width: 250px;
+        }
+    }
+
+    .show_title {
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 64, 22, 1);
+        line-height: 150%;
+        color: $white;
+        @include adaptiv-vaule("margin-bottom", 70, 40, 1);
+        margin-bottom: 70px;
+
+        @include media ("<phone") {
+            text-align: end;
+        }
+    }
+
+    .orange_text {
+        color: $orange;
+    }
+
+    .show_swiper {
+        @include adaptiv-vaule("padding-bottom", 70, 100, 1);
+        margin-bottom: 70px;
+
+        .swiper-slide {
+            transform: scale(0.7);
+        }
+
+        .swiper-slide-active {
+            transform: scale(1);
+        }
+
+        .swiper-button-prev {
+            top: 30px;
+            left: 100px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+
+            &::after{
+                content: url("../images/show/arrow_prev.svg");
+                margin-right: 20px;
+                margin-bottom: 18px;
+            }
+        }
+
+        .swiper-button-next{
+            top: 30px;
+            right: 100px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+
+            &::after{
+                content: url("../images/show/arrow_next.svg");
+                margin-left: 20px;
+                margin-bottom: 18px;
+            }
+        }
+
+        .swiper-pagination{
+            align-items: center;
+            justify-content: center;
+            display: none;
+
+            @include media ("<desktop") {
+                display: flex;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background-color: $orange;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 21px;
+            height: 21px;
+        }
+    }
+
+    .card_slide {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .slide_img {
+        overflow: hidden;
+        border-radius: 12px;
+        margin-bottom: 25px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .card_title {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 42px;
+        color: $white;
+        margin-bottom: 15px;
+    }
+
+    .card_descr {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 130%;
+        color: $white;
+    }
+
+    .btn_wrap {
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        border: 1px solid $white;
+        width: 240px;
+        height: 70px;
+        position: relative;
+        margin: 0 auto;
+
+        &:hover {
+            .read_btn {
+                top: -1px;
+                right: -1px;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .read_btn {
+        transition: all .3s ease;
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        background-color: $orange;
+        position: absolute;
+        top: -7px;
+        right: 7px;
+        font-weight: 700;
+        font-size: 20px;
+        width: 240px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #FFFFFF;
     }
 }

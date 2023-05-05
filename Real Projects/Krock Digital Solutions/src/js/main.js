@@ -1,4 +1,5 @@
 initBurger();
+initSwiper();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -30,11 +31,54 @@ function initSwiper() {
         );
     }
 
-    destroySlidersOnResize(".me-slider", 960, {
+    destroySlidersOnResize(".project_swiper", 9999, {
         spaceBetween: 20,
-
+        autoHeight: true,
+        direction: "horizontal",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
         pagination: {
             el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        breakpoints: {
+            850: {
+                direction: "vertical",
+            },
+            mousewheel: {
+                releaseOnEdges: true,
+            },
+        },
+    });
+    destroySlidersOnResize(".show_swiper", 9999, {
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 20,
+        autoHeight: true,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            // when window width is >= 320px
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            768: {
+                spaceBetween: 30,
+            },
+            480: {
+                slidesPerView: 2.5,
+            },
         },
     });
 }
@@ -53,7 +97,10 @@ function initBurger() {
 horizontalScroll();
 
 function horizontalScroll() {
-    let screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
     if (screenWidth < 768) {
         return;
     }
