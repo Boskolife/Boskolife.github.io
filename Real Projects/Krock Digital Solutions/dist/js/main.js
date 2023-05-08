@@ -46,12 +46,12 @@ function initSwiper() {
       el: ".swiper-pagination",
       clickable: true
     },
+    mousewheel: {
+      releaseOnEdges: true
+    },
     breakpoints: {
       850: {
         direction: "vertical"
-      },
-      mousewheel: {
-        releaseOnEdges: true
       }
     }
   });
@@ -70,7 +70,6 @@ function initSwiper() {
       clickable: true
     },
     breakpoints: {
-      // when window width is >= 320px
       1024: {
         slidesPerView: 4,
         spaceBetween: 40

@@ -43,14 +43,14 @@ function initSwiper() {
             el: ".swiper-pagination",
             clickable: true,
         },
-
+        mousewheel: {
+            releaseOnEdges: true,
+        },
         breakpoints: {
             850: {
                 direction: "vertical",
             },
-            mousewheel: {
-                releaseOnEdges: true,
-            },
+           
         },
     });
     destroySlidersOnResize(".show_swiper", 9999, {
@@ -68,7 +68,6 @@ function initSwiper() {
             clickable: true,
         },
         breakpoints: {
-            // when window width is >= 320px
             1024: {
                 slidesPerView: 4,
                 spaceBetween: 40,

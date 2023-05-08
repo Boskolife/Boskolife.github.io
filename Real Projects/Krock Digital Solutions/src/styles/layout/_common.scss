@@ -1337,18 +1337,7 @@ body {
     background-color: #F6F6F6;
     @include adaptiv-vaule("margin-top", 85, 60, 1);
     position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100px;
-        background-color: #F6F6F6;
-        top: -45px;
-        left: 0;
-        z-index: -1;
-        transform: skewY(-3deg);
-    }
+    transform: skewY(-3deg);
 
     .must_haves_content {
         position: relative;
@@ -1356,6 +1345,7 @@ body {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        transform: skewY(3deg);
 
         @include media ("<desktop") {
             flex-direction: column;
@@ -1518,20 +1508,9 @@ body {
     @include adaptiv-vaule("padding-bottom", 150, 50, 1);
     background-color: $black;
     position: relative;
+    transform: skewY(-3deg);
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100px;
-        background-color: $black;
-        top: -45px;
-        left: 0;
-        z-index: 1;
-        transform: skewY(-3deg);
-    }
-
-    .crown{
+    .crown {
         position: absolute;
         top: 85%;
         left: 50px;
@@ -1551,6 +1530,7 @@ body {
     .show_content {
         position: relative;
         z-index: 1;
+        transform: skewY(3deg);
     }
 
     .orange_line {
@@ -1590,6 +1570,7 @@ body {
     .show_swiper {
         @include adaptiv-vaule("padding-bottom", 70, 100, 1);
         margin-bottom: 70px;
+        transform: skewY(3deg);
 
         .swiper-slide {
             transform: scale(0.7);
@@ -1613,14 +1594,14 @@ body {
                 display: none;
             }
 
-            &::after{
+            &::after {
                 content: url("../images/show/arrow_prev.svg");
                 margin-right: 20px;
                 margin-bottom: 18px;
             }
         }
 
-        .swiper-button-next{
+        .swiper-button-next {
             top: 30px;
             right: 100px;
             font-weight: 700;
@@ -1634,14 +1615,14 @@ body {
                 display: none;
             }
 
-            &::after{
+            &::after {
                 content: url("../images/show/arrow_next.svg");
                 margin-left: 20px;
                 margin-bottom: 18px;
             }
         }
 
-        .swiper-pagination{
+        .swiper-pagination {
             align-items: center;
             justify-content: center;
             display: none;
@@ -1729,5 +1710,238 @@ body {
         justify-content: center;
         text-align: center;
         color: #FFFFFF;
+    }
+}
+
+.contact_us {
+    @include adaptiv-vaule("padding-top", 200, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 70, 1);
+    position: relative;
+
+    .star{
+        position: absolute;
+        left: 50%;
+        top: 5%;
+
+        @include media ("<tablet") {
+            left: 85%;
+            top: 0;
+        }
+    }
+
+    .bubbles{
+        position: absolute;
+        right: 10%;
+        top: 5%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .confetti{
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .wow{
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+
+        @include media ("<tablet") {
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    .contact_body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-height: 490px;
+        position: relative;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+            max-height: 100%;
+        }
+    }
+
+    .social_links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #EDECEC;
+        border-radius: 27px 0 0 27px;
+        padding: 20px;
+        height: 490px;
+
+        @include media ("<tablet") {
+            flex-direction: row;
+            justify-content: space-around;
+            height: 100%;
+            border-radius: 0 0 27px 27px ;
+            width: 100%;
+            margin-top: -20px;
+            padding-top: 40px;
+            z-index: -1;
+        }
+    }
+
+    .link {
+        transition: all .3s ease;
+
+        @include media ("<tablet") {
+            margin: 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 50px;
+
+            @include media ("<tablet") {
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all .3s ease;
+
+            svg {
+                fill: $orange;
+                transition: all .3s ease;
+            }
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: #8F8F8F;
+            transition: all .3s ease;
+        }
+    }
+
+    form {
+        position: absolute;
+        left: 70px;
+        background: #292929;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 400px;
+        width: 100%;
+        @include adaptiv-vaule("padding-top", 40, 30, 1);
+        @include adaptiv-vaule("padding-bottom", 45, 25, 1);
+        @include adaptiv-vaule("padding-right", 50, 35, 1);
+        @include adaptiv-vaule("padding-left", 50, 35, 1);
+
+        @include media ("<tablet") {
+            position: static;
+            max-width: 100%;
+        }
+    }
+
+    .form_title {
+        font-weight: 700;
+        font-size: 25px;
+        color: $white;
+        margin-bottom: 50px;
+    }
+
+    .data_text,
+    .area_text {
+        border: none;
+        border-bottom: 1px solid #454545;
+        background-color: transparent;
+        padding-bottom: 15px;
+        width: 100%;
+        transition: all .3s ease;
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+
+        &:focus {
+            transition: all .3s ease;
+            border-bottom: 1px solid $orange;
+        }
+
+        &::placeholder {
+            font-weight: 300;
+            font-size: 16px;
+            color: #6D6D6D;
+        }
+    }
+
+    .data_text {
+        margin-bottom: 30px;
+    }
+
+    .area_text {
+        height: 125px;
+        margin-bottom: 15px;
+    }
+
+    .agree {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+        color: #6D6D6D;
+        margin-bottom: 30px;
+    }
+
+    .btn_wrap {
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        border: 1px solid $white;
+        width: 240px;
+        height: 70px;
+        position: relative;
+        margin: 0 auto;
+
+        &:hover {
+            .form_btn {
+                top: -1px;
+                right: -1px;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .form_btn {
+        transition: all .3s ease;
+        border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+        background-color: $orange;
+        border: none;
+        position: absolute;
+        top: -7px;
+        right: 7px;
+        font-weight: 700;
+        font-size: 20px;
+        width: 240px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .contact_us_img{
+
+        @include media ("<tablet") {
+            width: 100%;     
+            margin-bottom: -50px;
+
+            img{
+                width: 100%;
+            }
+        }
     }
 }
