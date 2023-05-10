@@ -37,8 +37,8 @@
                             <li class="menu_item"> <a class="menu_link" href="podcast_page.html">Podcast</a>
                             </li>
                             <li class="menu_item"> <a class="menu_link" href="blog_page.html">Blog</a></li>
-                            <li class="menu_item"> <a class="btn_item popup_btn yellow_btn" href="#">Contact
-                                    Us</a></li>
+                            <li class="menu_item"> <a class="menu_link connect_popup_btn" href="#">Contact Us</a></li>
+                            <li class="menu_item"> <a class="btn_item popup_btn yellow_btn" href="#">Guest Interview</a></li>
                         </ul>
                     </nav>
                     <div class="header_burger">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="popup_container"></div>
-            <div class="contact_popup popup_active">
+            <div class="contact_popup">
                 <div class="close_item">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +122,7 @@
                                 <h2 class="step_title">Thanks for completing the form!
                                 </h2>
                                 <div class="step_img">
-                                    <img src="./images/header/checked.svg" alt= "image not found" >
+                                    <img src="./images/header/checked.svg" alt="image not found">
                                 </div>
                                 <a href="#" class="yellow_btn step_close">Close</a>
                             </div>
@@ -143,6 +143,47 @@
                                 <progress>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="connect_popup">
+                <div class="close_item">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7 5.58579L12.2929 0.292893C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711L8.41421 7L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L7 8.41421L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" />
+                    </svg>
+                </div>
+                <div class="popup_content">
+                    <form>
+                        <div class="form_body">
+                            <div class="step_1">
+                                <h2 class="popup_title"><span class="yellow_word">Contact
+                                    </span>Us
+                                </h2>
+                                <p class="popup_descr">Thank you for your interest in being a guest on our
+                                    podcast!
+                                    Please fill out the following form so we can learn more about you and
+                                    your
+                                    expertise.</p>
+                                <div class="input_body">
+                                    <div class="input_wrap">
+                                        <label class="data_title" for="name">Enter your name*</label>
+                                        <input id="name" class="data_text" placeholder="Name" type="text">
+                                        <label class="data_title" for="mail">Enter your email*</label>
+                                        <input id="mail" class="data_text"
+                                            placeholder="Unhealthylove@gmail.com" type="email">
+                                        <label class="data_title" for="tel">Enter your phone*</label>
+                                        <input id="tel" class="data_text" placeholder="+ xx - xxx- xxx - xx"
+                                            type="tel">
+                                        <label class="data_title">Your message*</label>
+                                        <textarea class="data_text area_text" name="handles"
+                                            placeholder="Enter your message"></textarea>
+                                        <button class="form_btn yellow_btn">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </header>

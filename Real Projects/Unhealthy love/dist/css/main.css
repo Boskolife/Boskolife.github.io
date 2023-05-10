@@ -1109,7 +1109,7 @@ header .menu_item {
 
 @media (max-width: 1250px) {
   header .menu_item {
-    margin-left: calc(0px + 70 * ((100vw - calc(375px)) / 875));
+    margin-left: calc(-50px + 120 * ((100vw - calc(375px)) / 875));
   }
 }
 
@@ -1261,7 +1261,6 @@ header .contact_popup {
   height: max-content;
   width: calc(100% - 10px);
   text-align: center;
-  visibility: hidden;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1271,6 +1270,7 @@ header .contact_popup {
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 50%;
+  visibility: hidden;
   opacity: 0;
   transition: all .3s ease-out;
   /* Только если меньше контейнера */
@@ -1623,9 +1623,40 @@ header .white_btn:hover {
 
 header .yellow_btn {
   width: 130px;
-  padding: 15px;
+  /* Только если меньше контейнера */
+  padding-top: 15px;
+  /* Только если меньше контейнера */
+  padding-bottom: 15px;
+  /* Только если меньше контейнера */
+  padding-right: 15px;
+  /* Только если меньше контейнера */
+  padding-left: 15px;
   margin-right: 40px;
   margin: 0;
+}
+
+@media (max-width: 1250px) {
+  header .yellow_btn {
+    padding-top: calc(7px + 8 * ((100vw - calc(375px)) / 875));
+  }
+}
+
+@media (max-width: 1250px) {
+  header .yellow_btn {
+    padding-bottom: calc(7px + 8 * ((100vw - calc(375px)) / 875));
+  }
+}
+
+@media (max-width: 1250px) {
+  header .yellow_btn {
+    padding-right: calc(7px + 8 * ((100vw - calc(375px)) / 875));
+  }
+}
+
+@media (max-width: 1250px) {
+  header .yellow_btn {
+    padding-left: calc(7px + 8 * ((100vw - calc(375px)) / 875));
+  }
 }
 
 header .form_btn {
@@ -1731,6 +1762,57 @@ header .step_4 .step_title {
 
 header .step_4 .step_img {
   margin-bottom: 45px;
+}
+
+header .connect_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 60px 0 50px 0;
+  z-index: 10;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  max-width: 600px;
+  width: calc(100% - 30px);
+  transition: all .3s ease-out;
+  height: calc(100% - 20px);
+  overflow: auto;
+}
+
+header .connect_popup form {
+  margin: 0;
+}
+
+header .connect_popup .form_body {
+  margin: 0;
+}
+
+header .connect_popup .input_wrap {
+  width: 100%;
+}
+
+header .connect_popup .form_btn {
+  display: block;
+  margin: 0 auto;
+}
+
+header .connect_popup_active {
+  visibility: visible;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: all .3s ease-out;
+  border-radius: 0px;
+}
+
+header .popup_btn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 html {

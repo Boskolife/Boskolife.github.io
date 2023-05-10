@@ -16,6 +16,7 @@ initMainAudio();
 getCardData();
 initCircleBtn();
 updateProgressPopup();
+initConnectPopup();
 
 function initCircleBtn() {
   var circleBtn = document.querySelector(".sound_btn");
@@ -201,6 +202,52 @@ function initContactPopup() {
 
   closeBtn.addEventListener("click", function () {
     closePopup();
+  });
+  closeStep.addEventListener("click", function () {
+    closePopup();
+  });
+  popupContainer.addEventListener("click", function (e) {
+    if (e.target === popupContainer || e.target.classList.contains("close_item") == "") {
+      closePopup();
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.code === "Escape" && popupBody.classList.contains("popup_active")) {
+      closePopup();
+    }
+  });
+}
+
+function initConnectPopup() {
+  var popupBody = document.querySelector(".connect_popup");
+
+  if (!popupBody) {
+    return;
+  }
+
+  var popupContainer = document.querySelector(".popup_container");
+  var poupBtn = document.querySelectorAll(".connect_popup_btn");
+  var closeBtn = document.querySelectorAll(".close_item");
+  var closeStep = document.querySelector(".step_close");
+  poupBtn.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      popupBody.classList.add("connect_popup_active");
+      popupContainer.classList.add("cont_active");
+      document.body.classList.add("popup_lock");
+    });
+  });
+
+  function closePopup() {
+    popupBody.classList.remove("connect_popup_active");
+    popupContainer.classList.remove("cont_active");
+    document.body.classList.remove("popup_lock");
+  }
+
+  closeBtn.forEach(function (item) {
+    item.addEventListener("click", function () {
+      closePopup();
+    });
   });
   closeStep.addEventListener("click", function () {
     closePopup();

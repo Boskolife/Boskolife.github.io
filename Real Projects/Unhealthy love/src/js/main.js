@@ -8,6 +8,7 @@ initMainAudio();
 getCardData();
 initCircleBtn();
 updateProgressPopup();
+initConnectPopup();
 
 function initCircleBtn() {
     const circleBtn = document.querySelector(".sound_btn");
@@ -208,6 +209,61 @@ function initContactPopup() {
 
     closeBtn.addEventListener("click", () => {
         closePopup();
+    });
+
+    closeStep.addEventListener("click", () => {
+        closePopup();
+    });
+
+    popupContainer.addEventListener("click", (e) => {
+        if (
+            e.target === popupContainer ||
+            e.target.classList.contains("close_item") == ""
+        ) {
+            closePopup();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (
+            e.code === "Escape" &&
+            popupBody.classList.contains("popup_active")
+        ) {
+            closePopup();
+        }
+    });
+}
+
+
+function initConnectPopup() {
+    const popupBody = document.querySelector(".connect_popup");
+    if (!popupBody) {
+        return;
+    }
+    const popupContainer = document.querySelector(".popup_container");
+    const poupBtn = document.querySelectorAll(".connect_popup_btn");
+    const closeBtn = document.querySelectorAll(".close_item");
+    const closeStep = document.querySelector(".step_close");
+
+    poupBtn.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            popupBody.classList.add("connect_popup_active");
+            popupContainer.classList.add("cont_active");
+            document.body.classList.add("popup_lock");
+        });
+    });
+
+    function closePopup() {
+        popupBody.classList.remove("connect_popup_active");
+        popupContainer.classList.remove("cont_active");
+        document.body.classList.remove("popup_lock");
+    }
+
+    closeBtn.forEach((item) => {
+        item.addEventListener("click", () => {
+            closePopup();
+        });
     });
 
     closeStep.addEventListener("click", () => {
@@ -560,7 +616,6 @@ function updateProgressPopup() {
     function updateProgress() {
         let progressBar = document.getElementById("progressBar");
         let progressValue = document.getElementById("progressValue");
-
 
         let progress = (currentStep / totalSteps) * 100;
         progressBar.value = progress;

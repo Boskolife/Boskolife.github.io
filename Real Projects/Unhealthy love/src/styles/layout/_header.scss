@@ -106,7 +106,7 @@ header {
     }
 
     .menu_item {
-        @include adaptiv-vaule("margin-left", 70, 0, 1);
+        @include adaptiv-vaule("margin-left", 70, -50, 1);
 
         @include media ("<tablet_max") {
             width: 100%;
@@ -241,12 +241,12 @@ header {
         height: max-content;
         width: calc(100% - 10px);
         text-align: center;
-        visibility: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         border-radius: 50%;
+        visibility: hidden;
         opacity: 0;
         transition: all .3s ease-out;
         @include adaptiv-vaule("padding-top", 60, 60, 1);
@@ -258,6 +258,7 @@ header {
             overflow: auto;
         }
     }
+
 
     .popup_active {
         visibility: visible;
@@ -464,12 +465,15 @@ header {
 
     .yellow_btn {
         width: 130px;
-        padding: 15px;
+        @include adaptiv-vaule("padding-top", 15, 7, 1);
+        @include adaptiv-vaule("padding-bottom", 15, 7, 1);
+        @include adaptiv-vaule("padding-right", 15, 7, 1);
+        @include adaptiv-vaule("padding-left", 15, 7, 1);
         margin-right: 40px;
         margin: 0;
     }
 
-    .form_btn{
+    .form_btn {
         display: none;
     }
 
@@ -559,9 +563,57 @@ header {
             margin-bottom: 45px;
         }
 
-        .step_img{
+        .step_img {
             margin-bottom: 45px;
         }
+    }
+
+    .connect_popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        padding: 60px 0 50px 0;
+        z-index: 10;
+        border-radius: 50%;
+        visibility: hidden;
+        opacity: 0;
+        max-width: 600px;
+        width: calc(100% - 30px);
+        transition: all .3s ease-out;
+        height: calc(100% - 20px);
+        overflow: auto;
+
+        form {
+            margin: 0;
+        }
+
+
+        .form_body {
+            margin: 0;
+        }
+
+        .input_wrap {
+            width: 100%;
+        }
+
+        .form_btn {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .connect_popup_active {
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        transition: all .3s ease-out;
+        border-radius: 0px;
+    }
+
+    .popup_btn {
+        width: max-content;
     }
 
     // .checkbox_wrap {
