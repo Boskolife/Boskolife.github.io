@@ -11,6 +11,8 @@ initSwiper();
 horizontalScroll();
 
 function initSwiper() {
+  var _destroySlidersOnResi, _destroySlidersOnResi2;
+
   function destroySlidersOnResize(selector, width, obj, moreThan) {
     var init = _objectSpread({}, obj);
 
@@ -66,6 +68,7 @@ function initSwiper() {
     centeredSlides: true,
     spaceBetween: 20,
     autoHeight: true,
+    grabCursor: true,
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -101,6 +104,41 @@ function initSwiper() {
       }
     }
   });
+  destroySlidersOnResize(".case_swiper_one", 9999, (_destroySlidersOnResi = {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: 3,
+    autoplay: true,
+    speed: 1000
+  }, _defineProperty(_destroySlidersOnResi, "autoplay", {
+    delay: 2000,
+    pauseOnMouseEnter: true
+  }), _defineProperty(_destroySlidersOnResi, "breakpoints", {
+    768: {
+      slidesPerView: 3.5,
+      spaceBetween: 20
+    }
+  }), _destroySlidersOnResi));
+  destroySlidersOnResize(".case_swiper_two", 9999, (_destroySlidersOnResi2 = {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: 3,
+    autoplay: true,
+    speed: 1000
+  }, _defineProperty(_destroySlidersOnResi2, "autoplay", {
+    delay: 2000,
+    pauseOnMouseEnter: true,
+    reverseDirection: true
+  }), _defineProperty(_destroySlidersOnResi2, "breakpoints", {
+    768: {
+      slidesPerView: 3.5,
+      spaceBetween: 30
+    }
+  }), _destroySlidersOnResi2));
 }
 
 function initBurger() {

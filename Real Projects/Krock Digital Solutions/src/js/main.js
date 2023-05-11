@@ -61,6 +61,7 @@ function initSwiper() {
         centeredSlides: true,
         spaceBetween: 20,
         autoHeight: true,
+        grabCursor: true,
         loop: true,
         navigation: {
             nextEl: ".swiper-button-next",
@@ -93,6 +94,45 @@ function initSwiper() {
         breakpoints: {
             480: {
                 slidesPerView: 2,
+            },
+        },
+    });
+    destroySlidersOnResize(".case_swiper_one", 9999, {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 3,
+        autoplay: true,
+        speed: 1000,
+        autoplay: {
+            delay: 2000,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3.5,
+                spaceBetween: 20,
+            },
+        },
+    });
+    destroySlidersOnResize(".case_swiper_two", 9999, {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 3,
+        autoplay: true,
+        speed: 1000,
+        autoplay: {
+            delay: 2000,
+            pauseOnMouseEnter: true,
+            reverseDirection: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3.5,
+                spaceBetween: 30,
             },
         },
     });
