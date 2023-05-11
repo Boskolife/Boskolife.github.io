@@ -1,5 +1,6 @@
 initBurger();
 initSwiper();
+horizontalScroll();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -9,6 +10,9 @@ function initSwiper() {
 
         const win = window;
         const sliderSelector = document.querySelector(selector);
+        if (!sliderSelector) {
+            return;
+        }
         let swiper = new Swiper(selector, init);
 
         const toggleInit = () => {
@@ -50,7 +54,6 @@ function initSwiper() {
             850: {
                 direction: "vertical",
             },
-           
         },
     });
     destroySlidersOnResize(".show_swiper", 9999, {
@@ -80,6 +83,19 @@ function initSwiper() {
             },
         },
     });
+    destroySlidersOnResize(".service_swiper", 768, {
+        slidesPerView: 1,
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+            },
+        },
+    });
 }
 
 function initBurger() {
@@ -93,8 +109,6 @@ function initBurger() {
     });
 }
 
-horizontalScroll();
-
 function horizontalScroll() {
     let screenWidth =
         window.innerWidth ||
@@ -105,6 +119,10 @@ function horizontalScroll() {
     }
 
     let slides = document.querySelectorAll(".fromRight");
+    if (!slides) {
+        return;
+    }
+
     let action = gsap
         .timeline({
             scrollTrigger: {
@@ -121,5 +139,6 @@ function horizontalScroll() {
             ease: "none",
             stagger: 3,
         })
-        .to({}, { duration: 1 }); // an empty tween to generate a pause at the end
+        .to({}, { duration: 1 });
+    // an empty tween to generate a pause at the end
 }

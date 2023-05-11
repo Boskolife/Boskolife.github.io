@@ -8,6 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 initBurger();
 initSwiper();
+horizontalScroll();
 
 function initSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -15,6 +16,11 @@ function initSwiper() {
 
     var win = window;
     var sliderSelector = document.querySelector(selector);
+
+    if (!sliderSelector) {
+      return;
+    }
+
     var swiper = new Swiper(selector, init);
 
     var toggleInit = function toggleInit() {
@@ -82,6 +88,19 @@ function initSwiper() {
       }
     }
   });
+  destroySlidersOnResize(".service_swiper", 768, {
+    slidesPerView: 1,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 2
+      }
+    }
+  });
 }
 
 function initBurger() {
@@ -94,8 +113,6 @@ function initBurger() {
   });
 }
 
-horizontalScroll();
-
 function horizontalScroll() {
   var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
@@ -104,6 +121,11 @@ function horizontalScroll() {
   }
 
   var slides = document.querySelectorAll(".fromRight");
+
+  if (!slides) {
+    return;
+  }
+
   var action = gsap.timeline({
     scrollTrigger: {
       trigger: "#horizontal_scroll",
