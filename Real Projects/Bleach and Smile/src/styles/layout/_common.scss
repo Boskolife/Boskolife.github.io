@@ -122,7 +122,7 @@ body {
 
 .services {
     @include adaptiv-vaule("padding-top", 15, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 200, 7, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 85, 1);
     position: relative;
 
     .circle_left {
@@ -151,7 +151,7 @@ body {
     .ellips_right {
         position: absolute;
         right: 0;
-        top:20%;
+        top: 20%;
         background: rgba(238, 246, 254, 0.7);
         filter: blur(25px);
         width: 326px;
@@ -159,7 +159,7 @@ body {
         z-index: -1;
     }
 
-    .dots{
+    .dots {
         position: absolute;
         right: 0;
         bottom: 50px;
@@ -203,7 +203,7 @@ body {
         }
     }
 
-    .item_link{
+    .item_link {
         position: absolute;
         top: 0;
         left: 0;
@@ -228,4 +228,325 @@ body {
         font-size: 24px;
         color: $gray;
     }
+}
+
+.advantage {
+    background-color: $white;
+    position: relative;
+
+    @include media ("<desktop") {
+        padding-top: 15px;
+    }
+
+    .diamond {
+        position: absolute;
+        left: 0;
+        bottom: -60%;
+        z-index: 1;
+
+        @include media ("<desktop") {
+            bottom: -20%;
+        }
+    }
+
+    .advantage_content {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
+            align-items: center;
+            width: calc(100% - 30px);
+            margin: 0 auto;
+        }
+    }
+
+    .advantage_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+
+        @include media ("<desktop") {
+            position: static;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 750px;
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .advantage_text {
+        width: 40%;
+        text-align: start;
+
+        @include media ("<desktop") {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .advantage_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 64, 36, 1);
+        color: $gray;
+        margin-bottom: 20px;
+    }
+
+    .advantage_descr {
+        @include adaptiv-vaule("font-size", 18, 20, 1);
+        line-height: 130%;
+        color: $gray;
+        max-width: 370px;
+        @include adaptiv-vaule("margin-bottom", 125, 60, 1);
+
+        @include media ("<desktop") {
+            margin: 0 auto;
+            @include adaptiv-vaule("margin-bottom", 125, 60, 1);
+        }
+    }
+
+    .items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
+    }
+
+    .item {
+        width: 49%;
+        margin-bottom: 150px;
+        @include adaptiv-vaule("margin-bottom", 150, 60, 1);
+
+        @include media ("<desktop") {
+            text-align: center;
+        }
+    }
+
+    .item_img {
+        margin-left: 5px;
+        margin-bottom: 25px;
+        width: 78px;
+        height: 78px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.lager {
+    text-align: center;
+    @include adaptiv-vaule("padding-top", 175, 230, 1);
+    @include adaptiv-vaule("padding-bottom", 60, 130, 1);
+
+    .tip {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 36, 24, 1);
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 65, 20, 1);
+        display: inline-block;
+    }
+
+    .lager_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .hidden {
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
+    .visible {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .lager_img {
+        position: relative;
+        @include adaptiv-vaule("width", 507, 335, 1);
+        @include adaptiv-vaule("height", 507, 335, 1);
+        margin-right: 30px;
+
+        @include media ("<tablet") {
+            margin: 0 0 60px 0;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            @include adaptiv-vaule("width", 507, 335, 1);
+            @include adaptiv-vaule("height", 507, 335, 1);
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        &::after {
+            bottom: -3px;
+            right: -3px;
+            background-color: $rose;
+        }
+
+        &::before {
+            top: -3px;
+            left: -3px;
+            background-color: $blue;
+        }
+
+        img {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+
+    .lager_text {
+        width: 48%;
+        text-align: start;
+
+        @include media ("<tablet") {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .lager_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 38, 36, 1);
+        color: $black;
+        margin-bottom: 45px;
+    }
+
+    .lager_descr {
+        @include adaptiv-vaule("font-size", 18, 20, 1);
+        line-height: 140%;
+        color: $black;
+        max-width: 430px;
+        margin-bottom: 55px;
+    }
+
+    .blue_btn {
+        max-width: 350px;
+    }
+}
+
+.reviews {
+    @include adaptiv-vaule("padding-top", 175, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 155, 45, 1);
+    position: relative;
+    text-align: center;
+
+    .reviews_title {
+        font-weight: 700;
+        font-size: 36px;
+        color: $black;
+        margin-bottom: 100px;
+        @include adaptiv-vaule("margin-bottom", 175, 230, 1);
+    }
+
+    .reviews_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .reviews_swiper {
+        width: 30%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 70px;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+        .swiper-button-prev {
+            top: 30%;
+            left: 10px;
+            transform: rotateZ(90deg);
+        }
+
+        .swiper-button-next {
+            top: 70%;
+            left: 10px;
+            transform: rotateZ(90deg);
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: start;
+    }
+
+    .card_title {
+        font-weight: 700;
+        font-size: 48px;
+        color: $black;
+        margin-bottom: 20px;
+    }
+
+    .date {
+        font-size: 18px;
+        color: $black;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .card_descr {
+        font-size: 18px;
+        line-height: 150%;
+        color: $black;
+    }
+
+    .button_wrap {
+        width: 30px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .reviews_img {
+        width: 70%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+
 }

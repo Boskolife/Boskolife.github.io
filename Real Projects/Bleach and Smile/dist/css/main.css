@@ -1023,7 +1023,7 @@ body {
       padding-top: calc(50px + -35 * ((100vw - calc(375px)) / 955)); } }
   @media (max-width: 1330px) {
     .services {
-      padding-bottom: calc(7px + 193 * ((100vw - calc(375px)) / 955)); } }
+      padding-bottom: calc(85px + 115 * ((100vw - calc(375px)) / 955)); } }
   .services .circle_left {
     position: absolute;
     left: 0;
@@ -1119,5 +1119,336 @@ body {
     font-weight: 700;
     font-size: 24px;
     color: #4F4F4F; }
+
+.advantage {
+  background-color: #ffffff;
+  position: relative; }
+  @media (max-width: 1023px) {
+    .advantage {
+      padding-top: 15px; } }
+  .advantage .diamond {
+    position: absolute;
+    left: 0;
+    bottom: -60%;
+    z-index: 1; }
+    @media (max-width: 1023px) {
+      .advantage .diamond {
+        bottom: -20%; } }
+  .advantage .advantage_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative; }
+    @media (max-width: 1023px) {
+      .advantage .advantage_content {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        -ms-flex-align: center;
+        align-items: center;
+        width: calc(100% - 30px);
+        margin: 0 auto; } }
+  .advantage .advantage_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%; }
+    @media (max-width: 1023px) {
+      .advantage .advantage_img {
+        position: static;
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 750px;
+        width: 100%;
+        height: auto; } }
+    .advantage .advantage_img img {
+      width: 100%;
+      height: 100%; }
+  .advantage .advantage_text {
+    width: 40%;
+    text-align: start; }
+    @media (max-width: 1023px) {
+      .advantage .advantage_text {
+        width: 100%;
+        text-align: center; } }
+  .advantage .advantage_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 64px;
+    color: #4F4F4F;
+    margin-bottom: 20px; }
+    @media (max-width: 1330px) {
+      .advantage .advantage_title {
+        font-size: calc(36px + 28 * ((100vw - calc(375px)) / 955)); } }
+  .advantage .advantage_descr {
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 130%;
+    color: #4F4F4F;
+    max-width: 370px;
+    /* Только если меньше контейнера */
+    margin-bottom: 125px; }
+    @media (max-width: 1330px) {
+      .advantage .advantage_descr {
+        font-size: calc(20px + -2 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .advantage .advantage_descr {
+        margin-bottom: calc(60px + 65 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .advantage .advantage_descr {
+        margin: 0 auto;
+        /* Только если меньше контейнера */
+        margin-bottom: 125px; } }
+  @media (max-width: 1023px) and (max-width: 1330px) {
+    .advantage .advantage_descr {
+      margin-bottom: calc(60px + 65 * ((100vw - calc(375px)) / 955)); } }
+  .advantage .items {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    @media (max-width: 1023px) {
+      .advantage .items {
+        -ms-flex-pack: center;
+        justify-content: center; } }
+  .advantage .item {
+    width: 49%;
+    margin-bottom: 150px;
+    /* Только если меньше контейнера */
+    margin-bottom: 150px; }
+    @media (max-width: 1330px) {
+      .advantage .item {
+        margin-bottom: calc(60px + 90 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .advantage .item {
+        text-align: center; } }
+  .advantage .item_img {
+    margin-left: 5px;
+    margin-bottom: 25px;
+    width: 78px;
+    height: 78px;
+    overflow: hidden; }
+    @media (max-width: 1023px) {
+      .advantage .item_img {
+        margin: 0 auto;
+        margin-bottom: 25px; } }
+
+.lager {
+  text-align: center;
+  /* Только если меньше контейнера */
+  padding-top: 175px;
+  /* Только если меньше контейнера */
+  padding-bottom: 60px; }
+  @media (max-width: 1330px) {
+    .lager {
+      padding-top: calc(230px + -55 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .lager {
+      padding-bottom: calc(130px + -70 * ((100vw - calc(375px)) / 955)); } }
+  .lager .tip {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    color: #000000;
+    /* Только если меньше контейнера */
+    margin-bottom: 65px;
+    display: inline-block; }
+    @media (max-width: 1330px) {
+      .lager .tip {
+        font-size: calc(24px + 12 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .lager .tip {
+        margin-bottom: calc(20px + 45 * ((100vw - calc(375px)) / 955)); } }
+  .lager .lager_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 767px) {
+      .lager .lager_content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .lager .hidden {
+    display: none; }
+    @media (max-width: 767px) {
+      .lager .hidden {
+        display: block; } }
+  @media (max-width: 767px) {
+    .lager .visible {
+      display: none; } }
+  .lager .lager_img {
+    position: relative;
+    /* Только если меньше контейнера */
+    width: 507px;
+    /* Только если меньше контейнера */
+    height: 507px;
+    margin-right: 30px; }
+    @media (max-width: 1330px) {
+      .lager .lager_img {
+        width: calc(335px + 172 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .lager .lager_img {
+        height: calc(335px + 172 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .lager .lager_img {
+        margin: 0 0 60px 0; } }
+    .lager .lager_img::after, .lager .lager_img::before {
+      content: '';
+      position: absolute;
+      /* Только если меньше контейнера */
+      width: 507px;
+      /* Только если меньше контейнера */
+      height: 507px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: -1; }
+      @media (max-width: 1330px) {
+        .lager .lager_img::after, .lager .lager_img::before {
+          width: calc(335px + 172 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .lager .lager_img::after, .lager .lager_img::before {
+          height: calc(335px + 172 * ((100vw - calc(375px)) / 955)); } }
+    .lager .lager_img::after {
+      bottom: -3px;
+      right: -3px;
+      background-color: #EC008C; }
+    .lager .lager_img::before {
+      top: -3px;
+      left: -3px;
+      background-color: #0088CC; }
+    .lager .lager_img img {
+      border-radius: 50%;
+      overflow: hidden; }
+  .lager .lager_text {
+    width: 48%;
+    text-align: start; }
+    @media (max-width: 767px) {
+      .lager .lager_text {
+        width: 100%;
+        text-align: center; } }
+  .lager .lager_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 38px;
+    color: #000000;
+    margin-bottom: 45px; }
+    @media (max-width: 1330px) {
+      .lager .lager_title {
+        font-size: calc(36px + 2 * ((100vw - calc(375px)) / 955)); } }
+  .lager .lager_descr {
+    /* Только если меньше контейнера */
+    font-size: 18px;
+    line-height: 140%;
+    color: #000000;
+    max-width: 430px;
+    margin-bottom: 55px; }
+    @media (max-width: 1330px) {
+      .lager .lager_descr {
+        font-size: calc(20px + -2 * ((100vw - calc(375px)) / 955)); } }
+  .lager .blue_btn {
+    max-width: 350px; }
+
+.reviews {
+  /* Только если меньше контейнера */
+  padding-top: 175px;
+  /* Только если меньше контейнера */
+  padding-bottom: 155px;
+  position: relative;
+  text-align: center; }
+  @media (max-width: 1330px) {
+    .reviews {
+      padding-top: calc(50px + 125 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .reviews {
+      padding-bottom: calc(45px + 110 * ((100vw - calc(375px)) / 955)); } }
+  .reviews .reviews_title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 100px;
+    /* Только если меньше контейнера */
+    margin-bottom: 175px; }
+    @media (max-width: 1330px) {
+      .reviews .reviews_title {
+        margin-bottom: calc(230px + -55 * ((100vw - calc(375px)) / 955)); } }
+  .reviews .reviews_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .reviews .reviews_content {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+  .reviews .reviews_swiper {
+    width: 30%;
+    height: 300px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 70px; }
+    @media (max-width: 1023px) {
+      .reviews .reviews_swiper {
+        width: 100%; } }
+    .reviews .reviews_swiper .swiper-button-prev {
+      top: 30%;
+      left: 10px;
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg); }
+    .reviews .reviews_swiper .swiper-button-next {
+      top: 70%;
+      left: 10px;
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg); }
+  .reviews .card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: start; }
+  .reviews .card_title {
+    font-weight: 700;
+    font-size: 48px;
+    color: #000000;
+    margin-bottom: 20px; }
+  .reviews .date {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 20px;
+    display: inline-block; }
+  .reviews .card_descr {
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000; }
+  .reviews .button_wrap {
+    width: 30px;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .reviews .reviews_img {
+    width: 70%; }
+    @media (max-width: 1023px) {
+      .reviews .reviews_img {
+        width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
