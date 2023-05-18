@@ -15,6 +15,11 @@ function ininSwiper() {
 
     var win = window;
     var sliderSelector = document.querySelector(selector);
+
+    if (!sliderSelector) {
+      return;
+    }
+
     var swiper = new Swiper(selector, init);
 
     var toggleInit = function toggleInit() {
@@ -36,10 +41,15 @@ function ininSwiper() {
 
   destroySlidersOnResize(".reviews_swiper", 9999, {
     spaceBetween: 20,
-    direction: "vertical",
+    direction: "horizontal",
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+      1024: {
+        direction: "vertical"
+      }
     }
   });
 }

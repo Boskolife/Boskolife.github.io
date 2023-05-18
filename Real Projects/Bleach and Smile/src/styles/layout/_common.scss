@@ -457,16 +457,43 @@ body {
 
 .reviews {
     @include adaptiv-vaule("padding-top", 175, 50, 1);
-    @include adaptiv-vaule("padding-bottom", 155, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 315, 45, 1);
     position: relative;
     text-align: center;
+    overflow: hidden;
+
+    .lines {
+        position: absolute;
+        left: 0;
+        top: -50px;
+        z-index: -1;
+    }
+
+    .circle {
+        position: absolute;
+        background-color: #DDEEFE;
+        @include adaptiv-vaule("width", 333, 145, 1);
+        @include adaptiv-vaule("height", 333, 145, 1);
+        border-radius: 50%;
+        bottom: 0;
+        left: 30%;
+
+        @include media ("<desktop") {
+            left: 85%;
+            bottom: 300px;
+        }
+
+        @include media ("<phone") {
+            bottom: 195px;
+        }
+    }
 
     .reviews_title {
         font-weight: 700;
         font-size: 36px;
         color: $black;
         margin-bottom: 100px;
-        @include adaptiv-vaule("margin-bottom", 175, 230, 1);
+        @include adaptiv-vaule("margin-bottom", 175, 80, 1);
     }
 
     .reviews_content {
@@ -489,18 +516,38 @@ body {
 
         @include media ("<desktop") {
             width: 100%;
+            height: 250px;
+            padding: 0;
         }
 
         .swiper-button-prev {
-            top: 30%;
+            top: 25%;
             left: 10px;
-            transform: rotateZ(90deg);
+
+            @include media ("<desktop") {
+                left: 70%;
+                top: 10%;
+                transform: rotateZ(-90deg);
+            }
+
+            &::after {
+                content: url(../images/reviews/arrow_prev.svg)
+            }
         }
 
         .swiper-button-next {
-            top: 70%;
+            top: 60%;
             left: 10px;
-            transform: rotateZ(90deg);
+
+            @include media ("<desktop") {
+                left: 90%;
+                top: 10%;
+                transform: rotateZ(-90deg);
+            }
+
+            &::after {
+                content: url(../images/reviews/arrow_next.svg)
+            }
         }
     }
 
@@ -541,12 +588,123 @@ body {
     }
 
     .reviews_img {
-        width: 70%;
+        width: 65%;
+        margin-left: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
 
         @include media ("<desktop") {
+            width: 100%;
+            margin: 0 0 50px 0;
+        }
+
+        .reviews_img_first {
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews_img_second {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+        }
+
+        .reviews_img_third {
+            position: absolute;
+            top: -150px;
+            left: 0px;
+        }
+
+        .reviews_img_fourth {
+            position: absolute;
+            z-index: 2;
+            top: -40px;
+            right: 130px;
+        }
+
+        .reviews_img_fifth {
+            position: absolute;
+            z-index: 2;
+            bottom: -100px;
+            right: 160px;
+        }
+
+        .reviews_img_sixth {
+            position: absolute;
+            left: 100px;
+            bottom: -200px;
+        }
+    }
+}
+
+.contact {
+    @include adaptiv-vaule("padding-top", 35, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 60, 1);
+
+    .contact_content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include media ("<desktop") {
+            flex-wrap: wrap;
+           justify-content: center;
+           align-items: center;
+        }
+    }
+
+    .contact_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 36, 20, 1);
+        color: $black;
+        width: 35%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        @include media ("<phone_max") {
+            text-align: start;
+        }
+    }
+
+    .link {
+        width: 30%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        @include media ("<desktop") {
+            width: 45%;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        @include media ("<phone_max") {
             width: 100%;
         }
     }
 
+    .link_text {
+        font-weight: 500;
+        @include adaptiv-vaule("font-size", 32, 20, 1);
+        color: $black;
 
+    }
+
+    .contact_img {
+        margin-bottom: 40px;
+        width: 50px;
+        height: 50px;
+
+        @include media ("<desktop") {
+            margin: 0 20px 0 0;
+        }
+    }
 }
