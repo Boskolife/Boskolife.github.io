@@ -1897,4 +1897,270 @@ body {
       border-radius: 50%;
       background-color: #4F4F4F; }
 
+.home_bleachingh {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px;
+  position: relative;
+  z-index: 2; }
+  @media (max-width: 1330px) {
+    .home_bleachingh {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .home_bleachingh {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .home_bleachingh .main_img {
+    width: 100%;
+    /* Только если меньше контейнера */
+    height: 620px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px; }
+    @media (max-width: 1330px) {
+      .home_bleachingh .main_img {
+        height: calc(325px + 295 * ((100vw - calc(375px)) / 955)); } }
+    .home_bleachingh .main_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .home_bleachingh .main_descr {
+    font-weight: 400;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .home_bleachingh .main_descr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
+.price_section {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .price_section {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .price_section {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .price_section .service_title_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 35px; }
+    @media (max-width: 1023px) {
+      .price_section .service_title_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .price_section .title {
+    max-width: 880px;
+    width: 100%;
+    margin-right: 30px;
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .price_section .title {
+        font-size: calc(26px + 6 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .price_section .title {
+        margin-bottom: 25px; } }
+  .price_section .price {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 48px;
+    color: #0088CC; }
+    @media (max-width: 1330px) {
+      .price_section .price {
+        font-size: calc(36px + 12 * ((100vw - calc(375px)) / 955)); } }
+  .price_section .tip_wrap {
+    margin-bottom: 35px; }
+  .price_section .tip {
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F;
+    max-width: 840px;
+    width: 100%; }
+    @media (max-width: 1330px) {
+      .price_section .tip {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+  .price_section .jewellery_service {
+    /* Только если меньше контейнера */
+    padding-bottom: 80px;
+    border-bottom: 1px dashed #9F9F9F; }
+    @media (max-width: 1330px) {
+      .price_section .jewellery_service {
+        padding-bottom: calc(55px + 25 * ((100vw - calc(375px)) / 955)); } }
+    .price_section .jewellery_service:not(:last-child) {
+      margin-bottom: 60px; }
+  .price_section .service_list_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 767px) {
+      .price_section .service_list_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .price_section .service_list {
+    width: 47%; }
+    @media (max-width: 767px) {
+      .price_section .service_list {
+        width: 100%; }
+        .price_section .service_list:first-child {
+          margin-bottom: 35px; } }
+  .price_section .list_item {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F;
+    position: relative;
+    padding-left: 20px; }
+    .price_section .list_item::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #4F4F4F; }
+
+.bleaching_descr {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .bleaching_descr {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .bleaching_descr {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .bleaching_descr .text_one,
+  .bleaching_descr .text_two,
+  .bleaching_descr .text_three {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* Только если меньше контейнера */
+    margin-bottom: 100px;
+    gap: 20px; }
+    @media (max-width: 1330px) {
+      .bleaching_descr .text_one,
+      .bleaching_descr .text_two,
+      .bleaching_descr .text_three {
+        margin-bottom: calc(90px + 10 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .bleaching_descr .text_one,
+      .bleaching_descr .text_two,
+      .bleaching_descr .text_three {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .bleaching_descr .text_one .text_wrap,
+    .bleaching_descr .text_two .text_wrap,
+    .bleaching_descr .text_three .text_wrap {
+      width: 55%; }
+      @media (max-width: 1023px) {
+        .bleaching_descr .text_one .text_wrap,
+        .bleaching_descr .text_two .text_wrap,
+        .bleaching_descr .text_three .text_wrap {
+          width: 100%; } }
+    .bleaching_descr .text_one .text_img,
+    .bleaching_descr .text_two .text_img,
+    .bleaching_descr .text_three .text_img {
+      width: 40%;
+      /* Только если меньше контейнера */
+      height: 800px;
+      border-radius: 25px;
+      overflow: hidden; }
+      @media (max-width: 1330px) {
+        .bleaching_descr .text_one .text_img,
+        .bleaching_descr .text_two .text_img,
+        .bleaching_descr .text_three .text_img {
+          height: calc(495px + 305 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .bleaching_descr .text_one .text_img,
+        .bleaching_descr .text_two .text_img,
+        .bleaching_descr .text_three .text_img {
+          width: 100%; } }
+      .bleaching_descr .text_one .text_img img,
+      .bleaching_descr .text_two .text_img img,
+      .bleaching_descr .text_three .text_img img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+  @media (max-width: 1023px) {
+    .bleaching_descr .visible {
+      display: none; } }
+  .bleaching_descr .hidden {
+    display: none; }
+    @media (max-width: 1023px) {
+      .bleaching_descr .hidden {
+        display: block; } }
+  @media (max-width: 1023px) {
+    .bleaching_descr .text_one {
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; } }
+  .bleaching_descr .text_two .text_img {
+    /* Только если меньше контейнера */
+    height: 540px; }
+    @media (max-width: 1330px) {
+      .bleaching_descr .text_two .text_img {
+        height: calc(335px + 205 * ((100vw - calc(375px)) / 955)); } }
+  .bleaching_descr .text_three {
+    margin-bottom: 0; }
+    @media (max-width: 1023px) {
+      .bleaching_descr .text_three {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+    .bleaching_descr .text_three .img_wrap {
+      width: 40%; }
+      @media (max-width: 1023px) {
+        .bleaching_descr .text_three .img_wrap {
+          width: 100%; } }
+    .bleaching_descr .text_three .text_img {
+      width: 100%;
+      /* Только если меньше контейнера */
+      height: 615px; }
+      @media (max-width: 1330px) {
+        .bleaching_descr .text_three .text_img {
+          height: calc(380px + 235 * ((100vw - calc(375px)) / 955)); } }
+    .bleaching_descr .text_three .first {
+      /* Только если меньше контейнера */
+      margin-bottom: 60px; }
+      @media (max-width: 1330px) {
+        .bleaching_descr .text_three .first {
+          margin-bottom: calc(35px + 25 * ((100vw - calc(375px)) / 955)); } }
+  .bleaching_descr .text_title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #4F4F4F;
+    margin-bottom: 25px; }
+  .bleaching_descr .text_descr {
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .bleaching_descr .text_descr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
 /*# sourceMappingURL=main.css.map */
