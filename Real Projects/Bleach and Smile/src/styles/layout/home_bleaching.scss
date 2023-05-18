@@ -150,8 +150,12 @@
             }
         }
 
-        .text_img {
+        .img_wrap{
             width: 40%;
+        }
+
+        .text_img {
+            width: 100%;
             @include adaptiv-vaule("height", 800, 495, 1);
             border-radius: 25px;
             overflow: hidden;

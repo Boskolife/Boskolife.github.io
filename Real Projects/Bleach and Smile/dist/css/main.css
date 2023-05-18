@@ -2081,10 +2081,14 @@ body {
         .bleaching_descr .text_two .text_wrap,
         .bleaching_descr .text_three .text_wrap {
           width: 100%; } }
+    .bleaching_descr .text_one .img_wrap,
+    .bleaching_descr .text_two .img_wrap,
+    .bleaching_descr .text_three .img_wrap {
+      width: 40%; }
     .bleaching_descr .text_one .text_img,
     .bleaching_descr .text_two .text_img,
     .bleaching_descr .text_three .text_img {
-      width: 40%;
+      width: 100%;
       /* Только если меньше контейнера */
       height: 800px;
       border-radius: 25px;
