@@ -738,7 +738,7 @@ header {
     -ms-flex-align: center;
     align-items: center;
     position: relative;
-    z-index: 3; }
+    z-index: 4; }
     header .dropbtn img {
       margin-left: 8px;
       transition: all .3s ease; }
@@ -762,7 +762,7 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease;
-    z-index: 2; }
+    z-index: 3; }
     @media (max-width: 1023px) {
       header .dropdown-content {
         position: static;
@@ -2166,5 +2166,425 @@ body {
     @media (max-width: 1330px) {
       .bleaching_descr .text_descr {
         font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
+.teeth_whitening {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px;
+  position: relative;
+  z-index: 2; }
+  @media (max-width: 1330px) {
+    .teeth_whitening {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .teeth_whitening {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .teeth_whitening .main_img {
+    width: 100%;
+    /* Только если меньше контейнера */
+    height: 620px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px; }
+    @media (max-width: 1330px) {
+      .teeth_whitening .main_img {
+        height: calc(325px + 295 * ((100vw - calc(375px)) / 955)); } }
+    .teeth_whitening .main_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .teeth_whitening .main_descr {
+    font-weight: 400;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .teeth_whitening .main_descr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
+.teeth_whitening_price {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .teeth_whitening_price {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .teeth_whitening_price {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .teeth_whitening_price .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+    @media (max-width: 1023px) {
+      .teeth_whitening_price .content {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center; } }
+  .teeth_whitening_price .price_list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 48%; }
+    @media (max-width: 1023px) {
+      .teeth_whitening_price .price_list {
+        width: 100%; } }
+  .teeth_whitening_price .price_title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #4F4F4F;
+    margin-bottom: 5px; }
+  .teeth_whitening_price .price_descr {
+    font-size: 20px;
+    color: #9F9F9F;
+    /* Только если меньше контейнера */
+    margin-bottom: 55px; }
+    @media (max-width: 1330px) {
+      .teeth_whitening_price .price_descr {
+        margin-bottom: calc(35px + 20 * ((100vw - calc(375px)) / 955)); } }
+  .teeth_whitening_price .items_list {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .teeth_whitening_price .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #4F4F4F; }
+    @media (max-width: 599px) {
+      .teeth_whitening_price .item {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    @media (max-width: 479px) {
+      .teeth_whitening_price .item {
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .teeth_whitening_price .item_title,
+  .teeth_whitening_price .item_price,
+  .teeth_whitening_price .item_descr {
+    font-size: 20px;
+    color: #000000; }
+    @media (max-width: 599px) {
+      .teeth_whitening_price .item_title,
+      .teeth_whitening_price .item_price,
+      .teeth_whitening_price .item_descr {
+        color: #4F4F4F; } }
+  @media (max-width: 599px) {
+    .teeth_whitening_price .item_title {
+      margin-bottom: 10px; } }
+  @media (max-width: 599px) {
+    .teeth_whitening_price .item_descr {
+      margin-bottom: 20px;
+      color: #9F9F9F; } }
+
+.facts {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .facts {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .facts {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .facts .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .facts .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .facts .facts_text {
+    width: 55%; }
+    @media (max-width: 1023px) {
+      .facts .facts_text {
+        width: 100%;
+        margin-bottom: 50px; } }
+  .facts .facts_title {
+    font-weight: 700;
+    font-size: 64px;
+    /* Только если меньше контейнера */
+    font-size: 64px;
+    /* Только если меньше контейнера */
+    margin-bottom: 95px;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .facts .facts_title {
+        font-size: calc(36px + 28 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .facts .facts_title {
+        margin-bottom: calc(35px + 60 * ((100vw - calc(375px)) / 955)); } }
+  .facts .facts_img {
+    width: 45%;
+    /* Только если меньше контейнера */
+    height: 1060px;
+    margin-right: -70px;
+    border-radius: 20px;
+    overflow: hidden; }
+    @media (max-width: 1330px) {
+      .facts .facts_img {
+        height: calc(515px + 545 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .facts .facts_img {
+        width: 70%;
+        margin: 0; } }
+    @media (max-width: 599px) {
+      .facts .facts_img {
+        width: 100%; } }
+    .facts .facts_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .facts .facts_items {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    /* Только если меньше контейнера */
+    column-gap: 30px;
+    /* Только если меньше контейнера */
+    row-gap: 155px; }
+    @media (max-width: 1330px) {
+      .facts .facts_items {
+        -webkit-column-gap: calc(0px + 30 * ((100vw - calc(375px)) / 955));
+        -moz-column-gap: calc(0px + 30 * ((100vw - calc(375px)) / 955));
+        column-gap: calc(0px + 30 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .facts .facts_items {
+        row-gap: calc(50px + 105 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 599px) {
+      .facts .facts_items {
+        grid-template: 1fr / 1fr; } }
+  .facts .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  .facts .item_img {
+    width: 78px;
+    height: 78px;
+    margin-right: 25px; }
+  .facts .item_title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #4F4F4F;
+    margin-bottom: 10px; }
+  .facts .item_descr {
+    font-size: 18px;
+    color: #4F4F4F; }
+
+.whitening_text {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .whitening_text {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .whitening_text {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .whitening_text .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .whitening_text .text_block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+    @media (max-width: 1023px) {
+      .whitening_text .text_block {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .whitening_text .text_block:nth-child(even) {
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse; }
+      @media (max-width: 1023px) {
+        .whitening_text .text_block:nth-child(even) {
+          -ms-flex-direction: column;
+          flex-direction: column; } }
+    .whitening_text .text_block:not(:last-child) {
+      margin-bottom: 80px; }
+  .whitening_text .item_img {
+    width: 555px;
+    height: 555px;
+    /* Только если меньше контейнера */
+    width: 555px;
+    /* Только если меньше контейнера */
+    height: 555px;
+    border-radius: 25px;
+    overflow: hidden; }
+    @media (max-width: 1330px) {
+      .whitening_text .item_img {
+        width: calc(345px + 210 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .whitening_text .item_img {
+        height: calc(345px + 210 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .whitening_text .item_img {
+        width: 100%; } }
+    .whitening_text .item_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .whitening_text .item_text {
+    width: 50%; }
+    @media (max-width: 1023px) {
+      .whitening_text .item_text {
+        width: 100%; } }
+  .whitening_text .item_title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #4F4F4F;
+    margin-bottom: 30px; }
+  .whitening_text .item_descr {
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+
+.methods {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px;
+  position: relative;
+  z-index: 2; }
+  @media (max-width: 1330px) {
+    .methods {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .methods {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .methods .methods_title {
+    font-size: 36px;
+    color: #4F4F4F;
+    text-align: center;
+    /* Только если меньше контейнера */
+    margin-bottom: 105px; }
+    @media (max-width: 1330px) {
+      .methods .methods_title {
+        margin-bottom: calc(35px + 70 * ((100vw - calc(375px)) / 955)); } }
+  .methods .methods_img {
+    width: 100%;
+    /* Только если меньше контейнера */
+    height: 620px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px; }
+    @media (max-width: 1330px) {
+      .methods .methods_img {
+        height: calc(325px + 295 * ((100vw - calc(375px)) / 955)); } }
+    .methods .methods_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .methods .methods_descr {
+    font-weight: 400;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .methods .methods_descr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
+.result {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .result {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .result {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .result .result_title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 100px;
+    text-align: center; }
+    @media (max-width: 1330px) {
+      .result .result_title {
+        margin-bottom: calc(35px + 65 * ((100vw - calc(375px)) / 955)); } }
+  .result .image-container {
+    position: relative;
+    width: 500px;
+    /* Замените на желаемую ширину контейнера */
+    height: 300px;
+    /* Замените на желаемую высоту контейнера */
+    overflow: hidden; }
+  .result .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .result .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: -webkit-clip-path 0.3s ease;
+    transition: clip-path 0.3s ease;
+    transition: clip-path 0.3s ease, -webkit-clip-path 0.3s ease; }
+  .result .slider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 5px;
+    /* Замените на желаемую ширину ползунка */
+    height: 100%;
+    /* Замените на желаемую высоту ползунка */
+    background-color: #333;
+    /* Замените на желаемый цвет ползунка */
+    cursor: ew-resize;
+    z-index: 1; }
+  .result .dragging {
+    cursor: ew-resize; }
 
 /*# sourceMappingURL=main.css.map */

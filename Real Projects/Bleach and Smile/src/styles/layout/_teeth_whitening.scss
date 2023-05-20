@@ -1,0 +1,376 @@
+.teeth_whitening {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+    position: relative;
+    z-index: 2;
+
+    .main_img {
+        width: 100%;
+        @include adaptiv-vaule("height", 620, 325, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .main_descr {
+        font-weight: 400;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        line-height: 150%;
+        color: $gray;
+    }
+}
+
+.teeth_whitening_price {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .price_list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 48%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .price_title {
+        font-weight: 700;
+        font-size: 32px;
+        color: $gray;
+        margin-bottom: 5px;
+    }
+
+    .price_descr {
+        font-size: 20px;
+        color: #9F9F9F;
+        @include adaptiv-vaule("margin-bottom", 55, 35, 1);
+    }
+
+    .items_list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed $gray;
+
+        @include media ("<phone_max") {
+            flex-direction: column;
+        }
+
+        @include media ("<phone") {
+            align-items: flex-start;
+        }
+    }
+
+    .item_title,
+    .item_price,
+    .item_descr {
+        font-size: 20px;
+        color: #000000;
+
+        @include media ("<phone_max") {
+            color: $gray;
+        }
+
+    }
+
+    .item_title {
+        @include media ("<phone_max") {
+            margin-bottom: 10px;
+        }
+    }
+
+    .item_descr {
+        @include media ("<phone_max") {
+            margin-bottom: 20px;
+            color: #9F9F9F;
+        }
+    }
+}
+
+.facts {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .facts_text {
+        width: 55%;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    .facts_title {
+        font-weight: 700;
+        font-size: 64px;
+        @include adaptiv-vaule("font-size", 64, 36, 1);
+        @include adaptiv-vaule("margin-bottom", 95, 35, 1);
+        color: $gray;
+    }
+
+    .facts_img {
+        width: 45%;
+        @include adaptiv-vaule("height", 1060, 515, 1);
+        margin-right: -70px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            width: 70%;
+            margin: 0;
+        }
+
+        @include media ("<phone_max") {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .facts_items {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        column-gap: 30px;
+        @include adaptiv-vaule("column-gap", 30, 0, 1);
+        @include adaptiv-vaule("row-gap", 155, 50, 1);
+
+        @include media ("<phone_max") {
+            grid-template: 1fr / 1fr;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+    }
+
+    .item_img {
+        width: 78px;
+        height: 78px;
+        margin-right: 25px;
+    }
+
+    .item_title {
+        font-weight: 700;
+        font-size: 24px;
+        color: $gray;
+        margin-bottom: 10px;
+    }
+
+    .item_descr {
+        font-size: 18px;
+        color: $gray;
+    }
+}
+
+.whitening_text {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .text_block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ("<desktop") {
+                flex-direction: column;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 80px;
+        }
+    }
+
+    .item_img {
+        width: 555px;
+        height: 555px;
+        @include adaptiv-vaule("width", 555, 345, 1);
+        @include adaptiv-vaule("height", 555, 345, 1);
+        border-radius: 25px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .item_text {
+        width: 50%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
+    }
+
+    .item_title {
+        font-weight: 700;
+        font-size: 36px;
+        color: $gray;
+        margin-bottom: 30px;
+    }
+
+    .item_descr {
+        font-size: 24px;
+        line-height: 150%;
+        color: $gray;
+    }
+}
+
+.methods {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+    position: relative;
+    z-index: 2;
+
+    .methods_title {
+        font-size: 36px;
+        color: $gray;
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 105, 35, 1);
+    }
+
+    .methods_img {
+        width: 100%;
+        @include adaptiv-vaule("height", 620, 325, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .methods_descr {
+        font-weight: 400;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        line-height: 150%;
+        color: $gray;
+    }
+}
+
+.result {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .result_title {
+        font-weight: 700;
+        font-size: 36px;
+        color: $gray;
+        @include adaptiv-vaule("margin-bottom", 100, 35, 1);
+        text-align: center;
+    }
+
+    .image-container {
+        position: relative;
+        width: 500px;
+        /* Замените на желаемую ширину контейнера */
+        height: 300px;
+        /* Замените на желаемую высоту контейнера */
+        overflow: hidden;
+    }
+
+    .image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: clip-path 0.3s ease;
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        /* Замените на желаемую ширину ползунка */
+        height: 100%;
+        /* Замените на желаемую высоту ползунка */
+        background-color: #333;
+        /* Замените на желаемый цвет ползунка */
+        cursor: ew-resize;
+        z-index: 1;
+    }
+
+    .dragging {
+        cursor: ew-resize;
+    }
+
+}
