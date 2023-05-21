@@ -379,6 +379,12 @@ th {
 
 @font-face {
   font-family: "SFProDisplay";
+  src: url("../fonts/SFProDisplay-Medium.ttf");
+  font-style: normal;
+  font-weight: 500; }
+
+@font-face {
+  font-family: "SFProDisplay";
   src: url("../fonts/SFProDisplay-Bold.ttf");
   font-style: normal;
   font-weight: 700; }
@@ -2947,5 +2953,353 @@ body {
     @media (max-width: 767px) {
       .contact_main_section .main_text {
         display: block; } }
+
+.welcome {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 90px; }
+  @media (max-width: 1330px) {
+    .welcome {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .welcome {
+      padding-bottom: calc(40px + 50 * ((100vw - calc(375px)) / 955)); } }
+  .welcome .tip {
+    text-align: center;
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    color: #4F4F4F;
+    margin-bottom: 25px; }
+    @media (max-width: 1330px) {
+      .welcome .tip {
+        font-size: calc(26px + 10 * ((100vw - calc(375px)) / 955)); } }
+  .welcome .welcome_text_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .welcome .welcome_text_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .welcome .title_wrap {
+    width: 45%; }
+    @media (max-width: 1023px) {
+      .welcome .title_wrap {
+        width: 100%; } }
+  .welcome .welcome_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 85px;
+    line-height: 117.64706%;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 15px; }
+    @media (max-width: 1330px) {
+      .welcome .welcome_title {
+        font-size: calc(48px + 37 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .welcome .welcome_title {
+        margin-bottom: calc(5px + 10 * ((100vw - calc(375px)) / 955)); } }
+  .welcome .welcome_descr {
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 29px;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .welcome .welcome_descr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+  .welcome .subtext {
+    width: 50%; }
+    @media (max-width: 1023px) {
+      .welcome .subtext {
+        width: 100%; } }
+  .welcome .subtext_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    line-height: 38px;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .welcome .subtext_title {
+        font-size: calc(26px + 6 * ((100vw - calc(375px)) / 955)); } }
+  .welcome .subtext_decr {
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    line-height: 150%;
+    color: #4F4F4F; }
+    @media (max-width: 1330px) {
+      .welcome .subtext_decr {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+
+.contact_form {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .contact_form {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .contact_form {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: #F9FDFF;
+    border: 2px dashed #0088CC;
+    border-radius: 25px;
+    /* Только если меньше контейнера */
+    padding-top: 115px;
+    /* Только если меньше контейнера */
+    padding-bottom: 45px;
+    /* Только если меньше контейнера */
+    padding-right: 50px;
+    /* Только если меньше контейнера */
+    padding-left: 50px;
+    gap: 30px; }
+    @media (max-width: 1330px) {
+      .contact_form .content {
+        padding-top: calc(50px + 65 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .content {
+        padding-bottom: calc(40px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .content {
+        padding-right: calc(25px + 25 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .content {
+        padding-left: calc(25px + 25 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .contact_form .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .contact_form .form_text {
+    max-width: 360px;
+    width: 100%; }
+    @media (max-width: 1023px) {
+      .contact_form .form_text {
+        max-width: 100%; } }
+  .contact_form .text_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 30px; }
+    @media (max-width: 1330px) {
+      .contact_form .text_title {
+        font-size: calc(26px + 6 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .text_title {
+        margin-bottom: calc(25px + 5 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .schedule_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    /* Только если меньше контейнера */
+    margin-bottom: 80px;
+    max-width: 360px;
+    width: 100%; }
+    @media (max-width: 1330px) {
+      .contact_form .schedule_wrap {
+        margin-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .schedule {
+    /* Только если меньше контейнера */
+    padding-top: 15px;
+    /* Только если меньше контейнера */
+    padding-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+    .contact_form .schedule:not(:last-child) {
+      /* Только если меньше контейнера */
+      margin-bottom: 35px; }
+      @media (max-width: 1330px) {
+        .contact_form .schedule:not(:last-child) {
+          margin-bottom: calc(20px + 15 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .schedule {
+        padding-top: calc(7px + 8 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .schedule {
+        padding-bottom: calc(7px + 8 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 479px) {
+      .contact_form .schedule {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+    .contact_form .schedule::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 100%;
+      background: #EC008C;
+      border-radius: 5px; }
+  .contact_form .schedule_item {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    color: #000000; }
+    @media (max-width: 1330px) {
+      .contact_form .schedule_item {
+        font-size: calc(20px + 4 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 479px) {
+      .contact_form .schedule_item:first-child {
+        margin-bottom: 5px; } }
+  .contact_form .link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .contact_form .phone {
+    /* Только если меньше контейнера */
+    margin-bottom: 65px; }
+    @media (max-width: 1330px) {
+      .contact_form .phone {
+        margin-bottom: calc(40px + 25 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .link_text {
+    font-weight: 500;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    color: #000000; }
+    @media (max-width: 1330px) {
+      .contact_form .link_text {
+        font-size: calc(20px + 12 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .contact_img {
+    margin-bottom: 40px;
+    width: 50px;
+    height: 50px; }
+    @media (max-width: 1023px) {
+      .contact_form .contact_img {
+        margin: 0 0 20px 0; } }
+  .contact_form form {
+    width: 60%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    @media (max-width: 1023px) {
+      .contact_form form {
+        width: 100%; } }
+  .contact_form .input_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%; }
+    .contact_form .input_wrap:not(:last-child) {
+      /* Только если меньше контейнера */
+      margin-bottom: 40px; }
+      @media (max-width: 1330px) {
+        .contact_form .input_wrap:not(:last-child) {
+          margin-bottom: calc(25px + 15 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .data_name {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 20px; }
+    @media (max-width: 1330px) {
+      .contact_form .data_name {
+        font-size: calc(20px + 12 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .contact_form .data_name {
+        margin-bottom: calc(10px + 10 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .data,
+  .contact_form .area_text {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    padding: 15px 30px;
+    /* Только если меньше контейнера */
+    font-size: 28px;
+    color: #000000;
+    transition: all .3s ease; }
+    @media (max-width: 1330px) {
+      .contact_form .data,
+      .contact_form .area_text {
+        font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 479px) {
+      .contact_form .data,
+      .contact_form .area_text {
+        padding: 15px 20px; } }
+    .contact_form .data::-webkit-input-placeholder, .contact_form .area_text::-webkit-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      color: #C0B5B5; }
+    .contact_form .data::-moz-placeholder, .contact_form .area_text::-moz-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      color: #C0B5B5; }
+    .contact_form .data:-ms-input-placeholder, .contact_form .area_text:-ms-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      color: #C0B5B5; }
+    .contact_form .data::-ms-input-placeholder, .contact_form .area_text::-ms-input-placeholder {
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      color: #C0B5B5; }
+    .contact_form .data::placeholder,
+    .contact_form .area_text::placeholder {
+      /* Только если меньше контейнера */
+      font-size: 28px;
+      color: #C0B5B5; }
+      @media (max-width: 1330px) {
+        .contact_form .data::-webkit-input-placeholder, .contact_form .area_text::-webkit-input-placeholder {
+          font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); }
+        .contact_form .data::-moz-placeholder, .contact_form .area_text::-moz-placeholder {
+          font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); }
+        .contact_form .data:-ms-input-placeholder, .contact_form .area_text:-ms-input-placeholder {
+          font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); }
+        .contact_form .data::-ms-input-placeholder, .contact_form .area_text::-ms-input-placeholder {
+          font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); }
+        .contact_form .data::placeholder,
+        .contact_form .area_text::placeholder {
+          font-size: calc(20px + 8 * ((100vw - calc(375px)) / 955)); } }
+    .contact_form .data:focus,
+    .contact_form .area_text:focus {
+      border: 1px solid #EC008C; }
+  .contact_form .area_text {
+    height: 280px; }
+  .contact_form .tip {
+    font-size: 16px;
+    display: inline-block;
+    color: #000000;
+    /* Только если меньше контейнера */
+    margin-bottom: 50px; }
+    @media (max-width: 1330px) {
+      .contact_form .tip {
+        margin-bottom: calc(20px + 30 * ((100vw - calc(375px)) / 955)); } }
+  .contact_form .blue_btn {
+    border: none; }
 
 /*# sourceMappingURL=main.css.map */
