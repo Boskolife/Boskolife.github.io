@@ -47,6 +47,24 @@ function ininSwiper() {
             },
         },
     });
+    destroySlidersOnResize(".contact_swiper", 9999, {
+        spaceBetween: 20,
+        direction: "horizontal",
+        simulateTouch:true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+          },
+        breakpoints: {
+            1024: {
+                direction: "vertical",
+            },
+        },
+    });
+
 }
 
 function initBurger() {
