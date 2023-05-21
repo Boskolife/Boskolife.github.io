@@ -1,0 +1,283 @@
+.latest_post {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .post_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-vaule("height", 680, 390, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    .post_swiper {
+        width: 70%;
+        @include adaptiv-vaule("height", 680, 390, 1);
+        margin: 0;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: $white;
+            opacity: 0.6;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    }
+
+    .post_body {
+        width: 28%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: row;
+            width: 100%;
+        }
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .post {
+        position: relative;
+        border-radius: 25px;
+        overflow: hidden;
+        @include adaptiv-vaule("height", 325, 195, 1);
+        @include adaptiv-vaule("padding-top", 25, 20, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 20, 1);
+        @include adaptiv-vaule("padding-right", 45, 30, 1);
+        @include adaptiv-vaule("padding-left", 45, 30, 1);
+
+        @include media ("<tablet") {
+            height: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border-radius: 25px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(28, 147, 214, 0) 0%, rgba(28, 147, 214, 0.7) 55.73%)
+        }
+    }
+
+    .swiper-slide {
+        height: 100%;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+
+    .post_slide {
+        position: relative;
+        border-radius: 25px;
+        overflow: hidden;
+        height: 100%;
+        @include adaptiv-vaule("padding-top", 15, 7, 1);
+        @include adaptiv-vaule("padding-right", 90, 30, 1);
+        @include adaptiv-vaule("padding-left", 90, 30, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(28, 147, 214, 0) 0%, rgba(28, 147, 214, 0.7) 55.73%)
+        }
+
+        .post_text {
+            @include adaptiv-vaule("margin-top", -50, -30, 1);
+        }
+    }
+
+    .post_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .post_text {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .post_title {
+        font-weight: 700;
+        font-size: 30px;
+        color: $white;
+        @include adaptiv-vaule("margin-bottom", 20, 10, 1);
+    }
+
+    .date_post {
+        font-size: 18px;
+        color: $white;
+        @include adaptiv-vaule("margin-bottom", 25, 20, 1);
+    }
+
+    .permalink {
+        display: flex;
+        align-items: center;
+        position: relative;
+        text-decoration: underline;
+        font-size: 24px;
+        color: $white;
+
+        img {
+            margin-left: 25px;
+        }
+    }
+}
+
+.categories {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .container{
+        padding: 0 0 0 15px;
+    }
+
+    .category_wrap{
+        &:not(:last-child){
+            @include adaptiv-vaule("margin-bottom", 50, 80, 1);
+        }
+    }
+
+    .category_title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 36px;
+        color: $gray;
+    }
+
+    .categories_swiper {
+        padding-bottom: 50px;
+
+        .swiper-scrollbar {
+            background-color: #F5F5F5;
+            height: 10px;
+            border-radius: 50px;
+        }
+
+        .swiper-scrollbar-drag {
+            background-color: #9DDEEF;
+            border-radius: 50px;
+        }
+    }
+
+    .swiper-slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .post_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 440px;
+        background: #F4F4F4;
+        border-radius: 25px;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10px;
+            background-color: $blue;
+        }
+    }
+
+    .post_img {
+        border-radius: 25px;
+        overflow: hidden;
+        width: 100%;
+        @include adaptiv-vaule("height", 295, 165, 1);
+    }
+
+    .post_text {
+        @include adaptiv-vaule("padding-right", 35, 15, 1);
+        @include adaptiv-vaule("padding-left", 35, 15, 1);
+        @include adaptiv-vaule("padding-top", 35, 25, 1);
+        @include adaptiv-vaule("padding-bottom", 45, 25, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post_title {
+        font-weight: 700;
+        font-size: 30px;
+        @include adaptiv-vaule("font-size", 30, 18, 1);
+        color: #373535;
+        margin-bottom: 10px;
+
+        @include media ("<tablet") {
+            order: 2;
+        }
+    }
+
+    .date_post {
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        color: #373535;
+        @include adaptiv-vaule("margin-bottom", 30, 5, 1);
+
+        @include media ("<tablet") {
+            order: 1;
+        }
+    }
+
+    .permalink {
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        text-decoration-line: underline;
+        color: #373535;
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            order: 3;
+        }
+
+        img {
+            margin-left: 25px;
+        }
+    }
+}

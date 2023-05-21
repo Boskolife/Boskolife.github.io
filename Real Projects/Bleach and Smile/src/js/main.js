@@ -50,21 +50,52 @@ function ininSwiper() {
     destroySlidersOnResize(".contact_swiper", 9999, {
         spaceBetween: 20,
         direction: "horizontal",
-        simulateTouch:true,
+        simulateTouch: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
         pagination: {
-            el: '.swiper-pagination',
-          },
+            el: ".swiper-pagination",
+        },
         breakpoints: {
             1024: {
                 direction: "vertical",
             },
         },
     });
+    destroySlidersOnResize(".post_swiper", 9999, {
+        spaceBetween: 20,
+        direction: "horizontal",
+        simulateTouch: true,
 
+        breakpoints: {
+            1024: {
+                direction: "vertical",
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            },
+        },
+    });
+    destroySlidersOnResize(".categories_swiper", 9999, {
+        spaceBetween: 10,
+        slidesPerView:1.75,
+        direction: "horizontal",
+        simulateTouch: true,
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView:3,
+            },
+            768: {
+                spaceBetween: 20,
+                slidesPerView:2,
+            },
+        },
+    });
 }
 
 function initBurger() {
