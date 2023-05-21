@@ -2898,6 +2898,9 @@ body {
     @media (max-width: 1023px) {
       .contact_main_section .contact_swiper {
         padding: 0; } }
+    @media (max-width: 767px) {
+      .contact_main_section .contact_swiper {
+        margin-bottom: 35px; } }
     @media (max-width: 1023px) {
       .contact_main_section .contact_swiper .swiper-pagination {
         display: none; } }
@@ -2936,5 +2939,13 @@ body {
       height: 100%;
       -o-object-fit: cover;
       object-fit: cover; }
+  .contact_main_section .main_text {
+    font-size: 20px;
+    line-height: 150%;
+    color: #4F4F4F;
+    display: none; }
+    @media (max-width: 767px) {
+      .contact_main_section .main_text {
+        display: block; } }
 
 /*# sourceMappingURL=main.css.map */
