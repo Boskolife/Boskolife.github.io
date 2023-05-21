@@ -62,59 +62,59 @@ function initBurger() {
     });
 }
 
-var slider = document.getElementById("slider");
-var imageBefore = document.querySelector(".before img");
-var imageAfter = document.querySelector(".after img");
-var containerWidth = slider.parentNode.offsetWidth;
-var sliderWidth = slider.offsetWidth;
-var isDragging = false;
-var startX;
-var startLeft;
+// var slider = document.getElementById("slider");
+// var imageBefore = document.querySelector(".before img");
+// var imageAfter = document.querySelector(".after img");
+// var containerWidth = slider.parentNode.offsetWidth;
+// var sliderWidth = slider.offsetWidth;
+// var isDragging = false;
+// var startX;
+// var startLeft;
 
-function updateImageClipPath(percentage) {
-    var clipPathValue =
-        "polygon(0 0, " + percentage + "% 0, " + percentage + "% 100%, 0 100%)";
-    imageBefore.style.clipPath = clipPathValue;
-    imageAfter.style.clipPath = clipPathValue;
-}
+// function updateImageClipPath(percentage) {
+//     var clipPathValue =
+//         "polygon(0 0, " + percentage + "% 0, " + percentage + "% 100%, 0 100%)";
+//     imageBefore.style.clipPath = clipPathValue;
+//     imageAfter.style.clipPath = clipPathValue;
+// }
 
-slider.addEventListener("mousedown", function (event) {
-    event.preventDefault();
-    isDragging = true;
-    slider.classList.add("dragging");
-    startX = event.clientX;
-    startLeft = slider.offsetLeft;
-});
+// slider.addEventListener("mousedown", function (event) {
+//     event.preventDefault();
+//     isDragging = true;
+//     slider.classList.add("dragging");
+//     startX = event.clientX;
+//     startLeft = slider.offsetLeft;
+// });
 
-document.addEventListener("mousemove", function (event) {
-    if (isDragging) {
-        var offsetX = event.clientX - startX;
-        var newPosition = Math.max(
-            0,
-            Math.min(containerWidth - sliderWidth, startLeft + offsetX)
-        );
-        var percentage = (newPosition / containerWidth) * 100;
-        slider.style.left = newPosition + "px";
-        updateImageClipPath(percentage);
-    }
-});
+// document.addEventListener("mousemove", function (event) {
+//     if (isDragging) {
+//         var offsetX = event.clientX - startX;
+//         var newPosition = Math.max(
+//             0,
+//             Math.min(containerWidth - sliderWidth, startLeft + offsetX)
+//         );
+//         var percentage = (newPosition / containerWidth) * 100;
+//         slider.style.left = newPosition + "px";
+//         updateImageClipPath(percentage);
+//     }
+// });
 
-document.addEventListener("mouseup", function () {
-    if (isDragging) {
-        isDragging = false;
-        slider.classList.remove("dragging");
-    }
-});
+// document.addEventListener("mouseup", function () {
+//     if (isDragging) {
+//         isDragging = false;
+//         slider.classList.remove("dragging");
+//     }
+// });
 
-// Обновляем путь обрезки изображений при изменении размеров окна
-window.addEventListener("resize", function () {
-    containerWidth = slider.parentNode.offsetWidth;
-    var currentPosition = parseInt(slider.style.left, 10);
-    var percentage = (currentPosition / containerWidth) * 100;
-    updateImageClipPath(percentage);
-});
+// // Обновляем путь обрезки изображений при изменении размеров окна
+// window.addEventListener("resize", function () {
+//     containerWidth = slider.parentNode.offsetWidth;
+//     var currentPosition = parseInt(slider.style.left, 10);
+//     var percentage = (currentPosition / containerWidth) * 100;
+//     updateImageClipPath(percentage);
+// });
 
-// Инициализация пути обрезки изображений при загрузке страницы
-var initialPosition = containerWidth / 2;
-slider.style.left = initialPosition + "px";
-updateImageClipPath(50);
+// // Инициализация пути обрезки изображений при загрузке страницы
+// var initialPosition = containerWidth / 2;
+// slider.style.left = initialPosition + "px";
+// updateImageClipPath(50);

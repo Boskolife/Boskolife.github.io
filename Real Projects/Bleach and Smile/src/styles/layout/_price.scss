@@ -1,0 +1,276 @@
+.price_main_section {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    .main_img {
+        width: 100%;
+        @include adaptiv-vaule("height", 330, 350, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 50px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .main_img_phone{
+        display: none;
+        @include adaptiv-vaule("height", 330, 350, 1);
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media ("<tablet") {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .price_title {
+        font-weight: 700;
+        font-size: 36px;
+        color: $gray;
+        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
+    }
+
+    .price_descr_wrap {
+        width: 100%;
+        background: #D3F0FF;
+        border-radius: 25px;
+        @include adaptiv-vaule("padding-top", 25, 30, 1);
+        @include adaptiv-vaule("padding-bottom", 25, 30, 1);
+        @include adaptiv-vaule("padding-right", 20, 15, 1);
+        @include adaptiv-vaule("padding-left", 20, 15, 1);
+    }
+
+    .descr_title {
+        font-weight: 700;
+        font-size: 24px;
+        color: $black;
+        margin-bottom: 20px;
+    }
+
+    .descr_text {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 150%;
+        color: $black;
+    }
+}
+
+.price_list_section {
+    @include adaptiv-vaule("padding-top", 55, 45, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 40, 1);
+
+    .price_list_title {
+        font-weight: 700;
+        font-size: 32px;
+        color: $gray;
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 110, 55, 1);
+    }
+
+    .list_wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .list_body {
+        width: 50%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .line {
+        border-right: 1px dashed #9F9F9F;
+        @include adaptiv-vaule("padding-right", 35, 15, 1);
+        @include adaptiv-vaule("margin-right", 35, 15, 1);
+
+        @include media ("<desktop") {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .price_list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 55px;
+    }
+
+    .price_title {
+        font-weight: 700;
+        font-size: 32px;
+        color: $gray;
+        margin-bottom: 5px;
+    }
+
+    .price_descr {
+        font-size: 20px;
+        color: #9F9F9F;
+        @include adaptiv-vaule("margin-bottom", 35, 45, 1);
+    }
+
+    .items_list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed $gray;
+
+        @include media ("<phone") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .item_title,
+    .item_price,
+    .item_descr {
+        font-size: 20px;
+        color: #000000;
+        width: 35%;
+        text-align: start;
+
+        @include media ("<phone") {
+            color: $gray;
+            width: 100%;
+        }
+
+    }
+
+    .item_title {
+        font-weight: 400;
+        text-align: start;
+
+        @include media ("<phone") {
+            margin-bottom: 10px;
+        }
+    }
+
+    .item_descr {
+        @include media ("<phone") {
+            margin-bottom: 20px;
+            color: #9F9F9F;
+        }
+    }
+
+    .item_price {
+        text-align: end;
+        width: 20%;
+
+        @include media ("<phone") {
+            width: 100%;
+            text-align: start;
+        }
+    }
+
+    .help_block {
+        background: #FFFFFF;
+        border: 1px solid #D8D7D7;
+        border-radius: 25px;
+        padding: 25px 35px;
+    }
+
+    .help_body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        @include adaptiv-vaule("margin-bottom", 70, 50, 1);
+
+        @include media ("<phone_max") {
+            flex-direction: column;
+        }
+    }
+
+    .text_wrap {
+        width: 48%;
+
+        @include media ("<phone_max") {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .help_title {
+        font-weight: 700;
+        font-size: 32px;
+        color: $gray;
+        @include adaptiv-vaule("margin-bottom", 70, 10, 1);
+    }
+
+    .help_text {
+        font-size: 24px;
+        line-height: 155%;
+        letter-spacing: -0.1px;
+        color: $gray;
+    }
+
+    .help_img {
+        margin-right: 25px;
+
+        
+        @include media ("<phone_max") {
+            margin: 0;
+        }
+    }
+
+    .blue_btn {
+        max-width: 100%;
+    }
+
+    .visible{
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .hidden{
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+        }
+    }
+}

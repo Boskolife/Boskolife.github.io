@@ -434,7 +434,6 @@ h6,
 .h6,
 .h {
   font-family: "SFProDisplay";
-  font-weight: bold;
   margin: 0;
   color: inherit; }
 
@@ -2586,5 +2585,292 @@ body {
     z-index: 1; }
   .result .dragging {
     cursor: ew-resize; }
+
+.price_main_section {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px;
+  position: relative;
+  z-index: 2;
+  text-align: center; }
+  @media (max-width: 1330px) {
+    .price_main_section {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .price_main_section {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .price_main_section .main_img {
+    width: 100%;
+    /* Только если меньше контейнера */
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px; }
+    @media (max-width: 1330px) {
+      .price_main_section .main_img {
+        height: calc(350px + -20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .price_main_section .main_img {
+        display: none; } }
+    .price_main_section .main_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .price_main_section .main_img_phone {
+    display: none;
+    /* Только если меньше контейнера */
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden; }
+    @media (max-width: 1330px) {
+      .price_main_section .main_img_phone {
+        height: calc(350px + -20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 767px) {
+      .price_main_section .main_img_phone {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 50px; } }
+    @media (max-width: 479px) {
+      .price_main_section .main_img_phone {
+        width: 100%; } }
+    .price_main_section .main_img_phone img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .price_main_section .price_title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 50px; }
+    @media (max-width: 1330px) {
+      .price_main_section .price_title {
+        margin-bottom: calc(30px + 20 * ((100vw - calc(375px)) / 955)); } }
+  .price_main_section .price_descr_wrap {
+    width: 100%;
+    background: #D3F0FF;
+    border-radius: 25px;
+    /* Только если меньше контейнера */
+    padding-top: 25px;
+    /* Только если меньше контейнера */
+    padding-bottom: 25px;
+    /* Только если меньше контейнера */
+    padding-right: 20px;
+    /* Только если меньше контейнера */
+    padding-left: 20px; }
+    @media (max-width: 1330px) {
+      .price_main_section .price_descr_wrap {
+        padding-top: calc(30px + -5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .price_main_section .price_descr_wrap {
+        padding-bottom: calc(30px + -5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .price_main_section .price_descr_wrap {
+        padding-right: calc(15px + 5 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .price_main_section .price_descr_wrap {
+        padding-left: calc(15px + 5 * ((100vw - calc(375px)) / 955)); } }
+  .price_main_section .descr_title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px; }
+  .price_main_section .descr_text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #000000; }
+
+.price_list_section {
+  /* Только если меньше контейнера */
+  padding-top: 55px;
+  /* Только если меньше контейнера */
+  padding-bottom: 25px; }
+  @media (max-width: 1330px) {
+    .price_list_section {
+      padding-top: calc(45px + 10 * ((100vw - calc(375px)) / 955)); } }
+  @media (max-width: 1330px) {
+    .price_list_section {
+      padding-bottom: calc(40px + -15 * ((100vw - calc(375px)) / 955)); } }
+  .price_list_section .price_list_title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #4F4F4F;
+    text-align: center;
+    /* Только если меньше контейнера */
+    margin-bottom: 110px; }
+    @media (max-width: 1330px) {
+      .price_list_section .price_list_title {
+        margin-bottom: calc(55px + 55 * ((100vw - calc(375px)) / 955)); } }
+  .price_list_section .list_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .price_list_section .list_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .price_list_section .list_body {
+    width: 50%; }
+    @media (max-width: 1023px) {
+      .price_list_section .list_body {
+        width: 100%; } }
+  .price_list_section .line {
+    border-right: 1px dashed #9F9F9F;
+    /* Только если меньше контейнера */
+    padding-right: 35px;
+    /* Только если меньше контейнера */
+    margin-right: 35px; }
+    @media (max-width: 1330px) {
+      .price_list_section .line {
+        padding-right: calc(15px + 20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1330px) {
+      .price_list_section .line {
+        margin-right: calc(15px + 20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 1023px) {
+      .price_list_section .line {
+        border: none;
+        margin: 0;
+        padding: 0; } }
+  .price_list_section .price_list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 55px; }
+  .price_list_section .price_title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #4F4F4F;
+    margin-bottom: 5px; }
+  .price_list_section .price_descr {
+    font-size: 20px;
+    color: #9F9F9F;
+    /* Только если меньше контейнера */
+    margin-bottom: 35px; }
+    @media (max-width: 1330px) {
+      .price_list_section .price_descr {
+        margin-bottom: calc(45px + -10 * ((100vw - calc(375px)) / 955)); } }
+  .price_list_section .items_list {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .price_list_section .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #4F4F4F; }
+    @media (max-width: 479px) {
+      .price_list_section .item {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .price_list_section .item_title,
+  .price_list_section .item_price,
+  .price_list_section .item_descr {
+    font-size: 20px;
+    color: #000000;
+    width: 35%;
+    text-align: start; }
+    @media (max-width: 479px) {
+      .price_list_section .item_title,
+      .price_list_section .item_price,
+      .price_list_section .item_descr {
+        color: #4F4F4F;
+        width: 100%; } }
+  .price_list_section .item_title {
+    font-weight: 400;
+    text-align: start; }
+    @media (max-width: 479px) {
+      .price_list_section .item_title {
+        margin-bottom: 10px; } }
+  @media (max-width: 479px) {
+    .price_list_section .item_descr {
+      margin-bottom: 20px;
+      color: #9F9F9F; } }
+  .price_list_section .item_price {
+    text-align: end;
+    width: 20%; }
+    @media (max-width: 479px) {
+      .price_list_section .item_price {
+        width: 100%;
+        text-align: start; } }
+  .price_list_section .help_block {
+    background: #FFFFFF;
+    border: 1px solid #D8D7D7;
+    border-radius: 25px;
+    padding: 25px 35px; }
+  .price_list_section .help_body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 20px;
+    /* Только если меньше контейнера */
+    margin-bottom: 70px; }
+    @media (max-width: 1330px) {
+      .price_list_section .help_body {
+        margin-bottom: calc(50px + 20 * ((100vw - calc(375px)) / 955)); } }
+    @media (max-width: 599px) {
+      .price_list_section .help_body {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .price_list_section .text_wrap {
+    width: 48%; }
+    @media (max-width: 599px) {
+      .price_list_section .text_wrap {
+        width: 100%;
+        text-align: center; } }
+  .price_list_section .help_title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #4F4F4F;
+    /* Только если меньше контейнера */
+    margin-bottom: 70px; }
+    @media (max-width: 1330px) {
+      .price_list_section .help_title {
+        margin-bottom: calc(10px + 60 * ((100vw - calc(375px)) / 955)); } }
+  .price_list_section .help_text {
+    font-size: 24px;
+    line-height: 155%;
+    letter-spacing: -0.1px;
+    color: #4F4F4F; }
+  .price_list_section .help_img {
+    margin-right: 25px; }
+    @media (max-width: 599px) {
+      .price_list_section .help_img {
+        margin: 0; } }
+  .price_list_section .blue_btn {
+    max-width: 100%; }
+  @media (max-width: 1023px) {
+    .price_list_section .visible {
+      display: none; } }
+  .price_list_section .hidden {
+    display: none; }
+    @media (max-width: 1023px) {
+      .price_list_section .hidden {
+        display: block; } }
 
 /*# sourceMappingURL=main.css.map */
