@@ -19,7 +19,7 @@
     }
 }
 
-.post_text {
+.post_text_section {
     @include adaptiv-vaule("padding-top", 55, 45, 1);
     @include adaptiv-vaule("padding-bottom", 25, 40, 1);
 
