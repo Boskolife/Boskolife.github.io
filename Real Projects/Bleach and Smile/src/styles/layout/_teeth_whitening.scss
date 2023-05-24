@@ -330,47 +330,25 @@
         text-align: center;
     }
 
-    .image-container {
-        position: relative;
-        width: 500px;
-        /* Замените на желаемую ширину контейнера */
-        height: 300px;
-        /* Замените на желаемую высоту контейнера */
-        overflow: hidden;
-    }
-
-    .image-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .relust_slide {
         width: 100%;
-        height: 100%;
+        @include adaptiv-vaule("height", 620, 325, 1);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
-    .image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: clip-path 0.3s ease;
-    }
+    .beer-reveal {
+        img {
 
-    .slider {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 5px;
-        /* Замените на желаемую ширину ползунка */
-        height: 100%;
-        /* Замените на желаемую высоту ползунка */
-        background-color: #333;
-        /* Замените на желаемый цвет ползунка */
-        cursor: ew-resize;
-        z-index: 1;
+            &:first-child{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
-
-    .dragging {
-        cursor: ew-resize;
-    }
-
 }
