@@ -7,8 +7,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 initBurger();
-initSwiper();
-horizontalScroll();
+initSwiper(); // horizontalScroll();
 
 function initSwiper() {
   var _destroySlidersOnResi, _destroySlidersOnResi2;
@@ -148,6 +147,39 @@ function initBurger() {
     burger.classList.toggle("burger_active");
     navMenu.classList.toggle("menu_active");
     document.body.classList.toggle("body_lock");
+  });
+}
+
+changeLabel();
+
+function changeLabel() {
+  // let checkboxes = document.querySelectorAll(".looking_check");
+  // checkboxes.forEach(function (checkbox) {
+  //     checkbox.addEventListener("change", function () {
+  //         let label = checkbox.previousElementSibling;
+  //         if (checkbox.checked) {
+  //             label.classList.add("label_checked");
+  //         } else {
+  //             label.classList.remove("label_checked");
+  //         }
+  //     });
+  // });
+  var checkboxes = document.querySelectorAll(".looking_check");
+  var labels = document.querySelectorAll(".looking_title");
+  checkboxes.forEach(function (checkbox, index) {
+    checkbox.addEventListener("change", function () {
+      if (checkbox.checked) {
+        labels[index].classList.add("label_checked");
+      } else {
+        labels[index].classList.remove("label_checked");
+      }
+
+      checkboxes.forEach(function (otherCheckbox, otherIndex) {
+        if (otherIndex !== index) {
+          labels[otherIndex].classList.remove("label_checked");
+        }
+      });
+    });
   });
 }
 
