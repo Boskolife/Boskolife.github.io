@@ -3534,6 +3534,98 @@ body {
     visibility: hidden;
     width: 0;
     height: 0; }
+  .form .input_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 100%; }
+    .form .input_wrap:not(:last-child) {
+      margin-bottom: 40px; }
+  .form .data,
+  .form .area {
+    font-weight: 300;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    color: #222222;
+    border: none;
+    border-bottom: 1px solid #8F8F8F;
+    padding-bottom: 65px;
+    width: 100%; }
+    @media (max-width: 1085px) {
+      .form .data,
+      .form .area {
+        font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); } }
+    .form .data::-webkit-input-placeholder, .form .area::-webkit-input-placeholder {
+      font-weight: 300;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      color: #C1C1C1; }
+    .form .data::-moz-placeholder, .form .area::-moz-placeholder {
+      font-weight: 300;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      color: #C1C1C1; }
+    .form .data:-ms-input-placeholder, .form .area:-ms-input-placeholder {
+      font-weight: 300;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      color: #C1C1C1; }
+    .form .data::-ms-input-placeholder, .form .area::-ms-input-placeholder {
+      font-weight: 300;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      color: #C1C1C1; }
+    .form .data::placeholder,
+    .form .area::placeholder {
+      font-weight: 300;
+      /* Только если меньше контейнера */
+      font-size: 24px;
+      color: #C1C1C1; }
+      @media (max-width: 1085px) {
+        .form .data::-webkit-input-placeholder, .form .area::-webkit-input-placeholder {
+          font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); }
+        .form .data::-moz-placeholder, .form .area::-moz-placeholder {
+          font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); }
+        .form .data:-ms-input-placeholder, .form .area:-ms-input-placeholder {
+          font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); }
+        .form .data::-ms-input-placeholder, .form .area::-ms-input-placeholder {
+          font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); }
+        .form .data::placeholder,
+        .form .area::placeholder {
+          font-size: calc(22px + 2 * ((100vw - calc(375px)) / 710)); } }
+  .form .btn_wrap {
+    border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+    border: 1px solid #222222;
+    width: 240px;
+    height: 70px;
+    position: relative; }
+    .form .btn_wrap:hover .form_btn {
+      top: -1px;
+      right: -1px;
+      transition: all .3s ease; }
+  .form .form_btn {
+    transition: all .3s ease;
+    border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+    background-color: #EB5B31;
+    border: none;
+    position: absolute;
+    top: -7px;
+    right: 7px;
+    font-weight: 700;
+    font-size: 20px;
+    width: 240px;
+    height: 70px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF; }
 
 footer {
   /* Только если меньше контейнера */
