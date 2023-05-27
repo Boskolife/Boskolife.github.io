@@ -214,7 +214,25 @@ function horizontalScroll() {
   });
 }
 
-function openTab(evt, tabName) {
+function openTabCase(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active_tab", "");
+  }
+
+  document.getElementById(tabName).style.display = "grid";
+  evt.currentTarget.className += " active_tab";
+}
+
+function openTabBlog(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
 

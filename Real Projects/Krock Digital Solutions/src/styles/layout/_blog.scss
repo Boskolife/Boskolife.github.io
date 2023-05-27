@@ -1,0 +1,170 @@
+.blog_tabs {
+    @include adaptiv-vaule("padding-top", 50, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 20, 1);
+
+    .case_tabs_content {
+        text-align: center;
+    }
+
+    .tabs {
+        background-color: #F3F3F3;
+        max-width: max-content;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .tablinks {
+        border: none;
+        background-color: #F3F3F3;
+        color: $gray_2;
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
+        @include adaptiv-vaule("padding-top", 12, 12, 1);
+        @include adaptiv-vaule("padding-bottom", 12, 12, 1);
+        @include adaptiv-vaule("padding-right", 34, 13, 1);
+        @include adaptiv-vaule("padding-left", 34, 13, 1);
+        position: relative;
+        border-radius: 12px;
+        transition: all .3s ease;
+
+        &:not(:last-child) {
+            @include adaptiv-vaule("margin-right", 8, 4, 1);
+
+            &::after {
+                content: '';
+                position: absolute;
+                @include adaptiv-vaule("right", -8, -4, 1);
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 65%;
+                background-color: $white;
+            }
+        }
+    }
+
+    .active_tab {
+        background-color: $orange;
+        color: $white;
+        transition: all .3s ease;
+    }
+
+    .tabcontent {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        column-gap: 30px;
+        @include adaptiv-vaule("row-gap", 90, 45, 1);
+        justify-items: center;
+        align-items: start;
+
+        @include media ("<phone_max") {
+            grid-template: 1fr / 1fr;
+        }
+    }
+
+    .tab_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 455px;
+        width: 100%;
+        position: relative;
+
+        &:nth-child(even) {
+            margin-top: 150px;
+
+            @include media ("<phone_max") {
+                margin: 0;
+            }
+        }
+    }
+
+    .topic {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: $orange;
+        border-radius: 30px;
+        font-weight: 300;
+        font-size: 14px;
+        color: $white;
+        padding: 5px 20px;
+    }
+
+    .item_img {
+        width: 100%;
+        height: 430px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 25px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .item_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: start;
+    }
+
+    .item_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        color: $black;
+    }
+
+    .date {
+        position: absolute;
+        top: 70px;
+        left: -80px;
+        transform: rotate(270deg);
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+        color: $black;
+
+        @include media ("<phone_max") {
+            position: static;
+        }
+    }
+
+    .item_btn_wrap {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        border: 1px solid $black;
+        width: 75px;
+        height: 70px;
+        position: relative;
+
+        &:hover {
+            .item_btn {
+                top: 0;
+                right: 0;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .item_btn {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        background-color: $orange;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        transition: all .3s ease;
+    }
+
+
+}
