@@ -1,0 +1,37 @@
+.recomended_section {
+    background-color: #F3F3F3;
+    @include adaptiv-vaule("padding-top", 100, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 90, 70, 1);
+
+    .recomended_title {
+        @include adaptiv-vaule("margin-bottom", 95, 45, 1);
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 114%;
+        color: $black;
+    }
+
+    .post_swiper{
+        padding-bottom: 50px;
+
+        .swiper-pagination{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-pagination-bullet{
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: $orange;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active{
+            width: 21px;
+            height: 21px;
+        }
+    }
+}

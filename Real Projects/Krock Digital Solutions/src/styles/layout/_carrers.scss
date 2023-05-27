@@ -1,0 +1,287 @@
+.carrers_main {
+    @include adaptiv-vaule("padding-top", 65, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 75, 55, 1);
+    position: relative;
+
+    .carresr_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 64, 40, 1);
+        color: $black;
+        position: relative;
+        text-align: center;
+        max-width: max-content;
+        margin: 0 auto;
+        margin-bottom: 60px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include adaptiv-vaule("width", 120, 95, 1);
+            @include adaptiv-vaule("height", 68, 45, 1);
+            background-color: $orange;
+            clip-path: polygon(0 0, 90% 0, 100% 95%, 15% 100%);
+            z-index: -1;
+            border-radius: 5px;
+        }
+    }
+
+    .positions {
+        background-color: $black;
+        @include adaptiv-vaule("padding-top", 90, 50, 1);
+        @include adaptiv-vaule("padding-bottom", 110, 100, 1);
+        position: relative;
+    }
+
+    .coub {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include adaptiv-vaule("width", 370, 230, 1);
+        @include adaptiv-vaule("height", 420, 200, 1);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .star {
+        position: absolute;
+        right: 0;
+        top: 40px;
+    }
+
+    .bubbles {
+        position: absolute;
+        left: 30%;
+        top: 45px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .positions_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        color: $white;
+        position: relative;
+        z-index: 1;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .positions_img_wrap {
+        width: 35%;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .img_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 32, 30, 1);
+        line-height: 39px;
+        color: $white;
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+    }
+
+    .positions_img {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .positions_item {
+        width: 60%;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $white;
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .item_title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .item_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 40, 32, 1);
+        margin-right: 20px;
+        line-height: 49px;
+        color: $white;
+    }
+
+    .item_btn {
+        border-radius: 10px;
+        background-color: $orange;
+        font-weight: 800;
+        font-size: 16px;
+        color: $white;
+        padding: 8px 15px;
+    }
+
+    .visible_btn {
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .hidden_btn {
+        display: none;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
+
+    .descr_wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 55px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .descr_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .descr_item_title {
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #C1C1C1;
+        margin-bottom: 10px;
+    }
+
+    .descr_item_text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        color: #FFFFFF;
+    }
+}
+
+.numbers {
+    @include adaptiv-vaule("padding-top", 65, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 75, 55, 1);
+    position: relative;
+    overflow: hidden;
+
+    .numbers_title {
+        font-weight: 700;
+        font-size: 32px;
+        color: $black;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    .numbers_body {
+        background-color: $orange;
+        @include adaptiv-vaule("padding-top", 75, 70, 1);
+        @include adaptiv-vaule("padding-bottom", 75, 70, 1);
+        position: relative;
+    }
+
+    .crystal{
+        position: absolute;
+        top: 30px;
+        left: 0;
+
+        @include media ("<tablet") {
+            left: -40px;
+        }
+    }
+    .wow{
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+
+        @include media ("<tablet") {
+            right: -40px;
+            bottom: 0;
+        }
+    }
+
+    .numbers_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            max-width: max-content;
+            margin: 0 auto;
+            align-items: flex-start;
+        }
+    }
+
+    .item_number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media ("<tablet") {
+            align-items: flex-start;
+        }
+    }
+
+    .number {
+        font-weight: 700;
+        font-size: 96px;
+        color: $white;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .number_border {
+        font-weight: 700;
+        font-size: 96px;
+        color: transparent;
+        -webkit-text-stroke: 1px #000;
+        position: absolute;
+        z-index: -1;
+        top: 3px;
+        left: 8px;
+    }
+
+    .number_text {
+        font-weight: 700;
+        font-size: 24px;
+        color: $white;
+    }
+}

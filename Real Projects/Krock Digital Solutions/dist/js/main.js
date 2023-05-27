@@ -138,6 +138,19 @@ function initSwiper() {
       spaceBetween: 30
     }
   }), _destroySlidersOnResi2));
+  destroySlidersOnResize(".post_swiper", 99999, {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }
+    }
+  });
 }
 
 function initBurger() {

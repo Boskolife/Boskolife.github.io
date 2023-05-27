@@ -3501,6 +3501,47 @@ body {
     right: 5px;
     transition: all .3s ease; }
 
+.plug {
+  width: 100%;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: url(../images/plug/plug_bg.jpg) 0 0/100% 100% no-repeat;
+  overflow: hidden; }
+  .plug .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%; }
+  .plug .plug_logo {
+    margin-bottom: 60px; }
+  .plug .plug_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 64px;
+    color: #ffffff;
+    margin-bottom: 20px; }
+    @media (max-width: 1085px) {
+      .plug .plug_title {
+        font-size: calc(40px + 24 * ((100vw - calc(375px)) / 710)); } }
+  .plug .plug_descr {
+    font-weight: 300;
+    font-size: 20px;
+    color: #ffffff; }
+
 .contact_main {
   /* Только если меньше контейнера */
   padding-top: 65px;
@@ -3823,6 +3864,355 @@ body {
     justify-content: center;
     text-align: center;
     color: #FFFFFF; }
+
+.recomended_section {
+  background-color: #F3F3F3;
+  /* Только если меньше контейнера */
+  padding-top: 100px;
+  /* Только если меньше контейнера */
+  padding-bottom: 90px; }
+  @media (max-width: 1085px) {
+    .recomended_section {
+      padding-top: calc(60px + 40 * ((100vw - calc(375px)) / 710)); } }
+  @media (max-width: 1085px) {
+    .recomended_section {
+      padding-bottom: calc(70px + 20 * ((100vw - calc(375px)) / 710)); } }
+  .recomended_section .recomended_title {
+    /* Только если меньше контейнера */
+    margin-bottom: 95px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 114%;
+    color: #222222; }
+    @media (max-width: 1085px) {
+      .recomended_section .recomended_title {
+        margin-bottom: calc(45px + 50 * ((100vw - calc(375px)) / 710)); } }
+  .recomended_section .post_swiper {
+    padding-bottom: 50px; }
+    .recomended_section .post_swiper .swiper-pagination {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    .recomended_section .post_swiper .swiper-pagination-bullet {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #EB5B31;
+      opacity: 1; }
+    .recomended_section .post_swiper .swiper-pagination-bullet-active {
+      width: 21px;
+      height: 21px; }
+
+.carrers_main {
+  /* Только если меньше контейнера */
+  padding-top: 65px;
+  /* Только если меньше контейнера */
+  padding-bottom: 75px;
+  position: relative; }
+  @media (max-width: 1085px) {
+    .carrers_main {
+      padding-top: calc(20px + 45 * ((100vw - calc(375px)) / 710)); } }
+  @media (max-width: 1085px) {
+    .carrers_main {
+      padding-bottom: calc(55px + 20 * ((100vw - calc(375px)) / 710)); } }
+  .carrers_main .carresr_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 64px;
+    color: #222222;
+    position: relative;
+    text-align: center;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0 auto;
+    margin-bottom: 60px; }
+    @media (max-width: 1085px) {
+      .carrers_main .carresr_title {
+        font-size: calc(40px + 24 * ((100vw - calc(375px)) / 710)); } }
+    .carrers_main .carresr_title::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      /* Только если меньше контейнера */
+      width: 120px;
+      /* Только если меньше контейнера */
+      height: 68px;
+      background-color: #EB5B31;
+      -webkit-clip-path: polygon(0 0, 90% 0, 100% 95%, 15% 100%);
+      clip-path: polygon(0 0, 90% 0, 100% 95%, 15% 100%);
+      z-index: -1;
+      border-radius: 5px; }
+      @media (max-width: 1085px) {
+        .carrers_main .carresr_title::before {
+          width: calc(95px + 25 * ((100vw - calc(375px)) / 710)); } }
+      @media (max-width: 1085px) {
+        .carrers_main .carresr_title::before {
+          height: calc(45px + 23 * ((100vw - calc(375px)) / 710)); } }
+  .carrers_main .positions {
+    background-color: #222222;
+    /* Только если меньше контейнера */
+    padding-top: 90px;
+    /* Только если меньше контейнера */
+    padding-bottom: 110px;
+    position: relative; }
+    @media (max-width: 1085px) {
+      .carrers_main .positions {
+        padding-top: calc(50px + 40 * ((100vw - calc(375px)) / 710)); } }
+    @media (max-width: 1085px) {
+      .carrers_main .positions {
+        padding-bottom: calc(100px + 10 * ((100vw - calc(375px)) / 710)); } }
+  .carrers_main .coub {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* Только если меньше контейнера */
+    width: 370px;
+    /* Только если меньше контейнера */
+    height: 420px; }
+    @media (max-width: 1085px) {
+      .carrers_main .coub {
+        width: calc(230px + 140 * ((100vw - calc(375px)) / 710)); } }
+    @media (max-width: 1085px) {
+      .carrers_main .coub {
+        height: calc(200px + 220 * ((100vw - calc(375px)) / 710)); } }
+    .carrers_main .coub img {
+      width: 100%;
+      height: 100%; }
+  .carrers_main .star {
+    position: absolute;
+    right: 0;
+    top: 40px; }
+  .carrers_main .bubbles {
+    position: absolute;
+    left: 30%;
+    top: 45px; }
+    @media (max-width: 767px) {
+      .carrers_main .bubbles {
+        display: none; } }
+  .carrers_main .positions_content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px;
+    color: #ffffff;
+    position: relative;
+    z-index: 1; }
+    @media (max-width: 767px) {
+      .carrers_main .positions_content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .carrers_main .positions_img_wrap {
+    width: 35%; }
+    @media (max-width: 767px) {
+      .carrers_main .positions_img_wrap {
+        width: 100%; } }
+  .carrers_main .img_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    line-height: 39px;
+    color: #ffffff;
+    /* Только если меньше контейнера */
+    margin-bottom: 60px; }
+    @media (max-width: 1085px) {
+      .carrers_main .img_title {
+        font-size: calc(30px + 2 * ((100vw - calc(375px)) / 710)); } }
+    @media (max-width: 1085px) {
+      .carrers_main .img_title {
+        margin-bottom: calc(25px + 35 * ((100vw - calc(375px)) / 710)); } }
+  @media (max-width: 767px) {
+    .carrers_main .positions_img {
+      display: none; } }
+  .carrers_main .positions_item {
+    width: 60%; }
+    @media (max-width: 767px) {
+      .carrers_main .positions_item {
+        width: 100%; } }
+  .carrers_main .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ffffff; }
+    .carrers_main .item:not(:last-child) {
+      margin-bottom: 40px; }
+  .carrers_main .item_title_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px; }
+  .carrers_main .item_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 40px;
+    margin-right: 20px;
+    line-height: 49px;
+    color: #ffffff; }
+    @media (max-width: 1085px) {
+      .carrers_main .item_title {
+        font-size: calc(32px + 8 * ((100vw - calc(375px)) / 710)); } }
+  .carrers_main .item_btn {
+    border-radius: 10px;
+    background-color: #EB5B31;
+    font-weight: 800;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px 15px; }
+  @media (max-width: 479px) {
+    .carrers_main .visible_btn {
+      display: none; } }
+  .carrers_main .hidden_btn {
+    display: none; }
+    @media (max-width: 479px) {
+      .carrers_main .hidden_btn {
+        display: block; } }
+  .carrers_main .descr_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 55px; }
+    @media (max-width: 767px) {
+      .carrers_main .descr_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 20px; } }
+  .carrers_main .descr_item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .carrers_main .descr_item_title {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #C1C1C1;
+    margin-bottom: 10px; }
+  .carrers_main .descr_item_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #FFFFFF; }
+
+.numbers {
+  /* Только если меньше контейнера */
+  padding-top: 65px;
+  /* Только если меньше контейнера */
+  padding-bottom: 75px;
+  position: relative;
+  overflow: hidden; }
+  @media (max-width: 1085px) {
+    .numbers {
+      padding-top: calc(20px + 45 * ((100vw - calc(375px)) / 710)); } }
+  @media (max-width: 1085px) {
+    .numbers {
+      padding-bottom: calc(55px + 20 * ((100vw - calc(375px)) / 710)); } }
+  .numbers .numbers_title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #222222;
+    margin-bottom: 70px;
+    text-align: center; }
+  .numbers .numbers_body {
+    background-color: #EB5B31;
+    /* Только если меньше контейнера */
+    padding-top: 75px;
+    /* Только если меньше контейнера */
+    padding-bottom: 75px;
+    position: relative; }
+    @media (max-width: 1085px) {
+      .numbers .numbers_body {
+        padding-top: calc(70px + 5 * ((100vw - calc(375px)) / 710)); } }
+    @media (max-width: 1085px) {
+      .numbers .numbers_body {
+        padding-bottom: calc(70px + 5 * ((100vw - calc(375px)) / 710)); } }
+  .numbers .crystal {
+    position: absolute;
+    top: 30px;
+    left: 0; }
+    @media (max-width: 767px) {
+      .numbers .crystal {
+        left: -40px; } }
+  .numbers .wow {
+    position: absolute;
+    bottom: 80px;
+    right: 0; }
+    @media (max-width: 767px) {
+      .numbers .wow {
+        right: -40px;
+        bottom: 0; } }
+  .numbers .numbers_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 767px) {
+      .numbers .numbers_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        margin: 0 auto;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .numbers .item_number {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .numbers .item_number {
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+  .numbers .number {
+    font-weight: 700;
+    font-size: 96px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1; }
+  .numbers .number_border {
+    font-weight: 700;
+    font-size: 96px;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+    position: absolute;
+    z-index: -1;
+    top: 3px;
+    left: 8px; }
+  .numbers .number_text {
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff; }
 
 footer {
   /* Только если меньше контейнера */
