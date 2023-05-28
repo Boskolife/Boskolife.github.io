@@ -4,16 +4,22 @@
     position: relative;
 
     .big_word {
+        width: 80%;
         position: absolute;
-        @include adaptiv-vaule("bottom", -200, -50, 1);
+        @include adaptiv-vaule("bottom", -190, 150, 1);
         left: 50%;
         transform: translateX(-50%);
-        @include adaptiv-vaule("font-size", 200, 60, 1);
-        font-weight: 800;
-        color: $gray;
-        text-transform: uppercase;
         z-index: -1;
-        max-width: max-content;
+
+        @include media ("<tablet") {
+            @include adaptiv-vaule("bottom", -70, -25, 1);
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .container {

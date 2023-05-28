@@ -1,5 +1,7 @@
 initBurger();
 initSwiper();
+changeLabel();
+setTimeout(initPopUp, 40000);
 // horizontalScroll();
 
 function initSwiper() {
@@ -162,25 +164,12 @@ function initBurger() {
     });
 }
 
-changeLabel();
 function changeLabel() {
-    // let checkboxes = document.querySelectorAll(".looking_check");
-    // checkboxes.forEach(function (checkbox) {
-    //     checkbox.addEventListener("change", function () {
-    //         let label = checkbox.previousElementSibling;
-    //         if (checkbox.checked) {
-    //             label.classList.add("label_checked");
-    //         } else {
-    //             label.classList.remove("label_checked");
-    //         }
-    //     });
-    // });
-    var checkboxes = document.querySelectorAll(".looking_check");
-    var labels = document.querySelectorAll(".looking_title");
+    let checkboxes = document.querySelectorAll(".looking_check");
+    let labels = document.querySelectorAll(".looking_title");
 
     checkboxes.forEach(function (checkbox, index) {
         checkbox.addEventListener("change", function () {
-            
             if (checkbox.checked) {
                 labels[index].classList.add("label_checked");
             } else {
@@ -192,7 +181,6 @@ function changeLabel() {
                     labels[otherIndex].classList.remove("label_checked");
                 }
             });
-
         });
     });
 }
@@ -267,3 +255,20 @@ function openTabBlog(evt, tabName) {
     document.getElementById(tabName).style.display = "grid";
     evt.currentTarget.className += " active_tab";
 }
+
+function initPopUp() {
+    const popUpContainer = document.querySelector(".popUpContainer");
+    const popUp = document.querySelector(".popUp");
+    const closeElement = document.querySelector(".close_element");
+
+    popUpContainer.classList.add('activeContainer');
+    popUp.classList.add('activePopUp');
+    document.body.classList.add("popUp_lock");
+
+    closeElement.addEventListener("click", () => {
+        popUp.classList.remove('activePopUp');
+        popUpContainer.classList.remove('activeContainer');
+        document.body.classList.remove("popUp_lock");
+    });
+}
+

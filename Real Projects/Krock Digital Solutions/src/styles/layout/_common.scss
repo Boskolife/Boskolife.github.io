@@ -1718,7 +1718,7 @@ body {
     @include adaptiv-vaule("padding-bottom", 200, 70, 1);
     position: relative;
 
-    .star{
+    .star {
         position: absolute;
         left: 50%;
         top: 5%;
@@ -1729,7 +1729,7 @@ body {
         }
     }
 
-    .bubbles{
+    .bubbles {
         position: absolute;
         right: 10%;
         top: 5%;
@@ -1739,7 +1739,7 @@ body {
         }
     }
 
-    .confetti{
+    .confetti {
         position: absolute;
         bottom: 0;
         left: 10%;
@@ -1749,7 +1749,7 @@ body {
         }
     }
 
-    .wow{
+    .wow {
         position: absolute;
         right: 10%;
         bottom: 0;
@@ -1787,7 +1787,7 @@ body {
             flex-direction: row;
             justify-content: space-around;
             height: 100%;
-            border-radius: 0 0 27px 27px ;
+            border-radius: 0 0 27px 27px;
             width: 100%;
             margin-top: -20px;
             padding-top: 40px;
@@ -1933,15 +1933,137 @@ body {
         color: #FFFFFF;
     }
 
-    .contact_us_img{
+    .contact_us_img {
 
         @include media ("<tablet") {
-            width: 100%;     
+            width: 100%;
             margin-bottom: -50px;
 
-            img{
+            img {
                 width: 100%;
             }
         }
     }
+}
+
+.popUpContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(216, 216, 216, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 4;
+    display: none;
+}
+
+.popUp {
+    background-color: $orange;
+    max-width: 615px;
+    width: calc(100% - 20px);
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    @include adaptiv-vaule("padding-top", 40, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 40, 20, 1);
+    @include adaptiv-vaule("padding-right", 65, 15, 1);
+    @include adaptiv-vaule("padding-left", 65, 15, 1);
+    z-index: 5;
+    display: none;
+
+    .close_element {
+        position: absolute;
+        cursor: pointer;
+        @include adaptiv-vaule("top", 20, 15, 1);
+        @include adaptiv-vaule("right", 20, 15, 1);
+
+        &:hover{
+            svg {
+                fill-opacity: 1;
+                transition: all .3s ease;
+            }
+        }
+
+        svg {
+            fill: $white;
+            fill-opacity: 0.6;
+            transition: all .3s ease;
+        }
+    }
+
+    .popUp_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 32, 30, 1);
+        text-align: center;
+        color: $white;
+        @include adaptiv-vaule("margin-bottom", 30, 15, 1);
+    }
+
+
+    .input_wrap {
+        background-color: $white;
+        border-radius: 18px;
+        padding: 8px 8px 8px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            background-color: transparent;
+            border-radius: 0;
+            padding: 0;
+        }
+    }
+
+    .popUp_input {
+        border: none;
+        width: 90%;
+        padding-right: 15px;
+
+        @include media ("<tablet") {
+            background-color: $white;
+            border-radius: 18px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+        }
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(43, 61, 81, 0.5);
+        }
+    }
+
+    .popUp_btn {
+        border: none;
+        background-color: $orange;
+        color: $white;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 18px;
+        width: 170px;
+        transition: all .3s ease;
+
+        @include media ("<tablet") {
+            background-color: $white;
+            color: $orange;
+        }
+
+        &:hover {
+            background-color: #BA4422;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.activePopUp,
+.activeContainer {
+    display: block;
 }

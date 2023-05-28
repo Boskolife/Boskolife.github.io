@@ -7,7 +7,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 initBurger();
-initSwiper(); // horizontalScroll();
+initSwiper();
+changeLabel();
+setTimeout(initPopUp, 40000); // horizontalScroll();
 
 function initSwiper() {
   var _destroySlidersOnResi, _destroySlidersOnResi2;
@@ -163,20 +165,7 @@ function initBurger() {
   });
 }
 
-changeLabel();
-
 function changeLabel() {
-  // let checkboxes = document.querySelectorAll(".looking_check");
-  // checkboxes.forEach(function (checkbox) {
-  //     checkbox.addEventListener("change", function () {
-  //         let label = checkbox.previousElementSibling;
-  //         if (checkbox.checked) {
-  //             label.classList.add("label_checked");
-  //         } else {
-  //             label.classList.remove("label_checked");
-  //         }
-  //     });
-  // });
   var checkboxes = document.querySelectorAll(".looking_check");
   var labels = document.querySelectorAll(".looking_title");
   checkboxes.forEach(function (checkbox, index) {
@@ -261,5 +250,19 @@ function openTabBlog(evt, tabName) {
 
   document.getElementById(tabName).style.display = "grid";
   evt.currentTarget.className += " active_tab";
+}
+
+function initPopUp() {
+  var popUpContainer = document.querySelector(".popUpContainer");
+  var popUp = document.querySelector(".popUp");
+  var closeElement = document.querySelector(".close_element");
+  popUpContainer.classList.add('activeContainer');
+  popUp.classList.add('activePopUp');
+  document.body.classList.add("popUp_lock");
+  closeElement.addEventListener("click", function () {
+    popUp.classList.remove('activePopUp');
+    popUpContainer.classList.remove('activeContainer');
+    document.body.classList.remove("popUp_lock");
+  });
 }
 //# sourceMappingURL=main.js.map
