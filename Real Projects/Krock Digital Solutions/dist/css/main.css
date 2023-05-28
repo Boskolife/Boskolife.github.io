@@ -4058,6 +4058,102 @@ body {
     .recomended_section .post_swiper .swiper-pagination-bullet-active {
       width: 21px;
       height: 21px; }
+  .recomended_section .tab_item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: 455px;
+    width: 100%;
+    position: relative; }
+    .recomended_section .tab_item:nth-child(even) {
+      margin-top: 150px; }
+      @media (max-width: 649px) {
+        .recomended_section .tab_item:nth-child(even) {
+          margin: 0; } }
+  .recomended_section .topic {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #EB5B31;
+    border-radius: 30px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 5px 20px; }
+  .recomended_section .item_img {
+    width: 100%;
+    height: 430px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px; }
+    .recomended_section .item_img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .recomended_section .item_text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    text-align: start; }
+  .recomended_section .item_title {
+    font-weight: 700;
+    /* Только если меньше контейнера */
+    font-size: 32px;
+    color: #222222; }
+    @media (max-width: 1085px) {
+      .recomended_section .item_title {
+        font-size: calc(24px + 8 * ((100vw - calc(375px)) / 710)); } }
+  .recomended_section .date {
+    position: absolute;
+    top: 70px;
+    left: -80px;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    font-weight: 300;
+    /* Только если меньше контейнера */
+    font-size: 20px;
+    color: #222222; }
+    @media (max-width: 1085px) {
+      .recomended_section .date {
+        font-size: calc(14px + 6 * ((100vw - calc(375px)) / 710)); } }
+    @media (max-width: 649px) {
+      .recomended_section .date {
+        position: static; } }
+  .recomended_section .item_btn_wrap {
+    border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+    border: 1px solid #222222;
+    width: 75px;
+    height: 70px;
+    position: relative; }
+    .recomended_section .item_btn_wrap:hover .item_btn {
+      top: 0;
+      right: 0;
+      transition: all .3s ease; }
+  .recomended_section .item_btn {
+    border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+    background-color: #EB5B31;
+    width: 100%;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    transition: all .3s ease; }
 
 .carrers_main {
   /* Только если меньше контейнера */
