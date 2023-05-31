@@ -565,3 +565,121 @@
         }
     }
 }
+
+.more_case {
+    @include adaptiv-vaule("padding-top", 115, 65, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 25, 1);
+    background-color: $black;
+    position: relative;
+
+    .orange_word{
+        color: $orange;
+    }
+
+    .line{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    .king{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .more_case_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        color: $white;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 50px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .tab_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 335px;
+        width: 100%;
+    }
+
+    .item_img {
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 25px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .item_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: start;
+    }
+
+    .item_title {
+        font-weight: 700;
+        font-size: 24px;
+        color: $white;
+    }
+
+    .date {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+        color: $white;
+    }
+
+    .item_btn_wrap {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        border: 1px solid $white;
+        width: 42px;
+        height: 42px;
+        position: relative;
+
+        &:hover {
+            .item_btn {
+                top: 0;
+                right: 0;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .item_btn {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        background-color: $orange;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        transition: all .3s ease;
+        padding: 9px;
+    }
+
+    .btn_wrap{
+        border: 1px solid $white;
+        margin: 0 auto;
+    }
+}

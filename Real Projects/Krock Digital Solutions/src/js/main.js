@@ -169,7 +169,7 @@ function initSwiper() {
     });
     destroySlidersOnResize(".rewievs_swiper", 99999, {
         slidesPerView: 1,
-        centeredSlides:true,
+        centeredSlides: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -184,11 +184,13 @@ function initSwiper() {
 function initBurger() {
     const burger = document.querySelector(".header_burger");
     const navMenu = document.querySelector(".nav");
+    const navContainer = document.querySelector(".nav_container");
 
     burger.addEventListener("click", () => {
         burger.classList.toggle("burger_active");
         navMenu.classList.toggle("menu_active");
         document.body.classList.toggle("body_lock");
+        navContainer.classList.toggle("active_container");
     });
 }
 
@@ -300,5 +302,82 @@ function initPopUp() {
         popUp.classList.remove("activePopUp");
         popUpContainer.classList.remove("activeContainer");
         document.body.classList.remove("popUp_lock");
+    });
+}
+
+updateProgressPopup();
+
+function updateProgressPopup() {
+    const nextBtn = document.getElementById("nextButton");
+    const backBtn = document.getElementById("backButton");
+    const sendBtn = document.getElementById("send");
+    const numberSteps = document.querySelectorAll(".title_wrap");
+    const stepWrap = document.querySelectorAll(".steps_wrap");
+    const parent = document.querySelector(".brief .content");
+
+    let currentStep = 0;
+    let totalSteps = 4;
+    const steps = new Array(totalSteps + 1).fill(0).map(() => {
+        return {
+            done: false,
+        };
+    });
+
+    steps[currentStep].done = true;
+    updateProgress();
+
+    function updateProgress() {
+        let progressBar = document.getElementById("progressBar");
+        let progress = (currentStep / totalSteps) * 100;
+        progressBar.value = progress;
+        parent.classList.add(`step_${currentStep}`);
+        steps.forEach((item, i) => {
+            if (item.done) {
+                numberSteps[i].classList.add("active");
+            } else {
+                numberSteps[i].classList.remove("active");
+            }
+            if (currentStep === i) {
+                numberSteps[i]
+                    .querySelector(".title")
+                    .classList.add("title_active");
+            } else {
+                numberSteps[i]
+                    .querySelector(".title")
+                    .classList.remove("title_active");
+            }
+        });
+    }
+
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            parent.classList.remove(`step_${currentStep}`);
+            currentStep++;
+            steps[currentStep].done = true;
+            updateProgress();
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 0) {
+            parent.classList.remove(`step_${currentStep}`);
+            steps[currentStep].done = false;
+            currentStep--;
+            updateProgress();
+        }
+    }
+
+    nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nextStep();
+    });
+
+    sendBtn.addEventListener("click", () => {
+        nextStep();
+    });
+
+    backBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        prevStep();
     });
 }

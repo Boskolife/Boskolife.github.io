@@ -186,10 +186,12 @@ function initSwiper() {
 function initBurger() {
   var burger = document.querySelector(".header_burger");
   var navMenu = document.querySelector(".nav");
+  var navContainer = document.querySelector(".nav_container");
   burger.addEventListener("click", function () {
     burger.classList.toggle("burger_active");
     navMenu.classList.toggle("menu_active");
     document.body.classList.toggle("body_lock");
+    navContainer.classList.toggle("active_container");
   });
 }
 
@@ -296,6 +298,76 @@ function initPopUp() {
     popUp.classList.remove("activePopUp");
     popUpContainer.classList.remove("activeContainer");
     document.body.classList.remove("popUp_lock");
+  });
+}
+
+updateProgressPopup();
+
+function updateProgressPopup() {
+  var nextBtn = document.getElementById("nextButton");
+  var backBtn = document.getElementById("backButton");
+  var sendBtn = document.getElementById("send");
+  var numberSteps = document.querySelectorAll(".title_wrap");
+  var stepWrap = document.querySelectorAll(".steps_wrap");
+  var parent = document.querySelector(".brief .content");
+  var currentStep = 0;
+  var totalSteps = 4;
+  var steps = new Array(totalSteps + 1).fill(0).map(function () {
+    return {
+      done: false
+    };
+  });
+  steps[currentStep].done = true;
+  updateProgress();
+
+  function updateProgress() {
+    var progressBar = document.getElementById("progressBar");
+    var progress = currentStep / totalSteps * 100;
+    progressBar.value = progress;
+    parent.classList.add("step_".concat(currentStep));
+    steps.forEach(function (item, i) {
+      if (item.done) {
+        numberSteps[i].classList.add("active");
+      } else {
+        numberSteps[i].classList.remove("active");
+      }
+
+      if (currentStep === i) {
+        numberSteps[i].querySelector(".title").classList.add("title_active");
+      } else {
+        numberSteps[i].querySelector(".title").classList.remove("title_active");
+      }
+    });
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      parent.classList.remove("step_".concat(currentStep));
+      currentStep++;
+      steps[currentStep].done = true;
+      updateProgress();
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      parent.classList.remove("step_".concat(currentStep));
+      steps[currentStep].done = false;
+      currentStep--;
+      updateProgress();
+    }
+  }
+
+  nextBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    nextStep();
+  });
+  sendBtn.addEventListener("click", function () {
+    nextStep();
+  });
+  backBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    prevStep();
   });
 }
 //# sourceMappingURL=main.js.map

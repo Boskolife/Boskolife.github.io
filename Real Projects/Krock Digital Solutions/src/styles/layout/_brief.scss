@@ -1,0 +1,344 @@
+.brief {
+    width: 100%;
+    height: calc(100vh - 82px);
+    overflow: auto;
+
+    @include media ("<desktop") {
+        height: auto;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+
+    $steps: 0,
+    1,
+    2,
+    3,
+    4;
+
+    @each $step in $steps {
+        .step_#{$step} {
+            .content_step_#{$step} {
+                display: block;
+            }
+
+            .title_wrap_#{$step} {
+                display: flex;
+            }
+        }
+    }
+
+    .step_0{
+        #backButton{
+            display: none;
+        }
+    }
+    .step_4{
+        #nextButton{
+            display: none;
+        }
+
+        #send{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: $white;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    #send {
+        display: none;
+    }
+
+    .title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        @include media ("<desktop") {
+            gap: 5px;
+        }
+
+        &.active {
+            .step_body {
+                border: 1px solid $orange;
+
+                .step {
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+
+    .title {
+        font-weight: 300;
+        font-size: 16px;
+        color: $black;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .title_active{
+        @include media ("<desktop") {
+            display: block;
+        }
+    }
+
+    .steps {
+        max-width: 300px;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        @include adaptiv-vaule("padding-top", 60, 30, 1);
+        @include adaptiv-vaule("padding-bottom", 60, 30, 1);
+        @include adaptiv-vaule("padding-right", 40, 15, 1);
+        @include adaptiv-vaule("padding-left", 40, 15, 1);
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid $orange;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .step_body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 48px;
+            min-height: 48px;
+            border-radius: 50%;
+        }
+
+        .step {
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #C1C1C1;
+        }
+    }
+
+    .steps_wrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        max-width: max-content;
+        gap: 45px;
+        @include adaptiv-vaule("gap", 45, 10, 1);
+        z-index: 2;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            flex-direction: row;
+        }
+    }
+
+    .progressBar {
+        position: absolute;
+        top: 205px;
+        left: -151px;
+        transform: rotate(90deg);
+        // transform-origin: right top;
+        width: 350px;
+        height: 2px;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        .progress_line {
+            width: 100%;
+            height: 100%;
+            // transform: rotate(90deg);
+            // transform-origin: right top; 
+            background-color: $orange;
+
+            &::-webkit-progress-bar {
+                background-color: #DCDCDC;
+            }
+
+            &::-webkit-progress-value {
+                background-color: $orange;
+            }
+        }
+    }
+
+    .step_content_wrap {
+        background-color: $orange;
+        padding: 60px 40px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .step_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 48, 36, 1);
+        color: $white;
+        margin-bottom: 42px;
+    }
+
+    .sub_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        color: $white;
+        margin-bottom: 25px;
+    }
+
+
+    [data-status='invalid']{
+        .failure{
+            display: block;
+        }
+        
+        .content_step{
+            display: none;
+        }
+    }
+
+    .failure,
+    .success{
+        display: none;
+    }
+
+    .first {
+        margin-bottom: 70px;
+
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .input_body {
+            display: flex;
+            align-items: center;
+
+            input {
+                // margin-right: 10px;
+                opacity: 0;
+                visibility: hidden;
+                width: 0;
+                height: 0;
+
+                &:checked {
+                    background-color: red;
+                }
+            }
+
+            label {
+                font-size: 18px;
+                color: #F9EBE7;
+                cursor: pointer;
+                border-radius: 15px;
+                padding: 5px 10px;
+                border: 1px solid #F9EBE7;
+            }
+        }
+    }
+
+    form{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .content_step {
+        margin-bottom: 70px;
+        display: none;
+
+        .input_wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &:not(:last-child) {
+                margin-bottom: 35px;
+            }
+        }
+
+        .data_text,
+        .area_text {
+            width: 100%;
+            background-color: transparent;
+            padding: 12px;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            font-size: 20px;
+            color: $white;
+            transition: all .3s ease;
+
+            &:focus {
+                border-bottom: 1px solid rgba(255, 255, 255, 1);
+                transition: all .3s ease;
+            }
+        }
+
+        .area_text {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            height: 105px;
+
+            &:focus {
+                border: 1px solid rgba(255, 255, 255, 1);
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .button_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: max-content;
+        gap: 50px;
+        margin: 0 auto;
+    }
+
+    .brief_btn {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+        display: flex;
+        align-items: center;
+    }
+
+    .nextArrow {
+        margin-left: 10px;
+    }
+
+    .prevArrow {
+        margin-right: 10px;
+        transform: rotate(180deg);
+    }
+
+}

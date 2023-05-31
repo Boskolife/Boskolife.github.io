@@ -99,7 +99,7 @@
         }
 
         &:hover {
-            .form_btn {
+            .app_btn {
                 top: -1px;
                 right: -1px;
                 transition: all .3s ease;
@@ -382,7 +382,7 @@
         @include adaptiv-vaule("margin-bottom", 50, 30, 1);
     }
 
-    .content{
+    .content {
         @include media ("<phone") {
             display: flex;
             align-items: center;
@@ -422,13 +422,13 @@
     }
 }
 
-.app_text{
+.app_text {
     @include adaptiv-vaule("padding-top", 55, 25, 1);
     @include adaptiv-vaule("padding-bottom", 55, 25, 1);
     background-color: $orange;
     overflow: hidden;
 
-    .content{
+    .content {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -439,7 +439,7 @@
         }
     }
 
-    .text{
+    .text {
         width: 40%;
 
         @include media ("<desktop") {
@@ -447,21 +447,21 @@
         }
     }
 
-    .app_text_title{
+    .app_text_title {
         font-weight: 700;
         @include adaptiv-vaule("font-size", 32, 24, 1);
         color: $white;
         margin-bottom: 20px;
     }
 
-    .app_text_descr{
+    .app_text_descr {
         font-weight: 300;
         @include adaptiv-vaule("font-size", 20, 16, 1);
         line-height: 130%;
         color: $white;
     }
 
-    .img{
+    .img {
         width: 50%;
         position: relative;
         @include adaptiv-vaule("bottom", -55, -25, 1);
@@ -472,9 +472,186 @@
             margin: 0 auto;
         }
 
-        img{
+        img {
             width: 100%;
             height: 100%;
+        }
+    }
+}
+
+.app_list {
+    @include adaptiv-vaule("padding-top", 55, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 25, 1);
+
+    .app_list_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 55, 50, 1);
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptiv-vaule("column-gap", 70, 0, 1);
+        row-gap: 30px;
+    }
+
+    .item {
+        width: 45%;
+        padding-left: 55px;
+        position: relative;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        &::before {
+            content: url(../images/case_template/check.svg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .item_title {
+        font-weight: 600;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    .item_descr {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 130%;
+        color: #000000;
+    }
+}
+
+
+
+.more_project {
+    @include adaptiv-vaule("padding-top", 55, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 25, 1);
+
+    .more_project_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        color: $black;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .tab_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 335px;
+        width: 100%;
+    }
+
+    .item_img {
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 25px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .item_text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: start;
+    }
+
+    .item_title {
+        font-weight: 700;
+        font-size: 24px;
+        color: $black;
+    }
+
+    .date {
+        font-weight: 300;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+        color: $black;
+    }
+
+    .item_btn_wrap {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        border: 1px solid $black;
+        width: 42px;
+        height: 42px;
+        position: relative;
+
+        &:hover {
+            .item_btn {
+                top: 0;
+                right: 0;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    .item_btn {
+        border-radius: 81% 93% 67% 100% / 61% 0% 71% 2%;
+        background-color: $orange;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        transition: all .3s ease;
+        padding: 9px;
+    }
+}
+
+.gallery {
+    @include adaptiv-vaule("padding-top", 55, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 55, 25, 1);
+    background-color: #F3F3F3;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    .gallery_img {
+        max-width: 300px;
+        width: 100%;
+        height: 180px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
         }
     }
 }

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krock Digital Solutions</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="website icon" href="./images/icologo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+        defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="header_content">
+                    <div class="bubble_img">
+                        <img src="./images/header/bubbles.svg" alt= "bubbles" >
+                    </div>
+                    <a href="index.html" target="_blank" class="logo">
+                        <img src="./images/header/main_logo.svg" alt="image not found">
+                    </a>
+                    <div class="nav_container"></div>
+                    <nav class="nav">
+                        <ul class="nav_menu">
+                            <li class="menu_item"> <a class="menu_link" target="_blank" href="about_us.html">About us</a></li>
+                            <li class="menu_item"> <a class="menu_link" target="_blank" href="service.html">Services</a></li>
+                            <li class="menu_item"> <a class="menu_link" target="_blank" href="case.html">Case studies</a></li>
+                            <li class="menu_item"> <a class="menu_link" target="_blank" href="blog.html">Blog</a></li>
+                            <li class="menu_item"> <a class="menu_link" target="_blank" href="contact.html">Contact</a></li>
+                        </ul>
+                        <a href="brief.html" target="_blank" class="menu_btn">Request offer</a>
+                    </nav>
+                    <div class="header_burger">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="brief">
+                <div class="content">
+                    <div class="steps">
+                        <div class="steps_wrap">
+                            <div class="title_wrap title_wrap_0">
+                                <div class="step_body active_step">
+                                    <span class="step">1</span>
+                                </div>
+                                <span class="title">Project type</span>
+                            </div>
+                            <div class="title_wrap title_wrap_1">
+                                <div class="step_body">
+                                    <span class="step">2</span>
+                                </div>
+                                <span class="title">Project type</span>
+                            </div>
+                            <div class="title_wrap title_wrap_2">
+                                <div class="step_body">
+                                    <span class="step">3</span>
+                                </div>
+                                <span class="title">Project type</span>
+                            </div>
+                            <div class="title_wrap title_wrap_3">
+                                <div class="step_body">
+                                    <span class="step">4</span>
+                                </div>
+                                <span class="title">Project type</span>
+                            </div>
+                            <div class="title_wrap title_wrap_4">
+                                <div class="step_body">
+                                    <span class="step">5</span>
+                                </div>
+                                <span class="title">Project type</span>
+                            </div>
+                            <div class="progressBar">
+                                <progress class="progress_line" id="progressBar" value="0" max="100">
+                                    <progress>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step_content_wrap">
+                        <form>
+                            <div class="form_body">
+                                <div class="content_step content_step_0">
+                                    <h2 class="step_title">What kind of the project are you need?
+                                    </h2>
+                                    <h3 class="sub_title">Choose your option:</h3>
+                                    <div class="wrap">
+                                        <div class="input_body">
+                                            <input id="1" type="checkbox">
+                                            <label for="1">Web Site</label>
+                                        </div>
+                                        <div class="input_body">
+                                            <input id="2" type="checkbox">
+                                            <label for="2">Web Site</label>
+                                        </div>
+                                        <div class="input_body">
+                                            <input id="3" type="checkbox">
+                                            <label for="3">Web Site</label>
+                                        </div>
+                                        <div class="input_body">
+                                            <input id="4" type="checkbox">
+                                            <label for="4">Web Site</label>
+                                        </div>
+                                        <div class="input_body">
+                                            <input id="5" type="checkbox">
+                                            <label for="5">Web Site</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_step content_step_1">
+                                    <h2 class="step_title">Is it a new project or a redesign?
+                                    </h2>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Do you have an old version of your
+                                            project?</label>
+                                        <input class="data_text" placeholder="Link on website"
+                                            type="text">
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Tell about your company</label>
+                                        <textarea class="area_text"
+                                            placeholder="Share important information about your company"></textarea>
+                                    </div>
+                                </div>
+                                <div class="content_step content_step_2">
+                                    <h2 class="step_title">How much time do you wish this projet to
+                                        take?
+                                    </h2>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">How much time do we have for
+                                            development?</label>
+                                        <input class="data_text" placeholder="2-4 weeks" type="text">
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Information about competitors</label>
+                                        <textarea class="area_text"
+                                            placeholder="A few key competitors and be sure to include links to their sites."></textarea>
+                                    </div>
+                                </div>
+                                <div class="content_step content_step_3">
+                                    <h2 class="step_title">How much time do you wish this projet to
+                                        take?
+                                    </h2>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Design Information</label>
+                                        <textarea class="area_text"
+                                            placeholder="Tell us how you see the design of your site, also indicate if you have ready-made corporate identity elements that you need to use"></textarea>
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Information about the future</label>
+                                        <textarea class="area_text"
+                                            placeholder="Tell us how you see the future site, its structure and functionality."></textarea>
+                                    </div>
+                                </div>
+                                <div class="content_step content_step_4">
+                                    <h2 class="step_title">Your contact information
+                                    </h2>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">What your name?</label>
+                                        <input class="data_text" placeholder="Your full name"
+                                            type="text">
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Your email</label>
+                                        <input class="data_text" placeholder="info@krockds.com"
+                                            type="email">
+                                    </div>
+                                    <div class="input_wrap">
+                                        <label class="sub_title">Your phone number</label>
+                                        <input class="data_text" placeholder="+xx (xx) xxx-xx-xx"
+                                            type="tel">
+                                    </div>
+                                </div>
+                                <div class="success">
+                                    <p class="true">done</p>
+                                </div>
+                                <div class="failure">
+                                    <p class="false">invalid</p>
+                                </div>
+                            </div>
+                            <div class="button_wrap">
+                                <a href="#" class="brief_btn" id="backButton">
+                                    <img class="prevArrow" src="./images/arrow_next.svg" alt= "image not found" >
+                                    Previous
+                                </a>
+                                <a href="#" class="brief_btn" id="nextButton">Next
+                                    <img class="nextArrow" src="./images/arrow_next.svg" alt= "image not found" >
+                                </a>
+                                <button class="brief_btn form_btn" id="send" type="submit">Send
+                                    <img class="nextArrow" src="./images/arrow_next.svg" alt= "image not found" >
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
