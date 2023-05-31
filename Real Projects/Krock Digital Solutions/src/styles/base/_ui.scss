@@ -9,3 +9,39 @@
 .popUp_lock{
     overflow: hidden;
 }
+
+
+.btn_wrap {
+    border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+    border: 1px solid $black;
+    width: 240px;
+    height: 70px;
+    position: relative;
+
+    &:hover {
+        .orange_btn {
+            top: -1px;
+            right: -1px;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.orange_btn {
+    transition: all .3s ease;
+    border-radius: 100% 57% 35% 19% / 60% 53% 54% 100%;
+    background-color: $orange;
+    border: none;
+    position: absolute;
+    top: -7px;
+    right: 7px;
+    font-weight: 700;
+    font-size: 20px;
+    width: 240px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+}

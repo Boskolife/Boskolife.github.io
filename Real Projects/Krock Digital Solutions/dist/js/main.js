@@ -153,6 +153,34 @@ function initSwiper() {
       }
     }
   });
+  destroySlidersOnResize(".team_swiper", 99999, {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 2
+      }
+    }
+  });
+  destroySlidersOnResize(".rewievs_swiper", 99999, {
+    slidesPerView: 1,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
 }
 
 function initBurger() {
@@ -253,15 +281,20 @@ function openTabBlog(evt, tabName) {
 }
 
 function initPopUp() {
-  var popUpContainer = document.querySelector(".popUpContainer");
   var popUp = document.querySelector(".popUp");
+
+  if (!popUp) {
+    return;
+  }
+
+  var popUpContainer = document.querySelector(".popUpContainer");
   var closeElement = document.querySelector(".close_element");
-  popUpContainer.classList.add('activeContainer');
-  popUp.classList.add('activePopUp');
+  popUpContainer.classList.add("activeContainer");
+  popUp.classList.add("activePopUp");
   document.body.classList.add("popUp_lock");
   closeElement.addEventListener("click", function () {
-    popUp.classList.remove('activePopUp');
-    popUpContainer.classList.remove('activeContainer');
+    popUp.classList.remove("activePopUp");
+    popUpContainer.classList.remove("activeContainer");
     document.body.classList.remove("popUp_lock");
   });
 }
