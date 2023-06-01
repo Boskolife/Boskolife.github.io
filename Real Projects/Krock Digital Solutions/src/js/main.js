@@ -2,7 +2,7 @@ initBurger();
 initSwiper();
 changeLabel();
 setTimeout(initPopUp, 40000);
-// horizontalScroll();
+horizontalScroll();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -308,12 +308,15 @@ function initPopUp() {
 updateProgressPopup();
 
 function updateProgressPopup() {
+    const parent = document.querySelector(".brief .content");
+    if(!parent){
+        return
+    }
     const nextBtn = document.getElementById("nextButton");
     const backBtn = document.getElementById("backButton");
     const sendBtn = document.getElementById("send");
     const numberSteps = document.querySelectorAll(".title_wrap");
     const stepWrap = document.querySelectorAll(".steps_wrap");
-    const parent = document.querySelector(".brief .content");
 
     let currentStep = 0;
     let totalSteps = 4;
@@ -329,7 +332,6 @@ function updateProgressPopup() {
     function updateProgress() {
         let progressBar = document.getElementById("progressBar");
         let progress = (currentStep / totalSteps) * 100;
-        progressBar.value = progress;
         parent.classList.add(`step_${currentStep}`);
         steps.forEach((item, i) => {
             if (item.done) {

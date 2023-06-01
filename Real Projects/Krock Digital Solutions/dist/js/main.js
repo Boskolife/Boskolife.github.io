@@ -9,7 +9,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 initBurger();
 initSwiper();
 changeLabel();
-setTimeout(initPopUp, 40000); // horizontalScroll();
+setTimeout(initPopUp, 40000);
+horizontalScroll();
 
 function initSwiper() {
   var _destroySlidersOnResi, _destroySlidersOnResi2;
@@ -304,12 +305,17 @@ function initPopUp() {
 updateProgressPopup();
 
 function updateProgressPopup() {
+  var parent = document.querySelector(".brief .content");
+
+  if (!parent) {
+    return;
+  }
+
   var nextBtn = document.getElementById("nextButton");
   var backBtn = document.getElementById("backButton");
   var sendBtn = document.getElementById("send");
   var numberSteps = document.querySelectorAll(".title_wrap");
   var stepWrap = document.querySelectorAll(".steps_wrap");
-  var parent = document.querySelector(".brief .content");
   var currentStep = 0;
   var totalSteps = 4;
   var steps = new Array(totalSteps + 1).fill(0).map(function () {
@@ -323,7 +329,6 @@ function updateProgressPopup() {
   function updateProgress() {
     var progressBar = document.getElementById("progressBar");
     var progress = currentStep / totalSteps * 100;
-    progressBar.value = progress;
     parent.classList.add("step_".concat(currentStep));
     steps.forEach(function (item, i) {
       if (item.done) {
