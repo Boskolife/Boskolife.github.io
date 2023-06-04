@@ -2,7 +2,8 @@ initBurger();
 initSwiper();
 changeLabel();
 setTimeout(initPopUp, 40000);
-horizontalScroll();
+// horizontalScroll();
+initTabs();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -284,6 +285,56 @@ function openTabBlog(evt, tabName) {
 
     document.getElementById(tabName).style.display = "grid";
     evt.currentTarget.className += " active_tab";
+}
+
+function openTabFaq(evt, tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(
+            " active_tab",
+            ""
+        );
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active_tab";
+}
+
+function initTabs() {
+    const faqTabs = document.querySelector("#faqTabs");
+
+    if (!faqTabs) return;
+
+    const tabs = document.querySelectorAll(".tab_title"),
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelectorAll(".tabcontent"),
+        closeItem = document.querySelectorAll(".open_status");
+
+    function showTabContent(i = 0) {
+        tabsContent[i].classList.toggle("show_content");
+        tabs[i].classList.toggle("tab_active");
+        closeItem[i].classList.toggle("open_active");
+    }
+
+    tabsParent.forEach(item =>{
+        item.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target && target.classList.contains("tab_title")) {
+                tabs.forEach((item, i) => {
+                    if (target == item) {
+                        showTabContent(i);
+                    }
+                });
+            }
+        });
+    })
+   
 }
 
 function initPopUp() {

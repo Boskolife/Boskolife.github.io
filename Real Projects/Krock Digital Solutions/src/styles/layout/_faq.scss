@@ -1,0 +1,194 @@
+.faq {
+    @include adaptiv-vaule("padding-top", 120, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 70, 1);
+
+    .content {
+        text-align: center;
+    }
+
+    .faq_title {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 60, 34, 1);
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    .faq_descr {
+        font-weight: 300;
+        font-size: 20px;
+        color: #000000;
+    }
+
+    .faq_tabs_content {
+        @include adaptiv-vaule("margin-top", 75, 40, 1);
+        @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .tabs_btn {
+        width: 25%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        @include media ("<tablet") {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .tabs_title {
+        font-weight: 700;
+        font-size: 32px;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .tablinks {
+        border: none;
+        background-color: transparent;
+        font-weight: 300;
+        font-size: 24px;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 35, 15, 1);
+
+        @include media ("<tablet") {
+            padding: 8px 15px;
+            margin: 0;
+            background-color: #F3F3F3;
+            border-radius: 20px;
+            
+        }
+    }
+
+    .active_tab {
+        font-weight: 700;
+
+        @include media ("<tablet") {
+            background-color: $orange;
+            color: $white;
+        }
+    }
+
+    .tab_content_wrap {
+        width: 70%;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .tabcontent {
+        width: 100%;
+        text-align: start;
+        display: none;
+    }
+
+    .tabs {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #F3F3F3;
+    }
+
+    .active_content {
+        display: block;
+    }
+
+    .tab_title_wrap {
+        padding: 15px 15px 15px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .open_status {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        margin-left: 5px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $orange;
+            top: 0;
+            left: 0;
+            transition: all .3s ease;
+        }
+
+        &::before {
+            width: 2px;
+            height: 15px;
+            border-radius: 2px;
+            transform: rotate(90deg);
+        }
+
+        &::after {
+            width: 2px;
+            height: 15px;
+            border-radius: 2px;
+        }
+    }
+
+    .open_active {
+        &::before {
+            transform: rotate(45deg);
+            transition: all .3s ease;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            transition: all .3s ease;
+        }
+    }
+
+    .tab_title {
+        font-weight: 700;
+        font-size: 24px;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        color: $black;
+        cursor: pointer;
+    }
+
+    .tab_content {
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        line-height: 130%;
+        color: #000000;
+        transition: all .4s linear;
+    }
+
+    .show_content {
+        height: auto;
+        transition: all .4s linear;
+        padding: 0 0 15px 0;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+    }
+}

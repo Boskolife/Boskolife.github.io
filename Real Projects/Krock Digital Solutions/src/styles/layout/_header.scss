@@ -148,6 +148,24 @@ header {
         }
     }
 
+    .social_links{
+        display: none;
+
+        @include media ("<tablet") {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-top: 70px;
+        }
+    }
+
+    .link{
+        svg{
+            fill: $white;
+        }
+    }
+
     .header_burger {
         display: none;
         width: 29px;

@@ -65,7 +65,7 @@
     }
 
     .positions_content {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
@@ -192,6 +192,38 @@
         font-size: 18px;
         line-height: 120%;
         color: #FFFFFF;
+    }
+
+    .havent_open_positions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $white;
+        max-width: 510px;
+        width: 100%;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-top", 90, 50, 1);
+        @include adaptiv-vaule("margin-bottom", 110, 20, 1);
+        position: relative;
+        z-index: 2;
+
+        .title {
+            font-weight: 700;
+            font-size: 40px;
+            @include adaptiv-vaule("font-size", 40, 32, 1);
+            line-height: 49px;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .descr {
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 120%;
+        }
     }
 }
 

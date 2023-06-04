@@ -848,6 +848,29 @@ html {
         }
     }
 
+    .number_title{
+        font-weight: 700;
+        font-size: 55px;
+        color: $orange;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
+        @include adaptiv-vaule("font-size", 330, 160, 1);
+    }
+
+    .number_border {
+        font-weight: 700;
+        /* Только если меньше контейнера */
+        font-size: 55px;
+        color: transparent;
+        -webkit-text-stroke: 3px #000;
+        position: absolute;
+        z-index: -1;
+        bottom: 15px;
+        left: 10px;
+        @include adaptiv-vaule("font-size", 330, 160, 1);
+    }
+
     .trust_us_title {
         @include adaptiv-vaule("margin-top", -50, -30, 1);
         text-align: start;
