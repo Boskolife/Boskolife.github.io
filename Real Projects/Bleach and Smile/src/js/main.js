@@ -1,5 +1,6 @@
 ininSwiper();
 initBurger();
+initBeerSlider();
 
 function ininSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -111,4 +112,9 @@ function initBurger() {
     });
 }
 
-var slider = new BeerSlider( document.getElementById( "beer-slider" ) );
+function initBeerSlider() {
+    let slider = new BeerSlider( document.getElementById( "beer-slider" ) );
+    if(!slider){
+        return
+    }
+};

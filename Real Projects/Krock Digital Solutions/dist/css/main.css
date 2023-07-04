@@ -5193,6 +5193,35 @@ html ::-webkit-scrollbar-thumb {
   transition: all .3s ease;
 }
 
+.slider-container {
+  overflow: hidden;
+}
+
+.slider-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.js-marquee {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 30px;
+  height: 300px;
+}
+
+.js-marquee .slide_img {
+  width: auto;
+  height: auto;
+}
+
 .blog_tabs {
   /* Только если меньше контейнера */
   padding-top: 50px;

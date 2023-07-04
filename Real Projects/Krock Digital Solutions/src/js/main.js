@@ -322,7 +322,7 @@ function initTabs() {
         closeItem[i].classList.toggle("open_active");
     }
 
-    tabsParent.forEach(item =>{
+    tabsParent.forEach((item) => {
         item.addEventListener("click", (event) => {
             const target = event.target;
             if (target && target.classList.contains("tab_title")) {
@@ -333,8 +333,7 @@ function initTabs() {
                 });
             }
         });
-    })
-   
+    });
 }
 
 function initPopUp() {
@@ -360,14 +359,13 @@ updateProgressPopup();
 
 function updateProgressPopup() {
     const parent = document.querySelector(".brief .content");
-    if(!parent){
-        return
+    if (!parent) {
+        return;
     }
     const nextBtn = document.getElementById("nextButton");
     const backBtn = document.getElementById("backButton");
     const sendBtn = document.getElementById("send");
     const numberSteps = document.querySelectorAll(".title_wrap");
-    const stepWrap = document.querySelectorAll(".steps_wrap");
 
     let currentStep = 0;
     let totalSteps = 4;
@@ -383,6 +381,7 @@ function updateProgressPopup() {
     function updateProgress() {
         let progressBar = document.getElementById("progressBar");
         let progress = (currentStep / totalSteps) * 100;
+        progressBar.value = progress;
         parent.classList.add(`step_${currentStep}`);
         steps.forEach((item, i) => {
             if (item.done) {

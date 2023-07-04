@@ -1422,7 +1422,8 @@ body {
     @media (max-width: 1023px) {
       .reviews .reviews_content {
         -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse; } }
+        flex-direction: column-reverse;
+        gap: 200px; } }
   .reviews .reviews_swiper {
     width: 30%;
     height: 300px;
@@ -1502,37 +1503,113 @@ body {
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: center;
-    justify-content: center;
-    overflow: hidden; }
+    justify-content: center; }
     @media (max-width: 1023px) {
       .reviews .reviews_img {
         width: 100%;
-        margin: 0 0 50px 0; } }
+        margin: 0; } }
     .reviews .reviews_img .reviews_img_first {
-      position: relative;
-      z-index: 1; }
+      z-index: 1;
+      /* Только если меньше контейнера */
+      width: 510px;
+      /* Только если меньше контейнера */
+      height: 380px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_first {
+          width: calc(240px + 270 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_first {
+          height: calc(175px + 205 * ((100vw - calc(375px)) / 955)); } }
     .reviews .reviews_img .reviews_img_second {
       position: absolute;
       left: 0px;
-      top: 50%; }
+      top: 50%;
+      /* Только если меньше контейнера */
+      width: 140px;
+      /* Только если меньше контейнера */
+      height: 100px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_second {
+          width: calc(65px + 75 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_second {
+          height: calc(50px + 50 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .reviews .reviews_img .reviews_img_second {
+          top: 50%; } }
     .reviews .reviews_img .reviews_img_third {
       position: absolute;
       top: -150px;
-      left: 0px; }
+      left: 0px;
+      /* Только если меньше контейнера */
+      width: 320px;
+      /* Только если меньше контейнера */
+      height: 240px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_third {
+          width: calc(150px + 170 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_third {
+          height: calc(110px + 130 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .reviews .reviews_img .reviews_img_third {
+          top: -65px;
+          left: 0; } }
     .reviews .reviews_img .reviews_img_fourth {
       position: absolute;
       z-index: 2;
       top: -40px;
-      right: 130px; }
+      right: 130px;
+      /* Только если меньше контейнера */
+      width: 160px;
+      /* Только если меньше контейнера */
+      height: 120px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_fourth {
+          width: calc(75px + 85 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_fourth {
+          height: calc(55px + 65 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .reviews .reviews_img .reviews_img_fourth {
+          right: 10px; } }
     .reviews .reviews_img .reviews_img_fifth {
       position: absolute;
       z-index: 2;
-      bottom: -100px;
-      right: 160px; }
+      bottom: -70px;
+      right: 160px;
+      /* Только если меньше контейнера */
+      width: 160px;
+      /* Только если меньше контейнера */
+      height: 120px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_fifth {
+          width: calc(75px + 85 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_fifth {
+          height: calc(55px + 65 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .reviews .reviews_img .reviews_img_fifth {
+          right: 20px;
+          bottom: -30px; } }
     .reviews .reviews_img .reviews_img_sixth {
       position: absolute;
       left: 100px;
-      bottom: -200px; }
+      bottom: -200px;
+      /* Только если меньше контейнера */
+      width: 320px;
+      /* Только если меньше контейнера */
+      height: 240px; }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_sixth {
+          width: calc(150px + 170 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1330px) {
+        .reviews .reviews_img .reviews_img_sixth {
+          height: calc(110px + 130 * ((100vw - calc(375px)) / 955)); } }
+      @media (max-width: 1023px) {
+        .reviews .reviews_img .reviews_img_sixth {
+          left: 35px;
+          bottom: -100px; } }
 
 .contact {
   /* Только если меньше контейнера */

@@ -364,7 +364,6 @@ function updateProgressPopup() {
   var backBtn = document.getElementById("backButton");
   var sendBtn = document.getElementById("send");
   var numberSteps = document.querySelectorAll(".title_wrap");
-  var stepWrap = document.querySelectorAll(".steps_wrap");
   var currentStep = 0;
   var totalSteps = 4;
   var steps = new Array(totalSteps + 1).fill(0).map(function () {
@@ -378,6 +377,7 @@ function updateProgressPopup() {
   function updateProgress() {
     var progressBar = document.getElementById("progressBar");
     var progress = currentStep / totalSteps * 100;
+    progressBar.value = progress;
     parent.classList.add("step_".concat(currentStep));
     steps.forEach(function (item, i) {
       if (item.done) {

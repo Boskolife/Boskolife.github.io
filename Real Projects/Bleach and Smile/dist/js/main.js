@@ -8,6 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 ininSwiper();
 initBurger();
+initBeerSlider();
 
 function ininSwiper() {
   function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -114,5 +115,13 @@ function initBurger() {
   });
 }
 
-var slider = new BeerSlider(document.getElementById("beer-slider"));
+function initBeerSlider() {
+  var slider = new BeerSlider(document.getElementById("beer-slider"));
+
+  if (!slider) {
+    return;
+  }
+}
+
+;
 //# sourceMappingURL=main.js.map

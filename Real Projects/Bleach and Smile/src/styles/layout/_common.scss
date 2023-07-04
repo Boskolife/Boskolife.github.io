@@ -503,6 +503,7 @@ body {
 
         @include media ("<desktop") {
             flex-direction: column-reverse;
+            gap: 200px;
         }
     }
 
@@ -594,28 +595,41 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
 
         @include media ("<desktop") {
             width: 100%;
-            margin: 0 0 50px 0;
+            margin: 0;
         }
 
         .reviews_img_first {
-            position: relative;
             z-index: 1;
+            @include adaptiv-vaule("width", 510, 240, 1);
+            @include adaptiv-vaule("height", 380, 175, 1);
         }
 
         .reviews_img_second {
             position: absolute;
             left: 0px;
             top: 50%;
+            @include adaptiv-vaule("width", 140, 65, 1);
+            @include adaptiv-vaule("height", 100, 50, 1);
+
+            @include media ("<desktop") {
+                top: 50%;
+            }
         }
 
         .reviews_img_third {
             position: absolute;
             top: -150px;
             left: 0px;
+            @include adaptiv-vaule("width", 320, 150, 1);
+            @include adaptiv-vaule("height", 240, 110, 1);
+
+            @include media ("<desktop") {
+                top: -65px;
+                left: 0;
+            }
         }
 
         .reviews_img_fourth {
@@ -623,19 +637,40 @@ body {
             z-index: 2;
             top: -40px;
             right: 130px;
+            @include adaptiv-vaule("width", 160, 75, 1);
+            @include adaptiv-vaule("height", 120, 55, 1);
+
+            @include media ("<desktop") {
+                right: 10px;
+            }
         }
 
         .reviews_img_fifth {
             position: absolute;
             z-index: 2;
-            bottom: -100px;
+            bottom: -70px;
             right: 160px;
+            @include adaptiv-vaule("width", 160, 75, 1);
+            @include adaptiv-vaule("height", 120, 55, 1);
+
+            @include media ("<desktop") {
+                right: 20px;
+                bottom: -30px;
+            }
         }
 
         .reviews_img_sixth {
             position: absolute;
             left: 100px;
             bottom: -200px;
+            @include adaptiv-vaule("width", 320, 150, 1);
+            @include adaptiv-vaule("height", 240, 110, 1);
+
+
+            @include media ("<desktop") {
+                left: 35px;
+                bottom: -100px;
+            }
         }
     }
 }
@@ -652,8 +687,8 @@ body {
 
         @include media ("<desktop") {
             flex-wrap: wrap;
-           justify-content: center;
-           align-items: center;
+            justify-content: center;
+            align-items: center;
         }
     }
 
