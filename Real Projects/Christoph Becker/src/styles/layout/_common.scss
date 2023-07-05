@@ -2,6 +2,10 @@ body {
     background-color: $white;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1230px;
     width: 100%;

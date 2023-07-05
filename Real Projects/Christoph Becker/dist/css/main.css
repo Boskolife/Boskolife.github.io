@@ -694,6 +694,9 @@ header {
 body {
   background-color: #fff; }
 
+html {
+  scroll-behavior: smooth; }
+
 .container {
   max-width: 1230px;
   width: 100%;
