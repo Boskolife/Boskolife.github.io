@@ -308,7 +308,6 @@ function openTabFaq(evt, tabName) {
 
 function initTabs() {
     const faqTabs = document.querySelector("#faqTabs");
-
     if (!faqTabs) return;
 
     const tabs = document.querySelectorAll(".tab_title"),
@@ -431,5 +430,17 @@ function updateProgressPopup() {
     backBtn.addEventListener("click", (e) => {
         e.preventDefault();
         prevStep();
+    });
+}
+
+showTabList ();
+
+function showTabList () {
+    const openArrow = document.querySelector('.openList_arrow');
+    const faqList = document.querySelector('.faq_list');
+
+    openArrow.addEventListener('click', () => {
+        openArrow.classList.toggle('activeArrow');
+        faqList.classList.toggle('active_list')
     });
 }

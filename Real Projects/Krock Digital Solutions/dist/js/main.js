@@ -424,4 +424,15 @@ function updateProgressPopup() {
     prevStep();
   });
 }
+
+showTabList();
+
+function showTabList() {
+  var openArrow = document.querySelector('.openList_arrow');
+  var faqList = document.querySelector('.faq_list');
+  openArrow.addEventListener('click', function () {
+    openArrow.classList.toggle('activeArrow');
+    faqList.classList.toggle('active_list');
+  });
+}
 //# sourceMappingURL=main.js.map

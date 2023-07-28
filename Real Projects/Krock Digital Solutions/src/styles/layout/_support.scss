@@ -1,0 +1,512 @@
+.support {
+    .support_content {
+        background-color: $orange;
+        @include adaptiv-vaule("padding-top", 65, 35, 1);
+        @include adaptiv-vaule("padding-bottom", 65, 45, 1);
+        text-align: center;
+    }
+
+    .support_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 55, 40, 1);
+        @include adaptiv-vaule("margin-bottom", 30, 15, 1);
+    }
+
+    .search_wrap {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        background: $white;
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: start;
+        @include adaptiv-vaule("padding-top", 20, 10, 1);
+        @include adaptiv-vaule("padding-bottom", 20, 10, 1);
+        @include adaptiv-vaule("padding-right", 20, 10, 1);
+        @include adaptiv-vaule("padding-left", 20, 10, 1);
+
+        .search_img {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .searchInput {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+        }
+    }
+
+    .support_faq {
+        background: #F3F3F3;
+        @include adaptiv-vaule("padding-top", 55, 35, 1);
+        @include adaptiv-vaule("padding-bottom", 65, 45, 1);
+    }
+
+    .support_faq_title {
+        color: $black;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .support_faq_descr {
+        color: $black;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 60, 45, 1);
+    }
+
+    .openList_arrow {
+        width: 30px;
+        height: 15px;
+        margin: 0 auto;
+        transition: all .3s ease;
+        cursor: pointer;
+    }
+
+    .activeArrow {
+        transform: rotate(180deg);
+        transition: all .3s ease;
+    }
+
+    .faq_list {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .active_list {
+        height: auto;
+        transition: all .4s linear;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+        @include adaptiv-vaule("margin-top", 100, 50, 1);
+    }
+
+    .tabcontent {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .tab_title_wrap {
+        padding: 15px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+
+        @include media ("<phone") {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .tab_title {
+        color: $black;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        font-style: normal;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .tab_content {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        line-height: 130%;
+        text-align: start;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        display: flex;
+        align-items: center;
+        transition: all .4s linear;
+        padding-left: 30px;
+    }
+
+    .open_status {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+
+        @include media ("<phone") {
+            margin: 0 0 0 15px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $orange;
+            top: 0;
+            left: 0;
+            transition: all .3s ease;
+        }
+
+        &::before {
+            width: 2px;
+            height: 15px;
+            border-radius: 2px;
+            transform: rotate(90deg);
+        }
+
+        &::after {
+            width: 2px;
+            height: 15px;
+            border-radius: 2px;
+        }
+    }
+
+    .open_active {
+        &::before {
+            transform: rotate(45deg);
+            transition: all .3s ease;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            transition: all .3s ease;
+        }
+    }
+
+    .show_content {
+        height: auto;
+        transition: all .4s linear;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+}
+
+.help {
+    padding: 65px 0;
+
+    .help_content {
+        display: grid;
+        justify-content: center;
+        grid-template: 1fr / repeat(3, 1fr);
+        gap: 25px;
+
+        @include media ("<desktop") {
+            grid-template: 1fr / 1fr 1fr;
+        }
+
+        @include media ("<phone") {
+            grid-template: 1fr / 1fr;
+        }
+    }
+
+    .help_card {
+        border-radius: 20px;
+        @include adaptiv-vaule("padding-top", 30, 15, 1);
+        @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+        @include adaptiv-vaule("padding-right", 25, 15, 1);
+        @include adaptiv-vaule("padding-left", 25, 15, 1);
+        border: 1px solid #c1c1c1;
+    }
+
+    .card_title_wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: 13px;
+
+        @include media ("<phone") {
+            margin: 0;
+            justify-content: center;
+        }
+    }
+
+    .title_icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .card_title {
+        color: $black;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .card_text {
+        color: $black;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        font-weight: 300;
+        line-height: 130%;
+        margin-bottom: 10px;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .card_btn {
+        color: $orange;
+        font-size: 16px;
+        font-weight: 800;
+        padding: 8px 15px;
+        border-radius: 10px;
+        border: 1px solid $orange;
+        display: inline-block;
+        transition: all .3s ease;
+
+        @include media ("<phone") {
+            display: none;
+        }
+
+        &:hover {
+            color: $white;
+            background-color: $orange;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.articles {
+    @include adaptiv-vaule("padding-top", 90, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 90, 40, 1);
+    background-color: $black;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+    }
+
+    .articles_text {
+        color: $white;
+        max-width: 365px;
+        width: 100%;
+
+        @include media ("<tablet") {
+            max-width: 100%;
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+    }
+
+    .articles_title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .articles_descr {
+        font-size: 20px;
+        line-height: 130%;
+    }
+
+    .articles_links {
+        max-width: 375px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        @include media ("<tablet") {
+            max-width: 100%;
+            align-items: center;
+        }
+
+        @include media ("<phone") {
+            align-items: flex-start;
+        }
+    }
+
+    .articles_link {
+        color: $white;
+        display: inline-block;
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        transition: all .3s linear;
+        z-index: 1;
+        padding: 5px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #8F8F8F;
+            width: 100%;
+            height: 1px;
+            transition: all .3s linear;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $black;
+
+            &::after {
+                height: 100%;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.care {
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+
+    .content {
+        text-align: center;
+    }
+
+    .care_title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .care_descr {
+        max-width: 615px;
+        width: 100%;
+        font-size: 20px;
+        line-height: 130%;
+        margin: 0 auto;
+    }
+
+    .care_steps {
+        display: flex;
+        flex-direction: column;
+        max-width: 690px;
+        width: 100%;
+        margin: 0 auto;
+        @include adaptiv-vaule("row-gap", 50, 40, 1);
+        @include adaptiv-vaule("margin-top", 75, 50, 1);
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 2px;
+            background-color: $orange;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+    }
+
+    .item_step {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+        }
+
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+
+
+            .item_img {
+                text-align: end;
+            }
+
+            .item_step_text {
+                text-align: start;
+            }
+        }
+    }
+
+    .item_title {
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        margin-bottom: 10px;
+    }
+
+    .item_descr {
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        line-height: 130%;
+        max-width: 230px;
+
+        @include media ("<tablet") {
+            max-width: 100%;
+        }
+    }
+
+    .item_step_text {
+        width: 41%;
+        text-align: start;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .item_img {
+        width: 40%;
+        text-align: start;
+
+        @include media ("<tablet") {
+            min-width: 70px;
+            min-height: 70px;
+            max-width: 70px;
+            max-height: 70px;
+            margin-right: 20px;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .tip {
+        border-radius: 99px;
+        @include adaptiv-vaule("border-radius", 99, 30, 1);
+        background: #F3F3F3;
+        padding: 30px 15px;
+    }
+
+    .tip_title{
+        font-size: 20px;
+        color: $orange;
+        margin-bottom: 15px;
+
+        @include media ("<phone") {
+            max-width: 230px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+    }
+
+    .tip_text{
+        max-width: 680px;
+        margin: 0 auto;
+        font-size: 20px;
+        line-height: 130%;
+    }
+}
