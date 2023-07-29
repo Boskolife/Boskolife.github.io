@@ -4,6 +4,8 @@ changeLabel();
 setTimeout(initPopUp, 40000);
 // horizontalScroll();
 initTabs();
+showTabList();
+initHelpTabs();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -306,6 +308,25 @@ function openTabFaq(evt, tabName) {
     evt.currentTarget.className += " active_tab";
 }
 
+function openCardSupportContent(evt, tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("card_tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "flex";
+    }
+
+    tablinks = document.getElementsByClassName("supLink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(
+            " active_tab",
+            ""
+        );
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active_tab";
+}
+
 function initTabs() {
     const faqTabs = document.querySelector("#faqTabs");
     if (!faqTabs) return;
@@ -313,6 +334,35 @@ function initTabs() {
     const tabs = document.querySelectorAll(".tab_title"),
         tabsContent = document.querySelectorAll(".tab_content"),
         tabsParent = document.querySelectorAll(".tabcontent"),
+        closeItem = document.querySelectorAll(".open_status");
+
+    function showTabContent(i = 0) {
+        tabsContent[i].classList.toggle("show_content");
+        tabs[i].classList.toggle("tab_active");
+        closeItem[i].classList.toggle("open_active");
+    }
+
+    tabsParent.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target && target.classList.contains("tab_title")) {
+                tabs.forEach((item, i) => {
+                    if (target == item) {
+                        showTabContent(i);
+                    }
+                });
+            }
+        });
+    });
+}
+
+function initHelpTabs() {
+    const faqTabs = document.querySelector("#faqTabs");
+    if (!faqTabs) return;
+
+    const tabs = document.querySelectorAll(".tab_title"),
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelectorAll(".card_tabcontent"),
         closeItem = document.querySelectorAll(".open_status");
 
     function showTabContent(i = 0) {
@@ -433,14 +483,36 @@ function updateProgressPopup() {
     });
 }
 
-showTabList ();
+function showTabList() {
+    const openArrow = document.querySelector(".openList_arrow");
+    const faqList = document.querySelector(".faq_list");
 
-function showTabList () {
-    const openArrow = document.querySelector('.openList_arrow');
-    const faqList = document.querySelector('.faq_list');
+    openArrow.addEventListener("click", () => {
+        openArrow.classList.toggle("activeArrow");
+        faqList.classList.toggle("active_list");
+    });
+}
 
-    openArrow.addEventListener('click', () => {
-        openArrow.classList.toggle('activeArrow');
-        faqList.classList.toggle('active_list')
+hideCardList();
+
+function hideCardList() {
+    const cardBtn = document.querySelectorAll(".supLink");
+    const backBtn = document.querySelectorAll(".back_btn");
+    const cardListContent = document.querySelector(".help_content");
+    const cardContent = document.querySelectorAll(".support_content");
+
+    cardBtn.forEach((item) => {
+        item.addEventListener("click", () => {
+            cardListContent.style.display = "none";
+        });
+    });
+
+    backBtn.forEach((item) => {
+        item.addEventListener("click", () => {
+            cardListContent.style.display = "grid";
+            cardContent.forEach((item) => {
+                item.style.display = "none";
+            });
+        });
     });
 }

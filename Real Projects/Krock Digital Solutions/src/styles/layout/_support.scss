@@ -6,6 +6,7 @@
         text-align: center;
     }
 
+
     .support_title {
         color: $white;
         @include adaptiv-vaule("font-size", 55, 40, 1);
@@ -216,6 +217,10 @@
         @include adaptiv-vaule("padding-right", 25, 15, 1);
         @include adaptiv-vaule("padding-left", 25, 15, 1);
         border: 1px solid #c1c1c1;
+
+        @include media ("<phone") {
+            text-align: center;
+        }
     }
 
     .card_title_wrap {
@@ -224,7 +229,7 @@
         margin-bottom: 13px;
 
         @include media ("<phone") {
-            margin: 0;
+            margin-bottom: 10px;
             justify-content: center;
         }
     }
@@ -263,17 +268,238 @@
         display: inline-block;
         transition: all .3s ease;
 
-        @include media ("<phone") {
-            display: none;
-        }
-
         &:hover {
             color: $white;
             background-color: $orange;
             transition: all .3s ease;
         }
     }
+
+    .support_content {
+        display: none;
+    }
+
+    .active_content {
+        display: block;
+    }
+
+
+    .back_btn {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: $black;
+        font-size: 20px;
+        font-weight: 400;
+        padding-bottom: 3px;
+        border-bottom: 1px solid $black;
+        max-width: max-content;
+
+        img{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    }
 }
+
+.card_help_content {
+
+    .content_title {
+        color: $black;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 45px;
+    }
+
+    .card_tabcontent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    .tabs {
+        width: 45%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .tab_title_wrap {
+        padding: 0 0 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #F3F3F3;
+
+        @include media ("<phone") {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .tab_title {
+        color: $black;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        font-style: normal;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .tab_content {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        line-height: 130%;
+        text-align: start;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        display: flex;
+        align-items: center;
+        transition: all .4s linear;
+        padding-left: 30px;
+    }
+
+    .open_status {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+
+        @include media ("<phone") {
+            margin: 0 0 0 15px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $orange;
+            top: 0;
+            left: 5px;
+            transition: all .3s ease;
+            width: 3px;
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        &::before {
+            transform: rotate(90deg);
+        }
+    }
+
+    .open_active {
+        &::before {
+            transform: rotate(45deg);
+            transition: all .3s ease;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            transition: all .3s ease;
+        }
+    }
+
+    .show_content {
+        height: auto;
+        transition: all .4s linear;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .form_wrap {
+        border-radius: 20px;
+        background: #F3F3F3;
+        padding: 40px 10px;
+        text-align: center;
+    }
+
+    .form_title {
+        color: $black;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 15px
+    }
+
+    .form_descr {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    form {
+        max-width: 680px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .input_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 55px;
+    }
+
+    .data_text,
+    .area_text {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $black;
+        width: 46%;
+        color: $black;
+        font-size: 20px;
+        padding-bottom: 15px;
+        margin-bottom: 40px;
+        height: max-content;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        &::placeholder {
+            color: $black;
+            font-size: 20px;
+        }
+    }
+
+    .area_text {
+        padding-bottom: 100px;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .form_btn {
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: $orange;
+        border-radius: 12px;
+        border: 1px solid $orange;
+        min-width: 215px;
+        margin: 0 auto;
+        padding: 15px;
+        transition: all .3s ease;
+
+        &:hover {
+            color: $orange;
+            background-color: $white;
+            transition: all .3s ease;
+        }
+    }
+}
+
 
 .articles {
     @include adaptiv-vaule("padding-top", 90, 40, 1);
@@ -491,7 +717,7 @@
         padding: 30px 15px;
     }
 
-    .tip_title{
+    .tip_title {
         font-size: 20px;
         color: $orange;
         margin-bottom: 15px;
@@ -503,7 +729,7 @@
         }
     }
 
-    .tip_text{
+    .tip_text {
         max-width: 680px;
         margin: 0 auto;
         font-size: 20px;
