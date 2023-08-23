@@ -1,4 +1,5 @@
 initBurger();
+anchorListener();
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
     const init = {
@@ -53,18 +54,52 @@ destroySlidersOnResize(".logo_swiper", 9999, {
     },
 });
 
+destroySlidersOnResize(".landscapes_swiper", 9999, {
+    slidesPerView: 3,
+    speed: 2000,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoHeight: true,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1.7,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 2.3,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});
+
 function initBurger() {
     const menu = document.querySelector(".nav");
     const burger = document.querySelector(".header_burger");
+    const menuItems = document.querySelectorAll(".menu_item");
 
     burger.addEventListener("click", () => {
         burger.classList.toggle("burger_active");
         menu.classList.toggle("menu_active");
         document.body.classList.toggle("body_lock");
     });
-}
 
-anchorListener();
+    menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            burger.classList.remove("burger_active");
+            menu.classList.remove("menu_active");
+            document.body.classList.remove("body_lock");
+        });
+    });
+}
 
 function anchorListener() {
     let screenWidth =

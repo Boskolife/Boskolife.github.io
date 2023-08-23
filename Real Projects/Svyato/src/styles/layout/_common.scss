@@ -277,6 +277,10 @@ html {
     position: relative;
     height: 450px;
 
+    @include media ("<desktop") {
+        margin-bottom: 0;
+    }
+
     .any_bg {
         position: absolute;
         top: 0;
@@ -290,7 +294,7 @@ html {
         }
     }
 
-    .any_bg_phone{
+    .any_bg_phone {
         display: none;
 
         @include media ("<phone") {
@@ -331,5 +335,448 @@ html {
         margin: 0 auto;
         text-align: center;
         font-weight: 400;
+    }
+}
+
+.about_me_section {
+    @include adaptiv-vaule("padding-top", 70, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 70, 45, 1);
+
+    @include media ("<desktop") {
+        background-color: $gray_2;
+
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media ("<desktop") {
+            flex-direction: column
+        }
+    }
+
+    .about_text {
+        @include adaptiv-vaule("width", 645, 600, 1);
+        @include adaptiv-vaule("padding-top", 90, -90, 1);
+        @include adaptiv-vaule("padding-bottom", 90, -90, 1);
+        @include adaptiv-vaule("padding-right", 90, -90, 1);
+        @include adaptiv-vaule("padding-left", 90, -90, 1);
+        background-color: $gray_2;
+        position: relative;
+        z-index: 1;
+
+        @include media ("<desktop") {
+            max-width: 580px;
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 35px;
+        }
+    }
+
+    .title_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        @include adaptiv-vaule("margin-bottom", 65, 20, 1);
+    }
+
+    .title_img {
+        margin-right: 25px;
+    }
+
+    .title {
+        @include adaptiv-vaule("font-size", 40, 30, 1);
+        color: $black;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    .descr {
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        color: $black;
+        @include adaptiv-vaule("margin-bottom", 50, 35, 1);
+    }
+
+    .about_btn {
+        background-color: $orange;
+        min-width: 275px;
+        text-align: center;
+
+        &:hover {
+            background-color: $gray_3;
+        }
+    }
+
+    .about_img {
+        width: 40%;
+        filter: grayscale(100%);
+        position: relative;
+        @include adaptiv-vaule("left", -115, 145, 1);
+        width: 580px;
+        height: 690px;
+        transition: $all_03;
+
+        @include media ("<desktop") {
+            position: static;
+            max-width: 580px;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            right: - 20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $black;
+            z-index: -1;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+        }
+
+        &:hover {
+            transition: $all_03;
+            filter: grayscale(0);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.landscapres_section {
+    @include adaptiv-vaule("padding-top", 80, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 70, 50, 1);
+    overflow: hidden;
+
+    .landscapres_title {
+        color: $orange;
+        text-transform: uppercase;
+        @include adaptiv-vaule("font-size", 60, 40, 1);
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    .landscapes_text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 50px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .landscapes_descr {
+        width: 65%;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        color: $black;
+        margin-right: 25px;
+
+        @include media ("<desktop") {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+    }
+
+    .landscapes_btn {
+        background-color: #E3E3E3;
+        min-width: 290px;
+        text-align: center;
+
+        @include media ("<phone") {
+            min-width: 100%;
+        }
+
+        &:hover {
+            background-color: $orange;
+        }
+    }
+
+    .landscapes_swiper {
+        @include adaptiv-vaule("padding-bottom", 70, 40, 1);
+    }
+
+    .card_img {
+        margin-bottom: 20px;
+        @include adaptiv-vaule("height", 420, 235, 1);
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .card_title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .title {
+        margin-right: 15px;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+    }
+
+    .number {
+        color: #A9A9A9;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+    }
+
+    .swiper-horizontal>.swiper-scrollbar,
+    .swiper-scrollbar.swiper-scrollbar-horizontal {
+        width: 35%;
+        margin-bottom: 10px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .btn_wrap {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        width: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .swiper-button-prev {
+        &::after {
+            content: url(../images/next.svg);
+            transform: rotateY(180deg);
+        }
+    }
+
+    .swiper-button-next {
+        &::after {
+            content: url(../images/next.svg);
+        }
+    }
+}
+
+
+.contact {
+    @include adaptiv-vaule("margin-top", 70, 50, 1);
+    position: relative;
+    padding: 70px 0 85px 0;
+
+    .container {
+
+        @include media ("<desktop") {
+            padding: 0;
+        }
+    }
+
+    .contact_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .title_wrap {
+        margin-top: 40px;
+        width: 25%;
+
+        @include media ("<desktop") {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+            margin: 0 0 50px 0;
+            padding: 0 15px;
+            @include adaptiv-vaule("padding-top", 150, 50, 1);
+            @include adaptiv-vaule("padding-bottom", 150, 50, 1);
+            position: relative;
+        }
+    }
+
+    .title_bg_phone {
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+
+    .contact_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 60, 40, 1);
+        margin-bottom: 10px;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include media ("<desktop") {
+            margin: 0;
+        }
+    }
+
+    form {
+        width: 70%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        background-color: $white;
+        @include adaptiv-vaule("padding-top", 50, 0, 1);
+        @include adaptiv-vaule("padding-bottom", 45, 0, 1);
+        @include adaptiv-vaule("padding-right", 35, 0, 1);
+        @include adaptiv-vaule("padding-left", 65, 0, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            width: 100%;
+            gap: 30px;
+            padding: 0 15px;
+        }
+    }
+
+    .wrap_inputs {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 45%;
+        height: 100%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .data_text,
+    .area_text {
+        width: 100%;
+        background-color: #F0F0F0;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        padding: 15px;
+        margin-bottom: 30px;
+        border: none;
+        transition: $all_03;
+
+        &:focus {
+            transition: $all_03;
+            border: 1px solid $orange;
+        }
+    }
+
+    .form_btn_phone {
+        background-color: $orange;
+        width: 100%;
+        border: none;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        padding: 15px;
+        transition: $all_03;
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+
+    .form_btn_desk {
+        background-color: $orange;
+        width: 100%;
+        border: none;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        padding: 15px;
+        transition: $all_03;
+        display: inline-block;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .area_text {
+        height: 130px;
+    }
+
+    .contact_info {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .info_link {
+        display: flex;
+        align-items: center;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        color: #828282;
+        letter-spacing: -0.2px;
+        line-height: 130%;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        img {
+            margin-right: 15px;
+        }
+    }
+
+    .hover-link {
+        transition: $all_03;
+
+        &:hover {
+            transition: $all_03;
+            color: $orange;
+        }
     }
 }

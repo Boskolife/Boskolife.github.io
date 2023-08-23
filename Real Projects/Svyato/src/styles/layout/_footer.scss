@@ -1,0 +1,111 @@
+#footer {
+    @include adaptiv-vaule("padding-top", 55, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+
+    @include media ("<tablet") {
+        background-color: $gray_2;
+    }
+
+    .footer_top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    .logo_name {
+        font-weight: 700;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        color: $black;
+
+        @include media ("<tablet") {
+            order: 1;
+        }
+    }
+
+    .links_wrap{
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        width: 40%;
+
+        @include media ("<tablet") {
+            order: 3;
+            width: 60%;
+            flex-direction: row-reverse;
+        }
+
+        @include media ("<phone") {
+            width: 90%;
+        }
+    }
+
+    .location {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .title {
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        color: $black;
+        margin-bottom: 15px;
+    }
+
+    .info_link {
+        color: #828282;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.16px;
+        margin-bottom: 6px;
+    }
+
+    .link_hover {
+        transition: $all_03;
+
+        &:hover {
+            transition: $all_03;
+            color: $orange;
+        }
+    }
+
+    .social_links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @include media ("<tablet") {
+            order: 2;
+        }
+    }
+
+    .link {
+        svg {
+            fill: #828282;
+            transition: $all_03;
+
+            &:hover {
+                transition: $all_03;
+                fill: $orange;
+            }
+        }
+    }
+
+    .footer_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+    }
+}

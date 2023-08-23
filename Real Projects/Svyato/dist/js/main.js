@@ -7,6 +7,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 initBurger();
+anchorListener();
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
@@ -57,18 +58,50 @@ destroySlidersOnResize(".logo_swiper", 9999, {
     }
   }
 });
+destroySlidersOnResize(".landscapes_swiper", 9999, {
+  slidesPerView: 3,
+  speed: 2000,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  autoHeight: true,
+  scrollbar: {
+    el: ".swiper-scrollbar"
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.7,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 2.3,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }
+});
 
 function initBurger() {
   var menu = document.querySelector(".nav");
   var burger = document.querySelector(".header_burger");
+  var menuItems = document.querySelectorAll(".menu_item");
   burger.addEventListener("click", function () {
     burger.classList.toggle("burger_active");
     menu.classList.toggle("menu_active");
     document.body.classList.toggle("body_lock");
   });
+  menuItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      burger.classList.remove("burger_active");
+      menu.classList.remove("menu_active");
+      document.body.classList.remove("body_lock");
+    });
+  });
 }
-
-anchorListener();
 
 function anchorListener() {
   var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
