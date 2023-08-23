@@ -1258,20 +1258,14 @@ html {
     @media (max-width: 1300px) {
       .landscapres_section .landscapes_swiper {
         padding-bottom: calc(40px + 30 * ((100vw - calc(320px)) / 980)); } }
+  .landscapres_section .swiper-slide {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content; }
   .landscapres_section .card_img {
-    margin-bottom: 20px;
-    /* Только если меньше контейнера */
-    height: 420px;
-    position: relative; }
-    @media (max-width: 1300px) {
-      .landscapres_section .card_img {
-        height: calc(235px + 185 * ((100vw - calc(320px)) / 980)); } }
+    margin-bottom: 20px; }
     .landscapres_section .card_img img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
+      height: auto; }
   .landscapres_section .card_title {
     display: -ms-flexbox;
     display: flex;

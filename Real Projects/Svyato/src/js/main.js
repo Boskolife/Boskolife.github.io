@@ -55,7 +55,7 @@ destroySlidersOnResize(".logo_swiper", 9999, {
 });
 
 destroySlidersOnResize(".landscapes_swiper", 9999, {
-    slidesPerView: 3,
+    slidesPerView: 'auto',
     speed: 2000,
     navigation: {
         nextEl: ".swiper-button-next",
@@ -67,15 +67,9 @@ destroySlidersOnResize(".landscapes_swiper", 9999, {
     },
     breakpoints: {
         320: {
-            slidesPerView: 1.7,
             spaceBetween: 10,
         },
-        768: {
-            slidesPerView: 2.3,
-            spaceBetween: 20,
-        },
         1024: {
-            slidesPerView: 3,
             spaceBetween: 30,
         },
     },

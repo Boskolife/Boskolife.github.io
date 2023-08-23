@@ -507,17 +507,16 @@ html {
         @include adaptiv-vaule("padding-bottom", 70, 40, 1);
     }
 
+    .swiper-slide {
+        max-width: max-content;
+    }
+
     .card_img {
         margin-bottom: 20px;
-        @include adaptiv-vaule("height", 420, 235, 1);
-        position: relative;
+        // @include adaptiv-vaule("height", 420, 235, 1);
 
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        img{
+            height:auto;
         }
     }
 
