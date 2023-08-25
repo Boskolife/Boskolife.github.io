@@ -56,6 +56,10 @@ header {
         transition: $all_03;
     }
 
+    .item_active{
+        font-weight: 700;
+    }
+
     .nav_menu {
         display: flex;
         align-items: center;

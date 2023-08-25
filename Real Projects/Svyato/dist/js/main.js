@@ -8,76 +8,94 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 initBurger();
 anchorListener();
+findHref();
+initSwiper();
 
-function destroySlidersOnResize(selector, width, obj, moreThan) {
-  var init = _objectSpread({}, obj);
+function initSwiper() {
+  function destroySlidersOnResize(selector, width, obj, moreThan) {
+    var init = _objectSpread({}, obj);
 
-  var win = window;
-  var sliderSelector = document.querySelector(selector);
-  var swiper = new Swiper(selector, init);
+    var win = window;
+    var sliderSelector = document.querySelector(selector);
+    var swiper = new Swiper(selector, init);
 
-  var toggleInit = function toggleInit() {
-    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+    var toggleInit = function toggleInit() {
+      var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
 
-    if (neededWidth) {
-      if (!sliderSelector.classList.contains("swiper-initialized")) {
-        swiper = new Swiper(selector, init);
+      if (neededWidth) {
+        if (!sliderSelector.classList.contains("swiper-initialized")) {
+          swiper = new Swiper(selector, init);
+        }
+      } else if (sliderSelector.classList.contains("swiper-initialized")) {
+        swiper.destroy();
       }
-    } else if (sliderSelector.classList.contains("swiper-initialized")) {
-      swiper.destroy();
-    }
-  };
+    };
 
-  ["load", "resize"].forEach(function (evt) {
-    return win.addEventListener(evt, toggleInit, false);
+    ["load", "resize"].forEach(function (evt) {
+      return win.addEventListener(evt, toggleInit, false);
+    });
+  }
+
+  destroySlidersOnResize(".logo_swiper", 9999, {
+    slidesPerView: 5.5,
+    spaceBetween: 30,
+    speed: 2000,
+    loop: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2
+      },
+      480: {
+        slidesPerView: 2.5
+      },
+      768: {
+        slidesPerView: 3.5
+      },
+      1024: {
+        slidesPerView: 5.5
+      }
+    }
+  });
+  destroySlidersOnResize(".landscapes_swiper", 9999, {
+    slidesPerView: "auto",
+    speed: 2000,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    autoHeight: true,
+    scrollbar: {
+      el: ".swiper-scrollbar"
+    },
+    breakpoints: {
+      320: {
+        spaceBetween: 10
+      },
+      1024: {
+        spaceBetween: 30
+      }
+    }
+  });
+  destroySlidersOnResize(".landscapes_page_swiper", 9999, {
+    direction: "vertical",
+    spaceBetween: 30,
+    speed: 2000,
+    mousewheel: {
+      releaseOnEdges: true
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction"
+    }
   });
 }
-
-destroySlidersOnResize(".logo_swiper", 9999, {
-  slidesPerView: 5.5,
-  spaceBetween: 30,
-  speed: 2000,
-  loop: true,
-  // pauseOnMouseEnter:true,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 2
-    },
-    480: {
-      slidesPerView: 2.5
-    },
-    768: {
-      slidesPerView: 3.5
-    },
-    1024: {
-      slidesPerView: 5.5
-    }
-  }
-});
-destroySlidersOnResize(".landscapes_swiper", 9999, {
-  slidesPerView: 'auto',
-  speed: 2000,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  autoHeight: true,
-  scrollbar: {
-    el: ".swiper-scrollbar"
-  },
-  breakpoints: {
-    320: {
-      spaceBetween: 10
-    },
-    1024: {
-      spaceBetween: 30
-    }
-  }
-});
 
 function initBurger() {
   var menu = document.querySelector(".nav");
@@ -125,5 +143,16 @@ function anchorListener() {
   targetElements.forEach(function (targetElement) {
     observer.observe(targetElement);
   });
+}
+
+function findHref() {
+  var element = document.getElementById("menu").getElementsByTagName("a");
+  var url = window.location.href;
+
+  for (var i = 0; i < element.length; i++) {
+    if (url === element[i].href) {
+      element[i].classList.add("item_active");
+    }
+  }
 }
 //# sourceMappingURL=main.js.map

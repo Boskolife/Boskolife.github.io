@@ -616,6 +616,8 @@ header {
   header .menu_active {
     right: 0;
     transition: all 0.3s ease 0s; }
+  header .item_active {
+    font-weight: 700; }
   header .nav_menu {
     display: -ms-flexbox;
     display: flex;
@@ -959,6 +961,10 @@ html {
     gap: 25px;
     margin-bottom: 20px;
     height: 72px; }
+    @media (max-width: 1023px) {
+      .foryou_section .card_title_wrap {
+        -ms-flex-pack: start;
+        justify-content: flex-start; } }
   .foryou_section .title_img {
     min-width: 35px;
     min-height: 35px; }
@@ -1264,8 +1270,11 @@ html {
     max-width: max-content; }
   .landscapres_section .card_img {
     margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .landscapres_section .card_img {
+        height: 235px; } }
     .landscapres_section .card_img img {
-      height: auto; }
+      height: 100%; }
   .landscapres_section .card_title {
     display: -ms-flexbox;
     display: flex;
@@ -1327,6 +1336,9 @@ html {
   @media (max-width: 1300px) {
     .contact {
       margin-top: calc(50px + 20 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 479px) {
+    .contact {
+      margin-top: 0; } }
   @media (max-width: 1023px) {
     .contact .container {
       padding: 0; } }
@@ -1439,7 +1451,6 @@ html {
         -ms-flex-direction: column;
         flex-direction: column;
         width: 100%;
-        gap: 30px;
         padding: 0 15px; } }
   .contact .wrap_inputs {
     display: -ms-flexbox;
@@ -1538,6 +1549,61 @@ html {
     .contact .hover-link:hover {
       transition: all 0.3s ease 0s;
       color: #FD9800; }
+
+.landscapes_page .landscapes_page_swiper {
+  height: calc(100vh - 133px);
+  padding-left: 100px; }
+  @media (max-width: 1023px) {
+    .landscapes_page .landscapes_page_swiper {
+      height: calc(100vh - 63px); } }
+
+.landscapes_page .swiper-scrollbar {
+  left: 0; }
+  .landscapes_page .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #FD9800; }
+
+.landscapes_page .swiper-pagination {
+  top: 8px;
+  left: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
+
+.landscapes_page .card {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 30px;
+  height: 100%; }
+
+.landscapes_page .card_img {
+  height: 100%;
+  max-width: 70%;
+  width: auto; }
+  .landscapes_page .card_img img {
+    height: 100%;
+    width: 100%; }
+
+.landscapes_page .date {
+  /* Только если меньше контейнера */
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #9E9E9E; }
+  @media (max-width: 1300px) {
+    .landscapes_page .date {
+      font-size: calc(16px + 4 * ((100vw - calc(320px)) / 980)); } }
+
+.landscapes_page .text {
+  /* Только если меньше контейнера */
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #414141; }
+  @media (max-width: 1300px) {
+    .landscapes_page .text {
+      font-size: calc(16px + 4 * ((100vw - calc(320px)) / 980)); } }
 
 #footer {
   /* Только если меньше контейнера */
@@ -1650,7 +1716,7 @@ html {
       #footer .footer_bottom {
         -ms-flex-direction: column;
         flex-direction: column;
-        gap: 20px;
+        gap: 5px;
         -ms-flex-align: start;
         align-items: flex-start; } }
 

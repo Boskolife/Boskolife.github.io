@@ -243,6 +243,10 @@ html {
         gap: 25px;
         margin-bottom: 20px;
         height: 72px;
+
+        @include media ("<desktop") {
+            justify-content: flex-start;
+        }
     }
 
     .title_img {
@@ -513,10 +517,13 @@ html {
 
     .card_img {
         margin-bottom: 20px;
-        // @include adaptiv-vaule("height", 420, 235, 1);
 
-        img{
-            height:auto;
+        @include media ("<phone") {
+            height: 235px;
+        }
+
+        img {
+            height: 100%;
         }
     }
 
@@ -582,6 +589,10 @@ html {
     @include adaptiv-vaule("margin-top", 70, 50, 1);
     position: relative;
     padding: 70px 0 85px 0;
+
+    @include media ("<phone") {
+        margin-top: 0;
+    }
 
     .container {
 
@@ -677,7 +688,6 @@ html {
         @include media ("<desktop") {
             flex-direction: column;
             width: 100%;
-            gap: 30px;
             padding: 0 15px;
         }
     }
@@ -777,5 +787,62 @@ html {
             transition: $all_03;
             color: $orange;
         }
+    }
+}
+
+.landscapes_page {
+
+    .landscapes_page_swiper {
+        height: calc(100vh - 133px);
+        padding-left: 100px;
+
+        @include media ("<desktop") {
+            height: calc(100vh - 63px);
+        }
+    }
+
+    .swiper-scrollbar{
+        left: 0;
+
+        .swiper-scrollbar-drag{
+            background-color: $orange;
+        }
+    }
+
+    .swiper-pagination{
+        top: 8px;
+        left: 20px;
+        width: max-content;
+    }
+
+    .card{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        height: 100%;
+    }
+
+    .card_img{
+        height: 100%;
+        max-width: 70%;
+        width: auto;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .date{
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        margin-bottom: 25px;
+        color: #9E9E9E;
+    }
+
+    .text{
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        margin-bottom: 25px;
+        color: #414141;
     }
 }
