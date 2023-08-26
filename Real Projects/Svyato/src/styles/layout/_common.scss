@@ -794,25 +794,58 @@ html {
 
     .landscapes_page_swiper {
         height: calc(100vh - 133px);
-        padding-left: 100px;
+        padding-left: 80px;
 
         @include media ("<desktop") {
             height: calc(100vh - 63px);
+            padding: 35px 0 0 0;
         }
     }
 
     .swiper-scrollbar{
         left: 0;
 
+        @include media ("<desktop") {
+            display: none;
+        }
+
         .swiper-scrollbar-drag{
             background-color: $orange;
         }
     }
 
+    // .swiper-scrollbar.swiper-scrollbar-vertical, .swiper-vertical>.swiper-scrollbar{
+    //     @include media ("<desktop") {
+    //         transform: rotate(270deg);
+    //         top: -20%;
+    //         height: 50%;
+    //         left: 43.5%;
+    //     }
+    // }
+
     .swiper-pagination{
         top: 8px;
         left: 20px;
         width: max-content;
+
+        @include media ("<desktop") {
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: start;
+            height: 35px;
+            background-color: #FDFDFD;
+        }
+
+        .swiper-pagination-current{
+            color: #414141;
+            font-size: 16px;
+        }
+
+        .swiper-pagination-total{
+            color: #9E9E9E;
+            font-size: 16px;
+        }
     }
 
     .card{
@@ -821,12 +854,20 @@ html {
         justify-content: flex-start;
         gap: 30px;
         height: 100%;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
     }
 
     .card_img{
         height: 100%;
         max-width: 70%;
         width: auto;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+        }
 
         img{
             height: 100%;

@@ -82,7 +82,7 @@ function initSwiper() {
     destroySlidersOnResize(".landscapes_page_swiper", 9999, {
         direction: "vertical",
         spaceBetween: 30,
-        speed: 2000,
+        speed: 1000,
         mousewheel: {
             releaseOnEdges: true,
         },

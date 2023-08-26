@@ -681,10 +681,9 @@ header {
       margin-bottom: 5px; }
   header .header_burger {
     display: none;
-    width: 28px;
-    height: 21px;
+    width: 25px;
+    height: 20px;
     position: relative;
-    top: -2px;
     cursor: pointer;
     z-index: 3; }
     @media (max-width: 1023px) {
@@ -699,11 +698,13 @@ header {
       transition: all 0.4s ease; }
     header .header_burger span {
       position: absolute;
-      width: 100%;
+      width: 50%;
       height: 3px;
       background: #1C1C1C;
-      top: 9px;
-      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 0;
       transition: all 0.4s ease;
       opacity: 1; }
     header .header_burger::after {
@@ -713,13 +714,11 @@ header {
   header .burger_active::after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    bottom: 9px;
-    background: golden; }
+    bottom: 8px; }
   header .burger_active::before {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 9px;
-    background: golden; }
+    top: 9px; }
   header .burger_active span {
     opacity: 0;
     visibility: hidden; }
@@ -1552,13 +1551,17 @@ html {
 
 .landscapes_page .landscapes_page_swiper {
   height: calc(100vh - 133px);
-  padding-left: 100px; }
+  padding-left: 80px; }
   @media (max-width: 1023px) {
     .landscapes_page .landscapes_page_swiper {
-      height: calc(100vh - 63px); } }
+      height: calc(100vh - 63px);
+      padding: 35px 0 0 0; } }
 
 .landscapes_page .swiper-scrollbar {
   left: 0; }
+  @media (max-width: 1023px) {
+    .landscapes_page .swiper-scrollbar {
+      display: none; } }
   .landscapes_page .swiper-scrollbar .swiper-scrollbar-drag {
     background-color: #FD9800; }
 
@@ -1568,6 +1571,20 @@ html {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content; }
+  @media (max-width: 1023px) {
+    .landscapes_page .swiper-pagination {
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: start;
+      height: 35px;
+      background-color: #FDFDFD; } }
+  .landscapes_page .swiper-pagination .swiper-pagination-current {
+    color: #414141;
+    font-size: 16px; }
+  .landscapes_page .swiper-pagination .swiper-pagination-total {
+    color: #9E9E9E;
+    font-size: 16px; }
 
 .landscapes_page .card {
   display: -ms-flexbox;
@@ -1578,11 +1595,18 @@ html {
   justify-content: flex-start;
   gap: 30px;
   height: 100%; }
+  @media (max-width: 1023px) {
+    .landscapes_page .card {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
 
 .landscapes_page .card_img {
   height: 100%;
   max-width: 70%;
   width: auto; }
+  @media (max-width: 1023px) {
+    .landscapes_page .card_img {
+      max-width: 100%; } }
   .landscapes_page .card_img img {
     height: 100%;
     width: 100%; }

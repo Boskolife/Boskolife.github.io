@@ -125,10 +125,9 @@ header {
 
     .header_burger {
         display: none;
-        width: 28px;
-        height: 21px;
+        width: 25px;
+        height: 20px;
         position: relative;
-        top: -2px;
         cursor: pointer;
         z-index: 3;
 
@@ -148,11 +147,12 @@ header {
 
         span {
             position: absolute;
-            width: 100%;
+            width: 50%;
             height: 3px;
             background: $black;
-            top: 9px;
-            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
             transition: all 0.4s ease;
             opacity: 1;
         }
@@ -169,14 +169,12 @@ header {
     .burger_active {
         &::after {
             transform: rotate(-45deg);
-            bottom: 9px;
-            background: golden;
+            bottom: 8px;
         }
 
         &::before {
             transform: rotate(45deg);
             top: 9px;
-            background: golden;
         }
 
         span {
