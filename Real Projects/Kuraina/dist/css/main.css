@@ -1079,6 +1079,14 @@ header {
   .main_section .slide_21 {
     display: grid;
     place-items: center; }
+    .main_section .slide_21 .slide_21_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
     .main_section .slide_21 .slide_text {
       max-width: 680px;
       margin: 0 auto; }
