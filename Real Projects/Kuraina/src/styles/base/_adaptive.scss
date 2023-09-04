@@ -1,0 +1,45 @@
+$maxWidth: 1440;
+$maxWidthContainer: 1300;
+$minWidth: 320;
+
+@mixin adaptiv-vaule ($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        /* Только если меньше контейнера */
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - calc(#{$minWidth + px})) / #{$maxWidthContainer - $minWidth}));
+        }
+    } @else if $type==2 {
+        /* Только если больше контейнера */
+        #{$property}: $startSize + px;
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize +px} + #{$addSize} * ((100vw - calc(#{$minWidth + px})) / #{$maxWidth - $minWidth}));
+        }         
+    } @else {
+        /* Во всех случаях */
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - calc(#{$minWidth + px})) / #{$maxWidth - $minWidth}));
+    }
+}
+
+/* Init */
+
+/*  @include adaptiv-vaule("padding-top", 15, 7, 1);
+    @include adaptiv-vaule("padding-bottom", 15, 7, 1);
+    @include adaptiv-vaule("padding-right", 15, 7, 1);
+    @include adaptiv-vaule("padding-left", 15, 7, 1);
+
+    @include adaptiv-vaule("margin-top", 15, 7, 1);
+    @include adaptiv-vaule("margin-bottom", 40 , 20, 1);
+    @include adaptiv-vaule("margin-right", 15, 7, 1);
+    @include adaptiv-vaule("margin-left", 15, 7, 1);
+
+    @include adaptiv-vaule("font-size", 115, 96, 1);
+*/
+
+/* "paddibg" - свойство которое нужно адаптировать */
+/* 50 - максимальное значение свойства в px */
+/* 20 - минимальное значение свойства в px */
+/* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
+
+    
