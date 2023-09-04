@@ -2,7 +2,7 @@ initBurger();
 initSwiper();
 changeLabel();
 setTimeout(initPopUp, 40000);
-// horizontalScroll();
+horizontalScroll();
 initTabs();
 showTabList();
 initHelpTabs();
