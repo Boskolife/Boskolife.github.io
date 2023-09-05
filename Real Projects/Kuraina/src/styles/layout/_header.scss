@@ -1,7 +1,77 @@
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
     padding: 15px;
+    width: 100%;
+    @include adaptiv-vaule("padding-left", 125, 10, 1);
+
+    @include media ("<tablet") {
+        padding: 10px;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 30px;
+        transition: all .3s ease;
+
+        @include media ("<tablet") {
+            width: 70px;
+            margin-right: 15px;
+        }
+    }
+
+    .wrapper{
+        overflow: hidden;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            height: 40px;
+        }
+    }
+
+    .progressBar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        position: relative;
+        transition: all .6s ease;
+        margin-bottom: 20px;
+        left: 0;
+        
+
+        @include media ("<tablet") {
+            margin-bottom: 10px;
+        }
+
+        .progress_line {
+            width: 97%;
+            height: 2px;
+            position: relative;
+            left: 20px;
+        }
+    }
+
+    .progress_img {
+        position: absolute;
+        top: -50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: all .6s ease;
+
+        @include media ("<tablet") {
+            width: 25px;
+            height: 25px;
+            top: 0;
+        }
+    }
 }

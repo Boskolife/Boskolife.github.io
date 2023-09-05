@@ -1,36 +1,14 @@
 // Swiper:
+let imageRotate = 0;
 
-function destroySlidersOnResize(selector, width, obj, moreThan) {
-    const init = {
-        ...obj,
-    };
-
-    const win = window;
-    const sliderSelector = document.querySelector(selector);
-    let swiper = new Swiper(selector, init);
-
-    const toggleInit = () => {
-        const neededWidth = moreThan
-            ? win.innerWidth >= width
-            : win.innerWidth <= width;
-        if (neededWidth) {
-            if (!sliderSelector.classList.contains("swiper-initialized")) {
-                swiper = new Swiper(selector, init);
-            }
-        } else if (sliderSelector.classList.contains("swiper-initialized")) {
-            swiper.destroy();
-        }
-    };
-
-    ["load", "resize"].forEach((evt) =>
-        win.addEventListener(evt, toggleInit, false)
-    );
-}
-
-destroySlidersOnResize(".main_swiper", 9999, {
+const slider = new Swiper(".main_swiper", {
     speed: 1500,
     mousewheel: true,
-    slidesPerView:1,
+    slidesPerView: 1,
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+    },
     effect: "creative",
     creativeEffect: {
         prev: {
@@ -41,11 +19,42 @@ destroySlidersOnResize(".main_swiper", 9999, {
         },
     },
     breakpoints: {
-      320:{
-        autoHeight:true,
-      },
-      1024:{
-        autoHeight:false,
-      },
-    }
+        320: {
+            autoHeight: true,
+        },
+        1024: {
+            autoHeight: false,
+        },
+    },
+    on: {
+        slideChange: (self) => {
+            const sideWrap = document.querySelector(".progressBar");
+            const logo = document.getElementById("logo");
+            let progressBar = document.getElementById("progressBar");
+            const rotateElem = document.querySelector(".progress_img");
+            let progress = self.progress * (100 - 4.75);
+            sideWrap.style.left = `${progress}%`;
+            if (self.activeIndex > 0) {
+                logo.style.opacity = "0";
+            } else {
+                logo.style.opacity = "1";
+            }
+        },
+
+        slideNextTransitionStart: (self) => {
+            const rotateElem = document.querySelector(".progress_img");
+            let progress = self.progress * 100;
+            rotateElem.style.transform = `
+            translateY(-50%) rotate(${(imageRotate += 45)}deg)
+            `;
+        },
+
+        slidePrevTransitionStart: (self) => {
+            const rotateElem = document.querySelector(".progress_img");
+            let progress = self.progress * 100;
+            rotateElem.style.transform = `
+            translateY(-50%) rotate(${(imageRotate -= 45)}deg)
+            `;
+        },
+    },
 });
