@@ -650,11 +650,6 @@ header {
     @media (max-width: 1023px) {
       .main_section .slide {
         padding-bottom: 200px; } }
-    @media (max-width: 1023px) {
-      .main_section .slide .slide_img_wrap {
-        position: absolute;
-        bottom: -50%;
-        width: 90%; } }
   .main_section .flex_slide .slide_content {
     display: -ms-flexbox;
     display: flex;

@@ -33,14 +33,14 @@
             padding-bottom: 200px;
         }
 
-        .slide_img_wrap {
+        // .slide_img_wrap {
 
-            @include media ("<desktop") {
-                position: absolute;
-                bottom: -50%;
-                width: 90%;
-            }
-        }
+        //     @include media ("<desktop") {
+        //         position: absolute;
+        //         bottom: -50%;
+        //         width: 90%;
+        //     }
+        // }
     }
 
     .flex_slide {
