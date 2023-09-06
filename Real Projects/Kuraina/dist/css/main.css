@@ -577,10 +577,12 @@ header {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 20px; }
     @media (max-width: 767px) {
       header .wrapper {
-        height: 40px; } }
+        height: 40px;
+        margin: 0; } }
   header .progressBar {
     width: 100%;
     display: -ms-flexbox;
@@ -600,13 +602,18 @@ header {
       height: 2px;
       position: relative;
       left: 20px; }
+      @media (max-width: 767px) {
+        header .progressBar .progress_line {
+          left: 30px; } }
   header .progress_img {
     position: absolute;
     top: -50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     left: 0;
-    transition: all .6s ease; }
+    transition: all .6s ease;
+    width: 50px;
+    height: 50px; }
     @media (max-width: 767px) {
       header .progress_img {
         width: 25px;
