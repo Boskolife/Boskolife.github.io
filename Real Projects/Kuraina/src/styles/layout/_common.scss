@@ -30,7 +30,7 @@
         position: relative;
 
         @include media ("<desktop") {
-            padding-bottom: 200px;
+            padding-bottom: 10px;
         }
 
         // .slide_img_wrap {
@@ -80,7 +80,7 @@
             line-height: 130%;
 
             &:not(:last-child) {
-                @include adaptiv-vaule("margin-bottom", 40, 20, 1);
+                @include adaptiv-vaule("margin-bottom", 20, 10, 1);
             }
         }
     }

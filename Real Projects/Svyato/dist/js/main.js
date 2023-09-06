@@ -1,101 +1,67 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 initBurger();
 anchorListener();
 findHref();
-initSwiper();
-
-function initSwiper() {
-  function destroySlidersOnResize(selector, width, obj, moreThan) {
-    var init = _objectSpread({}, obj);
-
-    var win = window;
-    var sliderSelector = document.querySelector(selector);
-    var swiper = new Swiper(selector, init);
-
-    var toggleInit = function toggleInit() {
-      var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
-
-      if (neededWidth) {
-        if (!sliderSelector.classList.contains("swiper-initialized")) {
-          swiper = new Swiper(selector, init);
-        }
-      } else if (sliderSelector.classList.contains("swiper-initialized")) {
-        swiper.destroy();
-      }
-    };
-
-    ["load", "resize"].forEach(function (evt) {
-      return win.addEventListener(evt, toggleInit, false);
-    });
+var logoSwiper = new Swiper(".logo_swiper", {
+  slidesPerView: 5.5,
+  spaceBetween: 30,
+  speed: 2000,
+  loop: true,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 2
+    },
+    480: {
+      slidesPerView: 2.5
+    },
+    768: {
+      slidesPerView: 3.5
+    },
+    1024: {
+      slidesPerView: 5.5
+    }
   }
-
-  destroySlidersOnResize(".logo_swiper", 9999, {
-    slidesPerView: 5.5,
-    spaceBetween: 30,
-    speed: 2000,
-    loop: true,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false
+});
+var landscapesSwiper = new Swiper(".landscapes_swiper", {
+  slidesPerView: "auto",
+  speed: 2000,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  autoHeight: true,
+  scrollbar: {
+    el: ".swiper-scrollbar"
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 10
     },
-    breakpoints: {
-      320: {
-        slidesPerView: 2
-      },
-      480: {
-        slidesPerView: 2.5
-      },
-      768: {
-        slidesPerView: 3.5
-      },
-      1024: {
-        slidesPerView: 5.5
-      }
+    1024: {
+      spaceBetween: 30
     }
-  });
-  destroySlidersOnResize(".landscapes_swiper", 9999, {
-    slidesPerView: "auto",
-    speed: 2000,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    autoHeight: true,
-    scrollbar: {
-      el: ".swiper-scrollbar"
-    },
-    breakpoints: {
-      320: {
-        spaceBetween: 10
-      },
-      1024: {
-        spaceBetween: 30
-      }
-    }
-  });
-  destroySlidersOnResize(".landscapes_page_swiper", 9999, {
-    direction: "vertical",
-    spaceBetween: 30,
-    speed: 1000,
-    mousewheel: {
-      releaseOnEdges: true
-    },
-    scrollbar: {
-      el: ".swiper-scrollbar"
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction"
-    }
-  });
-}
+  }
+});
+var landscapesPageSwiper = new Swiper(".landscapes_page_swiper", {
+  direction: "vertical",
+  spaceBetween: 30,
+  speed: 1000,
+  mousewheel: {
+    releaseOnEdges: true
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar"
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction"
+  }
+});
 
 function initBurger() {
   var menu = document.querySelector(".nav");

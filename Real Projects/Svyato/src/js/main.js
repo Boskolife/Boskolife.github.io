@@ -1,100 +1,68 @@
 initBurger();
 anchorListener();
 findHref();
-initSwiper();
 
-function initSwiper() {
-    function destroySlidersOnResize(selector, width, obj, moreThan) {
-        const init = {
-            ...obj,
-        };
+const logoSwiper = new Swiper(".logo_swiper", {
+    slidesPerView: 5.5,
+    spaceBetween: 30,
+    speed: 2000,
+    loop: true,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+        },
+        480: {
+            slidesPerView: 2.5,
+        },
+        768: {
+            slidesPerView: 3.5,
+        },
+        1024: {
+            slidesPerView: 5.5,
+        },
+    },
+});
 
-        const win = window;
-        const sliderSelector = document.querySelector(selector);
-        let swiper = new Swiper(selector, init);
+const landscapesSwiper = new Swiper(".landscapes_swiper", {
+    slidesPerView: "auto",
+    speed: 2000,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoHeight: true,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+    },
+    breakpoints: {
+        320: {
+            spaceBetween: 10,
+        },
+        1024: {
+            spaceBetween: 30,
+        },
+    },
+});
 
-        const toggleInit = () => {
-            const neededWidth = moreThan
-                ? win.innerWidth >= width
-                : win.innerWidth <= width;
-            if (neededWidth) {
-                if (!sliderSelector.classList.contains("swiper-initialized")) {
-                    swiper = new Swiper(selector, init);
-                }
-            } else if (
-                sliderSelector.classList.contains("swiper-initialized")
-            ) {
-                swiper.destroy();
-            }
-        };
-
-        ["load", "resize"].forEach((evt) =>
-            win.addEventListener(evt, toggleInit, false)
-        );
-    }
-
-    destroySlidersOnResize(".logo_swiper", 9999, {
-        slidesPerView: 5.5,
-        spaceBetween: 30,
-        speed: 2000,
-        loop: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-            },
-            480: {
-                slidesPerView: 2.5,
-            },
-            768: {
-                slidesPerView: 3.5,
-            },
-            1024: {
-                slidesPerView: 5.5,
-            },
-        },
-    });
-
-    destroySlidersOnResize(".landscapes_swiper", 9999, {
-        slidesPerView: "auto",
-        speed: 2000,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoHeight: true,
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-        breakpoints: {
-            320: {
-                spaceBetween: 10,
-            },
-            1024: {
-                spaceBetween: 30,
-            },
-        },
-    });
-
-    destroySlidersOnResize(".landscapes_page_swiper", 9999, {
-        direction: "vertical",
-        spaceBetween: 30,
-        speed: 1000,
-        mousewheel: {
-            releaseOnEdges: true,
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-        },
-    });
-}
+const landscapesPageSwiper = new Swiper(".landscapes_page_swiper", {
+    direction: "vertical",
+    spaceBetween: 30,
+    speed: 1000,
+    mousewheel: {
+        releaseOnEdges: true,
+    },
+    scrollbar: {
+        el: ".swiper-scrollbar",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+    },
+});
 
 function initBurger() {
     const menu = document.querySelector(".nav");

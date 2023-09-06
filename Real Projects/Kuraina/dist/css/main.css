@@ -572,7 +572,7 @@ header {
         margin-right: 15px; } }
   header .wrapper {
     overflow: hidden;
-    height: 80px;
+    height: 66px;
     width: 100%;
     display: -ms-flexbox;
     display: flex;
@@ -591,7 +591,6 @@ header {
     justify-content: end;
     position: relative;
     transition: all .6s ease;
-    margin-bottom: 20px;
     left: 0; }
     @media (max-width: 767px) {
       header .progressBar {
@@ -649,7 +648,7 @@ header {
         padding-bottom: calc(40px + 10 * ((100vw - calc(320px)) / 980)); } }
     @media (max-width: 1023px) {
       .main_section .slide {
-        padding-bottom: 200px; } }
+        padding-bottom: 10px; } }
   .main_section .flex_slide .slide_content {
     display: -ms-flexbox;
     display: flex;
@@ -694,10 +693,10 @@ header {
         font-size: calc(16px + 2 * ((100vw - calc(320px)) / 980)); } }
     .main_section .flex_slide .text:not(:last-child) {
       /* Только если меньше контейнера */
-      margin-bottom: 40px; }
+      margin-bottom: 20px; }
       @media (max-width: 1300px) {
         .main_section .flex_slide .text:not(:last-child) {
-          margin-bottom: calc(20px + 20 * ((100vw - calc(320px)) / 980)); } }
+          margin-bottom: calc(10px + 10 * ((100vw - calc(320px)) / 980)); } }
   .main_section .revert .slide_content {
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }

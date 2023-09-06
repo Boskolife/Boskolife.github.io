@@ -78,9 +78,9 @@ header {
     }
 
     .contact_btn {
-        padding: 15px;
+        padding: 10px;
         background-color: #E3E3E3;
-        @include adaptiv-vaule("width", 195, 100, 1);
+        @include adaptiv-vaule("width", 155, 100, 1);
         text-align: center;
         transition: $all_03;
 

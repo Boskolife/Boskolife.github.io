@@ -638,15 +638,15 @@ header {
     header .menu_item {
       margin-bottom: 50px; } }
   header .contact_btn {
-    padding: 15px;
+    padding: 10px;
     background-color: #E3E3E3;
     /* Только если меньше контейнера */
-    width: 195px;
+    width: 155px;
     text-align: center;
     transition: all 0.3s ease 0s; }
     @media (max-width: 1300px) {
       header .contact_btn {
-        width: calc(100px + 95 * ((100vw - calc(320px)) / 980)); } }
+        width: calc(100px + 55 * ((100vw - calc(320px)) / 980)); } }
     @media (max-width: 1023px) {
       header .contact_btn {
         width: 200px;
