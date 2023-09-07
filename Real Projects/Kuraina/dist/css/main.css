@@ -698,6 +698,9 @@ header {
     @media (max-width: 1300px) {
       .main_section .flex_slide .text {
         font-size: calc(16px + 2 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 767px) {
+      .main_section .flex_slide .text {
+        text-indent: 20px; } }
     .main_section .flex_slide .text:not(:last-child) {
       /* Только если меньше контейнера */
       margin-bottom: 20px; }
@@ -809,7 +812,8 @@ header {
       width: 100%;
       height: 100%;
       padding: 0 10px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      bottom: 80px; }
       @media (max-width: 767px) {
         .main_section .slide_1 .slide_text_wrap {
           width: calc(100% - 20px); } }
@@ -1212,6 +1216,7 @@ header {
       object-fit: cover; }
     .main_section .slide_21 .slide_text {
       max-width: 680px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      z-index: 1; }
 
 /*# sourceMappingURL=main.css.map */

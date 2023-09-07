@@ -31,6 +31,7 @@ const slider = new Swiper(".main_swiper", {
             const sideWrap = document.querySelector(".progressBar");
             const logo = document.getElementById("logo");
             let progressBar = document.getElementById("progressBar");
+            const rotateElem = document.querySelector(".progress_img");
             let progress = self.progress * (100 - 9.5);
             sideWrap.style.left = `${progress}%`;
             if (self.activeIndex > 0) {

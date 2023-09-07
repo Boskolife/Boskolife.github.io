@@ -32,6 +32,7 @@ var slider = new Swiper(".main_swiper", {
       var sideWrap = document.querySelector(".progressBar");
       var logo = document.getElementById("logo");
       var progressBar = document.getElementById("progressBar");
+      var rotateElem = document.querySelector(".progress_img");
       var progress = self.progress * (100 - 9.5);
       sideWrap.style.left = "".concat(progress, "%");
 

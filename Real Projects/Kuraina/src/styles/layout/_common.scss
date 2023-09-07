@@ -32,15 +32,6 @@
         @include media ("<desktop") {
             padding-bottom: 10px;
         }
-
-        // .slide_img_wrap {
-
-        //     @include media ("<desktop") {
-        //         position: absolute;
-        //         bottom: -50%;
-        //         width: 90%;
-        //     }
-        // }
     }
 
     .flex_slide {
@@ -78,6 +69,10 @@
             text-align: justify;
             @include adaptiv-vaule("font-size", 18, 16, 1);
             line-height: 130%;
+
+            @include media ("<tablet") {
+                text-indent: 20px;
+            }
 
             &:not(:last-child) {
                 @include adaptiv-vaule("margin-bottom", 20, 10, 1);
@@ -188,6 +183,7 @@
             height: 100%;
             padding: 0 10px;
             margin: 0 auto;
+            bottom: 80px;
 
             @include media ("<tablet") {
                 width: calc(100% - 20px);
@@ -678,6 +674,7 @@
         .slide_text {
             max-width: 680px;
             margin: 0 auto;
+            z-index: 1;
         }
     }
 }
