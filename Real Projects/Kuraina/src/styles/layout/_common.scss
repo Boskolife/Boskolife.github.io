@@ -657,6 +657,7 @@
     .slide_21 {
         display: grid;
         place-items: center;
+        overflow:auto;
         
         @include media ("<desktop") {
             padding-bottom: 40px;

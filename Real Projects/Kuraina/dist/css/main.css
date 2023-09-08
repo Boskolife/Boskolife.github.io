@@ -1202,7 +1202,8 @@ header {
         right: 0; } }
   .main_section .slide_21 {
     display: grid;
-    place-items: center; }
+    place-items: center;
+    overflow: auto; }
     @media (max-width: 1023px) {
       .main_section .slide_21 {
         padding-bottom: 40px; } }
