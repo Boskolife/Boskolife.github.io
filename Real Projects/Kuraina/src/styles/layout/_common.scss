@@ -179,7 +179,7 @@
             height: 100%;
             padding: 0 10px;
             margin: 0 auto;
-            bottom: 80px;
+            bottom: 100px;
 
             @include media ("<tablet") {
                 width: calc(100% - 20px);
@@ -654,6 +654,7 @@
         display: grid;
         place-items: center;
         height:100vh;
+        overflow: auto;
 
         @include media ("<phone") {
             padding: 60px 0 40px 0;

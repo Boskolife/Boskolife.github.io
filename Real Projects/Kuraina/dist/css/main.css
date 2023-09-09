@@ -811,7 +811,7 @@ header {
       height: 100%;
       padding: 0 10px;
       margin: 0 auto;
-      bottom: 80px; }
+      bottom: 100px; }
       @media (max-width: 767px) {
         .main_section .slide_1 .slide_text_wrap {
           width: calc(100% - 20px); } }
@@ -1201,7 +1201,8 @@ header {
   .main_section .slide_21 {
     display: grid;
     place-items: center;
-    height: 100vh; }
+    height: 100vh;
+    overflow: auto; }
     @media (max-width: 479px) {
       .main_section .slide_21 {
         padding: 60px 0 40px 0;
