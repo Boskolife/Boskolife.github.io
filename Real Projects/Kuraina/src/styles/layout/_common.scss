@@ -146,10 +146,6 @@
         }
     }
 
-    .swiper-pagination{
-        display: none;
-    }
-
     .slide_1 {
         padding: 0 0 30px 0;
 
@@ -657,12 +653,13 @@
     .slide_21 {
         display: grid;
         place-items: center;
-        overflow:auto;
-        
-        @include media ("<desktop") {
-            padding-bottom: 40px;
-        }
+        height:100vh;
 
+        @include media ("<phone") {
+            padding: 60px 0 40px 0;
+            align-items: flex-start;
+        }
+        
         .slide_21_img {
             position: absolute;
             top: 0;
@@ -675,6 +672,7 @@
         .slide_text {
             max-width: 680px;
             margin: 0 auto;
+            overflow: auto;
             z-index: 1;
         }
     }
