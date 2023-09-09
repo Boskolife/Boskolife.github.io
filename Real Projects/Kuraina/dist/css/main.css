@@ -736,6 +736,10 @@ header {
       .main_section .white_list {
         height: 100vh;
         padding: 0; } }
+    @media (max-width: 767px) {
+      .main_section .white_list {
+        -ms-flex-align: start;
+        align-items: flex-start; } }
     .main_section .white_list .title_wrap {
       display: -ms-flexbox;
       display: flex;
@@ -747,6 +751,9 @@ header {
       @media (max-width: 1023px) {
         .main_section .white_list .title_wrap {
           width: calc(100% - 20px); } }
+      @media (max-width: 767px) {
+        .main_section .white_list .title_wrap {
+          padding-top: 100px; } }
     .main_section .white_list .slide_title {
       color: #000;
       /* Только если меньше контейнера */
@@ -772,7 +779,7 @@ header {
       text-transform: uppercase; }
       @media (max-width: 1300px) {
         .main_section .white_list .author {
-          bottom: calc(30px + 20 * ((100vw - calc(320px)) / 980)); } }
+          bottom: calc(100px + -50 * ((100vw - calc(320px)) / 980)); } }
       @media (max-width: 1300px) {
         .main_section .white_list .author {
           right: calc(10px + 35 * ((100vw - calc(320px)) / 980)); } }
