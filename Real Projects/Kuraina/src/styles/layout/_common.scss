@@ -28,9 +28,13 @@
         @include adaptiv-vaule("padding-bottom", 50, 40, 1);
         width: 100%;
         position: relative;
-
+        
         @include media ("<desktop") {
             padding-bottom: 10px;
+        }
+
+        @include media ("<phone") {
+            height: 100%;
         }
     }
 
