@@ -17,6 +17,18 @@
     .main_swiper {
         width: 100%;
         height: 100%;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            &::after {
+                color: #000;
+            }
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+
     }
 
     .swiper-slide {
@@ -24,11 +36,12 @@
     }
 
     .slide {
-        @include adaptiv-vaule("padding-top", 50, 60, 1);
+        @include adaptiv-vaule("padding-top", 100, 60, 1);
         @include adaptiv-vaule("padding-bottom", 50, 40, 1);
         width: 100%;
         position: relative;
-        
+        overflow: auto;
+
         @include media ("<desktop") {
             padding-bottom: 10px;
         }
@@ -110,7 +123,7 @@
             padding: 0;
         }
 
-        @include media ("<tablet") {    
+        @include media ("<tablet") {
             align-items: flex-start;
         }
 
@@ -131,12 +144,12 @@
 
         .slide_title {
             color: $black;
-            @include adaptiv-vaule("font-size", 60, 24, 1);
+            @include adaptiv-vaule("font-size", 40, 24, 1);
             font-weight: 300;
             line-height: 130%;
             text-transform: uppercase;
 
-            
+
 
             &:not(:last-child) {
                 margin-bottom: 10px;
@@ -145,7 +158,7 @@
 
         .author {
             position: absolute;
-            @include adaptiv-vaule("bottom", 50, 140, 1);
+            @include adaptiv-vaule("bottom", 50, 130, 1);
             @include adaptiv-vaule("right", 45, 10, 1);
             color: $black;
             @include adaptiv-vaule("font-size", 32, 20, 1);
@@ -654,7 +667,7 @@
             }
         }
 
-        
+
         .slide_img_wrap {
 
             @include media ("<desktop") {
@@ -666,14 +679,14 @@
     .slide_21 {
         display: grid;
         place-items: center;
-        height:100vh;
+        height: 100vh;
         overflow: auto;
 
         @include media ("<phone") {
             padding: 60px 0 40px 0;
             align-items: flex-start;
         }
-        
+
         .slide_21_img {
             position: absolute;
             top: 0;

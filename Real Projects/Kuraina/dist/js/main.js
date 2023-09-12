@@ -3,12 +3,12 @@
 // Swiper:
 var imageRotate = 0;
 var slider = new Swiper(".main_swiper", {
-  speed: 1500,
-  mousewheel: true,
+  speed: 1400,
+  // mousewheel: true,
   slidesPerView: 1,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction"
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   },
   effect: "creative",
   creativeEffect: {
