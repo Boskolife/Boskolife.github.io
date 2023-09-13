@@ -3,7 +3,6 @@ let imageRotate = 0;
 
 const slider = new Swiper(".main_swiper", {
     speed: 1400,
-    // mousewheel: true,
     slidesPerView: 1,
     navigation: {
         nextEl: ".swiper-button-next",

@@ -4,7 +4,6 @@
 var imageRotate = 0;
 var slider = new Swiper(".main_swiper", {
   speed: 1400,
-  // mousewheel: true,
   slidesPerView: 1,
   navigation: {
     nextEl: ".swiper-button-next",
