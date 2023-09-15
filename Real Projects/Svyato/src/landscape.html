@@ -8,6 +8,8 @@
     <link rel="website icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -19,75 +21,25 @@
             <section class="landscapes_page">
                 <div class="container">
                     <div class="content">
-                        <div class="swiper landscapes_page_swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card_img">
-                                            <img src="./images/swiper_img_1.png" alt= "image not found" >
-                                        </div>
-                                        <div class="card_text">
-                                            <p class="date">01.10.2023</p>
-                                            <p class="text">
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius.
-                                                <br>
-                                                <br>
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>               
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card_img">
-                                            <img src="./images/swiper_img_2.png" alt= "image not found" >
-                                        </div>
-                                        <div class="card_text">
-                                            <p class="date">01.10.2023</p>
-                                            <p class="text">
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius.
-                                                <br>
-                                                <br>
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>               
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card_img">
-                                            <img src="./images/swiper_img_3.png" alt= "image not found" >
-                                        </div>
-                                        <div class="card_text">
-                                            <p class="date">01.10.2023</p>
-                                            <p class="text">
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius.
-                                                <br>
-                                                <br>
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>               
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card_img">
-                                            <img src="./images/swiper_img_1.png" alt= "image not found" >
-                                        </div>
-                                        <div class="card_text">
-                                            <p class="date">01.10.2023</p>
-                                            <p class="text">
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius.
-                                                <br>
-                                                <br>
-                                                Lorem ipsum dolor sit amet consectetur. Diam interdum lacus penatibus velit. Eros vitae libero sapien varius. 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>               
-                            </div>
-                            <div class="swiper-scrollbar"></div>
-                            <div class="swiper-pagination"></div>
+                        <ul class="filter_list">
+                            <li class="filter_item" data-id="all">Lorem All</li>
+                            <li class="filter_item" data-id="two">Lorem Two</li>
+                            <li class="filter_item" data-id="three">Lorem Three</li>
+                            <li class="filter_item" data-id="four">Lorem Four</li>
+                        </ul>
+                        <div class="gallery_wrap">
+                                <a class="gallery_item two" href="./images/swiper_img_1.png" data-fancybox data-caption="Lorem">
+                                    <img class='gallery_img' src="./images/swiper_img_1.png" />
+                                </a>
+                                <a class="gallery_item three" href="./images/swiper_img_1.png" data-fancybox data-caption="Lorem">
+                                    <img class='gallery_img' src="./images/swiper_img_1.png" />
+                                </a>
+                                <a class="gallery_item four" href="./images/swiper_img_1.png" data-fancybox data-caption="Lorem">
+                                    <img class='gallery_img' src="./images/swiper_img_1.png" />
+                                </a>
+                                <a class="gallery_item two" href="./images/swiper_img_1.png" data-fancybox data-caption="Lorem">
+                                    <img class='gallery_img' src="./images/swiper_img_1.png" />
+                                </a>
                         </div>
                     </div>
                 </div>

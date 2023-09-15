@@ -3,6 +3,7 @@
 initBurger();
 anchorListener();
 findHref();
+imageFilter();
 var logoSwiper = new Swiper(".logo_swiper", {
   slidesPerView: 5.5,
   spaceBetween: 30,
@@ -119,6 +120,56 @@ function findHref() {
     if (url === element[i].href) {
       element[i].classList.add("item_active");
     }
+  }
+}
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+  groupAll: true
+});
+
+function imageFilter() {
+  var list = document.querySelector(".filter_list");
+  var items = document.querySelectorAll(".gallery_item");
+  var filterListItems = document.querySelectorAll(".filter_item");
+  list.addEventListener("click", function (e) {
+    var targetId = e.target.dataset.id;
+    var target = e.target;
+
+    if (target.classList.contains("filter_item")) {
+      filterListItems.forEach(function (listItem) {
+        listItem.classList.remove("activeFilter");
+        target.classList.add("activeFilter");
+      });
+    }
+
+    switch (targetId) {
+      case "all":
+        getItems("gallery_item");
+        break;
+
+      case "two":
+        getItems(targetId);
+        break;
+
+      case "three":
+        getItems(targetId);
+        break;
+
+      case "four":
+        getItems(targetId);
+        break;
+    }
+  });
+
+  function getItems(className) {
+    items.forEach(function (item) {
+      if (item.classList.contains(className)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
   }
 }
 //# sourceMappingURL=main.js.map

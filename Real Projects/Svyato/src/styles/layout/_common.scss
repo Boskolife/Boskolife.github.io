@@ -792,27 +792,65 @@ html {
 
 .landscapes_page {
 
-    .landscapes_page_swiper {
-        height: calc(100vh - 133px);
-        padding-left: 80px;
 
-        @include media ("<desktop") {
-            height: calc(100vh - 63px);
-            padding: 35px 0 0 0;
+    .filter_list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        gap: 15px;
+    }
+
+    .filter_item{
+        cursor: pointer;
+    }
+
+    .gallery_wrap {
+        column-count: 3;
+
+        @include media ("<tablet") {
+            column-count: 2;
+        }
+
+        @include media ("<phone") {
+            column-count: 1;
         }
     }
 
-    .swiper-scrollbar{
-        left: 0;
-
-        @include media ("<desktop") {
-            display: none;
-        }
-
-        .swiper-scrollbar-drag{
-            background-color: $orange;
-        }
+    .gallery_item {
+        display: inline-block;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 15px;
     }
+
+    .gallery_img {
+        width: 100%;
+        height: 100%;
+    }
+
+    // .landscapes_page_swiper {
+    //     height: calc(100vh - 133px);
+    //     padding-left: 80px;
+
+    //     @include media ("<desktop") {
+    //         height: calc(100vh - 63px);
+    //         padding: 35px 0 0 0;
+    //     }
+    // }
+
+    // .swiper-scrollbar{
+    //     left: 0;
+
+    //     @include media ("<desktop") {
+    //         display: none;
+    //     }
+
+    //     .swiper-scrollbar-drag{
+    //         background-color: $orange;
+    //     }
+    // }
 
     // .swiper-scrollbar.swiper-scrollbar-vertical, .swiper-vertical>.swiper-scrollbar{
     //     @include media ("<desktop") {
@@ -823,67 +861,67 @@ html {
     //     }
     // }
 
-    .swiper-pagination{
-        top: 8px;
-        left: 20px;
-        width: max-content;
+    // .swiper-pagination{
+    //     top: 8px;
+    //     left: 20px;
+    //     width: max-content;
 
-        @include media ("<desktop") {
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: start;
-            height: 35px;
-            background-color: #FDFDFD;
-        }
+    //     @include media ("<desktop") {
+    //         top: 0;
+    //         left: 0;
+    //         width: 100%;
+    //         text-align: start;
+    //         height: 35px;
+    //         background-color: #FDFDFD;
+    //     }
 
-        .swiper-pagination-current{
-            color: #414141;
-            font-size: 16px;
-        }
+    //     .swiper-pagination-current{
+    //         color: #414141;
+    //         font-size: 16px;
+    //     }
 
-        .swiper-pagination-total{
-            color: #9E9E9E;
-            font-size: 16px;
-        }
-    }
+    //     .swiper-pagination-total{
+    //         color: #9E9E9E;
+    //         font-size: 16px;
+    //     }
+    // }
 
-    .card{
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 30px;
-        height: 100%;
+    // .card{
+    //     display: flex;
+    //     align-items: flex-start;
+    //     justify-content: flex-start;
+    //     gap: 30px;
+    //     height: 100%;
 
-        @include media ("<desktop") {
-            flex-direction: column;
-        }
-    }
+    //     @include media ("<desktop") {
+    //         flex-direction: column;
+    //     }
+    // }
 
-    .card_img{
-        height: 100%;
-        max-width: 70%;
-        width: auto;
+    // .card_img{
+    //     height: 100%;
+    //     max-width: 70%;
+    //     width: auto;
 
-        @include media ("<desktop") {
-            max-width: 100%;
-        }
+    //     @include media ("<desktop") {
+    //         max-width: 100%;
+    //     }
 
-        img{
-            height: 100%;
-            width: 100%;
-        }
-    }
+    //     img{
+    //         height: 100%;
+    //         width: 100%;
+    //     }
+    // }
 
-    .date{
-        @include adaptiv-vaule("font-size", 20, 16, 1);
-        margin-bottom: 25px;
-        color: #9E9E9E;
-    }
+    // .date{
+    //     @include adaptiv-vaule("font-size", 20, 16, 1);
+    //     margin-bottom: 25px;
+    //     color: #9E9E9E;
+    // }
 
-    .text{
-        @include adaptiv-vaule("font-size", 20, 16, 1);
-        margin-bottom: 25px;
-        color: #414141;
-    }
+    // .text{
+    //     @include adaptiv-vaule("font-size", 20, 16, 1);
+    //     margin-bottom: 25px;
+    //     color: #414141;
+    // }
 }

@@ -1,6 +1,7 @@
 initBurger();
 anchorListener();
 findHref();
+imageFilter();
 
 const logoSwiper = new Swiper(".logo_swiper", {
     slidesPerView: 5.5,
@@ -123,5 +124,53 @@ function findHref() {
         if (url === element[i].href) {
             element[i].classList.add("item_active");
         }
+    }
+}
+
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+    groupAll: true,
+});
+
+function imageFilter() {
+    const list = document.querySelector(".filter_list");
+    const items = document.querySelectorAll(".gallery_item");
+    const filterListItems = document.querySelectorAll(".filter_item");
+
+    list.addEventListener("click", (e) => {
+        const targetId = e.target.dataset.id;
+        const target = e.target;
+
+        if (target.classList.contains("filter_item")) {
+            filterListItems.forEach((listItem) => {
+                listItem.classList.remove("activeFilter");
+                target.classList.add("activeFilter");
+            });
+        }
+
+        switch (targetId) {
+            case "all":
+                getItems("gallery_item");
+                break;
+            case "two":
+                getItems(targetId);
+                break;
+            case "three":
+                getItems(targetId);
+                break;
+            case "four":
+                getItems(targetId);
+                break;
+        }
+    });
+
+    function getItems(className) {
+        items.forEach((item) => {
+            if (item.classList.contains(className)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
     }
 }
