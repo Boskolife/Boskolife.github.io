@@ -1,0 +1,332 @@
+#footer {
+    overflow: hidden;
+
+    .cont{
+        max-width: 1570px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+    }
+
+    .title, .link{
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #FFFFFF;
+        margin: 0;
+
+        &:hover{
+            text-decoration: underline;
+            color: $yellow;
+        }
+    }
+
+    .top{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 45px 0 55px 0;
+        background-color: $black;
+
+        @include media ("<phone") {
+            padding: 40px 0;
+        }
+
+        .cont{
+
+            @include media ("<laptop") {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .footer-logo{
+
+        @include media ("<laptop") {
+            margin-bottom: 30px;
+        }
+    }
+
+    .footer-menu{
+        display: flex;
+
+        @include media ("<laptop") {
+            margin-bottom: 30px;
+        }
+
+        @include media ("<desktop_sm") {
+            margin: 0;
+        }
+    }
+
+    .menu{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @include media ("<desktop_sm") {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+    }
+    
+    .menu-item{
+        position: relative;
+        padding: 0;
+        margin: 0 25px;
+        
+        @include media ("<desktop_sm") {
+            margin: 0 25px 25px 25px;
+        }
+
+        @include media ("<phone") {
+            margin: 0 20px 20px 20px;
+        }
+
+        .title{
+            font-size: 16px;
+            margin-bottom: 25px;
+
+            &:first-child{
+                font-weight: 500;
+            }
+        }
+    }
+
+    .menu-item_active {
+    
+        .sub-menu{
+            max-height: 500px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition: all .7s ease 0s;
+            margin: 0 0 20px 0;
+        }
+
+        .arrow{
+
+            svg{
+                transform: rotate3d(1, 0, 0, 180deg);
+                fill: $yellow;
+            }
+        }
+    }
+
+    .control{
+        display: flex;
+    }
+
+    .arrow{
+        display: none;
+        position: relative;
+        width: 20px;
+        height: 25px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        transition: all .3s ease 0s;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        
+        @include media ("<desktop_sm") {
+            display: flex;
+        }
+
+        &:hover{
+    
+            svg{
+                fill: $yellow;
+            }
+        }
+
+        svg{
+            width: 10px;
+            height: 7px;
+            fill: $white;
+            transition: all .3s ease 0s;
+            z-index: -1;
+        }
+    }
+
+    .sub-menu{
+        list-style: none;
+        padding: 0;
+
+        @include media ("<desktop_sm") {
+            max-height: 0;
+            visibility: hidden;
+            transition: all .7s ease 0s;
+            opacity: 0;
+            pointer-events: none;
+            padding: 0;
+        }
+    }
+
+    .sub-item{
+        margin-bottom: 20px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    .text{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #FFFFFF;
+        margin-bottom: 15px;
+    }
+
+    .icon-bg{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .bot{
+        padding: 10px 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #4F4F4F;
+
+        .cont{
+            @include media ("<phone_max") {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .title{
+    
+            &:hover{
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+
+        .text{
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+
+    .socials{
+        display: flex;
+
+        @include media ("<phone_max") {
+            margin: 20px 0;
+        }
+    }
+
+    .social-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+
+        &:hover{
+            svg{
+                fill: $yellow;
+            }
+        }
+
+        svg{
+            width: 22px;
+            height: 22px;
+            transition: all .3s ease 0s;
+            fill: $white;
+        }
+
+    }
+    
+    .youtube{
+
+        svg{
+            width: 33px;
+        }
+    }
+}
+
+.footer-form{
+
+    @include media ("<laptop") {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    @include media ("<phone") {
+        padding: 0 15px;
+    }
+
+    .input-wrap{
+        display: flex;
+    }
+
+    input{
+        background: #161616;
+        border: 1px solid #191919;
+        border-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        color: $white;
+        padding: 14px;
+        width: 100%;
+        max-width: 220px;
+        transition: all .3s ease 0s;
+
+        @include media ("<laptop") {
+            max-width: 100%;
+        }
+
+        @include media ("<desktop_sm") {
+            transform: translate(3px);
+        }
+
+        &::placeholder{
+            color: #272727;
+        }
+
+        &:focus{
+            border-color: $yellow;
+        }
+    }
+    
+    .btn-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: $yellow;
+        width: 50px;
+        min-width: 50px;
+        transform: translate(-7px);
+        border: 1px solid $yellow;
+        transition: all .3s ease 0s;
+
+        @include media ("<desktop_sm") {
+            transform: translate(-3px);
+        }
+
+        &:hover {
+            background: $yellow_h;
+        }
+
+        svg{
+            width: 21px;
+            height: 20px;
+            fill: $black;
+        }
+    }
+}

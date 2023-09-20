@@ -1,0 +1,167 @@
+.ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn_wrap_blue {
+
+    a {
+        background: $blue;
+        padding: 20px 25px;
+        border-radius: 90px;
+        min-width: 200px;
+        transition: all 0.3s ease;
+        color: $white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16 / 14 * 100%;
+        display: inline-block;
+
+        &:hover {
+            background: $green;
+        }
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+        vertical-align: -3px;
+    }
+}
+
+.cont {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    @include media ("<phone") {
+        padding: 0 30px;
+    }
+}
+
+.blue_word {
+    font-style: normal;
+    color: $blue;
+}
+
+.big-circle,
+.small-circle,
+.middle-circle {
+    position: absolute;
+    border: 1px solid #7A7B7E;
+    border-radius: 50%;
+}
+
+.blur_circle_blue,
+.blur_circle_green {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.blur_circle_blue {
+    width: 950px;
+    height: 760px;
+    background: radial-gradient(50% 50% at 50% 50%, #191D7A 25%, rgba(51, 59, 145, 0) 100%);
+    transform: rotate(-75deg);
+}
+
+.blur_circle_green {
+    width: 830px;
+    height: 665px;
+    background: radial-gradient(50% 50% at 50% 50%, #197A63 5%, rgba(51, 145, 100, 0) 100%);
+    transform: rotate(105deg);
+}
+
+.big-circle {
+    @include adaptiv-vaule("width", 400, 300, 1);
+    @include adaptiv-vaule("height", 400, 300, 1);
+
+    .small-circle {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.middle-circle {
+    width: 60px;
+    height: 60px;
+}
+
+.tabs__btn {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    @include adaptiv-vaule("padding-top", 7, 5, 1);
+    @include adaptiv-vaule("padding-bottom", 7, 5, 1);
+    @include adaptiv-vaule("padding-right", 30, 1, 1);
+    transition: all .3s ease;
+    position: relative;
+
+    &:not(:last-child){
+        margin-bottom: 30px;
+    }
+
+    @include media ("<tablet") {
+        padding:0 30px;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: $green;
+        opacity: 0;
+        transition: all 1s ease;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            right: 99.5%;
+        }
+    }
+
+    svg {
+        @include adaptiv-vaule("margin-right", 20, 10, 1);
+        min-width: 24px;
+
+        path {
+            transition: all .3s ease;
+            fill: #D3D3D3;
+        }
+    }
+}
+
+.tab_text {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(18, 17, 17, 0.8);
+}
+
+.tabs__btn_active {
+    position: relative;
+
+    &::after {
+        opacity: 1;
+    }
+
+    svg {
+
+        path {
+            transition: all .3s ease;
+            fill: $green;
+        }
+    }
+
+    .tab_text {
+        color: $black;
+    }
+}

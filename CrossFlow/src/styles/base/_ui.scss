@@ -1,0 +1,238 @@
+.body_lock {
+    overflow: hidden;
+}
+
+.ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include media ("<phone") {
+        padding: 0 10px;
+    }
+}
+
+.yellow-btn {
+    padding: 15px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    color: $black;
+    background: $yellow;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all .3s ease;
+    text-align: center;
+
+    @include media ("<phone") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: $yellow_h;
+    }
+}
+
+.grey-btn {
+    padding: 15px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    color: $white;
+    background: $gray_02;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s ease;
+    text-align: center;
+
+    @include media ("<phone") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: #666565;
+    }
+}
+
+.component-title {
+    padding: 10px 0 10px 0;
+    @include adaptiv-vaule("padding-right", 90, 40, 1);
+    @include adaptiv-vaule("padding-left", 90, 40, 1);
+    background: $black;
+    @include adaptiv-vaule("font-size", 20, 15, 1);
+    color: $white;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.consultation-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include media ("<desktop") {
+        flex-direction: column-reverse;
+    }
+}
+
+.consultation-text {
+    width: 49%;
+    text-align: start;
+
+    @include media ("<desktop") {
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center
+    }
+}
+
+.component-title {
+    @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+}
+
+.consultation-title {
+    @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+}
+
+.form {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+
+    @include media ("<desktop") {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #C2C2C2;
+        padding: 25px 25px 25px 40px;
+        border-radius: 10px;
+        margin-bottom: 35px;
+        background: $white;
+
+        @include media ("<tablet") {
+            margin-bottom: 15px;
+        }
+
+        &:focus {
+            border: 1px solid $yellow;
+            transition: all 0.3s ease;
+        }
+
+        &::placeholder {
+            color: $black;
+        }
+    }
+
+    textarea {
+        min-height: 220px;
+        margin-bottom: 0;
+    }
+
+    .selectBox {
+        cursor: pointer;
+
+        option {
+            border: 1px solid #C2C2C2;
+            padding: 25px 25px 25px 40px;
+            border-radius: 10px;
+            margin-bottom: 35px;
+            appearance: none;
+            background: #efefef url(../images/Tutorials-page/arrow.svg)right / 15px 15px no-repeat;
+            background-position-x: calc(100% - 10px);
+            text-align: left;
+
+            @include media ("<tablet") {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkboxes {
+        max-height: 0px;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease 0s;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            max-height: 999px;
+            transition: all 1s ease 0s;
+        }
+
+        label {
+            display: block;
+            border: 1px #dadada solid;
+            margin-bottom: 30px;
+            border: 1px solid #C2C2C2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: $white;
+            text-align: start;
+        }
+
+        input {
+            margin: 0 5px 0 0;
+        }
+    }
+
+    .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .custom-checkbox+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        position: relative;
+        width: 15px;
+        height: 15px;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 15px;
+            height: 15px;
+            border: 1px solid red;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border-radius: 5px;
+            margin-right: 5px;
+            background: #fff;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+    }
+}

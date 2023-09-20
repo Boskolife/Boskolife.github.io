@@ -1,0 +1,589 @@
+header {
+    padding: 25px 0;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    background: $white;
+
+    @include media ("<desktop") {
+        padding: 15px 0;
+    }
+}
+
+.search {
+    form {
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        position: relative;
+        border: 1px solid #E6E8EC;
+        border-radius: 62px;
+        padding: 9px 15px;
+        @include adaptiv-vaule("padding-top", 9, 5, 1);
+    @include adaptiv-vaule("padding-bottom", 9, 5, 1);
+    @include adaptiv-vaule("padding-right", 15, 5, 1);
+    @include adaptiv-vaule("padding-left", 15, 5, 1);
+        outline: none;
+        background: transparent;
+        @include adaptiv-vaule("width", 312, 20, 1);
+        z-index: 1;
+
+        @include media ("<tablet") {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            transition: background 0.5s ease, width 0s ease;
+            background: $green url(../images/Header/search_icon.svg) center no-repeat;
+        }
+
+        &:focus {
+            border: 1px solid $blue;
+
+            @include media ("<tablet") {
+                transition: width 0.5s ease;
+                position: absolute;
+                width: 220px;
+                background: transparent;
+                padding: 0 15px;
+                right: 45px;
+
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+
+            @include media ("<phone_max") {
+                width: 100%;
+                bottom: -45px;
+                right: 0;
+            }
+        }
+
+        &::placeholder {
+            font-size: 14px;
+            transition: all 0 ease;
+            color: #23262F;
+
+            @include media ("<tablet") {
+                font-size: 0;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5px;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: $green;
+        transition: all 0.3s ease;
+        z-index: 4;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        &:hover {
+            background: $blue;
+        }
+
+        svg {
+            fill: $white;
+            margin-top: 5px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    .logo {
+        margin-right: 15px;
+        max-width: 240px;
+        width: 100%;
+        position: relative;
+
+        @include media ("<phone") {
+            width: 168px;
+        }
+
+        .elem {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 2px;
+            height: 100%;
+            display: block;
+            border-radius: 10px;
+            background-color: $green;
+            animation-name: over_anim1;
+            animation-duration: 2.3s;
+            animation-fill-mode: forwards;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7),
+                &:nth-child(8),
+                &:nth-child(9),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12) {
+                    animation-name: over_anim2;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-delay: .5s;
+                    transform: translateX(-100%);
+                }
+
+                &:nth-child(1),
+                &:nth-child(13),
+                &:nth-child(14),
+                &:nth-child(15),
+                &:nth-child(16),
+                &:nth-child(17) {
+                    animation-name: over_anim2;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-delay: .5s;
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            position: fixed;
+            justify-content: center;
+            height: 100vh;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            background: $white;
+            transition: all 0.3s ease;
+            z-index: 2;
+            padding-top: 50px;
+            @include adaptiv-vaule("padding-bottom", 30, 15, 1);
+            @include adaptiv-vaule("padding-right", 30, 10, 1);
+            @include adaptiv-vaule("padding-left", 30, 10, 1);
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+
+        @include media ("<tablet") {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        @include media ("<phone_max") {
+            align-items: center;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        top: 2px;
+        right: -1px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 16px;
+        height: 16px;
+
+        @include media ("<tablet") {
+            width: 25px;
+            height: 25px;
+        }
+
+        @include media ("<phone") {
+            width: 50%;
+        }
+
+        svg {
+            transition: all .7s ease , fill .0s ease;
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+
+            @include media ("<tablet") {
+                transform: rotate(-90deg);
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
+    .control {
+        margin-right: 10px;
+        max-width: 200px;
+        margin: 0 auto;
+        position: relative;
+
+        @include media ("<phone") {
+            max-width: 100%;
+        }
+
+        .link {
+            margin-right: 15px;
+        }
+    }
+
+
+    .menu-item {
+        position: relative;
+        margin-right: 50px;
+        text-align: center;
+
+        @include media ("<desktop") {
+            margin-right: 15px;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+            padding: 15px 0;
+            border-top: 1px solid #EDEDED;
+            margin-right: 0;
+        }
+
+        @include media (">=tablet") {
+
+            &:hover {
+
+                .arrow {
+
+                    svg {
+                        transform: rotate3d(1, 0, 0, 180deg);
+                    }
+                }
+
+                .sub-menu {
+                    top: 17px;
+                    transition: all 0.5s ease;
+                    visibility: visible;
+                    pointer-events: all;
+                    opacity: 1;
+                    z-index: 5;
+                }
+            }
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            text-align: start;
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            @include media ("<tablet") {
+                border-bottom: 1px solid #EDEDED;
+            }
+        }
+
+        .link {
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-transform: capitalize;
+            cursor:pointer;
+
+            @include media ("<tablet") {
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+    }
+
+    .menu-item_active {
+
+        @include media('<tablet') {
+
+            .sub-menu {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transition: all 0.5s ease 0s;
+                text-align: center;
+                padding-top: 70px;
+            }
+        }
+    }
+
+    .arrow_tab_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+
+        .tabs__nav_title {
+            color: $blue;
+            font-size: 24px;
+            display: none;
+        }
+    }
+
+    .arrow_tab_wrap_active{
+        position: fixed;
+        top: 15px;
+        @include adaptiv-vaule("top", 19, 15, 1);
+        left: 30px;
+
+        .tabs__nav_title{
+            display: block;
+        }
+    }
+
+    .arrow_open {
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        position: static;
+        margin-right: 15px;
+
+        &::after{
+            position:absolute;
+            content:'';
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $blue;
+            z-index: -2;
+        }
+
+        svg {
+            transform: rotate(90deg);
+            fill: $white;
+            width: 30px;
+            height: 30px;
+        }
+
+        .tabs__nav_title {
+            display: block;
+        }
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: -10px;
+        padding-top: 15px;
+        transition: all 0.7s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        background: $white;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: start;
+        width: 200px;
+        z-index: 3;
+
+
+        @include media('<tablet') {
+            visibility: hidden;
+            transition: all .7s ease 0s;
+            opacity: 0;
+            pointer-events: none;
+            padding: 0;
+            background: $white;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: flex-start;
+        }
+
+        @include media ("<phone_max") {
+            text-align: center;
+
+        }
+    }
+
+    .sub-item {
+        margin-bottom: 10px;
+        text-align: start;
+        width: 100%;
+
+        @include media ("<tablet") {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-left: 30px;
+
+            &:first-child {
+                border-top: 1px solid #EDEDED;
+                padding-top: 20px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        @include media ("<phone") {
+            text-align: start;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .link {
+
+            @include media ("<tablet") {
+                font-size: 14px;
+                font-weight: 600;
+                color: rgba(18, 17, 17, 0.8);
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 5px 0;
+            }
+
+            svg {
+                display: none;
+    
+                @include media ("<tablet") {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    margin: 3px 10px 0 0;
+    
+                    path {
+                        fill: #D3D3D3;
+                    }
+                }
+            }
+        }
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        @include adaptiv-vaule("margin-left", 20, 5, 1);
+    }
+
+
+    .burger_menu {
+        display: none;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $green;
+        position: relative;
+        cursor: pointer;
+        z-index: 2;
+
+        @include media ("<tablet") {
+            display: block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            border-radius: 2px;
+            background: $white;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.4s ease;
+        }
+
+        span {
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            border-radius: 2px;
+            background: $white;
+            top: 19px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.4s ease;
+            opacity: 1;
+        }
+
+        &::after {
+            bottom: 12px;
+        }
+
+        &::before {
+            top: 12px;
+        }
+    }
+
+    .burger_active {
+        &::after {
+            transform: rotate(30deg) translateX(-108%);
+            width: 8px;
+        }
+
+        &::before {
+            transform: rotate(-30deg) translateX(-108%);
+            width: 8px;
+
+        }
+    }
+
+    .menu_active {
+        right: 0;
+    }
+}
+
+.blue {
+    background: transparent;
+
+    .header_content {
+
+        .sub-menu {
+            background-color: #F4FBF7;
+
+            @include media ("<tablet") {
+                background-color: $white;
+            }
+        }
+    }
+}

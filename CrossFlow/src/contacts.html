@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFlow</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400italic,regular,500,600,700" rel="stylesheet" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header.html
+        <main id="main">
+            <div class="main-img-all carrers-main-img">
+                <img class="ibg" src="./images/Contacts/bg.jpg" alt="image not found">
+            </div>
+            <div class="contacts">
+                <div class="swiper-pagination"></div>
+                <div class="swiper contact-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide1" data-name="General enquiries">
+                            //= templates/main_form.html
+                        </div>
+                        <div class="swiper-slide" data-name="Media enquiries">
+                            <div class="cont slide2">
+                                <form class="form" action="#">
+                                    <input type="text" placeholder="Name">
+                                    <input type="email" placeholder="Email">
+                                    <div>
+                                        <button class="yellow-btn" type="submit">Call to action</button>
+                                    </div>
+                                </form>
+                                <div class="text">
+                                    <h2 class="title">Lorem ipsum dolor sit</h2>
+                                    <p class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    <a class="social" href="tel:+12345678990">+1 234 567 89 90</a>
+                                    <br></br>
+                                    <a class="social" href="mailto:mail@mail.com">mail@mail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
+
+</html>

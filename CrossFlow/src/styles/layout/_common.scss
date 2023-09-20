@@ -1,0 +1,2759 @@
+body {
+    background: #fff;
+}
+
+/* -----------------------------------------#Main------------------------------------- */
+
+.main-section {
+    padding-bottom: 50px;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        transform: skewY(-3deg);
+        bottom: 37px;
+        left: 0;
+        width: 100vw;
+        height: 20px;
+        background-color: $yellow;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        transform: skewY(-2.6deg);
+    }
+
+    .main-bg {
+        z-index: -1;
+    }
+
+    .cont {
+        min-height: calc(100vh - 150px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .main-text {
+        width: 40%;
+        margin-right: 20px;
+
+        @include media ("<tablet") {
+            width: 80%;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-right: 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .main-title {
+        margin-bottom: 30px;
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .main-description {
+        font-size: 12px;
+        line-height: 18 / 12 * 100%;
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            margin-bottom: 20px;
+        }
+    }
+
+    .main-img {
+        width: 52%;
+        align-self: flex-end;
+
+        @include media ("<tablet") {
+            width: 73%;
+        }
+    }
+}
+
+.logos-main {
+    padding: 30px 0;
+
+    .cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .logo-img {
+        margin: 0 10px 20px 10px;
+    }
+
+}
+
+
+/* -----------------------------------------#About------------------------------------- */
+
+.about {
+    padding-top: 35px;
+    padding-bottom: 40px;
+
+    .about-content {
+        text-align: center;
+    }
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 85, 30, 1);
+    }
+
+    .description {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 125px;
+        @include adaptiv-vaule("margin-bottom", 125, 50, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .solution {
+        text-align: start;
+        margin-right: 50px;
+
+        @include media ("<desktop") {
+            margin: 0 0 70px 0;
+            text-align: center;
+        }
+
+        @include media ("<tablet") {
+            margin: 0 0 45px 0;
+        }
+    }
+
+    .solution-title {
+        margin-bottom: 115px;
+
+        @include media ("<desktop") {
+            margin-bottom: 15px;
+        }
+    }
+
+    .solution-description {
+        font-size: 20px;
+        max-width: 480px;
+        line-height: 30 / 20 * 100%;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .numbers {
+        text-align: start;
+
+        @include media ("<desktop") {
+            text-align: center
+        }
+    }
+
+    .numbers-title {
+        @include adaptiv-vaule("font-size", 26, 18, 1);
+        margin-bottom: 100px;
+
+        @include media ("<desktop") {
+            margin-bottom: 50px;
+        }
+    }
+
+    .box-number {
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .box {
+        display: flex;
+
+        &:first-child {
+            margin-right: 50px;
+
+            @include media ("<tablet") {
+                margin-right: 25px
+            }
+
+            @include media ("<phone") {
+                margin: 0 0 20px 0;
+            }
+        }
+
+        span {
+            @include adaptiv-vaule("font-size", 96, 48, 1);
+            margin-right: 25px;
+
+            @include media ("<tablet") {
+                margin-right: 15px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 13px;
+            line-height: 30 / 20 * 100%;
+
+            @include media ("<tablet") {
+                font-size: 16px;
+                margin-top: 7px;
+            }
+        }
+    }
+
+    .gallery {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .img-block {
+        position: relative;
+        width: 30%;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0 0 40% 0;
+        margin-bottom: 70px;
+
+        @include media ("<tablet") {
+            width: 48%;
+            padding: 0 0 60% 0;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            padding: 0 0 100% 0;
+            margin-bottom: 30px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            opacity: 0;
+            z-index: 1;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+
+            &::before {
+                opacity: 50%;
+            }
+        }
+
+        img {
+            transition: all .3s ease 0s;
+        }
+    }
+}
+
+
+
+/* -----------------------------------------#Solutions------------------------------------- */
+
+
+.solutions {
+    padding-top: 40px;
+    @include adaptiv-vaule("padding-bottom", 75, 25, 1);
+
+    .solutions-content {
+        text-align: center;
+    }
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 65, 35, 1);
+    }
+
+    .solutions-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 31%;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 35px;
+
+        @include media ("<900px") {
+            width: 48%;
+        }
+
+        @include media ("<650px") {
+            width: 89%;
+            margin: 0 auto;
+            margin-bottom: 35px;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+        }
+    }
+
+    .img-card {
+        position: relative;
+        padding: 0 0 90% 0;
+        margin-bottom: 20px;
+
+        @include media ("<650px") {
+            padding: 0 0 60% 0;
+        }
+    }
+
+    .card-title {
+        @include adaptiv-vaule("font-size", 25, 18, 1);
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+        line-height: 38 / 25 * 100%;
+    }
+
+    .card-description {
+        font-size: 15px;
+        flex: 1 1 auto;
+        @include adaptiv-vaule("margin-bottom", 65, 30, 1);
+        line-height: 22 / 15 * 100%;
+    }
+
+    .btn-wrap {
+
+        @include media ("<phone") {
+            .grey-btn {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/* -----------------------------------------#Main-swiper------------------------------------- */
+
+.main-swiper {
+    @include adaptiv-vaule("padding-top", 75, 25, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
+
+    .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .slide-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0 0 32% 0;
+        width: 32%;
+
+        @include media ("<tablet") {
+            width: 60%;
+            margin-bottom: 35px;
+            padding: 0 0 60% 0;
+        }
+
+        @include media ("<phone") {
+            width: 100%;
+            padding: 0 0 100% 0;
+        }
+    }
+
+    .slide-text {
+        width: 63%;
+
+        @include media ("<tablet") {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .component-title {
+        margin-bottom: 35px;
+    }
+
+    .slide-title {
+        margin-bottom: 80px;
+        @include adaptiv-vaule("margin-bottom", 80, 35, 1);
+    }
+
+    .personal-info {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .pers-img {
+        width: 76px;
+        height: 76px;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+
+        @include media ("<tablet") {
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+    .name {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 5px;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .job,
+    .sub-name {
+        font-size: 15px;
+
+        @include media ("<tablet") {
+            font-size: 12px;
+        }
+    }
+
+    .sub-name {
+        margin-top: 5px;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        .swiper-pagination-bullet {
+            background: $gray;
+            width: 76px;
+            height: 11px;
+            border-radius: 5px;
+            opacity: 1;
+
+            @include media ("<tablet") {
+                width: 35px;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $yellow;
+            width: 76px;
+            height: 11px;
+            border-radius: 5px;
+
+            @include media ("<tablet") {
+                width: 35px;
+            }
+        }
+    }
+
+    .swiper-pagination {
+        position: static;
+        width: auto !important;
+        margin: 0 50px;
+
+        @include media ("<tablet") {
+            margin: 0 5px;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        top: auto;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+
+        &::after {
+            content: none;
+        }
+
+        svg {
+            width: 23px;
+            height: 14px;
+            fill: $black;
+        }
+    }
+}
+
+
+/* -----------------------------------------#Awards-swiper------------------------------------- */
+
+
+.awards {
+    @include adaptiv-vaule("padding-top", 60, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 30, 1);
+    transform: skewY(-3deg);
+    text-align: center;
+    background: #F9F9F9;
+
+    .component-title {
+        transform: skewY(3deg);
+        @include adaptiv-vaule("margin-bottom", 110, 40, 1);
+    }
+
+    .awards-slider {
+        transform: skewY(3deg);
+        position: relative;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            margin: 0;
+
+            &::after {
+                content: none;
+            }
+
+            svg {
+                width: 23px;
+                height: 14px;
+                fill: $black;
+            }
+        }
+
+        .swiper-button-prev {
+            left: -10px;
+        }
+
+        .swiper-button-next {
+            right: -10px;
+        }
+    }
+}
+
+/* -----------------------------------------#Cases------------------------------------- */
+
+
+.cases {
+    @include adaptiv-vaule("padding-top", 130, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 100, 1);
+    position: relative;
+    transform: skewY(-3deg);
+
+    .cases-bg {
+        z-index: -1;
+    }
+
+    .cases-content {
+        display: grid;
+        row-gap: 50px;
+        column-gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        transform: skewY(3deg);
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 30px;
+        }
+    }
+
+    .block-text {
+        @include media ("<desktop") {
+            text-align: center;
+        }
+    }
+
+    .component-title {
+        margin-bottom: 20px;
+    }
+
+    .case-title {
+        margin-bottom: 25px;
+    }
+
+    .cases-description {
+        max-width: 480px;
+        margin-bottom: 20px;
+    }
+
+    .block-company {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        grid-row: span 2;
+        text-align: center;
+        position: relative;
+        @include adaptiv-vaule("padding-top", 120, 40, 1);
+        @include adaptiv-vaule("padding-bottom", 120, 40, 1);
+        @include adaptiv-vaule("padding-right", 20, 10, 1);
+        @include adaptiv-vaule("padding-left", 20, 10, 1);
+
+        @include media (">desktop") {
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0);
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+
+                &::before {
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+                .yellow-btn,
+                .block-description {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+    .logo-company {
+        width: 300px;
+        height: 280px;
+
+        @include media ("<tablet") {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .logo-company,
+    .block-description {
+        @include adaptiv-vaule("margin-bottom", 65, 25, 1);
+        color: #fff;
+        z-index: 2;
+    }
+
+    .block-description {
+        max-width: 480px;
+    }
+
+    .yellow-btn,
+    .block-description {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 2;
+
+        @include media ("<desktop") {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .btn-wrap {
+        z-index: 2;
+    }
+}
+
+/* -----------------------------------------#Contact------------------------------------- */
+
+
+.contact {
+    @include adaptiv-vaule("padding-top", 100, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 70, 1);
+
+    .contact-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .contact-text {
+        width: 38%;
+        margin-right: 40px;
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center
+        }
+    }
+
+    .component-title,
+    .contact-title {
+        @include adaptiv-vaule("margin-bottom", 45, 20, 1);
+    }
+
+    .contact-description {
+        @include adaptiv-vaule("margin-bottom", 80, 35, 1);
+    }
+
+    .contact-img {
+        position: relative;
+        width: 50%;
+        padding: 0 0 56% 0;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            width: 100%;
+            padding: 0 0 45% 0;
+        }
+
+        @include media ("<phone") {
+            padding: 0 0 70% 0;
+        }
+    }
+}
+
+
+/* -----------------------------------------#Consultation------------------------------------- 
+*/
+
+.consultation {
+    @include adaptiv-vaule("padding-top", 180, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 40, 1);
+    text-align: center;
+    position: relative;
+    background: hsla(0, 0%, 74%, 0.1);
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -65px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        transform: skewY(-3deg);
+    }
+
+    button {
+        border: none;
+    }
+}
+
+
+//-------------#About-page----------//
+
+/* --------------------------#Main-section-about----------------------------- */
+.main-img-all {
+    position: relative;
+    overflow: hidden;
+    margin: 84px 0 30px 0;
+    min-height: 670px;
+    width: 100%;
+    @include adaptiv-vaule("margin-bottom", 85, 15, 1);
+
+    @include media ("<desktop") {
+        min-height: 350px;
+    }
+
+    @include media ("<phone_max") {
+        margin: 74px 0 30px 0;
+    }
+
+    .ibg {
+        height: 99%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        transform: skewY(-3deg);
+        bottom: 37px;
+        left: 0;
+        width: 100vw;
+        height: 20px;
+        background-color: $yellow;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        right: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        transform: skewY(-2.6deg);
+        z-index: 1;
+    }
+}
+
+.main-section-about {
+    padding: 40px 0 0 0;
+
+    .cont {
+        border-bottom: 3px solid #EBEBEB;
+        padding: 0 15px 65px 15px;
+
+        @include media ("<phone") {
+            padding: 0 10px 30px 10px;
+        }
+    }
+
+    .component-title,
+    .about-title {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
+
+
+    .about-text {
+        display: flex;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 90, 40, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .descrip {
+            width: 48%;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+        }
+    }
+
+    .first {
+        margin-right: 30px;
+
+        @include media ("<desktop") {
+            margin: 0 0 30px 0;
+        }
+    }
+
+    .about-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
+        @include adaptiv-vaule("margin-bottom", 80, 30, 1);
+
+        @include media ("<desktop") {
+            column-gap: 30px;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .block-info {
+
+        h3 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .block-img {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .about-value {
+        h3 {
+            margin-bottom: 35px;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+            @include adaptiv-vaule("font-size", 20, 18, 1);
+            font-weight: 700;
+        }
+    }
+
+    .value-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
+
+        @include media ("<desktop") {
+            column-gap: 30px;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<phone") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .value-img {
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+        min-height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+
+/* --------------------------#Team----------------------------- */
+
+.team {
+    padding: 70px 0 0 0;
+
+    .slider-title {
+        margin-bottom: 25px;
+    }
+
+    .slider-description {
+        margin-bottom: 45px;
+    }
+
+    .team-slider {
+        padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+        text-align: center;
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        p {
+            @include adaptiv-vaule("font-size", 20, 18, 1);
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        span {
+            display: block;
+            color: #9D9D9D;
+            @include adaptiv-vaule("font-size", 20, 16, 1);
+            text-align: left;
+        }
+    }
+
+    .slide-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 500px;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            min-height: 400px;
+        }
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .arrow-wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 130px;
+        margin-left: 50px;
+
+        @include media ("<phone") {
+            max-width: 100px;
+            margin-left: 25px;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 500px;
+    }
+
+    .swiper-pagination {
+        position: static;
+        border-radius: 5px;
+
+        .swiper-pagination-progressbar-fill {
+            background: $black;
+            border-radius: 5px;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: relative;
+        top: auto;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+
+        &::after {
+            content: none;
+        }
+
+        svg {
+            width: 23px;
+            height: 14px;
+            fill: $yellow;
+        }
+    }
+
+    .swiper-button-disabled {
+        svg {
+            fill: $gray;
+        }
+    }
+}
+
+/* --------------------------#Video----------------------------- */
+
+.video {
+    padding: 50px 0 50px 0;
+
+    .component-title {
+        margin-bottom: 35px;
+    }
+
+    .video-description {
+        max-width: 480px;
+        margin-bottom: 70px;
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+    }
+
+    .video-box {
+        width: 100%;
+        height: 735px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            height: 500px;
+        }
+
+        @include media ("<tablet") {
+            height: 300px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+//-------------#Blog-page----------//
+
+/* --------------------------#Main-blog----------------------------- */
+
+.main-blog-img {
+    width: 100%;
+    min-height: 650px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    @include media ("<desktop") {
+        min-height: 450px;
+    }
+
+    @include media ("<phone_max") {
+        min-height: 300px;
+    }
+}
+
+
+
+.main-blog {
+    @include adaptiv-vaule("padding-top", 150, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 40, 15, 1);
+
+    .cont {
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 40px;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .title {
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 10px;
+        }
+
+        .text {
+            @include media ("<desktop") {
+                margin-bottom: 20px;
+            }
+        }
+
+        .blog-title {
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+    }
+
+    .icons {
+
+        a {
+            margin-left: 10px;
+
+            @include media ("<desktop") {
+                margin: 0 10px 0 0;
+            }
+
+            svg {
+                fill: #D3D3D3;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    fill: $yellow;
+                }
+            }
+        }
+    }
+
+    .first-block {
+        margin-bottom: 35px;
+    }
+
+    .block-blog {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .block-img {
+            position: relative;
+            width: 49%;
+            min-height: 375px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 20px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 0 30px 0;
+                min-height: 300px;
+            }
+        }
+
+        p {
+            width: 48%;
+            margin-bottom: 0;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+        }
+    }
+
+    .second-block {
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+    }
+
+    .blog-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 220px;
+        margin-bottom: 30px;
+    }
+
+    .third-block {
+        margin-bottom: 30px;
+    }
+}
+
+
+//-------------#Blog----------//
+
+/* --------------------------#Main-blog----------------------------- */
+
+.main-blog-sub {
+    @include adaptiv-vaule("padding-top", 150, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 40, 20, 1);
+
+    .blog-title {
+        margin-bottom: 30px;
+    }
+
+    .title-description {
+        margin-bottom: 20px;
+    }
+
+    .sub-title {
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+    }
+}
+
+/* --------------------------#Cards----------------------------- */
+
+
+.cards {
+    @include adaptiv-vaule("padding-top", 45, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 90, 30, 1);
+
+    .cont {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 55px;
+        column-gap: 40px;
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card {
+        position: relative;
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .card-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .card-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 250px;
+        margin-bottom: 15px;
+
+        img {
+            transition: all 0.3s ease;
+        }
+    }
+
+    .card-title {
+        @include adaptiv-vaule("font-size", 25, 18, 1);
+        letter-spacing: -0.05em;
+        line-height: 38 / 25 * 100%;
+    }
+}
+
+
+//-------------#Hub-page----------//
+
+/* --------------------------#Hub----------------------------- */
+
+.hub {
+    padding-bottom: 60px;
+    text-align: center;
+
+    .title-text {
+        text-align: start
+    }
+
+    .component-title,
+    .news-title {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
+
+    .news-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 30px;
+        @include adaptiv-vaule("margin-bottom", 75, 30, 1);
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card {
+        position: relative;
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .card-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .card-img {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 400px;
+        margin-bottom: 20px;
+
+        img {
+            transition: all 0.3s ease;
+        }
+
+        @include media ("<tablet") {
+            min-height: 300px;
+        }
+    }
+}
+
+
+/* --------------------------#Whitepapers----------------------------- */
+
+.whitepapers {
+    @include adaptiv-vaule("padding-top", 100, 65, 1);
+    @include adaptiv-vaule("padding-bottom", 50, 20, 1);
+
+    .papers-title {
+        margin-bottom: 35px;
+    }
+
+    .papers-description {
+        max-width: 480px;
+        @include adaptiv-vaule("margin-bottom", 100, 45, 1);
+    }
+
+    .papers-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 30px;
+        @include adaptiv-vaule("margin-bottom", 115, 50, 1);
+
+        @include media ("<desktop_sm") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<phone_max") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card {
+        position: relative;
+
+        &:hover {
+            .papers-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .card-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .papers-img {
+        width: 100%;
+        min-height: 250px;
+        position: relative;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+//-------------#About-page----------//
+
+/* --------------------------#Carrers----------------------------- */
+
+.carrers {
+    @include adaptiv-vaule("margin-bottom", 115, 50, 1);
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 75, 35, 1);
+    }
+
+    .carrers-title {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
+
+    .carrers-description {
+        max-width: 515px;
+        @include adaptiv-vaule("margin-bottom", 150, 60, 1);
+    }
+
+    .carrers-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 75px;
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+            row-gap: 35px;
+        }
+    }
+
+    .card {
+        position: relative;
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1)
+                }
+            }
+
+            svg {
+                fill: $yellow;
+                transform: translateX(10px);
+            }
+        }
+
+        .card-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    .card-img {
+        position: relative;
+        width: 100%;
+        min-height: 170px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 35px;
+
+        img {
+            transition: all 0.3s ease;
+        }
+
+        @include media ("<tablet") {
+            min-height: 250px;
+        }
+    }
+
+    .card-text {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            @include adaptiv-vaule("font-size", 20, 14, 1);
+            font-weight: 600;
+        }
+
+        svg {
+            margin-right: 50px;
+            @include adaptiv-vaule("margin-right", 50, 10, 1);
+            fill: $black;
+            transition: all 0.3s ease;
+            min-width: 22px;
+            width: 22px;
+
+            @include media ("<phone") {
+                min-width: 15px;
+                width: 15px;
+            }
+        }
+
+        .date {
+            white-space: nowrap;
+        }
+
+        .name {
+            margin: 0 10px;
+        }
+    }
+
+
+    .overflow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(7px);
+        transition: all .5s ease 0s;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+
+    }
+
+    .cart-pop-up {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1050px;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        background-color: #F2F2F2;
+        border-radius: 5px;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease 0s;
+        overflow: auto;
+        height: 70%;
+
+        @include media ("<desktop") {
+            top: 5%;
+            height: 90%;
+            transform: translate(-50%);
+        }
+    }
+
+    .title-wrap {
+        position: relative;
+        padding: 50px 80px;
+        background-color: $yellow;
+
+        @include media ("<tablet") {
+            padding: 40px;
+        }
+
+        @include media ("<phone") {
+            padding: 20px 40px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 32px;
+        color: $black;
+        @include adaptiv-vaule("font-size", 32, 20, 1);
+    }
+
+    .text-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 45px 80px;
+        flex: 1;
+
+        @include media ("<tablet") {
+            padding: 40px;
+        }
+
+        @include media ("<phone") {
+            padding: 20px;
+        }
+    }
+
+    .list {
+        margin: 0 0 50px 0;
+
+        @include media ("<phone") {
+            margin: 0 0 25px 0;
+        }
+    }
+
+    .item {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.85;
+        color: $black;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+        }
+
+        @include media ("<phone") {
+            font-size: 16px;
+        }
+    }
+
+    .btn-wrap {
+        text-align: center;
+
+        @include media ("<phone_max") {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .yellow-btn,
+    .grey-btn {
+        padding: 17px 35px;
+        min-width: 180px;
+        margin: 0 25px;
+        border: none;
+
+        @include media ("<phone_max") {
+            margin: 10px 0;
+        }
+    }
+}
+
+.active_review {
+
+    .overflow {
+        visibility: visible;
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .cart-pop-up {
+        visibility: visible;
+        opacity: 1;
+        z-index: 3;
+    }
+}
+
+/* --------------------------#Hub-video----------------------------- */
+
+
+.hub-video {
+
+    .video-box {
+        @include adaptiv-vaule("margin-bottom", 100, 35, 1);
+    }
+
+    .btn-wrap {
+        text-align: center;
+    }
+}
+
+//-------------#Our Solution-page----------//
+
+/* --------------------------#Solutions----------------------------- */
+
+.solutions-page {
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+    border-bottom: 3px solid #EBEBEB;
+
+    .solutions-text {
+
+        @include media ("<phone") {
+            text-align: center
+        }
+    }
+
+    .component-title,
+    .solutions-title,
+    .solutions-description {
+        @include adaptiv-vaule("margin-bottom", 45, 20, 1);
+    }
+
+    .solutions-title {
+        max-width: 700px;
+    }
+
+    .solutions-description {
+        max-width: 630px;
+    }
+
+    .network {
+        text-align: center;
+    }
+
+    .network-title {
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+    }
+
+}
+
+/* --------------------------#Solutions-cardbox----------------------------- */
+
+.solutions-cardbox {
+    @include adaptiv-vaule("padding-top", 100, 50, 1);
+    @include adaptiv-vaule("padding-bottom", 65, 20, 1);
+
+    .cont {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 50px;
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-card {
+        position: relative;
+        width: 100%;
+        min-height: 370px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        @include media ("<tablet") {
+            min-height: 250px
+        }
+    }
+
+    .card-title {
+        @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+        @include adaptiv-vaule("font-size", 25, 18, 1);
+    }
+
+    .card-description {
+        font-size: 15px;
+        flex: 1 1 auto;
+        @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+    }
+}
+
+
+
+
+//-------------#Cases-page----------//
+
+/* --------------------------#Cases----------------------------- */
+
+.cases-page {
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+
+    .component-title {
+        @include adaptiv-vaule("margin-bottom", 90, 40, 1);
+    }
+
+    .icons-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 40px;
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media ("<phone") {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* --------------------------#studies-cards----------------------------- */
+
+.cards-info-news {
+    @include adaptiv-vaule("padding-bottom", 140, 50, 1);
+
+
+    .cases-title {
+        margin-bottom: 20px;
+    }
+
+    .cases-description {
+        max-width: 515px;
+        @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+    }
+
+    .cases-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 70px;
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+        }
+    }
+
+    .card {
+        position: relative;
+
+        &:hover {
+            .card-img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        h3 {
+            @include adaptiv-vaule("font-size", 32, 20, 1);
+            line-height: 48 / 32 * 100%;
+        }
+    }
+
+    .card-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .card-img {
+        position: relative;
+        max-width: 644px;
+        height: 410px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        @include media ("<desktop") {
+            max-width: 100%;
+        }
+
+        @include media ("<tablet") {
+            height: 250px;
+        }
+
+
+        img {
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+//-------------#News-page----------//
+
+/* --------------------------#News-page----------------------------- */
+
+.news-page {
+    @include adaptiv-vaule("padding-top", 230, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+    .cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column-reverse;
+            padding: 0;
+        }
+    }
+
+    .news-text {
+        width: 49%;
+        margin-right: 30px;
+
+        @include media ("<tablet") {
+            width: 100%;
+            margin: 0;
+            padding: 0 15px;
+        }
+    }
+
+    .component-title,
+    .news-title,
+    .news-description {
+        @include adaptiv-vaule("margin-bottom", 45, 25, 1);
+    }
+
+
+    .news-img {
+        width: 48%;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 650px;
+
+        @include media ("<desktop") {
+            min-height: 500px;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        @include media ("<phone") {
+            min-height: 300px;
+        }
+    }
+}
+
+//-------------#News-(page)----------//
+
+/* --------------------------#News-subpage----------------------------- */
+
+.news-subpage {
+    @include adaptiv-vaule("padding-top", 230, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 50, 1);
+
+    .cont {
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .main-img {
+        position: relative;
+        min-height: 650px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include adaptiv-vaule("margin-bottom", 60, 25, 1);
+
+        @include media ("<tablet") {
+            min-height: 400px;
+        }
+    }
+
+    .news-subtitle {
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .news-subdescription {
+        margin-bottom: 30px;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .payments {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 75, 55, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        .text {
+            width: 47%;
+            margin-right: 30px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+
+            h3 {
+                @include adaptiv-vaule("font-size", 20, 18, 1);
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+        }
+
+        .img {
+            width: 49%;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 470px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                margin: 0 auto;
+                min-height: 450px;
+            }
+
+            @include media ("<phone") {
+                min-height: 300px;
+            }
+        }
+    }
+
+    .quote {
+        max-width: 1070px;
+        margin: 0 auto;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        span {
+            @include adaptiv-vaule("font-size", 36, 20, 1);
+            font-style: italic;
+            font-weight: 600;
+            line-height: 54 / 36 * 100%;
+        }
+
+        p {
+            margin-top: 30px;
+            @include adaptiv-vaule("font-size", 20, 18, 1);
+            font-weight: 700;
+        }
+    }
+}
+
+
+.question {
+    text-align: center;
+    padding-top: 180px;
+    @include adaptiv-vaule("padding-top", 180, 80, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 70, 1);
+    background: hsla(0, 0%, 74%, 0.1);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -55px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        transform: skewY(-3deg);
+    }
+
+    h4 {
+        @include adaptiv-vaule("font-size", 36, 25, 1);
+        line-height: 54 / 36 * 100%;
+        font-weight: 700;
+        @include adaptiv-vaule("margin-bottom", 65, 45, 1);
+    }
+
+    p {
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        line-height: 36 / 24 * 100%;
+        @include adaptiv-vaule("margin-bottom", 65, 35, 1);
+    }
+}
+
+
+//-------------#Tutorial-page----------//
+
+/* --------------------------#Tutorial----------------------------- */
+
+
+.tutorial {
+
+    .component-title,
+    .tutorial-title,
+    .tutorial-description {
+        @include adaptiv-vaule("margin-bottom", 50, 30, 1);
+        max-width: 630px;
+    }
+
+    .tutorial-title {
+        max-width: 500px;
+    }
+
+    .tutorial-description {
+        max-width: 630px;
+    }
+
+    .videos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 75px;
+        padding-bottom: 40px;
+
+        @include media ("<desktop") {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            row-gap: 40px;
+        }
+    }
+
+    .video-box {
+        width: 100%;
+
+        @include media ("<desktop") {
+            width: 80%;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        h3 {
+            @include adaptiv-vaule("font-size", 25, 16, 1);
+            line-height: 38 / 25 * 100%;
+        }
+
+        .frame {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 315px;
+
+            @include media ("<phone") {
+                height: 250px;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+
+
+}
+
+
+//-------------#contacts-page----------//
+
+/* --------------------------#contacts----------------------------- */
+
+.contacts {
+    text-align: center;
+    position: relative;
+
+    .cont {
+        width: auto;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        display: flex;
+        margin-bottom: 50px;
+
+        @include media ("<tablet") {
+            margin-bottom: 0px;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        position: relative;
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+        color: #E6E6E6;
+        width: 100%;
+        margin: 0 !important;
+        background-color: transparent;
+        padding: 30px 0 100px 0;
+        opacity: 1;
+        transition: all .3s ease 0s;
+
+        @include media ("<tablet") {
+            font-size: 20px;
+            padding: 30px 0 40px 0;
+        }
+
+        @include media ("<phone_max") {
+            font-size: 14px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: #E6E6E6;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all .3s ease 0s;
+
+            @include media ("<tablet") {
+                height: 5px;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        color: $black;
+
+        &::after {
+            background: $yellow;
+        }
+    }
+
+    .swiper-slide {
+        padding: 50px 0 150px 0;
+    }
+
+    .slide1 {
+        min-height: 1100px;
+        padding: 50px 0;
+
+        @include media ("<desktop") {
+            min-height: 1600px;
+        }
+    }
+
+    button {
+        border: none;
+    }
+
+    .consultation {
+        background-color: transparent;
+        padding: 0;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .slide2 {
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .form {
+            width: 50%;
+            padding-right: 50px;
+
+            @include media ("<desktop") {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 40px;
+            }
+        }
+
+        .yellow-btn {
+            padding: 19px 35px;
+        }
+    }
+
+    .text {
+        width: 50%;
+        padding-left: 50px;
+        border-left: 1px solid #D9D9D9;
+
+        @include media ("<desktop") {
+            width: 100%;
+            padding: 0;
+            border: none;
+        }
+    }
+
+    .title {
+        margin-bottom: 15px;
+    }
+
+    .discription {
+        margin-bottom: 35px;
+        font-weight: 400;
+        color: $black;
+    }
+
+    .social {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 32px;
+        color: $black;
+        transition: all .3s ease 0s;
+
+        @include media ("<desktop") {
+            font-size: 28px;
+        }
+
+        @include media ("<tablet") {
+            font-size: 24px;
+        }
+
+        @include media ("<phone_max") {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
+
+
+//-------------#Partners-page----------//
+
+/* --------------------------#Partners----------------------------- */
+
+.partners {
+
+    .partners-content,
+    .component-title {
+        margin-bottom: 50px;
+    }
+
+    .partners-block {
+        @include adaptiv-vaule("margin-bottom", 85, 35, 1);
+
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 110, 45, 1);
+
+        @include media ("<desktop") {
+            flex-wrap: wrap;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .block-text {
+        width: 44%;
+
+
+        @include media ("<widescreen") {
+            width: 48%;
+        }
+
+        @include media ("<desktop") {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+        }
+    }
+
+
+
+    .block-img {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        min-height: 620px;
+        width: 48%;
+
+        @include media ("<desktop") {
+            min-height: 400px;
+            width: 100%;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+    }
+
+    .full-img {
+        position: relative;
+        width: 100%;
+        min-height: 620px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            min-height: 400px;
+        }
+
+        @include media ("<tablet") {
+            min-height: 280px;
+        }
+    }
+}
+
+/* --------------------------#Benefits----------------------------- */
+
+.benefits {
+    padding-bottom: 50px;
+
+    .content {
+        @include adaptiv-vaule("margin-bottom", 180, 50, 1);
+    }
+
+    .benefits-title {
+        margin-bottom: 30px;
+    }
+
+    .block-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+
+        .text {
+            max-width: 560px;
+
+            @include media ("<desktop") {
+                max-width: 100%;
+            }
+
+            &:first-child {
+                margin-right: 30px;
+
+                @include media ("<desktop") {
+                    margin: 0 0 25px 0;
+                }
+            }
+        }
+    }
+
+    .rate {
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include adaptiv-vaule("margin-bottom", 160, 45, 1);
+
+            @include media ("<desktop") {
+                flex-wrap: wrap;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .block-img {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 49%;
+            min-height: 620px;
+
+            @include media ("<desktop") {
+                min-height: 400px;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            @include media ("<tablet") {
+                min-height: 280px;
+            }
+        }
+
+        .block-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 41%;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+            }
+        }
+
+        .block-list {
+            margin: 20px 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                color: $black;
+                font-size: 20px;
+                line-height: 30 / 20 * 100%;
+                position: relative;
+                margin-left: 30px;
+
+                @include media ("<tablet") {
+                    font-size: 16px;
+                }
+
+                &::before {
+                    content: url(../images/Partners-page/list-item.svg);
+                    position: absolute;
+                    top: 3px;
+                    left: -30px;
+                }
+            }
+        }
+    }
+
+    .btn-wrap {
+        text-align: center;
+    }
+}
+
+
+/* --------------------------#Partners-form----------------------------- */
+
+
+
+.partners-form {
+    padding: 160px 0 50px 0;
+    @include adaptiv-vaule("padding-top", 160, 70, 1);
+    text-align: center;
+    background: rgba(189, 189, 189, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: -70px;
+        left: 0;
+        width: 100%;
+        height: 140px;
+        background: #fff;
+        transform: skewY(-4deg);
+
+        @include media ("<tablet") {
+            top: -100px;
+        }
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .description {
+        margin-bottom: 30px;
+    }
+
+    form {
+
+        .string {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include media ("<desktop") {
+                flex-direction: column;
+            }
+
+            input {
+                width: 48%;
+
+                @include media ("<desktop") {
+                    width: 100%;
+                }
+            }
+        }
+
+        input,
+        textarea {
+            background: $white;
+            border: 1px solid $gray_04;
+            border-radius: 10px;
+            padding: 25px 25px 25px 40px;
+            width: 100%;
+            @include adaptiv-vaule("margin-bottom", 35, 20, 1);
+
+            @include media ("<tablet") {
+                padding: 15px;
+            }
+
+            &:focus {
+                border: 1px solid $yellow;
+            }
+
+            &::placeholder {
+                color: $black;
+            }
+        }
+
+        textarea {
+            height: 240px;
+        }
+    }
+
+    .checkboxes {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptiv-vaule("margin-bottom", 15, 5, 1);
+
+        .check-text {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            &:last-child {
+                label {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        input {
+            margin: 0 20px;
+            width: 22px;
+            height: 22px;
+
+            @include media ("<tablet") {
+                margin: 0 10px 0 0;
+            }
+        }
+
+        label {
+            font-size: 20px;
+            line-height: 30 / 20 * 100%;
+            @include adaptiv-vaule("margin-right", 60, 30, 1);
+
+            @include media ("<tablet") {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .text {
+        @include adaptiv-vaule("margin-bottom", 55, 25, 1);
+
+        p {
+            @include media ("<phone") {
+                font-size: 12px;
+            }
+        }
+    }
+
+
+    .yellow-btn {
+        border: none;
+    }
+}

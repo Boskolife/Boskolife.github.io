@@ -1,0 +1,205 @@
+footer {
+    background: $black;
+    position: relative;
+    overflow: hidden;
+
+    .blur_circle_blue {
+        bottom: -420px;
+        right: 0;
+        width: 828.86px;
+        height: 665.64px;
+        transform: rotate(30deg);
+        z-index: 1;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+}
+
+.footer_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv-vaule("padding-top", 50, 30, 1);
+    @include adaptiv-vaule("padding-bottom", 25, 35, 1);
+
+    @include media ("<tablet") {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 20px;
+
+        @include media ("<tablet") {
+            margin: 0 0 20px 0;
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .menu-item {
+        position: relative;
+        z-index: 1;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+
+            @include media ("<tablet") {
+                margin: 0 0 15px 0;
+            }
+        }
+
+        @include media (">=tablet") {
+
+            &:hover {
+
+                .arrow {
+
+                    svg {
+                        transform: rotate3d(1, 0, 0, 180deg);
+                        fill: $blue;
+                    }
+                }
+
+                .sub-menu {
+                    top: 17px;
+                    left: 0;
+                    max-height: 500px;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    transition: all 0.5s ease 0s;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .sub-menu {
+        max-height: 0;
+        padding-top: 15px;
+        transition: all .7s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 0;
+        position: static;
+
+        @include media('<tablet') {
+        }
+    }
+
+    .sub-item {
+        margin-bottom: 10px;
+        text-align: start;
+        max-width: 130px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .menu-item_active {
+
+        @include media('<tablet') {
+
+            .sub-menu {
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transition: all 0.5s ease 0s;
+                text-align: center;
+                margin: 10px 0 0 0;
+            }
+        }
+    }
+
+    .link {
+        font-size: 14px;
+        font-weight: 600;
+        color: $white;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        top: -2px;
+        right: -25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+
+        svg {
+            transition: all .7s ease;
+            position: relative;
+            z-index: -1;
+
+            path {
+                fill: $white;
+            }
+        }
+    }
+}
+
+.footer_bot {
+    padding: 15px 0;
+    border-top: 1px solid rgba(151, 151, 151, 0.2);
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media ("<phone_max") {
+        flex-direction: column;
+    }
+
+    .footer_link{
+        display: flex;
+        align-items: center;
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+
+        &:hover{
+
+            svg{
+                fill: $green;
+            }
+        }
+
+        @include media ("<phone_max") {
+            margin-bottom: 15px;
+        }
+
+        svg{
+            fill: $blue;
+            margin-left: 5px;
+            transition: all .3s ease;
+        }
+    }
+
+    .copyright {
+        color: #DAD9D9;
+        @include adaptiv-vaule("font-size", 14, 12, 1);
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./images/page-icon-16x16.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="bg">
+        </div>
+        //= templates/header.html
+        <main id="main">
+            <section class="company">
+                <div class="cont">
+                    <div class="company-content">
+                        <div class="title-text">
+                            <h1 class="title">Company News and Updates</h1>
+                            <p class="description company-description">Every week we share out expertise on effective
+                                strategies and
+                                technics to
+                                help you reach customers and prospects across the entire web.</p>
+                        </div>
+                        <div class="content-block">
+                            <div class="block-img">
+                                <img src="./images/company/img-1.png" alt="image not found">
+                            </div>
+                            <div class="block-text">
+                                <p class="text">We focus on improving your web presence through technical optimisation
+                                    of the site & it's architecture, followed by content optimisation & expansion
+                                    designed to please the search engines and expand authority in your target audience
+                                    and base industry. We build a number of citation links and optimise GMB presences,
+                                    with fresh blog content being posted and shared socially each month.</p>
+                                <div class="cards-company">
+                                    <a href="blog.html" class="card-blog">
+                                        <div class="card-img">
+                                            <img src="./images/company/card-img.jpg" alt="image not found">
+                                        </div>
+                                        <h2 class="card-title">Trailer Business</h2>
+                                    </a>
+                                    <a href="blog.html" class="card-blog">
+                                        <div class="card-img">
+                                            <img src="./images/company/card-img.jpg" alt="image not found">
+                                        </div>
+                                        <h2 href="blog.html" class="card-title">Art Storage Business</h2>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-email">
+                <div class="cont">
+                    <div class="content-email">
+                        <h3 class="title">Get new blog posts by email</h3>
+                        <form action="#" class="form-email">
+                            <input class="input" type="text" placeholder="Name">
+                            <input class="input" type="email" placeholder="Email">
+                            <button type="submit" class="btn">Subscribe <img src="./images/main/arrow.svg"
+                                    alt="image not found"></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
