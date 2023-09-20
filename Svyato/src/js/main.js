@@ -1,3 +1,4 @@
+new WOW().init();
 initBurger();
 anchorListener();
 findHref();
@@ -129,11 +130,13 @@ function findHref() {
 
 Fancybox.bind("[data-fancybox]", {
     // Your custom options
-    // groupAll: true,
 });
 
 function imageFilter() {
     const list = document.querySelector(".filter_list");
+    if(!list){
+        return
+    }
     const items = document.querySelectorAll(".gallery_item");
     const filterListItems = document.querySelectorAll(".filter_item");
 

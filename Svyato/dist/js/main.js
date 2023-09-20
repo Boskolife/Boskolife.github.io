@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 initBurger();
 anchorListener();
 findHref();
@@ -124,11 +125,15 @@ function findHref() {
 }
 
 Fancybox.bind("[data-fancybox]", {// Your custom options
-  // groupAll: true,
 });
 
 function imageFilter() {
   var list = document.querySelector(".filter_list");
+
+  if (!list) {
+    return;
+  }
+
   var items = document.querySelectorAll(".gallery_item");
   var filterListItems = document.querySelectorAll(".filter_item");
   list.addEventListener("click", function (e) {

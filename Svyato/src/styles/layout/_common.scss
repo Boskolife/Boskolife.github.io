@@ -793,7 +793,7 @@ html {
 .landscapes_page {
 
 
-    .filter_list{
+    .filter_list {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -801,7 +801,7 @@ html {
         gap: 15px;
     }
 
-    .filter_item{
+    .filter_item {
         cursor: pointer;
     }
 
@@ -829,99 +829,475 @@ html {
         width: 100%;
         height: 100%;
     }
+}
 
-    // .landscapes_page_swiper {
-    //     height: calc(100vh - 133px);
-    //     padding-left: 80px;
+.about_me_page {
 
-    //     @include media ("<desktop") {
-    //         height: calc(100vh - 63px);
-    //         padding: 35px 0 0 0;
-    //     }
-    // }
+    .title {
+        margin-bottom: 12px;
+    }
 
-    // .swiper-scrollbar{
-    //     left: 0;
+    .tip {
+        color: $orange;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 400;
+        display: inline-block;
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
+    }
 
-    //     @include media ("<desktop") {
-    //         display: none;
-    //     }
+    .about_img {
+        filter: grayscale(0);
 
-    //     .swiper-scrollbar-drag{
-    //         background-color: $orange;
-    //     }
-    // }
+        @include media ("<desktop") {
+            margin-bottom: 25px;
+        }
+    }
 
-    // .swiper-scrollbar.swiper-scrollbar-vertical, .swiper-vertical>.swiper-scrollbar{
-    //     @include media ("<desktop") {
-    //         transform: rotate(270deg);
-    //         top: -20%;
-    //         height: 50%;
-    //         left: 43.5%;
-    //     }
-    // }
+    .info_block {
+        @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+        display: flex;
+        align-items: center;
 
-    // .swiper-pagination{
-    //     top: 8px;
-    //     left: 20px;
-    //     width: max-content;
+        @include media ("<desktop") {
+            margin-bottom: 0;
+        }
+    }
 
-    //     @include media ("<desktop") {
-    //         top: 0;
-    //         left: 0;
-    //         width: 100%;
-    //         text-align: start;
-    //         height: 35px;
-    //         background-color: #FDFDFD;
-    //     }
+    .info_text {
+        position: relative;
+        padding-left: 20px;
+        width: 45%;
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+        font-weight: 400;
 
-    //     .swiper-pagination-current{
-    //         color: #414141;
-    //         font-size: 16px;
-    //     }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $orange;
+        }
+    }
 
-    //     .swiper-pagination-total{
-    //         color: #9E9E9E;
-    //         font-size: 16px;
-    //     }
-    // }
+    .visible {
+        display: block;
 
-    // .card{
-    //     display: flex;
-    //     align-items: flex-start;
-    //     justify-content: flex-start;
-    //     gap: 30px;
-    //     height: 100%;
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
 
-    //     @include media ("<desktop") {
-    //         flex-direction: column;
-    //     }
-    // }
+    .hidden {
+        display: none;
+        max-width: 580px;
+        width: 100%;
 
-    // .card_img{
-    //     height: 100%;
-    //     max-width: 70%;
-    //     width: auto;
+        @include media ("<desktop") {
+            display: block;
+            padding: 20px;
+        }
+    }
+}
 
-    //     @include media ("<desktop") {
-    //         max-width: 100%;
-    //     }
+.started {
+    @include adaptiv-vaule("padding-top", 200, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 200, 50, 1);
+    position: relative;
 
-    //     img{
-    //         height: 100%;
-    //         width: 100%;
-    //     }
-    // }
+    .started_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
 
-    // .date{
-    //     @include adaptiv-vaule("font-size", 20, 16, 1);
-    //     margin-bottom: 25px;
-    //     color: #9E9E9E;
-    // }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 
-    // .text{
-    //     @include adaptiv-vaule("font-size", 20, 16, 1);
-    //     margin-bottom: 25px;
-    //     color: #414141;
-    // }
+    .title_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include adaptiv-vaule("margin-bottom", 60, 30, 1);
+    }
+
+    .how {
+        color: $orange;
+        text-align: center;
+        font-family: 'Waterfall';
+        @include adaptiv-vaule("font-size", 147, 120, 1);
+        font-weight: 400;
+    }
+
+    .started_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 40, 20, 1);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .started_text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
+    }
+
+    .text {
+        width: 38%;
+        color: #FFF;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 400;
+        text-align: start;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+}
+
+.hobby {
+    @include adaptiv-vaule("padding-top", 130, 10, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 65, 1);
+    height: 100%;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        height: 100%;
+
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    .hobby_main_img {
+        width: 41%;
+        height: 664px;
+        position: relative;
+
+        @include media ("<desktop") {
+            width: 70%;
+            height: 425px;
+        }
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .hobby_text_wrap {
+        width: 58%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
+    }
+
+    .text_wrap {
+        max-width: 595px;
+        width: 100%;
+        margin: 0 auto;
+        flex: 1 1 auto;
+    }
+
+    .hobby_title {
+        color: $orange;
+        font-family: 'Waterfall';
+        @include adaptiv-vaule("font-size", 147, 120, 1);
+        font-weight: 400;
+    }
+
+    .hobby_text {
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 400;
+        margin-bottom: 37px;
+
+        @include media ("<desktop") {
+            margin: 0;
+        }
+    }
+
+    .text_image {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .hobby_subimg {
+        width: 49%;
+        height: 235px;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.expirience {
+    @include adaptiv-vaule("padding-top", 130, 65, 1);
+
+    .expirience_title {
+        text-align: center;
+        color: $black;
+        @include adaptiv-vaule("font-size", 40, 30, 1);
+        font-weight: 400;
+        @include adaptiv-vaule("margin-bottom", 80, 70, 1);
+    }
+
+    .work_list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @include media ("<620px") {
+            gap: 50px;
+        }
+    }
+
+    .work_wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 60px;
+        position: relative;
+
+        @include media ("<tablet") {
+            gap: 30px;
+        }
+    }
+
+    .work_image {
+        max-width: 420px;
+        width: 100%;
+        height: 213px;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .work_text {
+        max-width: 510px;
+        width: 100%;
+
+        @include media ("<desktop") {
+            max-width: 80%;
+        }
+
+        @include media ("<620px") {
+            max-width: 100%;
+        }
+    }
+
+    .progress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media ("<desktop") {
+            min-width: 135px;
+        }
+
+        @include media ("<620px") {
+            min-width: max-content;
+        }
+    }
+
+    .progress_title {
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 700;
+        margin-bottom: 7px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .progress_title_hidden {
+        display: none;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        margin: 0;
+
+        @include media ("<620px") {
+            display: block;
+        }
+    }
+
+    .progress_title_visible {
+        display: block;
+
+        @include media ("<620px") {
+            display: none;
+        }
+    }
+
+    .progress_line {
+        width: 2px;
+        height: 280px;
+        background-color: $gray_2;
+    }
+
+    .work_text {
+        padding: 20px 30px;
+        background-color: $gray_2;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 15px;
+            left: -20px;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-right: 20px solid $gray_2;
+            border-bottom: 15px solid transparent;
+        }
+    }
+
+    .orange_text {
+        color: $orange;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .text_title {
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .text_tip {
+        color: #828282;
+        @include adaptiv-vaule("font-size", 16, 14, 1);
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .description {
+        color: $black;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 400;
+    }
+
+    .revert {
+        flex-direction: row-reverse;
+
+        @include media ("<desktop") {
+            flex-direction: row;
+        }
+
+        .work_image {
+            max-width: 510px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include media ("<desktop") {
+                display: none;
+            }
+
+            img {
+                max-width: 420px;
+            }
+        }
+
+        .work_text {
+            max-width: 420px;
+
+            @include media ("<desktop") {
+                max-width: 80%;
+            }
+
+            @include media ("<620px") {
+                max-width: 100%;
+            }
+
+            &::before {
+                display: none;
+
+                @include media ("<desktop") {
+                    display: block;
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 15px;
+                right: -20px;
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-left: 20px solid $gray_2;
+                border-bottom: 15px solid transparent;
+
+                @include media ("<desktop") {
+                    display: none;
+                }
+            }
+        }
+
+        .progress_title_hidden {
+            display: none;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            margin: 0;
+
+            @include media ("<620px") {
+                display: block;
+            }
+        }
+
+        .progress_title_visible {
+            display: block;
+
+            @include media ("<620px") {
+                display: none;
+            }
+        }
+    }
 }
