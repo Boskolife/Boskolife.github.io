@@ -1665,23 +1665,25 @@ html {
 
 .started {
   /* Только если меньше контейнера */
-  padding-top: 200px;
+  padding-top: 50px;
   /* Только если меньше контейнера */
-  padding-bottom: 200px;
+  padding-bottom: 80px;
   position: relative; }
   @media (max-width: 1300px) {
     .started {
-      padding-top: calc(10px + 190 * ((100vw - calc(375px)) / 925)); } }
+      padding-top: calc(30px + 20 * ((100vw - calc(375px)) / 925)); } }
   @media (max-width: 1300px) {
     .started {
-      padding-bottom: calc(50px + 150 * ((100vw - calc(375px)) / 925)); } }
+      padding-bottom: calc(50px + 30 * ((100vw - calc(375px)) / 925)); } }
   .started .started_img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; }
+    z-index: -1;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
     .started .started_img img {
       width: 100%;
       height: 100%;
