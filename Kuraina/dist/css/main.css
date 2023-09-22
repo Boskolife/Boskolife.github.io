@@ -601,9 +601,11 @@ header {
         margin-bottom: 10px; } }
     header .progressBar .progress_line {
       width: 97%;
-      height: 2px;
+      height: 1px;
       position: relative;
-      left: 20px; }
+      left: 20px;
+      border: none;
+      background-color: #E9E9E9; }
       @media (max-width: 767px) {
         header .progressBar .progress_line {
           left: 30px; } }
@@ -613,7 +615,7 @@ header {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     left: 0;
-    transition: all .6s ease;
+    transition: all .8s ease;
     width: 50px;
     height: 50px; }
     @media (max-width: 767px) {
@@ -807,14 +809,15 @@ header {
     .main_section .white_list .author {
       color: #000;
       /* Только если меньше контейнера */
-      font-size: 32px;
+      font-size: 16px;
       font-weight: 300;
       text-transform: uppercase;
       width: 100%;
-      text-align: end; }
+      text-align: end;
+      font-style: italic; }
       @media (max-width: 1300px) {
         .main_section .white_list .author {
-          font-size: calc(20px + 12 * ((100vw - calc(320px)) / 980)); } }
+          font-size: calc(14px + 2 * ((100vw - calc(320px)) / 980)); } }
       @media (max-width: 1023px) {
         .main_section .white_list .author {
           width: calc(100% - 20px);
@@ -833,9 +836,11 @@ header {
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
+      height: 100%; }
+      @media (max-width: 1023px) {
+        .main_section .slide_1 .slide_bg {
+          -o-object-fit: cover;
+          object-fit: cover; } }
     .main_section .slide_1 .slide_text_wrap {
       position: relative;
       z-index: 1;

@@ -71,7 +71,7 @@ const slider = new Swiper(".main_swiper", {
             const rotateElem = document.querySelector(".progress_img");
             let progress = self.progress * 100;
             rotateElem.style.transform = `
-            translateY(-50%) rotate(${(imageRotate += 45)}deg)
+            translateY(-50%) rotate(${(imageRotate += 360)}deg)
             `;
         },
 
@@ -79,7 +79,7 @@ const slider = new Swiper(".main_swiper", {
             const rotateElem = document.querySelector(".progress_img");
             let progress = self.progress * 100;
             rotateElem.style.transform = `
-            translateY(-50%) rotate(${(imageRotate -= 45)}deg)
+            translateY(-50%) rotate(${(imageRotate -= 360)}deg)
             `;
         },
     },

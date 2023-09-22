@@ -64,12 +64,12 @@ var slider = new Swiper(".main_swiper", {
     slideNextTransitionStart: function slideNextTransitionStart(self) {
       var rotateElem = document.querySelector(".progress_img");
       var progress = self.progress * 100;
-      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate += 45, "deg)\n            ");
+      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate += 360, "deg)\n            ");
     },
     slidePrevTransitionStart: function slidePrevTransitionStart(self) {
       var rotateElem = document.querySelector(".progress_img");
       var progress = self.progress * 100;
-      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate -= 45, "deg)\n            ");
+      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate -= 360, "deg)\n            ");
     }
   }
 });

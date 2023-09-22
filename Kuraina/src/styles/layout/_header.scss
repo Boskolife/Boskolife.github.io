@@ -58,9 +58,11 @@ header {
 
         .progress_line {
             width: 97%;
-            height: 2px;
+            height: 1px;
             position: relative;
             left: 20px;
+            border: none;
+            background-color: #E9E9E9;
 
             @include media ("<tablet") {
                 left: 30px;
@@ -73,7 +75,7 @@ header {
         top: -50%;
         transform: translateY(-50%);
         left: 0;
-        transition: all .6s ease;
+        transition: all .8s ease;
         width:50px;
         height:50px;
 
