@@ -748,6 +748,8 @@ html {
   @media (max-width: 1300px) {
     .global_btn {
       font-size: calc(16px + 4 * ((100vw - calc(375px)) / 925)); } }
+  .global_btn:hover {
+    background-color: #FFB444; }
 
 .main_section {
   position: relative;
@@ -1160,7 +1162,7 @@ html {
     min-width: 275px;
     text-align: center; }
     .about_me_section .about_btn:hover {
-      background-color: #C2C2C2; }
+      background-color: #FFB444; }
   .about_me_section .about_img {
     width: 40%;
     -webkit-filter: grayscale(100%);

@@ -23,6 +23,10 @@ html {
     padding: 15px;
     transition: $all_03;
     display: inline-block;
+
+    &:hover {
+        background-color: #FFB444;
+    }
 }
 
 .main_section {
@@ -409,7 +413,7 @@ html {
         text-align: center;
 
         &:hover {
-            background-color: $gray_3;
+            background-color: #FFB444;
         }
     }
 
