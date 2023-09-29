@@ -50,8 +50,7 @@ var slider = new Swiper(".main_swiper", {
       var activeText = activeSlide.querySelectorAll(".text");
       activeText.forEach(function (itemText) {
         itemText.classList.add("activeText");
-      });
-      activeSlide.scrollIntoView(); // if ((this.activeIndex + 1) % 2 === 0) {
+      }); // if ((this.activeIndex + 1) % 2 === 0) {
       //     slider.allowSlideNext = false;
       //     slider.allowSlidePrev = false;
       //     setTimeout(() => {

@@ -55,8 +55,6 @@ const slider = new Swiper(".main_swiper", {
                 itemText.classList.add("activeText");
             });
 
-            activeSlide.scrollIntoView();
-
             // if ((this.activeIndex + 1) % 2 === 0) {
             //     slider.allowSlideNext = false;
             //     slider.allowSlidePrev = false;
