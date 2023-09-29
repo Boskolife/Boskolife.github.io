@@ -1,11 +1,15 @@
 initBurger();
+replaceTextSeo();
 initSwiper();
 changeLabel();
 setTimeout(initPopUp, 40000);
-horizontalScroll();
-initTabs();
+// horizontalScroll();
 showTabList();
+initTabs();
 initHelpTabs();
+initSeoTabs();
+updateProgressPopup();
+hideCardList();
 
 function initSwiper() {
     function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -218,39 +222,6 @@ function changeLabel() {
     });
 }
 
-function horizontalScroll() {
-    let screenWidth =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-    if (screenWidth < 768) {
-        return;
-    }
-
-    let slides = document.querySelectorAll(".fromRight");
-    if (!slides) {
-        return;
-    }
-
-    let action = gsap
-        .timeline({
-            scrollTrigger: {
-                trigger: "#horizontal_scroll",
-                pin: true,
-                scrub: 0.3,
-                start: "top top",
-                end: "+=3000",
-            },
-        })
-        .to(slides, {
-            xPercent: -100,
-            duration: 2,
-            ease: "none",
-            stagger: 3,
-        })
-        .to({}, { duration: 1 });
-}
-
 function openTabCase(evt, tabName) {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -385,6 +356,38 @@ function initHelpTabs() {
     });
 }
 
+function initSeoTabs() {
+    const faqTabs = document.querySelector("#faqTabs");
+    if (!faqTabs) {
+        return;
+    }
+
+    const tabs = document.querySelectorAll(".tab_title"),
+        tabsContent = document.querySelectorAll(".tab_content"),
+        tabsParent = document.querySelectorAll(".seo_tabcontent"),
+        closeItem = document.querySelectorAll(".open_status");
+    console.log(tabsParent);
+    function showTabContent(i = 0) {
+        tabsContent[i].classList.toggle("show_content");
+        tabs[i].classList.toggle("tab_active");
+        closeItem[i].classList.toggle("open_active");
+    }
+
+    tabsParent.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const target = event.target;
+
+            if (target && target.classList.contains("tab_title")) {
+                tabs.forEach((item, i) => {
+                    if (target == item) {
+                        showTabContent(i);
+                    }
+                });
+            }
+        });
+    });
+}
+
 function initPopUp() {
     const popUp = document.querySelector(".popUp");
     if (!popUp) {
@@ -403,8 +406,6 @@ function initPopUp() {
         document.body.classList.remove("popUp_lock");
     });
 }
-
-updateProgressPopup();
 
 function updateProgressPopup() {
     const parent = document.querySelector(".brief .content");
@@ -485,6 +486,7 @@ function updateProgressPopup() {
 
 function showTabList() {
     const openArrow = document.querySelector(".openList_arrow");
+    if (!openArrow) return;
     const faqList = document.querySelector(".faq_list");
 
     openArrow.addEventListener("click", () => {
@@ -492,8 +494,6 @@ function showTabList() {
         faqList.classList.toggle("active_list");
     });
 }
-
-hideCardList();
 
 function hideCardList() {
     const cardBtn = document.querySelectorAll(".supLink");
@@ -515,4 +515,56 @@ function hideCardList() {
             });
         });
     });
+}
+
+function replaceTextSeo() {
+    const titleItems = document.querySelectorAll(".title_item");
+    const textItems = document.querySelectorAll(".text_item");
+
+    titleItems.forEach((title, index) => {
+        title.addEventListener("click", () => {
+            titleItems.forEach((item) => {
+                item.classList.remove("activeTitle");
+            });
+            textItems.forEach((item) => {
+                item.classList.remove("activeText");
+            });
+
+            title.classList.add("activeTitle");
+            textItems[index].classList.add("activeText");
+        });
+    });
+}
+
+function horizontalScroll() {
+    let screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+    if (screenWidth < 768) {
+        return;
+    }
+
+    let slides = document.querySelectorAll(".fromRight");
+    if (!slides) {
+        return;
+    }
+
+    let action = gsap
+        .timeline({
+            scrollTrigger: {
+                trigger: "#horizontal_scroll",
+                pin: true,
+                scrub: 0.3,
+                start: "top top",
+                end: "+=3000",
+            },
+        })
+        .to(slides, {
+            xPercent: -100,
+            duration: 2,
+            ease: "none",
+            stagger: 3,
+        })
+        .to({}, { duration: 1 });
 }

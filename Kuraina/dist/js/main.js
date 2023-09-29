@@ -51,15 +51,14 @@ var slider = new Swiper(".main_swiper", {
       activeText.forEach(function (itemText) {
         itemText.classList.add("activeText");
       });
-
-      if ((this.activeIndex + 1) % 2 === 0) {
-        slider.allowSlideNext = false;
-        slider.allowSlidePrev = false;
-        setTimeout(function () {
-          slider.allowSlideNext = true;
-          slider.allowSlidePrev = true;
-        }, 5000);
-      }
+      activeSlide.scrollIntoView(); // if ((this.activeIndex + 1) % 2 === 0) {
+      //     slider.allowSlideNext = false;
+      //     slider.allowSlidePrev = false;
+      //     setTimeout(() => {
+      //         slider.allowSlideNext = true;
+      //         slider.allowSlidePrev = true;
+      //     }, 5000);
+      // }
     },
     slideNextTransitionStart: function slideNextTransitionStart(self) {
       var rotateElem = document.querySelector(".progress_img");

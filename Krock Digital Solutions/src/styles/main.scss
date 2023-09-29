@@ -42,7 +42,6 @@ $media-expressions: (
 @import 'layout/services_style';
 @import 'layout/case';
 @import 'layout/blog';
-@import 'layout/plug';
 @import 'layout/contact';
 @import 'layout/post';
 @import 'layout/about_us';
@@ -51,5 +50,6 @@ $media-expressions: (
 @import 'layout/faq';
 @import 'layout/brief';
 @import 'layout/support';
+@import 'layout/custom_seo';
 @import 'layout/footer';
 

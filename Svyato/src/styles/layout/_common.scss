@@ -144,7 +144,6 @@ html {
         align-items: center;
         -webkit-transition-timing-function: linear !important;
         transition-timing-function: linear !important;
-
     }
 
     .swiper-slide {
@@ -1107,6 +1106,85 @@ html {
         @include media ("<tablet") {
             gap: 30px;
         }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ("<desktop") {
+                flex-direction: row;
+            }
+
+            .work_image {
+                max-width: 510px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include media ("<desktop") {
+                    display: none;
+                }
+
+                img {
+                    max-width: 420px;
+                }
+            }
+
+            .work_text {
+                max-width: 420px;
+
+                @include media ("<desktop") {
+                    max-width: 80%;
+                }
+
+                @include media ("<620px") {
+                    max-width: 100%;
+                }
+
+                &::before {
+                    display: none;
+
+                    @include media ("<desktop") {
+                        display: block;
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 15px;
+                    right: -20px;
+                    width: 0;
+                    height: 0;
+                    border-top: 15px solid transparent;
+                    border-left: 20px solid $gray_2;
+                    border-bottom: 15px solid transparent;
+
+                    @include media ("<desktop") {
+                        display: none;
+                    }
+                }
+            }
+
+            .progress_title_hidden {
+                display: none;
+                position: absolute;
+                top: -30px;
+                left: 0;
+                margin: 0;
+
+                @include media ("<620px") {
+                    display: block;
+                }
+            }
+
+            .progress_title_visible {
+                display: block;
+
+                @include media ("<620px") {
+                    display: none;
+                }
+            }
+        }
     }
 
     .work_image {
@@ -1224,84 +1302,5 @@ html {
         color: $black;
         @include adaptiv-vaule("font-size", 20, 16, 1);
         font-weight: 400;
-    }
-
-    .revert {
-        flex-direction: row-reverse;
-
-        @include media ("<desktop") {
-            flex-direction: row;
-        }
-
-        .work_image {
-            max-width: 510px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            @include media ("<desktop") {
-                display: none;
-            }
-
-            img {
-                max-width: 420px;
-            }
-        }
-
-        .work_text {
-            max-width: 420px;
-
-            @include media ("<desktop") {
-                max-width: 80%;
-            }
-
-            @include media ("<620px") {
-                max-width: 100%;
-            }
-
-            &::before {
-                display: none;
-
-                @include media ("<desktop") {
-                    display: block;
-                }
-            }
-
-            &::after {
-                position: absolute;
-                content: '';
-                top: 15px;
-                right: -20px;
-                width: 0;
-                height: 0;
-                border-top: 15px solid transparent;
-                border-left: 20px solid $gray_2;
-                border-bottom: 15px solid transparent;
-
-                @include media ("<desktop") {
-                    display: none;
-                }
-            }
-        }
-
-        .progress_title_hidden {
-            display: none;
-            position: absolute;
-            top: -30px;
-            left: 0;
-            margin: 0;
-
-            @include media ("<620px") {
-                display: block;
-            }
-        }
-
-        .progress_title_visible {
-            display: block;
-
-            @include media ("<620px") {
-                display: none;
-            }
-        }
     }
 }

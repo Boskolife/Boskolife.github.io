@@ -7,13 +7,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 initBurger();
+replaceTextSeo();
 initSwiper();
 changeLabel();
-setTimeout(initPopUp, 40000);
-horizontalScroll();
-initTabs();
+setTimeout(initPopUp, 40000); // horizontalScroll();
+
 showTabList();
+initTabs();
 initHelpTabs();
+initSeoTabs();
+updateProgressPopup();
+hideCardList();
 
 function initSwiper() {
   var _destroySlidersOnResi, _destroySlidersOnResi2;
@@ -219,37 +223,6 @@ function changeLabel() {
   });
 }
 
-function horizontalScroll() {
-  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-  if (screenWidth < 768) {
-    return;
-  }
-
-  var slides = document.querySelectorAll(".fromRight");
-
-  if (!slides) {
-    return;
-  }
-
-  var action = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#horizontal_scroll",
-      pin: true,
-      scrub: 0.3,
-      start: "top top",
-      end: "+=3000"
-    }
-  }).to(slides, {
-    xPercent: -100,
-    duration: 2,
-    ease: "none",
-    stagger: 3
-  }).to({}, {
-    duration: 1
-  });
-}
-
 function openTabCase(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -382,6 +355,41 @@ function initHelpTabs() {
   });
 }
 
+function initSeoTabs() {
+  var faqTabs = document.querySelector("#faqTabs");
+
+  if (!faqTabs) {
+    return;
+  }
+
+  var tabs = document.querySelectorAll(".tab_title"),
+      tabsContent = document.querySelectorAll(".tab_content"),
+      tabsParent = document.querySelectorAll(".seo_tabcontent"),
+      closeItem = document.querySelectorAll(".open_status");
+  console.log(tabsParent);
+
+  function showTabContent() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    tabsContent[i].classList.toggle("show_content");
+    tabs[i].classList.toggle("tab_active");
+    closeItem[i].classList.toggle("open_active");
+  }
+
+  tabsParent.forEach(function (item) {
+    item.addEventListener("click", function (event) {
+      var target = event.target;
+
+      if (target && target.classList.contains("tab_title")) {
+        tabs.forEach(function (item, i) {
+          if (target == item) {
+            showTabContent(i);
+          }
+        });
+      }
+    });
+  });
+}
+
 function initPopUp() {
   var popUp = document.querySelector(".popUp");
 
@@ -400,8 +408,6 @@ function initPopUp() {
     document.body.classList.remove("popUp_lock");
   });
 }
-
-updateProgressPopup();
 
 function updateProgressPopup() {
   var parent = document.querySelector(".brief .content");
@@ -477,14 +483,13 @@ function updateProgressPopup() {
 
 function showTabList() {
   var openArrow = document.querySelector(".openList_arrow");
+  if (!openArrow) return;
   var faqList = document.querySelector(".faq_list");
   openArrow.addEventListener("click", function () {
     openArrow.classList.toggle("activeArrow");
     faqList.classList.toggle("active_list");
   });
 }
-
-hideCardList();
 
 function hideCardList() {
   var cardBtn = document.querySelectorAll(".supLink");
@@ -503,6 +508,54 @@ function hideCardList() {
         item.style.display = "none";
       });
     });
+  });
+}
+
+function replaceTextSeo() {
+  var titleItems = document.querySelectorAll(".title_item");
+  var textItems = document.querySelectorAll(".text_item");
+  titleItems.forEach(function (title, index) {
+    title.addEventListener("click", function () {
+      titleItems.forEach(function (item) {
+        item.classList.remove("activeTitle");
+      });
+      textItems.forEach(function (item) {
+        item.classList.remove("activeText");
+      });
+      title.classList.add("activeTitle");
+      textItems[index].classList.add("activeText");
+    });
+  });
+}
+
+function horizontalScroll() {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  if (screenWidth < 768) {
+    return;
+  }
+
+  var slides = document.querySelectorAll(".fromRight");
+
+  if (!slides) {
+    return;
+  }
+
+  var action = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#horizontal_scroll",
+      pin: true,
+      scrub: 0.3,
+      start: "top top",
+      end: "+=3000"
+    }
+  }).to(slides, {
+    xPercent: -100,
+    duration: 2,
+    ease: "none",
+    stagger: 3
+  }).to({}, {
+    duration: 1
   });
 }
 //# sourceMappingURL=main.js.map

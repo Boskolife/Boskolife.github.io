@@ -42,7 +42,6 @@ const slider = new Swiper(".main_swiper", {
 
         slideChangeTransitionStart: function () {
             const activeSlide = this.slides[this.activeIndex];
-
             const textElements = document.querySelectorAll(
                 ".swiper-slide .text"
             );
@@ -56,15 +55,17 @@ const slider = new Swiper(".main_swiper", {
                 itemText.classList.add("activeText");
             });
 
-            if ((this.activeIndex + 1) % 2 === 0) {
-                slider.allowSlideNext = false;
-                slider.allowSlidePrev = false;
+            activeSlide.scrollIntoView();
 
-                setTimeout(() => {
-                    slider.allowSlideNext = true;
-                    slider.allowSlidePrev = true;
-                }, 5000);
-            }
+            // if ((this.activeIndex + 1) % 2 === 0) {
+            //     slider.allowSlideNext = false;
+            //     slider.allowSlidePrev = false;
+
+            //     setTimeout(() => {
+            //         slider.allowSlideNext = true;
+            //         slider.allowSlidePrev = true;
+            //     }, 5000);
+            // }
         },
 
         slideNextTransitionStart: (self) => {
