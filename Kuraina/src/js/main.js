@@ -55,15 +55,15 @@ const slider = new Swiper(".main_swiper", {
                 itemText.classList.add("activeText");
             });
 
-            // if ((this.activeIndex + 1) % 2 === 0) {
-            //     slider.allowSlideNext = false;
-            //     slider.allowSlidePrev = false;
+            if ((this.activeIndex + 1) % 2 === 0) {
+                slider.allowSlideNext = false;
+                slider.allowSlidePrev = false;
 
-            //     setTimeout(() => {
-            //         slider.allowSlideNext = true;
-            //         slider.allowSlidePrev = true;
-            //     }, 5000);
-            // }
+                setTimeout(() => {
+                    slider.allowSlideNext = true;
+                    slider.allowSlidePrev = true;
+                }, 5000);
+            }
         },
 
         slideNextTransitionStart: (self) => {
