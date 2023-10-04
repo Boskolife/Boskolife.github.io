@@ -9,7 +9,7 @@
     }
 
     .container {
-        max-width: 1440px;
+        // max-width: 1440px;
         width: 100%;
         margin: 0 auto;
         padding-bottom: 30px;
@@ -53,15 +53,20 @@
             padding-top: 60px;
         }
 
-        .slide_img_wrap {
-            max-width: 640px;
-            width: 100%;
-            max-height: 600px;
-            height: 100%;
+        .slide_content{
+            height: 90vh;
+        }
 
-            @include media ("<desktop") {
-                width: 60%;
-                max-height: 350px;
+        .slide_img_wrap {
+            // max-width: 640px;
+            // width: 100%;
+            // max-height: 600px;
+            height: 100%;
+            max-width: 1000px;
+            width: 60%;
+
+            @include media ("<1200px") {
+                height: 550px;
             }
 
             @include media ("<phone") {
@@ -102,7 +107,7 @@
         .slide_text {
             max-width: 520px;
             width: 45%;
-            @include adaptiv-vaule("margin-right", 80, -80, 1);
+            // @include adaptiv-vaule("margin-right", 80, -80, 1);
 
             @include media ("<desktop") {
                 margin: 0;
@@ -131,7 +136,7 @@
 
         .activeText{
             opacity: 1;
-            transition: all 8s ease;
+            transition: all 10s ease;
         }
     }
 
@@ -198,7 +203,7 @@
             color: $black;
             @include adaptiv-vaule("font-size", 16, 14, 1);
             font-weight: 300;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             width: 100%;
             text-align: end;
             font-style: italic;
@@ -258,10 +263,19 @@
             height: 100%;
             padding: 0 10px;
             margin: 0 auto;
-            bottom: 140px;
+            bottom: 50px;
+
+            @include media ("<desktop") {
+                left: 30px;
+            }
 
             @include media ("<tablet") {
                 width: calc(100% - 20px);
+                left: 0;
+            }
+
+            @include media ("<phone") {
+                bottom: 90px;
             }
         }
 
@@ -271,7 +285,8 @@
             @include adaptiv-vaule("font-size", 24, 18, 1);
             font-weight: 300;
             line-height: 124.383%;
-            text-transform: uppercase;
+            font-style: italic;
+            // text-transform: uppercase;         
         }
 
         .main {
@@ -610,6 +625,8 @@
             position: absolute;
             left: 20px;
             bottom: 0;
+            height: 100%;
+            width: 100%;
         }
 
         .slide_img_wrap {
@@ -632,6 +649,7 @@
 
             &:nth-child(1) {
                 text-align: end;
+                max-width: 400px;
             }
 
             &:nth-child(2) {
@@ -643,7 +661,7 @@
             }
 
             &:nth-child(5) {
-                @include adaptiv-vaule("margin-left", 600, 60, 1);
+                @include adaptiv-vaule("margin-left", 300, 60, 1);
             }
 
             &:nth-child(6) {

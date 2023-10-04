@@ -55,22 +55,22 @@ const slider = new Swiper(".main_swiper", {
                 itemText.classList.add("activeText");
             });
 
-            if ((this.activeIndex + 1) % 2 === 0) {
-                slider.allowSlideNext = false;
-                slider.allowSlidePrev = false;
+            // if ((this.activeIndex + 1) % 2 === 0) {
+            //     slider.allowSlideNext = false;
+            //     slider.allowSlidePrev = false;
 
-                setTimeout(() => {
-                    slider.allowSlideNext = true;
-                    slider.allowSlidePrev = true;
-                }, 5000);
-            }
+            //     setTimeout(() => {
+            //         slider.allowSlideNext = true;
+            //         slider.allowSlidePrev = true;
+            //     }, 5000);
+            // }
         },
 
         slideNextTransitionStart: (self) => {
             const rotateElem = document.querySelector(".progress_img");
             let progress = self.progress * 100;
             rotateElem.style.transform = `
-            translateY(-50%) rotate(${(imageRotate += 360)}deg)
+            translateY(-50%) rotate(${(imageRotate += 90)}deg)
             `;
         },
 
@@ -78,7 +78,7 @@ const slider = new Swiper(".main_swiper", {
             const rotateElem = document.querySelector(".progress_img");
             let progress = self.progress * 100;
             rotateElem.style.transform = `
-            translateY(-50%) rotate(${(imageRotate -= 360)}deg)
+            translateY(-50%) rotate(${(imageRotate -= 90)}deg)
             `;
         },
     },

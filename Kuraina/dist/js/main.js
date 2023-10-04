@@ -50,26 +50,24 @@ var slider = new Swiper(".main_swiper", {
       var activeText = activeSlide.querySelectorAll(".text");
       activeText.forEach(function (itemText) {
         itemText.classList.add("activeText");
-      });
-
-      if ((this.activeIndex + 1) % 2 === 0) {
-        slider.allowSlideNext = false;
-        slider.allowSlidePrev = false;
-        setTimeout(function () {
-          slider.allowSlideNext = true;
-          slider.allowSlidePrev = true;
-        }, 5000);
-      }
+      }); // if ((this.activeIndex + 1) % 2 === 0) {
+      //     slider.allowSlideNext = false;
+      //     slider.allowSlidePrev = false;
+      //     setTimeout(() => {
+      //         slider.allowSlideNext = true;
+      //         slider.allowSlidePrev = true;
+      //     }, 5000);
+      // }
     },
     slideNextTransitionStart: function slideNextTransitionStart(self) {
       var rotateElem = document.querySelector(".progress_img");
       var progress = self.progress * 100;
-      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate += 360, "deg)\n            ");
+      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate += 90, "deg)\n            ");
     },
     slidePrevTransitionStart: function slidePrevTransitionStart(self) {
       var rotateElem = document.querySelector(".progress_img");
       var progress = self.progress * 100;
-      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate -= 360, "deg)\n            ");
+      rotateElem.style.transform = "\n            translateY(-50%) rotate(".concat(imageRotate -= 90, "deg)\n            ");
     }
   }
 });
