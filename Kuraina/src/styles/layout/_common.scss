@@ -53,23 +53,53 @@
             padding-top: 60px;
         }
 
-        .slide_content{
+        @include media ("<phone") {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .slide_content {
             height: 90vh;
+
+            @include media ("<desktop") {
+                height: 100%;
+            }
+
+            @include media ("<phone") {
+                justify-content: flex-end;
+            }
+        }
+
+        .slide_text {
+            margin-right: 35px;
+
+            @include media ("<phone") {
+                padding: 0 10px;
+            }
         }
 
         .slide_img_wrap {
-            // max-width: 640px;
-            // width: 100%;
-            // max-height: 600px;
+            max-height: 900px;
             height: 100%;
             max-width: 1000px;
             width: 60%;
 
-            @include media ("<1200px") {
+            @include media ("<widescreen") {
+                position: fixed;
+                left: -100px;
+                width: 640px;
+            }
+
+            @include media ("<laptop") {
                 height: 550px;
             }
 
+            @include media ("<desktop") {
+                position: static;
+            }
+
             @include media ("<phone") {
+                height: 350px;
                 width: 100%;
             }
 
@@ -78,7 +108,6 @@
                 height: 100%;
             }
         }
-
     }
 
     .flex_slide {
@@ -91,16 +120,15 @@
             gap: 30px;
             position: relative;
             z-index: 1;
-            // display: flex;
-            // align-items: flex-start;
-            // justify-content: space-between;
-            // width: 100%;
-            // height: 100%;
-            // gap: 20px;
+
+            @include media ("<widescreen") {
+                justify-content: flex-end;
+            }
 
             @include media ("<desktop") {
                 column-count: 1;
                 flex-direction: column-reverse;
+                justify-content: center;
             }
         }
 
@@ -134,7 +162,7 @@
             }
         }
 
-        .activeText{
+        .activeText {
             opacity: 1;
             transition: all 10s ease;
         }
@@ -147,6 +175,23 @@
 
             @include media ("<desktop") {
                 flex-direction: column-reverse;
+            }
+        }
+
+        .slide_img_wrap {
+
+            @include media ("<widescreen") {
+                position: fixed;
+                right: -100px;
+                width: 640px;
+            }
+
+            @include media ("<desktop") {
+                position: static;
+            }
+
+            @include media ("<phone") {
+                width: 100%;
             }
         }
 
@@ -233,10 +278,10 @@
             height: 100%;
         }
 
-        .image_wrap{
+        .image_wrap {
             position: absolute;
             display: inline-block;
-            width:100%;
+            width: 100%;
             height: 100%;
         }
 
