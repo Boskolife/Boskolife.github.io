@@ -702,14 +702,15 @@ header {
     .main_section .slide .slide_img_wrap {
       max-height: 900px;
       height: 100%;
-      max-width: 800px;
+      max-width: 700px;
       width: 60%; }
       @media (min-width: 1441px) {
         .main_section .slide .slide_img_wrap {
           height: 750px; } }
       @media (min-width: 1921px) {
         .main_section .slide .slide_img_wrap {
-          height: 1000px; } }
+          height: 1000px;
+          max-width: 800px; } }
       @media (max-width: 1199px) {
         .main_section .slide .slide_img_wrap {
           position: fixed;
