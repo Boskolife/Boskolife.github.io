@@ -83,3 +83,5 @@ const slider = new Swiper(".main_swiper", {
         },
     },
 });
+
+
