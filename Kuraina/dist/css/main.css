@@ -605,7 +605,8 @@ header {
       position: relative;
       left: 20px;
       border: none;
-      background-color: transparent; }
+      background: #fff;
+      border: none; }
       header .progressBar .progress_line::after {
         content: '';
         position: absolute;
@@ -856,7 +857,7 @@ header {
     .main_section .white_list .author {
       color: #000;
       /* Только если меньше контейнера */
-      font-size: 16px;
+      font-size: 22px;
       font-weight: 300;
       width: 100%;
       text-align: end;
@@ -864,7 +865,7 @@ header {
       margin-right: 50px; }
       @media (max-width: 1300px) {
         .main_section .white_list .author {
-          font-size: calc(14px + 2 * ((100vw - calc(320px)) / 980)); } }
+          font-size: calc(16px + 6 * ((100vw - calc(320px)) / 980)); } }
       @media (max-width: 1023px) {
         .main_section .white_list .author {
           width: calc(100% - 20px);
@@ -1036,24 +1037,35 @@ header {
   .main_section .slide_7 .title_wrap {
     max-width: 1380px;
     margin: 0 auto; }
+  .main_section .slide_7 .slide_title:nth-child(1) {
+    margin-right: 150px;
+    text-align: end; }
   .main_section .slide_7 .slide_title:nth-child(2) {
     /* Только если меньше контейнера */
     margin-left: 420px; }
     @media (max-width: 1300px) {
       .main_section .slide_7 .slide_title:nth-child(2) {
         margin-left: calc(100px + 320 * ((100vw - calc(320px)) / 980)); } }
+  .main_section .slide_7 .slide_title:nth-child(3) {
+    margin-left: 450px; }
   .main_section .slide_7 .slide_title:nth-child(4) {
     /* Только если меньше контейнера */
-    margin-left: 700px; }
+    margin-left: 500px; }
     @media (max-width: 1300px) {
       .main_section .slide_7 .slide_title:nth-child(4) {
-        margin-left: calc(100px + 600 * ((100vw - calc(320px)) / 980)); } }
+        margin-left: calc(100px + 400 * ((100vw - calc(320px)) / 980)); } }
+  .main_section .slide_7 .slide_title:nth-child(5) {
+    /* Только если меньше контейнера */
+    margin-left: 600px; }
+    @media (max-width: 1300px) {
+      .main_section .slide_7 .slide_title:nth-child(5) {
+        margin-left: calc(100px + 500 * ((100vw - calc(320px)) / 980)); } }
   .main_section .slide_7 .slide_title:nth-child(6) {
     /* Только если меньше контейнера */
-    margin-left: 670px; }
+    margin-left: 430px; }
     @media (max-width: 1300px) {
       .main_section .slide_7 .slide_title:nth-child(6) {
-        margin-left: calc(100px + 570 * ((100vw - calc(320px)) / 980)); } }
+        margin-left: calc(100px + 330 * ((100vw - calc(320px)) / 980)); } }
   .main_section .slide_8 {
     background: linear-gradient(90deg, #E4F2FF 0%, #749AD3 100%); }
     .main_section .slide_8 .slide_8_img {

@@ -254,9 +254,8 @@
 
         .author {
             color: $black;
-            @include adaptiv-vaule("font-size", 16, 14, 1);
+            @include adaptiv-vaule("font-size", 22, 16, 1);
             font-weight: 300;
-            // text-transform: uppercase;
             width: 100%;
             text-align: end;
             font-style: italic;
@@ -480,16 +479,29 @@
 
         .slide_title {
 
+            &:nth-child(1) {
+                margin-right: 150px;
+                text-align: end;
+            }
+
             &:nth-child(2) {
                 @include adaptiv-vaule("margin-left", 420, 100, 1);
             }
 
+            &:nth-child(3) {
+               margin-left: 450px;
+            }
+
             &:nth-child(4) {
-                @include adaptiv-vaule("margin-left", 700, 100, 1);
+                @include adaptiv-vaule("margin-left", 500, 100, 1);
+            }
+
+            &:nth-child(5) {
+                @include adaptiv-vaule("margin-left", 600, 100, 1);
             }
 
             &:nth-child(6) {
-                @include adaptiv-vaule("margin-left", 670, 100, 1);
+                @include adaptiv-vaule("margin-left", 430, 100, 1);
             }
         }
     }
