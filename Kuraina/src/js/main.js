@@ -53,7 +53,9 @@ const slider = new Swiper(".main_swiper", {
             const activeText = activeSlide.querySelectorAll(".text");
             activeText.forEach((itemText) => {
                 itemText.classList.add("activeText");
+                activeSlide.scrollIntoView();
             });
+
 
             // if ((this.activeIndex + 1) % 2 === 0) {
             //     slider.allowSlideNext = false;
@@ -84,4 +86,4 @@ const slider = new Swiper(".main_swiper", {
     },
 });
 
-
+console.log(window.innerHeight)
