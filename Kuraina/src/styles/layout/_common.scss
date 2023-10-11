@@ -1,4 +1,4 @@
-body{
+body {
     background-color: transparent;
 }
 
@@ -88,10 +88,14 @@ body{
 
         .slide_img_wrap {
             max-height: 800px;
-            height: 100%;
             max-width: 800px;
+            height: 100%;
             width: 60%;
 
+            @include media (">1700px") {
+                max-height: 1000px;
+                max-width: 1000px;
+            }
 
             @include media ("<widescreen") {
                 position: fixed;
@@ -370,7 +374,7 @@ body{
 
         .title_wrap {
             max-width: 855px;
-            margin: 0 auto; 
+            margin: 0 auto;
         }
 
         .slide_title {
@@ -481,7 +485,7 @@ body{
                 @include adaptiv-vaule("margin-right", 150, 10, 1);
 
                 @include media ("<phone") {
-                    margin-right:0;
+                    margin-right: 0;
                     margin-left: 10px;
                 }
             }
@@ -806,6 +810,7 @@ body{
             transform: translateY(-50%);
             left: 10%;
             max-width: 420px;
+            max-height:525px;
 
             @include media ("<desktop") {
                 top: 10%;
@@ -813,7 +818,6 @@ body{
                 transform: translateX(-50%);
             }
         }
-
 
         .slide_img_wrap {
 
