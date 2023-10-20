@@ -56,16 +56,15 @@ const slider = new Swiper(".main_swiper", {
                 activeSlide.scrollIntoView();
             });
 
+            if ((this.activeIndex + 1) % 2 === 0) {
+                slider.allowSlideNext = false;
+                slider.allowSlidePrev = false;
 
-            // if ((this.activeIndex + 1) % 2 === 0) {
-            //     slider.allowSlideNext = false;
-            //     slider.allowSlidePrev = false;
-
-            //     setTimeout(() => {
-            //         slider.allowSlideNext = true;
-            //         slider.allowSlidePrev = true;
-            //     }, 5000);
-            // }
+                setTimeout(() => {
+                    slider.allowSlideNext = true;
+                    slider.allowSlidePrev = true;
+                }, 5000);
+            }
         },
 
         slideNextTransitionStart: (self) => {
@@ -86,4 +85,4 @@ const slider = new Swiper(".main_swiper", {
     },
 });
 
-console.log(window.innerHeight)
+console.log(window.innerHeight);
