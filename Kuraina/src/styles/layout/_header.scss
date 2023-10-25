@@ -77,6 +77,11 @@ header {
             @include media ("<tablet") {
                 left: 30px;
             }
+
+            @include media (">1920px") {
+                width: 98%;
+            }
+
         }
     }
 

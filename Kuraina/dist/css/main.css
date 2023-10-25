@@ -618,6 +618,9 @@ header {
       @media (max-width: 767px) {
         header .progressBar .progress_line {
           left: 30px; } }
+      @media (min-width: 1921px) {
+        header .progressBar .progress_line {
+          width: 98%; } }
   header .progress_img {
     position: absolute;
     top: -50%;
@@ -704,7 +707,6 @@ body {
       width: 60%; }
       @media (min-width: 1701px) {
         .main_section .slide .slide_img_wrap {
-          max-height: 1000px;
           max-width: 1000px; } }
       @media (max-width: 1199px) {
         .main_section .slide .slide_img_wrap {
@@ -880,7 +882,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%; }
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         .main_section .slide_1 .slide_bg {
           -o-object-fit: cover;
           object-fit: cover; } }
@@ -924,7 +926,16 @@ body {
       max-width: 415px;
       width: 100%;
       margin-bottom: 30px;
-      text-align: start; }
+      text-align: start;
+      position: relative; }
+      .main_section .slide_1 .main::after {
+        content: url(../images/undecover.png);
+        position: absolute;
+        top: -50%;
+        left: -25%;
+        z-index: -1;
+        max-width: 750px;
+        max-height: 300px; }
     .main_section .slide_1 .sign {
       text-align: end; }
   .main_section .slide_2 {
@@ -973,9 +984,7 @@ body {
       left: 0;
       top: 0;
       width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
+      height: 100%; }
     @media (max-width: 1023px) {
       .main_section .slide_4 .slide_img_wrap {
         bottom: -48%;
