@@ -722,6 +722,14 @@ body {
       .main_section .slide .slide_img_wrap img {
         width: 100%;
         height: 100%; }
+  .main_section .swiper-button-prev {
+    left: 20px; }
+    .main_section .swiper-button-prev::after {
+      content: url(../images/arrow_prev.svg); }
+  .main_section .swiper-button-next {
+    right: 20px; }
+    .main_section .swiper-button-next::after {
+      content: url(../images/arrow_next.svg); }
   .main_section .flex_slide .slide_content {
     -webkit-column-count: 2;
     -moz-column-count: 2;

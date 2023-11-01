@@ -117,6 +117,20 @@ body {
         }
     }
 
+
+    .swiper-button-prev {
+        left: 20px;
+        &::after {
+            content: url(../images/arrow_prev.svg);
+        }
+    }
+    .swiper-button-next {
+        right: 20px;
+        &::after {
+            content: url(../images/arrow_next.svg);
+        }
+    }
+
     .flex_slide {
 
         .slide_content {
@@ -344,7 +358,7 @@ body {
             text-align: start;
             position: relative;
 
-            &::after{
+            &::after {
                 content: url(../images/undecover.png);
                 position: absolute;
                 top: -50%;
@@ -821,7 +835,7 @@ body {
             transform: translateY(-50%);
             left: 10%;
             max-width: 420px;
-            max-height:525px;
+            max-height: 525px;
 
             @include media ("<desktop") {
                 top: 10%;
@@ -842,13 +856,13 @@ body {
         display: grid;
         place-items: center;
         height: 100vh;
-        position:relative;
+        position: relative;
 
         @include media ("<desktop") {
             padding: 0;
         }
 
-        .white_under{
+        .white_under {
             position: absolute;
             top: 50%;
             left: 50%;
