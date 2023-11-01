@@ -72,5 +72,4 @@ var slider = new Swiper(".main_swiper", {
     }
   }
 });
-console.log(window.innerHeight);
 //# sourceMappingURL=main.js.map

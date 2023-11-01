@@ -84,5 +84,3 @@ const slider = new Swiper(".main_swiper", {
         },
     },
 });
-
-console.log(window.innerHeight);

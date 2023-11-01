@@ -713,7 +713,9 @@ body {
             position: absolute;
             left: 0;
             bottom: 0;
+            max-height: 1100px;
             height: 100%;
+            max-width: 1050px;
             width: 100%;
         }
 
@@ -840,9 +842,21 @@ body {
         display: grid;
         place-items: center;
         height: 100vh;
+        position:relative;
 
         @include media ("<desktop") {
             padding: 0;
+        }
+
+        .white_under{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 1445px;
+            width: 100%;
+            max-height: 725px;
+            z-index: 1;
         }
 
         .slide_21_img {
