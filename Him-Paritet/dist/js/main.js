@@ -6,7 +6,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// Burger
+openCatalog(); // Burger
+
 var burger = document.querySelector(".burger_menu");
 var menuBody = document.querySelector(".nav");
 var linkClose = document.querySelectorAll(".link-close");
@@ -238,4 +239,26 @@ new ItcTabs(".tabs");
     window.dispatchEvent(new Event("locationchange"));
   });
 })();
+
+function openCatalog() {
+  var catalogBtn = document.querySelector(".catalog_btn");
+  var catalogList = document.querySelector(".sub-menu");
+  var isOpen = false;
+  catalogBtn.addEventListener("click", function (e) {
+    if (isOpen) {
+      catalogList.classList.remove("activeCatalog");
+    } else {
+      catalogList.classList.add("activeCatalog");
+    }
+
+    isOpen = !isOpen;
+    e.stopPropagation();
+  });
+  document.addEventListener("click", function (event) {
+    if (isOpen && event.target !== catalogList && event.target !== catalogBtn) {
+      catalogList.classList.remove("activeCatalog");
+      isOpen = false;
+    }
+  });
+}
 //# sourceMappingURL=main.js.map
