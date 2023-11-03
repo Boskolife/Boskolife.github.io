@@ -724,11 +724,11 @@ body {
         height: 100%; }
   .main_section .swiper-button-prev {
     left: 20px;
-    opacity: 0.5; }
+    opacity: 0.2; }
     .main_section .swiper-button-prev::after {
       content: url(../images/arrow_prev.svg); }
   .main_section .swiper-button-next {
-    opacity: 0.5;
+    opacity: 0.2;
     right: 20px; }
     .main_section .swiper-button-next::after {
       content: url(../images/arrow_next.svg); }
@@ -1051,10 +1051,10 @@ body {
     margin: 0 auto; }
   .main_section .slide_7 .slide_title:nth-child(1) {
     /* Только если меньше контейнера */
-    margin-right: 150px; }
+    margin-left: 650px; }
     @media (max-width: 1300px) {
       .main_section .slide_7 .slide_title:nth-child(1) {
-        margin-right: calc(10px + 140 * ((100vw - calc(375px)) / 925)); } }
+        margin-left: calc(10px + 640 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 479px) {
       .main_section .slide_7 .slide_title:nth-child(1) {
         margin-right: 0;
@@ -1258,7 +1258,7 @@ body {
       bottom: 0;
       max-height: 1100px;
       height: 100%;
-      max-width: 675px;
+      max-width: 875px;
       width: 100%; }
     @media (max-width: 1023px) {
       .main_section .slide_16 .slide_img_wrap {
@@ -1303,11 +1303,21 @@ body {
     @media (max-width: 1023px) {
       .main_section .slide_18 .slide_img_wrap {
         left: 0; } }
+    .main_section .slide_18 .slide_text {
+      margin-top: 50px; }
+      @media (max-width: 479px) {
+        .main_section .slide_18 .slide_text {
+          margin-top: 0; } }
   .main_section .slide_19 .title_wrap {
     max-width: 1150px;
     margin: 0 auto; }
   .main_section .slide_19 .slide_title:nth-child(1) {
-    text-align: start; }
+    text-align: start;
+    /* Только если меньше контейнера */
+    margin-left: 500px; }
+    @media (max-width: 1300px) {
+      .main_section .slide_19 .slide_title:nth-child(1) {
+        margin-left: calc(0px + 500 * ((100vw - calc(375px)) / 925)); } }
   .main_section .slide_19 .slide_title:nth-child(2) {
     /* Только если меньше контейнера */
     margin-left: 160px; }
@@ -1375,6 +1385,11 @@ body {
       width: 100%;
       max-height: 625px;
       z-index: 1; }
+      @media (max-width: 1199px) {
+        .main_section .slide_21 .white_under {
+          left: 59%;
+          max-width: 850px;
+          max-height: 500px; } }
     .main_section .slide_21 .slide_21_img {
       position: absolute;
       top: 0;
