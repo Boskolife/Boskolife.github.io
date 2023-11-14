@@ -542,7 +542,7 @@ body {
             }
 
             &:nth-child(3) {
-                @include adaptiv-vaule("margin-left", 150, 10, 1);
+                @include adaptiv-vaule("margin-left", 210, 10, 1);
             }
 
             &:nth-child(4) {
@@ -550,7 +550,7 @@ body {
             }
 
             &:nth-child(5) {
-                @include adaptiv-vaule("margin-left", 160, 10, 1);
+                @include adaptiv-vaule("margin-left", 90, 10, 1);
             }
 
             &:nth-child(6) {
