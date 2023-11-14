@@ -289,6 +289,7 @@ body {
     .slide_1 {
         padding: 0;
         height: 100vh;
+        position: relative;
 
         @include media ("<desktop") {
             overflow: hidden;
@@ -312,32 +313,36 @@ body {
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
+        }
+
+        .artifact {
+            position: absolute;
+            width: 350px;
+            height: 300px;
+            left: 0;
+            bottom: 0;
 
             @include media ("<desktop") {
-                object-fit: cover;
+                display: none;
             }
         }
 
         .slide_text_wrap {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: column;
-            max-width: 410px;
+            position: absolute;
             width: 100%;
-            height: 100%;
+            z-index: 1;
             padding: 0 10px;
-            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
             bottom: 50px;
 
-            @include media ("<desktop") {
-                left: 30px;
+            @include media ("<laptop") {
+                left: 63%;
             }
 
-            @include media ("<tablet") {
-                width: calc(100% - 20px);
-                left: 0;
+            @include media ("<desktop") {
+                left: 50%;
             }
 
             @include media ("<phone") {
@@ -345,14 +350,39 @@ body {
             }
         }
 
+        .title_wrap{
+            max-width: 410px;
+            width: 100%;
+            margin: 0 auto;
+
+            @include media ("<phone") {
+                width: calc(100% - 20px);
+            }
+        }
+
+        .under_img {
+            position: absolute;
+            top: 50%;
+            left: 56%;
+            transform: translate(-50%, -50%);
+            width: 850px;
+            height: 300px;
+            z-index: -1;
+
+            @include media ("<tablet") {
+                object-fit: cover;
+                left: 50%;
+                top: 60%;
+            }
+        }
+
         .slide_title {
-            color: $white;
+            color: $black;
             font-size: 24px;
             @include adaptiv-vaule("font-size", 24, 18, 1);
             font-weight: 300;
             line-height: 124.383%;
-            font-style: italic;
-            // text-transform: uppercase;         
+            font-style: italic;       
         }
 
         .main {
@@ -361,16 +391,6 @@ body {
             margin-bottom: 30px;
             text-align: start;
             position: relative;
-
-            &::after {
-                content: url(../images/undecover.png);
-                position: absolute;
-                top: -50%;
-                left: -25%;
-                z-index: -1;
-                max-width: 750px;
-                max-height: 300px;
-            }
         }
 
         .sign {
@@ -430,9 +450,9 @@ body {
 
         .slide_4_img {
             position: absolute;
-            left: 0;
+            left: 10%;
             top: 0;
-            width: 100%;
+            max-width: 400px;
             height: 100%;
         }
 
@@ -691,7 +711,7 @@ body {
             }
         }
 
-        .slide_text{
+        .slide_text {
             margin-top: 50px;
         }
     }
@@ -797,8 +817,8 @@ body {
             }
         }
 
-        .slide_text{
-            margin-top:50px;
+        .slide_text {
+            margin-top: 50px;
 
             @include media ("<phone") {
                 margin-top: 0;
@@ -883,16 +903,10 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            max-width: 1150px;
+            max-width: 900px;
             width: 100%;
-            max-height: 625px;
+            max-height: 425px;
             z-index: 1;
-
-            @include media ("<1200px") {
-                left: 59%;
-                max-width: 850px;
-                max-height: 500px;
-            }
         }
 
         .slide_21_img {
