@@ -314,6 +314,7 @@ body {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: 80% 20%;
         }
 
         .artifact {
@@ -350,7 +351,7 @@ body {
             }
         }
 
-        .title_wrap{
+        .title_wrap {
             max-width: 410px;
             width: 100%;
             margin: 0 auto;
@@ -363,7 +364,7 @@ body {
         .under_img {
             position: absolute;
             top: 50%;
-            left: 56%;
+            left: 52%;
             transform: translate(-50%, -50%);
             width: 850px;
             height: 300px;
@@ -382,7 +383,7 @@ body {
             @include adaptiv-vaule("font-size", 24, 18, 1);
             font-weight: 300;
             line-height: 124.383%;
-            font-style: italic;       
+            font-style: italic;
         }
 
         .main {
@@ -528,7 +529,7 @@ body {
         .slide_title {
 
             &:nth-child(1) {
-                @include adaptiv-vaule("margin-left", 650, 10, 1);
+                @include adaptiv-vaule("margin-left", 250, 10, 1);
 
                 @include media ("<phone") {
                     margin-right: 0;
@@ -537,23 +538,23 @@ body {
             }
 
             &:nth-child(2) {
-                @include adaptiv-vaule("margin-left", 420, 10, 1);
+                @include adaptiv-vaule("margin-left", 160, 10, 1);
             }
 
             &:nth-child(3) {
-                @include adaptiv-vaule("margin-left", 450, 10, 1);
+                @include adaptiv-vaule("margin-left", 150, 10, 1);
             }
 
             &:nth-child(4) {
-                @include adaptiv-vaule("margin-left", 500, 10, 1);
+                @include adaptiv-vaule("margin-left", 170, 10, 1);
             }
 
             &:nth-child(5) {
-                @include adaptiv-vaule("margin-left", 600, 10, 1);
+                @include adaptiv-vaule("margin-left", 160, 10, 1);
             }
 
             &:nth-child(6) {
-                @include adaptiv-vaule("margin-left", 430, 10, 1);
+                @include adaptiv-vaule("margin-left", 130, 10, 1);
             }
         }
     }
