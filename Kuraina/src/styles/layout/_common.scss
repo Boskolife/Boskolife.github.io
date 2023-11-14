@@ -363,11 +363,11 @@ body {
 
         .under_img {
             position: absolute;
-            top: 50%;
-            left: 52%;
+            top: 48%;
+            left: 55%;
             transform: translate(-50%, -50%);
             width: 850px;
-            height: 300px;
+            height: 240px;
             z-index: -1;
 
             @include media ("<tablet") {
@@ -389,13 +389,13 @@ body {
         .main {
             max-width: 415px;
             width: 100%;
-            margin-bottom: 30px;
             text-align: start;
             position: relative;
         }
 
         .sign {
             text-align: end;
+            font-weight: 600;
         }
     }
 
@@ -451,10 +451,10 @@ body {
 
         .slide_4_img {
             position: absolute;
-            left: 10%;
-            top: 0;
-            max-width: 400px;
-            height: 100%;
+            left: 0;
+            bottom: 0;
+            width: auto;
+            max-height: 90%;
         }
 
         .slide_img_wrap {
