@@ -166,7 +166,7 @@ body {
         background-color: $white;
         position: relative;
         z-index: 1;
-        border-radius: 16px;
+        border-radius: 16px 16px 0 0;
     }
 
     .board_title {

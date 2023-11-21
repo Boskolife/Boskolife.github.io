@@ -722,7 +722,7 @@ body {
     background-color: #fff;
     position: relative;
     z-index: 1;
-    border-radius: 16px; }
+    border-radius: 16px 16px 0 0; }
   .main_content .board_title {
     color: #222531;
     /* Только если меньше контейнера */
