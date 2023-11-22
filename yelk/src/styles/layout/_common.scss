@@ -345,7 +345,7 @@ body {
         justify-content: flex-start;
 
         @include media ("<tablet") {
-            padding-bottom: 20px;
+            padding-bottom: 45px;
         }
 
         .board_top {
@@ -410,7 +410,7 @@ body {
         justify-content: flex-start;
 
         @include media ("<tablet") {
-            padding-bottom: 20px;
+            padding-bottom: 45px;
         }
 
         .board_top {
@@ -501,5 +501,89 @@ body {
             font-size: 12px;
             line-height: 200%;
         }
+
+        .icons_wrap {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 16px;
+
+            @include media ("<tablet") {
+                gap: 8px;
+            }
+        }
+
+        .icons_body {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &:nth-child(1) {
+                .square {
+                    background-color: #5155C3;
+                }
+            }
+
+            &:nth-child(2) {
+                .square {
+                    background-color: #597DBE;
+                }
+            }
+
+            &:nth-child(3) {
+                .square {
+                    background-color: #5F99BB;
+                }
+            }
+
+            &:nth-child(4) {
+                .square {
+                    background-color: #65B8B7;
+                }
+            }
+
+            &:nth-child(5) {
+                .square {
+                    background-color: #6CDDB1;
+                }
+            }
+
+            &:nth-child(6) {
+                .square {
+                    background-color: #222531;
+                    opacity: 0.4;
+                }
+            }
+
+            .name {
+                color: $black;
+                font-variant-numeric: lining-nums tabular-nums;
+                font-size: 12px;
+                line-height: 133%;
+            }
+        }
+
+        .square {
+            border-radius: 4px;
+            width: 12px;
+            height: 12px;
+        }
+
+        .disable {
+            .square {
+                background-color: #222531;
+                opacity: 0.4;
+            }
+
+            .name {
+                opacity: 0.4;
+            }
+        }
     }
+
 }

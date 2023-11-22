@@ -859,7 +859,7 @@ body {
     justify-content: flex-start; }
     @media (max-width: 767px) {
       .main_content .dash_1 {
-        padding-bottom: 20px; } }
+        padding-bottom: 45px; } }
     .main_content .dash_1 .board_top {
       margin-bottom: 8px; }
     .main_content .dash_1 .board_bottom {
@@ -912,7 +912,7 @@ body {
     justify-content: flex-start; }
     @media (max-width: 767px) {
       .main_content .dash_2 {
-        padding-bottom: 20px; } }
+        padding-bottom: 45px; } }
     .main_content .dash_2 .board_top {
       margin-bottom: 8px; }
     .main_content .dash_2 .board_bottom {
@@ -972,5 +972,55 @@ body {
       font-variant-numeric: lining-nums tabular-nums;
       font-size: 12px;
       line-height: 200%; }
+    .main_content .dash_2 .icons_wrap {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+      gap: 16px; }
+      @media (max-width: 767px) {
+        .main_content .dash_2 .icons_wrap {
+          gap: 8px; } }
+    .main_content .dash_2 .icons_body {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      gap: 4px; }
+      .main_content .dash_2 .icons_body:nth-child(1) .square {
+        background-color: #5155C3; }
+      .main_content .dash_2 .icons_body:nth-child(2) .square {
+        background-color: #597DBE; }
+      .main_content .dash_2 .icons_body:nth-child(3) .square {
+        background-color: #5F99BB; }
+      .main_content .dash_2 .icons_body:nth-child(4) .square {
+        background-color: #65B8B7; }
+      .main_content .dash_2 .icons_body:nth-child(5) .square {
+        background-color: #6CDDB1; }
+      .main_content .dash_2 .icons_body:nth-child(6) .square {
+        background-color: #222531;
+        opacity: 0.4; }
+      .main_content .dash_2 .icons_body .name {
+        color: #222531;
+        font-variant-numeric: lining-nums tabular-nums;
+        font-size: 12px;
+        line-height: 133%; }
+    .main_content .dash_2 .square {
+      border-radius: 4px;
+      width: 12px;
+      height: 12px; }
+    .main_content .dash_2 .disable .square {
+      background-color: #222531;
+      opacity: 0.4; }
+    .main_content .dash_2 .disable .name {
+      opacity: 0.4; }
 
 /*# sourceMappingURL=main.css.map */
